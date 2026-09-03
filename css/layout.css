@@ -1,0 +1,249 @@
+/* ==========================================================================
+   EPICUREAN FLOW - LAYOUT & CONTAINER SYSTEM (EDITORIAL EDITION)
+   ========================================================================== */
+
+/* Main Containers */
+.container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--text-reading-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.container-editorial {
+  width: 100%;
+  max-width: var(--text-editorial-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+/* Section Spacing */
+.section {
+  padding-top: var(--section-padding-desktop);
+  padding-bottom: var(--section-padding-desktop);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-sm {
+  padding-top: calc(var(--section-padding-desktop) * 0.55);
+  padding-bottom: calc(var(--section-padding-desktop) * 0.55);
+}
+
+.section-lg {
+  padding-top: calc(var(--section-padding-desktop) * 1.2);
+  padding-bottom: calc(var(--section-padding-desktop) * 1.2);
+}
+
+/* Section Themes */
+.theme-ivory {
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+}
+
+.theme-cream {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+}
+
+.theme-ink {
+  background-color: var(--color-ink);
+  color: var(--color-ivory);
+}
+
+.theme-ink h1, .theme-ink h2, .theme-ink h3, .theme-ink h4 {
+  color: var(--color-ivory);
+}
+
+.theme-ink p {
+  color: rgba(245, 240, 231, 0.82);
+}
+
+.theme-olive {
+  background-color: var(--color-olive);
+  color: var(--color-ivory);
+}
+
+.theme-olive h1, .theme-olive h2, .theme-olive h3, .theme-olive h4 {
+  color: var(--color-ivory);
+}
+
+.theme-olive p {
+  color: rgba(245, 240, 231, 0.9);
+}
+
+/* Section Headers */
+.section-header {
+  margin-bottom: 72px;
+}
+
+.section-header.text-center {
+  text-align: center;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  margin-bottom: 18px;
+}
+
+.section-eyebrow::before,
+.section-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--color-gold);
+  opacity: 0.6;
+}
+
+.section-eyebrow.no-lines::before,
+.section-eyebrow.no-lines::after {
+  display: none;
+}
+
+.theme-ink .section-eyebrow {
+  color: var(--color-gold-light);
+}
+
+.theme-ink .section-eyebrow::before,
+.theme-ink .section-eyebrow::after {
+  background-color: var(--color-gold-light);
+}
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+.section-description {
+  max-width: var(--text-reading-width);
+  font-size: 1.15rem;
+  color: var(--color-ink-muted);
+  line-height: 1.65;
+}
+
+.theme-ink .section-description {
+  color: rgba(245, 240, 231, 0.78);
+}
+
+.section-header.text-center .section-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Standard Grids */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--grid-gap-desktop);
+  align-items: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap-desktop);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--grid-gap-desktop);
+}
+
+.grid-editorial {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.grid-editorial-reverse {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   EDITORIAL ASYMMETRIC GRIDS (BREAKING EQUAL-CARD FEEL)
+   -------------------------------------------------------------------------- */
+
+/* Asymmetric Cookbooks Layout (54% Hero Book / 46% Stacked Supporting Books) */
+.grid-asymmetric-cookbooks {
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.cookbooks-secondary-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Asymmetric Courses Layout (58% Flagship Masterclass / 42% Supporting Pathway) */
+.grid-asymmetric-courses {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.courses-secondary-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Magazine Recipe Layout (1 Large Feature + Stacked Side Stories) */
+.grid-magazine {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.grid-magazine-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Food Tours Travel Showcase */
+.grid-travel-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: stretch;
+}

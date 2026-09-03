@@ -1,0 +1,938 @@
+/* ==========================================================================
+   EPICUREAN FLOW - UI COMPONENTS SYSTEM (EDITORIAL MASTER REFINEMENT)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. STICKY NAVIGATION & HEADER
+   -------------------------------------------------------------------------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  transition: all var(--transition-normal);
+  background-color: rgba(245, 240, 231, 0.90);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.header.scrolled {
+  height: var(--header-height-scrolled);
+  background-color: rgba(245, 240, 231, 0.98);
+  box-shadow: 0 10px 30px rgba(18, 17, 15, 0.07);
+  border-bottom-color: var(--color-gold-border);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-serif);
+  font-size: 1.875rem; /* 30px */
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+  text-transform: uppercase;
+  transition: opacity var(--transition-fast);
+}
+
+.logo:hover {
+  opacity: 0.85;
+}
+
+.logo-accent {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold);
+  text-transform: none;
+}
+
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  position: relative;
+  padding: 10px 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--color-gold-gradient);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-gold-hover);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Cart Icon Button */
+.cart-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: var(--color-ink);
+  background-color: transparent;
+  transition: all var(--transition-fast);
+}
+
+.cart-btn:hover {
+  background-color: rgba(188, 145, 66, 0.14);
+  color: var(--color-gold-hover);
+}
+
+.cart-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-gold-gradient);
+  color: var(--color-white);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-fast);
+}
+
+/* Mobile Hamburger Toggle */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-ink);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Navigation Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 380px;
+  height: 100vh;
+  background-color: var(--color-cream);
+  z-index: 1001;
+  padding: 110px 36px 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-drawer);
+  transition: right var(--transition-normal);
+}
+
+.mobile-nav-drawer.open {
+  right: 0;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  transition: color var(--transition-fast);
+}
+
+.mobile-nav-link:hover {
+  color: var(--color-gold);
+}
+
+.mobile-nav-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+
+/* --------------------------------------------------------------------------
+   02. BUTTON SYSTEM
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem; /* 14px */
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 18px 36px;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn .arrow-icon {
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Primary Button (Solid Ink) */
+.btn-primary {
+  background-color: var(--color-ink);
+  color: var(--color-ivory);
+  border: 1px solid var(--color-ink);
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-primary:hover {
+  background: var(--color-gold-gradient);
+  border-color: var(--color-gold);
+  color: var(--color-white);
+  box-shadow: 0 10px 28px rgba(188, 145, 66, 0.32);
+}
+
+/* Gold Button */
+.btn-gold {
+  background: var(--color-gold-gradient);
+  color: var(--color-white);
+  border: 1px solid var(--color-gold);
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-gold:hover {
+  background-color: var(--color-gold-hover);
+  border-color: var(--color-gold-hover);
+  box-shadow: 0 10px 28px rgba(188, 145, 66, 0.38);
+}
+
+/* Secondary Button (Outlined) */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-ink);
+  color: var(--color-ivory);
+}
+
+/* Secondary Light Button (for Dark sections) */
+.btn-secondary-light {
+  background-color: transparent;
+  color: var(--color-ivory);
+  border: 1px solid rgba(245, 240, 231, 0.45);
+}
+
+.btn-secondary-light:hover {
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  border-color: var(--color-ivory);
+}
+
+/* Editorial Text Link */
+.btn-link {
+  padding: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.btn-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: transform var(--transition-fast);
+  transform-origin: left;
+}
+
+.btn-link:hover::after {
+  transform: scaleX(1.15);
+}
+
+
+/* --------------------------------------------------------------------------
+   03. HERO SECTION (CINEMATIC BREATHING ROOM)
+   -------------------------------------------------------------------------- */
+.hero-wrapper {
+  position: relative;
+  min-height: 94vh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--header-height) + 48px);
+  padding-bottom: 96px;
+}
+
+.hero-visual-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-book);
+}
+
+.hero-visual-frame::before {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-quote-box {
+  position: absolute;
+  bottom: -28px;
+  left: -28px;
+  background: var(--color-white);
+  padding: 24px 28px;
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-card-hover);
+  border-left: 3px solid var(--color-gold);
+  max-width: 300px;
+  z-index: 2;
+}
+
+
+/* --------------------------------------------------------------------------
+   04. FEATURED COOKBOOKS (CONTROLLED ASYMMETRY)
+   -------------------------------------------------------------------------- */
+
+/* Hero Featured Cookbook (Left Side - ~54% width) */
+.cookbook-hero-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-light);
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  height: 100%;
+}
+
+.cookbook-hero-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.cookbook-hero-cover-wrap {
+  position: relative;
+  background-color: var(--color-ivory);
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cookbook-hero-cover {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-book);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cookbook-hero-card:hover .cookbook-hero-cover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-book-hover);
+}
+
+.cookbook-hero-body {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Secondary Compact Cookbook Cards (Right Stack - ~46% width) */
+.cookbook-compact-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 24px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cookbook-compact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.cookbook-compact-cover {
+  width: 90px;
+  height: 115px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-book);
+}
+
+.product-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(18, 17, 15, 0.88);
+  backdrop-filter: blur(8px);
+  color: var(--color-ivory);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.product-badge.free {
+  background-color: var(--color-olive);
+}
+
+.product-badge.gold {
+  background: var(--color-gold-gradient);
+  color: var(--color-white);
+}
+
+
+/* --------------------------------------------------------------------------
+   05. FEATURED COURSES (FLAGSHIP & PATHWAYS)
+   -------------------------------------------------------------------------- */
+
+/* Flagship Masterclass (Left Side - ~58% width) */
+.course-flagship-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-light);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.course-flagship-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.course-flagship-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.course-flagship-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.course-flagship-card:hover .course-flagship-img {
+  transform: scale(1.03);
+}
+
+.course-flagship-body {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.course-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9375rem;
+  color: var(--color-ink-light);
+  margin-bottom: 12px;
+  line-height: 1.45;
+}
+
+.course-highlight-icon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Secondary Course Stack (Right Side - ~42% width) */
+.course-compact-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--color-border-light);
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.course-compact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+
+/* --------------------------------------------------------------------------
+   06. CHEF AUTHORITY EDITORIAL SPREAD
+   -------------------------------------------------------------------------- */
+.chef-portrait-frame {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card-hover);
+}
+
+.chef-portrait-frame::before {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.chef-portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chef-quote-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  padding: 22px;
+  background-color: rgba(18, 17, 15, 0.94);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-xs);
+  color: var(--color-ivory);
+  border-left: 3px solid var(--color-gold);
+  z-index: 2;
+}
+
+.chef-quote-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.chef-editorial-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.credential-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.credential-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   07. EDITORIAL RECIPE MAGAZINE SYSTEM
+   -------------------------------------------------------------------------- */
+.recipe-featured-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--color-border-light);
+  transition: transform var(--transition-fast);
+}
+
+.recipe-featured-card:hover {
+  transform: translateY(-4px);
+}
+
+.recipe-featured-img-wrap {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+}
+
+.recipe-featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.recipe-featured-card:hover .recipe-featured-img {
+  transform: scale(1.03);
+}
+
+.recipe-featured-content {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.recipe-side-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px;
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.recipe-side-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-card);
+}
+
+.recipe-side-img-wrap {
+  width: 130px;
+  height: 105px;
+  flex-shrink: 0;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+}
+
+.recipe-side-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recipe-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+
+/* --------------------------------------------------------------------------
+   08. SLIDE-OUT CART DRAWER
+   -------------------------------------------------------------------------- */
+.cart-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(18, 17, 15, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1010;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.cart-drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 440px;
+  height: 100vh;
+  background-color: var(--color-cream);
+  z-index: 1011;
+  box-shadow: var(--shadow-drawer);
+  transition: right var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-drawer.open {
+  right: 0;
+}
+
+.cart-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cart-drawer-title {
+  font-family: var(--font-serif);
+  font-size: 1.625rem;
+}
+
+.cart-drawer-close {
+  font-size: 1.5rem;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.cart-drawer-body {
+  padding: 28px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.cart-empty-message {
+  text-align: center;
+  color: var(--color-ink-muted);
+  margin-top: 60px;
+  font-size: 1rem;
+}
+
+.cart-drawer-footer {
+  padding: 28px;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-white);
+}
+
+.cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+
+/* --------------------------------------------------------------------------
+   09. NEWSLETTER & FOOTER
+   -------------------------------------------------------------------------- */
+.newsletter-card {
+  background: var(--color-olive-dark);
+  color: var(--color-ivory);
+  border-radius: var(--radius-lg);
+  padding: 72px 64px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card-hover);
+  border: 1px solid rgba(188, 145, 66, 0.25);
+}
+
+.newsletter-card h2 {
+  color: var(--color-ivory);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  max-width: 560px;
+  margin-top: 28px;
+}
+
+.newsletter-input {
+  flex-grow: 1;
+  padding: 18px 22px;
+  border-radius: var(--radius-xs);
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--color-white);
+  font-size: 0.9375rem;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.newsletter-input::placeholder {
+  color: rgba(245, 240, 231, 0.55);
+}
+
+.newsletter-input:focus {
+  border-color: var(--color-gold);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer {
+  background-color: var(--color-ink);
+  color: var(--color-ivory);
+  padding-top: 104px;
+  padding-bottom: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 72px;
+  margin-bottom: 72px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-brand .logo {
+  color: var(--color-ivory);
+}
+
+.footer-brand-desc {
+  font-size: 0.9375rem;
+  color: rgba(245, 240, 231, 0.7);
+  max-width: 320px;
+  line-height: 1.65;
+}
+
+.footer-col-title {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 24px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-link {
+  font-size: 0.9375rem;
+  color: rgba(245, 240, 231, 0.78);
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-gold-light);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
+  color: rgba(245, 240, 231, 0.5);
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 28px;
+}
