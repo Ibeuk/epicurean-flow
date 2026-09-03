@@ -58,6 +58,36 @@ const PRODUCTS_DATA = {
       url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/seasonal-recipe-cookbook'
     }
   ],
+  courses: [
+    {
+      id: 'course-diabetes-masterclass',
+      title: 'Diabetes Cooking Course Masterclass',
+      price: '€39.00',
+      numericPrice: 39.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg'
+    },
+    {
+      id: 'holiday-bundle',
+      title: 'Holiday Cooking Bundle',
+      price: '€69.00',
+      numericPrice: 69.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg'
+    },
+    {
+      id: 'course-diabetes-foundations',
+      title: 'Diabetes Cooking Foundations',
+      price: '€19.00',
+      numericPrice: 19.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg'
+    },
+    {
+      id: 'french-sauce-workshop',
+      title: 'French Sauce & Emulsion Workshop',
+      price: '€29.00',
+      numericPrice: 29.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg'
+    }
+  ],
   freeResources: [
     {
       id: 'free-mediterranean-ebook',
@@ -100,21 +130,29 @@ class CartManager {
     this.wixClient = null;
     this.badgeEl = document.querySelector('.cart-badge');
     this.drawerEl = document.getElementById('cart-drawer');
-    this.backdropEl = document.getElementById('cart-backdrop');
-    this.cartItemsListEl = document.getElementById('cart-items-list');
-    this.cartSubtotalEl = document.getElementById('cart-subtotal-val');
+    this.backdropEl = document.getElementById('cart-backdrop') || document.getElementById('cart-overlay');
+    this.cartItemsListEl = document.getElementById('cart-items-list') || document.getElementById('cart-items-container');
+    this.cartSubtotalEl = document.getElementById('cart-subtotal-val') || document.querySelector('.cart-subtotal-amount');
     this.checkoutBtnEl = document.getElementById('btn-proceed-checkout');
+    this.closeBtnEl = document.getElementById('close-cart-btn') || document.getElementById('cart-close-btn');
     this.init();
   }
 
   async init() {
-    const cartToggleBtns = document.querySelectorAll('.cart-btn, #close-cart-btn');
+    const cartToggleBtns = document.querySelectorAll('.cart-btn');
     cartToggleBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         this.toggleDrawer();
       });
     });
+
+    if (this.closeBtnEl) {
+      this.closeBtnEl.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.closeDrawer();
+      });
+    }
 
     if (this.backdropEl) {
       this.backdropEl.addEventListener('click', () => this.closeDrawer());
@@ -126,6 +164,18 @@ class CartManager {
         this.proceedToCheckout();
       });
     }
+
+    // Global listener for all buy & add-to-cart buttons
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.btn-add-to-cart, .btn-buy-trigger');
+      if (btn) {
+        e.preventDefault();
+        const productId = btn.getAttribute('data-id') || btn.getAttribute('data-product-id');
+        const title = btn.getAttribute('data-title');
+        const price = btn.getAttribute('data-price');
+        this.addItem(productId, { title, price });
+      }
+    });
 
     // Initialize Wix SDK connection in background
     this.wixClient = await createWixHeadlessClient();
@@ -155,16 +205,21 @@ class CartManager {
     }
   }
 
-  async addItem(productId) {
-    // Find product in catalog
+  async addItem(productId, meta = null) {
+    // Find product in catalog or use meta
     let item = PRODUCTS_DATA.cookbooks.find(p => p.id === productId);
+    if (!item && PRODUCTS_DATA.courses) {
+      item = PRODUCTS_DATA.courses.find(p => p.id === productId);
+    }
+
     if (!item) {
+      const priceVal = meta && meta.price ? parseFloat(meta.price) : 9.00;
       item = {
-        id: productId,
-        title: 'Selected Culinary Publication',
-        price: '€9.00',
-        numericPrice: 9.00,
-        image: 'https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg'
+        id: productId || 'custom-item',
+        title: meta && meta.title ? meta.title : 'Selected Culinary Publication',
+        price: '€' + priceVal.toFixed(2),
+        numericPrice: priceVal,
+        image: 'https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg'
       };
     }
 

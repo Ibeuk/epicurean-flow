@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Cookbooks & Culinary Guides | Epicurean Flow</title>
+  <meta name="description" content="Explore chef-authored digital cookbooks by Chef Eliane Muskus. Master Mediterranean spices, diabetes-friendly gourmet cooking, and everyday culinary technique with instant digital delivery.">
+  <meta name="keywords" content="digital cookbooks, Chef Eliane Muskus, diabetes recipe book, Mediterranean cookbooks, spice essentials, gourmet recipes">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Digital Cookbooks & Guides | Epicurean Flow">
+  <meta property="og:description" content="Chef-authored digital cookbooks featuring Mediterranean flavor layering, diabetes-friendly gourmet dining, and everyday essentials.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://epicureanflow.netlify.app/cookbooks.html">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       01. STICKY NAVIGATION
+       ========================================================================= -->
+  <header class="header" id="main-header">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow Homepage">
+        <img src="images/logo.png" alt="Epicurean Flow - Where Cooking Inspires" class="header-logo-img">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="cookbooks.html" class="nav-link active">Cookbooks</a></li>
+          <li><a href="courses.html" class="nav-link">Courses</a></li>
+          <li><a href="recipes.html" class="nav-link">Recipes</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="cart-btn" aria-label="View Shopping Cart">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-badge">0</span>
+          </button>
+          <a href="#catalog" class="btn btn-primary">
+            <span>Browse Catalog</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="cookbooks.html" class="mobile-nav-link active">Cookbooks</a>
+      <a href="courses.html" class="mobile-nav-link">Courses</a>
+      <a href="recipes.html" class="mobile-nav-link">Recipes</a>
+      <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="#catalog" class="btn btn-gold" style="width: 100%;">Browse Catalog</a>
+      <p style="font-size: 0.8125rem; color: var(--color-ink-light); text-align: center; margin-top: 8px;">
+        Chef-led culinary education & cookbooks
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         PAGE HERO BANNER
+         ========================================================================= -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-eyebrow">Digital Publications & Guides</span>
+        <h1 class="page-hero-title">Chef-Authored Digital Cookbooks</h1>
+        <p class="page-hero-subtitle">
+          Precision recipes, foundational technique guides, and health-conscious flavor pairing designed for home cooks who love bold, authentic food. Instant digital delivery with lifetime access.
+        </p>
+
+        <!-- Trust Badges Bar -->
+        <div style="display: flex; gap: 28px; flex-wrap: wrap; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--color-border-light);">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.875rem; font-weight: 500; color: var(--color-ink);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Instant PDF Download</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.875rem; font-weight: 500; color: var(--color-ink);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            <span>Mobile, iPad & Desktop Ready</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.875rem; font-weight: 500; color: var(--color-ink);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Secure Wix Checkout</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         CATALOG SECTION WITH CARDS
+         ========================================================================= -->
+    <section class="section theme-ivory" id="catalog">
+      <div class="container">
+        
+        <!-- Filter Tabs -->
+        <div class="filter-bar" id="cookbook-filter-bar">
+          <button class="filter-pill active" data-filter="all">All Editions (5)</button>
+          <button class="filter-pill" data-filter="mediterranean">Mediterranean & Spices</button>
+          <button class="filter-pill" data-filter="diabetes">Diabetes-Friendly</button>
+          <button class="filter-pill" data-filter="everyday">Everyday & Seasonal</button>
+          <button class="filter-pill" data-filter="free">Complimentary Guides</button>
+        </div>
+
+        <div class="grid-products">
+          
+          <!-- Cookbook 1: A Symphony of Flavors -->
+          <article class="product-card" data-category="mediterranean">
+            <div class="product-media">
+              <span class="product-badge bestselling">Signature Bestseller</span>
+              <img src="https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg" 
+                   alt="A Symphony of Flavors cookbook cover by Chef Eliane Muskus"
+                   loading="lazy">
+              <div class="product-overlay">
+                <button class="btn btn-gold btn-add-to-cart" 
+                        data-id="symphony-flavors"
+                        data-title="A Symphony of Flavors" 
+                        data-price="9.00"
+                        data-type="Digital Cookbook (PDF)">
+                  Quick Add +
+                </button>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-subtitle">Mediterranean & Middle Eastern</span>
+              <h3 class="product-title">A Symphony of Flavors</h3>
+              <p class="product-desc">
+                The ultimate exploration of spice roasting, aromatic oil infusions, and slow-layered braises. Master authentic flavor balancing from Cannes to the Levant.
+              </p>
+              
+              <ul style="margin-bottom: 20px; font-size: 0.8125rem; color: var(--color-ink-subtle); display: flex; flex-direction: column; gap: 6px;">
+                <li>✓ 45+ Chef-tested step-by-step recipes</li>
+                <li>✓ Whole-spice roasting & grinding matrix</li>
+                <li>✓ Printable grocery pantry checklist</li>
+              </ul>
+
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="product-currency">€</span>9.00
+                </div>
+                <button class="btn btn-primary btn-add-to-cart" 
+                        data-id="symphony-flavors"
+                        data-title="A Symphony of Flavors" 
+                        data-price="9.00"
+                        data-type="Digital Cookbook (PDF)">
+                  <span>Buy Cookbook</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cookbook 2: Chef Eliane's New Diabetes Recipe Book -->
+          <article class="product-card" data-category="diabetes">
+            <div class="product-media">
+              <span class="product-badge new">Specialty Focus</span>
+              <img src="https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg" 
+                   alt="Chef Eliane's New Diabetes Recipe Book cover"
+                   loading="lazy">
+              <div class="product-overlay">
+                <button class="btn btn-gold btn-add-to-cart" 
+                        data-id="diabetes-recipe-book"
+                        data-title="Chef Eliane's New Diabetes Recipe Book" 
+                        data-price="9.00"
+                        data-type="Digital Cookbook (PDF)">
+                  Quick Add +
+                </button>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-subtitle">Health & Gastronomy</span>
+              <h3 class="product-title">Chef Eliane's New Diabetes Recipe Book</h3>
+              <p class="product-desc">
+                Flavor-first gourmet cuisine formulated specifically for blood sugar stability. Rich olive oil emulsions, herb crusts, and low-glycemic desserts.
+              </p>
+
+              <ul style="margin-bottom: 20px; font-size: 0.8125rem; color: var(--color-ink-subtle); display: flex; flex-direction: column; gap: 6px;">
+                <li>✓ 50+ Low-glycemic chef creations</li>
+                <li>✓ Diabetic Banana Cake & baking conversions</li>
+                <li>✓ Carbohydrate & protein pairing guide</li>
+              </ul>
+
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="product-currency">€</span>9.00
+                </div>
+                <button class="btn btn-primary btn-add-to-cart" 
+                        data-id="diabetes-recipe-book"
+                        data-title="Chef Eliane's New Diabetes Recipe Book" 
+                        data-price="9.00"
+                        data-type="Digital Cookbook (PDF)">
+                  <span>Buy Cookbook</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cookbook 3: Let's Eat -->
+          <article class="product-card" data-category="everyday">
+            <div class="product-media">
+              <img src="https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg" 
+                   alt="Let's Eat Cookbook cover by Chef Eliane Muskus"
+                   loading="lazy">
+              <div class="product-overlay">
+                <button class="btn btn-gold btn-add-to-cart" 
+                        data-id="lets-eat"
+                        data-title="Let's Eat" 
+                        data-price="9.00"
+                        data-type="Digital Cookbook (PDF)">
+                  Quick Add +
+                </button>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-subtitle">Everyday Gourmet</span>
+              <h3 class="product-title">Let's Eat</h3>
+              <p class="product-desc">
+                Elevated weeknight cooking designed to minimize prep fatigue. Restaurant techniques applied to standard home kitchens for delicious dinners in under 35 minutes.
+              </p>
+
+              <ul style="margin-bottom: 20px; font-size: 0.8125rem; color: var(--color-ink-subtle); display: flex; flex-direction: column; gap: 6px;">
+                <li>✓ 40+ Quick high-impact family meals</li>
+                <li>✓ Smart pantry essentials matrix</li>
+                <li>✓ Zero-waste kitchen hacks</li>
+              </ul>
+
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="product-currency">€</span>9.00
+                </div>
+                <button class="btn btn-primary btn-add-to-cart" 
+                        data-id="lets-eat"
+                        data-title="Let's Eat" 
+                        data-price="9.00"
+                        data-type="Digital Cookbook (PDF)">
+                  <span>Buy Cookbook</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cookbook 4: Seasonal Recipe Cookbook -->
+          <article class="product-card" data-category="everyday">
+            <div class="product-media">
+              <img src="https://static.wixstatic.com/media/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg" 
+                   alt="Seasonal Recipe Cookbook by Chef Eliane"
+                   loading="lazy">
+              <div class="product-overlay">
+                <button class="btn btn-gold btn-add-to-cart" 
+                        data-id="seasonal-recipe-book"
+                        data-title="Seasonal Recipe Cookbook" 
+                        data-price="9.00"
+                        data-type="Digital Cookbook (PDF)">
+                  Quick Add +
+                </button>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-subtitle">Market Inspirations</span>
+              <h3 class="product-title">Seasonal Recipe Cookbook</h3>
+              <p class="product-desc">
+                Fresh ingredients for year-round plating. Spring asparagus, summer heirlooms, autumn squashes, and comforting winter roasts inspired by French farmers markets.
+              </p>
+
+              <ul style="margin-bottom: 20px; font-size: 0.8125rem; color: var(--color-ink-subtle); display: flex; flex-direction: column; gap: 6px;">
+                <li>✓ 4 Distinct four-course seasonal menus</li>
+                <li>✓ Seasonal produce peak timing chart</li>
+                <li>✓ Wine & beverage pairing suggestions</li>
+              </ul>
+
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="product-currency">€</span>9.00
+                </div>
+                <button class="btn btn-primary btn-add-to-cart" 
+                        data-id="seasonal-recipe-book"
+                        data-title="Seasonal Recipe Cookbook" 
+                        data-price="9.00"
+                        data-type="Digital Cookbook (PDF)">
+                  <span>Buy Cookbook</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cookbook 5: Mediterranean Recipe eBook (Free Gift) -->
+          <article class="product-card" data-category="free">
+            <div class="product-media">
+              <span class="product-badge free">Free Welcome Gift</span>
+              <img src="https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg" 
+                   alt="Free Mediterranean Recipe eBook by Chef Eliane"
+                   loading="lazy">
+            </div>
+            <div class="product-content">
+              <span class="product-subtitle">Complimentary Starter</span>
+              <h3 class="product-title">Mediterranean Recipe eBook</h3>
+              <p class="product-desc">
+                6 authentic dishes + 2 bonus secret appetizer dips. Chef Eliane's personal introduction to effortless, sun-drenched European home cooking.
+              </p>
+
+              <ul style="margin-bottom: 20px; font-size: 0.8125rem; color: var(--color-ink-subtle); display: flex; flex-direction: column; gap: 6px;">
+                <li>✓ Instant free PDF delivery to your inbox</li>
+                <li>✓ Authentic Cannes tapenade recipe</li>
+                <li>✓ Herb-marinated feta & dipping oils</li>
+              </ul>
+
+              <div class="product-footer">
+                <div class="product-price" style="color: var(--color-olive);">
+                  <span class="product-currency">€</span>0.00
+                </div>
+                <a href="#free-download" class="btn btn-gold">
+                  <span>Download Free PDF</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         INSIDE OUR DIGITAL EDITIONS FEATURE GRID
+         ========================================================================= -->
+    <section class="section theme-cream">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">The Reader Experience</span>
+          <h2 class="section-title">Crafted for Practical Kitchen Success</h2>
+          <p class="section-description">
+            Each digital cookbook is meticulously formatted for hands-on kitchen use, whether propped on an iPad or printed in your culinary binder.
+          </p>
+        </div>
+
+        <div class="feature-box-grid">
+          <div class="feature-box">
+            <div class="feature-box-icon">📖</div>
+            <h4>Interactive Navigation</h4>
+            <p>Clickable table of contents and index so you can jump from grocery aisle to stovetop prep in one tap on your mobile device.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon">⚖️</div>
+            <h4>Dual Measurements</h4>
+            <p>Every recipe includes exact Grams (Metric) and Cups/Ounces (Imperial) measurements tested for flawless results anywhere in the world.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon">📷</div>
+            <h4>High-Definition Plating</h4>
+            <p>Full-color reference photography demonstrating searing depths, sauce emulsification stages, and elegant dinner presentation.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon">🔄</div>
+            <h4>Lifetime Digital Access</h4>
+            <p>Download immediately after checkout. Any future recipe updates or seasonal editions are yours to download anytime without additional fees.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         FREE RECIPE DOWNLOAD LEAD MAGNET
+         ========================================================================= -->
+    <section class="section theme-ink" id="free-download">
+      <div class="container">
+        <div style="max-width: 680px; margin: 0 auto; text-align: center;">
+          <span class="section-eyebrow" style="color: var(--color-gold);">Complimentary Chef Guide</span>
+          <h2 class="section-title" style="color: var(--color-ivory);">Get the Free Mediterranean Recipe eBook</h2>
+          <p style="color: rgba(245, 240, 231, 0.8); margin-bottom: 32px; font-size: 1.125rem;">
+            Receive 6 signature recipes plus 2 secret restaurant dips delivered directly to your inbox within seconds.
+          </p>
+
+          <form id="free-cookbook-form" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+            <input type="email" placeholder="Enter your best email address..." required 
+                   style="flex: 1; min-width: 280px; padding: 14px 20px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: var(--color-ivory); font-size: 1rem;">
+            <button type="submit" class="btn btn-gold">
+              <span>Send Me the Free eBook</span>
+            </button>
+          </form>
+          <p style="font-size: 0.8125rem; color: rgba(245,240,231,0.5); margin-top: 14px;">
+            Instant download link sent via email. No spam, ever.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         FREQUENTLY ASKED QUESTIONS
+         ========================================================================= -->
+    <section class="section theme-ivory">
+      <div class="container" style="max-width: 860px;">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Got Questions?</span>
+          <h2 class="section-title">Digital Cookbook FAQ</h2>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 36px;">
+          <div style="background: var(--color-white); padding: 24px 28px; border-radius: var(--radius-md); border: 1px solid var(--color-border-light);">
+            <h4 style="margin-bottom: 8px; font-size: 1.125rem;">How and when do I receive my cookbooks?</h4>
+            <p style="color: var(--color-ink-light); font-size: 0.9375rem; line-height: 1.6;">
+              Immediately upon successful Wix checkout, your download link is displayed on screen and automatically emailed to you. You can download the PDF file directly to your phone, tablet, or laptop.
+            </p>
+          </div>
+
+          <div style="background: var(--color-white); padding: 24px 28px; border-radius: var(--radius-md); border: 1px solid var(--color-border-light);">
+            <h4 style="margin-bottom: 8px; font-size: 1.125rem;">Are these recipes suitable for beginners?</h4>
+            <p style="color: var(--color-ink-light); font-size: 0.9375rem; line-height: 1.6;">
+              Yes! Chef Eliane breaks down Michelin-quality technique into intuitive, manageable steps. Whether you have never toasted whole spices before or cook daily, you will learn the "why" behind each ingredient.
+            </p>
+          </div>
+
+          <div style="background: var(--color-white); padding: 24px 28px; border-radius: var(--radius-md); border: 1px solid var(--color-border-light);">
+            <h4 style="margin-bottom: 8px; font-size: 1.125rem;">Can I print the cookbooks at home?</h4>
+            <p style="color: var(--color-ink-light); font-size: 0.9375rem; line-height: 1.6;">
+              Absolutely. All files are high-resolution PDF documents configured for standard A4 and US Letter printing, with dedicated margins for kitchen binders.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-brand">
+            <img src="images/logo.png" alt="Epicurean Flow" style="height: 48px; width: auto; filter: brightness(0) invert(1);">
+          </a>
+          <p class="footer-brand-desc" style="margin-top: 16px;">
+            A premium chef-led culinary platform combining Michelin-rooted expertise, practical education, cookbooks, and diabetes-friendly gastronomy.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="cookbooks.html" class="footer-link">Cookbooks & Guides</a></li>
+            <li><a href="courses.html" class="footer-link">Online Courses</a></li>
+            <li><a href="recipes.html" class="footer-link">Recipe Journal</a></li>
+            <li><a href="about.html" class="footer-link">About Chef Eliane</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Epicurean Flow</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Chef Eliane</a></li>
+            <li><a href="courses.html" class="footer-link">Culinary Masterclasses</a></li>
+            <li><a href="cookbooks.html#diabetes" class="footer-link">Diabetes-Friendly Kitchen</a></li>
+            <li><a href="about.html#food-tours" class="footer-link">Food Tours</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Support & Legal</h4>
+          <ul class="footer-links">
+            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/faq" class="footer-link">FAQ</a></li>
+            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/refund-policy" class="footer-link">Refund Policy</a></li>
+            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/privacy-policy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/terms" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Epicurean Flow by Chef Eliane Muskus. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <span>Powered by Wix e-Commerce</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       SLIDE-OUT CART DRAWER & OVERLAY (WIX INTEGRATION)
+       ========================================================================= -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <div class="cart-header-title">
+        <h3 style="font-size: 1.25rem; font-family: var(--font-serif); margin: 0;">Your Culinary Bag</h3>
+        <span class="cart-item-count" style="font-size: 0.8125rem; color: var(--color-ink-light);">(0 items)</span>
+      </div>
+      <button class="cart-close-btn" id="cart-close-btn" aria-label="Close Shopping Bag">✕</button>
+    </div>
+
+    <div class="cart-body" id="cart-items-container">
+      <div class="cart-empty-state">
+        <div style="font-size: 3rem; margin-bottom: 16px; opacity: 0.4;">👜</div>
+        <p style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-ink); margin-bottom: 8px;">Your bag is empty</p>
+        <p style="font-size: 0.875rem; color: var(--color-ink-light); margin-bottom: 24px;">Explore our chef-crafted cookbooks and culinary courses.</p>
+        <button class="btn btn-secondary" onclick="window.cartManager?.closeCart()">Explore Cookbooks</button>
+      </div>
+    </div>
+
+    <div class="cart-footer" id="cart-footer" style="display: none;">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span class="cart-subtotal-amount">€0.00</span>
+      </div>
+      <p style="font-size: 0.75rem; color: var(--color-ink-light); margin-bottom: 16px;">
+        Taxes and instant digital delivery calculated at secure checkout.
+      </p>
+      <a href="https://h6s-b2f1901cdca137-epicureanflow.wix-site-host.com/cart-page" 
+         id="btn-proceed-checkout" 
+         class="btn btn-gold btn-checkout" 
+         style="width: 100%; text-align: center; text-decoration: none;">
+        <span>Proceed to Wix Checkout →</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Filter Pill Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const pills = document.querySelectorAll('.filter-pill');
+      const cards = document.querySelectorAll('.grid-products .product-card');
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          const filter = pill.getAttribute('data-filter');
+          cards.forEach(card => {
+            const cat = card.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

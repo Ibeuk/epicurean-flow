@@ -31,8 +31,38 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  gap: 36px;
 }
 
+.logo-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.logo-brand:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.header-logo-img {
+  height: 52px;
+  max-height: 52px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  display: block;
+  transition: height var(--transition-normal);
+}
+
+.header.scrolled .header-logo-img {
+  height: 42px;
+  max-height: 42px;
+}
+
+/* Fallback text logo (if image not loaded) */
 .logo {
   display: flex;
   align-items: baseline;
@@ -60,7 +90,8 @@
 .nav-desktop {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 40px;
+  margin-left: auto;
 }
 
 .nav-links {
@@ -936,3 +967,154 @@
   display: flex;
   gap: 28px;
 }
+
+/* --------------------------------------------------------------------------
+   10. SUBPAGE HEROES & EDITORIAL COMPONENTS
+   -------------------------------------------------------------------------- */
+.page-hero {
+  padding-top: calc(var(--header-height) + 56px);
+  padding-bottom: 64px;
+  background-color: var(--color-cream);
+  border-bottom: 1px solid var(--color-border-light);
+  position: relative;
+}
+
+.page-hero-title {
+  margin-bottom: 16px;
+}
+
+.page-hero-subtitle {
+  font-size: 1.1875rem;
+  color: var(--color-ink-muted);
+  max-width: 680px;
+  line-height: 1.65;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 36px 0;
+}
+
+.filter-pill {
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-ink-light);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+  background: var(--color-ink);
+  color: var(--color-ivory);
+  border-color: var(--color-ink);
+}
+
+/* Inside the Book / Features Grid */
+.feature-box-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.feature-box {
+  background: var(--color-white);
+  padding: 32px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--transition-fast);
+}
+
+.feature-box:hover {
+  transform: translateY(-4px);
+}
+
+.feature-box-icon {
+  font-size: 2rem;
+  color: var(--color-gold);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.feature-box h4 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.feature-box p {
+  color: var(--color-ink-light);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+/* Recipe Detail Layout */
+.recipe-detail-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 48px;
+  border: 1px solid var(--color-border-light);
+}
+
+.recipe-detail-header {
+  padding: 40px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.recipe-detail-body {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+@media (max-width: 900px) {
+  .recipe-detail-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ingredient-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9375rem;
+  color: var(--color-ink-subtle);
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--color-border-light);
+}
+
+.ingredient-bullet {
+  color: var(--color-gold);
+  font-weight: bold;
+}
+
+.method-step {
+  margin-bottom: 24px;
+}
+
+.method-step-num {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+

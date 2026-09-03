@@ -573,8 +573,38 @@ ul, ol {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  gap: 36px;
 }
 
+.logo-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.logo-brand:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.header-logo-img {
+  height: 52px;
+  max-height: 52px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  display: block;
+  transition: height var(--transition-normal);
+}
+
+.header.scrolled .header-logo-img {
+  height: 42px;
+  max-height: 42px;
+}
+
+/* Fallback text logo (if image not loaded) */
 .logo {
   display: flex;
   align-items: baseline;
@@ -602,7 +632,8 @@ ul, ol {
 .nav-desktop {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 40px;
+  margin-left: auto;
 }
 
 .nav-links {
@@ -1479,6 +1510,157 @@ ul, ol {
   gap: 28px;
 }
 
+/* --------------------------------------------------------------------------
+   10. SUBPAGE HEROES & EDITORIAL COMPONENTS
+   -------------------------------------------------------------------------- */
+.page-hero {
+  padding-top: calc(var(--header-height) + 56px);
+  padding-bottom: 64px;
+  background-color: var(--color-cream);
+  border-bottom: 1px solid var(--color-border-light);
+  position: relative;
+}
+
+.page-hero-title {
+  margin-bottom: 16px;
+}
+
+.page-hero-subtitle {
+  font-size: 1.1875rem;
+  color: var(--color-ink-muted);
+  max-width: 680px;
+  line-height: 1.65;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 36px 0;
+}
+
+.filter-pill {
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-ink-light);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+  background: var(--color-ink);
+  color: var(--color-ivory);
+  border-color: var(--color-ink);
+}
+
+/* Inside the Book / Features Grid */
+.feature-box-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.feature-box {
+  background: var(--color-white);
+  padding: 32px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--transition-fast);
+}
+
+.feature-box:hover {
+  transform: translateY(-4px);
+}
+
+.feature-box-icon {
+  font-size: 2rem;
+  color: var(--color-gold);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.feature-box h4 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.feature-box p {
+  color: var(--color-ink-light);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+/* Recipe Detail Layout */
+.recipe-detail-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 48px;
+  border: 1px solid var(--color-border-light);
+}
+
+.recipe-detail-header {
+  padding: 40px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.recipe-detail-body {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+@media (max-width: 900px) {
+  .recipe-detail-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ingredient-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9375rem;
+  color: var(--color-ink-subtle);
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--color-border-light);
+}
+
+.ingredient-bullet {
+  color: var(--color-gold);
+  font-weight: bold;
+}
+
+.method-step {
+  margin-bottom: 24px;
+}
+
+.method-step-num {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+
 /* --- animations.css --- */
 /* ==========================================================================
    EPICUREAN FLOW - ANIMATIONS & REVEALS
@@ -1850,19 +2032,18 @@ ul, ol {
   <header class="header" id="main-header">
     <div class="container header-container">
       <!-- Logo -->
-      <a href="index.html" class="logo" aria-label="Epicurean Flow Homepage">
-        Epicurean <span class="logo-accent">Flow</span>
+      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow Homepage">
+        <img src="images/logo.png" alt="Epicurean Flow - Where Cooking Inspires" class="header-logo-img">
       </a>
 
       <!-- Desktop Navigation -->
       <nav class="nav-desktop" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="#cookbooks" class="nav-link">Cookbooks</a></li>
-          <li><a href="#courses" class="nav-link">Courses</a></li>
-          <li><a href="#food-tours" class="nav-link">Food Tours</a></li>
-          <li><a href="#recipes" class="nav-link">Recipes</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
+          <li><a href="courses.html" class="nav-link">Courses</a></li>
+          <li><a href="recipes.html" class="nav-link">Recipes</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -1874,7 +2055,7 @@ ul, ol {
             </svg>
             <span class="cart-badge">0</span>
           </button>
-          <a href="#cookbooks" class="btn btn-primary">
+          <a href="cookbooks.html" class="btn btn-primary">
             <span>Shop Cookbooks</span>
           </a>
         </div>
@@ -1892,15 +2073,14 @@ ul, ol {
   <!-- Mobile Drawer Menu -->
   <div class="mobile-nav-drawer" id="mobile-drawer">
     <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="#cookbooks" class="mobile-nav-link">Cookbooks</a>
-      <a href="#courses" class="mobile-nav-link">Courses</a>
-      <a href="#food-tours" class="mobile-nav-link">Food Tours</a>
-      <a href="#recipes" class="mobile-nav-link">Recipes</a>
-      <a href="#about" class="mobile-nav-link">About Chef Eliane</a>
+      <a href="index.html" class="mobile-nav-link active">Home</a>
+      <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
+      <a href="courses.html" class="mobile-nav-link">Courses</a>
+      <a href="recipes.html" class="mobile-nav-link">Recipes</a>
+      <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
     </div>
     <div class="mobile-nav-footer">
-      <a href="#cookbooks" class="btn btn-gold" style="width: 100%;">Shop Cookbooks</a>
+      <a href="cookbooks.html" class="btn btn-gold" style="width: 100%;">Shop Cookbooks</a>
       <p style="font-size: 0.8125rem; color: var(--color-ink-light); text-align: center; margin-top: 8px;">
         Chef-led culinary education & cookbooks
       </p>
@@ -1925,11 +2105,11 @@ ul, ol {
             Chef-led cookbooks, practical culinary courses, inspiring recipes and culinary experiences from Chef Eliane Muskus.
           </p>
           <div class="hero-buttons" style="display: flex; gap: 16px; flex-wrap: wrap;">
-            <a href="#cookbooks" class="btn btn-primary">
+            <a href="cookbooks.html" class="btn btn-primary">
               <span>Explore Cookbooks</span>
               <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a href="#courses" class="btn btn-secondary">
+            <a href="courses.html" class="btn btn-secondary">
               <span>Discover Courses</span>
             </a>
           </div>
@@ -2075,6 +2255,10 @@ ul, ol {
           </article>
         </div>
       </div>
+
+      <div style="text-align: center; margin-top: 52px;">
+        <a href="cookbooks.html" class="btn btn-secondary">Explore Complete Cookbook Catalog →</a>
+      </div>
     </div>
   </section>
 
@@ -2168,6 +2352,10 @@ ul, ol {
           </article>
         </div>
       </div>
+
+      <div style="text-align: center; margin-top: 52px;">
+        <a href="courses.html" class="btn btn-secondary">Explore All Culinary Masterclasses →</a>
+      </div>
     </div>
   </section>
 
@@ -2217,7 +2405,7 @@ ul, ol {
           </div>
 
           <div>
-            <a href="#about" class="btn btn-primary">
+            <a href="about.html" class="btn btn-primary">
               <span>Meet Chef Eliane →</span>
             </a>
           </div>
@@ -2454,7 +2642,7 @@ ul, ol {
       </div>
 
       <div style="text-align: center; margin-top: 48px;">
-        <a href="#recipes" class="btn btn-secondary">Discover All Recipes</a>
+        <a href="recipes.html" class="btn btn-secondary">Discover All Recipes & Guides →</a>
       </div>
     </div>
   </section>
@@ -2560,20 +2748,20 @@ ul, ol {
         <div>
           <h4 class="footer-col-title">Explore</h4>
           <ul class="footer-links">
-            <li><a href="#cookbooks" class="footer-link">Cookbooks & Guides</a></li>
-            <li><a href="#courses" class="footer-link">Online Courses</a></li>
-            <li><a href="#recipes" class="footer-link">Recipe Journal</a></li>
-            <li><a href="#food-tours" class="footer-link">Food Tours</a></li>
+            <li><a href="cookbooks.html" class="footer-link">Cookbooks & Guides</a></li>
+            <li><a href="courses.html" class="footer-link">Online Courses</a></li>
+            <li><a href="recipes.html" class="footer-link">Recipe Journal</a></li>
+            <li><a href="about.html" class="footer-link">About Chef Eliane</a></li>
           </ul>
         </div>
 
         <div>
           <h4 class="footer-col-title">Epicurean Flow</h4>
           <ul class="footer-links">
-            <li><a href="#about" class="footer-link">About Chef Eliane</a></li>
-            <li><a href="#advanced-techniques" class="footer-link">Culinary Techniques</a></li>
-            <li><a href="#diabetes-kitchen" class="footer-link">Diabetes-Friendly Kitchen</a></li>
-            <li><a href="#contact" class="footer-link">Contact & Enquiries</a></li>
+            <li><a href="about.html" class="footer-link">About Chef Eliane</a></li>
+            <li><a href="courses.html" class="footer-link">Culinary Masterclasses</a></li>
+            <li><a href="cookbooks.html" class="footer-link">Diabetes-Friendly Kitchen</a></li>
+            <li><a href="about.html#food-tours" class="footer-link">Food Tours</a></li>
           </ul>
         </div>
 
@@ -2692,6 +2880,36 @@ const PRODUCTS_DATA = {
       url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/seasonal-recipe-cookbook'
     }
   ],
+  courses: [
+    {
+      id: 'course-diabetes-masterclass',
+      title: 'Diabetes Cooking Course Masterclass',
+      price: '€39.00',
+      numericPrice: 39.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg'
+    },
+    {
+      id: 'holiday-bundle',
+      title: 'Holiday Cooking Bundle',
+      price: '€69.00',
+      numericPrice: 69.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg'
+    },
+    {
+      id: 'course-diabetes-foundations',
+      title: 'Diabetes Cooking Foundations',
+      price: '€19.00',
+      numericPrice: 19.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg'
+    },
+    {
+      id: 'french-sauce-workshop',
+      title: 'French Sauce & Emulsion Workshop',
+      price: '€29.00',
+      numericPrice: 29.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg'
+    }
+  ],
   freeResources: [
     {
       id: 'free-mediterranean-ebook',
@@ -2734,21 +2952,29 @@ class CartManager {
     this.wixClient = null;
     this.badgeEl = document.querySelector('.cart-badge');
     this.drawerEl = document.getElementById('cart-drawer');
-    this.backdropEl = document.getElementById('cart-backdrop');
-    this.cartItemsListEl = document.getElementById('cart-items-list');
-    this.cartSubtotalEl = document.getElementById('cart-subtotal-val');
+    this.backdropEl = document.getElementById('cart-backdrop') || document.getElementById('cart-overlay');
+    this.cartItemsListEl = document.getElementById('cart-items-list') || document.getElementById('cart-items-container');
+    this.cartSubtotalEl = document.getElementById('cart-subtotal-val') || document.querySelector('.cart-subtotal-amount');
     this.checkoutBtnEl = document.getElementById('btn-proceed-checkout');
+    this.closeBtnEl = document.getElementById('close-cart-btn') || document.getElementById('cart-close-btn');
     this.init();
   }
 
   async init() {
-    const cartToggleBtns = document.querySelectorAll('.cart-btn, #close-cart-btn');
+    const cartToggleBtns = document.querySelectorAll('.cart-btn');
     cartToggleBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         this.toggleDrawer();
       });
     });
+
+    if (this.closeBtnEl) {
+      this.closeBtnEl.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.closeDrawer();
+      });
+    }
 
     if (this.backdropEl) {
       this.backdropEl.addEventListener('click', () => this.closeDrawer());
@@ -2760,6 +2986,18 @@ class CartManager {
         this.proceedToCheckout();
       });
     }
+
+    // Global listener for all buy & add-to-cart buttons
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.btn-add-to-cart, .btn-buy-trigger');
+      if (btn) {
+        e.preventDefault();
+        const productId = btn.getAttribute('data-id') || btn.getAttribute('data-product-id');
+        const title = btn.getAttribute('data-title');
+        const price = btn.getAttribute('data-price');
+        this.addItem(productId, { title, price });
+      }
+    });
 
     // Initialize Wix SDK connection in background
     this.wixClient = await createWixHeadlessClient();
@@ -2789,16 +3027,21 @@ class CartManager {
     }
   }
 
-  async addItem(productId) {
-    // Find product in catalog
+  async addItem(productId, meta = null) {
+    // Find product in catalog or use meta
     let item = PRODUCTS_DATA.cookbooks.find(p => p.id === productId);
+    if (!item && PRODUCTS_DATA.courses) {
+      item = PRODUCTS_DATA.courses.find(p => p.id === productId);
+    }
+
     if (!item) {
+      const priceVal = meta && meta.price ? parseFloat(meta.price) : 9.00;
       item = {
-        id: productId,
-        title: 'Selected Culinary Publication',
-        price: '€9.00',
-        numericPrice: 9.00,
-        image: 'https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg'
+        id: productId || 'custom-item',
+        title: meta && meta.title ? meta.title : 'Selected Culinary Publication',
+        price: '€' + priceVal.toFixed(2),
+        numericPrice: priceVal,
+        image: 'https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg'
       };
     }
 
