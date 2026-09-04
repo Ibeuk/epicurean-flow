@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
         html_bundled
     )
 
-    # Update checkout link in cart drawer to point directly to Wix Cart page
+    # Update checkout link in cart drawer to point directly to Wix Cart page with target="_top"
     html_bundled = html_bundled.replace(
-        'href="#cookbooks" class="btn btn-gold" style="width: 100%; text-align: center;">\n        <span>Proceed to Wix Checkout</span>',
-        'href="https://epicureanflow.wixsite.com/epicurean-flow/cart-page" target="_top" class="btn btn-gold" style="width: 100%; text-align: center;">\n        <span>Proceed to Wix Checkout</span>'
+        'id="btn-proceed-checkout" class="btn btn-gold"',
+        'id="btn-proceed-checkout" target="_top" class="btn btn-gold"'
     )
 
     output_path = 'wix-bundle.html'

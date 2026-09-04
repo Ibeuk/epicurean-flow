@@ -4,7 +4,7 @@
 
 const WIX_CONFIG = {
   clientId: 'd446c704-ea75-4680-affd-1633fca4bfb8',
-  pagesDomain: 'https://h6s-b2f1901cdca137-epicureanflow.wix-site-host.com/'
+  pagesDomain: 'https://epicureanflow.wixsite.com/epicurean-flow/'
 };
 
 const PRODUCTS_DATA = {
