@@ -15,8 +15,10 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -59,14 +61,16 @@
         </div>
       </nav>
 
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
-        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      <button class="hamburger mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
   </header>
 
   <!-- Mobile Drawer -->
-  <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+  <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
     <div class="mobile-menu-inner">
       <nav class="mobile-nav">
         <a href="index.html" class="mobile-nav-link">Home</a>
@@ -125,7 +129,7 @@
           </p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin-top: 40px;">
+        <div class="grid-cards-responsive">
           <div style="background: var(--color-white); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
             <div style="font-size: 2rem; margin-bottom: 16px;">🎯</div>
             <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink); margin-bottom: 12px;">Step-by-Step Clarity</h3>
@@ -162,7 +166,7 @@
           <p class="section-subtitle">Select the tier that matches your current kitchen confidence and culinary goals.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 36px; margin-top: 48px;">
+        <div class="grid-cards-responsive">
           <!-- Course 1: Beginners -->
           <article class="course-card">
             <div class="course-thumb">

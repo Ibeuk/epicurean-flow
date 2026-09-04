@@ -15,8 +15,10 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -59,14 +61,16 @@
         </div>
       </nav>
 
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
-        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      <button class="hamburger mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
   </header>
 
   <!-- Mobile Drawer -->
-  <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+  <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
     <div class="mobile-menu-inner">
       <nav class="mobile-nav">
         <a href="index.html" class="mobile-nav-link">Home</a>
@@ -101,7 +105,7 @@
     <!-- Biography Story Section -->
     <section class="section">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;">
+        <div class="about-hero-grid">
           <div>
             <span class="badge badge-gold" style="margin-bottom: 16px; display: inline-block;">Founder &amp; Executive Chef</span>
             <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-ink); margin-bottom: 20px;">Trading the Boardroom for the Kitchen</h2>
@@ -122,7 +126,7 @@
             <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg);">
               <img src="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_2500,h_1357,al_c/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg" alt="Chef Eliane Muskus Cooking" style="width: 100%; height: auto; display: block;">
             </div>
-            <div style="position: absolute; bottom: -20px; right: 20px; background: var(--color-white); padding: 18px 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--color-gold);">
+            <div class="about-hero-badge" style="position: absolute; bottom: -20px; right: 20px; background: var(--color-white); padding: 18px 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--color-gold);">
               <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--color-ink);">Michelin Accredited</span>
               <p style="font-size: 0.8rem; color: var(--color-ink-muted); margin: 0;">Cannes Chef's Table &bull; 2014</p>
             </div>
@@ -142,7 +146,7 @@
           </p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 48px;">
+        <div class="grid-cards-responsive">
           <div style="background: var(--color-white); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
             <div style="font-family: var(--font-serif); font-size: 2.25rem; color: var(--color-gold); font-weight: 700; margin-bottom: 8px;">2014</div>
             <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink); margin-bottom: 12px;">Michelin Accreditation</h3>

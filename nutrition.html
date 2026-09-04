@@ -15,8 +15,10 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -59,14 +61,16 @@
         </div>
       </nav>
 
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
-        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      <button class="hamburger mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
   </header>
 
   <!-- Mobile Drawer -->
-  <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+  <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
     <div class="mobile-menu-inner">
       <nav class="mobile-nav">
         <a href="index.html" class="mobile-nav-link">Home</a>
@@ -150,7 +154,7 @@
           <p class="section-subtitle">Practical formulas tested in Michelin kitchens and refined for daily home wellness.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin-top: 40px;">
+        <div class="grid-cards-responsive">
           <!-- Pillar 1 -->
           <div style="background: var(--color-white); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
             <div style="font-size: 2rem; margin-bottom: 16px;">🧄</div>
@@ -193,7 +197,7 @@
           <p class="section-subtitle">Bursting with color, fresh herbs, and Mediterranean vitality.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 32px; margin-top: 40px;">
+        <div class="grid-cards-responsive">
           <!-- Dish 1: Greek Feta Salad Tower -->
           <article class="course-card">
             <div class="course-thumb">
@@ -245,8 +249,8 @@
     <!-- Guide & Meal Planner Promotion -->
     <section class="section bg-light">
       <div class="container">
-        <div style="background: var(--color-white); border-radius: var(--radius-xl); padding: 48px; border: 1px solid var(--color-gold-light); box-shadow: var(--shadow-md);">
-          <div style="display: grid; grid-template-columns: 260px 1fr; gap: 40px; align-items: center;">
+        <div class="responsive-card-box">
+          <div class="nutrition-guide-grid">
             <div style="text-align: center;">
               <img src="https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg" alt="The Ultimate Macronutrient Guide" style="width: 100%; max-width: 240px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
             </div>

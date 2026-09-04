@@ -15,8 +15,10 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -59,14 +61,16 @@
         </div>
       </nav>
 
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
-        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      <button class="hamburger mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
   </header>
 
   <!-- Mobile Drawer -->
-  <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+  <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
     <div class="mobile-menu-inner">
       <nav class="mobile-nav">
         <a href="index.html" class="mobile-nav-link">Home</a>
@@ -102,14 +106,14 @@
     <section class="section">
       <div class="container">
         <div style="background: #151515; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); color: var(--color-white); border: 1px solid rgba(212, 163, 89, 0.3);">
-          <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center;">
+          <div class="cinema-spotlight-grid">
             <div class="video-thumb-wrap" style="aspect-ratio: 16/10;">
               <img src="https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg" alt="Searing the Perfect Steak">
               <div class="play-overlay-btn" style="width: 72px; height: 72px; font-size: 1.5rem;">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
             </div>
-            <div style="padding: 48px;">
+            <div style="padding: 36px;" class="cinema-spotlight-body">
               <span class="badge badge-gold" style="margin-bottom: 16px; display: inline-block;">Masterclass Spotlight</span>
               <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--color-white); margin-bottom: 16px;">Searing the Perfect Steak</h2>
               <p style="color: #bbb; line-height: 1.8; font-size: 1rem; margin-bottom: 24px;">

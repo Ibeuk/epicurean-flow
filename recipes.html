@@ -15,8 +15,10 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -59,14 +61,16 @@
         </div>
       </nav>
 
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
-        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      <button class="hamburger mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
   </header>
 
   <!-- Mobile Drawer -->
-  <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+  <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
     <div class="mobile-menu-inner">
       <nav class="mobile-nav">
         <a href="index.html" class="mobile-nav-link">Home</a>
@@ -182,8 +186,7 @@
           <button class="filter-pill" data-filter="technique">Chef Techniques</button>
         </div>
 
-        <div class="grid-recipes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 32px;">
-          
+        <div class="grid-recipes-responsive">
           <!-- Recipe 1: Greek Feta Salad Tower -->
           <article class="course-card" data-category="mediterranean">
             <div class="course-thumb">

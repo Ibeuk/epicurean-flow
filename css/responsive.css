@@ -1,18 +1,30 @@
 /* ==========================================================================
-   EPICUREAN FLOW - RESPONSIVE STYLES (EDITORIAL REFINEMENT)
+   EPICUREAN FLOW - MASTER MOBILE & RESPONSIVE STYLESHEET
+   Flawless mobile, tablet, and desktop adaptive layout system
    ========================================================================== */
 
-/* Large Desktop (Above 1280px) */
+/* Global Viewport Guard */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   01. LARGE DESKTOP (Above 1280px)
+   -------------------------------------------------------------------------- */
 @media (min-width: 1281px) {
   .container {
     max-width: var(--max-content-width);
   }
 }
 
-/* Tablet Landscape (1024px to 1280px) */
+/* --------------------------------------------------------------------------
+   02. TABLET LANDSCAPE (1024px to 1280px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 1280px) {
   :root {
-    --section-padding-desktop: 104px;
+    --section-padding-desktop: 96px;
     --grid-gap-desktop: 28px;
   }
 
@@ -21,33 +33,67 @@
   }
 
   .footer-grid {
-    grid-template-columns: 1.5fr repeat(3, 1fr);
-    gap: 48px;
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 44px;
   }
   
   .grid-editorial, .grid-editorial-reverse {
-    gap: 56px;
+    gap: 52px;
   }
 }
 
-/* Tablet Portrait (768px to 1023px) */
+/* --------------------------------------------------------------------------
+   03. TABLET PORTRAIT & MEDIUM SCREENS (Under 1024px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 1023px) {
   :root {
-    --section-padding-desktop: 88px;
+    --section-padding-desktop: 80px;
+    --header-height: var(--header-height-mobile);
   }
 
-  .nav-links, .nav-actions .btn {
-    display: none;
+  /* Navigation Bar Controls */
+  .nav-desktop,
+  .nav-links,
+  .nav-actions .btn,
+  .nav-actions .nav-cta {
+    display: none !important;
   }
 
-  .hamburger {
-    display: flex;
+  .hamburger,
+  .mobile-menu-btn {
+    display: flex !important;
   }
 
-  .grid-2, .grid-3, .grid-4, .grid-editorial, .grid-editorial-reverse, 
-  .grid-asymmetric-cookbooks, .grid-asymmetric-courses, .grid-magazine, .grid-travel-hero {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .header-container {
+    gap: 16px;
+  }
+
+  .header-logo-img {
+    height: 42px;
+    max-height: 42px;
+    max-width: 165px;
+  }
+
+  /* Multi-Column Grid Collapses */
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-editorial,
+  .grid-editorial-reverse,
+  .grid-asymmetric-cookbooks,
+  .grid-asymmetric-courses,
+  .grid-magazine,
+  .grid-travel-hero,
+  .story-callout-grid,
+  .preorder-card-grid,
+  .nutrition-guide-grid,
+  .about-hero-grid,
+  .cinema-spotlight-grid,
+  .consultation-grid,
+  .contact-layout,
+  .recipe-detail-body {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
   }
 
   .grid-editorial-reverse {
@@ -56,37 +102,45 @@
   }
 
   .cookbook-hero-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-quote-box {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  /* Remove negative decorative border frames on tablet/mobile */
+  .hero-visual-frame::before,
+  .chef-portrait-frame::before {
+    display: none !important;
   }
 
   .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 48px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 40px !important;
   }
 
   .newsletter-card {
-    padding: 48px 36px;
+    padding: 44px 32px;
   }
   
   .newsletter-form {
     flex-direction: column;
     max-width: 100%;
   }
-  
-  .hero-quote-box {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin-top: 16px;
-    max-width: 100%;
-  }
 }
 
-/* Mobile Screens (Under 768px) */
+/* --------------------------------------------------------------------------
+   04. STANDARD MOBILE SCREENS (Under 768px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 767px) {
   :root {
-    --section-padding-desktop: 68px;
-    --header-height: var(--header-height-mobile);
+    --section-padding-desktop: 56px;
+    --header-height: 64px;
   }
 
   html {
@@ -94,46 +148,178 @@
   }
 
   body {
-    font-size: 1.0625rem; /* ~16-17px */
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
-  h1 {
-    font-size: clamp(2.5rem, 8.5vw, 3.25rem);
-    line-height: 1.12;
+  /* Fluid Typography */
+  h1, .page-hero-title {
+    font-size: clamp(2rem, 7.5vw, 2.75rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
   }
 
-  h2 {
-    font-size: clamp(2rem, 6.5vw, 2.5rem);
+  h2, .section-title {
+    font-size: clamp(1.65rem, 5.8vw, 2.15rem) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.015em !important;
   }
 
-  .container {
-    padding-left: 20px;
-    padding-right: 20px;
+  h3 {
+    font-size: clamp(1.35rem, 4.5vw, 1.65rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  h4 {
+    font-size: 1.2rem !important;
+  }
+
+  .section-subtitle,
+  .page-hero-subtitle {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Container & Section Spacing */
+  .container,
+  .container-narrow,
+  .container-editorial,
+  .container-wide {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .section {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+
+  .section-sm {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .section-lg {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
   }
 
   .section-header {
-    margin-bottom: 40px;
+    margin-bottom: 36px !important;
   }
 
+  .page-hero {
+    padding-top: calc(64px + 32px) !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Header and Brand Bar */
+  .header {
+    height: 64px !important;
+  }
+
+  .header-container {
+    gap: 10px !important;
+  }
+
+  .header-logo-img {
+    height: 36px !important;
+    max-height: 36px !important;
+    max-width: 145px !important;
+  }
+
+  .cart-btn,
+  .hamburger,
+  .mobile-menu-btn {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* Full Screen Responsive Drawer */
+  .mobile-nav-drawer,
+  .mobile-menu-drawer {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 80px 24px 28px 24px !important;
+  }
+
+  .mobile-nav-links,
+  .mobile-nav {
+    gap: 16px !important;
+  }
+
+  .mobile-nav-link {
+    font-size: 1.45rem !important;
+    padding: 4px 0 !important;
+  }
+
+  /* Interactive Cart Drawer on Mobile */
+  .cart-drawer {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Hero Section Mobile Behavior */
   .hero-wrapper {
-    padding-top: calc(var(--header-height-mobile) + 24px);
-    padding-bottom: 56px;
-    min-height: auto;
+    padding-top: calc(64px + 20px) !important;
+    padding-bottom: 44px !important;
+    min-height: auto !important;
   }
 
   .hero-buttons {
-    flex-direction: column;
-    width: 100%;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
   }
 
   .hero-buttons .btn {
-    width: 100%;
+    width: 100% !important;
+    justify-content: center !important;
   }
 
-  .cookbook-hero-body, .course-flagship-body, .recipe-featured-content {
-    padding: 24px 20px;
+  /* Card Paddings & Box Overflows */
+  .responsive-card-box,
+  .contact-card,
+  .legal-content,
+  .newsletter-card,
+  .story-callout-card,
+  .cookbook-hero-body,
+  .course-flagship-body,
+  .recipe-featured-content,
+  .recipe-detail-header,
+  .recipe-detail-body {
+    padding: 24px 18px !important;
   }
 
+  .legal-container {
+    padding: 36px 16px !important;
+  }
+
+  /* All Catalog, Product, Recipe, and Media Grids Collapse */
+  .grid-products-responsive,
+  .grid-cards-responsive,
+  .grid-recipes-responsive,
+  .grid-products,
+  .grid-recipes,
+  .media-grid,
+  .feature-box-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Form Grids Collapse (Contact & Consultation) */
+  .form-row-2col {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .form-input {
+    font-size: 1rem !important; /* Prevents iOS auto-zoom */
+    padding: 12px 16px !important;
+  }
+
+  /* Compact Cards */
   .cookbook-compact-card {
     padding: 16px;
     gap: 16px;
@@ -154,46 +340,144 @@
     height: 180px;
   }
 
-  .cart-drawer {
-    max-width: 100%;
+  /* Recipe Meta Strip - 2x2 on Mobile */
+  .recipe-meta-strip {
+    position: static !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    padding: 16px !important;
+  }
+
+  /* Floating badges reset to normal document flow */
+  .chef-quote-badge {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin-top: 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  div[style*="position: absolute"][style*="bottom: -20px"] {
+    position: static !important;
+    margin-top: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Footer Mobile */
+  .footer {
+    padding-top: 56px !important;
+    padding-bottom: 36px !important;
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+    margin-bottom: 44px !important;
   }
 
   .footer-bottom {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
+    flex-direction: column !important;
+    gap: 16px !important;
+    text-align: center !important;
+    padding-top: 24px !important;
   }
 
   .footer-legal-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 16px !important;
   }
 
-  /* 44px Minimum Touch Targets */
-  .btn, .nav-link, .footer-link, .cart-btn, .hamburger {
+  /* Minimum 44px Touch Targets for Accessibility */
+  .btn,
+  .nav-link,
+  .footer-link,
+  .cart-btn,
+  .hamburger,
+  .mobile-menu-btn,
+  .filter-pill {
     min-height: 44px;
+    box-sizing: border-box;
   }
 }
 
-/* Small Mobile (360px - 390px) */
-@media (max-width: 390px) {
-  .container {
-    padding-left: 16px;
-    padding-right: 16px;
+/* --------------------------------------------------------------------------
+   05. COMPACT MOBILE SCREENS (Under 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .macro-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .preorder-card-grid img,
+  .nutrition-guide-grid img {
+    max-width: 200px !important;
+    margin: 0 auto 16px !important;
+  }
+
+  .cookbook-compact-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .cookbook-compact-cover {
+    width: 90px !important;
+    height: 115px !important;
+  }
+
+  .product-footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .product-footer .btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   06. ULTRA-COMPACT MOBILE (320px to 380px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .container,
+  .container-narrow,
+  .container-editorial,
+  .container-wide {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  h1, .page-hero-title {
+    font-size: 1.85rem !important;
+  }
+
+  h2, .section-title {
+    font-size: 1.5rem !important;
   }
 
   .btn {
-    padding: 15px 22px;
-    font-size: 0.8125rem;
+    padding: 13px 20px !important;
+    font-size: 0.8125rem !important;
+    letter-spacing: 0.06em !important;
   }
 
-  .newsletter-card {
-    padding: 32px 20px;
+  .responsive-card-box,
+  .contact-card,
+  .legal-content,
+  .newsletter-card,
+  .story-callout-card {
+    padding: 18px 12px !important;
+  }
+
+  .header-logo-img {
+    height: 32px !important;
+    max-width: 130px !important;
   }
 }

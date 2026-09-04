@@ -177,8 +177,9 @@
   transition: transform var(--transition-fast);
 }
 
-/* Mobile Hamburger Toggle */
-.hamburger {
+/* Mobile Hamburger Toggle (Both .hamburger and .mobile-menu-btn) */
+.hamburger,
+.mobile-menu-btn {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -188,12 +189,16 @@
   gap: 6px;
   cursor: pointer;
   z-index: 1002;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .hamburger-line {
   width: 24px;
   height: 2px;
   background-color: var(--color-ink);
+  border-radius: 2px;
   transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
@@ -209,52 +214,136 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Navigation Drawer */
-.mobile-nav-drawer {
+/* CSS-based Hamburger Box / Inner */
+.hamburger-box {
+  width: 24px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -1px;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-ink);
+  border-radius: 2px;
+  position: absolute;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-ink);
+  border-radius: 2px;
+  position: absolute;
+  transition: transform var(--transition-fast);
+}
+
+.hamburger-inner::before {
+  top: -7px;
+}
+
+.hamburger-inner::after {
+  bottom: -7px;
+}
+
+.mobile-menu-btn.active .hamburger-inner {
+  transform: rotate(45deg);
+}
+
+.mobile-menu-btn.active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+}
+
+/* Mobile Navigation Drawer (Unified) */
+.mobile-nav-drawer,
+.mobile-menu-drawer {
   position: fixed;
   top: 0;
   right: -100%;
   width: 100%;
   max-width: 380px;
   height: 100vh;
+  height: 100dvh;
   background-color: var(--color-cream);
   z-index: 1001;
-  padding: 110px 36px 40px 36px;
+  padding: 96px 28px 36px 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: var(--shadow-drawer);
-  transition: right var(--transition-normal);
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-.mobile-nav-drawer.open {
+.mobile-nav-drawer.open,
+.mobile-menu-drawer.open {
   right: 0;
 }
 
-.mobile-nav-links {
+.mobile-nav-links,
+.mobile-nav {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 18px;
 }
 
 .mobile-nav-link {
   font-family: var(--font-serif);
-  font-size: 1.875rem;
+  font-size: 1.625rem;
   font-weight: 500;
   color: var(--color-ink);
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: block;
+  padding: 6px 0;
 }
 
-.mobile-nav-link:hover {
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
   color: var(--color-gold);
+  transform: translateX(4px);
 }
 
-.mobile-nav-footer {
+.mobile-nav-footer,
+.mobile-menu-footer {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   padding-top: 24px;
   border-top: 1px solid var(--color-border);
+  margin-top: 24px;
+}
+
+/* Mobile Drawer Backdrop Overlay */
+.mobile-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(18, 17, 15, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 
@@ -1411,5 +1500,442 @@
 .legal-content li {
   margin-bottom: 8px;
 }
+
+/* ==========================================================================
+   FORM INPUTS, BADGES, CARDS & RESPONSIVE SEMANTIC GRIDS
+   ========================================================================== */
+
+/* Universal Form Controls */
+.form-input {
+  width: 100%;
+  padding: 14px 18px;
+  font-family: var(--font-sans);
+  font-size: 1rem; /* 16px to prevent iOS auto-zoom */
+  color: var(--color-ink);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(212, 163, 89, 0.18);
+}
+
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 44px;
+  cursor: pointer;
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* Badges System */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(18, 17, 15, 0.88);
+  color: var(--color-ivory);
+  border: 1px solid transparent;
+}
+
+.badge-gold {
+  background: rgba(212, 163, 89, 0.15);
+  color: var(--color-gold);
+  border-color: rgba(212, 163, 89, 0.4);
+}
+
+.badge-olive {
+  background: rgba(92, 107, 74, 0.15);
+  color: var(--color-olive);
+  border-color: rgba(92, 107, 74, 0.35);
+}
+
+/* Button Utilities */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-border);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-ink);
+  color: var(--color-ivory);
+  border-color: var(--color-ink);
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Background Utility */
+.bg-light {
+  background-color: var(--color-cream);
+}
+
+/* Section Typography Helpers */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-gold);
+  margin-bottom: 14px;
+}
+
+.section-subtitle {
+  max-width: var(--text-reading-width);
+  font-size: 1.125rem;
+  color: var(--color-ink-muted);
+  line-height: 1.65;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Product Card System (Cookbooks Catalog) */
+.product-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.product-media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--color-ivory);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-media img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-book);
+}
+
+.product-card:hover .product-media img {
+  transform: scale(1.04);
+}
+
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 17, 15, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.product-card:hover .product-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.product-content {
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 6px;
+}
+
+.product-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-ink);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.product-desc {
+  font-size: 0.9rem;
+  color: var(--color-ink-subtle);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border-light);
+  gap: 12px;
+}
+
+.product-price {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+/* Course Card System */
+.course-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  height: 100%;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.course-thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-cream);
+}
+
+.course-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.course-card:hover .course-thumb img {
+  transform: scale(1.04);
+}
+
+.course-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(18, 17, 15, 0.88);
+  backdrop-filter: blur(8px);
+  color: var(--color-ivory);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(212, 163, 89, 0.4);
+}
+
+.course-card-content {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Recipe Detail Spotlight */
+.recipe-detail-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+}
+
+.recipe-detail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recipe-meta-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(18, 17, 15, 0.92);
+  backdrop-filter: blur(12px);
+  padding: 16px 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  border-top: 1px solid rgba(212, 163, 89, 0.3);
+}
+
+.recipe-meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.recipe-meta-label {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(245, 240, 231, 0.6);
+  font-weight: 600;
+}
+
+.recipe-meta-val {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-gold-light);
+}
+
+/* Video Card Extras */
+.video-card-content {
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.video-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 8px;
+}
+
+.video-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-ink);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.video-desc {
+  font-size: 0.875rem;
+  color: var(--color-ink-subtle);
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Semantic Responsive Grids */
+.story-callout-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.preorder-card-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.nutrition-guide-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.cinema-spotlight-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+}
+
+.grid-products-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.grid-cards-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.grid-recipes-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.responsive-card-box {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  border: 1px solid var(--color-gold-light);
+  box-shadow: var(--shadow-md);
+  box-sizing: border-box;
+}
+
 
 
