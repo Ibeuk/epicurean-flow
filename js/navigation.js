@@ -94,4 +94,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
   }
+
+  // Desktop/Tablet Dropdown Toggle Handling
+  const dropdownItems = document.querySelectorAll('.has-dropdown');
+  dropdownItems.forEach(item => {
+    const toggle = item.querySelector('.dropdown-toggle');
+    if (toggle) {
+      // Toggle on touch devices or click
+      toggle.addEventListener('click', (e) => {
+        if (window.innerWidth >= 1024 && ('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+          if (!item.classList.contains('open')) {
+            e.preventDefault();
+            dropdownItems.forEach(other => other.classList.remove('open'));
+            item.classList.add('open');
+            toggle.setAttribute('aria-expanded', 'true');
+          }
+        }
+      });
+    }
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.has-dropdown')) {
+      dropdownItems.forEach(item => {
+        item.classList.remove('open');
+        const t = item.querySelector('.dropdown-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
 });
+

@@ -594,18 +594,18 @@ ul, ol {
 }
 
 .header-logo-img {
-  height: 52px;
-  max-height: 52px;
+  height: 64px;
+  max-height: 64px;
   width: auto;
-  max-width: 200px;
+  max-width: 240px;
   object-fit: contain;
   display: block;
   transition: height var(--transition-normal);
 }
 
 .header.scrolled .header-logo-img {
-  height: 42px;
-  max-height: 42px;
+  height: 52px;
+  max-height: 52px;
 }
 
 /* Fallback text logo (if image not loaded) */
@@ -636,27 +636,40 @@ ul, ol {
 .nav-desktop {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 28px;
   margin-left: auto;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li,
+.nav-item {
+  position: relative;
+  list-style: none;
 }
 
 .nav-link {
   font-family: var(--font-sans);
-  font-size: 0.8125rem; /* 13px */
-  font-weight: 500;
-  letter-spacing: 0.05em;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 600; /* Bolder as requested */
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-ink);
   position: relative;
-  padding: 8px 0;
+  padding: 10px 0;
   white-space: nowrap;
   transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
 }
 
 .nav-link::after {
@@ -680,10 +693,139 @@ ul, ol {
   width: 100%;
 }
 
+/* Dropdown Menu System */
+.nav-item.has-dropdown {
+  position: relative;
+}
+
+.dropdown-chevron {
+  transition: transform var(--transition-fast);
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.nav-item.has-dropdown:hover .dropdown-chevron,
+.nav-item.has-dropdown:focus-within .dropdown-chevron,
+.nav-item.has-dropdown.open .dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu Container */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  min-width: 310px;
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-gold-border);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 20px 45px rgba(18, 17, 15, 0.12), 0 4px 14px rgba(188, 145, 66, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Hover Bridge: prevents menu closing when moving mouse from link to dropdown */
+.nav-item.has-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  right: -10px;
+  height: 16px;
+  display: block;
+}
+
+.nav-item.has-dropdown:hover .dropdown-menu,
+.nav-item.has-dropdown:focus-within .dropdown-menu,
+.nav-item.has-dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  background-color: rgba(188, 145, 66, 0.09);
+  transform: translateX(4px);
+}
+
+.dropdown-item-title {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--transition-fast);
+}
+
+.dropdown-item:hover .dropdown-item-title {
+  color: var(--color-gold-hover);
+}
+
+.dropdown-item-desc {
+  font-size: 0.775rem;
+  color: var(--color-ink-muted);
+  margin-top: 2px;
+  line-height: 1.4;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Mobile Submenu in Drawer */
+.mobile-nav-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-submenu {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  gap: 10px;
+  border-left: 2px solid var(--color-gold);
+}
+
+.mobile-nav-sublink {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-ink-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  padding: 4px 0;
+}
+
+.mobile-nav-sublink:hover,
+.mobile-nav-sublink.active {
+  color: var(--color-gold);
+  transform: translateX(4px);
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
 }
 
 /* Cart Icon Button */
@@ -2661,9 +2803,9 @@ html, body {
   }
 
   .header-logo-img {
-    height: 42px;
-    max-height: 42px;
-    max-width: 165px;
+    height: 52px;
+    max-height: 52px;
+    max-width: 200px;
   }
 
   /* Multi-Column Grid Collapses */
@@ -2815,9 +2957,9 @@ html, body {
   }
 
   .header-logo-img {
-    height: 36px !important;
-    max-height: 36px !important;
-    max-width: 145px !important;
+    height: 48px !important;
+    max-height: 48px !important;
+    max-width: 180px !important;
   }
 
   .cart-btn,
@@ -3069,8 +3211,8 @@ html, body {
   }
 
   .header-logo-img {
-    height: 32px !important;
-    max-width: 130px !important;
+    height: 40px !important;
+    max-width: 150px !important;
   }
 }
 
@@ -3137,41 +3279,68 @@ html, body {
 
   <!-- =========================================================================
        01. STICKY NAVIGATION
-       ========================================================================= -->
-  <header class="header" id="main-header">
-    <div class="container header-container">
+       ========================================================================= -->  <!-- Navigation Header (6 Main Pillars with Curated Subpages) -->
+    <!-- Navigation Header (6 Main Pillars with Curated Subpages) -->
+  <header class="header" id="main-header" role="banner">
+    <div class="header-container container">
       <!-- Logo -->
-      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow Homepage">
+      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow - Where Cooking Inspires">
         <img src="images/logo.png" alt="Epicurean Flow - Where Cooking Inspires" class="header-logo-img">
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="nav-desktop" aria-label="Primary Navigation">
+      <!-- Desktop Navigation (6 Pillars with Luxury Submenu) -->
+      <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="courses.html" class="nav-link">Courses</a></li>
-          <li><a href="cookbooks.html" class="nav-link">Books</a></li>
-          <li><a href="menu-planning.html" class="nav-link">Menu Planning</a></li>
-          <li><a href="diabetes.html" class="nav-link">Diabetes</a></li>
-          <li><a href="nutrition.html" class="nav-link">Nutrition</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="media.html" class="nav-link">Media</a></li>
-          <li><a href="recipes.html" class="nav-link">Recipes</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="courses.html" class="nav-link ">Courses</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link ">Books</a></li>
+          
+          <!-- Recipes & Living Dropdown -->
+          <li class="nav-item has-dropdown">
+            <a href="recipes.html" class="nav-link dropdown-toggle " aria-haspopup="true" aria-expanded="false">
+              <span>Recipes</span>
+              <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <a href="recipes.html" class="dropdown-item " role="menuitem">
+                <span class="dropdown-item-title">All Recipes</span>
+                <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
+              </a>
+              <a href="diabetes.html" class="dropdown-item " role="menuitem">
+                <span class="dropdown-item-title">Diabetes Living</span>
+                <span class="dropdown-item-desc">Chef Eliane&rsquo;s low-carb journey &amp; recipes</span>
+              </a>
+              <a href="nutrition.html" class="dropdown-item " role="menuitem">
+                <span class="dropdown-item-title">Nutrition &amp; Science</span>
+                <span class="dropdown-item-desc">Nutrient-rich plates &amp; metabolic energy</span>
+              </a>
+              <a href="menu-planning.html" class="dropdown-item " role="menuitem">
+                <span class="dropdown-item-title">Menu Planning</span>
+                <span class="dropdown-item-desc">1-on-1 culinary consultation &amp; custom party menus</span>
+              </a>
+              <a href="media.html" class="dropdown-item " role="menuitem">
+                <span class="dropdown-item-title">Media &amp; Masterclasses</span>
+                <span class="dropdown-item-desc">Culinary video masterclasses &amp; cooking tips</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="about.html" class="nav-link ">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link ">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
           <button class="cart-btn" id="open-cart-btn" aria-label="View Shopping Cart">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
             <span class="cart-badge" id="cart-count">0</span>
           </button>
-          <a href="cookbooks.html" class="btn btn-primary nav-cta">
-            <span>Shop</span>
-          </a>
+          <a href="courses.html" class="btn btn-primary nav-cta"><span>Enroll</span></a>
         </div>
       </nav>
 
@@ -3185,27 +3354,33 @@ html, body {
   </header>
 
   <!-- Mobile Drawer Menu -->
-  <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer">
+  <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
     <div class="mobile-nav-links">
       <a href="index.html" class="mobile-nav-link active">Home</a>
-      <a href="courses.html" class="mobile-nav-link">Courses</a>
-      <a href="cookbooks.html" class="mobile-nav-link">Books</a>
-      <a href="menu-planning.html" class="mobile-nav-link">Menu Planning</a>
-      <a href="diabetes.html" class="mobile-nav-link">Diabetes</a>
-      <a href="nutrition.html" class="mobile-nav-link">Nutrition</a>
-      <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
-      <a href="media.html" class="mobile-nav-link">Media / Video Clips</a>
-      <a href="recipes.html" class="mobile-nav-link">Recipe Journal</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="courses.html" class="mobile-nav-link ">Courses</a>
+      <a href="cookbooks.html" class="mobile-nav-link ">Books</a>
+      
+      <div class="mobile-nav-group">
+        <a href="recipes.html" class="mobile-nav-link ">Recipes &amp; Living</a>
+        <div class="mobile-nav-submenu">
+          <a href="recipes.html" class="mobile-nav-sublink ">All Recipes</a>
+          <a href="diabetes.html" class="mobile-nav-sublink ">Diabetes Living</a>
+          <a href="nutrition.html" class="mobile-nav-sublink ">Nutrition &amp; Science</a>
+          <a href="menu-planning.html" class="mobile-nav-sublink ">Menu Planning Consultation</a>
+          <a href="media.html" class="mobile-nav-sublink ">Media &amp; Masterclasses</a>
+        </div>
+      </div>
+
+      <a href="about.html" class="mobile-nav-link ">About Chef Eliane</a>
+      <a href="contact.html" class="mobile-nav-link ">Contact</a>
     </div>
     <div class="mobile-nav-footer">
-      <a href="cookbooks.html" class="btn btn-primary" style="width: 100%;">Explore Shop</a>
+      <a href="courses.html" class="btn btn-primary" style="width: 100%;">Enroll in Academy</a>
       <p style="font-size: 0.8125rem; color: var(--color-ink-light); text-align: center; margin-top: 8px;">
-        Chef-led culinary education & cookbooks
+        Chef-led culinary education &amp; cookbooks
       </p>
     </div>
   </div>
-
 
   <!-- =========================================================================
        02. HERO SECTION
@@ -4439,7 +4614,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
   }
+
+  // Desktop/Tablet Dropdown Toggle Handling
+  const dropdownItems = document.querySelectorAll('.has-dropdown');
+  dropdownItems.forEach(item => {
+    const toggle = item.querySelector('.dropdown-toggle');
+    if (toggle) {
+      // Toggle on touch devices or click
+      toggle.addEventListener('click', (e) => {
+        if (window.innerWidth >= 1024 && ('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+          if (!item.classList.contains('open')) {
+            e.preventDefault();
+            dropdownItems.forEach(other => other.classList.remove('open'));
+            item.classList.add('open');
+            toggle.setAttribute('aria-expanded', 'true');
+          }
+        }
+      });
+    }
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.has-dropdown')) {
+      dropdownItems.forEach(item => {
+        item.classList.remove('open');
+        const t = item.querySelector('.dropdown-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
 });
+
 
 // --- animations.js ---
 /* ==========================================================================

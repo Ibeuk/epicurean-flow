@@ -69,9 +69,9 @@ html, body {
   }
 
   .header-logo-img {
-    height: 42px;
-    max-height: 42px;
-    max-width: 165px;
+    height: 52px;
+    max-height: 52px;
+    max-width: 200px;
   }
 
   /* Multi-Column Grid Collapses */
@@ -223,9 +223,9 @@ html, body {
   }
 
   .header-logo-img {
-    height: 36px !important;
-    max-height: 36px !important;
-    max-width: 145px !important;
+    height: 48px !important;
+    max-height: 48px !important;
+    max-width: 180px !important;
   }
 
   .cart-btn,
@@ -477,7 +477,7 @@ html, body {
   }
 
   .header-logo-img {
-    height: 32px !important;
-    max-width: 130px !important;
+    height: 40px !important;
+    max-width: 150px !important;
   }
 }

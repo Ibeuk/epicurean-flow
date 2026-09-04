@@ -32,35 +32,71 @@
   </aside>
 
   <!-- Navigation Header -->
-  <header class="header" role="banner">
+    <!-- Navigation Header (6 Main Pillars with Curated Subpages) -->
+  <header class="header" id="main-header" role="banner">
     <div class="header-container container">
-      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow - Home">
+      <!-- Logo -->
+      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow - Where Cooking Inspires">
         <img src="images/logo.png" alt="Epicurean Flow - Where Cooking Inspires" class="header-logo-img">
       </a>
 
-      <nav class="nav-desktop" role="navigation" aria-label="Main Navigation">
-        <div class="nav-links">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="courses.html" class="nav-link">Courses</a>
-          <a href="cookbooks.html" class="nav-link">Books</a>
-          <a href="menu-planning.html" class="nav-link">Menu Planning</a>
-          <a href="diabetes.html" class="nav-link">Diabetes</a>
-          <a href="nutrition.html" class="nav-link active">Nutrition</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="media.html" class="nav-link">Media</a>
-          <a href="recipes.html" class="nav-link">Recipes</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-        </div>
+      <!-- Desktop Navigation (6 Pillars with Luxury Submenu) -->
+      <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link ">Home</a></li>
+          <li class="nav-item"><a href="courses.html" class="nav-link ">Courses</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link ">Books</a></li>
+          
+          <!-- Recipes & Living Dropdown -->
+          <li class="nav-item has-dropdown">
+            <a href="recipes.html" class="nav-link dropdown-toggle active" aria-haspopup="true" aria-expanded="false">
+              <span>Recipes</span>
+              <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <a href="recipes.html" class="dropdown-item " role="menuitem">
+                <span class="dropdown-item-title">All Recipes</span>
+                <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
+              </a>
+              <a href="diabetes.html" class="dropdown-item " role="menuitem">
+                <span class="dropdown-item-title">Diabetes Living</span>
+                <span class="dropdown-item-desc">Chef Eliane&rsquo;s low-carb journey &amp; recipes</span>
+              </a>
+              <a href="nutrition.html" class="dropdown-item active" role="menuitem">
+                <span class="dropdown-item-title">Nutrition &amp; Science</span>
+                <span class="dropdown-item-desc">Nutrient-rich plates &amp; metabolic energy</span>
+              </a>
+              <a href="menu-planning.html" class="dropdown-item " role="menuitem">
+                <span class="dropdown-item-title">Menu Planning</span>
+                <span class="dropdown-item-desc">1-on-1 culinary consultation &amp; custom party menus</span>
+              </a>
+              <a href="media.html" class="dropdown-item " role="menuitem">
+                <span class="dropdown-item-title">Media &amp; Masterclasses</span>
+                <span class="dropdown-item-desc">Culinary video masterclasses &amp; cooking tips</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="about.html" class="nav-link ">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link ">Contact</a></li>
+        </ul>
 
         <div class="nav-actions">
-          <button class="cart-btn" id="open-cart-btn" aria-label="Shopping Cart">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <button class="cart-btn" id="open-cart-btn" aria-label="View Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
             <span class="cart-badge" id="cart-count">0</span>
           </button>
-          <a href="cookbooks.html" class="btn btn-primary nav-cta">Shop</a>
+          <a href="courses.html" class="btn btn-primary nav-cta"><span>Enroll</span></a>
         </div>
       </nav>
 
+      <!-- Mobile Hamburger Toggle -->
       <button class="hamburger mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -69,24 +105,32 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
-  <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
-    <div class="mobile-menu-inner">
-      <nav class="mobile-nav">
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="courses.html" class="mobile-nav-link">Courses</a>
-        <a href="cookbooks.html" class="mobile-nav-link">Books</a>
-        <a href="menu-planning.html" class="mobile-nav-link">Menu Planning</a>
-        <a href="diabetes.html" class="mobile-nav-link">Diabetes</a>
-        <a href="nutrition.html" class="mobile-nav-link active">Nutrition</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="media.html" class="mobile-nav-link">Media</a>
-        <a href="recipes.html" class="mobile-nav-link">Recipes</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-      </nav>
-      <div class="mobile-menu-footer">
-        <a href="cookbooks.html" class="btn btn-primary btn-block">Explore Books &amp; Courses</a>
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link ">Home</a>
+      <a href="courses.html" class="mobile-nav-link ">Courses</a>
+      <a href="cookbooks.html" class="mobile-nav-link ">Books</a>
+      
+      <div class="mobile-nav-group">
+        <a href="recipes.html" class="mobile-nav-link active">Recipes &amp; Living</a>
+        <div class="mobile-nav-submenu">
+          <a href="recipes.html" class="mobile-nav-sublink ">All Recipes</a>
+          <a href="diabetes.html" class="mobile-nav-sublink ">Diabetes Living</a>
+          <a href="nutrition.html" class="mobile-nav-sublink active">Nutrition &amp; Science</a>
+          <a href="menu-planning.html" class="mobile-nav-sublink ">Menu Planning Consultation</a>
+          <a href="media.html" class="mobile-nav-sublink ">Media &amp; Masterclasses</a>
+        </div>
       </div>
+
+      <a href="about.html" class="mobile-nav-link ">About Chef Eliane</a>
+      <a href="contact.html" class="mobile-nav-link ">Contact</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="courses.html" class="btn btn-primary" style="width: 100%;">Enroll in Academy</a>
+      <p style="font-size: 0.8125rem; color: var(--color-ink-light); text-align: center; margin-top: 8px;">
+        Chef-led culinary education &amp; cookbooks
+      </p>
     </div>
   </div>
 

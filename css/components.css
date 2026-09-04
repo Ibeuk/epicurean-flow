@@ -48,18 +48,18 @@
 }
 
 .header-logo-img {
-  height: 52px;
-  max-height: 52px;
+  height: 64px;
+  max-height: 64px;
   width: auto;
-  max-width: 200px;
+  max-width: 240px;
   object-fit: contain;
   display: block;
   transition: height var(--transition-normal);
 }
 
 .header.scrolled .header-logo-img {
-  height: 42px;
-  max-height: 42px;
+  height: 52px;
+  max-height: 52px;
 }
 
 /* Fallback text logo (if image not loaded) */
@@ -90,27 +90,40 @@
 .nav-desktop {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 28px;
   margin-left: auto;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li,
+.nav-item {
+  position: relative;
+  list-style: none;
 }
 
 .nav-link {
   font-family: var(--font-sans);
-  font-size: 0.8125rem; /* 13px */
-  font-weight: 500;
-  letter-spacing: 0.05em;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 600; /* Bolder as requested */
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-ink);
   position: relative;
-  padding: 8px 0;
+  padding: 10px 0;
   white-space: nowrap;
   transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
 }
 
 .nav-link::after {
@@ -134,10 +147,139 @@
   width: 100%;
 }
 
+/* Dropdown Menu System */
+.nav-item.has-dropdown {
+  position: relative;
+}
+
+.dropdown-chevron {
+  transition: transform var(--transition-fast);
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.nav-item.has-dropdown:hover .dropdown-chevron,
+.nav-item.has-dropdown:focus-within .dropdown-chevron,
+.nav-item.has-dropdown.open .dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu Container */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  min-width: 310px;
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-gold-border);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 20px 45px rgba(18, 17, 15, 0.12), 0 4px 14px rgba(188, 145, 66, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Hover Bridge: prevents menu closing when moving mouse from link to dropdown */
+.nav-item.has-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  right: -10px;
+  height: 16px;
+  display: block;
+}
+
+.nav-item.has-dropdown:hover .dropdown-menu,
+.nav-item.has-dropdown:focus-within .dropdown-menu,
+.nav-item.has-dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  background-color: rgba(188, 145, 66, 0.09);
+  transform: translateX(4px);
+}
+
+.dropdown-item-title {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--transition-fast);
+}
+
+.dropdown-item:hover .dropdown-item-title {
+  color: var(--color-gold-hover);
+}
+
+.dropdown-item-desc {
+  font-size: 0.775rem;
+  color: var(--color-ink-muted);
+  margin-top: 2px;
+  line-height: 1.4;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Mobile Submenu in Drawer */
+.mobile-nav-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-submenu {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  gap: 10px;
+  border-left: 2px solid var(--color-gold);
+}
+
+.mobile-nav-sublink {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-ink-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  padding: 4px 0;
+}
+
+.mobile-nav-sublink:hover,
+.mobile-nav-sublink.active {
+  color: var(--color-gold);
+  transform: translateX(4px);
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
 }
 
 /* Cart Icon Button */
