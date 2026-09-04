@@ -3,475 +3,376 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Recipe Journal & Culinary Techniques | Epicurean Flow</title>
-  <meta name="description" content="Chef-crafted recipes, culinary technique spotlights, and diabetes-friendly gourmet cooking guides from Chef Eliane Muskus. Cook with intuition, flavor, and confidence.">
-  <meta name="keywords" content="Chef Eliane recipes, diabetes friendly recipes, Mediterranean recipes, spice roasting, banana cake for diabetics, culinary journal">
+  <title>The Recipe Journal &amp; Culinary Techniques | Epicurean Flow</title>
+  <meta name="description" content="Chef-crafted recipes, technique masterclasses, and diabetes-friendly gourmet cooking guides by Chef Eliane Muskus. Cook with intuition, flavor, and confidence.">
+  <link rel="icon" type="image/png" href="images/logo.png">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="The Recipe Journal & Culinary Techniques | Epicurean Flow">
-  <meta property="og:description" content="Chef-crafted dishes and technique spotlights created to inspire passionate home cooks.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://epicureanflow.netlify.app/recipes.html">
-
-  <!-- Google Fonts Preconnect -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
-  <!-- CSS Design System -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
-  <!-- =========================================================================
-       01. STICKY NAVIGATION
-       ========================================================================= -->
-  <header class="header" id="main-header">
-    <div class="container header-container">
-      <!-- Logo -->
-      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow Homepage">
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" role="complementary" aria-label="Special Offer">
+    <div class="announcement-inner">
+      <span class="announcement-badge">Culinary Journal</span>
+      <span class="announcement-text">Explore Chef Eliane's latest seasonal recipes and low-carb diabetes guides</span>
+      <a href="#featured-recipe" class="announcement-link">Explore Featured <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header class="header" role="banner">
+    <div class="header-container container">
+      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow - Home">
         <img src="images/logo.png" alt="Epicurean Flow - Where Cooking Inspires" class="header-logo-img">
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="nav-desktop" aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
-          <li><a href="courses.html" class="nav-link">Courses</a></li>
-          <li><a href="recipes.html" class="nav-link active">Recipes</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-        </ul>
+      <nav class="nav-desktop" role="navigation" aria-label="Main Navigation">
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="courses.html" class="nav-link">Courses</a>
+          <a href="cookbooks.html" class="nav-link">Books</a>
+          <a href="menu-planning.html" class="nav-link">Menu Planning</a>
+          <a href="diabetes.html" class="nav-link">Diabetes</a>
+          <a href="nutrition.html" class="nav-link">Nutrition</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="media.html" class="nav-link">Media</a>
+          <a href="recipes.html" class="nav-link active">Recipes</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
 
         <div class="nav-actions">
-          <button class="cart-btn" aria-label="View Shopping Cart">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <path d="M16 10a4 4 0 0 1-8 0"></path>
-            </svg>
-            <span class="cart-badge">0</span>
+          <button class="cart-btn" id="open-cart-btn" aria-label="Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="cart-badge" id="cart-count">0</span>
           </button>
-          <a href="cookbooks.html" class="btn btn-primary">
-            <span>Shop Cookbooks</span>
-          </a>
+          <a href="cookbooks.html" class="btn btn-primary nav-cta">Shop</a>
         </div>
       </nav>
 
-      <!-- Mobile Hamburger Toggle -->
-      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
       </button>
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-nav-drawer" id="mobile-drawer">
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
-      <a href="courses.html" class="mobile-nav-link">Courses</a>
-      <a href="recipes.html" class="mobile-nav-link active">Recipes</a>
-      <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
-    </div>
-    <div class="mobile-nav-footer">
-      <a href="cookbooks.html" class="btn btn-gold" style="width: 100%;">Shop Cookbooks</a>
-      <p style="font-size: 0.8125rem; color: var(--color-ink-light); text-align: center; margin-top: 8px;">
-        Chef-led culinary education & cookbooks
-      </p>
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="courses.html" class="mobile-nav-link">Courses</a>
+        <a href="cookbooks.html" class="mobile-nav-link">Books</a>
+        <a href="menu-planning.html" class="mobile-nav-link">Menu Planning</a>
+        <a href="diabetes.html" class="mobile-nav-link">Diabetes</a>
+        <a href="nutrition.html" class="mobile-nav-link">Nutrition</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="media.html" class="mobile-nav-link">Media</a>
+        <a href="recipes.html" class="mobile-nav-link active">Recipes</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="cookbooks.html" class="btn btn-primary btn-block">Explore Books &amp; Courses</a>
+      </div>
     </div>
   </div>
 
-  <main>
-    <!-- =========================================================================
-         PAGE HERO BANNER
-         ========================================================================= -->
+  <main id="main-content">
+    <!-- Page Hero -->
     <section class="page-hero">
       <div class="container">
-        <span class="section-eyebrow">The Culinary Journal</span>
-        <h1 class="page-hero-title">Recipes, Technique & Everyday Gourmet</h1>
+        <p class="section-tag">The Recipe Journal</p>
+        <h1 class="page-hero-title">Recipes, Technique &amp; Everyday Gourmet</h1>
         <p class="page-hero-subtitle">
-          Chef-crafted dishes created to inspire home cooks. Discover how whole spices, fresh Mediterranean produce, and low-glycemic adaptations transform ordinary meals into restaurant-caliber experiences.
+          Discover foolproof techniques and vibrant Mediterranean dishes from award-winning Chef Eliane Muskus. Cook with intuition, sensory confidence, and healthy vitality.
         </p>
-
-        <!-- Filter pills -->
-        <div class="filter-bar" id="recipe-filter-bar">
-          <button class="filter-pill active" data-filter="all">All Recipes (6)</button>
-          <button class="filter-pill" data-filter="diabetes">Diabetes-Friendly</button>
-          <button class="filter-pill" data-filter="mediterranean">Mediterranean</button>
-          <button class="filter-pill" data-filter="technique">Technique Spotlight</button>
-          <button class="filter-pill" data-filter="soups-dips">Soups & Dips</button>
-        </div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         FEATURED MASTERCLASS RECIPE DEEP-DIVE
-         ========================================================================= -->
-    <section class="section theme-ivory">
+    <!-- Star Recipe Feature: Banana Cake -->
+    <section class="section" id="featured-recipe">
       <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Chef's Signature Feature</span>
-          <h2 class="section-title">Low-Carb Gourmet Banana Cake for Diabetics</h2>
-          <p class="section-description">
-            A revolutionary dessert recipe formulated by Chef Eliane that delivers moist texture, warm caramelized sweetness, and fragrant cinnamon spice while keeping blood sugar curves gently balanced.
-          </p>
-        </div>
-
         <div class="recipe-detail-card">
-          <div class="recipe-detail-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; background: var(--color-cream);">
-            <div>
-              <span class="product-badge" style="background: var(--color-gold); color: var(--color-ink); font-weight: 700;">Blood Sugar Balanced</span>
-              <h3 style="margin-top: 8px; font-size: 1.75rem;">Moist Almond & Spiced Banana Cake</h3>
-            </div>
-            <div style="display: flex; gap: 24px; font-size: 0.875rem; color: var(--color-ink);">
-              <div>⏱ <strong>Prep:</strong> 15 mins</div>
-              <div>🔥 <strong>Bake:</strong> 35 mins</div>
-              <div>🍰 <strong>Yield:</strong> 8 Slices</div>
-              <div>📉 <strong>Net Carbs:</strong> 6g / slice</div>
+          <div class="recipe-detail-hero">
+            <img src="https://static.wixstatic.com/media/8e85e1_06c405184e654ab7845eee7980e6d23d~mv2.jpg/v1/fit/w_2121,h_1414,q_90/file.jpg" alt="Healthy Banana Cake for Diabetics" class="recipe-detail-img">
+            <div class="recipe-meta-strip">
+              <div class="recipe-meta-col">
+                <span class="recipe-meta-label">Category</span>
+                <span class="recipe-meta-val">Diabetic Baking</span>
+              </div>
+              <div class="recipe-meta-col">
+                <span class="recipe-meta-label">Prep / Bake</span>
+                <span class="recipe-meta-val">15 / 40 mins</span>
+              </div>
+              <div class="recipe-meta-col">
+                <span class="recipe-meta-label">Glycemic Impact</span>
+                <span class="recipe-meta-val">Low GI</span>
+              </div>
+              <div class="recipe-meta-col">
+                <span class="recipe-meta-label">Chef's Rating</span>
+                <span class="recipe-meta-val">&starf;&starf;&starf;&starf;&starf;</span>
+              </div>
             </div>
           </div>
 
           <div class="recipe-detail-body">
-            <!-- Left: Ingredients -->
-            <div>
-              <h4 style="font-size: 1.25rem; margin-bottom: 20px; border-bottom: 2px solid var(--color-gold); padding-bottom: 8px; display: inline-block;">
-                Ingredients
-              </h4>
+            <div class="recipe-ingredients-col">
+              <span class="badge badge-gold" style="margin-bottom: 12px; display: inline-block;">Spotlight Creation</span>
+              <h2 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-ink); margin-bottom: 16px;">Healthy Banana Cake Recipe for Diabetics</h2>
+              <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.7; margin-bottom: 24px;">
+                A wholesome, naturally sweet banana bread crafted with blanched almond flour, Ceylon cinnamon, pasture-raised eggs, and raw walnuts. Completely free of refined sugars and processed flours.
+              </p>
+              
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-ink); margin-bottom: 14px;">Key Ingredients:</h3>
               <div class="ingredient-list">
-                <div class="ingredient-item">
-                  <span class="ingredient-bullet">▪</span>
-                  <span><strong>2 medium</strong> semi-ripe bananas (green-tipped for lower fructose)</span>
-                </div>
-                <div class="ingredient-item">
-                  <span class="ingredient-bullet">▪</span>
-                  <span><strong>200g (2 cups)</strong> ultra-fine blanched almond flour</span>
-                </div>
-                <div class="ingredient-item">
-                  <span class="ingredient-bullet">▪</span>
-                  <span><strong>3 large</strong> pasture-raised eggs, room temperature</span>
-                </div>
-                <div class="ingredient-item">
-                  <span class="ingredient-bullet">▪</span>
-                  <span><strong>60ml (1/4 cup)</strong> melted cold-pressed coconut oil or ghee</span>
-                </div>
-                <div class="ingredient-item">
-                  <span class="ingredient-bullet">▪</span>
-                  <span><strong>2 tbsp</strong> natural granulated erythritol or allulose</span>
-                </div>
-                <div class="ingredient-item">
-                  <span class="ingredient-bullet">▪</span>
-                  <span><strong>1.5 tsp</strong> fresh ground Ceylon cinnamon</span>
-                </div>
-                <div class="ingredient-item">
-                  <span class="ingredient-bullet">▪</span>
-                  <span><strong>1 tsp</strong> aluminum-free baking powder + pinch of sea salt</span>
-                </div>
-                <div class="ingredient-item">
-                  <span class="ingredient-bullet">▪</span>
-                  <span><strong>1 tsp</strong> pure Madagascar vanilla bean paste</span>
-                </div>
-              </div>
-
-              <!-- Chef's Pro Tip Callout -->
-              <div style="background: var(--color-cream); border-left: 3px solid var(--color-gold); padding: 16px; margin-top: 24px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
-                <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-gold-hover);">Chef Eliane's Tip:</span>
-                <p style="font-size: 0.8125rem; color: var(--color-ink); margin-top: 4px; line-height: 1.5;">
-                  Always choose bananas with slight green on the tips. They contain high levels of resistant starch which feeds gut flora without causing insulin spikes!
-                </p>
+                <div class="ingredient-item"><span class="ingredient-bullet">&bull;</span> 2 ripe medium bananas</div>
+                <div class="ingredient-item"><span class="ingredient-bullet">&bull;</span> 2 cups extra-fine almond flour</div>
+                <div class="ingredient-item"><span class="ingredient-bullet">&bull;</span> 3 large eggs at room temp</div>
+                <div class="ingredient-item"><span class="ingredient-bullet">&bull;</span> 1/4 cup extra virgin coconut oil</div>
+                <div class="ingredient-item"><span class="ingredient-bullet">&bull;</span> 1 tbsp pure Ceylon cinnamon</div>
+                <div class="ingredient-item"><span class="ingredient-bullet">&bull;</span> 1/4 cup chopped raw walnuts</div>
               </div>
             </div>
 
-            <!-- Right: Method Steps -->
-            <div>
-              <h4 style="font-size: 1.25rem; margin-bottom: 20px; border-bottom: 2px solid var(--color-gold); padding-bottom: 8px; display: inline-block;">
-                Culinary Method
-              </h4>
+            <div class="recipe-method-col">
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink); margin-bottom: 20px;">Chef's Executive Summary</h3>
               <div class="method-step">
-                <div class="method-step-num">Step 01</div>
-                <h5 style="font-size: 1.0625rem; margin-bottom: 6px;">Preheat & Tin Preparation</h5>
-                <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6;">
-                  Preheat your oven to 175°C (350°F). Line an 8-inch loaf tin with unbleached parchment paper, leaving a 1-inch overhang on the sides for easy lifting after baking.
-                </p>
+                <div class="method-step-num">Step 1</div>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: var(--color-ink-subtle);">Mash ripe bananas and whisk thoroughly with pasture eggs and melted coconut oil.</p>
               </div>
-
               <div class="method-step">
-                <div class="method-step-num">Step 02</div>
-                <h5 style="font-size: 1.0625rem; margin-bottom: 6px;">Emulsify Wet Base</h5>
-                <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6;">
-                  In a large ceramic mixing bowl, mash the bananas thoroughly with a fork until smooth. Whisk in the 3 eggs, melted coconut oil, and vanilla paste until glossy and homogenous.
-                </p>
+                <div class="method-step-num">Step 2</div>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: var(--color-ink-subtle);">Sift almond flour with Ceylon cinnamon and baking powder; fold into wet mixture with raw walnuts.</p>
               </div>
-
               <div class="method-step">
-                <div class="method-step-num">Step 03</div>
-                <h5 style="font-size: 1.0625rem; margin-bottom: 6px;">Incorporate Spiced Dry Ingredients</h5>
-                <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6;">
-                  Gently fold in the almond flour, ground Ceylon cinnamon, baking powder, sweetener, and sea salt with a silicone spatula. Stir just until combined—do not overmix.
-                </p>
+                <div class="method-step-num">Step 3</div>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: var(--color-ink-subtle);">Bake at 175&deg;C (350&deg;F) for 40 minutes until golden brown with a tender crumb.</p>
               </div>
-
-              <div class="method-step">
-                <div class="method-step-num">Step 04</div>
-                <h5 style="font-size: 1.0625rem; margin-bottom: 6px;">Bake & Cool to Set Crumb</h5>
-                <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6;">
-                  Pour the batter into the prepared tin. Bake for 32–36 minutes until a wooden skewer inserted into the center comes out clean and the crust is deep golden. Allow to cool completely for 20 minutes before slicing to let the almond crumb structure firmly set.
-                </p>
-              </div>
+              <a href="diabetes.html#featured-recipes" class="btn btn-primary" style="margin-top: 12px;">View Complete Diabetes Page &rarr;</a>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- =========================================================================
-         ADDITIONAL RECIPES & TECHNIQUE STORIES GRID
-         ========================================================================= -->
-    <section class="section theme-cream">
+    <!-- Filterable Recipe Journal Grid -->
+    <section class="section bg-light">
       <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Culinary Collection</span>
-          <h2 class="section-title">Explore More Kitchen Inspirations</h2>
+        <div class="section-header text-center">
+          <p class="section-tag">Explore The Archive</p>
+          <h2 class="section-title">All Recipes &amp; Technique Articles</h2>
+          <p class="section-subtitle">Curated dishes from Cannes, Amsterdam, and the Mediterranean basin.</p>
         </div>
 
-        <div class="grid-3" id="recipes-grid">
+        <!-- Filter Bar -->
+        <div class="filter-bar" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 32px 0 40px;">
+          <button class="filter-pill active" data-filter="all">All Articles</button>
+          <button class="filter-pill" data-filter="diabetes">Diabetes Friendly</button>
+          <button class="filter-pill" data-filter="mediterranean">Mediterranean</button>
+          <button class="filter-pill" data-filter="plant">Plant-Based</button>
+          <button class="filter-pill" data-filter="technique">Chef Techniques</button>
+        </div>
+
+        <div class="grid-recipes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 32px;">
           
-          <!-- Recipe 1: Roasted Whole Spices -->
-          <article class="article-card" data-category="technique">
-            <div class="article-media">
-              <span class="article-category">Technique</span>
-              <img src="https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg" 
-                   alt="Whole spices in cast iron skillet"
-                   loading="lazy">
+          <!-- Recipe 1: Greek Feta Salad Tower -->
+          <article class="course-card" data-category="mediterranean">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_2500,h_1357,al_c/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg" alt="Greek Feta Salad Tower">
+              <span class="course-badge">Mediterranean</span>
             </div>
-            <div class="article-content">
-              <span class="article-meta">10 Mins • Fundamental Guide</span>
-              <h3 class="article-title">The Art of Roasting & Blooming Whole Spices</h3>
-              <p class="article-desc">
-                How dry heat unleashes essential oils from coriander seeds, cumin, and cardamom before they ever touch oil.
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">Greek Feta Salad Tower</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                Juicy tomatoes, creamy barrel-aged feta, wild capers, fresh parsley, and golden olive oil layered into an architectural mezze centerpiece.
               </p>
-              <a href="cookbooks.html" class="btn-link">Read Technique Guide →</a>
+              <a href="nutrition.html" class="btn btn-outline btn-block">Read Article &amp; Recipe</a>
             </div>
           </article>
 
-          <!-- Recipe 2: Dipping Oils -->
-          <article class="article-card" data-category="mediterranean">
-            <div class="article-media">
-              <span class="article-category">Mediterranean</span>
-              <img src="https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg" 
-                   alt="Extra virgin olive oil with fresh wild herbs"
-                   loading="lazy">
+          <!-- Recipe 2: Sweet Without the Sugar -->
+          <article class="course-card" data-category="diabetes">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg" alt="Sweet Without the Sugar">
+              <span class="course-badge">Desserts</span>
             </div>
-            <div class="article-content">
-              <span class="article-meta">15 Mins • Appetizers</span>
-              <h3 class="article-title">Authentic Mediterranean Dipping Oils & Wild Herbs</h3>
-              <p class="article-desc">
-                Cold-pressed extra virgin olive oil layered with crushed Aleppo pepper, wild mountain thyme, and Meyer lemon zest.
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">Sweet Without the Sugar: Holiday Desserts</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                Diabetic-friendly festive desserts everyone will love: berry tarts, dark chocolate mousse, and vanilla bean custards without sugar spikes.
               </p>
-              <a href="cookbooks.html" class="btn-link">Explore Full Recipe →</a>
+              <a href="diabetes.html" class="btn btn-outline btn-block">Read Article &amp; Recipe</a>
             </div>
           </article>
 
-          <!-- Recipe 3: Soulful Soups -->
-          <article class="article-card" data-category="soups-dips">
-            <div class="article-media">
-              <span class="article-category">Soups</span>
-              <img src="https://static.wixstatic.com/media/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg" 
-                   alt="Velvety soup bowl garnished with herb oil"
-                   loading="lazy">
+          <!-- Recipe 3: Vegan Tofu Satay -->
+          <article class="course-card" data-category="plant">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg" alt="Vegan Tofu Satay">
+              <span class="course-badge">Plant-Based High Protein</span>
             </div>
-            <div class="article-content">
-              <span class="article-meta">35 Mins • Comfort Food</span>
-              <h3 class="article-title">Soulful Soups: Mediterranean Bowls of Flavor</h3>
-              <p class="article-desc">
-                Roasted squash and red lentil soup infused with ginger root, warm cumin, and finished with a silk herb oil drizzle.
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">Vegan Tofu Satay with Warm Peanut Sauce</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                Crispy pan-seared organic tofu skewers coated in lemongrass and ginger marinade with velvety peanut dipping sauce.
               </p>
-              <a href="cookbooks.html" class="btn-link">Explore Full Recipe →</a>
+              <a href="nutrition.html" class="btn btn-outline btn-block">Read Article &amp; Recipe</a>
             </div>
           </article>
 
-          <!-- Recipe 4: Provençal Sea Bass -->
-          <article class="article-card" data-category="mediterranean">
-            <div class="article-media">
-              <span class="article-category">Main Course</span>
-              <img src="https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg" 
-                   alt="Pan seared sea bass with herbs"
-                   loading="lazy">
+          <!-- Recipe 4: Stuffed Bell Peppers -->
+          <article class="course-card" data-category="mediterranean">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Stuffed Bell Peppers with Bulgur, Feta & Herbs">
+              <span class="course-badge">Mediterranean</span>
             </div>
-            <div class="article-content">
-              <span class="article-meta">25 Mins • Seafood</span>
-              <h3 class="article-title">Provençal Crisp Sea Bass with Fennel Reduction</h3>
-              <p class="article-desc">
-                Crisp skin technique, caramelized sweet fennel slices, and an aromatic white wine pan reduction.
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">Stuffed Bell Peppers with Bulgur &amp; Feta</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                Roasted sweet peppers packed with toasted bulgur, mint, parsley, toasted pine nuts, and crumbled Greek feta cheese.
               </p>
-              <a href="cookbooks.html" class="btn-link">Explore Full Recipe →</a>
+              <a href="diabetes.html" class="btn btn-outline btn-block">Read Article &amp; Recipe</a>
             </div>
           </article>
 
-          <!-- Recipe 5: Low-Glycemic Shakshuka -->
-          <article class="article-card" data-category="diabetes">
-            <div class="article-media">
-              <span class="article-category">Breakfast & Brunch</span>
-              <img src="https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg" 
-                   alt="Skillet shakshuka with farm eggs"
-                   loading="lazy">
+          <!-- Recipe 5: Stuffed Calamari -->
+          <article class="course-card" data-category="mediterranean">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg" alt="Mediterranean Stuffed Calamari">
+              <span class="course-badge">Seafood</span>
             </div>
-            <div class="article-content">
-              <span class="article-meta">20 Mins • Low-Glycemic</span>
-              <h3 class="article-title">Low-Glycemic Skillet Shakshuka</h3>
-              <p class="article-desc">
-                Slow-simmered vine tomatoes, charred sweet peppers, cumin, harissa, and softly poached pasture eggs.
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">Mediterranean Stuffed Calamari</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                Tender squid stuffed with finely diced vegetables and simmered gently in a rich tomato, garlic, and white wine reduction.
               </p>
-              <a href="cookbooks.html" class="btn-link">Explore Full Recipe →</a>
+              <a href="diabetes.html" class="btn btn-outline btn-block">Read Article &amp; Recipe</a>
             </div>
           </article>
 
-          <!-- Recipe 6: Cannes Tapenade -->
-          <article class="article-card" data-category="soups-dips">
-            <div class="article-media">
-              <span class="article-category">Appetizers & Dips</span>
-              <img src="https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg" 
-                   alt="Traditional black olive tapenade in stone mortar"
-                   loading="lazy">
+          <!-- Recipe 6: Searing Steak Technique -->
+          <article class="course-card" data-category="technique">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg" alt="Searing the Perfect Steak">
+              <span class="course-badge">Technique</span>
             </div>
-            <div class="article-content">
-              <span class="article-meta">10 Mins • Provençal Classic</span>
-              <h3 class="article-title">Chef Eliane's Signature Cannes Tapenade</h3>
-              <p class="article-desc">
-                Crushed Kalamata olives, brined capers, garlic cloves, and fruity olive oil blended in a stone mortar.
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">Searing the Perfect Steak: Pan Mastery</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                Professional chef methods for heat management, Maillard crust formation, and herb butter basting for succulent meat.
               </p>
-              <a href="cookbooks.html" class="btn-link">Explore Full Recipe →</a>
+              <a href="media.html" class="btn btn-outline btn-block">Watch Video &amp; Notes</a>
             </div>
           </article>
-
         </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         LEAD MAGNET BANNER
-         ========================================================================= -->
-    <section class="section theme-ink">
-      <div class="container" style="max-width: 720px; text-align: center;">
-        <span class="section-eyebrow" style="color: var(--color-gold);">Expand Your Culinary Library</span>
-        <h2 class="section-title" style="color: var(--color-ivory);">Want More Chef-Authored Recipes?</h2>
-        <p style="color: rgba(245, 240, 231, 0.8); font-size: 1.125rem; margin-bottom: 32px;">
-          Explore Chef Eliane's full collection of digital cookbooks covering Middle Eastern spices, low-carb diabetic dining, and seasonal gourmet home cooking.
-        </p>
-        <a href="cookbooks.html" class="btn btn-gold">
-          <span>Explore All Cookbooks →</span>
-        </a>
       </div>
     </section>
   </main>
 
-  <!-- =========================================================================
-       FOOTER
-       ========================================================================= -->
-  <footer class="footer">
-    <div class="container">
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo-brand">
-            <img src="images/logo.png" alt="Epicurean Flow" style="height: 48px; width: auto; filter: brightness(0) invert(1);">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="logo-brand" style="margin-bottom: 16px; display: inline-block;">
+            <img src="images/logo.png" alt="Epicurean Flow" class="header-logo-img" style="filter: brightness(0) invert(1);">
           </a>
-          <p class="footer-brand-desc" style="margin-top: 16px;">
-            A premium chef-led culinary platform combining Michelin-rooted expertise, practical education, cookbooks, and diabetes-friendly gastronomy.
-          </p>
+          <p class="footer-tagline">Where cooking inspires. Masterclasses, curated digital cookbooks, and gourmet cuisine by Award-Winning Chef Eliane Muskus.</p>
+          <div style="font-size: 0.85rem; color: #888; margin-top: 14px;">
+            <p>Amsterdam (Zuidas) 1082MZ, The Netherlands</p>
+            <p>Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+31 6 18571677</a></p>
+          </div>
         </div>
 
-        <div>
+        <div class="footer-col">
           <h4 class="footer-col-title">Explore</h4>
           <ul class="footer-links">
-            <li><a href="cookbooks.html" class="footer-link">Cookbooks & Guides</a></li>
-            <li><a href="courses.html" class="footer-link">Online Courses</a></li>
-            <li><a href="recipes.html" class="footer-link">Recipe Journal</a></li>
-            <li><a href="about.html" class="footer-link">About Chef Eliane</a></li>
+            <li><a href="courses.html">All Courses</a></li>
+            <li><a href="cookbooks.html">Digital Books &amp; Guides</a></li>
+            <li><a href="menu-planning.html">Menu Planning Service</a></li>
+            <li><a href="diabetes.html">Diabetes Living</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Energy</a></li>
+            <li><a href="recipes.html">Recipe Journal</a></li>
+            <li><a href="media.html">Taste in Motion (Media)</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4 class="footer-col-title">Epicurean Flow</h4>
+        <div class="footer-col">
+          <h4 class="footer-col-title">About &amp; Trust</h4>
           <ul class="footer-links">
-            <li><a href="about.html" class="footer-link">About Chef Eliane</a></li>
-            <li><a href="courses.html" class="footer-link">Culinary Masterclasses</a></li>
-            <li><a href="cookbooks.html#diabetes" class="footer-link">Diabetes-Friendly Kitchen</a></li>
-            <li><a href="about.html#food-tours" class="footer-link">Food Tours</a></li>
+            <li><a href="about.html">Chef Eliane’s Story</a></li>
+            <li><a href="about.html#milestones">Michelin Accreditation</a></li>
+            <li><a href="contact.html">Contact Headquarters</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4 class="footer-col-title">Support & Legal</h4>
-          <ul class="footer-links">
-            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/faq" class="footer-link">FAQ</a></li>
-            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/refund-policy" class="footer-link">Refund Policy</a></li>
-            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/privacy-policy" class="footer-link">Privacy Policy</a></li>
-            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/terms" class="footer-link">Terms of Service</a></li>
-          </ul>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Stay Inspired</h4>
+          <p style="font-size: 0.9rem; color: #888; margin-bottom: 16px;">Receive seasonal recipes, private consultation invitations, and chef tips directly in your inbox.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Epicurean Flow!');">
+            <input type="email" placeholder="Your email address" class="form-input newsletter-input" required>
+            <button type="submit" class="btn btn-primary">Join</button>
+          </form>
         </div>
       </div>
+    </div>
 
-      <div class="footer-bottom">
-        <div>
-          © 2026 Epicurean Flow by Chef Eliane Muskus. All rights reserved.
-        </div>
-        <div class="footer-legal-links">
-          <span>Powered by Wix e-Commerce</span>
-        </div>
+    <div class="footer-bottom container">
+      <p class="copyright">&copy; 2025 Epicurean Flow | All Rights Reserved</p>
+      <p style="font-size: 0.8rem; color: #777;">Business Registration number: 94886792 &bull; Amsterdam, The Netherlands</p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="refund-policy.html">Refund Policy</a>
       </div>
     </div>
   </footer>
 
-  <!-- =========================================================================
-       SLIDE-OUT CART DRAWER & OVERLAY (WIX INTEGRATION)
-       ========================================================================= -->
-  <div class="cart-overlay" id="cart-overlay"></div>
-  <div class="cart-drawer" id="cart-drawer">
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-backdrop" id="cart-backdrop" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart" aria-hidden="true">
     <div class="cart-header">
       <div class="cart-header-title">
-        <h3 style="font-size: 1.25rem; font-family: var(--font-serif); margin: 0;">Your Culinary Bag</h3>
-        <span class="cart-item-count" style="font-size: 0.8125rem; color: var(--color-ink-light);">(0 items)</span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <h3>Your Culinary Selection</h3>
       </div>
-      <button class="cart-close-btn" id="cart-close-btn" aria-label="Close Shopping Bag">✕</button>
+      <button class="close-cart-btn" id="close-cart-btn" aria-label="Close cart">&times;</button>
     </div>
 
-    <div class="cart-body" id="cart-items-container">
-      <div class="cart-empty-state">
-        <div style="font-size: 3rem; margin-bottom: 16px; opacity: 0.4;">👜</div>
-        <p style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-ink); margin-bottom: 8px;">Your bag is empty</p>
-        <p style="font-size: 0.875rem; color: var(--color-ink-light); margin-bottom: 24px;">Explore our chef-crafted cookbooks and culinary courses.</p>
-        <button class="btn btn-secondary" onclick="window.cartManager?.closeCart()">Explore Cookbooks</button>
+    <div class="cart-body" id="cart-body">
+      <div class="cart-items-list" id="cart-items-list"></div>
+      <div class="cart-empty-state" id="cart-empty-state">
+        <p class="empty-msg">Your shopping bag is empty.</p>
+        <a href="cookbooks.html" class="btn btn-outline btn-sm">Browse Books &amp; Courses</a>
       </div>
     </div>
 
-    <div class="cart-footer" id="cart-footer" style="display: none;">
-      <div class="cart-subtotal-row">
+    <div class="cart-footer" id="cart-footer">
+      <div class="cart-subtotal">
         <span>Subtotal</span>
-        <span class="cart-subtotal-amount">€0.00</span>
+        <span class="subtotal-amount" id="cart-subtotal-val">€0.00</span>
       </div>
-      <p style="font-size: 0.75rem; color: var(--color-ink-light); margin-bottom: 16px;">
-        Taxes and instant digital delivery calculated at secure checkout.
-      </p>
-      <a href="https://h6s-b2f1901cdca137-epicureanflow.wix-site-host.com/cart-page" 
-         id="btn-proceed-checkout" 
-         class="btn btn-gold btn-checkout" 
-         style="width: 100%; text-align: center; text-decoration: none;">
-        <span>Proceed to Wix Checkout →</span>
-      </a>
+      <button class="btn btn-primary btn-block checkout-btn" id="btn-proceed-checkout">
+        <span>Proceed to Secure Checkout</span>
+      </button>
     </div>
-  </div>
+  </aside>
 
-  <!-- JavaScript Modules -->
+  <!-- JavaScript -->
   <script src="js/navigation.js"></script>
-  <script src="js/animations.js"></script>
   <script src="js/products.js"></script>
   <script src="js/main.js"></script>
 
@@ -479,7 +380,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const pills = document.querySelectorAll('.filter-pill');
-      const cards = document.querySelectorAll('#recipes-grid .article-card');
+      const cards = document.querySelectorAll('.grid-recipes .course-card');
 
       pills.forEach(pill => {
         pill.addEventListener('click', () => {

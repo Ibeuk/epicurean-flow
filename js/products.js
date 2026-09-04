@@ -26,10 +26,10 @@ const PRODUCTS_DATA = {
       title: 'Chef Eliane’s New Diabetes Recipe Book',
       subtitle: 'Flavor-First Low-Carb Gourmet Cooking',
       category: 'Specialized Cookbook',
-      price: '€9.00',
-      numericPrice: 9.00,
+      price: '€32.00',
+      numericPrice: 32.00,
       image: 'https://static.wixstatic.com/media/30dece_b9c1ee9fe5bd4fb3b69eec8a061852fd~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg',
-      badge: 'Chef Favorite',
+      badge: 'Pre-Order',
       description: 'Vibrant, low-carb recipes designed by an award-winning chef living with diabetes. Enjoy restaurant-grade meals without compromising flavor.',
       url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/chef-eliane-s-new-diabetes-recipe-book'
     },
@@ -56,36 +56,103 @@ const PRODUCTS_DATA = {
       badge: 'Seasonal',
       description: 'Harness market-fresh ingredients with seasonal techniques that celebrate texture, aroma, and natural produce.',
       url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/seasonal-recipe-cookbook'
+    },
+    {
+      id: 'christmas-recipe-collection',
+      title: 'Christmas Recipe Collection Cookbook',
+      subtitle: 'Festive Entertaining & Elegant Holiday Menus',
+      category: 'Holiday Edition',
+      price: '€14.00',
+      numericPrice: 14.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg',
+      badge: 'Holiday Special',
+      description: 'Your secret to a flawless, stress-free festive dinner table filled with European elegance and showstopping flavors.',
+      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/christmas-recipe-collection-cookbook'
+    },
+    {
+      id: 'ultimate-macronutrient-guide',
+      title: 'The Ultimate Macronutrient Guide',
+      subtitle: 'Mastering Carbs, Proteins & Healthy Fats',
+      category: 'Nutrition Guide',
+      price: '€12.00',
+      numericPrice: 12.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg',
+      badge: 'Nutrition Guide',
+      description: 'Clear, practical formulas to balance energy, manage blood sugar, and structure nutrient-dense plates effortlessly.',
+      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/the-ultimate-macronutrient-guide'
+    },
+    {
+      id: 'meal-planner-eliane',
+      title: 'Epicurean Flow Meal Planner',
+      subtitle: 'By Award-Winning Chef Eliane Muskus',
+      category: 'Kitchen Planner',
+      price: '€15.00',
+      numericPrice: 15.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg',
+      badge: 'Planner',
+      description: 'Streamline your week with organized mise en place sheets, grocery lists, and balanced seasonal meal plans.',
+      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/epicurean-flow-meal-planner-by-eliane-muskus'
     }
   ],
   courses: [
+    {
+      id: 'course-beginners',
+      title: 'Beginners Cooking Course',
+      price: '€49.00',
+      numericPrice: 49.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg',
+      badge: 'Foundational'
+    },
+    {
+      id: 'course-intermediates',
+      title: 'Intermediates Cooking Course',
+      price: '€69.00',
+      numericPrice: 69.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg',
+      badge: 'Popular'
+    },
+    {
+      id: 'course-advanced',
+      title: 'Advanced Cooking Course',
+      price: '€89.00',
+      numericPrice: 89.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg',
+      badge: 'Mastery'
+    },
+    {
+      id: 'course-mini-essentials',
+      title: 'Mini Course: Foundations of Flavor (7 Days)',
+      price: '€19.00',
+      numericPrice: 19.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg',
+      badge: 'Quick Start'
+    },
     {
       id: 'course-diabetes-masterclass',
       title: 'Diabetes Cooking Course Masterclass',
       price: '€39.00',
       numericPrice: 39.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg'
+      image: 'https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg',
+      badge: 'Health'
     },
     {
       id: 'holiday-bundle',
-      title: 'Holiday Cooking Bundle',
+      title: 'Exclusive Holiday Cooking Bundle',
       price: '€69.00',
       numericPrice: 69.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg'
-    },
+      image: 'https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg',
+      badge: 'Bundle'
+    }
+  ],
+  services: [
     {
-      id: 'course-diabetes-foundations',
-      title: 'Diabetes Cooking Foundations',
-      price: '€19.00',
-      numericPrice: 19.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg'
-    },
-    {
-      id: 'french-sauce-workshop',
-      title: 'French Sauce & Emulsion Workshop',
-      price: '€29.00',
-      numericPrice: 29.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg'
+      id: 'consultation-menu-planning',
+      title: '30-Minute Culinary Consultation with Chef Eliane',
+      subtitle: 'Stress-Free Party Menu Planning & Custom Organization',
+      price: '€65.00',
+      numericPrice: 65.00,
+      image: 'https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg',
+      badge: 'Private Service'
     }
   ],
   freeResources: [
@@ -98,8 +165,20 @@ const PRODUCTS_DATA = {
       numericPrice: 0.00,
       image: 'https://static.wixstatic.com/media/30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg',
       badge: 'Free Gift',
-      description: 'Unlock 6 vibrant Mediterranean home-cooking recipes and 2 rare appetizer secrets designed for effortless entertaining.',
+      description: 'Experience true Mediterranean warmth with Chef Eliane’s favorite everyday recipes, pairing notes, and secret herb blends.',
       url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/download-your-free-mediterranean-recipe-ebook-6-delicious-recipes-2-bonus-di'
+    },
+    {
+      id: 'free-diabetes-bowls',
+      title: 'Diabetes-Friendly Mediterranean Bowls of Flavor',
+      subtitle: 'Low-Carb, High-Protein Nutrient-Dense Bowls',
+      category: 'Free Download',
+      price: '€0.00',
+      numericPrice: 0.00,
+      image: 'https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg',
+      badge: 'Free Gift',
+      description: 'Satisfying, blood-sugar conscious bowls loaded with fresh greens, healthy fats, and savory Mediterranean spices.',
+      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/download-your-free-diabetes-friendly-mediterranean-bowls-of-flavor'
     }
   ]
 };

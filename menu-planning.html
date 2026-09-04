@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Planning Service | 30-Minute Culinary Consultation | Epicurean Flow</title>
+  <meta name="description" content="Book Your 30-Minute Culinary Consultation With Chef Eliane. Whether you’re hosting a dinner party, a cheese and wine gathering, or a private event.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" role="complementary" aria-label="Special Offer">
+    <div class="announcement-inner">
+      <span class="announcement-badge">Private Service</span>
+      <span class="announcement-text">Limited 1-on-1 consultations available monthly with Chef Eliane Muskus</span>
+      <a href="#booking-section" class="announcement-link">Reserve Your Call <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header class="header" role="banner">
+    <div class="header-container container">
+      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow - Home">
+        <img src="images/logo.png" alt="Epicurean Flow - Where Cooking Inspires" class="header-logo-img">
+      </a>
+
+      <nav class="nav-desktop" role="navigation" aria-label="Main Navigation">
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="courses.html" class="nav-link">Courses</a>
+          <a href="cookbooks.html" class="nav-link">Books</a>
+          <a href="menu-planning.html" class="nav-link active">Menu Planning</a>
+          <a href="diabetes.html" class="nav-link">Diabetes</a>
+          <a href="nutrition.html" class="nav-link">Nutrition</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="media.html" class="nav-link">Media</a>
+          <a href="recipes.html" class="nav-link">Recipes</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="cart-btn" id="open-cart-btn" aria-label="Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </button>
+          <a href="#booking-section" class="btn btn-primary nav-cta">Book Call</a>
+        </div>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="courses.html" class="mobile-nav-link">Courses</a>
+        <a href="cookbooks.html" class="mobile-nav-link">Books</a>
+        <a href="menu-planning.html" class="mobile-nav-link active">Menu Planning</a>
+        <a href="diabetes.html" class="mobile-nav-link">Diabetes</a>
+        <a href="nutrition.html" class="mobile-nav-link">Nutrition</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="media.html" class="mobile-nav-link">Media</a>
+        <a href="recipes.html" class="mobile-nav-link">Recipes</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="#booking-section" class="btn btn-primary btn-block">Book Consultation</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-tag">Bespoke Entertaining &amp; Event Strategy</p>
+        <h1 class="page-hero-title">Stress-Free Party Menu Planning &mdash; Designed Just for You</h1>
+        <p class="page-hero-subtitle">
+          Book your 30-minute culinary consultation with Chef Eliane. Whether you’re hosting a dinner party, a cheese and wine gathering, or a special milestone, let a Michelin-trained chef architect your flawless menu.
+        </p>
+      </div>
+    </section>
+
+    <!-- Consultation Showcase Card -->
+    <section class="section">
+      <div class="container">
+        <div class="consultation-hero-card">
+          <div class="consultation-grid">
+            <div>
+              <span class="badge badge-gold" style="margin-bottom: 16px; display: inline-block;">Available Online Worldwide</span>
+              <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-ink); margin-bottom: 16px;">
+                30-Minute 1-on-1 Culinary Consultation with Chef Eliane
+              </h2>
+              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--color-ink-subtle); margin-bottom: 24px;">
+                Hosting shouldn’t be accompanied by stress, last-minute kitchen chaos, or ruined courses. In this private 30-minute video session, we’ll discuss your event vision, guest preferences, dietary requirements, kitchen setup, and timing.
+              </p>
+              
+              <ul class="service-feature-checklist">
+                <li class="service-feature-item">
+                  <span class="service-feature-icon">&#10003;</span>
+                  <div>
+                    <strong>Tailored Custom Menu:</strong> Multi-course seasonal menu matching your exact guest count, dietary profiles, and kitchen equipment.
+                  </div>
+                </li>
+                <li class="service-feature-item">
+                  <span class="service-feature-icon">&#10003;</span>
+                  <div>
+                    <strong>Detailed Chef Recipes:</strong> Precise measurements, chef tips, and presentation plating blueprints for every dish.
+                  </div>
+                </li>
+                <li class="service-feature-item">
+                  <span class="service-feature-icon">&#10003;</span>
+                  <div>
+                    <strong>Mise En Place Prep Schedule:</strong> Day-before prep instructions, timeline for the day of the event, and hour-by-hour countdown so you enjoy the party with your guests.
+                  </div>
+                </li>
+                <li class="service-feature-item">
+                  <span class="service-feature-icon">&#10003;</span>
+                  <div>
+                    <strong>Wine &amp; Beverage Pairings:</strong> Curated sommelier pairings from Chef Eliane’s Cannes and Amsterdam restaurant portfolio.
+                  </div>
+                </li>
+              </ul>
+
+              <div style="display: flex; align-items: baseline; gap: 20px; margin-top: 32px;">
+                <span style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 700; color: var(--color-gold);">€65.00</span>
+                <span style="color: var(--color-ink-muted); font-size: 0.95rem;">Per 30-Minute Consultation + Complete Digital Dossier</span>
+              </div>
+            </div>
+
+            <div style="background: var(--color-white); padding: 36px; border-radius: var(--radius-xl); border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); text-align: center;">
+              <img src="https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg" alt="Chef Eliane Consultation" style="width: 100%; border-radius: var(--radius-md); margin-bottom: 24px;">
+              <button class="btn btn-primary btn-block btn-add-to-cart" data-id="consultation-menu-planning" data-title="30-Minute Culinary Consultation with Chef Eliane" data-price="€65.00" data-numeric="65.00" data-image="https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg" style="margin-bottom: 12px;">Book Consultation (€65.00)</button>
+              <a href="https://wa.me/31618571677?text=Hello%20Chef%20Eliane,%20I%20would%20like%20to%20inquire%20about%20your%20Menu%20Planning%20Service" target="_blank" rel="noopener" class="btn btn-outline btn-block">Inquire via WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-Step Process -->
+    <section class="section bg-light">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-tag">How It Works</p>
+          <h2 class="section-title">From Concept to Unforgettable Gathering</h2>
+          <p class="section-subtitle">Three straightforward steps to execute seamless, restaurant-grade entertaining at home.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 40px;">
+          <div style="background: var(--color-white); padding: 36px 28px; border-radius: var(--radius-lg); border: 1px solid var(--color-border-light); text-align: center;">
+            <div style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-gold); font-weight: 700; margin-bottom: 12px;">01</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 12px;">Reserve &amp; Share Details</h3>
+            <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.6;">
+              Select your consultation or submit your inquiry form with event date, guest count, and any dietary restrictions.
+            </p>
+          </div>
+
+          <div style="background: var(--color-white); padding: 36px 28px; border-radius: var(--radius-lg); border: 1px solid var(--color-border-light); text-align: center;">
+            <div style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-gold); font-weight: 700; margin-bottom: 12px;">02</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 12px;">30-Minute Video Session</h3>
+            <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.6;">
+              Meet 1-on-1 with Chef Eliane to brainstorm themes, course flow, flavor harmonies, and kitchen organization.
+            </p>
+          </div>
+
+          <div style="background: var(--color-white); padding: 36px 28px; border-radius: var(--radius-lg); border: 1px solid var(--color-border-light); text-align: center;">
+            <div style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-gold); font-weight: 700; margin-bottom: 12px;">03</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 12px;">Receive Your Master Dossier</h3>
+            <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.6;">
+              Within 48 hours, receive your comprehensive package with shopping list, scaled recipes, and step-by-step cooking timeline.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="section" id="booking-section">
+      <div class="container" style="max-width: 800px;">
+        <div style="background: var(--color-white); border-radius: var(--radius-xl); padding: 48px; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
+          <div class="text-center" style="margin-bottom: 36px;">
+            <p class="section-tag">Direct Inquiry</p>
+            <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--color-ink); margin-bottom: 12px;">Inquire About Your Event Date</h2>
+            <p style="font-size: 1rem; color: var(--color-ink-subtle);">Tell us about your upcoming dinner party or tasting event.</p>
+          </div>
+
+          <form onsubmit="event.preventDefault(); alert('Thank you! Chef Eliane will review your consultation request and contact you within 24 hours.');">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; color: var(--color-ink);">Full Name</label>
+                <input type="text" class="form-input" placeholder="e.g. Eleanor Vance" required style="width: 100%;">
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; color: var(--color-ink);">Email Address</label>
+                <input type="email" class="form-input" placeholder="e.g. eleanor@example.com" required style="width: 100%;">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; color: var(--color-ink);">Event Type</label>
+                <select class="form-input" style="width: 100%;" required>
+                  <option value="">Select Event Type</option>
+                  <option value="dinner-party">Private Dinner Party</option>
+                  <option value="wine-cheese">Wine &amp; Cheese Tasting</option>
+                  <option value="holiday-gathering">Holiday / Festive Celebration</option>
+                  <option value="dietary-custom">Special Dietary / Diabetic Menu</option>
+                  <option value="other">Other Celebration</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; color: var(--color-ink);">Expected Guest Count</label>
+                <input type="number" class="form-input" placeholder="e.g. 8" min="2" max="100" style="width: 100%;">
+              </div>
+            </div>
+
+            <div style="margin-bottom: 28px;">
+              <label style="display: block; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; color: var(--color-ink);">Event Vision &amp; Dietary Notes</label>
+              <textarea class="form-input" rows="4" placeholder="Tell Chef Eliane about your desired vibe, favorite cuisines, allergies, or questions..." style="width: 100%;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Submit Consultation Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="logo-brand" style="margin-bottom: 16px; display: inline-block;">
+            <img src="images/logo.png" alt="Epicurean Flow" class="header-logo-img" style="filter: brightness(0) invert(1);">
+          </a>
+          <p class="footer-tagline">Where cooking inspires. Masterclasses, curated digital cookbooks, and bespoke culinary consultations by Award-Winning Chef Eliane Muskus.</p>
+          <div style="font-size: 0.85rem; color: #888; margin-top: 14px;">
+            <p>Amsterdam (Zuidas) 1082MZ, The Netherlands</p>
+            <p>Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+31 6 18571677</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="courses.html">All Courses</a></li>
+            <li><a href="cookbooks.html">Digital Books &amp; Guides</a></li>
+            <li><a href="menu-planning.html">Menu Planning Service</a></li>
+            <li><a href="diabetes.html">Diabetes Living</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Energy</a></li>
+            <li><a href="recipes.html">Recipe Journal</a></li>
+            <li><a href="media.html">Taste in Motion (Media)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">About &amp; Trust</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Chef Eliane’s Story</a></li>
+            <li><a href="about.html#milestones">Michelin Accreditation</a></li>
+            <li><a href="contact.html">Contact Headquarters</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Stay Inspired</h4>
+          <p style="font-size: 0.9rem; color: #888; margin-bottom: 16px;">Receive seasonal recipes, private consultation invitations, and chef tips directly in your inbox.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Epicurean Flow!');">
+            <input type="email" placeholder="Your email address" class="form-input newsletter-input" required>
+            <button type="submit" class="btn btn-primary">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p class="copyright">&copy; 2025 Epicurean Flow | All Rights Reserved</p>
+      <p style="font-size: 0.8rem; color: #777;">Business Registration number: 94886792 &bull; Amsterdam, The Netherlands</p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-backdrop" id="cart-backdrop" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart" aria-hidden="true">
+    <div class="cart-header">
+      <div class="cart-header-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <h3>Your Culinary Selection</h3>
+      </div>
+      <button class="close-cart-btn" id="close-cart-btn" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div class="cart-body" id="cart-body">
+      <div class="cart-items-list" id="cart-items-list"></div>
+      <div class="cart-empty-state" id="cart-empty-state">
+        <p class="empty-msg">Your shopping bag is empty.</p>
+        <a href="cookbooks.html" class="btn btn-outline btn-sm">Browse Books &amp; Courses</a>
+      </div>
+    </div>
+
+    <div class="cart-footer" id="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span class="subtotal-amount" id="cart-subtotal-val">€0.00</span>
+      </div>
+      <button class="btn btn-primary btn-block checkout-btn" id="btn-proceed-checkout">
+        <span>Proceed to Secure Checkout</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- JavaScript -->
+  <script src="js/navigation.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

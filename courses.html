@@ -3,461 +3,420 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Culinary Courses & Masterclasses | Epicurean Flow</title>
-  <meta name="description" content="Master technique with structured chef-led culinary masterclasses. Learn diabetes-friendly gourmet cuisine, holiday entertaining, and French kitchen fundamentals from Chef Eliane Muskus.">
-  <meta name="keywords" content="cooking courses, diabetes cooking class, Chef Eliane Muskus, culinary masterclasses, cooking school online">
+  <title>Courses | A Complete Cooking Experience by Epicurean Flow</title>
+  <meta name="description" content="We don’t just teach recipes; we deliver a complete cooking experience with features you won’t find elsewhere. Master the essentials with Chef Eliane Muskus.">
+  <link rel="icon" type="image/png" href="images/logo.png">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Culinary Courses & Masterclasses | Epicurean Flow">
-  <meta property="og:description" content="Master culinary technique and transform your kitchen confidence with structured, outcome-driven masterclasses.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://epicureanflow.netlify.app/courses.html">
-
-  <!-- Google Fonts Preconnect -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
-  <!-- CSS Design System -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
-  <!-- =========================================================================
-       01. STICKY NAVIGATION
-       ========================================================================= -->
-  <header class="header" id="main-header">
-    <div class="container header-container">
-      <!-- Logo -->
-      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow Homepage">
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" role="complementary" aria-label="Special Offer">
+    <div class="announcement-inner">
+      <span class="announcement-badge">Limited Time Offer</span>
+      <span class="announcement-text">Enroll in any course today &amp; receive our Comprehensive Cooking Workbook free</span>
+      <a href="#all-courses" class="announcement-link">Explore Courses <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header class="header" role="banner">
+    <div class="header-container container">
+      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow - Home">
         <img src="images/logo.png" alt="Epicurean Flow - Where Cooking Inspires" class="header-logo-img">
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="nav-desktop" aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
-          <li><a href="courses.html" class="nav-link active">Courses</a></li>
-          <li><a href="recipes.html" class="nav-link">Recipes</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-        </ul>
+      <nav class="nav-desktop" role="navigation" aria-label="Main Navigation">
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="courses.html" class="nav-link active">Courses</a>
+          <a href="cookbooks.html" class="nav-link">Books</a>
+          <a href="menu-planning.html" class="nav-link">Menu Planning</a>
+          <a href="diabetes.html" class="nav-link">Diabetes</a>
+          <a href="nutrition.html" class="nav-link">Nutrition</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="media.html" class="nav-link">Media</a>
+          <a href="recipes.html" class="nav-link">Recipes</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
 
         <div class="nav-actions">
-          <button class="cart-btn" aria-label="View Shopping Cart">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <path d="M16 10a4 4 0 0 1-8 0"></path>
-            </svg>
-            <span class="cart-badge">0</span>
+          <button class="cart-btn" id="open-cart-btn" aria-label="Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="cart-badge" id="cart-count">0</span>
           </button>
-          <a href="#masterclass" class="btn btn-primary">
-            <span>Explore Courses</span>
-          </a>
+          <a href="#all-courses" class="btn btn-primary nav-cta">Enroll</a>
         </div>
       </nav>
 
-      <!-- Mobile Hamburger Toggle -->
-      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
       </button>
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-nav-drawer" id="mobile-drawer">
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
-      <a href="courses.html" class="mobile-nav-link active">Courses</a>
-      <a href="recipes.html" class="mobile-nav-link">Recipes</a>
-      <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
-    </div>
-    <div class="mobile-nav-footer">
-      <a href="#masterclass" class="btn btn-gold" style="width: 100%;">Explore Courses</a>
-      <p style="font-size: 0.8125rem; color: var(--color-ink-light); text-align: center; margin-top: 8px;">
-        Chef-led culinary education & masterclasses
-      </p>
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="courses.html" class="mobile-nav-link active">Courses</a>
+        <a href="cookbooks.html" class="mobile-nav-link">Books</a>
+        <a href="menu-planning.html" class="mobile-nav-link">Menu Planning</a>
+        <a href="diabetes.html" class="mobile-nav-link">Diabetes</a>
+        <a href="nutrition.html" class="mobile-nav-link">Nutrition</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="media.html" class="mobile-nav-link">Media</a>
+        <a href="recipes.html" class="mobile-nav-link">Recipes</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="#all-courses" class="btn btn-primary btn-block">Explore Courses</a>
+      </div>
     </div>
   </div>
 
-  <main>
-    <!-- =========================================================================
-         PAGE HERO BANNER
-         ========================================================================= -->
+  <main id="main-content">
+    <!-- Page Hero -->
     <section class="page-hero">
       <div class="container">
-        <span class="section-eyebrow">Online Culinary Academy</span>
-        <h1 class="page-hero-title">Master Technique. Transform Your Cooking.</h1>
+        <p class="section-tag">Online Culinary Academy</p>
+        <h1 class="page-hero-title">Cooking Courses &amp; Masterclasses</h1>
         <p class="page-hero-subtitle">
-          Practical, outcome-focused education designed to replace recipe dependency with genuine culinary intuition and Michelin-level confidence in your home kitchen.
+          We don’t just teach recipes; we deliver a complete cooking experience with features you won’t find elsewhere. Master the essentials in 7 days or advance to Michelin-level technique.
         </p>
 
-        <div style="display: flex; gap: 28px; flex-wrap: wrap; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--color-border-light);">
-          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.875rem; font-weight: 500; color: var(--color-ink);">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span>Self-Paced HD Video Lessons</span>
+        <!-- Perks strip -->
+        <div style="display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--color-border-light);">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 500;">
+            <span style="color: var(--color-gold); font-size: 1.1rem;">&#10003;</span>
+            <span>Step-by-Step Video Clarity</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.875rem; font-weight: 500; color: var(--color-ink);">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            <span>Downloadable Course Workbooks</span>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 500;">
+            <span style="color: var(--color-gold); font-size: 1.1rem;">&#10003;</span>
+            <span>Free Comprehensive Workbook Included</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.875rem; font-weight: 500; color: var(--color-ink);">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-            <span>Lifetime Access & Updates</span>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 500;">
+            <span style="color: var(--color-gold); font-size: 1.1rem;">&#10003;</span>
+            <span>Lifetime Access &amp; Recipe Updates</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         FLAGSHIP MASTERCLASS HERO CARD
-         ========================================================================= -->
-    <section class="section theme-ivory" id="masterclass">
-      <div class="container">
-        
-        <div class="course-featured-card">
-          <div class="course-featured-grid">
-            <div class="course-media">
-              <span class="product-badge bestselling" style="position: absolute; top: 16px; left: 16px; z-index: 10;">
-                Flagship Masterclass
-              </span>
-              <img src="https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg" 
-                   alt="Diabetes Cooking Masterclass with Chef Eliane" 
-                   class="course-featured-img"
-                   loading="lazy">
-            </div>
-
-            <div class="course-info">
-              <span class="course-category">Comprehensive Masterclass</span>
-              <h2 class="course-title">Diabetes Cooking Course Masterclass</h2>
-              <p class="course-desc">
-                The definitive masterclass for managing blood sugar through elevated, flavor-first gourmet culinary technique. Move beyond clinical restrictions and learn how to cook rich, vibrant food that happens to be completely low-glycemic.
-              </p>
-
-              <!-- Highlights list -->
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px;">
-                <div style="font-size: 0.875rem; color: var(--color-ink); display: flex; align-items: center; gap: 8px;">
-                  <span style="color: var(--color-gold); font-weight: bold;">✓</span> 6 Comprehensive Video Modules
-                </div>
-                <div style="font-size: 0.875rem; color: var(--color-ink); display: flex; align-items: center; gap: 8px;">
-                  <span style="color: var(--color-gold); font-weight: bold;">✓</span> 24 Guided HD Cooking Lessons
-                </div>
-                <div style="font-size: 0.875rem; color: var(--color-ink); display: flex; align-items: center; gap: 8px;">
-                  <span style="color: var(--color-gold); font-weight: bold;">✓</span> 55-Page Downloadable PDF Guide
-                </div>
-                <div style="font-size: 0.875rem; color: var(--color-ink); display: flex; align-items: center; gap: 8px;">
-                  <span style="color: var(--color-gold); font-weight: bold;">✓</span> Pantry Swap & Grocery Cheatsheet
-                </div>
-              </div>
-
-              <!-- Price & CTA -->
-              <div class="course-enroll-bar" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding-top: 24px; border-top: 1px solid var(--color-border-light);">
-                <div>
-                  <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-ink-muted);">Full Course Tuition</div>
-                  <div style="font-family: var(--font-serif); font-size: 2.25rem; font-weight: 700; color: var(--color-ink);">€39.00</div>
-                </div>
-                <button class="btn btn-primary btn-add-to-cart" 
-                        data-id="course-diabetes-masterclass"
-                        data-title="Diabetes Cooking Course Masterclass" 
-                        data-price="39.00"
-                        data-type="Online Masterclass">
-                  <span>Enroll in Masterclass →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Curriculum Accordion Breakdown -->
-          <div style="padding: 40px; border-top: 1px solid var(--color-border-light); background: var(--color-cream);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 24px;">Curriculum & Lesson Modules</h3>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-              <div style="background: var(--color-white); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--color-border-light);">
-                <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase;">Module 01</span>
-                <h4 style="margin: 6px 0 10px; font-size: 1.125rem;">Knife Ergonomics & Searing Technique</h4>
-                <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.5;">Master French knife handling, heat control, and fond development without added sugars.</p>
-              </div>
-
-              <div style="background: var(--color-white); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--color-border-light);">
-                <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase;">Module 02</span>
-                <h4 style="margin: 6px 0 10px; font-size: 1.125rem;">The Chemistry of Blood Sugar & Flavor</h4>
-                <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.5;">How healthy fats, dietary fibers, and whole acid profiling slow carbohydrate absorption.</p>
-              </div>
-
-              <div style="background: var(--color-white); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--color-border-light);">
-                <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase;">Module 03</span>
-                <h4 style="margin: 6px 0 10px; font-size: 1.125rem;">Olive Oil Emulsions & Pan Reductions</h4>
-                <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.5;">Craft velvety reductions, aiolis, vinaigrettes, and herbed pan sauces that elevate every protein.</p>
-              </div>
-
-              <div style="background: var(--color-white); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--color-border-light);">
-                <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase;">Module 04</span>
-                <h4 style="margin: 6px 0 10px; font-size: 1.125rem;">Mediterranean Seafood & Braises</h4>
-                <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.5;">Crispy sea bass with braised fennel, slow-cooked tagines, and low-carb vegetable sides.</p>
-              </div>
-
-              <div style="background: var(--color-white); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--color-border-light);">
-                <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase;">Module 05</span>
-                <h4 style="margin: 6px 0 10px; font-size: 1.125rem;">Diabetic Dessert Gastronomy</h4>
-                <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.5;">Bake Chef Eliane's famous low-carb Banana Cake, berry galettes, and dark cacao mousse.</p>
-              </div>
-
-              <div style="background: var(--color-white); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--color-border-light);">
-                <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase;">Module 06</span>
-                <h4 style="margin: 6px 0 10px; font-size: 1.125rem;">Pantry Setup & Weeknight Efficiency</h4>
-                <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.5;">Organize your kitchen for effortless prep so healthy dining becomes second nature.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         ADDITIONAL CULINARY PATHWAYS
-         ========================================================================= -->
-    <section class="section theme-cream">
+    <!-- What Sets Us Apart Section (Direct from Wix) -->
+    <section class="section">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-eyebrow">Targeted Learning Pathways</span>
-          <h2 class="section-title">Explore Specialized Culinary Workshops</h2>
-          <p class="section-description">
-            Focused mini-courses designed to solve specific kitchen challenges and elevate your seasonal entertaining.
+          <p class="section-tag">The Epicurean Standard</p>
+          <h2 class="section-title">What Sets Epicurean Flow Apart...</h2>
+          <p class="section-subtitle">
+            We don’t just teach recipes; we deliver a complete cooking experience with features you won’t find elsewhere.
           </p>
         </div>
 
-        <div class="grid-3" style="margin-top: 48px;">
-          
-          <!-- Course Card 1 -->
-          <article class="course-card" style="background: var(--color-white); border-radius: var(--radius-md); padding: 32px; border: 1px solid var(--color-border-light); display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <span class="product-badge exclusive" style="margin-bottom: 12px; display: inline-block;">Seasonal Special</span>
-              <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Exclusive Holiday Cooking Bundle</h3>
-              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
-                Complete step-by-step video guide and prep timeline for hosting stress-free holiday feasts with French and Mediterranean elegance.
-              </p>
-              <ul style="font-size: 0.8125rem; color: var(--color-ink-subtle); display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;">
-                <li>✓ Full 48-Hour stress-free prep schedule</li>
-                <li>✓ Perfect roast poultry & caramelized sauces</li>
-                <li>✓ Showstopper holiday side dishes</li>
-              </ul>
-            </div>
-            <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--color-border-light); padding-top: 20px;">
-              <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700;">€69.00</span>
-              <button class="btn btn-primary btn-add-to-cart" 
-                      data-id="holiday-bundle"
-                      data-title="Holiday Cooking Bundle" 
-                      data-price="69.00"
-                      data-type="Online Course">
-                <span>Enroll Now</span>
-              </button>
-            </div>
-          </article>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin-top: 40px;">
+          <div style="background: var(--color-white); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2rem; margin-bottom: 16px;">🎯</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink); margin-bottom: 12px;">Step-by-Step Clarity</h3>
+            <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.7;">
+              Easy-to-follow lessons tailored for all skill levels. We replace vague culinary jargon with clear visual checkpoints so you know exactly when a sauce is emulsified or a steak has reached peak Maillard reaction.
+            </p>
+          </div>
 
-          <!-- Course Card 2 -->
-          <article class="course-card" style="background: var(--color-white); border-radius: var(--radius-md); padding: 32px; border: 1px solid var(--color-border-light); display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <span class="product-badge" style="margin-bottom: 12px; display: inline-block; background: var(--color-cream-dark); color: var(--color-ink);">Beginner Friendly</span>
-              <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Diabetes Cooking Foundations</h3>
-              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
-                Build everyday confidence with essential low-glycemic ingredient swaps, label reading, and core pantry replacements.
-              </p>
-              <ul style="font-size: 0.8125rem; color: var(--color-ink-subtle); display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;">
-                <li>✓ 3 Focused video modules</li>
-                <li>✓ 15 Easy everyday staple recipes</li>
-                <li>✓ Downloadable grocery substitution cheat sheet</li>
-              </ul>
-            </div>
-            <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--color-border-light); padding-top: 20px;">
-              <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700;">€19.00</span>
-              <button class="btn btn-primary btn-add-to-cart" 
-                      data-id="course-diabetes-foundations"
-                      data-title="Diabetes Cooking Foundations" 
-                      data-price="19.00"
-                      data-type="Online Course">
-                <span>Enroll Now</span>
-              </button>
-            </div>
-          </article>
+          <div style="background: var(--color-white); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2rem; margin-bottom: 16px;">🌍</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink); margin-bottom: 12px;">Global Inspiration</h3>
+            <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.7;">
+              Learn foolproof recipes from Mediterranean, Asian, South American, and classic European cuisines. Drawing from Chef Eliane’s 23 years cooking on Mediterranean yachts and in Michelin-accredited kitchens.
+            </p>
+          </div>
 
-          <!-- Course Card 3 -->
-          <article class="course-card" style="background: var(--color-white); border-radius: var(--radius-md); padding: 32px; border: 1px solid var(--color-border-light); display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <span class="product-badge" style="margin-bottom: 12px; display: inline-block; background: var(--color-olive); color: white;">Technique Workshop</span>
-              <h3 style="font-size: 1.5rem; margin-bottom: 12px;">French Sauce & Emulsion Workshop</h3>
-              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
-                Master the soul of French cuisine: clarified stocks, wine deglazes, velvety emulsions, and aromatic reductions.
-              </p>
-              <ul style="font-size: 0.8125rem; color: var(--color-ink-subtle); display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;">
-                <li>✓ 5 Mother sauces adapted for home cooks</li>
-                <li>✓ Fixing broken emulsions in seconds</li>
-                <li>✓ Aromatic finishing herb butters</li>
-              </ul>
-            </div>
-            <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--color-border-light); padding-top: 20px;">
-              <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700;">€29.00</span>
-              <button class="btn btn-primary btn-add-to-cart" 
-                      data-id="french-sauce-workshop"
-                      data-title="French Sauce & Emulsion Workshop" 
-                      data-price="29.00"
-                      data-type="Online Course">
-                <span>Enroll Now</span>
-              </button>
-            </div>
-          </article>
-
+          <div style="background: var(--color-white); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2rem; margin-bottom: 16px;">📖</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink); margin-bottom: 12px;">Exclusive Bonus Workbook</h3>
+            <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.7;">
+              A free Comprehensive Cooking Workbook included with every course download. Filled with mise en place checklists, temperature charts, conversion guides, and flavor pairing matrixes.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         WHAT YOU WILL ACHIEVE (LEARNING OUTCOMES)
-         ========================================================================= -->
-    <section class="section theme-ivory">
+    <!-- All Courses Catalog Grid (Beginners, Intermediates, Advanced, Mini 7-Day, Diabetes, Holiday) -->
+    <section class="section bg-light" id="all-courses">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-eyebrow">Proven Results</span>
-          <h2 class="section-title">What You Will Achieve</h2>
+          <p class="section-tag">Curriculum Pathways</p>
+          <h2 class="section-title">Explore All Cooking Courses</h2>
+          <p class="section-subtitle">Select the tier that matches your current kitchen confidence and culinary goals.</p>
         </div>
 
-        <div class="feature-box-grid">
-          <div class="feature-box">
-            <div class="feature-box-icon">⚡</div>
-            <h4>Cook Without Strict Recipes</h4>
-            <p>Understand the four pillars of flavor: Salt, Fat, Acid, and Heat. Never panic when you are missing an ingredient again.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 36px; margin-top: 48px;">
+          <!-- Course 1: Beginners -->
+          <article class="course-card">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg" alt="Beginners Cooking Course">
+              <span class="course-badge">Foundational</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px;">Beginners Cooking Course</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 20px;">
+                Designed for those starting out. Master essential knife handling, kitchen safety, pan heating, and simple Mediterranean staples with foolproof confidence.
+              </p>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; padding-top: 16px; border-top: 1px solid var(--color-border-light);">
+                <span style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; color: var(--color-gold);">€49.00</span>
+                <span style="font-size: 0.85rem; color: var(--color-ink-muted);">Lifetime Access</span>
+              </div>
+              <button class="btn btn-primary btn-block btn-add-to-cart" data-id="course-beginners" data-title="Beginners Cooking Course" data-price="€49.00" data-numeric="49.00" data-image="https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg">Enroll Now (€49.00)</button>
+            </div>
+          </article>
+
+          <!-- Course 2: Intermediates -->
+          <article class="course-card">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg" alt="Intermediates Cooking Course">
+              <span class="course-badge">Most Popular</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px;">Intermediates Cooking Course</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 20px;">
+                Elevate your home cooking into restaurant quality. Learn delicate sauce emulsions, seafood searing, complex braises, and multi-course timing.
+              </p>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; padding-top: 16px; border-top: 1px solid var(--color-border-light);">
+                <span style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; color: var(--color-gold);">€69.00</span>
+                <span style="font-size: 0.85rem; color: var(--color-ink-muted);">Lifetime Access</span>
+              </div>
+              <button class="btn btn-primary btn-block btn-add-to-cart" data-id="course-intermediates" data-title="Intermediates Cooking Course" data-price="€69.00" data-numeric="69.00" data-image="https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg">Enroll Now (€69.00)</button>
+            </div>
+          </article>
+
+          <!-- Course 3: Advanced -->
+          <article class="course-card">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg" alt="Advanced Cooking Course">
+              <span class="course-badge">Mastery</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px;">Advanced Cooking Course</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 20px;">
+                Michelin-level plating, delicate pastry lamination, game meats, and sophisticated flavor balancing. For passionate cooks seeking professional mastery.
+              </p>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; padding-top: 16px; border-top: 1px solid var(--color-border-light);">
+                <span style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; color: var(--color-gold);">€89.00</span>
+                <span style="font-size: 0.85rem; color: var(--color-ink-muted);">Lifetime Access</span>
+              </div>
+              <button class="btn btn-primary btn-block btn-add-to-cart" data-id="course-advanced" data-title="Advanced Cooking Course" data-price="€89.00" data-numeric="89.00" data-image="https://static.wixstatic.com/media/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg">Enroll Now (€89.00)</button>
+            </div>
+          </article>
+
+          <!-- Course 4: Mini 7-Day Course (Foundations of Flavor) -->
+          <article class="course-card">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg" alt="Mini Cooking Course: Master the Essentials in 7 Days">
+              <span class="course-badge">Quick Start</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px;">Mini Course: Foundations of Flavor</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 20px;">
+                Master the essentials in 7 days. Learn how to balance the 5 key flavors (sweet, sour, salty, bitter, umami) and master sautéing, roasting, and blanching.
+              </p>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; padding-top: 16px; border-top: 1px solid var(--color-border-light);">
+                <span style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; color: var(--color-gold);">€19.00</span>
+                <span style="font-size: 0.85rem; color: var(--color-ink-muted);">7-Day Guided Plan</span>
+              </div>
+              <button class="btn btn-primary btn-block btn-add-to-cart" data-id="course-mini-essentials" data-title="Mini Course: Foundations of Flavor (7 Days)" data-price="€19.00" data-numeric="19.00" data-image="https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg">Enroll Now (€19.00)</button>
+            </div>
+          </article>
+
+          <!-- Course 5: Diabetes Cooking Masterclass -->
+          <article class="course-card">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg" alt="Diabetes Cooking Course Masterclass">
+              <span class="course-badge">Health &amp; Flavor</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px;">Diabetes Cooking Masterclass</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 20px;">
+                Crafted by Chef Eliane for low-carb, low-glycemic eating that never sacrifices gourmet flavor. Includes 24 HD lessons and full glycemic swap guides.
+              </p>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; padding-top: 16px; border-top: 1px solid var(--color-border-light);">
+                <span style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; color: var(--color-gold);">€39.00</span>
+                <span style="font-size: 0.85rem; color: var(--color-ink-muted);">Lifetime Access</span>
+              </div>
+              <button class="btn btn-primary btn-block btn-add-to-cart" data-id="course-diabetes-masterclass" data-title="Diabetes Cooking Course Masterclass" data-price="€39.00" data-numeric="39.00" data-image="https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg">Enroll Now (€39.00)</button>
+            </div>
+          </article>
+
+          <!-- Course 6: Holiday Bundle -->
+          <article class="course-card">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg" alt="Exclusive Holiday Cooking Bundle">
+              <span class="course-badge">Festive Special</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px;">Exclusive Holiday Cooking Bundle</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 20px;">
+                Master the art of festive entertaining! Your secret to a flawless, stress-free holiday dinner with showstopping appetizers, mains, and desserts.
+              </p>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; padding-top: 16px; border-top: 1px solid var(--color-border-light);">
+                <span style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; color: var(--color-gold);">€69.00</span>
+                <span style="font-size: 0.85rem; color: var(--color-ink-muted);">Complete Package</span>
+              </div>
+              <button class="btn btn-primary btn-block btn-add-to-cart" data-id="holiday-bundle" data-title="Exclusive Holiday Cooking Bundle" data-price="€69.00" data-numeric="69.00" data-image="https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg">Enroll Now (€69.00)</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Is This You? / Problems We Solve (Direct Wix Content) -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 900px; margin: 0 auto;">
+          <div class="section-header text-center">
+            <p class="section-tag">Empathy &amp; Mastery</p>
+            <h2 class="section-title">IS THIS YOU? Sounds Familiar?</h2>
+            <p class="section-subtitle">
+              You’re ready to take your cooking to the next level, but every time you step into the kitchen, you encounter the same obstacles:
+            </p>
           </div>
 
-          <div class="feature-box">
-            <div class="feature-box-icon">🥗</div>
-            <h4>Stable Blood Sugar Joy</h4>
-            <p>Enjoy meals that keep glucose curves steady without feeling like you are eating medical dietary food.</p>
+          <div style="background: var(--color-offwhite); border-radius: var(--radius-xl); padding: 40px; border: 1px solid var(--color-border-light); margin: 32px 0;">
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 1.05rem; color: var(--color-ink);">
+              <li style="display: flex; align-items: center; gap: 12px;"><span style="color: #c0392b; font-weight: bold;">✕</span> Struggling with knife skills and slow, uneven chopping.</li>
+              <li style="display: flex; align-items: center; gap: 12px;"><span style="color: #c0392b; font-weight: bold;">✕</span> Moving food around the pan too much, missing that perfect caramelization.</li>
+              <li style="display: flex; align-items: center; gap: 12px;"><span style="color: #c0392b; font-weight: bold;">✕</span> Confusing braising with stewing and ending up with tough meat.</li>
+              <li style="display: flex; align-items: center; gap: 12px;"><span style="color: #c0392b; font-weight: bold;">✕</span> Making mistakes while poaching or not getting it right at all.</li>
+              <li style="display: flex; align-items: center; gap: 12px;"><span style="color: #c0392b; font-weight: bold;">✕</span> Failing to balance flavors in sauces and delicate dishes.</li>
+            </ul>
+
+            <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--color-border-light); font-size: 1rem; line-height: 1.8; color: var(--color-ink-subtle);">
+              <p>
+                <strong>You’re not alone!</strong> After teaching over 500 students&mdash;ranging from home cooks to professional yacht chefs in Cannes and Amsterdam&mdash;Chef Eliane has seen every mistake in the book. With the right foundational techniques, you can unlock your potential and create dishes that truly impress.
+              </p>
+            </div>
           </div>
 
-          <div class="feature-box">
-            <div class="feature-box-icon">🔪</div>
-            <h4>Effortless Knife Speed</h4>
-            <p>Learn the exact grip and rocking motions used in French kitchens to cut your evening meal preparation time in half.</p>
-          </div>
-
-          <div class="feature-box">
-            <div class="feature-box-icon">🍷</div>
-            <h4>Host with Poise & Grace</h4>
-            <p>Execute multi-course dinner parties with complete calm through Michelin restaurant staging and advance prep workflows.</p>
+          <!-- Student Testimonial -->
+          <div style="text-align: center; margin-top: 48px;">
+            <blockquote style="font-family: var(--font-serif); font-size: 1.4rem; font-style: italic; color: var(--color-ink); line-height: 1.6; margin-bottom: 16px;">
+              &ldquo;The quizzes, workbook, and live Q&amp;A gave me confidence in the kitchen. Epicurean Flow is a game-changer!&rdquo;
+            </blockquote>
+            <cite style="font-size: 0.9rem; font-weight: 600; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em; display: block;">
+              &mdash; Sarah T., Epicurean Flow Student
+            </cite>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- =========================================================================
-       FOOTER
-       ========================================================================= -->
-  <footer class="footer">
-    <div class="container">
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo-brand">
-            <img src="images/logo.png" alt="Epicurean Flow" style="height: 48px; width: auto; filter: brightness(0) invert(1);">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="logo-brand" style="margin-bottom: 16px; display: inline-block;">
+            <img src="images/logo.png" alt="Epicurean Flow" class="header-logo-img" style="filter: brightness(0) invert(1);">
           </a>
-          <p class="footer-brand-desc" style="margin-top: 16px;">
-            A premium chef-led culinary platform combining Michelin-rooted expertise, practical education, cookbooks, and diabetes-friendly gastronomy.
-          </p>
+          <p class="footer-tagline">Where cooking inspires. Masterclasses, curated digital cookbooks, and gourmet cuisine by Award-Winning Chef Eliane Muskus.</p>
+          <div style="font-size: 0.85rem; color: #888; margin-top: 14px;">
+            <p>Amsterdam (Zuidas) 1082MZ, The Netherlands</p>
+            <p>Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+31 6 18571677</a></p>
+          </div>
         </div>
 
-        <div>
+        <div class="footer-col">
           <h4 class="footer-col-title">Explore</h4>
           <ul class="footer-links">
-            <li><a href="cookbooks.html" class="footer-link">Cookbooks & Guides</a></li>
-            <li><a href="courses.html" class="footer-link">Online Courses</a></li>
-            <li><a href="recipes.html" class="footer-link">Recipe Journal</a></li>
-            <li><a href="about.html" class="footer-link">About Chef Eliane</a></li>
+            <li><a href="courses.html">All Courses</a></li>
+            <li><a href="cookbooks.html">Digital Books &amp; Guides</a></li>
+            <li><a href="menu-planning.html">Menu Planning Service</a></li>
+            <li><a href="diabetes.html">Diabetes Living</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Energy</a></li>
+            <li><a href="recipes.html">Recipe Journal</a></li>
+            <li><a href="media.html">Taste in Motion (Media)</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4 class="footer-col-title">Epicurean Flow</h4>
+        <div class="footer-col">
+          <h4 class="footer-col-title">About &amp; Trust</h4>
           <ul class="footer-links">
-            <li><a href="about.html" class="footer-link">About Chef Eliane</a></li>
-            <li><a href="courses.html" class="footer-link">Culinary Masterclasses</a></li>
-            <li><a href="cookbooks.html#diabetes" class="footer-link">Diabetes-Friendly Kitchen</a></li>
-            <li><a href="about.html#food-tours" class="footer-link">Food Tours</a></li>
+            <li><a href="about.html">Chef Eliane’s Story</a></li>
+            <li><a href="about.html#milestones">Michelin Accreditation</a></li>
+            <li><a href="contact.html">Contact Headquarters</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4 class="footer-col-title">Support & Legal</h4>
-          <ul class="footer-links">
-            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/faq" class="footer-link">FAQ</a></li>
-            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/refund-policy" class="footer-link">Refund Policy</a></li>
-            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/privacy-policy" class="footer-link">Privacy Policy</a></li>
-            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/terms" class="footer-link">Terms of Service</a></li>
-          </ul>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Stay Inspired</h4>
+          <p style="font-size: 0.9rem; color: #888; margin-bottom: 16px;">Receive seasonal recipes, private consultation invitations, and chef tips directly in your inbox.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Epicurean Flow!');">
+            <input type="email" placeholder="Your email address" class="form-input newsletter-input" required>
+            <button type="submit" class="btn btn-primary">Join</button>
+          </form>
         </div>
       </div>
+    </div>
 
-      <div class="footer-bottom">
-        <div>
-          © 2026 Epicurean Flow by Chef Eliane Muskus. All rights reserved.
-        </div>
-        <div class="footer-legal-links">
-          <span>Powered by Wix e-Commerce</span>
-        </div>
+    <div class="footer-bottom container">
+      <p class="copyright">&copy; 2025 Epicurean Flow | All Rights Reserved</p>
+      <p style="font-size: 0.8rem; color: #777;">Business Registration number: 94886792 &bull; Amsterdam, The Netherlands</p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="refund-policy.html">Refund Policy</a>
       </div>
     </div>
   </footer>
 
-  <!-- =========================================================================
-       SLIDE-OUT CART DRAWER & OVERLAY (WIX INTEGRATION)
-       ========================================================================= -->
-  <div class="cart-overlay" id="cart-overlay"></div>
-  <div class="cart-drawer" id="cart-drawer">
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-backdrop" id="cart-backdrop" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart" aria-hidden="true">
     <div class="cart-header">
       <div class="cart-header-title">
-        <h3 style="font-size: 1.25rem; font-family: var(--font-serif); margin: 0;">Your Culinary Bag</h3>
-        <span class="cart-item-count" style="font-size: 0.8125rem; color: var(--color-ink-light);">(0 items)</span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <h3>Your Culinary Selection</h3>
       </div>
-      <button class="cart-close-btn" id="cart-close-btn" aria-label="Close Shopping Bag">✕</button>
+      <button class="close-cart-btn" id="close-cart-btn" aria-label="Close cart">&times;</button>
     </div>
 
-    <div class="cart-body" id="cart-items-container">
-      <div class="cart-empty-state">
-        <div style="font-size: 3rem; margin-bottom: 16px; opacity: 0.4;">👜</div>
-        <p style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-ink); margin-bottom: 8px;">Your bag is empty</p>
-        <p style="font-size: 0.875rem; color: var(--color-ink-light); margin-bottom: 24px;">Explore our chef-crafted cookbooks and culinary courses.</p>
-        <button class="btn btn-secondary" onclick="window.cartManager?.closeCart()">Explore Cookbooks</button>
+    <div class="cart-body" id="cart-body">
+      <div class="cart-items-list" id="cart-items-list"></div>
+      <div class="cart-empty-state" id="cart-empty-state">
+        <p class="empty-msg">Your shopping bag is empty.</p>
+        <a href="cookbooks.html" class="btn btn-outline btn-sm">Browse Books &amp; Courses</a>
       </div>
     </div>
 
-    <div class="cart-footer" id="cart-footer" style="display: none;">
-      <div class="cart-subtotal-row">
+    <div class="cart-footer" id="cart-footer">
+      <div class="cart-subtotal">
         <span>Subtotal</span>
-        <span class="cart-subtotal-amount">€0.00</span>
+        <span class="subtotal-amount" id="cart-subtotal-val">€0.00</span>
       </div>
-      <p style="font-size: 0.75rem; color: var(--color-ink-light); margin-bottom: 16px;">
-        Taxes and instant course access calculated at secure checkout.
-      </p>
-      <a href="https://h6s-b2f1901cdca137-epicureanflow.wix-site-host.com/cart-page" 
-         id="btn-proceed-checkout" 
-         class="btn btn-gold btn-checkout" 
-         style="width: 100%; text-align: center; text-decoration: none;">
-        <span>Proceed to Wix Checkout →</span>
-      </a>
+      <button class="btn btn-primary btn-block checkout-btn" id="btn-proceed-checkout">
+        <span>Proceed to Secure Checkout</span>
+      </button>
     </div>
-  </div>
+  </aside>
 
-  <!-- JavaScript Modules -->
+  <!-- JavaScript -->
   <script src="js/navigation.js"></script>
-  <script src="js/animations.js"></script>
   <script src="js/products.js"></script>
   <script src="js/main.js"></script>
 </body>

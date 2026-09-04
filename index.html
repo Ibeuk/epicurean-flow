@@ -99,23 +99,28 @@
       <nav class="nav-desktop" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
           <li><a href="courses.html" class="nav-link">Courses</a></li>
-          <li><a href="recipes.html" class="nav-link">Recipes</a></li>
+          <li><a href="cookbooks.html" class="nav-link">Books</a></li>
+          <li><a href="menu-planning.html" class="nav-link">Menu Planning</a></li>
+          <li><a href="diabetes.html" class="nav-link">Diabetes</a></li>
+          <li><a href="nutrition.html" class="nav-link">Nutrition</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="media.html" class="nav-link">Media</a></li>
+          <li><a href="recipes.html" class="nav-link">Recipes</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
-          <button class="cart-btn" aria-label="View Shopping Cart">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <button class="cart-btn" id="open-cart-btn" aria-label="View Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
-            <span class="cart-badge">0</span>
+            <span class="cart-badge" id="cart-count">0</span>
           </button>
-          <a href="cookbooks.html" class="btn btn-primary">
-            <span>Shop Cookbooks</span>
+          <a href="cookbooks.html" class="btn btn-primary nav-cta">
+            <span>Shop</span>
           </a>
         </div>
       </nav>
@@ -133,13 +138,18 @@
   <div class="mobile-nav-drawer" id="mobile-drawer">
     <div class="mobile-nav-links">
       <a href="index.html" class="mobile-nav-link active">Home</a>
-      <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
       <a href="courses.html" class="mobile-nav-link">Courses</a>
-      <a href="recipes.html" class="mobile-nav-link">Recipes</a>
+      <a href="cookbooks.html" class="mobile-nav-link">Books</a>
+      <a href="menu-planning.html" class="mobile-nav-link">Menu Planning</a>
+      <a href="diabetes.html" class="mobile-nav-link">Diabetes</a>
+      <a href="nutrition.html" class="mobile-nav-link">Nutrition</a>
       <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
+      <a href="media.html" class="mobile-nav-link">Media / Video Clips</a>
+      <a href="recipes.html" class="mobile-nav-link">Recipe Journal</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
     </div>
     <div class="mobile-nav-footer">
-      <a href="cookbooks.html" class="btn btn-gold" style="width: 100%;">Shop Cookbooks</a>
+      <a href="cookbooks.html" class="btn btn-primary" style="width: 100%;">Explore Shop</a>
       <p style="font-size: 0.8125rem; color: var(--color-ink-light); text-align: center; margin-top: 8px;">
         Chef-led culinary education & cookbooks
       </p>
@@ -797,54 +807,63 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            Epicurean <span class="logo-accent">Flow</span>
+            <img src="images/logo.png" alt="Epicurean Flow" class="header-logo-img" style="filter: brightness(0) invert(1);">
           </a>
           <p class="footer-brand-desc">
-            A premium chef-led culinary platform combining Michelin-rooted expertise, practical education, cookbooks, and diabetes-friendly gastronomy.
+            A premium chef-led culinary platform combining Michelin-accredited expertise, practical education, cookbooks, and diabetes-friendly gastronomy by Chef Eliane Muskus.
           </p>
+          <div style="font-size: 0.85rem; color: #888; margin-top: 14px;">
+            <p>Amsterdam (Zuidas) 1082MZ, The Netherlands</p>
+            <p>Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+31 6 18571677</a></p>
+          </div>
         </div>
 
         <div>
           <h4 class="footer-col-title">Explore</h4>
           <ul class="footer-links">
-            <li><a href="cookbooks.html" class="footer-link">Cookbooks & Guides</a></li>
-            <li><a href="courses.html" class="footer-link">Online Courses</a></li>
+            <li><a href="courses.html" class="footer-link">All Courses</a></li>
+            <li><a href="cookbooks.html" class="footer-link">Books &amp; Guides</a></li>
+            <li><a href="menu-planning.html" class="footer-link">Menu Planning Service</a></li>
+            <li><a href="diabetes.html" class="footer-link">Diabetes Living</a></li>
+            <li><a href="nutrition.html" class="footer-link">Nutrition &amp; Energy</a></li>
+            <li><a href="media.html" class="footer-link">Taste in Motion (Media)</a></li>
             <li><a href="recipes.html" class="footer-link">Recipe Journal</a></li>
-            <li><a href="about.html" class="footer-link">About Chef Eliane</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Epicurean Flow</h4>
+          <h4 class="footer-col-title">About &amp; Trust</h4>
           <ul class="footer-links">
             <li><a href="about.html" class="footer-link">About Chef Eliane</a></li>
-            <li><a href="courses.html" class="footer-link">Culinary Masterclasses</a></li>
-            <li><a href="cookbooks.html" class="footer-link">Diabetes-Friendly Kitchen</a></li>
-            <li><a href="about.html#food-tours" class="footer-link">Food Tours</a></li>
+            <li><a href="about.html#milestones" class="footer-link">Michelin Accreditation</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Headquarters</a></li>
+            <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
+            <li><a href="refund-policy.html" class="footer-link">Refund Policy</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Support & Legal</h4>
-          <ul class="footer-links">
-            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/faq" class="footer-link">FAQ</a></li>
-            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/refund-policy" class="footer-link">Refund Policy</a></li>
-            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/privacy-policy" class="footer-link">Privacy Policy</a></li>
-            <li><a href="https://epicureanflow.wixsite.com/epicurean-flow/terms" class="footer-link">Terms of Service</a></li>
-          </ul>
+          <h4 class="footer-col-title">Stay Inspired</h4>
+          <p style="font-size: 0.88rem; color: #888; margin-bottom: 14px;">Receive seasonal recipes, private consultation invitations, and chef tips directly in your inbox.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Epicurean Flow!');">
+            <input type="email" placeholder="Your email address" class="form-input newsletter-input" required style="width: 100%; margin-bottom: 10px;">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Join the Table</button>
+          </form>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>
-          © 2026 Epicurean Flow by Chef Eliane Muskus. All rights reserved.
+          &copy; 2025 Epicurean Flow | All Rights Reserved &bull; Business Registration number: 94886792 &bull; Amsterdam, The Netherlands
         </div>
         <div class="footer-legal-links">
-          <span>Powered by Wix e-Commerce</span>
+          <a href="privacy-policy.html" class="footer-link">Privacy</a>
           <span>•</span>
-          <a href="https://epicureanflow.wixsite.com/epicurean-flow/privacy-policy" class="footer-link">Privacy</a>
+          <a href="terms.html" class="footer-link">Terms</a>
           <span>•</span>
-          <a href="https://epicureanflow.wixsite.com/epicurean-flow/terms" class="footer-link">Terms</a>
+          <a href="refund-policy.html" class="footer-link">Refunds</a>
         </div>
       </div>
     </div>
