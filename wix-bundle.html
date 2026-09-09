@@ -123,9 +123,7 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
   width: 100%;
 }
 
@@ -137,6 +135,7 @@ body {
   background-color: var(--color-ivory);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   width: 100%;
   position: relative;
@@ -3233,17 +3232,16 @@ textarea.form-input {
   }
 }
 
-/* IntersectionObserver Scroll Reveals */
+/* IntersectionObserver Scroll Reveals (Pure Stable Fade - Zero Vertical Shifting) */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transition: opacity 0.5s ease-out;
+  will-change: opacity;
 }
 
 .reveal-on-scroll.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none !important;
 }
 
 /* Stagger Delay Utility Classes */
@@ -4059,89 +4057,18 @@ html, body {
         <p class="section-description">Curated recipe collections, spice essentials, and specialized diabetes-friendly culinary books designed for instant digital download.</p>
       </div>
 
-      <!-- Asymmetric Cookbooks Layout -->
-      <div class="grid-asymmetric-cookbooks">
-        <!-- Hero Featured Book (~54% Width) -->
-        <article class="cookbook-hero-card reveal-on-scroll delay-1">
-          <div class="cookbook-hero-cover-wrap">
-            <img src="https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" 
-                 alt="A Symphony of Flavors Cookbook Cover" 
-                 class="cookbook-hero-cover"
-                 loading="lazy">
-          </div>
-          <div class="cookbook-hero-body">
-            <div>
-              <span class="product-badge gold">Featured Publication</span>
-              <h3 style="font-family: var(--font-serif); font-size: 1.875rem; margin-bottom: 8px;">A Symphony of Flavors</h3>
-              <p style="font-size: 0.875rem; font-weight: 600; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">Mediterranean & Middle Eastern Spice Essentials</p>
-              <p style="color: var(--color-ink-light); margin-bottom: 24px; font-size: 0.9375rem; line-height: 1.6;">
-                Master the essential spices and blends—from sumac and wild za'atar to ras el hanout—that transform everyday home cooking into aromatic masterpieces.
-              </p>
-            </div>
-            <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid var(--color-border-light);">
-              <span class="product-price" style="font-size: 1.5rem;">€9.00</span>
-              <button class="btn btn-primary btn-buy-trigger" data-product-id="symphony-flavors">
-                <span>Buy Cookbook</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Stacked Secondary Books (~46% Width) -->
-        <div class="cookbooks-secondary-stack reveal-on-scroll delay-2">
-          <!-- Book 2 -->
-          <article class="cookbook-compact-card">
-            <img src="https://static.wixstatic.com/media/30dece_b9c1ee9fe5bd4fb3b69eec8a061852fd~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" 
-                 alt="Chef Eliane's Diabetes Recipe Book" 
-                 class="cookbook-compact-cover"
-                 loading="lazy">
-            <div style="flex-grow: 1;">
-              <span class="product-badge" style="margin-bottom: 6px;">Specialized Edition</span>
-              <h4 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 4px;">Chef Eliane's Diabetes Recipe Book</h4>
-              <p style="font-size: 0.875rem; color: var(--color-ink-light); margin-bottom: 10px;">Vibrant, low-carb recipes designed by a chef living with diabetes.</p>
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-weight: 700; color: var(--color-ink); font-size: 1.125rem;">€9.00</span>
-                <button class="btn-link btn-buy-trigger" data-product-id="diabetes-recipe-book">Buy Book →</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Book 3 -->
-          <article class="cookbook-compact-card">
-            <img src="https://static.wixstatic.com/media/8e85e1_06c405184e654ab7845eee7980e6d23d~mv2.jpg/v1/fit/w_2121,h_1414,q_90/file.jpg" 
-                 alt="Let's Eat Cookbook" 
-                 class="cookbook-compact-cover"
-                 loading="lazy">
-            <div style="flex-grow: 1;">
-              <span class="product-badge" style="margin-bottom: 6px;">Essential Guide</span>
-              <h4 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 4px;">Let’s Eat</h4>
-              <p style="font-size: 0.875rem; color: var(--color-ink-light); margin-bottom: 10px;">Approachable daily meals crafted to inspire culinary confidence.</p>
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-weight: 700; color: var(--color-ink); font-size: 1.125rem;">€9.00</span>
-                <button class="btn-link btn-buy-trigger" data-product-id="lets-eat">Buy Book →</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Free Ebook Lead Magnet -->
-          <article class="cookbook-compact-card" style="background-color: var(--color-ivory-surface); border-color: var(--color-gold-border);">
-            <img src="https://static.wixstatic.com/media/30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" 
-                 alt="Free Mediterranean Recipe eBook" 
-                 class="cookbook-compact-cover"
-                 loading="lazy">
-            <div style="flex-grow: 1;">
-              <span class="product-badge free" style="margin-bottom: 6px;">Free Gift</span>
-              <h4 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 4px;">Mediterranean Recipe eBook</h4>
-              <p style="font-size: 0.875rem; color: var(--color-ink-light); margin-bottom: 10px;">6 authentic recipes + 2 secret appetizer dips.</p>
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-weight: 700; color: var(--color-olive); font-size: 1.125rem;">€0.00</span>
-                <a href="#newsletter" class="btn-link" style="color: var(--color-olive);">Get Free Copy →</a>
-              </div>
-            </div>
-          </article>
+      <!-- New Collection Curation State -->
+      <div style="max-width: 860px; margin: 0 auto; text-align: center; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 64px 36px; box-shadow: var(--shadow-sm);">
+        <span class="product-badge gold" style="font-size: 0.85rem; padding: 6px 18px; margin-bottom: 20px; display: inline-block;">New Edition in Curation</span>
+        <h3 style="font-family: var(--font-serif); font-size: 2.25rem; color: var(--color-ink); margin-bottom: 16px;">Newly Redesigned Cookbooks &amp; Guides Arriving Soon</h3>
+        <p style="font-size: 1.0625rem; color: var(--color-ink-muted); max-width: 640px; margin: 0 auto 32px auto; line-height: 1.75;">
+          Chef Eliane is currently finalizing our refreshed, redesigned digital publications and seasonal master guides. The updated collection is being prepared for release.
+        </p>
+        <div style="display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+          <a href="recipes.html" class="btn btn-primary"><span>Explore Free Recipes</span></a>
+          <a href="about.html" class="btn btn-outline"><span>Meet Chef Eliane</span></a>
         </div>
       </div>
-
       <div style="text-align: center; margin-top: 52px;">
         <a href="cookbooks.html" class="btn btn-secondary">Explore Complete Cookbook Catalog →</a>
       </div>
@@ -4160,85 +4087,18 @@ html, body {
         <p class="section-description">Our courses emphasize what you will achieve in the kitchen. Transform from blindly following recipes to understanding culinary technique.</p>
       </div>
 
-      <!-- Asymmetric Courses Layout -->
-      <div class="grid-asymmetric-courses">
-        <!-- Flagship Masterclass (~58% Width) -->
-        <article class="course-flagship-card reveal-on-scroll delay-1">
-          <div class="course-flagship-media">
-            <img src="https://static.wixstatic.com/media/30dece_b9c1ee9fe5bd4fb3b69eec8a061852fd~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" 
-                 alt="Diabetes Cooking Masterclass" 
-                 class="course-flagship-img"
-                 loading="lazy">
-            <span class="course-level-tag" style="position: absolute; top: 20px; right: 20px;">Flagship Masterclass</span>
-          </div>
-          <div class="course-flagship-body">
-            <span class="course-outcome-badge">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Complete Outcome Pathway
-            </span>
-            <h3 style="font-family: var(--font-serif); font-size: 1.875rem; margin-bottom: 16px;">Diabetes Cooking Course Masterclass</h3>
-            
-            <div style="margin-bottom: 28px; flex-grow: 1;">
-              <div class="course-highlight-item">
-                <span class="course-highlight-icon">✓</span>
-                <span>Transform low-carb cooking into restaurant-quality dining experiences</span>
-              </div>
-              <div class="course-highlight-item">
-                <span class="course-highlight-icon">✓</span>
-                <span>Interactive quizzes, structured shopping lists & video masterclasses</span>
-              </div>
-              <div class="course-highlight-item">
-                <span class="course-highlight-icon">✓</span>
-                <span>Created by award-winning Chef Eliane living with diabetes herself</span>
-              </div>
-            </div>
-
-            <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--color-border-light);">
-              <div>
-                <span style="font-size: 0.75rem; color: var(--color-ink-muted); text-transform: uppercase; letter-spacing: 0.1em; display: block;">Enrollment</span>
-                <span class="product-price" style="font-size: 1.625rem;">€39.00</span>
-              </div>
-              <a href="#contact" class="btn btn-primary">
-                <span>Explore Masterclass</span>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Supporting Courses Stack (~42% Width) -->
-        <div class="courses-secondary-stack reveal-on-scroll delay-2">
-          <!-- Course 2 -->
-          <article class="course-compact-card">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
-              <span class="product-badge gold">Holiday Entertaining</span>
-              <span style="font-weight: 700; color: var(--color-ink); font-size: 1.25rem;">€69.00</span>
-            </div>
-            <h4 style="font-family: var(--font-serif); font-size: 1.375rem; margin-bottom: 8px;">Exclusive Holiday Cooking Bundle</h4>
-            <p style="font-size: 0.9375rem; color: var(--color-ink-light); margin-bottom: 16px; line-height: 1.5;">
-              Minute-by-minute timeline for stress-free hosting, juicy turkey technique, French Christmas table & bonus appetizer guide.
-            </p>
-            <div style="align-self: flex-start;">
-              <a href="#contact" class="btn-link">View Course Details →</a>
-            </div>
-          </article>
-
-          <!-- Course 3 -->
-          <article class="course-compact-card">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
-              <span class="product-badge">Kitchen Foundations</span>
-              <span style="font-weight: 700; color: var(--color-ink); font-size: 1.25rem;">€19.00</span>
-            </div>
-            <h4 style="font-family: var(--font-serif); font-size: 1.375rem; margin-bottom: 8px;">Diabetes Cooking Foundations</h4>
-            <p style="font-size: 0.9375rem; color: var(--color-ink-light); margin-bottom: 16px; line-height: 1.5;">
-              Build everyday confidence with essential low-carb ingredient swaps and flavor profiling principles.
-            </p>
-            <div style="align-self: flex-start;">
-              <a href="#contact" class="btn-link">View Course Details →</a>
-            </div>
-          </article>
+      <!-- New Courses In Production State -->
+      <div style="max-width: 860px; margin: 0 auto; text-align: center; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 64px 36px; box-shadow: var(--shadow-sm);">
+        <span class="product-badge gold" style="font-size: 0.85rem; padding: 6px 18px; margin-bottom: 20px; display: inline-block;">Academy Redesign</span>
+        <h3 style="font-family: var(--font-serif); font-size: 2.25rem; color: var(--color-ink); margin-bottom: 16px;">New Masterclasses &amp; Video Courses in Production</h3>
+        <p style="font-size: 1.0625rem; color: var(--color-ink-muted); max-width: 640px; margin: 0 auto 32px auto; line-height: 1.75;">
+          We are currently updating our culinary curriculum with newly produced masterclasses, studio videos, and downloadable kitchen workbooks. Enrolment will re-open with the redesigned curriculum shortly.
+        </p>
+        <div style="display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+          <a href="recipes.html" class="btn btn-primary"><span>Explore Technique Library</span></a>
+          <a href="contact.html" class="btn btn-outline"><span>Inquire About Private Sessions</span></a>
         </div>
       </div>
-
       <div style="text-align: center; margin-top: 52px;">
         <a href="courses.html" class="btn btn-secondary">Explore All Culinary Masterclasses →</a>
       </div>
@@ -4764,143 +4624,9 @@ const WIX_CONFIG = {
 };
 
 const PRODUCTS_DATA = {
-  cookbooks: [
-    {
-      id: 'symphony-flavors',
-      wixId: 'af654225-662f-42e5-ac51-fbebc88f63ed',
-      title: 'A Symphony of Flavors',
-      subtitle: 'Mediterranean & Middle Eastern Spice Essentials',
-      category: 'Digital Cookbook',
-      price: '€9.00',
-      numericPrice: 9.00,
-      image: 'https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg',
-      badge: 'Bestseller',
-      description: 'Master the essential spices and blends—from sumac and za’atar to ras el hanout—that elevate home dishes into Mediterranean culinary masterpieces.',
-      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate'
-    },
-    {
-      id: 'diabetes-recipe-book',
-      title: 'Chef Eliane’s New Diabetes Recipe Book',
-      subtitle: 'Flavor-First Low-Carb Gourmet Cooking',
-      category: 'Specialized Cookbook',
-      price: '€32.00',
-      numericPrice: 32.00,
-      image: 'https://static.wixstatic.com/media/30dece_b9c1ee9fe5bd4fb3b69eec8a061852fd~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg',
-      badge: 'Pre-Order',
-      description: 'Vibrant, low-carb recipes designed by an award-winning chef living with diabetes. Enjoy restaurant-grade meals without compromising flavor.',
-      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/chef-eliane-s-new-diabetes-recipe-book'
-    },
-    {
-      id: 'lets-eat',
-      title: 'Let’s Eat',
-      subtitle: 'Everyday Gourmet Culinary Inspirations',
-      category: 'Cookbook',
-      price: '€9.00',
-      numericPrice: 9.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_06c405184e654ab7845eee7980e6d23d~mv2.jpg/v1/fit/w_2121,h_1414,q_90/file.jpg',
-      badge: 'Essential',
-      description: 'Chef Eliane’s signature collection of approachable yet sophisticated daily meals crafted to inspire culinary confidence.',
-      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/let-s-eat'
-    },
-    {
-      id: 'seasonal-recipe-cookbook',
-      title: 'Seasonal Recipe Cookbook',
-      subtitle: 'Fresh Ingredients for Year-Round Plating',
-      category: 'Seasonal Guide',
-      price: '€9.00',
-      numericPrice: 9.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_2500,h_1357,al_c/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg',
-      badge: 'Seasonal',
-      description: 'Harness market-fresh ingredients with seasonal techniques that celebrate texture, aroma, and natural produce.',
-      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/seasonal-recipe-cookbook'
-    },
-    {
-      id: 'christmas-recipe-collection',
-      title: 'Christmas Recipe Collection Cookbook',
-      subtitle: 'Festive Entertaining & Elegant Holiday Menus',
-      category: 'Holiday Edition',
-      price: '€14.00',
-      numericPrice: 14.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_14376467c2e045a884d6fe64a1e55711~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg',
-      badge: 'Holiday Special',
-      description: 'Your secret to a flawless, stress-free festive dinner table filled with European elegance and showstopping flavors.',
-      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/christmas-recipe-collection-cookbook'
-    },
-    {
-      id: 'ultimate-macronutrient-guide',
-      title: 'The Ultimate Macronutrient Guide',
-      subtitle: 'Mastering Carbs, Proteins & Healthy Fats',
-      category: 'Nutrition Guide',
-      price: '€12.00',
-      numericPrice: 12.00,
-      image: 'https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_500,h_500,q_90/file.png',
-      badge: 'Nutrition Guide',
-      description: 'Clear, practical formulas to balance energy, manage blood sugar, and structure nutrient-dense plates effortlessly.',
-      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/the-ultimate-macronutrient-guide'
-    },
-    {
-      id: 'meal-planner-eliane',
-      title: 'Epicurean Flow Meal Planner',
-      subtitle: 'By Award-Winning Chef Eliane Muskus',
-      category: 'Kitchen Planner',
-      price: '€15.00',
-      numericPrice: 15.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_c25a6a7985884ad7bc9e9b38adda9152~mv2.png/v1/fit/w_500,h_500,q_90/file.png',
-      badge: 'Planner',
-      description: 'Streamline your week with organized mise en place sheets, grocery lists, and balanced seasonal meal plans.',
-      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/epicurean-flow-meal-planner-by-eliane-muskus'
-    }
-  ],
-  courses: [
-    {
-      id: 'course-beginners',
-      title: 'Beginners Cooking Course',
-      price: '€49.00',
-      numericPrice: 49.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_914b5711d4114ac69a398a3dc4f012a2~mv2.png/v1/fit/w_800,h_600,q_90/file.png',
-      badge: 'Foundational'
-    },
-    {
-      id: 'course-intermediates',
-      title: 'Intermediates Cooking Course',
-      price: '€69.00',
-      numericPrice: 69.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_263553f004204acdafe445736757f806~mv2.png/v1/fit/w_800,h_600,q_90/file.png',
-      badge: 'Popular'
-    },
-    {
-      id: 'course-advanced',
-      title: 'Advanced Cooking Course',
-      price: '€89.00',
-      numericPrice: 89.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_8ec914d75d454565800354cc88582fe8~mv2.png/v1/fit/w_800,h_600,q_90/file.png',
-      badge: 'Mastery'
-    },
-    {
-      id: 'course-mini-essentials',
-      title: 'Mini Course: Foundations of Flavor (7 Days)',
-      price: '€19.00',
-      numericPrice: 19.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_1fd1cb0496c344f8b60ca721ee1780d0~mv2.png/v1/fit/w_800,h_600,q_90/file.png',
-      badge: 'Quick Start'
-    },
-    {
-      id: 'course-diabetes-masterclass',
-      title: 'Diabetes Cooking Course Masterclass',
-      price: '€39.00',
-      numericPrice: 39.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_ec53f319f79b407db2c73cc46f3aea69~mv2.webp/v1/fit/w_800,h_600,q_90/file.webp',
-      badge: 'Health'
-    },
-    {
-      id: 'holiday-bundle',
-      title: 'Exclusive Holiday Cooking Bundle',
-      price: '€69.00',
-      numericPrice: 69.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_14376467c2e045a884d6fe64a1e55711~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg',
-      badge: 'Bundle'
-    }
-  ],
+  // Current products removed pending synchronization with newly redesigned catalog
+  cookbooks: [],
+  courses: [],
   services: [
     {
       id: 'consultation-menu-planning',
@@ -5298,13 +5024,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileDrawer = document.querySelector('.mobile-nav-drawer, .mobile-menu-drawer');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-  // Sticky Header Scroll State
+  // Sticky Header Scroll State with Hysteresis & rAF to eliminate visual flicker
+  let isTicking = false;
   const handleScroll = () => {
     if (!header) return;
-    if (window.scrollY > 30) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y > 60) {
+          header.classList.add('scrolled');
+        } else if (y < 20) {
+          header.classList.remove('scrolled');
+        }
+        isTicking = false;
+      });
+      isTicking = true;
     }
   };
 
@@ -5452,16 +5186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealObserver.observe(el);
   });
 
-  // Subtle Hero Parallax Image Movement on Scroll
-  const heroImage = document.querySelector('.hero-bg-img');
-  if (heroImage) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      if (scrolled < window.innerHeight) {
-        heroImage.style.transform = `scale(1.05) translateY(${scrolled * 0.12}px)`;
-      }
-    }, { passive: true });
-  }
+  // Static smooth visual framing without jittery parallax
 });
 
 // --- main.js ---

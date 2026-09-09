@@ -33,14 +33,5 @@ document.addEventListener('DOMContentLoaded', () => {
     revealObserver.observe(el);
   });
 
-  // Subtle Hero Parallax Image Movement on Scroll
-  const heroImage = document.querySelector('.hero-bg-img');
-  if (heroImage) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      if (scrolled < window.innerHeight) {
-        heroImage.style.transform = `scale(1.05) translateY(${scrolled * 0.12}px)`;
-      }
-    }, { passive: true });
-  }
+  // Static smooth visual framing without jittery parallax
 });

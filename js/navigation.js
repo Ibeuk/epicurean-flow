@@ -9,13 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileDrawer = document.querySelector('.mobile-nav-drawer, .mobile-menu-drawer');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-  // Sticky Header Scroll State
+  // Sticky Header Scroll State with Hysteresis & rAF to eliminate visual flicker
+  let isTicking = false;
   const handleScroll = () => {
     if (!header) return;
-    if (window.scrollY > 30) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y > 60) {
+          header.classList.add('scrolled');
+        } else if (y < 20) {
+          header.classList.remove('scrolled');
+        }
+        isTicking = false;
+      });
+      isTicking = true;
     }
   };
 
