@@ -11,6 +11,7 @@ const PRODUCTS_DATA = {
   cookbooks: [
     {
       id: 'symphony-flavors',
+      wixId: 'af654225-662f-42e5-ac51-fbebc88f63ed',
       title: 'A Symphony of Flavors',
       subtitle: 'Mediterranean & Middle Eastern Spice Essentials',
       category: 'Digital Cookbook',
@@ -64,7 +65,7 @@ const PRODUCTS_DATA = {
       category: 'Holiday Edition',
       price: '€14.00',
       numericPrice: 14.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg',
+      image: 'https://static.wixstatic.com/media/8e85e1_14376467c2e045a884d6fe64a1e55711~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg',
       badge: 'Holiday Special',
       description: 'Your secret to a flawless, stress-free festive dinner table filled with European elegance and showstopping flavors.',
       url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/christmas-recipe-collection-cookbook'
@@ -76,7 +77,7 @@ const PRODUCTS_DATA = {
       category: 'Nutrition Guide',
       price: '€12.00',
       numericPrice: 12.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg',
+      image: 'https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_500,h_500,q_90/file.png',
       badge: 'Nutrition Guide',
       description: 'Clear, practical formulas to balance energy, manage blood sugar, and structure nutrient-dense plates effortlessly.',
       url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/the-ultimate-macronutrient-guide'
@@ -88,7 +89,7 @@ const PRODUCTS_DATA = {
       category: 'Kitchen Planner',
       price: '€15.00',
       numericPrice: 15.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg',
+      image: 'https://static.wixstatic.com/media/8e85e1_c25a6a7985884ad7bc9e9b38adda9152~mv2.png/v1/fit/w_500,h_500,q_90/file.png',
       badge: 'Planner',
       description: 'Streamline your week with organized mise en place sheets, grocery lists, and balanced seasonal meal plans.',
       url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/epicurean-flow-meal-planner-by-eliane-muskus'
@@ -100,7 +101,7 @@ const PRODUCTS_DATA = {
       title: 'Beginners Cooking Course',
       price: '€49.00',
       numericPrice: 49.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg',
+      image: 'https://static.wixstatic.com/media/8e85e1_914b5711d4114ac69a398a3dc4f012a2~mv2.png/v1/fit/w_800,h_600,q_90/file.png',
       badge: 'Foundational'
     },
     {
@@ -108,7 +109,7 @@ const PRODUCTS_DATA = {
       title: 'Intermediates Cooking Course',
       price: '€69.00',
       numericPrice: 69.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg',
+      image: 'https://static.wixstatic.com/media/8e85e1_263553f004204acdafe445736757f806~mv2.png/v1/fit/w_800,h_600,q_90/file.png',
       badge: 'Popular'
     },
     {
@@ -116,7 +117,7 @@ const PRODUCTS_DATA = {
       title: 'Advanced Cooking Course',
       price: '€89.00',
       numericPrice: 89.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_a9f1a0808a5c49ee9fef4c09d5a7d79b~mv2.jpg',
+      image: 'https://static.wixstatic.com/media/8e85e1_8ec914d75d454565800354cc88582fe8~mv2.png/v1/fit/w_800,h_600,q_90/file.png',
       badge: 'Mastery'
     },
     {
@@ -124,7 +125,7 @@ const PRODUCTS_DATA = {
       title: 'Mini Course: Foundations of Flavor (7 Days)',
       price: '€19.00',
       numericPrice: 19.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg',
+      image: 'https://static.wixstatic.com/media/8e85e1_1fd1cb0496c344f8b60ca721ee1780d0~mv2.png/v1/fit/w_800,h_600,q_90/file.png',
       badge: 'Quick Start'
     },
     {
@@ -132,7 +133,7 @@ const PRODUCTS_DATA = {
       title: 'Diabetes Cooking Course Masterclass',
       price: '€39.00',
       numericPrice: 39.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_166b8ba26a9749198642a8b375b4dbb6~mv2.jpg',
+      image: 'https://static.wixstatic.com/media/8e85e1_ec53f319f79b407db2c73cc46f3aea69~mv2.webp/v1/fit/w_800,h_600,q_90/file.webp',
       badge: 'Health'
     },
     {
@@ -140,7 +141,7 @@ const PRODUCTS_DATA = {
       title: 'Exclusive Holiday Cooking Bundle',
       price: '€69.00',
       numericPrice: 69.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg/v1/fill/w_1200,h_800,al_c/8e85e1_fc54bcfb12d744b8b64e0a4f660d5b78~mv2.jpg',
+      image: 'https://static.wixstatic.com/media/8e85e1_14376467c2e045a884d6fe64a1e55711~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg',
       badge: 'Bundle'
     }
   ],
@@ -151,7 +152,7 @@ const PRODUCTS_DATA = {
       subtitle: 'Stress-Free Party Menu Planning & Custom Organization',
       price: '€65.00',
       numericPrice: 65.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg',
+      image: 'https://static.wixstatic.com/media/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg/v1/fill/w_1200,h_1200,al_c/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg',
       badge: 'Private Service'
     }
   ],
@@ -186,12 +187,13 @@ const PRODUCTS_DATA = {
 // Asynchronously load the official Wix Headless SDK
 async function createWixHeadlessClient() {
   try {
-    const { createClient, OAuthStrategy } = await import('https://esm.sh/@wix/sdk@1.15.5');
-    const { products } = await import('https://esm.sh/@wix/stores@1.0.185');
-    const { currentCart } = await import('https://esm.sh/@wix/ecom@1.0.697');
+    const { createClient, OAuthStrategy } = await import('https://esm.sh/@wix/sdk');
+    const { products } = await import('https://esm.sh/@wix/stores');
+    const { currentCart } = await import('https://esm.sh/@wix/ecom');
+    const { redirects } = await import('https://esm.sh/@wix/redirects');
 
     const client = createClient({
-      modules: { products, currentCart },
+      modules: { products, currentCart, redirects },
       auth: OAuthStrategy({ clientId: WIX_CONFIG.clientId })
     });
     console.log('[Wix Headless] Client initialized with Client ID:', WIX_CONFIG.clientId);
@@ -202,23 +204,52 @@ async function createWixHeadlessClient() {
   }
 }
 
+// Storage Key for cross-page persistence
+const CART_STORAGE_KEY = 'epicurean_flow_cart';
+
 // Cart Drawer & eCommerce Manager Class
 class CartManager {
   constructor() {
     this.cartItems = [];
     this.wixClient = null;
-    this.badgeEl = document.querySelector('.cart-badge');
     this.drawerEl = document.getElementById('cart-drawer');
     this.backdropEl = document.getElementById('cart-backdrop') || document.getElementById('cart-overlay');
-    this.cartItemsListEl = document.getElementById('cart-items-list') || document.getElementById('cart-items-container');
-    this.cartSubtotalEl = document.getElementById('cart-subtotal-val') || document.querySelector('.cart-subtotal-amount');
+    this.cartItemsListEl = document.getElementById('cart-items-list') || document.getElementById('cart-items-container') || document.getElementById('cart-body');
+    this.cartSubtotalEl = document.getElementById('cart-subtotal-val') || document.querySelector('.cart-subtotal-amount') || document.querySelector('.subtotal-amount');
     this.checkoutBtnEl = document.getElementById('btn-proceed-checkout');
     this.closeBtnEl = document.getElementById('close-cart-btn') || document.getElementById('cart-close-btn');
+
+    // Load persisted cart from localStorage immediately on instantiate
+    this.loadCart();
     this.init();
+    this.renderCart();
+  }
+
+  loadCart() {
+    try {
+      const saved = localStorage.getItem(CART_STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          this.cartItems = parsed;
+        }
+      }
+    } catch (err) {
+      console.warn('[CartManager] Error reading saved cart:', err);
+      this.cartItems = [];
+    }
+  }
+
+  saveCart() {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(this.cartItems));
+    } catch (err) {
+      console.warn('[CartManager] Error saving cart:', err);
+    }
   }
 
   async init() {
-    const cartToggleBtns = document.querySelectorAll('.cart-btn');
+    const cartToggleBtns = document.querySelectorAll('.cart-btn, #open-cart-btn');
     cartToggleBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -244,6 +275,21 @@ class CartManager {
       });
     }
 
+    // Escape key closes cart drawer
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.drawerEl && this.drawerEl.classList.contains('open')) {
+        this.closeDrawer();
+      }
+    });
+
+    // Cross-tab and window sync: if another tab updates cart, reflect here
+    window.addEventListener('storage', (e) => {
+      if (e.key === CART_STORAGE_KEY) {
+        this.loadCart();
+        this.renderCart();
+      }
+    });
+
     // Global listener for all buy & add-to-cart buttons
     document.addEventListener('click', (e) => {
       const btn = e.target.closest('.btn-add-to-cart, .btn-buy-trigger');
@@ -252,7 +298,8 @@ class CartManager {
         const productId = btn.getAttribute('data-id') || btn.getAttribute('data-product-id');
         const title = btn.getAttribute('data-title');
         const price = btn.getAttribute('data-price');
-        this.addItem(productId, { title, price });
+        const image = btn.getAttribute('data-image');
+        this.addItem(productId, { title, price, image });
       }
     });
 
@@ -290,19 +337,31 @@ class CartManager {
     if (!item && PRODUCTS_DATA.courses) {
       item = PRODUCTS_DATA.courses.find(p => p.id === productId);
     }
+    if (!item && PRODUCTS_DATA.services) {
+      item = PRODUCTS_DATA.services.find(p => p.id === productId);
+    }
 
     if (!item) {
-      const priceVal = meta && meta.price ? parseFloat(meta.price) : 9.00;
+      const priceVal = meta && meta.price ? parseFloat(meta.price.replace(/[^0-9.]/g, '')) : 9.00;
       item = {
-        id: productId || 'custom-item',
+        id: productId || 'custom-item-' + Date.now(),
         title: meta && meta.title ? meta.title : 'Selected Culinary Publication',
-        price: '€' + priceVal.toFixed(2),
-        numericPrice: priceVal,
-        image: 'https://static.wixstatic.com/media/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg/v1/fill/w_1200,h_1600,al_c/8e85e1_53239a5ec99b4562ad8fb7a3c3dfd3e0~mv2.jpg'
+        price: '€' + (priceVal || 9.00).toFixed(2),
+        numericPrice: priceVal || 9.00,
+        image: meta && meta.image ? meta.image : 'https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg'
       };
     }
 
-    this.cartItems.push(item);
+    this.cartItems.push({
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      numericPrice: Number(item.numericPrice) || 9.00,
+      image: item.image,
+      wixId: item.wixId || null
+    });
+
+    this.saveCart();
     this.renderCart();
     this.openDrawer();
 
@@ -313,7 +372,7 @@ class CartManager {
           lineItems: [
             {
               catalogReference: {
-                appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
+                appId: '215238eb-22a5-4c36-9e7b-e7c08025e04e',
                 catalogItemId: item.wixId
               },
               quantity: 1
@@ -327,27 +386,42 @@ class CartManager {
   }
 
   removeItem(index) {
-    this.cartItems.splice(index, 1);
-    this.renderCart();
+    if (index >= 0 && index < this.cartItems.length) {
+      this.cartItems.splice(index, 1);
+      this.saveCart();
+      this.renderCart();
+    }
   }
 
   renderCart() {
     const count = this.cartItems.length;
-    if (this.badgeEl) {
-      this.badgeEl.textContent = count;
-      this.badgeEl.style.transform = 'scale(1.25)';
-      setTimeout(() => this.badgeEl.style.transform = 'scale(1)', 200);
-    }
+
+    // Update ALL badge elements across headers/navs
+    const badges = document.querySelectorAll('.cart-badge, #cart-count');
+    badges.forEach(badge => {
+      badge.textContent = count;
+      badge.style.transform = 'scale(1.25)';
+      setTimeout(() => { badge.style.transform = 'scale(1)'; }, 200);
+    });
 
     if (!this.cartItemsListEl) return;
 
     if (count === 0) {
       this.cartItemsListEl.innerHTML = `
         <div class="cart-empty-message">
-          <p style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 8px;">Your cart is currently empty</p>
-          <p style="font-size: 0.875rem; color: var(--color-ink-muted);">Explore our cookbooks and courses to start learning.</p>
+          <div class="cart-empty-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <p class="cart-empty-title">Your shopping bag is empty</p>
+          <p class="cart-empty-desc">Explore our cookbooks, chef guides, and culinary masterclasses.</p>
+          <a href="cookbooks.html" class="btn btn-outline btn-sm">Browse Books &amp; Courses</a>
         </div>
       `;
+      // Also hide legacy empty state if present
+      const legacyEmpty = document.getElementById('cart-empty-state');
+      if (legacyEmpty && legacyEmpty !== this.cartItemsListEl) {
+        legacyEmpty.style.display = 'none';
+      }
       if (this.cartSubtotalEl) this.cartSubtotalEl.textContent = '€0.00';
       return;
     }
@@ -356,38 +430,102 @@ class CartManager {
     let html = '';
 
     this.cartItems.forEach((item, idx) => {
-      subtotal += item.numericPrice;
+      const p = Number(item.numericPrice) || 0;
+      subtotal += p;
       html += `
-        <div style="display: flex; gap: 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--color-border-light);">
-          <img src="${item.image}" alt="${item.title}" style="width: 56px; height: 56px; object-fit: cover; border-radius: var(--radius-xs);">
-          <div style="flex-grow: 1;">
-            <div style="font-family: var(--font-serif); font-weight: 600; font-size: 1rem; color: var(--color-ink);">${item.title}</div>
-            <div style="font-size: 0.8125rem; color: var(--color-gold); font-weight: 600;">${item.price}</div>
+        <div class="cart-item-row">
+          <img src="${item.image}" alt="${item.title}" class="cart-item-img" onerror="this.src='https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg'">
+          <div class="cart-item-details">
+            <div class="cart-item-title">${item.title}</div>
+            <div class="cart-item-price">${item.price || ('€' + p.toFixed(2))}</div>
           </div>
-          <button onclick="window.cartManager.removeItem(${idx})" style="color: var(--color-ink-muted); font-size: 1.25rem; padding: 4px; cursor: pointer;" title="Remove">✕</button>
+          <button type="button" class="cart-item-remove" onclick="window.cartManager.removeItem(${idx})" aria-label="Remove item" title="Remove">✕</button>
         </div>
       `;
     });
 
     this.cartItemsListEl.innerHTML = html;
+    // Hide legacy empty state element if present
+    const legacyEmpty = document.getElementById('cart-empty-state');
+    if (legacyEmpty && legacyEmpty !== this.cartItemsListEl) {
+      legacyEmpty.style.display = 'none';
+    }
     if (this.cartSubtotalEl) this.cartSubtotalEl.textContent = '€' + subtotal.toFixed(2);
   }
 
   async proceedToCheckout() {
-    if (this.wixClient) {
+    console.log('[CartManager] proceedToCheckout invoked! Cart items:', this.cartItems.length);
+    const originalText = this.checkoutBtnEl ? this.checkoutBtnEl.textContent : '';
+    if (this.checkoutBtnEl) {
+      this.checkoutBtnEl.textContent = 'Connecting to Secure Checkout...';
+      this.checkoutBtnEl.style.opacity = '0.75';
+      this.checkoutBtnEl.style.pointerEvents = 'none';
+    }
+
+    if (this.wixClient && this.wixClient.currentCart) {
+      console.log('[CartManager] wixClient ready, checking items...');
       try {
-        const { checkoutUrl } = await this.wixClient.currentCart.createCheckoutUrl();
-        if (checkoutUrl) {
-          window.location.href = checkoutUrl;
-          return;
+        // Sync any cart items to Wix server cart if needed
+        for (const item of this.cartItems) {
+          console.log('[CartManager] Checking item wixId:', item.title, item.wixId);
+          if (item.wixId) {
+            try {
+              const addRes = await this.wixClient.currentCart.addToCurrentCart({
+                lineItems: [{
+                  catalogReference: {
+                    appId: '215238eb-22a5-4c36-9e7b-e7c08025e04e',
+                    catalogItemId: item.wixId
+                  },
+                  quantity: 1
+                }]
+              });
+              console.log('[CartManager] Synced item to Wix cart:', addRes);
+            } catch (addErr) {
+              console.warn('[CartManager] Item add note:', addErr.message);
+            }
+          }
+        }
+
+        console.log('[CartManager] Calling createCheckoutFromCurrentCart...');
+        const checkout = await this.wixClient.currentCart.createCheckoutFromCurrentCart({
+          channelType: 'WEB'
+        });
+        console.log('[CartManager] Checkout created:', checkout);
+
+        if (checkout && checkout.checkoutId && this.wixClient.redirects) {
+          console.log('[CartManager] Creating redirect session for checkoutId:', checkout.checkoutId);
+          const redirect = await this.wixClient.redirects.createRedirectSession({
+            ecomCheckout: { checkoutId: checkout.checkoutId },
+            callbacks: {
+              postFlowUrl: window.location.href,
+              thankYouPageUrl: window.location.origin
+            }
+          });
+          console.log('[CartManager] Redirect session result:', redirect);
+
+          if (redirect && redirect.redirectSession && redirect.redirectSession.fullUrl) {
+            console.log('[CartManager] REDIRECTING TO:', redirect.redirectSession.fullUrl);
+            window.location.href = redirect.redirectSession.fullUrl;
+            return;
+          }
         }
       } catch (err) {
-        console.warn('[Wix Headless] Direct checkout session note:', err.message);
+        console.error('[CartManager] Wix Headless checkout error:', err);
       }
+    } else {
+      console.warn('[CartManager] wixClient not ready, fallback triggered');
     }
-    // Fallback: direct redirection to the Wix Pages Domain checkout
+
+    console.log('[CartManager] Falling back to standard store cart');
     window.location.href = `${WIX_CONFIG.pagesDomain}cart-page`;
   }
 }
 
-window.cartManager = new CartManager();
+// Automatically bind singleton instance on DOM load or immediately
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.cartManager = new CartManager();
+  });
+} else {
+  window.cartManager = new CartManager();
+}

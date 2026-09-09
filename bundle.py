@@ -96,10 +96,20 @@ document.addEventListener('DOMContentLoaded', () => {
     )
 
     # Update checkout link in cart drawer to point directly to Wix Cart page with target="_top"
-    html_bundled = html_bundled.replace(
-        'id="btn-proceed-checkout" class="btn btn-gold"',
-        'id="btn-proceed-checkout" target="_top" class="btn btn-gold"'
-    )
+    if 'id="btn-proceed-checkout"' in html_bundled and 'id="btn-proceed-checkout" target="_top"' not in html_bundled:
+        html_bundled = html_bundled.replace(
+            'id="btn-proceed-checkout"',
+            'id="btn-proceed-checkout" target="_top"'
+        )
+
+    # In-line local images (e.g. logo.png) as base64 for 100% standalone portable embed
+    import base64
+    logo_path = os.path.join('images', 'logo.png')
+    if os.path.exists(logo_path):
+        with open(logo_path, 'rb') as lf:
+            logo_b64 = 'data:image/png;base64,' + base64.b64encode(lf.read()).decode('utf-8')
+        html_bundled = html_bundled.replace('src="images/logo.png"', f'src="{logo_b64}"')
+        html_bundled = html_bundled.replace('href="images/logo.png"', f'href="{logo_b64}"')
 
     output_path = 'wix-bundle.html'
     with open(output_path, 'w', encoding='utf-8') as out:

@@ -13,6 +13,7 @@
   "dependencies": {
     "@wix/ecom": "^1.0.2481",
     "@wix/sdk": "^1.21.16",
-    "@wix/stores": "^1.0.895"
+    "@wix/stores": "^1.0.895",
+    "puppeteer-core": "^25.10.0"
   }
 }
