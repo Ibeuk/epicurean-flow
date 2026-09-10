@@ -247,3 +247,37 @@
   gap: 40px;
   align-items: stretch;
 }
+
+/* Card Uniform Flex Height & Pinned Actions */
+.tour-card,
+.product-card,
+.recipe-card,
+article.tour-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tour-body,
+.product-card-body,
+.recipe-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tour-body > :last-child,
+.card-actions,
+.product-actions {
+  margin-top: auto !important;
+}
+
+/* Fluid responsive grid tiers */
+.grid-cards-responsive,
+.grid-products-responsive,
+.grid-3-responsive {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+

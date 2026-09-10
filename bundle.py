@@ -102,14 +102,18 @@ document.addEventListener('DOMContentLoaded', () => {
             'id="btn-proceed-checkout" target="_top"'
         )
 
-    # In-line local images (e.g. logo.png) as base64 for 100% standalone portable embed
+    # In-line local images from images/ folder as base64 for 100% standalone portable embed
     import base64
-    logo_path = os.path.join('images', 'logo.png')
-    if os.path.exists(logo_path):
-        with open(logo_path, 'rb') as lf:
-            logo_b64 = 'data:image/png;base64,' + base64.b64encode(lf.read()).decode('utf-8')
-        html_bundled = html_bundled.replace('src="images/logo.png"', f'src="{logo_b64}"')
-        html_bundled = html_bundled.replace('href="images/logo.png"', f'href="{logo_b64}"')
+    if os.path.exists('images'):
+        for img_name in os.listdir('images'):
+            img_path = os.path.join('images', img_name)
+            if os.path.isfile(img_path):
+                ext = os.path.splitext(img_name)[1].lower()
+                mime = 'image/png' if ext == '.png' else ('image/jpeg' if ext in ('.jpg', '.jpeg') else 'application/octet-stream')
+                with open(img_path, 'rb') as img_f:
+                    b64_data = f'data:{mime};base64,' + base64.b64encode(img_f.read()).decode('utf-8')
+                html_bundled = html_bundled.replace(f'src="images/{img_name}"', f'src="{b64_data}"')
+                html_bundled = html_bundled.replace(f'href="images/{img_name}"', f'href="{b64_data}"')
 
     output_path = 'wix-bundle.html'
     with open(output_path, 'w', encoding='utf-8') as out:

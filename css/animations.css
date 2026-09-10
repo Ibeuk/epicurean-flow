@@ -41,15 +41,14 @@
   }
 }
 
-/* IntersectionObserver Scroll Reveals (Pure Stable Fade - Zero Vertical Shifting) */
+/* Scroll Reveals (Pure Stable Presentation - Zero Content Hiding) */
 .reveal-on-scroll {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
-  will-change: opacity;
+  opacity: 1;
+  transform: none;
 }
 
 .reveal-on-scroll.is-visible {
-  opacity: 1;
+  opacity: 1 !important;
   transform: none !important;
 }
 

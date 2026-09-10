@@ -427,14 +427,18 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: var(--shadow-drawer);
-  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .mobile-nav-drawer.open,
 .mobile-menu-drawer.open {
   right: 0;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-nav-links,
@@ -616,34 +620,44 @@
   padding-bottom: 96px;
 }
 
+.hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin-left: auto;
+}
+
 .hero-visual-frame {
   position: relative;
   aspect-ratio: 4 / 5;
-  border-radius: var(--radius-md);
+  max-height: 580px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-book);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--color-gold-border);
 }
 
-.hero-visual-frame::before {
-  content: '';
-  position: absolute;
-  inset: -14px;
-  border: 1px solid var(--color-gold-border);
-  border-radius: var(--radius-lg);
-  pointer-events: none;
-  z-index: 1;
+.hero-visual-frame img,
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero-quote-box {
   position: absolute;
-  bottom: -28px;
-  left: -28px;
-  background: var(--color-white);
-  padding: 24px 28px;
-  border-radius: var(--radius-xs);
-  box-shadow: var(--shadow-card-hover);
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-gold-border);
   border-left: 3px solid var(--color-gold);
-  max-width: 300px;
   z-index: 2;
 }
 
@@ -839,25 +853,20 @@
    -------------------------------------------------------------------------- */
 .chef-portrait-frame {
   position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-card-hover);
-}
-
-.chef-portrait-frame::before {
-  content: '';
-  position: absolute;
-  inset: -14px;
-  border: 1px solid var(--color-gold-border);
+  aspect-ratio: 4 / 5;
+  max-height: 520px;
   border-radius: var(--radius-lg);
-  pointer-events: none;
-  z-index: 1;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--color-gold-border);
 }
 
 .chef-portrait-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
 .chef-quote-badge {
@@ -2721,13 +2730,91 @@ textarea.form-input {
    15. SEASONAL CAMPAIGNS & PROMOTIONAL TILES
    -------------------------------------------------------------------------- */
 .seasonal-banner {
-  background: linear-gradient(135deg, #1C1917 0%, #2A2421 100%);
+  position: relative;
+  background: linear-gradient(135deg, rgba(28, 25, 23, 0.94) 0%, rgba(46, 36, 28, 0.96) 100%),
+              url('https://static.wixstatic.com/media/8e85e1_14376467c2e045a884d6fe64a1e55711~mv2.jpg') center/cover no-repeat;
   border: 1px solid var(--color-gold-border);
   border-radius: var(--radius-xl);
-  padding: 48px;
+  padding: 56px 48px;
   color: var(--color-ivory);
-  position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.seasonal-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.seasonal-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.seasonal-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(212, 175, 55, 0.18);
+  color: #EBD6A0;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 20px;
+}
+
+.seasonal-tag::before {
+  content: '✦';
+  color: var(--color-gold-light);
+}
+
+.seasonal-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 600;
+  color: #FAF7F2;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.seasonal-desc {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(245, 240, 231, 0.92);
+  margin-bottom: 32px;
+}
+
+.seasonal-desc em {
+  color: #EBD6A0;
+  font-style: italic;
+}
+
+.seasonal-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.seasonal-actions .btn-outline {
+  border-color: rgba(245, 240, 231, 0.5);
+  color: #FAF7F2;
+}
+
+.seasonal-actions .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #FAF7F2;
+  color: #FFFFFF;
 }
 
 .seasonal-badge {

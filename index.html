@@ -63,14 +63,7 @@
 </head>
 <body>
 
-  <!-- Announcement Bar -->
-  <aside class="announcement-bar" role="complementary" aria-label="Special Offer">
-    <div class="announcement-inner">
-      <span class="announcement-badge">Direct Access</span>
-      <span class="announcement-text">Instant digital delivery &bull; Lifetime course access &bull; Verified certificate of completion</span>
-      <a href="cookbooks.html" class="announcement-link">Explore Collection <span class="arrow" aria-hidden="true">&rarr;</span></a>
-    </div>
-  </aside>
+
 
   <!-- =========================================================================
        NAVIGATION HEADER (7 PILLARS)
@@ -208,13 +201,12 @@
           </div>
 
           <div class="hero-visual reveal-on-scroll delay-2">
-            <div class="hero-visual-frame" style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl); border: 1px solid var(--color-gold-border);">
+            <div class="hero-visual-frame">
               <img src="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_2500,h_1357,al_c/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg" 
                    alt="Chef Eliane Muskus preparing a gourmet dish with precision" 
-                   class="hero-bg-img"
-                   style="width: 100%; height: 100%; object-fit: cover;">
+                   class="hero-bg-img">
             </div>
-            <div class="hero-quote-box" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-radius: var(--radius-sm); border: 1px solid var(--color-gold-border); padding: 16px 20px; box-shadow: var(--shadow-md);">
+            <div class="hero-quote-box">
               <p style="font-family: var(--font-serif); font-size: 1.0625rem; font-style: italic; color: var(--color-ink); margin-bottom: 4px;">"Understand the technique behind every recipe."</p>
               <p style="font-size: 0.75rem; color: var(--color-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin: 0;">Chef Eliane Muskus &bull; Cannes &amp; Amsterdam</p>
             </div>
@@ -234,24 +226,24 @@
           <p class="section-description">Immediate culinary access: structured digital masterclasses and chef-authored culinary editions.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto;">
+        <div class="grid-cards-responsive" style="max-width: 1100px; margin: 0 auto;">
           
           <!-- Product Card 1: Masterclass Course -->
-          <article class="tour-card reveal-on-scroll delay-1" style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
-            <div class="tour-media" style="position: relative; aspect-ratio: 16/10; overflow: hidden;">
-              <img src="https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg" alt="The French Culinary Arts Masterclass" style="width: 100%; height: 100%; object-fit: cover;">
+          <article class="tour-card reveal-on-scroll delay-1">
+            <div class="tour-media">
+              <img src="https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg" alt="The French Culinary Arts Masterclass">
               <span class="tour-city-badge">Video Masterclass</span>
             </div>
-            <div class="tour-body" style="padding: 28px; display: flex; flex-direction: column; flex-grow: 1;">
+            <div class="tour-body">
               <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
                 <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold);">Course &bull; Certificate Included</span>
                 <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--color-ink);">$149.00</span>
               </div>
               <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px; color: var(--color-ink);">The French Culinary Arts Masterclass</h3>
-              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
                 12 HD video modules on knife accuracy, mother sauce reductions, emulsion stability, and Michelin-standard plating.
               </p>
-              <div style="display: flex; gap: 10px;">
+              <div style="display: flex; gap: 10px; margin-top: auto; padding-top: 16px;">
                 <a href="product-detail.html" class="btn btn-primary btn-sm" style="flex: 1; text-align: center; justify-content: center;">Learn More</a>
                 <button type="button" class="btn btn-outline btn-sm btn-add-to-cart" onclick="CartManager.addItem({id:'french-baking', title:'The French Culinary Arts Masterclass', price:149, type:'course', image:'https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg'}); CartManager.openCart();">
                   Add to Cart
@@ -261,21 +253,21 @@
           </article>
 
           <!-- Product Card 2: Upcoming Signature Cookbook Preview -->
-          <article class="tour-card reveal-on-scroll delay-2" style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
-            <div class="tour-media" style="position: relative; aspect-ratio: 16/10; overflow: hidden; background: #2A241F;">
-              <img src="https://static.wixstatic.com/media/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png/v1/fit/w_2500,h_1330,al_c/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png" alt="Let's Eat Cookbook Preview" style="width: 100%; height: 100%; object-fit: cover;">
+          <article class="tour-card reveal-on-scroll delay-2">
+            <div class="tour-media" style="background: #F5F0E7;">
+              <img src="images/lets-eat-cover.jpg" alt="Let's Eat Cookbook by Chef Eliane Muskus" style="object-fit: cover;">
               <span class="tour-city-badge">New Edition Preview</span>
             </div>
-            <div class="tour-body" style="padding: 28px; display: flex; flex-direction: column; flex-grow: 1;">
+            <div class="tour-body">
               <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
                 <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold);">Cookbook &bull; Digital &amp; Print</span>
                 <span style="font-size: 0.875rem; font-weight: 600; color: var(--color-gold);">Approved Edition</span>
               </div>
               <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px; color: var(--color-ink);">Let's Eat: Mediterranean Everyday</h3>
-              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
                 Over 70 vibrant, whole-ingredient recipes demonstrating low-glycemic Mediterranean cooking without sacrificing richness.
               </p>
-              <div style="display: flex; gap: 10px;">
+              <div style="display: flex; gap: 10px; margin-top: auto; padding-top: 16px;">
                 <a href="cookbooks.html" class="btn btn-primary btn-sm" style="flex: 1; text-align: center; justify-content: center;">View Book Details</a>
                 <a href="contact.html?subject=Lets-Eat-Waitlist" class="btn btn-outline btn-sm">Join Waitlist</a>
               </div>
@@ -283,21 +275,21 @@
           </article>
 
           <!-- Product Card 3: The Macronutrient Guide -->
-          <article class="tour-card reveal-on-scroll delay-3" style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
-            <div class="tour-media" style="position: relative; aspect-ratio: 16/10; overflow: hidden;">
-              <img src="https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_500,h_500,q_90/file.png" alt="The Ultimate Macronutrient Guide" style="width: 100%; height: 100%; object-fit: cover;">
+          <article class="tour-card reveal-on-scroll delay-3">
+            <div class="tour-media">
+              <img src="https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_500,h_500,q_90/file.png" alt="The Ultimate Macronutrient Guide">
               <span class="tour-city-badge">Nutritional Guide</span>
             </div>
-            <div class="tour-body" style="padding: 28px; display: flex; flex-direction: column; flex-grow: 1;">
+            <div class="tour-body">
               <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
                 <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold);">Digital Guide &bull; PDF</span>
                 <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--color-ink);">$29.00</span>
               </div>
               <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px; color: var(--color-ink);">The Ultimate Macronutrient Guide</h3>
-              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
                 Master protein, fat, and carbohydrate ratios for stable metabolic energy, clean satiety, and vibrant daily plates.
               </p>
-              <div style="display: flex; gap: 10px;">
+              <div style="display: flex; gap: 10px; margin-top: auto; padding-top: 16px;">
                 <a href="product-detail.html" class="btn btn-primary btn-sm" style="flex: 1; text-align: center; justify-content: center;">View Guide</a>
                 <button type="button" class="btn btn-outline btn-sm btn-add-to-cart" onclick="CartManager.addItem({id:'macro-guide', title:'The Ultimate Macronutrient Guide', price:29, type:'book', image:'https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_500,h_500,q_90/file.png'}); CartManager.openCart();">
                   Add to Cart
@@ -318,9 +310,7 @@
         <div class="grid-editorial" style="align-items: center;">
           <div class="chef-portrait-frame reveal-on-scroll">
             <img src="https://static.wixstatic.com/media/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg/v1/fill/w_2500,h_3750,al_c/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg" 
-                 alt="Chef Eliane Muskus in culinary studio"
-                 loading="lazy"
-                 style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                 alt="Chef Eliane Muskus in culinary studio">
           </div>
 
           <div class="chef-authority-content reveal-on-scroll delay-2">
@@ -401,8 +391,14 @@
               </div>
             </div>
 
-            <div style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg);">
-              <img src="https://static.wixstatic.com/media/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png/v1/fit/w_2500,h_1330,al_c/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png" alt="Chef Eliane teaching technique" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="course-feature-media" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 16/11; border: 1px solid var(--color-gold-border);">
+              <img src="https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg" alt="Chef Eliane teaching professional culinary technique" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              <div style="position: absolute; top: 16px; right: 16px; background: rgba(28, 25, 23, 0.88); backdrop-filter: blur(8px); padding: 6px 14px; border-radius: 999px; border: 1px solid var(--color-gold); color: #FAF7F2; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; display: flex; align-items: center; gap: 6px;">
+                <span style="color: var(--color-gold-light);">▶</span> 12 Video Modules
+              </div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(18,17,15,0.88), transparent); padding: 28px 20px 16px 20px; color: #FAF7F2;">
+                <p style="font-family: var(--font-serif); font-size: 1.0625rem; font-style: italic; margin: 0;">Michelin-Standard Pan Searing &amp; Emulsion Physics</p>
+              </div>
             </div>
           </div>
         </div>
@@ -509,32 +505,36 @@
           <p class="section-description">Immersive market journeys, private tastings, and artisan food producers in Amsterdam and Paris.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 1000px; margin: 0 auto;">
-          <div class="tour-card reveal-on-scroll delay-1" style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
-            <div class="tour-media" style="position: relative; aspect-ratio: 16/10; overflow: hidden;">
-              <img src="https://static.wixstatic.com/media/30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Amsterdam Food Tour" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="grid-cards-responsive" style="grid-template-columns: repeat(2, 1fr); max-width: 1000px; margin: 0 auto;">
+          <div class="tour-card reveal-on-scroll delay-1">
+            <div class="tour-media">
+              <img src="images/amsterdam-tour.jpg" alt="Amsterdam Canal Food Tour and Artisanal Cheese Tasting">
               <span class="tour-city-badge">Amsterdam</span>
             </div>
-            <div class="tour-body" style="padding: 28px;">
+            <div class="tour-body">
               <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px;">Canal-Side Artisanal Tasting Journey</h3>
               <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
                 Stroll historic canals, sample aged Gouda with master cheesemakers, and taste authentic Dutch pastries.
               </p>
-              <a href="food-tours.html" class="btn btn-outline btn-sm">Explore Tour Details &rarr;</a>
+              <div style="margin-top: auto; padding-top: 16px;">
+                <a href="food-tours.html" class="btn btn-outline btn-sm">Explore Tour Details &rarr;</a>
+              </div>
             </div>
           </div>
 
-          <div class="tour-card reveal-on-scroll delay-2" style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
-            <div class="tour-media" style="position: relative; aspect-ratio: 16/10; overflow: hidden;">
-              <img src="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_2500,h_1357,al_c/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg" alt="Paris Market Tour" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="tour-card reveal-on-scroll delay-2">
+            <div class="tour-media">
+              <img src="images/paris-tour.jpg" alt="Paris Historic Markets and Haute Cuisine Tour">
               <span class="tour-city-badge">Paris</span>
             </div>
-            <div class="tour-body" style="padding: 28px;">
+            <div class="tour-body">
               <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px;">Historic Markets &amp; Boulangeries of Paris</h3>
               <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
                 Walk covered Parisian markets, sample terroir wines, and discover hidden neighborhood bistros.
               </p>
-              <a href="food-tours.html" class="btn btn-outline btn-sm">Explore Tour Details &rarr;</a>
+              <div style="margin-top: auto; padding-top: 16px;">
+                <a href="food-tours.html" class="btn btn-outline btn-sm">Explore Tour Details &rarr;</a>
+              </div>
             </div>
           </div>
         </div>
@@ -552,51 +552,51 @@
           <p class="section-description">Discover recipes and understand the principles behind them. Each dish links directly to related masterclasses and guides.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 1100px; margin: 0 auto;">
+        <div class="grid-cards-responsive" style="max-width: 1100px; margin: 0 auto;">
           
-          <article class="reveal-on-scroll delay-1" style="background: var(--color-white); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
-            <div style="aspect-ratio: 16/10; overflow: hidden;">
-              <img src="https://static.wixstatic.com/media/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png/v1/fit/w_2500,h_1330,al_c/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png" alt="Low-Carb Gourmet Banana Cake" style="width: 100%; height: 100%; object-fit: cover;">
+          <article class="tour-card reveal-on-scroll delay-1">
+            <div class="tour-media">
+              <img src="https://static.wixstatic.com/media/8e85e1_06c405184e654ab7845eee7980e6d23d~mv2.jpg/v1/fit/w_800,h_500,q_90/file.jpg" alt="Low-Carb Gourmet Banana Cake">
             </div>
-            <div style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
+            <div class="tour-body">
               <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-gold); margin-bottom: 6px;">Recipes &bull; Diabetes-Friendly</span>
               <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px; color: var(--color-ink);">Low-Carb Gourmet Banana Cake</h3>
-              <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.55; margin-bottom: 16px; flex-grow: 1;">
+              <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.55; margin-bottom: 16px;">
                 Proof that low-glycemic baking can deliver deeply satisfying, moist dessert results.
               </p>
-              <div style="padding-top: 12px; border-top: 1px solid var(--color-border-light); font-size: 0.8125rem; color: var(--color-gold); font-weight: 600;">
+              <div style="margin-top: auto; padding-top: 12px; border-top: 1px solid var(--color-border-light); font-size: 0.8125rem; color: var(--color-gold); font-weight: 600;">
                 Related Guide: <a href="product-detail.html" style="color: var(--color-ink); text-decoration: underline;">Macro Guide &rarr;</a>
               </div>
             </div>
           </article>
 
-          <article class="reveal-on-scroll delay-2" style="background: var(--color-white); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
-            <div style="aspect-ratio: 16/10; overflow: hidden;">
-              <img src="https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Art of Roasting Whole Spices" style="width: 100%; height: 100%; object-fit: cover;">
+          <article class="tour-card reveal-on-scroll delay-2">
+            <div class="tour-media">
+              <img src="https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Art of Roasting Whole Spices">
             </div>
-            <div style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
+            <div class="tour-body">
               <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-gold); margin-bottom: 6px;">Cooking Techniques</span>
               <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px; color: var(--color-ink);">The Art of Roasting Whole Spices</h3>
-              <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.55; margin-bottom: 16px; flex-grow: 1;">
+              <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.55; margin-bottom: 16px;">
                 How dry heat activates volatile essential oils for deeper aromas and complex palate presence.
               </p>
-              <div style="padding-top: 12px; border-top: 1px solid var(--color-border-light); font-size: 0.8125rem; color: var(--color-gold); font-weight: 600;">
+              <div style="margin-top: auto; padding-top: 12px; border-top: 1px solid var(--color-border-light); font-size: 0.8125rem; color: var(--color-gold); font-weight: 600;">
                 Related Course: <a href="courses.html" style="color: var(--color-ink); text-decoration: underline;">Technique Masterclass &rarr;</a>
               </div>
             </div>
           </article>
 
-          <article class="reveal-on-scroll delay-3" style="background: var(--color-white); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
-            <div style="aspect-ratio: 16/10; overflow: hidden;">
-              <img src="https://static.wixstatic.com/media/30dece_f35014b18c7e4ef497d3056cec399bce~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Soulful Soups" style="width: 100%; height: 100%; object-fit: cover;">
+          <article class="tour-card reveal-on-scroll delay-3">
+            <div class="tour-media">
+              <img src="https://static.wixstatic.com/media/30dece_f35014b18c7e4ef497d3056cec399bce~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Soulful Soups">
             </div>
-            <div style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
+            <div class="tour-body">
               <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-gold); margin-bottom: 6px;">Food Experiences</span>
               <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px; color: var(--color-ink);">Soulful Mediterranean Soups</h3>
-              <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.55; margin-bottom: 16px; flex-grow: 1;">
+              <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.55; margin-bottom: 16px;">
                 Layering herb stems, mirepoix, and pure extra virgin olive oil for deeply restorative broths.
               </p>
-              <div style="padding-top: 12px; border-top: 1px solid var(--color-border-light); font-size: 0.8125rem; color: var(--color-gold); font-weight: 600;">
+              <div style="margin-top: auto; padding-top: 12px; border-top: 1px solid var(--color-border-light); font-size: 0.8125rem; color: var(--color-gold); font-weight: 600;">
                 Related Cookbook: <a href="cookbooks.html" style="color: var(--color-ink); text-decoration: underline;">Let's Eat &rarr;</a>
               </div>
             </div>

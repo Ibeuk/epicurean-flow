@@ -20,11 +20,11 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   02. TABLET LANDSCAPE (1024px to 1280px)
+   02. LAPTOP & SMALL DESKTOP (1024px to 1280px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1280px) {
   :root {
-    --section-padding-desktop: 96px;
+    --section-padding-desktop: 88px;
     --grid-gap-desktop: 28px;
   }
 
@@ -33,25 +33,20 @@ html, body {
   }
 
   .footer-grid {
-    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
-    gap: 36px;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 32px;
   }
   
   .grid-editorial, .grid-editorial-reverse {
-    gap: 52px;
+    gap: 48px;
   }
 }
 
 /* --------------------------------------------------------------------------
-   03. TABLET PORTRAIT & MEDIUM SCREENS (Under 1024px)
+   02B. NAVIGATION OVERFLOW GUARD (Under 1180px)
+   Switches cleanly to mobile drawer before 7-pillar nav can ever wrap or overflow
    -------------------------------------------------------------------------- */
-@media (max-width: 1023px) {
-  :root {
-    --section-padding-desktop: 80px;
-    --header-height: var(--header-height-mobile);
-  }
-
-  /* Navigation Bar Controls */
+@media (max-width: 1180px) {
   .nav-desktop,
   .nav-links,
   .nav-actions .btn,
@@ -69,15 +64,37 @@ html, body {
   }
 
   .header-logo-img {
-    height: 52px;
-    max-height: 52px;
-    max-width: 200px;
+    height: 48px;
+    max-height: 48px;
+    max-width: 190px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   03. TABLET PORTRAIT & MEDIUM SCREENS (768px to 1099px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1099px) {
+  :root {
+    --section-padding-desktop: 72px;
+    --header-height: var(--header-height-mobile);
   }
 
-  /* Multi-Column Grid Collapses */
-  .grid-2,
+  /* Two-column balanced grids on tablet */
   .grid-3,
-  .grid-4,
+  .grid-cards-responsive,
+  .grid-products-responsive,
+  .grid-3-responsive {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 28px !important;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  /* Single-column editorial layout */
+  .grid-2,
   .grid-editorial,
   .grid-editorial-reverse,
   .grid-asymmetric-cookbooks,
@@ -101,16 +118,27 @@ html, body {
     flex-direction: column-reverse;
   }
 
-  .cookbook-hero-card {
-    grid-template-columns: 1fr !important;
+  .hero-visual {
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .hero-quote-box {
     position: relative;
     bottom: auto;
     left: auto;
-    margin-top: 20px;
+    right: auto;
+    margin-top: 16px;
     max-width: 100%;
+  }
+
+  .chef-portrait-frame {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .cookbook-hero-card {
+    grid-template-columns: 1fr !important;
   }
 
   /* Remove negative decorative border frames on tablet/mobile */
@@ -125,7 +153,7 @@ html, body {
   }
 
   .newsletter-card {
-    padding: 44px 32px;
+    padding: 40px 28px;
   }
   
   .newsletter-form {
