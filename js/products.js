@@ -470,12 +470,25 @@ class WixProductsSync {
     const gridEl = document.getElementById('featured-products-grid') || document.getElementById('catalog-grid');
     if (!gridEl || !items || items.length === 0) return;
 
-    const newIds = items.map(i => i._id || i.id).join(',');
+    // Filter out Wix store default template dummy goods (vases, eyewear, sweaters, etc.)
+    const dummyItemKeywords = ['vase', 'tote bag', 'eye serum', 'sweater', 'eyeglasses', 'chair', 'cleanser', 'baseball cap', 'water bottle', 'diffuser', 'earrings', 't-shirt'];
+    const validItems = items.filter(item => {
+      const name = (item.name || item.title || '').toLowerCase();
+      return !dummyItemKeywords.some(keyword => name.includes(keyword));
+    });
+
+    if (validItems.length === 0) {
+      console.info('[WixProductsSync] Only default Wix store demo items detected; preserving curated chef catalog.');
+      return;
+    }
+
+    const newIds = validItems.map(i => i._id || i.id).join(',');
     if (this.renderedIds === newIds) return;
     this.renderedIds = newIds;
 
     let html = '';
-    items.forEach((item, index) => {
+    validItems.forEach((item, index) => {
+
       const id = item._id || item.id || `wix-prod-${index}`;
       const title = item.name || item.title || 'Epicurean Flow Edition';
       const rawPrice = item.price?.price ?? item.priceData?.price ?? item.numericPrice ?? 0;
