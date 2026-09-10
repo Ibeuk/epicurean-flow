@@ -4,8 +4,22 @@
 
 const WIX_CONFIG = {
   clientId: 'd446c704-ea75-4680-affd-1633fca4bfb8',
-  pagesDomain: 'https://epicureanflow.wixsite.com/epicurean-flow/'
+  get pagesDomain() {
+    if (typeof window !== 'undefined') {
+      const host = window.location.hostname;
+      if (host.includes('epicureanflow.com')) {
+        return `${window.location.protocol}//${window.location.host}/`;
+      }
+      try {
+        if (window.top && window.top.location && window.top.location.hostname.includes('epicureanflow.com')) {
+          return `${window.top.location.protocol}//${window.top.location.host}/`;
+        }
+      } catch (e) {}
+    }
+    return 'https://epicureanflow.wixsite.com/epicurean-flow/';
+  }
 };
+
 
 const PRODUCTS_DATA = {
   // Current products removed pending synchronization with newly redesigned catalog
@@ -406,7 +420,11 @@ class CartManager {
 
           if (redirect && redirect.redirectSession && redirect.redirectSession.fullUrl) {
             console.log('[CartManager] REDIRECTING TO:', redirect.redirectSession.fullUrl);
-            window.location.href = redirect.redirectSession.fullUrl;
+            if (window.top) {
+              window.top.location.href = redirect.redirectSession.fullUrl;
+            } else {
+              window.location.href = redirect.redirectSession.fullUrl;
+            }
             return;
           }
         }
@@ -417,8 +435,22 @@ class CartManager {
       console.warn('[CartManager] wixClient not ready, fallback triggered');
     }
 
+    // 1. Notify parent Wix page if running inside an iframe
+    if (window.parent && window.parent !== window) {
+      try {
+        window.parent.postMessage({ type: 'NAVIGATE_CHECKOUT' }, '*');
+      } catch (e) {}
+    }
+
     console.log('[CartManager] Falling back to standard store cart');
-    window.location.href = `${WIX_CONFIG.pagesDomain}cart-page`;
+    const targetUrl = `${WIX_CONFIG.pagesDomain}cart-page`;
+    if (window.top && window.top !== window) {
+      try {
+        window.top.location.href = targetUrl;
+        return;
+      } catch (e) {}
+    }
+    window.location.href = targetUrl;
   }
 }
 
@@ -467,11 +499,10 @@ class WixProductsSync {
   }
 
   renderProducts(items) {
-    const gridEl = document.getElementById('featured-products-grid') || document.getElementById('catalog-grid');
-    if (!gridEl || !items || items.length === 0) return;
+    if (!items || items.length === 0) return;
 
     // Filter out Wix store default template dummy goods (vases, eyewear, sweaters, etc.)
-    const dummyItemKeywords = ['vase', 'tote bag', 'eye serum', 'sweater', 'eyeglasses', 'chair', 'cleanser', 'baseball cap', 'water bottle', 'diffuser', 'earrings', 't-shirt'];
+    const dummyItemKeywords = ['vase', 'tote bag', 'eye serum', 'sweater', 'eyeglasses', 'chair', 'cleanser', 'baseball cap', 'water bottle', 'diffuser', 'earrings', 't-shirt', 'sunglasses'];
     const validItems = items.filter(item => {
       const name = (item.name || item.title || '').toLowerCase();
       return !dummyItemKeywords.some(keyword => name.includes(keyword));
@@ -486,14 +517,37 @@ class WixProductsSync {
     if (this.renderedIds === newIds) return;
     this.renderedIds = newIds;
 
-    let html = '';
-    validItems.forEach((item, index) => {
+    // Separate products into Courses vs Cookbooks
+    const courses = [];
+    const cookbooks = [];
 
-      const id = item._id || item.id || `wix-prod-${index}`;
+    validItems.forEach(item => {
+      const name = (item.name || item.title || '').toLowerCase();
+      const ribbon = (item.ribbon || item.badge || '').toLowerCase();
+      const collections = (item.collections || item.collectionIds || []).map(c => 
+        (typeof c === 'string' ? c : (c.name || c.title || '')).toLowerCase()
+      );
+
+      const isCourse = 
+        collections.some(c => c.includes('course') || c.includes('masterclass') || c.includes('academy')) ||
+        ribbon.includes('course') || ribbon.includes('masterclass') || ribbon.includes('academy') ||
+        name.includes('course') || name.includes('masterclass') || name.includes('academy') ||
+        name.includes('class') || name.includes('workshop') || name.includes('module');
+
+      if (isCourse) {
+        courses.push(item);
+      } else {
+        cookbooks.push(item);
+      }
+    });
+
+    // High-end responsive card generator
+    const renderCard = (item, type) => {
+      const id = item._id || item.id;
       const title = item.name || item.title || 'Epicurean Flow Edition';
       const rawPrice = item.price?.price ?? item.priceData?.price ?? item.numericPrice ?? 0;
-      const formattedPrice = item.price?.formatted?.price ?? item.priceData?.formatted?.price ?? item.formattedPrice ?? (rawPrice ? `$${Number(rawPrice).toFixed(2)}` : 'Inquire');
-      
+      const formattedPrice = item.price?.formatted?.price ?? item.priceData?.formatted?.price ?? item.formattedPrice ?? (rawPrice ? `€${Number(rawPrice).toFixed(2)}` : '€0.00');
+
       let imgUrl = 'https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg';
       if (item.media?.mainMedia?.image?.url) {
         imgUrl = item.media.mainMedia.image.url;
@@ -505,39 +559,70 @@ class WixProductsSync {
         imgUrl = item.image;
       }
 
-      const badge = item.ribbon || item.badge || (item.productType === 'digital' ? 'Digital Edition' : 'Featured Culinary');
-      const desc = item.description ? item.description.replace(/<[^>]*>?/gm, '').slice(0, 130) + '...' : 'Michelin-rooted technique, chef-tested ingredients, and vibrant gastronomic creations.';
-      const productSlug = item.slug || item.productPageUrl?.path || 'product-detail.html';
-      const detailUrl = productSlug.startsWith('http') ? productSlug : `product-detail.html?id=${id}`;
+      const defaultBadge = type === 'course' ? 'Masterclass Course' : 'Digital Cookbook';
+      const badge = item.ribbon || item.badge || defaultBadge;
+      const descSnippet = item.description 
+        ? item.description.replace(/<[^>]*>?/gm, '').slice(0, 130) + '...' 
+        : (type === 'course' 
+            ? 'Chef-led video masterclass with step-by-step techniques and comprehensive kitchen workbook.' 
+            : 'Chef-tested recipes with authentic Mediterranean roots, flavor pairing notes, and chef guidance.');
 
-      html += `
-        <article class="tour-card" data-wix-id="${id}">
-          <div class="tour-media">
-            <img src="${imgUrl}" alt="${title}" onerror="this.src='https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg'">
-            <span class="tour-city-badge">${badge}</span>
+      const productSlug = item.slug || item.productPageUrl?.path || '';
+      const detailUrl = productSlug.startsWith('http') ? productSlug : `product-detail.html?id=${id}`;
+      const safeTitle = title.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+
+      return `
+        <article class="tour-card" data-wix-id="${id}" style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+          <div class="tour-media" style="position: relative; aspect-ratio: 16/10; overflow: hidden; background: #12110f;">
+            <img src="${imgUrl}" alt="${safeTitle}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onerror="this.src='https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg'">
+            <span class="tour-city-badge" style="position: absolute; top: 14px; left: 14px; background: var(--color-gold-gradient); color: #fff; padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">${badge}</span>
           </div>
-          <div class="tour-body">
+          <div class="tour-body" style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
-              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold);">Chef Edition</span>
-              <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--color-ink);">${formattedPrice}</span>
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold);">${type === 'course' ? 'Culinary Academy' : 'Chef Edition'}</span>
+              <span style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: var(--color-ink);">${formattedPrice}</span>
             </div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px; color: var(--color-ink);">${title}</h3>
-            <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
-              ${desc}
+            <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px; color: var(--color-ink); line-height: 1.3;">${title}</h3>
+            <p style="font-size: 0.9rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
+              ${descSnippet}
             </p>
-            <div class="card-action-buttons">
-              <a href="${detailUrl}" class="btn btn-primary btn-sm btn-card-action">View Details</a>
-              <button type="button" class="btn btn-outline btn-sm btn-card-action btn-add-to-cart" 
-                onclick="CartManager.addItem({id:'${id}', wixId:'${id}', title:'${title.replace(/'/g, "\\'")}', price:${rawPrice || 0}, image:'${imgUrl}'}); CartManager.openCart();">
+            <div class="card-action-buttons" style="margin-top: auto; display: flex; flex-direction: column; gap: 8px;">
+              <button type="button" class="btn btn-primary btn-sm btn-card-action btn-add-to-cart" 
+                onclick="CartManager.addItem({id:'${id}', wixId:'${id}', title:'${safeTitle}', price:${rawPrice || 0}, image:'${imgUrl}'}); CartManager.openCart();">
                 Add to Cart &bull; ${formattedPrice}
               </button>
+              <a href="${detailUrl}" class="btn btn-outline btn-sm btn-card-action">View Details</a>
             </div>
           </div>
         </article>
       `;
-    });
+    };
 
-    gridEl.innerHTML = html;
+    // 1. Render Courses into #courses-live-grid
+    const coursesGridEl = document.getElementById('courses-live-grid');
+    if (coursesGridEl && courses.length > 0) {
+      coursesGridEl.innerHTML = courses.map(item => renderCard(item, 'course')).join('');
+      coursesGridEl.style.display = 'grid';
+      const coursePlaceholder = document.getElementById('courses-curation-placeholder');
+      if (coursePlaceholder) coursePlaceholder.style.display = 'none';
+      console.log(`[WixProductsSync] Rendered ${courses.length} live course(s) into #courses-live-grid`);
+    }
+
+    // 2. Render Cookbooks into #cookbooks-live-grid
+    const cookbooksGridEl = document.getElementById('cookbooks-live-grid');
+    if (cookbooksGridEl && cookbooks.length > 0) {
+      cookbooksGridEl.innerHTML = cookbooks.map(item => renderCard(item, 'cookbook')).join('');
+      cookbooksGridEl.style.display = 'grid';
+      const cookbookPlaceholder = document.getElementById('cookbooks-curation-placeholder');
+      if (cookbookPlaceholder) cookbookPlaceholder.style.display = 'none';
+      console.log(`[WixProductsSync] Rendered ${cookbooks.length} live cookbook(s) into #cookbooks-live-grid`);
+    }
+
+    // 3. Fallback for legacy generic grids if present
+    const genericGrid = document.getElementById('featured-products-grid') || document.getElementById('catalog-grid');
+    if (genericGrid) {
+      genericGrid.innerHTML = validItems.map(item => renderCard(item, 'cookbook')).join('');
+    }
   }
 }
 
