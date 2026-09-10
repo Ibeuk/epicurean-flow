@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique Food Tours & Culinary Discoveries | Epicurean Flow</title>
+  <meta name="description" content="Discover authentic gourmet walking tours and food experiences in Amsterdam and Paris curated by Michelin-accredited Chef Eliane Muskus.">
+  <link rel="canonical" href="https://epicureanflow.wixsite.com/epicurean-flow/food-tours">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Boutique Food Tours & Culinary Discoveries | Epicurean Flow">
+  <meta property="og:description" content="Discover authentic gourmet walking tours and food experiences in Amsterdam and Paris curated by Michelin-accredited Chef Eliane Muskus.">
+  <meta property="og:url" content="https://epicureanflow.wixsite.com/epicurean-flow/food-tours">
+  <meta property="og:image" content="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "Epicurean Flow Boutique Food Tours",
+    "description": "Gourmet culinary walking tours through historic markets and artisanal food producers in Amsterdam and Paris.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Epicurean Flow",
+      "url": "https://epicureanflow.wixsite.com/epicurean-flow/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Header Navigation (7 Pillars) -->
+  <header class="header" id="main-header" role="banner">
+    <div class="header-container container">
+      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow">
+        <img src="images/logo.png" alt="Epicurean Flow" class="header-logo-img">
+      </a>
+
+      <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
+          <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+          
+          <li class="nav-item has-dropdown">
+            <a href="recipes.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              <span>Recipes / Blog</span>
+              <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <a href="recipes.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">All Recipes</span>
+                <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
+              </a>
+              <a href="diabetes.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Diabetes Living</span>
+                <span class="dropdown-item-desc">Flavor-first low-carb gastronomy</span>
+              </a>
+              <a href="nutrition.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Nutrition &amp; Science</span>
+                <span class="dropdown-item-desc">Macro balancing &amp; vital energy</span>
+              </a>
+              <a href="menu-planning.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Menu Planning</span>
+                <span class="dropdown-item-desc">Bespoke 1-on-1 chef consultations</span>
+              </a>
+              <a href="media.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Media &amp; Cinema</span>
+                <span class="dropdown-item-desc">Masterclass video streams &amp; previews</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="food-tours.html" class="nav-link active">Food Tours</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="cart-btn" id="open-cart-btn" aria-label="View Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </button>
+          <a href="cookbooks.html" class="btn btn-primary nav-cta"><span>Shop</span></a>
+        </div>
+      </nav>
+
+      <button class="hamburger mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
+      <a href="courses.html" class="mobile-nav-link">Courses</a>
+      
+      <div class="mobile-nav-group">
+        <a href="recipes.html" class="mobile-nav-link">Recipes / Blog</a>
+        <div class="mobile-nav-submenu">
+          <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
+          <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
+          <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
+          <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
+          <a href="media.html" class="mobile-nav-sublink">Media &amp; Cinema</a>
+        </div>
+      </div>
+
+      <a href="food-tours.html" class="mobile-nav-link active">Food Tours</a>
+      <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="courses.html" class="btn btn-primary" style="width: 100%;">Enroll in Academy</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-tag">Curated Culinary Journeys</span>
+        <h1 class="page-hero-title">Boutique Food Tours &amp; Culinary Walks</h1>
+        <p class="page-hero-subtitle">
+          Experience European food capitals through the eyes of a professional chef. Discover hidden neighborhood artisans, historic spice docks, and authentic market tastings in Amsterdam and Paris.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tour Destinations Grid -->
+    <section class="section theme-ivory">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Signature Itineraries</span>
+          <h2 class="section-title">Chef-Curated Food Experiences</h2>
+          <p class="section-description">Small-group and private culinary journeys designed for passionate food lovers and curious travelers.</p>
+        </div>
+
+        <div class="grid-cards-responsive">
+          <!-- Tour 1: Amsterdam -->
+          <article class="tour-card">
+            <div class="tour-media">
+              <span class="tour-city-badge">Amsterdam</span>
+              <img src="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_800,h_500,q_90/file.jpg" alt="Amsterdam Canal Food Tour" loading="lazy">
+            </div>
+            <div class="tour-body">
+              <div class="tour-meta">
+                <span class="tour-meta-item">⏱ 3.5 Hours</span>
+                <span class="tour-meta-item">👥 Max 8 Guests</span>
+                <span class="tour-meta-item">🍷 7 Tastings</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 12px; color: var(--color-ink);">Historic Jordaan &amp; Spice Heritage Walk</h3>
+              <p style="font-size: 0.9375rem; color: var(--color-ink-muted); line-height: 1.6; margin-bottom: 24px; flex-grow: 1;">
+                Trace Amsterdam’s historic 17th-century spice trading routes. Visit heritage cheese affineurs, taste fresh warm stroopwafels, sample artisanal pickled herring, and savor rich Indonesian satay pairings.
+              </p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border-light); padding-top: 16px;">
+                <span style="font-size: 0.8125rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase;">Upcoming Offering</span>
+                <a href="#booking-section" class="btn btn-outline btn-sm">Join Waitlist &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tour 2: Paris -->
+          <article class="tour-card">
+            <div class="tour-media">
+              <span class="tour-city-badge">Paris</span>
+              <img src="https://static.wixstatic.com/media/8e85e1_14376467c2e045a884d6fe64a1e55711~mv2.jpg/v1/fit/w_800,h_500,q_90/file.jpg" alt="Paris Haute Cuisine Tour" loading="lazy">
+            </div>
+            <div class="tour-body">
+              <div class="tour-meta">
+                <span class="tour-meta-item">⏱ 4 Hours</span>
+                <span class="tour-meta-item">👥 Max 6 Guests</span>
+                <span class="tour-meta-item">🥖 8 Tastings</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 12px; color: var(--color-ink);">Saint-Germain Market &amp; Haute Cuisine Discovery</h3>
+              <p style="font-size: 0.9375rem; color: var(--color-ink-muted); line-height: 1.6; margin-bottom: 24px; flex-grow: 1;">
+                Walk the iconic culinary streets of Paris. Discover secret fromageries, boutique master chocolatiers, crusty baguette artisans, and historic bistros where French gastronomy was born.
+              </p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border-light); padding-top: 16px;">
+                <span style="font-size: 0.8125rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase;">Upcoming Offering</span>
+                <a href="#booking-section" class="btn btn-outline btn-sm">Join Waitlist &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tour 3: Bespoke Private -->
+          <article class="tour-card">
+            <div class="tour-media">
+              <span class="tour-city-badge">Bespoke</span>
+              <img src="https://static.wixstatic.com/media/8e85e1_06c405184e654ab7845eee7980e6d23d~mv2.jpg/v1/fit/w_800,h_500,q_90/file.jpg" alt="Private Chef Food Experience" loading="lazy">
+            </div>
+            <div class="tour-body">
+              <div class="tour-meta">
+                <span class="tour-meta-item">⏱ Tailored</span>
+                <span class="tour-meta-item">👥 Private Group</span>
+                <span class="tour-meta-item">✨ VIP Pairing</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 12px; color: var(--color-ink);">Private VIP Chef Walking &amp; Tasting Journeys</h3>
+              <p style="font-size: 0.9375rem; color: var(--color-ink-muted); line-height: 1.6; margin-bottom: 24px; flex-grow: 1;">
+                A completely bespoke private food day designed for families, corporate teams, or celebratory trips. Includes personalized meeting points and private wine cellar access.
+              </p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border-light); padding-top: 16px;">
+                <span style="font-size: 0.8125rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase;">By Request</span>
+                <a href="contact.html" class="btn btn-outline btn-sm">Inquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner Integration & Reservation Container -->
+    <section class="section theme-cream" id="booking-section">
+      <div class="container" style="max-width: 900px;">
+        <div class="tour-booking-box text-center">
+          <span class="product-badge gold" style="display: inline-block; margin-bottom: 16px;">Affiliate &amp; Booking Portal</span>
+          <h2 style="font-family: var(--font-serif); font-size: 2.25rem; color: var(--color-ink); margin-bottom: 16px;">Tour Reservation System</h2>
+          <p style="font-size: 1rem; color: var(--color-ink-muted); line-height: 1.7; max-width: 680px; margin: 0 auto 32px auto;">
+            We are currently synchronizing our online booking schedule directly with our certified tour partners. Be the first to secure dates as new departure slots are unlocked.
+          </p>
+
+          <!-- Integration Placeholder Container: Structured for Food Tour Company Widget / API Embed -->
+          <div id="food-tour-partner-widget" style="background: var(--color-ivory-surface); border: 1px dashed var(--color-gold-border); border-radius: var(--radius-md); padding: 32px; margin-bottom: 32px;">
+            <p style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-ink); margin-bottom: 12px;">Get Priority Access When Dates Open</p>
+            <form class="newsletter-form footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you! You have been placed on the priority list for Epicurean Flow Food Tours.'); this.reset();" style="max-width: 520px; margin: 0 auto;">
+              <input type="email" placeholder="Enter your email for tour schedule updates" class="newsletter-input" required>
+              <button type="submit" class="btn btn-primary"><span>Get Priority Access</span></button>
+            </form>
+          </div>
+
+          <p style="font-size: 0.8125rem; color: var(--color-ink-muted);">
+            Planning a private group or corporate event? <a href="contact.html" style="color: var(--color-gold); text-decoration: underline;">Contact Chef Eliane directly</a> for custom itineraries.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="logo-brand" style="margin-bottom: 16px; display: inline-block;">
+            <img src="images/logo.png" alt="Epicurean Flow" class="header-logo-img" style="filter: brightness(0) invert(1);">
+          </a>
+          <p class="footer-brand-desc">
+            A premium chef-led culinary platform combining Michelin-accredited expertise, practical education, cookbooks, and food experiences by Chef Eliane Muskus.
+          </p>
+          <div class="footer-contact-info" style="margin-top: 20px; font-size: 0.875rem; color: rgba(245, 240, 231, 0.75); line-height: 1.8;">
+            <p>Amsterdam (Zuidas) 1082MZ, The Netherlands</p>
+            <p>Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+31 6 18571677</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="cookbooks.html">Cookbooks</a></li>
+            <li><a href="courses.html">Cooking Courses</a></li>
+            <li><a href="food-tours.html">Food Tours</a></li>
+            <li><a href="recipes.html">Recipes &amp; Journal</a></li>
+            <li><a href="diabetes.html">Diabetes Living</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Science</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">About &amp; Trust</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Chef Eliane</a></li>
+            <li><a href="seasonal.html">Seasonal Campaigns</a></li>
+            <li><a href="contact.html">Contact Headquarters</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Stay Inspired</h4>
+          <p style="font-size: 0.9rem; color: rgba(245, 240, 231, 0.78); margin-bottom: 16px;">Receive seasonal recipes, private consultation invitations, and chef tips directly in your inbox.</p>
+          <form class="newsletter-form footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Epicurean Flow!');">
+            <input type="email" placeholder="Your email address" class="newsletter-input" required>
+            <button type="submit" class="btn btn-primary">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p class="copyright">&copy; 2026 Epicurean Flow | All Rights Reserved</p>
+      <p style="font-size: 0.8rem; color: rgba(245, 240, 231, 0.6);">Business Registration number: 94886792 &bull; Amsterdam, The Netherlands</p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy</a>
+        <span>&bull;</span>
+        <a href="terms.html">Terms</a>
+        <span>&bull;</span>
+        <a href="refund-policy.html">Refunds</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="footer-developer-bar">
+        <div class="developer-info">
+          <span class="developer-label">Website Engineered &amp; Designed by <a href="https://ibtex.ibe88agwu.workers.dev/" target="_blank" rel="noopener" class="developer-brand-link">IBTEX</a></span>
+          <span class="developer-sep">•</span>
+          <span class="developer-pitch">Planning a website redesign, brand build, platform migration, or SEO growth?</span>
+        </div>
+        <a href="https://wa.me/2348103883295?text=Hello%20IBTEX,%20I%20saw%20the%20Epicurean%20Flow%20website%20and%20would%20like%20to%20discuss%20a%20website%20redesign%2C%20development%2C%20or%20SEO%20project." target="_blank" rel="noopener" class="developer-cta-badge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <span>Chat with Developer on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Cart Drawer -->
+  <div class="cart-drawer-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span>Your Culinary Selection</span>
+      </h3>
+      <button class="cart-drawer-close" id="close-cart-btn" aria-label="Close Cart">✕</button>
+    </div>
+    <div class="cart-drawer-body" id="cart-items-list"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal-val">€0.00</span>
+      </div>
+      <a href="https://epicureanflow.wixsite.com/epicurean-flow/cart-page" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
+        <span>Proceed to Secure Checkout</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="js/navigation.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

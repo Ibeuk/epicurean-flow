@@ -197,7 +197,20 @@ class CartManager {
     }
   }
 
+  openCart() {
+    this.openDrawer();
+  }
+
+  closeCart() {
+    this.closeDrawer();
+  }
+
   async addItem(productId, meta = null) {
+    if (typeof productId === 'object' && productId !== null) {
+      meta = productId;
+      productId = productId.id;
+    }
+
     // Find product in catalog or use meta
     let item = PRODUCTS_DATA.cookbooks.find(p => p.id === productId);
     if (!item && PRODUCTS_DATA.courses) {
@@ -208,12 +221,13 @@ class CartManager {
     }
 
     if (!item) {
-      const priceVal = meta && meta.price ? parseFloat(meta.price.replace(/[^0-9.]/g, '')) : 9.00;
+      const rawPrice = meta && meta.price !== undefined ? meta.price : 9.00;
+      const priceVal = typeof rawPrice === 'number' ? rawPrice : (parseFloat(String(rawPrice).replace(/[^0-9.]/g, '')) || 9.00);
       item = {
         id: productId || 'custom-item-' + Date.now(),
         title: meta && meta.title ? meta.title : 'Selected Culinary Publication',
-        price: '€' + (priceVal || 9.00).toFixed(2),
-        numericPrice: priceVal || 9.00,
+        price: '€' + priceVal.toFixed(2),
+        numericPrice: priceVal,
         image: meta && meta.image ? meta.image : 'https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg'
       };
     }
@@ -310,6 +324,27 @@ class CartManager {
       `;
     });
 
+    // Contextual Upsell Recommendation (Section 8 of Brief)
+    const hasConsultation = this.cartItems.some(i => i.id === 'consultation-menu-planning');
+    if (!hasConsultation) {
+      html += `
+        <div class="cart-upsell-section">
+          <div class="cart-upsell-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>Chef's Recommended Pairing</span>
+          </div>
+          <div class="cart-upsell-card">
+            <img src="https://static.wixstatic.com/media/8e85e1_c25a6a7985884ad7bc9e9b38adda9152~mv2.png/v1/fit/w_500,h_500,q_90/file.png" alt="Menu Planning Consultation" class="cart-upsell-img">
+            <div class="cart-upsell-info">
+              <div class="cart-upsell-title">Personalized Menu Planning</div>
+              <div class="cart-upsell-price">€120.00</div>
+            </div>
+            <button type="button" class="btn-add-upsell" onclick="window.cartManager.addItem('consultation-menu-planning')">+ Add</button>
+          </div>
+        </div>
+      `;
+    }
+
     this.cartItemsListEl.innerHTML = html;
     // Hide legacy empty state element if present
     const legacyEmpty = document.getElementById('cart-empty-state');
@@ -388,10 +423,18 @@ class CartManager {
 }
 
 // Automatically bind singleton instance on DOM load or immediately
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    window.cartManager = new CartManager();
-  });
-} else {
+function setupCartGlobals() {
   window.cartManager = new CartManager();
+  window.CartManager = {
+    addItem: (prod, meta) => window.cartManager.addItem(prod, meta),
+    removeItem: (idx) => window.cartManager.removeItem(idx),
+    openCart: () => window.cartManager.openDrawer(),
+    closeCart: () => window.cartManager.closeDrawer()
+  };
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupCartGlobals);
+} else {
+  setupCartGlobals();
 }

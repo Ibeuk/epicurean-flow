@@ -1,0 +1,8 @@
+# Epicurean Flow - Robots.txt
+# https://epicureanflow.wixsite.com/epicurean-flow/
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://epicureanflow.wixsite.com/epicurean-flow/sitemap.xml

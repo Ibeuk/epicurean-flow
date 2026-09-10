@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Epicurean Flow | Chef-Led Cookbooks, Culinary Courses & Techniques</title>
-  <meta name="description" content="Master technique, flavor balance, and diabetes-friendly culinary arts with award-winning Chef Eliane Muskus. Premium digital cookbooks, video masterclasses, and food tours.">
+  <title>Epicurean Flow | Chef-Led Cookbooks, Culinary Courses &amp; Food Tours</title>
+  <meta name="description" content="Master technique, flavor balance, and culinary precision with award-winning Chef Eliane Muskus. Michelin-accredited culinary courses, curated cookbooks, and European food tours.">
   
   <!-- Canonical URL & Open Graph -->
   <link rel="canonical" href="https://epicureanflow.wixsite.com/epicurean-flow">
@@ -12,11 +12,12 @@
   <meta property="og:description" content="Chef-led cookbooks, practical culinary courses, inspiring recipes and culinary experiences from Chef Eliane Muskus.">
   <meta property="og:image" content="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg">
   <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="images/logo.png">
 
   <!-- Google Fonts Preconnect & Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
@@ -26,7 +27,7 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
 
-  <!-- Structured Data: Organization, Person, Products, Courses, Recipe -->
+  <!-- Structured Data: Organization & Person -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,43 +42,20 @@
           "@type": "Person",
           "name": "Chef Eliane Muskus",
           "jobTitle": "Founder & Executive Chef",
-          "description": "Award-winning chef, former owner of a Michelin-accredited restaurant in Cannes, France, specializing in French technique, Mediterranean flavor profiling, and low-carb diabetes gastronomy."
-        }
+          "description": "Former award-winning chef, former owner of a Michelin-accredited restaurant in Cannes, France, masterclass instructor, and cookbook author."
+        },
+        "sameAs": [
+          "https://www.instagram.com/epicureanflow/",
+          "https://www.facebook.com/profile.php?id=61558943582868",
+          "https://www.tiktok.com/@elianemuskus8"
+        ]
       },
       {
-        "@type": "Book",
-        "@id": "https://epicureanflow.wixsite.com/epicurean-flow/#book-symphony-flavors",
-        "name": "A Symphony of Flavors: Mediterranean & Middle Eastern Spice Essentials",
-        "author": { "@type": "Person", "name": "Chef Eliane Muskus" },
-        "offers": {
-          "@type": "Offer",
-          "price": "9.00",
-          "priceCurrency": "EUR",
-          "availability": "https://schema.org/InStock"
-        }
-      },
-      {
-        "@type": "Course",
-        "@id": "https://epicureanflow.wixsite.com/epicurean-flow/#course-diabetes-masterclass",
-        "name": "Diabetes Cooking Course Masterclass",
-        "provider": { "@type": "Organization", "name": "Epicurean Flow" },
-        "offers": {
-          "@type": "Offer",
-          "price": "39.00",
-          "priceCurrency": "EUR",
-          "availability": "https://schema.org/InStock"
-        }
-      },
-      {
-        "@type": "Recipe",
-        "@id": "https://epicureanflow.wixsite.com/epicurean-flow/#recipe-banana-cake",
-        "name": "Low-Carb Gourmet Banana Cake for Diabetics",
-        "author": { "@type": "Person", "name": "Chef Eliane Muskus" },
-        "prepTime": "PT25M",
-        "cookTime": "PT45M",
-        "recipeCategory": "Dessert",
-        "recipeCuisine": "Mediterranean",
-        "description": "A moist, almond flour gourmet banana cake naturally crafted for low-glycemic diabetes lifestyle without sacrificing authentic flavor."
+        "@type": "WebSite",
+        "@id": "https://epicureanflow.wixsite.com/epicurean-flow/#website",
+        "url": "https://epicureanflow.wixsite.com/epicurean-flow",
+        "name": "Epicurean Flow",
+        "description": "Premium culinary education, cookbooks, and European food tours."
       }
     ]
   }
@@ -85,10 +63,18 @@
 </head>
 <body>
 
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" role="complementary" aria-label="Special Offer">
+    <div class="announcement-inner">
+      <span class="announcement-badge">Direct Access</span>
+      <span class="announcement-text">Instant digital delivery &bull; Lifetime course access &bull; Verified certificate of completion</span>
+      <a href="cookbooks.html" class="announcement-link">Explore Collection <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </aside>
+
   <!-- =========================================================================
-       01. STICKY NAVIGATION
-       ========================================================================= -->  <!-- Navigation Header (6 Main Pillars with Curated Subpages) -->
-    <!-- Navigation Header (6 Main Pillars with Curated Subpages) -->
+       NAVIGATION HEADER (7 PILLARS)
+       ========================================================================= -->
   <header class="header" id="main-header" role="banner">
     <div class="header-container container">
       <!-- Logo -->
@@ -96,47 +82,48 @@
         <img src="images/logo.png" alt="Epicurean Flow - Where Cooking Inspires" class="header-logo-img">
       </a>
 
-      <!-- Desktop Navigation (6 Pillars with Luxury Submenu) -->
+      <!-- Desktop Navigation (7 Pillars) -->
       <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-          <li class="nav-item"><a href="courses.html" class="nav-link ">Courses</a></li>
-          <li class="nav-item"><a href="cookbooks.html" class="nav-link ">Books</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
+          <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
           
           <!-- Recipes & Living Dropdown -->
           <li class="nav-item has-dropdown">
-            <a href="recipes.html" class="nav-link dropdown-toggle " aria-haspopup="true" aria-expanded="false">
-              <span>Recipes</span>
+            <a href="recipes.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              <span>Recipes / Blog</span>
               <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
                 <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </a>
             <div class="dropdown-menu" role="menu">
-              <a href="recipes.html" class="dropdown-item " role="menuitem">
+              <a href="recipes.html" class="dropdown-item" role="menuitem">
                 <span class="dropdown-item-title">All Recipes</span>
                 <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
               </a>
-              <a href="diabetes.html" class="dropdown-item " role="menuitem">
+              <a href="diabetes.html" class="dropdown-item" role="menuitem">
                 <span class="dropdown-item-title">Diabetes Living</span>
-                <span class="dropdown-item-desc">Chef Eliane&rsquo;s low-carb journey &amp; recipes</span>
+                <span class="dropdown-item-desc">Flavor-first low-carb gastronomy</span>
               </a>
-              <a href="nutrition.html" class="dropdown-item " role="menuitem">
+              <a href="nutrition.html" class="dropdown-item" role="menuitem">
                 <span class="dropdown-item-title">Nutrition &amp; Science</span>
-                <span class="dropdown-item-desc">Nutrient-rich plates &amp; metabolic energy</span>
+                <span class="dropdown-item-desc">Macro balancing &amp; vital energy</span>
               </a>
-              <a href="menu-planning.html" class="dropdown-item " role="menuitem">
+              <a href="menu-planning.html" class="dropdown-item" role="menuitem">
                 <span class="dropdown-item-title">Menu Planning</span>
-                <span class="dropdown-item-desc">1-on-1 culinary consultation &amp; custom party menus</span>
+                <span class="dropdown-item-desc">Bespoke 1-on-1 chef consultations</span>
               </a>
-              <a href="media.html" class="dropdown-item " role="menuitem">
-                <span class="dropdown-item-title">Media &amp; Masterclasses</span>
-                <span class="dropdown-item-desc">Culinary video masterclasses &amp; cooking tips</span>
+              <a href="media.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Media &amp; Cinema</span>
+                <span class="dropdown-item-desc">Masterclass video streams &amp; previews</span>
               </a>
             </div>
           </li>
 
-          <li class="nav-item"><a href="about.html" class="nav-link ">About</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link ">Contact</a></li>
+          <li class="nav-item"><a href="food-tours.html" class="nav-link">Food Tours</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -148,7 +135,7 @@
             </svg>
             <span class="cart-badge" id="cart-count">0</span>
           </button>
-          <a href="courses.html" class="btn btn-primary nav-cta"><span>Enroll</span></a>
+          <a href="cookbooks.html" class="btn btn-primary nav-cta"><span>Shop</span></a>
         </div>
       </nav>
 
@@ -165,639 +152,489 @@
   <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
     <div class="mobile-nav-links">
       <a href="index.html" class="mobile-nav-link active">Home</a>
-      <a href="courses.html" class="mobile-nav-link ">Courses</a>
-      <a href="cookbooks.html" class="mobile-nav-link ">Books</a>
+      <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
+      <a href="courses.html" class="mobile-nav-link">Courses</a>
       
       <div class="mobile-nav-group">
-        <a href="recipes.html" class="mobile-nav-link ">Recipes &amp; Living</a>
+        <a href="recipes.html" class="mobile-nav-link">Recipes / Blog</a>
         <div class="mobile-nav-submenu">
-          <a href="recipes.html" class="mobile-nav-sublink ">All Recipes</a>
-          <a href="diabetes.html" class="mobile-nav-sublink ">Diabetes Living</a>
-          <a href="nutrition.html" class="mobile-nav-sublink ">Nutrition &amp; Science</a>
-          <a href="menu-planning.html" class="mobile-nav-sublink ">Menu Planning Consultation</a>
-          <a href="media.html" class="mobile-nav-sublink ">Media &amp; Masterclasses</a>
+          <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
+          <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
+          <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
+          <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
+          <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclasses</a>
         </div>
       </div>
 
-      <a href="about.html" class="mobile-nav-link ">About Chef Eliane</a>
-      <a href="contact.html" class="mobile-nav-link ">Contact</a>
+      <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
+      <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
     </div>
     <div class="mobile-nav-footer">
-      <a href="courses.html" class="btn btn-primary" style="width: 100%;">Enroll in Academy</a>
+      <a href="cookbooks.html" class="btn btn-primary" style="width: 100%;">Explore Collection</a>
       <p style="font-size: 0.8125rem; color: var(--color-ink-light); text-align: center; margin-top: 8px;">
         Chef-led culinary education &amp; cookbooks
       </p>
     </div>
   </div>
 
-  <!-- =========================================================================
-       02. HERO SECTION
-       ========================================================================= -->
-  <section class="section theme-ivory hero-wrapper">
-    <div class="container">
-      <div class="grid-editorial" style="align-items: center;">
-        <div class="hero-content reveal-on-scroll">
-          <span class="section-eyebrow">Chef-Led Culinary Platform</span>
-          <h1 style="margin-bottom: 24px;">
-            Cook beautifully.<br>
-            Learn confidently.<br>
-            <span class="text-serif-italic text-gold">Experience more.</span>
-          </h1>
-          <p class="lead" style="margin-bottom: 36px; max-width: 580px;">
-            Chef-led cookbooks, practical culinary courses, inspiring recipes and culinary experiences from Chef Eliane Muskus.
-          </p>
-          <div class="hero-buttons" style="display: flex; gap: 16px; flex-wrap: wrap;">
-            <a href="cookbooks.html" class="btn btn-primary">
-              <span>Explore Cookbooks</span>
-              <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+  <main id="main-content">
+
+    <!-- =========================================================================
+         SECTION 1 — HERO
+         ========================================================================= -->
+    <section class="section theme-ivory hero-wrapper">
+      <div class="container">
+        <div class="grid-editorial" style="align-items: center;">
+          <div class="hero-content reveal-on-scroll">
+            <span class="section-eyebrow">Chef-Led Culinary Platform</span>
+            <h1 style="margin-bottom: 20px; line-height: 1.15;">
+              Cook beautifully.<br>
+              Learn confidently.<br>
+              <span class="text-serif-italic text-gold">Experience more.</span>
+            </h1>
+            <p class="lead" style="margin-bottom: 32px; max-width: 540px; font-size: 1.125rem; line-height: 1.6;">
+              Michelin-accredited technique, chef-authored cookbooks, and structured masterclasses by award-winning Chef Eliane Muskus.
+            </p>
+            <div class="hero-buttons" style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="cookbooks.html" class="btn btn-primary">
+                <span>Explore Cookbooks</span>
+                <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="courses.html" class="btn btn-secondary">
+                <span>Explore Cooking Courses</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal-on-scroll delay-2">
+            <div class="hero-visual-frame" style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl); border: 1px solid var(--color-gold-border);">
+              <img src="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_2500,h_1357,al_c/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg" 
+                   alt="Chef Eliane Muskus preparing a gourmet dish with precision" 
+                   class="hero-bg-img"
+                   style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="hero-quote-box" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-radius: var(--radius-sm); border: 1px solid var(--color-gold-border); padding: 16px 20px; box-shadow: var(--shadow-md);">
+              <p style="font-family: var(--font-serif); font-size: 1.0625rem; font-style: italic; color: var(--color-ink); margin-bottom: 4px;">"Understand the technique behind every recipe."</p>
+              <p style="font-size: 0.75rem; color: var(--color-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin: 0;">Chef Eliane Muskus &bull; Cannes &amp; Amsterdam</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2 — FEATURED PRODUCTS (APPEARS VERY EARLY FOR HIGH CONVERSION)
+         ========================================================================= -->
+    <section class="section theme-cream" id="featured-products" style="padding-top: 56px; padding-bottom: 64px;">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-eyebrow">Signature Offerings</span>
+          <h2 class="section-title">Featured Cookbooks &amp; Masterclasses</h2>
+          <p class="section-description">Immediate culinary access: structured digital masterclasses and chef-authored culinary editions.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto;">
+          
+          <!-- Product Card 1: Masterclass Course -->
+          <article class="tour-card reveal-on-scroll delay-1" style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+            <div class="tour-media" style="position: relative; aspect-ratio: 16/10; overflow: hidden;">
+              <img src="https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg" alt="The French Culinary Arts Masterclass" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="tour-city-badge">Video Masterclass</span>
+            </div>
+            <div class="tour-body" style="padding: 28px; display: flex; flex-direction: column; flex-grow: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold);">Course &bull; Certificate Included</span>
+                <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--color-ink);">$149.00</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px; color: var(--color-ink);">The French Culinary Arts Masterclass</h3>
+              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                12 HD video modules on knife accuracy, mother sauce reductions, emulsion stability, and Michelin-standard plating.
+              </p>
+              <div style="display: flex; gap: 10px;">
+                <a href="product-detail.html" class="btn btn-primary btn-sm" style="flex: 1; text-align: center; justify-content: center;">Learn More</a>
+                <button type="button" class="btn btn-outline btn-sm btn-add-to-cart" onclick="CartManager.addItem({id:'french-baking', title:'The French Culinary Arts Masterclass', price:149, type:'course', image:'https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg'}); CartManager.openCart();">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 2: Upcoming Signature Cookbook Preview -->
+          <article class="tour-card reveal-on-scroll delay-2" style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+            <div class="tour-media" style="position: relative; aspect-ratio: 16/10; overflow: hidden; background: #2A241F;">
+              <img src="https://static.wixstatic.com/media/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png/v1/fit/w_2500,h_1330,al_c/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png" alt="Let's Eat Cookbook Preview" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="tour-city-badge">New Edition Preview</span>
+            </div>
+            <div class="tour-body" style="padding: 28px; display: flex; flex-direction: column; flex-grow: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold);">Cookbook &bull; Digital &amp; Print</span>
+                <span style="font-size: 0.875rem; font-weight: 600; color: var(--color-gold);">Approved Edition</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px; color: var(--color-ink);">Let's Eat: Mediterranean Everyday</h3>
+              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                Over 70 vibrant, whole-ingredient recipes demonstrating low-glycemic Mediterranean cooking without sacrificing richness.
+              </p>
+              <div style="display: flex; gap: 10px;">
+                <a href="cookbooks.html" class="btn btn-primary btn-sm" style="flex: 1; text-align: center; justify-content: center;">View Book Details</a>
+                <a href="contact.html?subject=Lets-Eat-Waitlist" class="btn btn-outline btn-sm">Join Waitlist</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 3: The Macronutrient Guide -->
+          <article class="tour-card reveal-on-scroll delay-3" style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+            <div class="tour-media" style="position: relative; aspect-ratio: 16/10; overflow: hidden;">
+              <img src="https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_500,h_500,q_90/file.png" alt="The Ultimate Macronutrient Guide" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="tour-city-badge">Nutritional Guide</span>
+            </div>
+            <div class="tour-body" style="padding: 28px; display: flex; flex-direction: column; flex-grow: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold);">Digital Guide &bull; PDF</span>
+                <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--color-ink);">$29.00</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px; color: var(--color-ink);">The Ultimate Macronutrient Guide</h3>
+              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                Master protein, fat, and carbohydrate ratios for stable metabolic energy, clean satiety, and vibrant daily plates.
+              </p>
+              <div style="display: flex; gap: 10px;">
+                <a href="product-detail.html" class="btn btn-primary btn-sm" style="flex: 1; text-align: center; justify-content: center;">View Guide</a>
+                <button type="button" class="btn btn-outline btn-sm btn-add-to-cart" onclick="CartManager.addItem({id:'macro-guide', title:'The Ultimate Macronutrient Guide', price:29, type:'book', image:'https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_500,h_500,q_90/file.png'}); CartManager.openCart();">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3 — WHY EPICUREAN FLOW (CONCISE TRUST-BUILDING)
+         ========================================================================= -->
+    <section class="section theme-ivory" id="why-trust">
+      <div class="container">
+        <div class="grid-editorial" style="align-items: center;">
+          <div class="chef-portrait-frame reveal-on-scroll">
+            <img src="https://static.wixstatic.com/media/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg/v1/fill/w_2500,h_3750,al_c/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg" 
+                 alt="Chef Eliane Muskus in culinary studio"
+                 loading="lazy"
+                 style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+          </div>
+
+          <div class="chef-authority-content reveal-on-scroll delay-2">
+            <span class="section-eyebrow">Why Epicurean Flow</span>
+            <h2 style="margin-bottom: 20px; line-height: 1.2;">Why Learn with Chef Eliane Muskus?</h2>
+            <p class="lead" style="margin-bottom: 24px; color: var(--color-ink); font-weight: 500;">
+              Cooking confidence comes from proven technique, not complicated instructions.
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;">
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <span style="color: var(--color-gold); font-size: 1.25rem; line-height: 1;">✦</span>
+                <div>
+                  <strong style="color: var(--color-ink); display: block; margin-bottom: 2px;">Former Award-Winning Chef</strong>
+                  <span style="font-size: 0.9375rem; color: var(--color-ink-light);">Recognized for culinary excellence, precision seasoning, and flavor layering.</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <span style="color: var(--color-gold); font-size: 1.25rem; line-height: 1;">✦</span>
+                <div>
+                  <strong style="color: var(--color-ink); display: block; margin-bottom: 2px;">Michelin-Accredited Restaurant Heritage</strong>
+                  <span style="font-size: 0.9375rem; color: var(--color-ink-light);">Founded and operated an acclaimed culinary establishment on the French Riviera in Cannes.</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <span style="color: var(--color-gold); font-size: 1.25rem; line-height: 1;">✦</span>
+                <div>
+                  <strong style="color: var(--color-ink); display: block; margin-bottom: 2px;">International Professional Experience</strong>
+                  <span style="font-size: 0.9375rem; color: var(--color-ink-light);">Decades leading professional kitchens and teaching cooking classes across France and Amsterdam.</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <span style="color: var(--color-gold); font-size: 1.25rem; line-height: 1;">✦</span>
+                <div>
+                  <strong style="color: var(--color-ink); display: block; margin-bottom: 2px;">Real-World Diabetes Gastronomy</strong>
+                  <span style="font-size: 0.9375rem; color: var(--color-ink-light);">Personal experience living with diabetes—crafting genuine low-carb gastronomy without sacrificing joy.</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="about.html" class="btn btn-outline">
+              <span>Read Full Culinary Biography &rarr;</span>
             </a>
-            <a href="courses.html" class="btn btn-secondary">
-              <span>Discover Courses</span>
-            </a>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div style="margin-top: 48px;" class="desktop-only">
-            <div class="scroll-indicator">
-              <span>Scroll to Explore</span>
-              <div class="scroll-line"></div>
+    <!-- =========================================================================
+         SECTION 4 — COOKING COURSES (EDUCATIONAL EXPERIENCES & CERTIFICATES)
+         ========================================================================= -->
+    <section class="section theme-cream" id="cooking-courses">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-eyebrow">Structured Culinary Education</span>
+          <h2 class="section-title">Professional Cooking Courses</h2>
+          <p class="section-description">Practical, video-guided courses designed to build permanent kitchen intuition. Certificate included upon graduation.</p>
+        </div>
+
+        <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-gold-border); padding: 48px 40px; box-shadow: var(--shadow-md); max-width: 960px; margin: 0 auto;" class="reveal-on-scroll">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 36px; align-items: center;">
+            <div>
+              <span class="product-badge gold" style="margin-bottom: 12px; display: inline-block;">On-Demand Academy</span>
+              <h3 style="font-family: var(--font-serif); font-size: 2rem; color: var(--color-ink); margin-bottom: 14px;">The Complete Technique Academy</h3>
+              <p style="font-size: 1rem; color: var(--color-ink-light); line-height: 1.65; margin-bottom: 20px;">
+                Learn heat management, knife rhythm, pan-searing, and mother sauce reductions through step-by-step video instruction.
+              </p>
+              
+              <ul style="list-style: none; padding: 0; margin: 0 0 24px 0; display: flex; flex-direction: column; gap: 10px;">
+                <li style="display: flex; gap: 8px; font-size: 0.9375rem; color: var(--color-ink);"><strong style="color: var(--color-gold);">&check;</strong> Official Certificate of Completion included</li>
+                <li style="display: flex; gap: 8px; font-size: 0.9375rem; color: var(--color-ink);"><strong style="color: var(--color-gold);">&check;</strong> Downloadable kitchen companion workbook (PDF)</li>
+                <li style="display: flex; gap: 8px; font-size: 0.9375rem; color: var(--color-ink);"><strong style="color: var(--color-gold);">&check;</strong> Lifetime access across mobile, tablet, and desktop</li>
+              </ul>
+
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <a href="courses.html" class="btn btn-primary"><span>Explore All Courses</span></a>
+                <a href="product-detail.html" class="btn btn-outline"><span>View Syllabus</span></a>
+              </div>
+            </div>
+
+            <div style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg);">
+              <img src="https://static.wixstatic.com/media/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png/v1/fit/w_2500,h_1330,al_c/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png" alt="Chef Eliane teaching technique" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="hero-visual reveal-on-scroll delay-2">
-          <div class="hero-visual-frame">
-            <img src="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_2500,h_1357,al_c/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg" 
-                 alt="Chef Eliane Muskus preparing a gourmet Mediterranean dish with precision" 
-                 class="hero-bg-img"
-                 style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="hero-quote-box">
-            <p style="font-family: var(--font-serif); font-size: 1.125rem; font-style: italic; color: var(--color-ink); margin-bottom: 4px;">"Technique behind the recipe."</p>
-            <p style="font-size: 0.75rem; color: var(--color-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; margin: 0;">Chef Eliane Muskus</p>
-          </div>
+    <!-- =========================================================================
+         SECTION 5 — COOKBOOK COLLECTION (LATEST / CURRENT EDITIONS ONLY)
+         ========================================================================= -->
+    <section class="section theme-ivory" id="cookbooks-collection">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-eyebrow">Chef-Authored Publications</span>
+          <h2 class="section-title">The Cookbook Collection</h2>
+          <p class="section-description">Outdated editions have been retired. Explore approved upcoming releases and companion guides.</p>
         </div>
-      </div>
-    </div>
-  </section>
 
-
-  <!-- =========================================================================
-       03. EDITORIAL BRAND STATEMENT (QUIET EDITORIAL MOMENT)
-       ========================================================================= -->
-  <section class="section theme-cream">
-    <div class="container-editorial reveal-on-scroll">
-      <div class="text-center" style="margin-bottom: 40px;">
-        <span class="section-eyebrow">The Epicurean Philosophy</span>
-        <h2>Technique at the heart.<br><span class="text-serif-italic">Flavor in every detail.</span></h2>
-        <div class="divider-gold center"></div>
-      </div>
-
-      <div style="font-size: 1.15rem; line-height: 1.8; color: var(--color-ink-subtle); max-width: 760px; margin-left: auto; margin-right: auto;">
-        <p class="drop-cap" style="margin-bottom: 24px;">
-          At Epicurean Flow, true cooking confidence begins when you understand the principles behind the method. Instead of memorizing static steps, our chef-guided philosophy reveals the science of heat distribution, flavor layering, and intuitive seasoning.
-        </p>
-        <p style="margin-bottom: 0;">
-          Founded by award-winning Chef Eliane Muskus—former owner of a Michelin-accredited restaurant in Cannes—Epicurean Flow bridges high-end European restaurant rigor with approachable home dining.
-        </p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
-       04. FEATURED COOKBOOKS (CONTROLLED ASYMMETRY)
-       ========================================================================= -->
-  <section class="section theme-ivory" id="cookbooks">
-    <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <span class="section-eyebrow">Chef-Authored Publications</span>
-        <h2 class="section-title">Featured Cookbooks & Digital Guides</h2>
-        <p class="section-description">Curated recipe collections, spice essentials, and specialized diabetes-friendly culinary books designed for instant digital download.</p>
-      </div>
-
-      <!-- New Collection Curation State -->
-      <div style="max-width: 860px; margin: 0 auto; text-align: center; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 64px 36px; box-shadow: var(--shadow-sm);">
-        <span class="product-badge gold" style="font-size: 0.85rem; padding: 6px 18px; margin-bottom: 20px; display: inline-block;">New Edition in Curation</span>
-        <h3 style="font-family: var(--font-serif); font-size: 2.25rem; color: var(--color-ink); margin-bottom: 16px;">Newly Redesigned Cookbooks &amp; Guides Arriving Soon</h3>
-        <p style="font-size: 1.0625rem; color: var(--color-ink-muted); max-width: 640px; margin: 0 auto 32px auto; line-height: 1.75;">
-          Chef Eliane is currently finalizing our refreshed, redesigned digital publications and seasonal master guides. The updated collection is being prepared for release.
-        </p>
-        <div style="display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
-          <a href="recipes.html" class="btn btn-primary"><span>Explore Free Recipes</span></a>
-          <a href="about.html" class="btn btn-outline"><span>Meet Chef Eliane</span></a>
-        </div>
-      </div>
-      <div style="text-align: center; margin-top: 52px;">
-        <a href="cookbooks.html" class="btn btn-secondary">Explore Complete Cookbook Catalog →</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
-       05. FEATURED COURSES (FLAGSHIP & PATHWAYS)
-       ========================================================================= -->
-  <section class="section theme-cream" id="courses">
-    <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <span class="section-eyebrow">Culinary Pathways</span>
-        <h2 class="section-title">Master Outcomes Through Focused Education</h2>
-        <p class="section-description">Our courses emphasize what you will achieve in the kitchen. Transform from blindly following recipes to understanding culinary technique.</p>
-      </div>
-
-      <!-- New Courses In Production State -->
-      <div style="max-width: 860px; margin: 0 auto; text-align: center; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 64px 36px; box-shadow: var(--shadow-sm);">
-        <span class="product-badge gold" style="font-size: 0.85rem; padding: 6px 18px; margin-bottom: 20px; display: inline-block;">Academy Redesign</span>
-        <h3 style="font-family: var(--font-serif); font-size: 2.25rem; color: var(--color-ink); margin-bottom: 16px;">New Masterclasses &amp; Video Courses in Production</h3>
-        <p style="font-size: 1.0625rem; color: var(--color-ink-muted); max-width: 640px; margin: 0 auto 32px auto; line-height: 1.75;">
-          We are currently updating our culinary curriculum with newly produced masterclasses, studio videos, and downloadable kitchen workbooks. Enrolment will re-open with the redesigned curriculum shortly.
-        </p>
-        <div style="display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
-          <a href="recipes.html" class="btn btn-primary"><span>Explore Technique Library</span></a>
-          <a href="contact.html" class="btn btn-outline"><span>Inquire About Private Sessions</span></a>
-        </div>
-      </div>
-      <div style="text-align: center; margin-top: 52px;">
-        <a href="courses.html" class="btn btn-secondary">Explore All Culinary Masterclasses →</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
-       06. CHEF ELIANE / BRAND AUTHORITY (EDITORIAL PROFILE)
-       ========================================================================= -->
-  <section class="section theme-ivory" id="about">
-    <div class="container">
-      <div class="grid-editorial">
-        <div class="chef-portrait-frame reveal-on-scroll">
-          <img src="https://static.wixstatic.com/media/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg/v1/fill/w_2500,h_3750,al_c/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg" 
-               alt="Chef Eliane Muskus portrait in professional culinary environment"
-               loading="lazy">
-          <div class="chef-quote-badge">
-            <p class="chef-quote-text" style="color: var(--color-gold-light);">"When you master technique, every recipe becomes an opportunity for personal expression."</p>
-            <p style="font-size: 0.8125rem; color: var(--color-gold-light); font-weight: 600; margin: 0;">— Chef Eliane Muskus</p>
+        <div style="max-width: 860px; margin: 0 auto; text-align: center; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 56px 36px; box-shadow: var(--shadow-sm);" class="reveal-on-scroll">
+          <span class="product-badge gold" style="font-size: 0.85rem; padding: 6px 18px; margin-bottom: 20px; display: inline-block;">Curated Catalog</span>
+          <h3 style="font-family: var(--font-serif); font-size: 2rem; color: var(--color-ink); margin-bottom: 14px;">Newly Redesigned Cookbooks &amp; Guides Arriving</h3>
+          <p style="font-size: 1.0625rem; color: var(--color-ink-muted); max-width: 640px; margin: 0 auto 28px auto; line-height: 1.7;">
+            Chef Eliane is currently finalizing our refreshed digital cookbook line. Old editions have been fully cleared from the site to ensure you only purchase approved, high-fidelity editions.
+          </p>
+          <div style="display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+            <a href="cookbooks.html" class="btn btn-primary"><span>Browse Cookbooks</span></a>
+            <a href="seasonal.html" class="btn btn-outline"><span>Seasonal Guides</span></a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="chef-authority-content reveal-on-scroll delay-2">
-          <span class="section-eyebrow">Learn From Experience</span>
-          <h2 style="margin-bottom: 24px;">Meet Chef Eliane Muskus</h2>
-          <p class="lead" style="margin-bottom: 20px;">
-            Chef Eliane’s culinary path is defined by bold transformation, international expertise, and a commitment to flavor-first cooking.
-          </p>
-          <p style="margin-bottom: 20px; color: var(--color-ink-light);">
-            Holding a degree in Business Development and a corporate career background, Chef Eliane took a bold leap to pursue her lifelong culinary calling. She founded and operated a Michelin-accredited restaurant in Cannes, France, cultivating a mastery of French technique, Mediterranean produce, and precision plating.
-          </p>
-          <p style="margin-bottom: 28px; color: var(--color-ink-light);">
-            Living with diabetes herself, Chef Eliane brings a personal, deeply practical perspective to health-conscious cooking—crafting courses and cookbooks that deliver restaurant-quality dishes without compromise.
-          </p>
-
-          <div class="chef-editorial-credentials">
-            <div class="credential-row">
-              <span class="credential-bullet"></span>
-              <span style="font-weight: 600; color: var(--color-ink); font-size: 0.9375rem;">Former owner of a Michelin-accredited restaurant in Cannes, France</span>
+    <!-- =========================================================================
+         SECTION 6 — SEASONAL COLLECTION (THANKSGIVING & CHRISTMAS IN PARIS)
+         ========================================================================= -->
+    <section class="section theme-cream" id="seasonal">
+      <div class="container">
+        <div class="seasonal-banner reveal-on-scroll">
+          <div class="seasonal-content">
+            <span class="seasonal-tag">Seasonal Culinary Collection</span>
+            <h2 class="seasonal-title">Thanksgiving, Christmas &amp; Christmas in Paris</h2>
+            <p class="seasonal-desc">
+              Celebrate the holidays with authentic French culinary traditions, stress-free celebration roast timelines, and our upcoming signature masterclass: <em>Christmas in Paris</em>.
+            </p>
+            <div class="seasonal-actions">
+              <a href="seasonal.html" class="btn btn-primary">
+                <span>Explore Seasonal Hub &rarr;</span>
+              </a>
+              <a href="seasonal.html#waitlist" class="btn btn-outline">
+                <span>Join Paris Waitlist</span>
+              </a>
             </div>
-            <div class="credential-row">
-              <span class="credential-bullet"></span>
-              <span style="font-weight: 600; color: var(--color-ink); font-size: 0.9375rem;">Authentic personal perspective managing diabetes through flavor-first cooking</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 7 — AUTHORITY & SOCIAL PROOF
+         ========================================================================= -->
+    <section class="section theme-ivory" style="border-top: 1px solid var(--color-border-light);">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-eyebrow">Professional Background</span>
+          <h2 class="section-title">Rooted in Real Professional Kitchens</h2>
+          <p class="section-description">Chef Eliane's teaching is built on decades of real European restaurant leadership.</p>
+        </div>
+
+        <div class="grid-4 text-center">
+          <div class="reveal-on-scroll delay-1" style="padding: 24px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border-light);">
+            <div style="font-size: 2.25rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 10px;">★</div>
+            <h4 style="font-family: var(--font-sans); font-size: 1.0625rem; font-weight: 700; margin-bottom: 8px;">Former Award Winner</h4>
+            <p style="font-size: 0.875rem; color: var(--color-ink-light); margin: 0;">Recognized chef with formal culinary leadership and menu innovation.</p>
+          </div>
+
+          <div class="reveal-on-scroll delay-2" style="padding: 24px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border-light);">
+            <div style="font-size: 2.25rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 10px;">⚜</div>
+            <h4 style="font-family: var(--font-sans); font-size: 1.0625rem; font-weight: 700; margin-bottom: 8px;">Michelin Standard</h4>
+            <p style="font-size: 0.875rem; color: var(--color-ink-light); margin: 0;">Proven Cannes restaurant track record and classic French brigades.</p>
+          </div>
+
+          <div class="reveal-on-scroll delay-3" style="padding: 24px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border-light);">
+            <div style="font-size: 2.25rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 10px;">✦</div>
+            <h4 style="font-family: var(--font-sans); font-size: 1.0625rem; font-weight: 700; margin-bottom: 8px;">Classroom Mastery</h4>
+            <p style="font-size: 0.875rem; color: var(--color-ink-light); margin: 0;">Years teaching hands-on culinary workshops in France and Amsterdam.</p>
+          </div>
+
+          <div class="reveal-on-scroll delay-4" style="padding: 24px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border-light);">
+            <div style="font-size: 2.25rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 10px;">🔒</div>
+            <h4 style="font-family: var(--font-sans); font-size: 1.0625rem; font-weight: 700; margin-bottom: 8px;">Stripe Protected</h4>
+            <p style="font-size: 0.875rem; color: var(--color-ink-light); margin: 0;">256-bit SSL encrypted checkout and immediate digital delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 8 — FOOD TOURS (UPCOMING AFFILIATE EXPERIENCES)
+         ========================================================================= -->
+    <section class="section theme-cream" id="food-tours">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-eyebrow">Culinary Travel</span>
+          <h2 class="section-title">Boutique European Food Tours</h2>
+          <p class="section-description">Immersive market journeys, private tastings, and artisan food producers in Amsterdam and Paris.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 1000px; margin: 0 auto;">
+          <div class="tour-card reveal-on-scroll delay-1" style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
+            <div class="tour-media" style="position: relative; aspect-ratio: 16/10; overflow: hidden;">
+              <img src="https://static.wixstatic.com/media/30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Amsterdam Food Tour" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="tour-city-badge">Amsterdam</span>
             </div>
-            <div class="credential-row">
-              <span class="credential-bullet"></span>
-              <span style="font-weight: 600; color: var(--color-ink); font-size: 0.9375rem;">International culinary background spanning Amsterdam, Cannes & Málaga</span>
+            <div class="tour-body" style="padding: 28px;">
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px;">Canal-Side Artisanal Tasting Journey</h3>
+              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
+                Stroll historic canals, sample aged Gouda with master cheesemakers, and taste authentic Dutch pastries.
+              </p>
+              <a href="food-tours.html" class="btn btn-outline btn-sm">Explore Tour Details &rarr;</a>
             </div>
           </div>
 
-          <div>
-            <a href="about.html" class="btn btn-primary">
-              <span>Meet Chef Eliane →</span>
-            </a>
+          <div class="tour-card reveal-on-scroll delay-2" style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
+            <div class="tour-media" style="position: relative; aspect-ratio: 16/10; overflow: hidden;">
+              <img src="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_2500,h_1357,al_c/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg" alt="Paris Market Tour" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="tour-city-badge">Paris</span>
+            </div>
+            <div class="tour-body" style="padding: 28px;">
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px;">Historic Markets &amp; Boulangeries of Paris</h3>
+              <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
+                Walk covered Parisian markets, sample terroir wines, and discover hidden neighborhood bistros.
+              </p>
+              <a href="food-tours.html" class="btn btn-outline btn-sm">Explore Tour Details &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- =========================================================================
+         SECTION 9 — BLOG / RECIPES (ORGANIC SEO & CONVERSION ENGINE)
+         ========================================================================= -->
+    <section class="section theme-ivory" id="recipes">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-eyebrow">The Recipe Journal</span>
+          <h2 class="section-title">Recipes, Techniques &amp; Culinary Tips</h2>
+          <p class="section-description">Discover recipes and understand the principles behind them. Each dish links directly to related masterclasses and guides.</p>
+        </div>
 
-  <!-- =========================================================================
-       07. ADVANCED COOKING TECHNIQUES (CINEMATIC DARK SECTION)
-       ========================================================================= -->
-  <section class="section theme-ink" id="advanced-techniques">
-    <div class="container">
-      <div class="grid-editorial-reverse">
-        <div class="reveal-on-scroll">
-          <span class="section-eyebrow">Elevate Your Skill</span>
-          <h2 style="margin-bottom: 24px; color: var(--color-ivory);">Go beyond recipes.<br><span class="text-serif-italic text-gold">Master technique.</span></h2>
-          <p class="lead" style="color: rgba(245, 240, 231, 0.9); margin-bottom: 24px;">
-            Recipes tell you what to do; technique explains why it works. Unlock the professional secrets behind heat control, emulsion stability, Maillard reaction browning, and sauce reduction.
-          </p>
-          <ul style="margin-bottom: 36px; display: flex; flex-direction: column; gap: 14px;">
-            <li style="display: flex; align-items: center; gap: 12px; font-size: 1.0625rem; color: rgba(245, 240, 231, 0.88);">
-              <span style="color: var(--color-gold-light); font-weight: bold;">◆</span> Professional knife skills & mis-en-place kitchen flow
-            </li>
-            <li style="display: flex; align-items: center; gap: 12px; font-size: 1.0625rem; color: rgba(245, 240, 231, 0.88);">
-              <span style="color: var(--color-gold-light); font-weight: bold;">◆</span> Understanding salt, acid, fat, and heat layering
-            </li>
-            <li style="display: flex; align-items: center; gap: 12px; font-size: 1.0625rem; color: rgba(245, 240, 231, 0.88);">
-              <span style="color: var(--color-gold-light); font-weight: bold;">◆</span> Advanced baking ratios, crust structure & yeast control
-            </li>
-          </ul>
-          <a href="#courses" class="btn btn-gold">
-            <span>Explore Advanced Cooking</span>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 1100px; margin: 0 auto;">
+          
+          <article class="reveal-on-scroll delay-1" style="background: var(--color-white); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+            <div style="aspect-ratio: 16/10; overflow: hidden;">
+              <img src="https://static.wixstatic.com/media/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png/v1/fit/w_2500,h_1330,al_c/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png" alt="Low-Carb Gourmet Banana Cake" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-gold); margin-bottom: 6px;">Recipes &bull; Diabetes-Friendly</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px; color: var(--color-ink);">Low-Carb Gourmet Banana Cake</h3>
+              <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.55; margin-bottom: 16px; flex-grow: 1;">
+                Proof that low-glycemic baking can deliver deeply satisfying, moist dessert results.
+              </p>
+              <div style="padding-top: 12px; border-top: 1px solid var(--color-border-light); font-size: 0.8125rem; color: var(--color-gold); font-weight: 600;">
+                Related Guide: <a href="product-detail.html" style="color: var(--color-ink); text-decoration: underline;">Macro Guide &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="reveal-on-scroll delay-2" style="background: var(--color-white); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+            <div style="aspect-ratio: 16/10; overflow: hidden;">
+              <img src="https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Art of Roasting Whole Spices" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-gold); margin-bottom: 6px;">Cooking Techniques</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px; color: var(--color-ink);">The Art of Roasting Whole Spices</h3>
+              <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.55; margin-bottom: 16px; flex-grow: 1;">
+                How dry heat activates volatile essential oils for deeper aromas and complex palate presence.
+              </p>
+              <div style="padding-top: 12px; border-top: 1px solid var(--color-border-light); font-size: 0.8125rem; color: var(--color-gold); font-weight: 600;">
+                Related Course: <a href="courses.html" style="color: var(--color-ink); text-decoration: underline;">Technique Masterclass &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="reveal-on-scroll delay-3" style="background: var(--color-white); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+            <div style="aspect-ratio: 16/10; overflow: hidden;">
+              <img src="https://static.wixstatic.com/media/30dece_f35014b18c7e4ef497d3056cec399bce~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Soulful Soups" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-gold); margin-bottom: 6px;">Food Experiences</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px; color: var(--color-ink);">Soulful Mediterranean Soups</h3>
+              <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.55; margin-bottom: 16px; flex-grow: 1;">
+                Layering herb stems, mirepoix, and pure extra virgin olive oil for deeply restorative broths.
+              </p>
+              <div style="padding-top: 12px; border-top: 1px solid var(--color-border-light); font-size: 0.8125rem; color: var(--color-gold); font-weight: 600;">
+                Related Cookbook: <a href="cookbooks.html" style="color: var(--color-ink); text-decoration: underline;">Let's Eat &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="recipes.html" class="btn btn-secondary">Discover All Recipes &amp; Guides &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 10 — FINAL CONVERSION CTA
+         ========================================================================= -->
+    <section class="section theme-olive" style="text-align: center; padding-top: 72px; padding-bottom: 72px;">
+      <div class="container-narrow reveal-on-scroll">
+        <span class="section-eyebrow" style="color: var(--color-gold-light);">Elevate Your Kitchen</span>
+        <h2 style="margin-bottom: 20px; color: var(--color-ivory); font-size: clamp(2rem, 3.5vw, 2.75rem);">Bring better cooking into your kitchen.</h2>
+        <p class="lead" style="color: rgba(245, 240, 231, 0.9); margin-bottom: 36px; max-width: 580px; margin-left: auto; margin-right: auto;">
+          Whether through our masterclasses or chef-authored cookbooks, learn the techniques behind unforgettable dining.
+        </p>
+        <div style="display: flex; gap: 18px; justify-content: center; flex-wrap: wrap;">
+          <a href="cookbooks.html" class="btn btn-gold">
+            <span>Explore Cookbooks</span>
+          </a>
+          <a href="courses.html" class="btn btn-secondary-light">
+            <span>Explore Courses</span>
           </a>
         </div>
-
-        <div class="reveal-on-scroll delay-2" style="aspect-ratio: 16 / 10; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-book);">
-          <img src="https://static.wixstatic.com/media/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png/v1/fit/w_2500,h_1330,al_c/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png" 
-               alt="Advanced culinary technique plating demonstration" 
-               style="width: 100%; height: 100%; object-fit: cover;"
-               loading="lazy">
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+  </main>
 
   <!-- =========================================================================
-       08. DIABETES-FRIENDLY KITCHEN
-       ========================================================================= -->
-  <section class="section theme-cream" id="diabetes-kitchen">
-    <div class="container">
-      <div class="grid-editorial">
-        <div class="reveal-on-scroll" style="aspect-ratio: 4 / 5; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card);">
-          <img src="https://static.wixstatic.com/media/30dece_f35014b18c7e4ef497d3056cec399bce~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" 
-               alt="Diabetes friendly Mediterranean soup bowl dish" 
-               style="width: 100%; height: 100%; object-fit: cover;"
-               loading="lazy">
-        </div>
-
-        <div class="reveal-on-scroll delay-2">
-          <span class="section-eyebrow" style="color: var(--color-olive);">Thoughtful Nutrition</span>
-          <h2 style="margin-bottom: 24px;">Flavor-first cooking for everyday life.</h2>
-          <p class="lead" style="margin-bottom: 20px;">
-            Reimagine diabetes-friendly meals with vibrant Mediterranean ingredients, smart carbohydrate swaps, and rich aromatic spice profiles.
-          </p>
-          <p style="margin-bottom: 28px; color: var(--color-ink-light);">
-            We focus on joyful, fulfilling food that aligns naturally with a low-glycemic lifestyle. Crafted by Chef Eliane with authentic home cooks in mind, these dishes make managing dietary goals a delicious daily pleasure.
-          </p>
-          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-            <a href="#cookbooks" class="btn btn-primary">
-              <span>Explore The Kitchen</span>
-            </a>
-            <a href="#recipes" class="btn btn-secondary">
-              <span>View Recipes</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
-       09. FOOD TOURS (IMMERSIVE CULINARY TRAVEL)
-       ========================================================================= -->
-  <section class="section theme-ivory" id="food-tours">
-    <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <span class="section-eyebrow">Culinary Journeys</span>
-        <h2 class="section-title">Travel Through Food</h2>
-        <p class="section-description">Immerse yourself in authentic market tours, regional tasting experiences, and hand-selected food journeys guided by culinary passion.</p>
-      </div>
-
-      <!-- Immersive Travel Hero Grid -->
-      <div class="grid-travel-hero">
-        <!-- Cannes Travel Feature (Large Left ~60%) -->
-        <article class="reveal-on-scroll delay-1" style="background: var(--color-white); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card); display: flex; flex-direction: column;">
-          <div style="aspect-ratio: 16 / 10; overflow: hidden;">
-            <img src="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_2500,h_1357,al_c/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg" 
-                 alt="Cannes French Riviera Market Tour" 
-                 style="width: 100%; height: 100%; object-fit: cover;"
-                 loading="lazy">
-          </div>
-          <div style="padding: 36px; display: flex; flex-direction: column; flex-grow: 1;">
-            <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-gold); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px;">Cannes & French Riviera</span>
-            <h3 style="font-family: var(--font-serif); font-size: 1.875rem; margin-bottom: 12px;">French Riviera Market & Culinary Excursions</h3>
-            <p style="color: var(--color-ink-light); margin-bottom: 24px; flex-grow: 1; line-height: 1.6;">
-              Discover vibrant Provençal produce, artisan cheese producers, and coastal seafood markets alongside expert culinary context from Chef Eliane.
-            </p>
-            <a href="#contact" class="btn btn-primary" style="align-self: flex-start;">Explore Riviera Tours</a>
-          </div>
-        </article>
-
-        <!-- Málaga Travel Feature (Right ~40%) -->
-        <article class="reveal-on-scroll delay-2" style="background: var(--color-white); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card); display: flex; flex-direction: column;">
-          <div style="aspect-ratio: 16 / 10; overflow: hidden;">
-            <img src="https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" 
-                 alt="Málaga & Spice Trails Food Experience" 
-                 style="width: 100%; height: 100%; object-fit: cover;"
-                 loading="lazy">
-          </div>
-          <div style="padding: 36px; display: flex; flex-direction: column; flex-grow: 1;">
-            <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-gold); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px;">Málaga & Andalusian Heritage</span>
-            <h3 style="font-family: var(--font-serif); font-size: 1.875rem; margin-bottom: 12px;">Málaga Culinary & Spice Discovery</h3>
-            <p style="color: var(--color-ink-light); margin-bottom: 24px; flex-grow: 1; line-height: 1.6;">
-              Trace Moorish flavor influences, olive oil mills, and Mediterranean spice routes in historical Andalusian settings.
-            </p>
-            <a href="#contact" class="btn btn-secondary" style="align-self: flex-start;">Explore Málaga Experience</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
-       10. RECIPES / EDITORIAL MAGAZINE GRID
-       ========================================================================= -->
-  <section class="section theme-cream" id="recipes">
-    <div class="container">
-      <div class="section-header text-center reveal-on-scroll">
-        <span class="section-eyebrow">The Culinary Journal</span>
-        <h2 class="section-title">Latest Recipes & Technique Guides</h2>
-        <p class="section-description">Editorial insights, seasonal cooking secrets, and diabetes-friendly dish ideas straight from Chef Eliane’s kitchen.</p>
-      </div>
-
-      <!-- Asymmetrical Magazine Grid (1 Major Feature + Stacked Secondary) -->
-      <div class="grid-magazine">
-        <!-- Major Featured Article -->
-        <article class="recipe-featured-card reveal-on-scroll delay-1">
-          <div class="recipe-featured-img-wrap">
-            <img src="https://static.wixstatic.com/media/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png/v1/fit/w_2500,h_1330,al_c/8e85e1_3f5245da684548df89b77ecb97a66fff%7Emv2.png" 
-                 alt="Low-Carb Gourmet Banana Cake" 
-                 class="recipe-featured-img"
-                 loading="lazy">
-            <span class="product-badge" style="position: absolute; top: 20px; left: 20px;">Featured Masterclass</span>
-          </div>
-          <div class="recipe-featured-content">
-            <div class="recipe-meta">
-              <span>Diabetes-Friendly</span>
-              <span>•</span>
-              <span>25 Mins Prep</span>
-              <span>•</span>
-              <span>Chef Masterclass</span>
-            </div>
-            <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 14px;">Low-Carb Gourmet Banana Cake for Diabetics</h3>
-            <p style="color: var(--color-ink-light); margin-bottom: 24px; flex-grow: 1; line-height: 1.65; font-size: 1.0625rem;">
-              A moist, naturally sweetened almond flour cake proving that low-glycemic baking can yield indulgent dessert results without compromising blood sugar stability.
-            </p>
-            <div>
-              <a href="#recipes" class="btn btn-link">Read Full Recipe & Technique →</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Stacked Secondary Editorial Articles -->
-        <div class="grid-magazine-sidebar reveal-on-scroll delay-2">
-          <article class="recipe-side-card">
-            <div class="recipe-side-img-wrap">
-              <img src="https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" 
-                   alt="The Art of Roasting Whole Spices" 
-                   class="recipe-side-img"
-                   loading="lazy">
-            </div>
-            <div>
-              <div class="recipe-meta">
-                <span>Culinary Guide</span>
-                <span>•</span>
-                <span>Technique</span>
-              </div>
-              <h4 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 6px;">The Art of Roasting & Toasting Whole Spices</h4>
-              <a href="#recipes" class="btn-link" style="font-size: 0.75rem;">Read Guide →</a>
-            </div>
-          </article>
-
-          <article class="recipe-side-card">
-            <div class="recipe-side-img-wrap">
-              <img src="https://static.wixstatic.com/media/30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" 
-                   alt="Authentic Mediterranean Dipping Oils" 
-                   class="recipe-side-img"
-                   loading="lazy">
-            </div>
-            <div>
-              <div class="recipe-meta">
-                <span>Entertaining</span>
-                <span>•</span>
-                <span>Appetizers</span>
-              </div>
-              <h4 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 6px;">Authentic Mediterranean Dipping Oils & Wild Herbs</h4>
-              <a href="#recipes" class="btn-link" style="font-size: 0.75rem;">Read Guide →</a>
-            </div>
-          </article>
-
-          <article class="recipe-side-card">
-            <div class="recipe-side-img-wrap">
-              <img src="https://static.wixstatic.com/media/30dece_f35014b18c7e4ef497d3056cec399bce~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" 
-                   alt="Soulful Mediterranean Soups" 
-                   class="recipe-side-img"
-                   loading="lazy">
-            </div>
-            <div>
-              <div class="recipe-meta">
-                <span>Healthy Cooking</span>
-                <span>•</span>
-                <span>Bowls</span>
-              </div>
-              <h4 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 6px;">Soulful Soups: Mediterranean Bowls of Flavor</h4>
-              <a href="#recipes" class="btn-link" style="font-size: 0.75rem;">Read Guide →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 48px;">
-        <a href="recipes.html" class="btn btn-secondary">Discover All Recipes & Guides →</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
-       11. TRUST & CREDIBILITY
-       ========================================================================= -->
-  <section class="section theme-ivory" style="border-top: 1px solid var(--color-border-light);">
-    <div class="container">
-      <div class="grid-4 text-center">
-        <div class="reveal-on-scroll delay-1" style="padding: 24px;">
-          <div style="font-size: 2.25rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 10px;">★</div>
-          <h4 style="font-family: var(--font-sans); font-size: 1.125rem; font-weight: 600; margin-bottom: 8px;">Chef Created</h4>
-          <p style="font-size: 0.9375rem; color: var(--color-ink-light); margin: 0;">Authored and battle-tested by Chef Eliane Muskus.</p>
-        </div>
-
-        <div class="reveal-on-scroll delay-2" style="padding: 24px;">
-          <div style="font-size: 2.25rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 10px;">⚜</div>
-          <h4 style="font-family: var(--font-sans); font-size: 1.125rem; font-weight: 600; margin-bottom: 8px;">Michelin Standard</h4>
-          <p style="font-size: 0.9375rem; color: var(--color-ink-light); margin: 0;">Rooted in French culinary rigor and Cannes restaurant history.</p>
-        </div>
-
-        <div class="reveal-on-scroll delay-3" style="padding: 24px;">
-          <div style="font-size: 2.25rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 10px;">🔒</div>
-          <h4 style="font-family: var(--font-sans); font-size: 1.125rem; font-weight: 600; margin-bottom: 8px;">Secure Wix Checkout</h4>
-          <p style="font-size: 0.9375rem; color: var(--color-ink-light); margin: 0;">Protected transactions and instant digital product delivery.</p>
-        </div>
-
-        <div class="reveal-on-scroll delay-4" style="padding: 24px;">
-          <div style="font-size: 2.25rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 10px;">✦</div>
-          <h4 style="font-family: var(--font-sans); font-size: 1.125rem; font-weight: 600; margin-bottom: 8px;">Digital Learning</h4>
-          <p style="font-size: 0.9375rem; color: var(--color-ink-light); margin: 0;">Self-paced courses with lifetime access on any device.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
-       12. PRIMARY CONVERSION CTA
-       ========================================================================= -->
-  <section class="section theme-olive" style="text-align: center;">
-    <div class="container-narrow reveal-on-scroll">
-      <span class="section-eyebrow" style="color: var(--color-gold-light);">Take The Next Step</span>
-      <h2 style="margin-bottom: 24px; color: var(--color-ivory);">Ready to cook with more confidence?</h2>
-      <p class="lead" style="color: rgba(245, 240, 231, 0.9); margin-bottom: 40px;">
-        Join home cooks around the world learning technique, mastering flavor, and elevating everyday meals with Chef Eliane Muskus.
-      </p>
-      <div style="display: flex; gap: 18px; justify-content: center; flex-wrap: wrap;">
-        <a href="#cookbooks" class="btn btn-gold">
-          <span>Explore Cookbooks</span>
-        </a>
-        <a href="#courses" class="btn btn-secondary-light">
-          <span>Browse Courses</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
-       13. NEWSLETTER
-       ========================================================================= -->
-  <section class="section theme-cream" id="newsletter">
-    <div class="container">
-      <div class="newsletter-card reveal-on-scroll">
-        <div style="max-width: 620px;">
-          <span class="section-eyebrow" style="color: var(--color-gold-light);">Exclusive Culinary Gift</span>
-          <h2>A little inspiration for your kitchen.</h2>
-          <p style="color: rgba(245, 240, 231, 0.88); font-size: 1.125rem; margin-top: 14px; margin-bottom: 28px; line-height: 1.6;">
-            Subscribe to receive Chef Eliane’s free <strong>Mediterranean Recipe eBook</strong> (6 authentic dishes + 2 bonus dips) and weekly culinary techniques sent directly to your inbox.
-          </p>
-
-          <form class="newsletter-form" action="#" method="POST">
-            <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email Address">
-            <button type="submit" class="btn btn-gold">
-              <span>Get Free Ebook</span>
-            </button>
-          </form>
-          <p style="font-size: 0.8125rem; color: rgba(245, 240, 231, 0.55); margin-top: 14px;">We respect your privacy. Unsubscribe at any time.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
-       14. FOOTER
-       ========================================================================= -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <img src="images/logo.png" alt="Epicurean Flow" class="header-logo-img" style="filter: brightness(0) invert(1);">
-          </a>
-          <p class="footer-brand-desc">
-            A premium chef-led culinary platform combining Michelin-accredited expertise, practical education, cookbooks, and diabetes-friendly gastronomy by Chef Eliane Muskus.
-          </p>
-          <div class="footer-contact-info" style="font-size: 0.875rem; color: rgba(245, 240, 231, 0.78); margin-top: 14px;">
-            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 6px;">Amsterdam (Zuidas) 1082MZ, The Netherlands</p>
-            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 6px;">Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
-            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 0;">WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+31 6 18571677</a></p>
-          </div>
-          <div class="footer-social-wrap">
-            <span class="footer-social-label">Follow Chef Eliane</span>
-            <div class="footer-social-links" role="list" aria-label="Social media channels">
-              <a href="https://www.facebook.com/profile.php?id=61558943582868" target="_blank" rel="noopener noreferrer" class="social-btn social-facebook" aria-label="Chef Eliane Muskus on Facebook" title="Facebook">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03.8-1.5 1.5-1.5H17.5V2.3A26 26 0 0 0 14.7 2c-3.1 0-5.2 1.9-5.2 5.3v2.2H6.5v4H9.5V22h4.5v-8.5z"/></svg>
-              </a>
-              <a href="https://www.instagram.com/epicureanflow/" target="_blank" rel="noopener noreferrer" class="social-btn social-instagram" aria-label="Chef Eliane Muskus on Instagram" title="Instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </a>
-              <a href="https://www.linkedin.com/in/epicureanadventureamsterdam/" target="_blank" rel="noopener noreferrer" class="social-btn social-linkedin" aria-label="Chef Eliane Muskus on LinkedIn" title="LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
-              </a>
-              <a href="https://www.tiktok.com/@elianemuskus8" target="_blank" rel="noopener noreferrer" class="social-btn social-tiktok" aria-label="Chef Eliane Muskus on TikTok" title="TikTok">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.47 6.28 6.28 0 0 0 1.95-4.57V8.53a8.28 8.28 0 0 0 4.82 1.54V6.69z"/></svg>
-              </a>
-              <a href="https://uk.pinterest.com/elianem0879/" target="_blank" rel="noopener noreferrer" class="social-btn social-pinterest" aria-label="Chef Eliane Muskus on Pinterest" title="Pinterest">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Explore</h4>
-          <ul class="footer-links">
-            <li><a href="courses.html" class="footer-link">All Courses</a></li>
-            <li><a href="cookbooks.html" class="footer-link">Books &amp; Guides</a></li>
-            <li><a href="menu-planning.html" class="footer-link">Menu Planning Service</a></li>
-            <li><a href="diabetes.html" class="footer-link">Diabetes Living</a></li>
-            <li><a href="nutrition.html" class="footer-link">Nutrition &amp; Energy</a></li>
-            <li><a href="media.html" class="footer-link">Taste in Motion (Media)</a></li>
-            <li><a href="recipes.html" class="footer-link">Recipe Journal</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">About &amp; Trust</h4>
-          <ul class="footer-links">
-            <li><a href="about.html" class="footer-link">About Chef Eliane</a></li>
-            <li><a href="about.html#milestones" class="footer-link">Michelin Accreditation</a></li>
-            <li><a href="contact.html" class="footer-link">Contact Headquarters</a></li>
-            <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
-            <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
-            <li><a href="refund-policy.html" class="footer-link">Refund Policy</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Stay Inspired</h4>
-          <p style="font-size: 0.88rem; color: rgba(245, 240, 231, 0.78); margin-bottom: 14px;">Receive seasonal recipes, private consultation invitations, and chef tips directly in your inbox.</p>
-          <form class="newsletter-form footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Epicurean Flow!');">
-            <input type="email" placeholder="Your email address" class="newsletter-input" required>
-            <button type="submit" class="btn btn-primary">Join</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>
-          &copy; 2026 Epicurean Flow | All Rights Reserved &bull; Business Registration number: 94886792 &bull; Amsterdam, The Netherlands
-        </div>
-        <div class="footer-legal-links">
-          <a href="privacy-policy.html" class="footer-link">Privacy</a>
-          <span>•</span>
-          <a href="terms.html" class="footer-link">Terms</a>
-          <span>•</span>
-          <a href="refund-policy.html" class="footer-link">Refunds</a>
-        </div>
-      </div>
-
-      <div class="footer-developer-bar">
-        <div class="developer-info">
-          <span class="developer-label">Website Engineered &amp; Designed by <a href="https://ibtex.ibe88agwu.workers.dev/" target="_blank" rel="noopener" class="developer-brand-link">IBTEX</a></span>
-          <span class="developer-sep">•</span>
-          <span class="developer-pitch">Planning a website redesign, brand build, platform migration, or SEO growth?</span>
-        </div>
-        <a href="https://wa.me/2348103883295?text=Hello%20IBTEX,%20I%20saw%20the%20Epicurean%20Flow%20website%20and%20would%20like%20to%20discuss%20a%20website%20redesign%2C%20development%2C%20or%20SEO%20project." target="_blank" rel="noopener" class="developer-cta-badge">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          <span>Chat with Developer on WhatsApp</span>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- =========================================================================
-       INTERACTIVE CART DRAWER
+       SHOPPING CART DRAWER
        ========================================================================= -->
   <div class="cart-drawer-backdrop" id="cart-backdrop"></div>
   <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart Drawer">
@@ -809,25 +646,89 @@
       <button class="cart-drawer-close" id="close-cart-btn" aria-label="Close Cart">✕</button>
     </div>
     <div class="cart-drawer-body" id="cart-items-list">
-      <div class="cart-empty-message">
-        <div class="cart-empty-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-        </div>
-        <p class="cart-empty-title">Your shopping bag is empty</p>
-        <p class="cart-empty-desc">Explore our cookbooks, chef guides, and culinary masterclasses.</p>
-        <a href="cookbooks.html" class="btn btn-outline btn-sm">Browse Books &amp; Courses</a>
-      </div>
+      <!-- Dynamically filled by CartManager -->
     </div>
     <div class="cart-drawer-footer">
       <div class="cart-subtotal">
         <span>Subtotal:</span>
-        <span id="cart-subtotal-val">€0.00</span>
+        <span id="cart-subtotal-val">$0.00</span>
       </div>
       <a href="https://epicureanflow.wixsite.com/epicurean-flow/cart-page" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
         <span>Proceed to Secure Checkout</span>
       </a>
     </div>
   </aside>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="images/logo.png" alt="Epicurean Flow" class="footer-logo-img">
+          </a>
+          <p class="footer-desc">
+            Epicurean Flow inspires home cooks and culinary professionals with Michelin-caliber technique, curated cookbooks, bespoke masterclasses, and boutique European food tours.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://www.instagram.com/epicureanflow/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Epicurean Flow on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61558943582868" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Epicurean Flow on Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://www.tiktok.com/@elianemuskus8" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Epicurean Flow on TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="cookbooks.html" class="footer-link">Cookbooks</a></li>
+            <li><a href="courses.html" class="footer-link">Courses</a></li>
+            <li><a href="recipes.html" class="footer-link">Recipes / Blog</a></li>
+            <li><a href="food-tours.html" class="footer-link">Food Tours</a></li>
+            <li><a href="about.html" class="footer-link">About Chef Eliane</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Culinary Living</h4>
+          <ul class="footer-links">
+            <li><a href="diabetes.html" class="footer-link">Diabetes Living</a></li>
+            <li><a href="nutrition.html" class="footer-link">Nutrition &amp; Science</a></li>
+            <li><a href="menu-planning.html" class="footer-link">Menu Planning</a></li>
+            <li><a href="media.html" class="footer-link">Media &amp; Cinema</a></li>
+            <li><a href="seasonal.html" class="footer-link">Seasonal Promotions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">The Masterclass Dispatch</h4>
+          <p class="footer-text-sm">Receive seasonal recipes, technique releases, and early access to upcoming cookbooks.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Epicurean Flow.'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address for culinary dispatch">
+            <button type="submit" class="btn btn-primary btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Epicurean Flow. All rights reserved.</p>
+        <ul class="footer-legal-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="refund-policy.html">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
   <!-- Scripts -->
   <script src="js/navigation.js"></script>

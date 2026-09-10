@@ -279,6 +279,16 @@ html, body {
     padding: 18px 20px !important;
   }
 
+  /* Product Detail Layout Tablet */
+  .product-detail-layout {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .product-detail-gallery {
+    position: static !important;
+  }
+
   /* Hero Section Mobile Behavior */
   .hero-wrapper {
     padding-top: calc(64px + 20px) !important;
@@ -510,5 +520,19 @@ html, body {
   .header-logo-img {
     height: 40px !important;
     max-width: 150px !important;
+  }
+
+  .product-detail-layout {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .product-detail-gallery {
+    position: static !important;
+  }
+
+  .seasonal-banner,
+  .tour-booking-box {
+    padding: 28px 18px !important;
   }
 }
