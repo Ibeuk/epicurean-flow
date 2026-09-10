@@ -78,9 +78,9 @@
   --header-height-mobile: 72px;
   
   /* Section Spacing Foundation */
-  --section-padding-desktop: 136px;
-  --section-padding-tablet: 96px;
-  --section-padding-mobile: 68px;
+  --section-padding-desktop: 72px;
+  --section-padding-tablet: 54px;
+  --section-padding-mobile: 40px;
   
   --grid-gap-desktop: 36px;
   --grid-gap-tablet: 24px;
@@ -1080,17 +1080,30 @@ article.tour-card {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   font-family: var(--font-sans);
-  font-size: 0.875rem; /* 14px */
+  font-size: 0.8125rem; /* 13px */
   font-weight: 600;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  padding: 18px 36px;
+  padding: 13px 26px;
   border-radius: var(--radius-xs);
   transition: all var(--transition-fast);
   cursor: pointer;
   white-space: nowrap;
+  line-height: 1.2;
+}
+
+.btn-lg {
+  padding: 15px 32px;
+  font-size: 0.875rem;
+}
+
+.btn-sm {
+  padding: 10px 18px;
+  font-size: 0.775rem;
+  letter-spacing: 0.05em;
+  gap: 6px;
 }
 
 .btn .arrow-icon {
@@ -1155,6 +1168,35 @@ article.tour-card {
   border-color: var(--color-ivory);
 }
 
+/* Outline Button with Gold Accent */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-gold);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-ink);
+  color: var(--color-ivory);
+  border-color: var(--color-ink);
+}
+
+/* Card Action Layout — Full-width stacked buttons to guarantee zero clipping */
+.card-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.btn-card-action {
+  width: 100% !important;
+  text-align: center;
+  justify-content: center;
+}
+
 /* Editorial Text Link */
 .btn-link {
   padding: 0;
@@ -1193,11 +1235,11 @@ article.tour-card {
    -------------------------------------------------------------------------- */
 .hero-wrapper {
   position: relative;
-  min-height: 94vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding-top: calc(var(--header-height) + 48px);
-  padding-bottom: 96px;
+  padding-top: calc(var(--header-height) + 24px);
+  padding-bottom: 56px;
 }
 
 .hero-visual {
@@ -1433,12 +1475,12 @@ article.tour-card {
    -------------------------------------------------------------------------- */
 .chef-portrait-frame {
   position: relative;
-  aspect-ratio: 4 / 5;
-  max-height: 520px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
   border: 1px solid var(--color-gold-border);
+  height: 100%;
+  min-height: 540px;
 }
 
 .chef-portrait-frame img {
@@ -1452,12 +1494,13 @@ article.tour-card {
 .chef-quote-badge {
   position: absolute;
   bottom: 24px;
-  left: 24px;
-  right: 24px;
-  padding: 22px;
-  background-color: rgba(18, 17, 15, 0.94);
+  left: 20px;
+  right: 20px;
+  padding: 18px 22px;
+  background-color: rgba(18, 17, 15, 0.90);
   backdrop-filter: blur(12px);
-  border-radius: var(--radius-xs);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-sm);
   color: var(--color-gold-light);
   border-left: 3px solid var(--color-gold);
   z-index: 2;
@@ -1465,37 +1508,39 @@ article.tour-card {
 
 .chef-quote-badge p {
   color: var(--color-gold-light);
+  margin: 0;
 }
 
 .chef-quote-text {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.0625rem;
   font-style: italic;
-  margin-bottom: 6px;
-  line-height: 1.5;
+  margin-bottom: 6px !important;
+  line-height: 1.45;
   color: var(--color-gold-light);
 }
 
 .chef-editorial-credentials {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin: 32px 0;
-  padding: 24px;
-  background-color: rgba(255, 255, 255, 0.7);
+  gap: 14px;
+  margin: 28px 0;
+  padding: 22px 24px;
+  background-color: #ffffff;
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border-light);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
 }
 
 .credential-row {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .credential-bullet {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--color-gold);
   flex-shrink: 0;
@@ -4460,7 +4505,7 @@ html, body {
           <p class="section-description">Immediate culinary access: structured digital masterclasses and chef-authored culinary editions.</p>
         </div>
 
-        <div class="grid-cards-responsive" style="max-width: 1100px; margin: 0 auto;">
+        <div class="grid-cards-responsive" id="featured-products-grid" style="max-width: 1100px; margin: 0 auto; min-height: 480px;">
           
           <!-- Product Card 1: Masterclass Course -->
           <article class="tour-card reveal-on-scroll delay-1">
@@ -4477,10 +4522,10 @@ html, body {
               <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
                 12 HD video modules on knife accuracy, mother sauce reductions, emulsion stability, and Michelin-standard plating.
               </p>
-              <div style="display: flex; gap: 10px; margin-top: auto; padding-top: 16px;">
-                <a href="product-detail.html" class="btn btn-primary btn-sm" style="flex: 1; text-align: center; justify-content: center;">Learn More</a>
-                <button type="button" class="btn btn-outline btn-sm btn-add-to-cart" onclick="CartManager.addItem({id:'french-baking', title:'The French Culinary Arts Masterclass', price:149, type:'course', image:'https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg'}); CartManager.openCart();">
-                  Add to Cart
+              <div class="card-action-buttons">
+                <a href="product-detail.html" class="btn btn-primary btn-sm btn-card-action">Learn More</a>
+                <button type="button" class="btn btn-outline btn-sm btn-card-action btn-add-to-cart" onclick="CartManager.addItem({id:'french-baking', title:'The French Culinary Arts Masterclass', price:149, type:'course', image:'https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg'}); CartManager.openCart();">
+                  Add to Cart &bull; $149.00
                 </button>
               </div>
             </div>
@@ -4501,9 +4546,9 @@ html, body {
               <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
                 Over 70 vibrant, whole-ingredient recipes demonstrating low-glycemic Mediterranean cooking without sacrificing richness.
               </p>
-              <div style="display: flex; gap: 10px; margin-top: auto; padding-top: 16px;">
-                <a href="cookbooks.html" class="btn btn-primary btn-sm" style="flex: 1; text-align: center; justify-content: center;">View Book Details</a>
-                <a href="contact.html?subject=Lets-Eat-Waitlist" class="btn btn-outline btn-sm">Join Waitlist</a>
+              <div class="card-action-buttons">
+                <a href="cookbooks.html" class="btn btn-primary btn-sm btn-card-action">View Book Details</a>
+                <a href="contact.html?subject=Lets-Eat-Waitlist" class="btn btn-outline btn-sm btn-card-action">Join Priority Waitlist</a>
               </div>
             </div>
           </article>
@@ -4523,10 +4568,10 @@ html, body {
               <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
                 Master protein, fat, and carbohydrate ratios for stable metabolic energy, clean satiety, and vibrant daily plates.
               </p>
-              <div style="display: flex; gap: 10px; margin-top: auto; padding-top: 16px;">
-                <a href="product-detail.html" class="btn btn-primary btn-sm" style="flex: 1; text-align: center; justify-content: center;">View Guide</a>
-                <button type="button" class="btn btn-outline btn-sm btn-add-to-cart" onclick="CartManager.addItem({id:'macro-guide', title:'The Ultimate Macronutrient Guide', price:29, type:'book', image:'https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_500,h_500,q_90/file.png'}); CartManager.openCart();">
-                  Add to Cart
+              <div class="card-action-buttons">
+                <a href="product-detail.html" class="btn btn-primary btn-sm btn-card-action">View Guide Details</a>
+                <button type="button" class="btn btn-outline btn-sm btn-card-action btn-add-to-cart" onclick="CartManager.addItem({id:'macro-guide', title:'The Ultimate Macronutrient Guide', price:29, type:'book', image:'https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_500,h_500,q_90/file.png'}); CartManager.openCart();">
+                  Add to Cart &bull; $29.00
                 </button>
               </div>
             </div>
@@ -4537,57 +4582,53 @@ html, body {
     </section>
 
     <!-- =========================================================================
-         SECTION 3 — WHY EPICUREAN FLOW (CONCISE TRUST-BUILDING)
+         SECTION 3 — MEET CHEF ELIANE MUSKUS (EDITORIAL PROFILE)
          ========================================================================= -->
-    <section class="section theme-ivory" id="why-trust">
+    <section class="section theme-ivory" id="about">
       <div class="container">
-        <div class="grid-editorial" style="align-items: center;">
+        <div class="grid-editorial">
           <div class="chef-portrait-frame reveal-on-scroll">
             <img src="https://static.wixstatic.com/media/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg/v1/fill/w_2500,h_3750,al_c/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg" 
-                 alt="Chef Eliane Muskus in culinary studio">
+                 alt="Chef Eliane Muskus portrait in professional culinary environment">
+            <div class="chef-quote-badge">
+              <p class="chef-quote-text" style="color: var(--color-gold-light);">"When you master technique, every recipe becomes an opportunity for personal expression."</p>
+              <p style="font-size: 0.8125rem; color: var(--color-gold-light); font-weight: 600; margin: 0;">— Chef Eliane Muskus</p>
+            </div>
           </div>
 
           <div class="chef-authority-content reveal-on-scroll delay-2">
-            <span class="section-eyebrow">Why Epicurean Flow</span>
-            <h2 style="margin-bottom: 20px; line-height: 1.2;">Why Learn with Chef Eliane Muskus?</h2>
-            <p class="lead" style="margin-bottom: 24px; color: var(--color-ink); font-weight: 500;">
-              Cooking confidence comes from proven technique, not complicated instructions.
+            <span class="section-eyebrow">Learn From Experience</span>
+            <h2 style="margin-bottom: 24px;">Meet Chef Eliane Muskus</h2>
+            <p class="lead" style="margin-bottom: 20px;">
+              Chef Eliane’s culinary path is defined by bold transformation, international expertise, and a commitment to flavor-first cooking.
             </p>
-            
-            <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;">
-              <div style="display: flex; gap: 14px; align-items: flex-start;">
-                <span style="color: var(--color-gold); font-size: 1.25rem; line-height: 1;">✦</span>
-                <div>
-                  <strong style="color: var(--color-ink); display: block; margin-bottom: 2px;">Former Award-Winning Chef</strong>
-                  <span style="font-size: 0.9375rem; color: var(--color-ink-light);">Recognized for culinary excellence, precision seasoning, and flavor layering.</span>
-                </div>
+            <p style="margin-bottom: 20px; color: var(--color-ink-light);">
+              Holding a degree in Business Development and a corporate career background, Chef Eliane took a bold leap to pursue her lifelong culinary calling. She founded and operated a Michelin-accredited restaurant in Cannes, France, cultivating a mastery of French technique, Mediterranean produce, and precision plating.
+            </p>
+            <p style="margin-bottom: 28px; color: var(--color-ink-light);">
+              Living with diabetes herself, Chef Eliane brings a personal, deeply practical perspective to health-conscious cooking—crafting courses and cookbooks that deliver restaurant-quality dishes without compromise.
+            </p>
+
+            <div class="chef-editorial-credentials">
+              <div class="credential-row">
+                <span class="credential-bullet"></span>
+                <span style="font-weight: 600; color: var(--color-ink); font-size: 0.9375rem;">Former owner of a Michelin-accredited restaurant in Cannes, France</span>
               </div>
-              <div style="display: flex; gap: 14px; align-items: flex-start;">
-                <span style="color: var(--color-gold); font-size: 1.25rem; line-height: 1;">✦</span>
-                <div>
-                  <strong style="color: var(--color-ink); display: block; margin-bottom: 2px;">Michelin-Accredited Restaurant Heritage</strong>
-                  <span style="font-size: 0.9375rem; color: var(--color-ink-light);">Founded and operated an acclaimed culinary establishment on the French Riviera in Cannes.</span>
-                </div>
+              <div class="credential-row">
+                <span class="credential-bullet"></span>
+                <span style="font-weight: 600; color: var(--color-ink); font-size: 0.9375rem;">Authentic personal perspective managing diabetes through flavor-first cooking</span>
               </div>
-              <div style="display: flex; gap: 14px; align-items: flex-start;">
-                <span style="color: var(--color-gold); font-size: 1.25rem; line-height: 1;">✦</span>
-                <div>
-                  <strong style="color: var(--color-ink); display: block; margin-bottom: 2px;">International Professional Experience</strong>
-                  <span style="font-size: 0.9375rem; color: var(--color-ink-light);">Decades leading professional kitchens and teaching cooking classes across France and Amsterdam.</span>
-                </div>
-              </div>
-              <div style="display: flex; gap: 14px; align-items: flex-start;">
-                <span style="color: var(--color-gold); font-size: 1.25rem; line-height: 1;">✦</span>
-                <div>
-                  <strong style="color: var(--color-ink); display: block; margin-bottom: 2px;">Real-World Diabetes Gastronomy</strong>
-                  <span style="font-size: 0.9375rem; color: var(--color-ink-light);">Personal experience living with diabetes—crafting genuine low-carb gastronomy without sacrificing joy.</span>
-                </div>
+              <div class="credential-row">
+                <span class="credential-bullet"></span>
+                <span style="font-weight: 600; color: var(--color-ink); font-size: 0.9375rem;">International culinary background spanning Amsterdam, Cannes &amp; M&aacute;laga</span>
               </div>
             </div>
 
-            <a href="about.html" class="btn btn-outline">
-              <span>Read Full Culinary Biography &rarr;</span>
-            </a>
+            <div>
+              <a href="about.html" class="btn btn-primary">
+                <span>Meet Chef Eliane &rarr;</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -5391,9 +5432,116 @@ class CartManager {
   }
 }
 
+// ==========================================================================
+// DYNAMIC WIX STORE SYNCHRONIZATION ENGINE
+// Allows Chef Eliane to manage products in Wix Dashboard -> updates website live
+// ==========================================================================
+class WixProductsSync {
+  constructor() {
+    this.wixClient = null;
+    this.init();
+  }
+
+  async init() {
+    // 1. Listen for Wix Velo messages if embedded in Wix
+    window.addEventListener('message', (event) => {
+      try {
+        if (!event.data) return;
+        const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+        if (data.type === 'SYNC_WIX_PRODUCTS' || data.type === 'WIX_PRODUCTS') {
+          const items = data.products || data.items || [];
+          if (Array.isArray(items) && items.length > 0) {
+            console.log('[WixProductsSync] Received live products via Wix Velo bridge:', items.length);
+            this.renderProducts(items);
+          }
+        }
+      } catch (err) {
+        console.debug('[WixProductsSync] Non-json window message ignored');
+      }
+    });
+
+    // 2. Query Wix Headless Stores if client available
+    try {
+      this.wixClient = await createWixHeadlessClient();
+      if (this.wixClient && this.wixClient.products) {
+        console.log('[WixProductsSync] Fetching live products from Wix Stores query...');
+        const res = await this.wixClient.products.queryProducts().limit(12).find();
+        if (res && res.items && res.items.length > 0) {
+          console.log('[WixProductsSync] Wix Stores returned live products:', res.items.length);
+          this.renderProducts(res.items);
+        }
+      }
+    } catch (err) {
+      console.info('[WixProductsSync] Wix Stores live query note:', err.message);
+    }
+  }
+
+  renderProducts(items) {
+    const gridEl = document.getElementById('featured-products-grid') || document.getElementById('catalog-grid');
+    if (!gridEl || !items || items.length === 0) return;
+
+    const newIds = items.map(i => i._id || i.id).join(',');
+    if (this.renderedIds === newIds) return;
+    this.renderedIds = newIds;
+
+    let html = '';
+    items.forEach((item, index) => {
+      const id = item._id || item.id || `wix-prod-${index}`;
+      const title = item.name || item.title || 'Epicurean Flow Edition';
+      const rawPrice = item.price?.price ?? item.priceData?.price ?? item.numericPrice ?? 0;
+      const formattedPrice = item.price?.formatted?.price ?? item.priceData?.formatted?.price ?? item.formattedPrice ?? (rawPrice ? `$${Number(rawPrice).toFixed(2)}` : 'Inquire');
+      
+      let imgUrl = 'https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg';
+      if (item.media?.mainMedia?.image?.url) {
+        imgUrl = item.media.mainMedia.image.url;
+        if (imgUrl.startsWith('wix:image://v1/')) {
+          const match = imgUrl.match(/wix:image:\/\/v1\/([^/]+)/);
+          if (match) imgUrl = `https://static.wixstatic.com/media/${match[1]}/v1/fit/w_800,h_800,q_90/file.jpg`;
+        }
+      } else if (item.image) {
+        imgUrl = item.image;
+      }
+
+      const badge = item.ribbon || item.badge || (item.productType === 'digital' ? 'Digital Edition' : 'Featured Culinary');
+      const desc = item.description ? item.description.replace(/<[^>]*>?/gm, '').slice(0, 130) + '...' : 'Michelin-rooted technique, chef-tested ingredients, and vibrant gastronomic creations.';
+      const productSlug = item.slug || item.productPageUrl?.path || 'product-detail.html';
+      const detailUrl = productSlug.startsWith('http') ? productSlug : `product-detail.html?id=${id}`;
+
+      html += `
+        <article class="tour-card" data-wix-id="${id}">
+          <div class="tour-media">
+            <img src="${imgUrl}" alt="${title}" onerror="this.src='https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg'">
+            <span class="tour-city-badge">${badge}</span>
+          </div>
+          <div class="tour-body">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold);">Chef Edition</span>
+              <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--color-ink);">${formattedPrice}</span>
+            </div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px; color: var(--color-ink);">${title}</h3>
+            <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
+              ${desc}
+            </p>
+            <div class="card-action-buttons">
+              <a href="${detailUrl}" class="btn btn-primary btn-sm btn-card-action">View Details</a>
+              <button type="button" class="btn btn-outline btn-sm btn-card-action btn-add-to-cart" 
+                onclick="CartManager.addItem({id:'${id}', wixId:'${id}', title:'${title.replace(/'/g, "\'")}', price:${rawPrice || 0}, image:'${imgUrl}'}); CartManager.openCart();">
+                Add to Cart &bull; ${formattedPrice}
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    });
+
+    gridEl.innerHTML = html;
+  }
+}
+
 // Automatically bind singleton instance on DOM load or immediately
 function setupCartGlobals() {
   window.cartManager = new CartManager();
+  window.wixProductsSync = new WixProductsSync();
   window.CartManager = {
     addItem: (prod, meta) => window.cartManager.addItem(prod, meta),
     removeItem: (idx) => window.cartManager.removeItem(idx),

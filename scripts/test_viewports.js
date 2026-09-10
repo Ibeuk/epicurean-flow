@@ -27,8 +27,8 @@ const viewports = [
   for (const vp of viewports) {
     const page = await browser.newPage();
     await page.setViewport({ width: vp.width, height: vp.height });
-    await page.goto(filePath, { waitUntil: 'networkidle0' });
-    await new Promise(r => setTimeout(r, 400));
+    await page.goto(filePath, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    await new Promise(r => setTimeout(r, 1200));
 
     // Ensure all reveal elements are visible for complete visual inspection
     await page.evaluate(() => {

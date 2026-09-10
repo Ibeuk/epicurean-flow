@@ -49,9 +49,9 @@
   --header-height-mobile: 72px;
   
   /* Section Spacing Foundation */
-  --section-padding-desktop: 136px;
-  --section-padding-tablet: 96px;
-  --section-padding-mobile: 68px;
+  --section-padding-desktop: 72px;
+  --section-padding-tablet: 54px;
+  --section-padding-mobile: 40px;
   
   --grid-gap-desktop: 36px;
   --grid-gap-tablet: 24px;

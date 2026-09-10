@@ -53,7 +53,8 @@ server.listen(PORT, async () => {
         await page.setViewport({ width: 1280, height: 800 });
       }
 
-      await page.goto(`http://localhost:${PORT}/${pageName}`, { waitUntil: 'networkidle0' });
+      await page.goto(`http://localhost:${PORT}/${pageName}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      await new Promise(r => setTimeout(r, 1000));
 
       const report = await page.evaluate(async () => {
         const shifts = [];

@@ -422,9 +422,116 @@ class CartManager {
   }
 }
 
+// ==========================================================================
+// DYNAMIC WIX STORE SYNCHRONIZATION ENGINE
+// Allows Chef Eliane to manage products in Wix Dashboard -> updates website live
+// ==========================================================================
+class WixProductsSync {
+  constructor() {
+    this.wixClient = null;
+    this.init();
+  }
+
+  async init() {
+    // 1. Listen for Wix Velo messages if embedded in Wix
+    window.addEventListener('message', (event) => {
+      try {
+        if (!event.data) return;
+        const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+        if (data.type === 'SYNC_WIX_PRODUCTS' || data.type === 'WIX_PRODUCTS') {
+          const items = data.products || data.items || [];
+          if (Array.isArray(items) && items.length > 0) {
+            console.log('[WixProductsSync] Received live products via Wix Velo bridge:', items.length);
+            this.renderProducts(items);
+          }
+        }
+      } catch (err) {
+        console.debug('[WixProductsSync] Non-json window message ignored');
+      }
+    });
+
+    // 2. Query Wix Headless Stores if client available
+    try {
+      this.wixClient = await createWixHeadlessClient();
+      if (this.wixClient && this.wixClient.products) {
+        console.log('[WixProductsSync] Fetching live products from Wix Stores query...');
+        const res = await this.wixClient.products.queryProducts().limit(12).find();
+        if (res && res.items && res.items.length > 0) {
+          console.log('[WixProductsSync] Wix Stores returned live products:', res.items.length);
+          this.renderProducts(res.items);
+        }
+      }
+    } catch (err) {
+      console.info('[WixProductsSync] Wix Stores live query note:', err.message);
+    }
+  }
+
+  renderProducts(items) {
+    const gridEl = document.getElementById('featured-products-grid') || document.getElementById('catalog-grid');
+    if (!gridEl || !items || items.length === 0) return;
+
+    const newIds = items.map(i => i._id || i.id).join(',');
+    if (this.renderedIds === newIds) return;
+    this.renderedIds = newIds;
+
+    let html = '';
+    items.forEach((item, index) => {
+      const id = item._id || item.id || `wix-prod-${index}`;
+      const title = item.name || item.title || 'Epicurean Flow Edition';
+      const rawPrice = item.price?.price ?? item.priceData?.price ?? item.numericPrice ?? 0;
+      const formattedPrice = item.price?.formatted?.price ?? item.priceData?.formatted?.price ?? item.formattedPrice ?? (rawPrice ? `$${Number(rawPrice).toFixed(2)}` : 'Inquire');
+      
+      let imgUrl = 'https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg';
+      if (item.media?.mainMedia?.image?.url) {
+        imgUrl = item.media.mainMedia.image.url;
+        if (imgUrl.startsWith('wix:image://v1/')) {
+          const match = imgUrl.match(/wix:image:\/\/v1\/([^/]+)/);
+          if (match) imgUrl = `https://static.wixstatic.com/media/${match[1]}/v1/fit/w_800,h_800,q_90/file.jpg`;
+        }
+      } else if (item.image) {
+        imgUrl = item.image;
+      }
+
+      const badge = item.ribbon || item.badge || (item.productType === 'digital' ? 'Digital Edition' : 'Featured Culinary');
+      const desc = item.description ? item.description.replace(/<[^>]*>?/gm, '').slice(0, 130) + '...' : 'Michelin-rooted technique, chef-tested ingredients, and vibrant gastronomic creations.';
+      const productSlug = item.slug || item.productPageUrl?.path || 'product-detail.html';
+      const detailUrl = productSlug.startsWith('http') ? productSlug : `product-detail.html?id=${id}`;
+
+      html += `
+        <article class="tour-card" data-wix-id="${id}">
+          <div class="tour-media">
+            <img src="${imgUrl}" alt="${title}" onerror="this.src='https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg'">
+            <span class="tour-city-badge">${badge}</span>
+          </div>
+          <div class="tour-body">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold);">Chef Edition</span>
+              <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--color-ink);">${formattedPrice}</span>
+            </div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 10px; color: var(--color-ink);">${title}</h3>
+            <p style="font-size: 0.9375rem; color: var(--color-ink-light); line-height: 1.6; margin-bottom: 20px;">
+              ${desc}
+            </p>
+            <div class="card-action-buttons">
+              <a href="${detailUrl}" class="btn btn-primary btn-sm btn-card-action">View Details</a>
+              <button type="button" class="btn btn-outline btn-sm btn-card-action btn-add-to-cart" 
+                onclick="CartManager.addItem({id:'${id}', wixId:'${id}', title:'${title.replace(/'/g, "\\'")}', price:${rawPrice || 0}, image:'${imgUrl}'}); CartManager.openCart();">
+                Add to Cart &bull; ${formattedPrice}
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    });
+
+    gridEl.innerHTML = html;
+  }
+}
+
 // Automatically bind singleton instance on DOM load or immediately
 function setupCartGlobals() {
   window.cartManager = new CartManager();
+  window.wixProductsSync = new WixProductsSync();
   window.CartManager = {
     addItem: (prod, meta) => window.cartManager.addItem(prod, meta),
     removeItem: (idx) => window.cartManager.removeItem(idx),
