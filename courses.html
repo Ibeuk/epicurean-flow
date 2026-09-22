@@ -151,6 +151,10 @@
           </div>
           <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 500;">
             <span style="color: var(--color-gold); font-size: 1.1rem;">&#10003;</span>
+            <span>Official Certificate Included (Select Courses)</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 500;">
+            <span style="color: var(--color-gold); font-size: 1.1rem;">&#10003;</span>
             <span>Lifetime Access &amp; Recipe Updates</span>
           </div>
         </div>
@@ -196,29 +200,304 @@
       </div>
     </section>
 
-    <!-- All Courses Catalog Grid (Beginners, Intermediates, Advanced, Mini 7-Day, Diabetes, Holiday) -->
+    <!-- All Courses Catalog Grid (6 Official Courses from Pricing Overview) -->
     <section class="section bg-light" id="all-courses">
       <div class="container">
-        <div class="section-header text-center">
-          <p class="section-tag">Curriculum Pathways</p>
-          <h2 class="section-title">Explore All Cooking Courses</h2>
-          <p class="section-subtitle">Select the tier that matches your current kitchen confidence and culinary goals.</p>
-        </div>
-
-        <!-- Dynamic Live Courses Container (auto-populated when added in Wix Stores) -->
-        <div id="courses-live-grid" class="grid-cards-responsive" style="display: none; margin-bottom: 36px;"></div>
-
-        <div id="courses-curation-placeholder" style="max-width: 860px; margin: 0 auto; text-align: center; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 64px 36px; box-shadow: var(--shadow-sm);">
-          <span class="product-badge gold" style="font-size: 0.85rem; padding: 6px 18px; margin-bottom: 20px; display: inline-block;">Academy Upgrades in Progress</span>
-          <h2 style="font-family: var(--font-serif); font-size: 2.25rem; color: var(--color-ink); margin-bottom: 16px;">New Masterclasses &amp; Video Courses in Production</h2>
-          <p style="font-size: 1.0625rem; color: var(--color-ink-muted); max-width: 640px; margin: 0 auto 32px auto; line-height: 1.75;">
-            We are currently updating our culinary curriculum with newly produced masterclasses, studio videos, and downloadable kitchen workbooks. Enrolment will re-open with the redesigned curriculum shortly.
-          </p>
-          <div style="display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
-            <a href="recipes.html" class="btn btn-primary"><span>Explore Technique Library</span></a>
-            <a href="contact.html" class="btn btn-outline"><span>Contact for Private Coaching</span></a>
+        <!-- Official Launch Promo Announcement -->
+        <div class="course-launch-banner" style="margin-bottom: 32px; background: linear-gradient(135deg, #1C1917 0%, #2D2723 100%); color: #FAF7F2; padding: 18px 24px; border-radius: 12px; border: 1px solid rgba(212,175,55,0.4); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span style="font-size: 1.5rem;">🎉</span>
+            <div>
+              <div style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: #FFF;">
+                New to Epicurean Flow? Use code <span class="course-promo-code" style="background: rgba(212,175,55,0.22); color: var(--color-gold); font-family: monospace; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px dashed var(--color-gold); letter-spacing: 1px;">FLOWS10</span> and enjoy <strong>10% off</strong> your first course.
+              </div>
+              <p style="font-size: 0.8rem; color: rgba(250,247,242,0.7); margin-top: 2px;">
+                *Valid on your first individual self-paced course. Excluded from bundles or already discounted packages.
+              </p>
+            </div>
           </div>
+          <button type="button" class="btn btn-gold btn-sm" onclick="navigator.clipboard.writeText('FLOWS10'); alert('Promo code FLOWS10 copied! You can apply it at checkout or in your cart drawer.');">
+            Copy Code: FLOWS10
+          </button>
         </div>
+
+        <div class="section-header text-center">
+          <p class="section-tag">Self-Paced Digital Curriculum</p>
+          <h2 class="section-title">Explore All Cooking Courses</h2>
+          <p class="section-subtitle">Interactive chef-led learning with video clarity, progress tracking, recipe workbooks, and completion certificates.</p>
+        </div>
+
+        <!-- Courses Catalog Grid (6 Official Courses) -->
+        <div class="product-cards-grid-3" id="courses-static-grid" style="margin-bottom: 36px;">
+          
+          <!-- 1. Beginners’ Cooking Course (€39.00) -->
+          <article class="catalog-card-editorial" id="beginners-cooking-course" data-id="beginners-cooking-course">
+            <div class="catalog-card-media">
+              <img src="images/course-beginners-cooking-cover.jpg" alt="Beginners’ Cooking Course by Chef Eliane Muskus" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-masterclass">Self-Paced Digital Course</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Culinary Foundations</span>
+                <span class="catalog-card-price">€39.00</span>
+              </div>
+              <h3 class="catalog-card-heading">Beginners’ Cooking Course</h3>
+              <p class="catalog-card-subheading">Essential Kitchen Foundations, Knife Skills &amp; Flavor</p>
+              <p class="catalog-card-paragraph">
+                Master essential culinary knife skills, heat control, pan searing, and seasoning fundamentals to cook with total confidence every single evening.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Interactive Video Modules &amp; Quizzes</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Comprehensive Recipe Companion Workbook</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Official Certificate of Completion</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="beginners-cooking-course"
+                  data-title="Beginners’ Cooking Course"
+                  data-numeric="39.00"
+                  data-price="€39.00"
+                  data-image="images/course-beginners-cooking-cover.jpg">
+                  Enroll Now &bull; €39.00
+                </button>
+                <a href="product-detail.html?id=beginners-cooking-course" class="btn btn-outline btn-sm">View Curriculum &amp; Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Baking for Beginners (€39.00) -->
+          <article class="catalog-card-editorial" id="beginners-baking" data-id="beginners-baking">
+            <div class="catalog-card-media">
+              <img src="images/course-baking-cover.jpg" alt="Baking for Beginners by Chef Eliane Muskus" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-masterclass">Self-Paced Digital Course</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Baking Academy</span>
+                <span class="catalog-card-price">€39.00</span>
+              </div>
+              <h3 class="catalog-card-heading">Baking for Beginners</h3>
+              <p class="catalog-card-subheading">Simple Recipes &bull; Essential Techniques &bull; Timeless Results</p>
+              <p class="catalog-card-paragraph">
+                Master pastry foundations, crusts, dough hydration chemistry, and golden savory bakes with confidence across 91 comprehensive instructional pages.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>91-Page Digital Companion Workbook</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Step-by-Step Pastry Science &amp; Quizzes</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Official Certificate of Completion</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="beginners-baking"
+                  data-title="Baking for Beginners"
+                  data-numeric="39.00"
+                  data-price="€39.00"
+                  data-image="images/course-baking-cover.jpg">
+                  Enroll Now &bull; €39.00
+                </button>
+                <a href="product-detail.html?id=beginners-baking" class="btn btn-outline btn-sm">View Curriculum &amp; Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Intermediate Cooking Techniques (€59.00) -->
+          <article class="catalog-card-editorial" id="intermediate-cooking-techniques" data-id="intermediate-cooking-techniques">
+            <div class="catalog-card-media">
+              <img src="images/intermediate-cooking-techniques-cover.jpg" alt="Intermediate Cooking Techniques Course" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-masterclass">Self-Paced Digital Course</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Skill Progression</span>
+                <span class="catalog-card-price">€59.00</span>
+              </div>
+              <h3 class="catalog-card-heading">Intermediate Cooking Techniques</h3>
+              <p class="catalog-card-subheading">Build Skills. Create Flavor. Cook with Confidence.</p>
+              <p class="catalog-card-paragraph">
+                Stop guessing pan heat and seasoning. Master golden pan-searing, emulsified French sauces, precision knife skills, and restaurant-style kitchen timing across 73 chef-led pages.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>73-Page Digital Course Workbook</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Sauce Emulsions &amp; Pan-Searing Science</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Official Certificate of Completion</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="intermediate-cooking-techniques"
+                  data-title="Intermediate Cooking Techniques"
+                  data-numeric="59.00"
+                  data-price="€59.00"
+                  data-image="images/intermediate-cooking-techniques-cover.jpg">
+                  Enroll Now &bull; €59.00
+                </button>
+                <a href="product-detail.html?id=intermediate-cooking-techniques" class="btn btn-outline btn-sm">View Curriculum &amp; Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Advanced Cooking Techniques (€79.00) -->
+          <article class="catalog-card-editorial" id="advanced-cooking-techniques" data-id="advanced-cooking-techniques">
+            <div class="catalog-card-media">
+              <img src="images/course-advanced-cover.jpg" alt="Advanced Cooking Techniques Masterclass" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-masterclass">Self-Paced Digital Course</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Haute Cuisine Mastery</span>
+                <span class="catalog-card-price">€79.00</span>
+              </div>
+              <h3 class="catalog-card-heading">Advanced Cooking Techniques</h3>
+              <p class="catalog-card-subheading">Master the Methods. Elevate Every Dish.</p>
+              <p class="catalog-card-paragraph">
+                Professional culinary methods for passionate home cooks. Complex reductions, braising science, delicate poaching, and precision plated presentation from Cannes &amp; Paris restaurant experience.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>40-Page Advanced Master Guide</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Michelin-Level Plating &amp; Poaching</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Official Certificate of Completion</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="advanced-cooking-techniques"
+                  data-title="Advanced Cooking Techniques"
+                  data-numeric="79.00"
+                  data-price="€79.00"
+                  data-image="images/course-advanced-cover.jpg">
+                  Enroll Now &bull; €79.00
+                </button>
+                <a href="product-detail.html?id=advanced-cooking-techniques" class="btn btn-outline btn-sm">View Curriculum &amp; Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Diabetes Cooking Course (€49.00) -->
+          <article class="catalog-card-editorial" id="diabetes-cooking-course" data-id="diabetes-cooking-course">
+            <div class="catalog-card-media">
+              <img src="images/course-diabetes-cooking.jpg" alt="Diabetes Cooking Course - Everyday Guidance" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-everyday">Self-Paced Digital Course</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Practical Health Guidance</span>
+                <span class="catalog-card-price">€49.00</span>
+              </div>
+              <h3 class="catalog-card-heading">Diabetes Cooking Course</h3>
+              <p class="catalog-card-subheading">Practical, Structured Everyday Guidance</p>
+              <p class="catalog-card-paragraph">
+                Practical, structured everyday culinary guidance for balanced blood sugar, vibrant energy, and delicious home cooking without sacrificing rich Mediterranean flavor or family enjoyment.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Blood Sugar Balancing Blueprints</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Effortless Weeknight Dinner Menus</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Glycemic Load &amp; Carb Swap Charts</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="diabetes-cooking-course"
+                  data-title="Diabetes Cooking Course"
+                  data-numeric="49.00"
+                  data-price="€49.00"
+                  data-image="images/course-diabetes-cooking.jpg">
+                  Enroll Now &bull; €49.00
+                </button>
+                <a href="product-detail.html?id=diabetes-cooking-course" class="btn btn-outline btn-sm">View Curriculum &amp; Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. The Complete Diabetes-Friendly Cooking Masterclass (€89.00) -->
+          <article class="catalog-card-editorial" id="diabetes-cooking-masterclass" data-id="diabetes-cooking-masterclass">
+            <div class="catalog-card-media">
+              <img src="images/course-diabetes-masterclass.jpg" alt="The Complete Diabetes-Friendly Cooking Masterclass" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-masterclass">Self-Paced Digital Course</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Premium Masterclass</span>
+                <span class="catalog-card-price">€89.00</span>
+              </div>
+              <h3 class="catalog-card-heading">The Complete Diabetes Masterclass</h3>
+              <p class="catalog-card-subheading">Delicious Recipes. Smart Strategies. Better Blood Sugar.</p>
+              <p class="catalog-card-paragraph">
+                A scientifically grounded, comprehensive masterclass guide. Delicious glycemic control strategies, nutrient-dense meal architecture, and satisfying gourmet flavors across 37 pages.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>37-Page Masterclass Guide (PDF)</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Advanced Low-Glycemic Flavor Alchemy</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Official Certificate of Completion</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="diabetes-cooking-masterclass"
+                  data-title="The Complete Diabetes-Friendly Cooking Masterclass"
+                  data-numeric="89.00"
+                  data-price="€89.00"
+                  data-image="images/course-diabetes-masterclass.jpg">
+                  Enroll Now &bull; €89.00
+                </button>
+                <a href="product-detail.html?id=diabetes-cooking-masterclass" class="btn btn-outline btn-sm">View Curriculum &amp; Details</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Dynamic Live Courses Container (optional enhancement if Wix Stores headless products load) -->
+        <div id="courses-live-grid" class="product-cards-grid-3" style="display: none; margin-bottom: 36px;"></div>
       </div>
     </section>
 
@@ -282,19 +561,19 @@
             <span class="footer-social-label">Follow Chef Eliane</span>
             <div class="footer-social-links" role="list" aria-label="Social media channels">
               <a href="https://www.facebook.com/profile.php?id=61558943582868" target="_blank" rel="noopener noreferrer" class="social-btn social-facebook" aria-label="Chef Eliane Muskus on Facebook" title="Facebook">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03.8-1.5 1.5-1.5H17.5V2.3A26 26 0 0 0 14.7 2c-3.1 0-5.2 1.9-5.2 5.3v2.2H6.5v4H9.5V22h4.5v-8.5z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
               </a>
               <a href="https://www.instagram.com/epicureanflow/" target="_blank" rel="noopener noreferrer" class="social-btn social-instagram" aria-label="Chef Eliane Muskus on Instagram" title="Instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </a>
               <a href="https://www.linkedin.com/in/epicureanadventureamsterdam/" target="_blank" rel="noopener noreferrer" class="social-btn social-linkedin" aria-label="Chef Eliane Muskus on LinkedIn" title="LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
               </a>
               <a href="https://www.tiktok.com/@elianemuskus8" target="_blank" rel="noopener noreferrer" class="social-btn social-tiktok" aria-label="Chef Eliane Muskus on TikTok" title="TikTok">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.47 6.28 6.28 0 0 0 1.95-4.57V8.53a8.28 8.28 0 0 0 4.82 1.54V6.69z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.47 6.28 6.28 0 0 0 1.95-4.57V8.53a8.28 8.28 0 0 0 4.82 1.54V6.69z"/></svg>
               </a>
               <a href="https://uk.pinterest.com/elianem0879/" target="_blank" rel="noopener noreferrer" class="social-btn social-pinterest" aria-label="Chef Eliane Muskus on Pinterest" title="Pinterest">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
               </a>
             </div>
           </div>

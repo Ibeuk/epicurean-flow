@@ -56,6 +56,43 @@
         "url": "https://epicureanflow.wixsite.com/epicurean-flow",
         "name": "Epicurean Flow",
         "description": "Premium culinary education, cookbooks, and European food tours."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What’s included in the courses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Engaging quizzes, real-time progress tracking, scrumptious recipes, and a certificate of completion that highlights your achievements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need special equipment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not at all! Our courses utilize everyday kitchen tools and easily accessible ingredients."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What about the food tours?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our curated food tours are available for booking, offering unique culinary experiences in cities worldwide—dive into local flavors!"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are your refund policies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All sales are final for digital products. Please see our website for complete details."
+            }
+          }
+        ]
       }
     ]
   }
@@ -174,173 +211,351 @@
   <main id="main-content">
 
     <!-- =========================================================================
-         SECTION 1 — HERO
+         SECTION 1 — HERO (FULL-WIDTH VISUAL WITH CHEF ELIANE)
          ========================================================================= -->
-    <section class="section theme-ivory hero-wrapper">
-      <div class="container">
-        <div class="grid-editorial" style="align-items: center;">
-          <div class="hero-content reveal-on-scroll">
-            <span class="section-eyebrow">Chef-Led Culinary Platform</span>
-            <h1 style="margin-bottom: 20px; line-height: 1.15;">
-              Cook beautifully.<br>
-              Learn confidently.<br>
-              <span class="text-serif-italic text-gold">Experience more.</span>
-            </h1>
-            <p class="lead" style="margin-bottom: 32px; max-width: 540px; font-size: 1.125rem; line-height: 1.6;">
-              Michelin-accredited technique, chef-authored cookbooks, and structured masterclasses by award-winning Chef Eliane Muskus.
-            </p>
-            <div class="hero-buttons" style="display: flex; gap: 16px; flex-wrap: wrap;">
-              <a href="#cookbooks-collection" class="btn btn-primary">
-                <span>Explore Cookbooks</span>
-                <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </a>
-              <a href="#cooking-courses" class="btn btn-secondary">
-                <span>Explore Cooking Courses</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="hero-visual reveal-on-scroll delay-2">
-            <div class="hero-visual-frame">
-              <img src="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_2500,h_1357,al_c/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg" 
-                   alt="Chef Eliane Muskus preparing a gourmet dish with precision" 
-                   class="hero-bg-img">
-            </div>
-            <div class="hero-quote-box">
-              <p style="font-family: var(--font-serif); font-size: 1.0625rem; font-style: italic; color: var(--color-ink); margin-bottom: 4px;">"Understand the technique behind every recipe."</p>
-              <p style="font-size: 0.75rem; color: var(--color-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin: 0;">Chef Eliane Muskus &bull; Cannes &amp; Amsterdam</p>
-            </div>
-          </div>
-        </div>
+    <section class="hero-fullwidth-section" id="hero">
+      <!-- Full-Width Background Visual Wrap -->
+      <div class="hero-fullwidth-bg-wrap">
+        <img src="images/hero-chef-eliane.jpg" 
+             alt="Chef Eliane Muskus garnishing a fresh gourmet dish in her Mediterranean kitchen" 
+             class="hero-fullwidth-img"
+             fetchpriority="high">
+        <div class="hero-fullwidth-scrim" aria-hidden="true"></div>
       </div>
-    </section>
 
-    <!-- =========================================================================
-         SECTION 2 — PROFESSIONAL COOKING COURSES (STRUCTURED CULINARY EDUCATION)
-         ========================================================================= -->
-    <section class="section theme-cream" id="cooking-courses">
-      <div class="container">
-        <div class="section-header text-center reveal-on-scroll">
-          <span class="section-eyebrow">&mdash; STRUCTURED CULINARY EDUCATION &mdash;</span>
-          <h2 class="section-title">Professional Cooking Courses</h2>
-          <p class="section-description">Practical, video-guided courses designed to build permanent kitchen intuition. Certificate included upon graduation.</p>
-        </div>
-
-        <!-- Dynamic Live Courses Container (populated when products are uploaded to Wix) -->
-        <div id="courses-live-grid" class="grid-products-responsive" style="display: none; margin-bottom: 32px;"></div>
-
-        <div class="academy-feature-card reveal-on-scroll">
-          <div class="academy-feature-grid">
-            <div>
-              <span class="academy-badge">On-Demand Academy</span>
-              <h3 class="academy-title">The Complete Technique Academy</h3>
-              <p class="academy-desc">
-                Learn heat management, knife rhythm, pan-searing, and mother sauce reductions through step-by-step video instruction.
-              </p>
-              
-              <ul class="academy-feature-list">
-                <li class="academy-feature-item"><span class="academy-check-icon">&check;</span> <span>Official Certificate of Completion included</span></li>
-                <li class="academy-feature-item"><span class="academy-check-icon">&check;</span> <span>Downloadable kitchen companion workbook (PDF)</span></li>
-                <li class="academy-feature-item"><span class="academy-check-icon">&check;</span> <span>Lifetime access across mobile, tablet, and desktop</span></li>
-              </ul>
-
-              <div class="academy-actions">
-                <a href="courses.html" class="btn btn-primary btn-academy"><span>Explore All Courses</span></a>
-                <a href="product-detail.html" class="btn btn-outline btn-academy"><span>View Syllabus</span></a>
-              </div>
-            </div>
-
-            <div class="academy-media-wrap">
-              <img src="images/steak-searing.jpg" alt="Chef Eliane demonstrating pan searing technique" class="academy-media-img" onerror="this.src='https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg'">
-              <div class="academy-video-pill">
-                <span style="color: var(--color-gold-light); font-size: 0.75rem;">&#9654;</span> 12 Video Modules
-              </div>
-            </div>
+      <!-- Foreground Content Container positioned on the left -->
+      <div class="hero-fullwidth-container">
+        <div class="hero-fullwidth-content reveal-on-scroll">
+          <div class="hero-award-chip">
+            <span class="chip-icon">⚜</span>
+            <span>Award-Winning Chef &bull; Cannes Provenance</span>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- =========================================================================
-         SECTION 3 — THE COOKBOOK COLLECTION (CHEF-AUTHORED PUBLICATIONS)
-         ========================================================================= -->
-    <section class="section theme-ivory" id="cookbooks-collection">
-      <div class="container">
-        <div class="section-header text-center reveal-on-scroll">
-          <span class="section-eyebrow">&mdash; CHEF-AUTHORED PUBLICATIONS &mdash;</span>
-          <h2 class="section-title">The Cookbook Collection</h2>
-          <p class="section-description">Outdated editions have been retired. Explore approved upcoming releases and companion guides.</p>
-        </div>
+          <h1 class="hero-title-main">
+            Cook with Confidence.<br>
+            <span class="hero-title-italic-gold">Create Food Worth Remembering.</span>
+          </h1>
 
-        <!-- Dynamic Live Cookbooks Container (populated when products are uploaded to Wix) -->
-        <div id="cookbooks-live-grid" class="grid-products-responsive" style="display: none; margin-bottom: 32px;"></div>
-
-        <div class="cookbook-curation-card reveal-on-scroll" id="cookbooks-curation-placeholder">
-          <span class="cookbook-curation-badge">Curated Catalog</span>
-          <h3 class="cookbook-curation-title">Newly Redesigned Cookbooks &amp; Guides Arriving</h3>
-          <p class="cookbook-curation-desc">
-            Chef Eliane is currently finalizing our refreshed digital cookbook line. Old editions have been fully cleared from the site to ensure you only purchase approved, high fidelity editions.
+          <p class="hero-subheadline-lead">
+            Chef-led cookbooks and interactive culinary masterclasses created to bring professional skills, exceptional flavour and renewed confidence into your kitchen.
           </p>
-          <div class="cookbook-curation-actions">
-            <a href="cookbooks.html" class="btn btn-primary btn-academy"><span>Browse Cookbooks</span></a>
-            <a href="seasonal.html" class="btn btn-outline btn-academy"><span>Seasonal Guides</span></a>
+
+          <div class="hero-actions-wrap">
+            <a href="#explore-collection" class="btn btn-gold btn-lg hero-cta-btn">
+              <span>Explore Cookbooks &amp; Courses</span>
+              <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="about.html" class="btn btn-outline-hero btn-lg">
+              <span>Meet Chef Eliane</span>
+            </a>
+          </div>
+
+          <!-- Understated Trust Strip -->
+          <div class="hero-trust-bar">
+            <div class="hero-avatars-cluster" aria-hidden="true">
+              <span class="hero-avatar-pill av-1">EM</span>
+              <span class="hero-avatar-pill av-2">SV</span>
+              <span class="hero-avatar-pill av-3">DK</span>
+            </div>
+            <div class="hero-trust-info">
+              <div class="hero-trust-stars" aria-label="5 stars">★★★★★</div>
+              <span class="hero-trust-text">4.9/5 Rating &bull; Trusted by 350+ Passionate Home Cooks</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================================
-         SECTION 4 — MEET CHEF ELIANE MUSKUS (EDITORIAL PROFILE)
+         EXPLORE COOKBOOKS & COURSES (INTERACTIVE COURSES & CURATED COOKBOOKS)
          ========================================================================= -->
-    <section class="section theme-cream" id="about">
+    <section class="explore-collection-section" id="explore-collection">
       <div class="container">
-        <div class="grid-editorial">
-          <div class="chef-portrait-frame reveal-on-scroll">
-            <img src="https://static.wixstatic.com/media/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg/v1/fill/w_2500,h_3750,al_c/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg" 
-                 alt="Chef Eliane Muskus portrait in professional culinary environment">
-            <div class="chef-quote-badge">
-              <p class="chef-quote-text" style="color: var(--color-gold-light);">"When you master technique, every recipe becomes an opportunity for personal expression."</p>
-              <p style="font-size: 0.8125rem; color: var(--color-gold-light); font-weight: 600; margin: 0;">— Chef Eliane Muskus</p>
+        
+        <!-- Main Section Header -->
+        <div class="explore-header-wrapper reveal-on-scroll">
+          <span class="section-eyebrow">&mdash; TANGIBLE CULINARY EXCELLENCE &mdash;</span>
+          <h2 class="section-title">Explore Cookbooks &amp; Courses</h2>
+          <p class="section-description">
+            Experience our immersive culinary masterclasses and chef-tested publications. Designed to make professional culinary mastery tangible, intuitive, and immediately actionable in your home kitchen with interactive quizzes, real-time progress tracking, and official certificates.
+          </p>
+
+          <div class="explore-nav-buttons">
+            <a href="#interactive-courses" class="btn btn-primary">
+              <span>Explore Courses</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </a>
+            <a href="#curated-cookbooks" class="btn btn-secondary">
+              <span>Browse Cookbooks</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- PART 1: INTERACTIVE COOKING COURSES -->
+        <div class="collection-subpart" id="interactive-courses">
+          <div class="subpart-header reveal-on-scroll">
+            <span class="subpart-eyebrow">STEP-BY-STEP VIDEO ACADEMY</span>
+            <h3 class="subpart-title">Interactive Cooking Courses</h3>
+            <p class="subpart-desc">
+              Watch culinary theory come to life through guided multi-angle HD video lessons, test your skills with interactive knowledge checks, track your completion, and earn your official diploma.
+            </p>
+          </div>
+
+          <!-- Main Introductory Course Preview Mockup -->
+          <div class="intro-mockup-showcase reveal-on-scroll">
+            <div class="intro-mockup-frame">
+              <img src="images/course-preview-mockup.png" 
+                   alt="Interactive cooking course student experience showing laptop with Advanced Cooking Techniques video lesson, 68% progress tracking, tablet knowledge check quiz, and certificate of completion" 
+                   class="intro-mockup-img"
+                   loading="lazy">
+            </div>
+            <div class="mockup-highlights-bar">
+              <div class="mockup-highlight-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Interactive Knowledge Quizzes</span>
+              </div>
+              <div class="mockup-highlight-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>68% Real-Time Progress Tracking</span>
+              </div>
+              <div class="mockup-highlight-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Structured Video Modules</span>
+              </div>
+              <div class="mockup-highlight-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Official Certificate of Completion</span>
+              </div>
             </div>
           </div>
 
-          <div class="chef-authority-content reveal-on-scroll delay-2">
-            <span class="section-eyebrow">Learn From Experience</span>
-            <h2 style="margin-bottom: 24px;">Meet Chef Eliane Muskus</h2>
-            <p class="lead" style="margin-bottom: 20px;">
-              Chef Eliane’s culinary path is defined by bold transformation, international expertise, and a commitment to flavor-first cooking.
-            </p>
-            <p style="margin-bottom: 20px; color: var(--color-ink-light);">
-              Holding a degree in Business Development and a corporate career background, Chef Eliane took a bold leap to pursue her lifelong culinary calling. She founded and operated a Michelin-accredited restaurant in Cannes, France, cultivating a mastery of French technique, Mediterranean produce, and precision plating.
-            </p>
-            <p style="margin-bottom: 28px; color: var(--color-ink-light);">
-              Living with diabetes herself, Chef Eliane brings a personal, deeply practical perspective to health-conscious cooking—crafting courses and cookbooks that deliver restaurant-quality dishes without compromise.
-            </p>
+          <!-- Individual Course Cards Grid (5 Products) -->
+          <div class="product-cards-grid-5">
+            <!-- 1. Beginners Baking Course -->
+            <a href="courses.html#beginners-baking" class="catalog-product-card reveal-on-scroll" aria-label="Beginners Baking Course">
+              <div class="catalog-card-media">
+                <img src="images/course-baking-cover.jpg" alt="Beginners Baking Course Cover" class="catalog-card-img" loading="lazy">
+                <div class="card-hover-overlay">
+                  <span class="btn-floating-view">
+                    <span>View Course</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </div>
+              </div>
+            </a>
 
-            <div class="chef-editorial-credentials">
-              <div class="credential-row">
-                <span class="credential-bullet"></span>
-                <span style="font-weight: 600; color: var(--color-ink); font-size: 0.9375rem;">Former owner of a Michelin-accredited restaurant in Cannes, France</span>
+            <!-- 2. Intermediate Cooking Course -->
+            <a href="courses.html#intermediate-cooking-techniques" class="catalog-product-card reveal-on-scroll delay-1" aria-label="Intermediate Cooking Techniques">
+              <div class="catalog-card-media">
+                <img src="images/intermediate-cooking-techniques-cover.jpg" alt="Intermediate Cooking Techniques Course Workbook Cover" class="catalog-card-img" loading="lazy">
+                <div class="card-hover-overlay">
+                  <span class="btn-floating-view">
+                    <span>View Course</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </div>
               </div>
-              <div class="credential-row">
-                <span class="credential-bullet"></span>
-                <span style="font-weight: 600; color: var(--color-ink); font-size: 0.9375rem;">Authentic personal perspective managing diabetes through flavor-first cooking</span>
+            </a>
+
+            <!-- 3. Advanced Cooking Techniques -->
+            <a href="courses.html#advanced-cooking-techniques" class="catalog-product-card reveal-on-scroll delay-2" aria-label="Advanced Cooking Techniques">
+              <div class="catalog-card-media">
+                <img src="images/course-advanced-cover.jpg" alt="Advanced Cooking Techniques Course Cover" class="catalog-card-img" loading="lazy">
+                <div class="card-hover-overlay">
+                  <span class="btn-floating-view">
+                    <span>View Course</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </div>
               </div>
-              <div class="credential-row">
-                <span class="credential-bullet"></span>
-                <span style="font-weight: 600; color: var(--color-ink); font-size: 0.9375rem;">International culinary background spanning Amsterdam, Cannes &amp; M&aacute;laga</span>
+            </a>
+
+            <!-- 4. Diabetes Cooking Course (Everyday Cooking) -->
+            <a href="courses.html#diabetes-cooking-course" class="catalog-product-card reveal-on-scroll delay-3" aria-label="Diabetes Cooking Course">
+              <div class="catalog-card-media">
+                <img src="images/course-diabetes-cooking.jpg" alt="Diabetes Cooking Course Cover" class="catalog-card-img" loading="lazy">
+                <div class="card-hover-overlay">
+                  <span class="btn-floating-view">
+                    <span>View Course</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- 5. Diabetes Masterclass (Premium Masterclass) -->
+            <a href="courses.html#diabetes-cooking-masterclass" class="catalog-product-card reveal-on-scroll delay-4" aria-label="Diabetes Masterclass">
+              <div class="catalog-card-media">
+                <img src="images/course-diabetes-masterclass.jpg" alt="Diabetes Masterclass Cover" class="catalog-card-img" loading="lazy">
+                <div class="card-hover-overlay">
+                  <span class="btn-floating-view">
+                    <span>View Course</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- PART 2: CURATED COOKBOOKS -->
+        <div class="collection-subpart" id="curated-cookbooks">
+          <div class="subpart-header reveal-on-scroll">
+            <span class="subpart-eyebrow">CHEF-AUTHORED PUBLICATIONS</span>
+            <h3 class="subpart-title">Curated Cookbooks</h3>
+            <p class="subpart-desc">
+              Meticulously tested recipe collections, flavor-pairing blueprints, and mindful nutrition designed for real home kitchens and joyful family gatherings.
+            </p>
+          </div>
+
+          <!-- Main Introductory 3-Book Mockup -->
+          <div class="intro-mockup-showcase reveal-on-scroll">
+            <div class="intro-mockup-frame">
+              <img src="images/three-cookbooks-mockup.jpg" 
+                   alt="Curated Cookbooks collection featuring Let's Eat Mediterranean Everyday, A Symphony of Flavors Spice Essentials, and The Diabetes-Friendly Kitchen" 
+                   class="intro-mockup-img"
+                   loading="lazy">
+            </div>
+            <div class="mockup-highlights-bar">
+              <div class="mockup-highlight-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Full-Color Editorial Food Photography</span>
+              </div>
+              <div class="mockup-highlight-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Chef-Tested Foolproof Measurements</span>
+              </div>
+              <div class="mockup-highlight-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Printable Recipe Cheat Sheets &amp; PDF Guides</span>
+              </div>
+              <div class="mockup-highlight-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Instant Digital Access Across All Devices</span>
               </div>
             </div>
+          </div>
 
-            <div>
-              <a href="about.html" class="btn btn-primary">
-                <span>Meet Chef Eliane &rarr;</span>
-              </a>
+          <!-- Individual Cookbook Cards Grid (4 Products) -->
+          <div class="product-cards-grid-4">
+            <!-- 1. Let's Eat: Mediterranean Everyday -->
+            <a href="cookbooks.html#lets-eat-mediterranean" class="catalog-product-card reveal-on-scroll" aria-label="Let's Eat Mediterranean Everyday">
+              <div class="catalog-card-media aspect-book">
+                <img src="images/lets-eat-cover.jpg" alt="Let's Eat Mediterranean Everyday Cookbook Cover" class="catalog-card-img" loading="lazy">
+                <div class="card-hover-overlay">
+                  <span class="btn-floating-view">
+                    <span>Browse Cookbook</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- 2. A Symphony of Flavors: Spice Essentials -->
+            <a href="cookbooks.html#symphony-of-flavors" class="catalog-product-card reveal-on-scroll delay-1" aria-label="A Symphony of Flavors Spice Essentials">
+              <div class="catalog-card-media aspect-book">
+                <img src="images/symphony-flavors-cover.jpg" alt="A Symphony of Flavors Spice Essentials Cookbook Cover" class="catalog-card-img" loading="lazy">
+                <div class="card-hover-overlay">
+                  <span class="btn-floating-view">
+                    <span>Browse Cookbook</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- 3. Stress-Free Thanksgiving: Complete Cooking Guide -->
+            <a href="cookbooks.html#stress-free-thanksgiving" class="catalog-product-card reveal-on-scroll delay-2" aria-label="Stress-Free Thanksgiving Complete Cooking Guide">
+              <div class="catalog-card-media aspect-book">
+                <img src="images/thanksgiving-guide-cover.jpg" alt="Stress-Free Thanksgiving Cooking Guide Cover" class="catalog-card-img" loading="lazy">
+                <div class="card-hover-overlay">
+                  <span class="btn-floating-view">
+                    <span>Explore Guide</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- 4. The Diabetes-Friendly Kitchen (Coming Soon) -->
+            <a href="cookbooks.html#the-diabetes-friendly-kitchen" class="catalog-product-card reveal-on-scroll delay-3" aria-label="The Diabetes-Friendly Kitchen Waitlist">
+              <div class="catalog-card-media aspect-book">
+                <span class="card-badge-pill badge-coming-soon">Coming Soon</span>
+                <img src="images/diabetes-kitchen-cover.jpg" alt="The Diabetes-Friendly Kitchen Cookbook Cover" class="catalog-card-img" loading="lazy">
+                <div class="card-hover-overlay">
+                  <span class="btn-floating-view">
+                    <span>Join Waitlist</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         LIMITED-TIME OFFER PROMO BANNER (COUPON FLOWS10)
+         ========================================================================= -->
+    <section class="promo-banner-section theme-ivory" id="limited-offer">
+      <div class="container">
+        <div class="promo-banner-card reveal-on-scroll">
+          <div class="promo-content-col">
+            <span class="promo-tag">Limited-Time Offer</span>
+            <h2 class="promo-title">Don’t Wait—Seize This Opportunity!</h2>
+            <p class="promo-desc">
+              For a limited time, enjoy <strong>10% off</strong> your first interactive cooking course with code: 
+              <span style="color: #fff; font-weight: 700; text-decoration: underline var(--color-gold);">FLOWS10</span>. 
+              This exclusive offer won’t last long—take action NOW and elevate your cooking!
+            </p>
+
+            <!-- Countdown Timer Component -->
+            <div class="promo-countdown-wrapper" aria-label="Limited-time offer countdown timer">
+              <div class="countdown-header">
+                <span class="countdown-pulse-dot" aria-hidden="true"></span>
+                <span class="countdown-header-title">Offer Expires In</span>
+              </div>
+              <div class="countdown-timer-grid" id="promo-countdown" role="timer" aria-live="off">
+                <div class="countdown-unit-box">
+                  <span class="countdown-digit" id="countdown-days">02</span>
+                  <span class="countdown-unit-label">Days</span>
+                </div>
+                <span class="countdown-colon" aria-hidden="true">:</span>
+                <div class="countdown-unit-box">
+                  <span class="countdown-digit" id="countdown-hours">14</span>
+                  <span class="countdown-unit-label">Hours</span>
+                </div>
+                <span class="countdown-colon" aria-hidden="true">:</span>
+                <div class="countdown-unit-box">
+                  <span class="countdown-digit" id="countdown-minutes">36</span>
+                  <span class="countdown-unit-label">Mins</span>
+                </div>
+                <span class="countdown-colon" aria-hidden="true">:</span>
+                <div class="countdown-unit-box countdown-unit-sec">
+                  <span class="countdown-digit" id="countdown-seconds">48</span>
+                  <span class="countdown-unit-label">Secs</span>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div class="promo-actions-wrap">
+            <div class="coupon-box">
+              <span class="coupon-label">Coupon:</span>
+              <span class="coupon-code">FLOWS10</span>
+              <button type="button" class="btn-copy-code" id="copy-coupon-btn" data-code="FLOWS10" aria-label="Copy coupon code FLOWS10">Copy Code</button>
+            </div>
+            <a href="courses.html?coupon=FLOWS10" class="btn btn-gold">
+              <span>Claim Your Discount! &rarr;</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
+
 
     <!-- =========================================================================
          SECTION 5 — SEASONAL COLLECTION (THANKSGIVING & CHRISTMAS IN PARIS)
@@ -368,56 +583,114 @@
     </section>
 
     <!-- =========================================================================
-         SECTION 6 — AUTHORITY & SOCIAL PROOF
+         SECTION 6 — WHY CHOOSE & THE EPICUREAN ADVANTAGE
          ========================================================================= -->
-    <section class="section theme-ivory" style="border-top: 1px solid var(--color-border-light);">
+    <section class="section theme-ivory" style="border-top: 1px solid var(--color-border-light);" id="why-choose">
       <div class="container">
+        <!-- Why Choose Epicurean Flow -->
         <div class="section-header text-center reveal-on-scroll">
-          <span class="section-eyebrow">Professional Background</span>
-          <h2 class="section-title">Rooted in Real Professional Kitchens</h2>
-          <p class="section-description">Chef Eliane's teaching is built on decades of real European restaurant leadership.</p>
+          <span class="section-eyebrow">Proven Culinary Excellence</span>
+          <h2 class="section-title">Why Choose Epicurean Flow?</h2>
+          <p class="section-description">Experience a transformational culinary journey combining interactive online learning, Michelin-caliber techniques, and authentic global experiences.</p>
         </div>
 
-        <div class="grid-4 text-center">
-          <div class="reveal-on-scroll delay-1" style="padding: 24px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border-light);">
-            <div style="font-size: 2.25rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 10px;">★</div>
-            <h4 style="font-family: var(--font-sans); font-size: 1.0625rem; font-weight: 700; margin-bottom: 8px;">Former Award Winner</h4>
-            <p style="font-size: 0.875rem; color: var(--color-ink-light); margin: 0;">Recognized chef with formal culinary leadership and menu innovation.</p>
+        <div class="advantage-grid reveal-on-scroll">
+          <div class="advantage-card">
+            <div class="why-choose-icon-wrap">
+              <img src="images/icon-interactive-learning.jpg" alt="Interactive Learning icon" class="why-choose-icon" width="72" height="72" loading="lazy">
+            </div>
+            <h3 class="advantage-title">Dynamic and Engaging Learning</h3>
+            <p class="advantage-desc">Wave goodbye to dull lessons! Our interactive courses keep you engaged with quizzes and progress tracking that motivate you to learn and succeed.</p>
           </div>
 
-          <div class="reveal-on-scroll delay-2" style="padding: 24px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border-light);">
-            <div style="font-size: 2.25rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 10px;">⚜</div>
-            <h4 style="font-family: var(--font-sans); font-size: 1.0625rem; font-weight: 700; margin-bottom: 8px;">Michelin Standard</h4>
-            <p style="font-size: 0.875rem; color: var(--color-ink-light); margin: 0;">Proven Cannes restaurant track record and classic French brigades.</p>
+          <div class="advantage-card">
+            <div class="why-choose-icon-wrap">
+              <img src="images/icon-chef-expertise.jpg" alt="Chef Expertise icon" class="why-choose-icon" width="72" height="72" loading="lazy">
+            </div>
+            <h3 class="advantage-title">Expert Guidance at Your Fingertips</h3>
+            <p class="advantage-desc">Learn directly from my culinary expertise—each module is crafted to equip you with insider techniques that will turn every meal into a masterpiece.</p>
           </div>
 
-          <div class="reveal-on-scroll delay-3" style="padding: 24px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border-light);">
-            <div style="font-size: 2.25rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 10px;">✦</div>
-            <h4 style="font-family: var(--font-sans); font-size: 1.0625rem; font-weight: 700; margin-bottom: 8px;">Classroom Mastery</h4>
-            <p style="font-size: 0.875rem; color: var(--color-ink-light); margin: 0;">Years teaching hands-on culinary workshops in France and Amsterdam.</p>
+          <div class="advantage-card">
+            <div class="why-choose-icon-wrap">
+              <img src="images/icon-culinary-tours.jpg" alt="Culinary Tours icon" class="why-choose-icon" width="72" height="72" loading="lazy">
+            </div>
+            <h3 class="advantage-title">Global Culinary Tours</h3>
+            <p class="advantage-desc">Book food tours in vibrant cities around the world and immerse yourself in the authentic flavors of each destination—an experience you won’t want to miss!</p>
+          </div>
+        </div>
+
+        <!-- Experience the Epicurean Advantage -->
+        <div class="section-header text-center reveal-on-scroll" style="margin-top: 64px;">
+          <span class="section-eyebrow">The Epicurean Standard</span>
+          <h2 class="section-title">Experience the Epicurean Advantage</h2>
+          <p class="section-description">Crafted for cooks at every level, delivering immediate access, versatile training, and connection with a passionate community.</p>
+        </div>
+
+        <div class="advantage-grid reveal-on-scroll">
+          <div class="advantage-card">
+            <div class="advantage-icon-pill" style="background: rgba(57, 66, 54, 0.1); color: var(--color-olive);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <h3 class="advantage-title">Versatile Culinary Exploration</h3>
+            <p class="advantage-desc">From classic techniques to innovative dishes, our courses cater to every skill level—perfect for beginners and seasoned chefs alike.</p>
           </div>
 
-          <div class="reveal-on-scroll delay-4" style="padding: 24px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border-light);">
-            <div style="font-size: 2.25rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 10px;">🔒</div>
-            <h4 style="font-family: var(--font-sans); font-size: 1.0625rem; font-weight: 700; margin-bottom: 8px;">Stripe Protected</h4>
-            <p style="font-size: 0.875rem; color: var(--color-ink-light); margin: 0;">256-bit SSL encrypted checkout and immediate digital delivery.</p>
+          <div class="advantage-card">
+            <div class="advantage-icon-pill" style="background: rgba(57, 66, 54, 0.1); color: var(--color-olive);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </div>
+            <h3 class="advantage-title">Instant Access to Culinary Mastery</h3>
+            <p class="advantage-desc">Download your courses and cookbooks immediately—no wait, just dive into creating gourmet meals right in your own kitchen!</p>
+          </div>
+
+          <div class="advantage-card">
+            <div class="advantage-icon-pill" style="background: rgba(57, 66, 54, 0.1); color: var(--color-olive);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 class="advantage-title">Join a Thriving Community of Food Lovers</h3>
+            <p class="advantage-desc">Connect, share, and get inspired by fellow culinary enthusiasts who are as passionate about cooking as you are.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================================
-         SECTION 8 — FOOD TOURS (UPCOMING AFFILIATE EXPERIENCES)
+         SECTION 8 — GLOBAL CULINARY TOURS (IMMERSIVE TASTING EXPERIENCES)
          ========================================================================= -->
     <section class="section theme-cream" id="food-tours">
       <div class="container">
         <div class="section-header text-center reveal-on-scroll">
           <span class="section-eyebrow">Culinary Travel</span>
-          <h2 class="section-title">Boutique European Food Tours</h2>
-          <p class="section-description">Immersive market journeys, private tastings, and artisan food producers in Amsterdam and Paris.</p>
+          <h2 class="section-title">Global Culinary Tours</h2>
+          <p class="section-description">Immersive market journeys, guided tastings, and hidden artisan food destinations curated by Chef Eliane.</p>
         </div>
 
-        <div class="grid-cards-responsive" style="grid-template-columns: repeat(2, 1fr); max-width: 1000px; margin: 0 auto;">
+        <!-- Prominent Guided Tapas Tasting Wide Showcase -->
+        <div class="tour-feature-showcase reveal-on-scroll">
+          <div class="tour-feature-media">
+            <img src="images/guided-tapas-tasting.jpg" 
+                 alt="Guided tapas tasting journey featuring authentic regional delicacies and wine pairings" 
+                 class="tour-feature-img"
+                 loading="lazy">
+            <span class="tour-feature-badge">Signature Experience</span>
+          </div>
+          <div class="tour-feature-content">
+            <span class="subpart-eyebrow">IMMERSIVE FOOD WALKS</span>
+            <h3 class="tour-feature-title">Guided Tapas Tasting &amp; Market Discoveries</h3>
+            <p class="tour-feature-desc">
+              Book food tours in vibrant culinary destinations around the world and immerse yourself in the authentic flavors of each city. Stroll historic markets, savor curated artisan tastings, and discover hidden neighborhood gems with expert local guides.
+            </p>
+            <div class="tour-feature-actions">
+              <a href="food-tours.html" class="btn btn-primary btn-lg">
+                <span>Explore Food Tours</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-cards-responsive" style="grid-template-columns: repeat(2, 1fr); max-width: 1000px; margin: 44px auto 0 auto;">
           <div class="tour-card reveal-on-scroll delay-1">
             <div class="tour-media">
               <img src="images/amsterdam-tour.jpg" alt="Amsterdam Canal Food Tour and Artisanal Cheese Tasting">
@@ -456,12 +729,15 @@
     <!-- =========================================================================
          SECTION 9 — BLOG / RECIPES (ORGANIC SEO & CONVERSION ENGINE)
          ========================================================================= -->
+    <!-- =========================================================================
+         SECTION 9 — BLOG / RECIPES (EXPLORE OUR BLOG)
+         ========================================================================= -->
     <section class="section theme-ivory" id="recipes">
       <div class="container">
         <div class="section-header text-center reveal-on-scroll">
-          <span class="section-eyebrow">The Recipe Journal</span>
-          <h2 class="section-title">Recipes, Techniques &amp; Culinary Tips</h2>
-          <p class="section-description">Discover recipes and understand the principles behind them. Each dish links directly to related masterclasses and guides.</p>
+          <span class="section-eyebrow">Explore Our Blog</span>
+          <h2 class="section-title">Unlock a Treasure Trove of Recipes!</h2>
+          <p class="section-description">Visit our blog for delectable recipes, expert cooking tips, and innovative techniques that will elevate your kitchen game daily.</p>
         </div>
 
         <div class="grid-cards-responsive" style="max-width: 1100px; margin: 0 auto;">
@@ -517,28 +793,550 @@
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
-          <a href="recipes.html" class="btn btn-secondary">Discover All Recipes &amp; Guides &rarr;</a>
+          <a href="recipes.html" class="btn btn-primary btn-lg">
+            <span>Discover Delicious Recipes! &rarr;</span>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- =========================================================================
-         SECTION 10 — FINAL CONVERSION CTA
+         SECTION 10 — TESTIMONIALS (STUDENT REVOLUTION)
          ========================================================================= -->
-    <section class="section theme-olive" style="text-align: center; padding-top: 72px; padding-bottom: 72px;">
-      <div class="container-narrow reveal-on-scroll">
-        <span class="section-eyebrow" style="color: var(--color-gold-light);">Elevate Your Kitchen</span>
-        <h2 style="margin-bottom: 20px; color: var(--color-ivory); font-size: clamp(2rem, 3.5vw, 2.75rem);">Bring better cooking into your kitchen.</h2>
-        <p class="lead" style="color: rgba(245, 240, 231, 0.9); margin-bottom: 36px; max-width: 580px; margin-left: auto; margin-right: auto;">
-          Whether through our masterclasses or chef-authored cookbooks, learn the techniques behind unforgettable dining.
-        </p>
-        <div style="display: flex; gap: 18px; justify-content: center; flex-wrap: wrap;">
-          <a href="cookbooks.html" class="btn btn-gold">
-            <span>Explore Cookbooks</span>
-          </a>
-          <a href="courses.html" class="btn btn-secondary-light">
-            <span>Explore Courses</span>
-          </a>
+    <!-- =========================================================================
+         SECTION 10 — TRANSFORMATION STORIES (5-STORY DYNAMIC SLIDING CAROUSEL)
+         ========================================================================= -->
+    <section class="testimonial-section theme-cream" id="testimonials">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-eyebrow">&mdash; TRANSFORMATION STORIES &mdash;</span>
+          <h2 class="section-title">Join the Epicurean Revolution!</h2>
+          <p class="section-description">
+            Real home cooks and culinary adventurers sharing their journey to kitchen confidence, foolproof techniques, and joyful gastronomy.
+          </p>
+        </div>
+
+        <div class="testimonial-slider-wrapper reveal-on-scroll" id="testimonial-slider-wrap">
+          
+          <!-- Top Control Header: Verified Badge, Timer Bar & Navigation Arrows -->
+          <div class="testimonial-slider-topbar">
+            <div class="testimonial-topbar-badge" aria-label="Verified Client Stories">
+              <span class="testimonial-badge-stars" aria-hidden="true">★★★★★</span>
+              <span class="testimonial-badge-text">Verified Client Stories</span>
+            </div>
+            
+            <div class="testimonial-timer-bar" title="Auto-advance progress">
+              <div class="testimonial-timer-progress" id="testimonial-timer-progress"></div>
+            </div>
+
+            <div class="testimonial-arrows">
+              <button type="button" class="testimonial-arrow-btn prev" id="testimonial-prev-btn" aria-label="Previous customer story">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button type="button" class="testimonial-arrow-btn next" id="testimonial-next-btn" aria-label="Next customer story">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Slider Viewport & Sliding Track -->
+          <div class="testimonial-viewport" id="testimonial-viewport">
+            <div class="testimonial-track" id="testimonial-track">
+              
+              <!-- Story 1: Elena & Marcus S. -->
+              <div class="testimonial-slide active" data-index="0">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Student
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “Chef Eliane completely transformed how we host dinner parties. Mastering French sauce reductions and pan-searing eliminated all kitchen stress. Our guests honestly thought we had hired a private Michelin chef!”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">EM</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Elena &amp; Marcus S.</h4>
+                      <p class="testimonial-author-location">London, United Kingdom</p>
+                      <span class="testimonial-course-tag">Advanced Cooking Techniques Graduate</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 2: David K. -->
+              <div class="testimonial-slide" data-index="1">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Student
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “Managing my Type-2 diabetes felt restrictive and bland until I found Epicurean Flow. Chef Eliane’s flavor-first low-carb gastronomy proved that healthy dining can be intensely delicious, elegant, and celebratory. Truly life-changing.”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">DK</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">David K.</h4>
+                      <p class="testimonial-author-location">Amsterdam, Netherlands</p>
+                      <span class="testimonial-course-tag">Diabetes Cooking Course &amp; Masterclass</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 3: Sophie V. -->
+              <div class="testimonial-slide" data-index="2">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Student
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “I had tried baking sourdough four times before and failed with dense, flat loaves. Chef Eliane’s video lessons on fermentation biology, flour hydration, and oven steam finally made it click. Golden, blistered, crackling crusts every single weekend!”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">SV</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Sophie V.</h4>
+                      <p class="testimonial-author-location">Paris, France</p>
+                      <span class="testimonial-course-tag">Beginners Baking Course Graduate</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 4: Robert & Claire T. -->
+              <div class="testimonial-slide" data-index="3">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Tour Guest
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “The Málaga food tour was the absolute highlight of our European trip. Tasting authentic cured jamón, fresh boquerones, and local mountain wines at secret taverns alongside passionate fellow food lovers was unforgettable.”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">RC</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Robert &amp; Claire T.</h4>
+                      <p class="testimonial-author-location">New York, United States</p>
+                      <span class="testimonial-course-tag">Málaga Tapas &amp; Historic Bodegas Tour</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 5: Ananya M. -->
+              <div class="testimonial-slide" data-index="4">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Reader
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “The flavor-pairing blueprints and spice roasting guides in 'A Symphony of Flavors' elevated our everyday family cooking. Every recipe is foolproof, gorgeously photographed, and brings authentic Mediterranean warmth into our kitchen.”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">AM</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Ananya M.</h4>
+                      <p class="testimonial-author-location">Zurich, Switzerland</p>
+                      <span class="testimonial-course-tag">Let's Eat &amp; A Symphony of Flavors Collector</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 6: Julian B. -->
+              <div class="testimonial-slide" data-index="5">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Student
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “The section on heat management and emulsified vinaigrettes alone was worth ten times the course fee. I used to rely on recipes blindly; now I cook by intuition, aroma, and technique. My kitchen confidence has skyrocketed.”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">JB</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Julian B.</h4>
+                      <p class="testimonial-author-location">Berlin, Germany</p>
+                      <span class="testimonial-course-tag">Intermediate Cooking Course Graduate</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 7: Isabella Rossi -->
+              <div class="testimonial-slide" data-index="6">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Student
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “Even coming from an Italian culinary household, Chef Eliane taught me nuances of modern plating, herb oils, and texture layering that made my dishes look like artwork. Her personal feedback on the student portal was remarkably insightful.”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">IR</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Isabella Rossi</h4>
+                      <p class="testimonial-author-location">Milan, Italy</p>
+                      <span class="testimonial-course-tag">Advanced Cooking Techniques Graduate</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 8: Dr. Henrik Lindqvist -->
+              <div class="testimonial-slide" data-index="7">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Student
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “As both a physician and an avid home cook, I appreciate how scientifically grounded and culinarily exquisite Chef Eliane's diabetes curriculum is. My fasting glucose dropped by 18% within two months of adopting her glycemic cooking methods.”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">HL</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Dr. Henrik Lindqvist</h4>
+                      <p class="testimonial-author-location">Stockholm, Sweden</p>
+                      <span class="testimonial-course-tag">The Diabetes Masterclass Student</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 9: Chloe & Liam P. -->
+              <div class="testimonial-slide" data-index="8">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Student
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “The croissant laminating module is world-class! The slow-motion fold breakdowns and temperature control tips made 27 flaky, buttery layers achievable in our standard home oven. Our weekend breakfasts are now bakery-quality.”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">CP</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Chloe &amp; Liam P.</h4>
+                      <p class="testimonial-author-location">Sydney, Australia</p>
+                      <span class="testimonial-course-tag">Beginners Baking Course Graduate</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 10: Mateo Garcés -->
+              <div class="testimonial-slide" data-index="9">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Tour Guest
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “Chef Eliane has an extraordinary connection with local artisans and producers. Walking into centuries-old cellars and olive groves with her felt like an intimate cultural masterclass rather than a standard commercial tour.”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">MG</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Mateo Garcés</h4>
+                      <p class="testimonial-author-location">Barcelona, Spain</p>
+                      <span class="testimonial-course-tag">Málaga Tapas &amp; Food Tours Guest</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 11: Sarah Jenkins, RDN -->
+              <div class="testimonial-slide" data-index="10">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Student
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “I regularly recommend Epicurean Flow to my nutrition clients. Chef Eliane dispels the myth that diabetic meal planning has to be boring steamed proteins. The spice marinades and legume innovations are utterly brilliant.”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">SJ</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Sarah Jenkins, RDN</h4>
+                      <p class="testimonial-author-location">Toronto, Canada</p>
+                      <span class="testimonial-course-tag">Diabetes Cooking Course Graduate</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 12: Alexander W. -->
+              <div class="testimonial-slide" data-index="11">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Reader
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “The toasted cumin lamb chops and charred citrus labneh from 'A Symphony of Flavors' have become our signature house recipe. The layout, flavor wheels, and foolproof ratios make it an indispensable cookbook on my countertop.”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">AW</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Alexander W.</h4>
+                      <p class="testimonial-author-location">San Francisco, United States</p>
+                      <span class="testimonial-course-tag">A Symphony of Flavors Reader</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 13: Camilla Nygård -->
+              <div class="testimonial-slide" data-index="12">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Student
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “Learning to debone whole fish and achieve restaurant-crisp skin on salmon gave me immense pride. Chef Eliane's clear multi-angle camera angles make you feel like you are standing right beside her in a Michelin kitchen.”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">CN</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Camilla Nygård</h4>
+                      <p class="testimonial-author-location">Oslo, Norway</p>
+                      <span class="testimonial-course-tag">Intermediate Cooking Course Graduate</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 14: Patrick O'Connor -->
+              <div class="testimonial-slide" data-index="13">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Client
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “Chef Eliane curated a 5-course bespoke seasonal autumn anniversary menu for my wife and me. Her preparation timeline, wine pairings, and make-ahead tips allowed me to serve an effortless, breathtaking dinner without missing a moment at the table.”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">PO</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Patrick O'Connor</h4>
+                      <p class="testimonial-author-location">Dublin, Ireland</p>
+                      <span class="testimonial-course-tag">Bespoke Menu Planning Client</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Story 15: Mei-Ling Zhao -->
+              <div class="testimonial-slide" data-index="14">
+                <article class="testimonial-card-editorial">
+                  <div class="testimonial-card-header">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="testimonial-verified-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      Verified Student
+                    </span>
+                  </div>
+                  <blockquote class="testimonial-quote-text">
+                    “The modules on clarified consommé, edible botanical garnishes, and delicate seafood poaching elevated my dinner party game beyond recognition. The certificate of completion is framed proudly in my dining room!”
+                  </blockquote>
+                  <div class="testimonial-card-footer">
+                    <div class="testimonial-avatar">MZ</div>
+                    <div class="testimonial-author-meta">
+                      <h4 class="testimonial-author-name">Mei-Ling Zhao</h4>
+                      <p class="testimonial-author-location">Singapore</p>
+                      <span class="testimonial-course-tag">Advanced Cooking Techniques Graduate</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Bottom Indicator Dots (Auto-synced via JS) -->
+          <div class="testimonial-dots" id="testimonial-dots" role="tablist" aria-label="Transformation story navigation">
+            <button type="button" class="testimonial-dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Story 1"></button>
+            <button type="button" class="testimonial-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Story 2"></button>
+            <button type="button" class="testimonial-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Story 3"></button>
+            <button type="button" class="testimonial-dot" data-slide="3" role="tab" aria-selected="false" aria-label="Story 4"></button>
+            <button type="button" class="testimonial-dot" data-slide="4" role="tab" aria-selected="false" aria-label="Story 5"></button>
+            <button type="button" class="testimonial-dot" data-slide="5" role="tab" aria-selected="false" aria-label="Story 6"></button>
+            <button type="button" class="testimonial-dot" data-slide="6" role="tab" aria-selected="false" aria-label="Story 7"></button>
+            <button type="button" class="testimonial-dot" data-slide="7" role="tab" aria-selected="false" aria-label="Story 8"></button>
+            <button type="button" class="testimonial-dot" data-slide="8" role="tab" aria-selected="false" aria-label="Story 9"></button>
+            <button type="button" class="testimonial-dot" data-slide="9" role="tab" aria-selected="false" aria-label="Story 10"></button>
+            <button type="button" class="testimonial-dot" data-slide="10" role="tab" aria-selected="false" aria-label="Story 11"></button>
+            <button type="button" class="testimonial-dot" data-slide="11" role="tab" aria-selected="false" aria-label="Story 12"></button>
+            <button type="button" class="testimonial-dot" data-slide="12" role="tab" aria-selected="false" aria-label="Story 13"></button>
+            <button type="button" class="testimonial-dot" data-slide="13" role="tab" aria-selected="false" aria-label="Story 14"></button>
+            <button type="button" class="testimonial-dot" data-slide="14" role="tab" aria-selected="false" aria-label="Story 15"></button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 11 — FAQS (YOUR QUESTIONS, ANSWERED)
+         ========================================================================= -->
+    <section class="faq-section theme-ivory" id="faqs">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-eyebrow">Frequently Asked Questions</span>
+          <h2 class="section-title">Your Questions, Answered</h2>
+          <p class="section-description">Everything you need to know about our interactive courses, culinary tours, equipment, and learning journey.</p>
+        </div>
+
+        <div class="faq-accordion-list reveal-on-scroll">
+          <div class="faq-item active">
+            <button type="button" class="faq-question-btn" aria-expanded="true">
+              <span>📌 What’s included in the courses?</span>
+              <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-panel">
+              <p>Engaging quizzes, real-time progress tracking, scrumptious recipes, and a prestigious certificate of completion that highlights your achievements.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>📌 Do I need special equipment?</span>
+              <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-panel">
+              <p>Not at all! Our courses utilize everyday kitchen tools and easily accessible ingredients, designed so you can master restaurant-quality dishes right at home.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>📌 What about the food tours?</span>
+              <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-panel">
+              <p>Our curated food tours are available for booking, offering unique culinary experiences in vibrant cities worldwide—dive into authentic local flavors and artisan food producers!</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>📌 What are your refund policies?</span>
+              <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer-panel">
+              <p>All sales are final for digital products. Please see our <a href="refund-policy.html" style="color: var(--color-gold); text-decoration: underline; font-weight: 600;">Refund Policy page</a> for complete details.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 12 — FINAL CONVERSION CTA & DIRECT CONTACT
+         ========================================================================= -->
+    <section class="final-cta-section" id="final-cta">
+      <div class="container">
+        <div class="final-cta-grid reveal-on-scroll">
+          
+          <!-- Left Column: Copy & Actions -->
+          <div class="final-cta-content">
+            <span class="section-eyebrow" style="color: var(--color-gold-light);">&mdash; START YOUR CULINARY JOURNEY &mdash;</span>
+            <h2 class="final-cta-title">
+              Ready to Cook with Greater Confidence?
+            </h2>
+            <p class="final-cta-desc">
+              Explore chef-led courses and cookbooks designed to bring exceptional flavour, practical skills and fresh inspiration into your kitchen.
+            </p>
+            
+            <div class="final-cta-buttons">
+              <a href="courses.html" class="btn btn-gold btn-lg">
+                <span>Start Cooking Today &rarr;</span>
+              </a>
+              <a href="#explore-collection" class="btn btn-secondary-light btn-lg">
+                <span>Explore Collection</span>
+              </a>
+            </div>
+
+            <p class="final-cta-perks">
+              Instant Digital Access &bull; Printable Kitchen Workbooks &bull; Official Certificates of Completion
+            </p>
+
+            <!-- Direct Contact Bar -->
+            <div class="direct-contact-bar" style="margin-top: 24px; padding-top: 18px; justify-content: flex-start;">
+              <span style="font-weight: 500;">Have questions? Contact us:</span>
+              <a href="mailto:info@epicureanflow.com" class="contact-chip-link" title="Email Epicurean Flow">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span>info@epicureanflow.com</span>
+              </a>
+              <a href="https://wa.me/31618571677" target="_blank" rel="noopener" class="contact-chip-link contact-chip-whatsapp" title="WhatsApp Chef Eliane">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                <span>WhatsApp: +31 6 18571677</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Breathtaking Málaga Seaside Terrace Feast Image -->
+          <div class="final-cta-media">
+            <img src="images/malaga-terrace-dining.jpg" 
+                 alt="Whole grilled sea bass dining on a sunlit Málaga terrace overlooking the Mediterranean sea with white wine and bougainvillea" 
+                 class="final-cta-img"
+                 loading="lazy">
+            <span class="final-cta-badge">Mediterranean Living</span>
+          </div>
+
         </div>
       </div>
     </section>
@@ -563,7 +1361,7 @@
     <div class="cart-drawer-footer">
       <div class="cart-subtotal">
         <span>Subtotal:</span>
-        <span id="cart-subtotal-val">$0.00</span>
+        <span id="cart-subtotal-val">€0.00</span>
       </div>
       <a href="https://epicureanflow.wixsite.com/epicurean-flow/cart-page" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
         <span>Proceed to Secure Checkout</span>
@@ -584,16 +1382,25 @@
           <p class="footer-desc">
             Epicurean Flow inspires home cooks and culinary professionals with Michelin-caliber technique, curated cookbooks, bespoke masterclasses, and boutique European food tours.
           </p>
-          <div class="footer-social-links">
-            <a href="https://www.instagram.com/epicureanflow/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Epicurean Flow on Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61558943582868" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Epicurean Flow on Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </a>
-            <a href="https://www.tiktok.com/@elianemuskus8" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Epicurean Flow on TikTok">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
-            </a>
+          <div class="footer-social-wrap">
+            <span class="footer-social-label">Follow Chef Eliane</span>
+            <div class="footer-social-links" role="list" aria-label="Social media channels">
+              <a href="https://www.facebook.com/profile.php?id=61558943582868" target="_blank" rel="noopener noreferrer" class="social-btn social-facebook" aria-label="Chef Eliane Muskus on Facebook" title="Facebook">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/epicureanflow/" target="_blank" rel="noopener noreferrer" class="social-btn social-instagram" aria-label="Chef Eliane Muskus on Instagram" title="Instagram">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/epicureanadventureamsterdam/" target="_blank" rel="noopener noreferrer" class="social-btn social-linkedin" aria-label="Chef Eliane Muskus on LinkedIn" title="LinkedIn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@elianemuskus8" target="_blank" rel="noopener noreferrer" class="social-btn social-tiktok" aria-label="Chef Eliane Muskus on TikTok" title="TikTok">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.47 6.28 6.28 0 0 0 1.95-4.57V8.53a8.28 8.28 0 0 0 4.82 1.54V6.69z"/></svg>
+              </a>
+              <a href="https://uk.pinterest.com/elianem0879/" target="_blank" rel="noopener noreferrer" class="social-btn social-pinterest" aria-label="Chef Eliane Muskus on Pinterest" title="Pinterest">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -638,6 +1445,18 @@
           <li><a href="terms.html">Terms of Service</a></li>
           <li><a href="refund-policy.html">Refund Policy</a></li>
         </ul>
+      </div>
+
+      <div class="footer-developer-bar">
+        <div class="developer-info">
+          <span class="developer-label">Website Engineered &amp; Designed by <a href="https://ibtex.ibe88agwu.workers.dev/" target="_blank" rel="noopener" class="developer-brand-link">IBTEX</a></span>
+          <span class="developer-sep">•</span>
+          <span class="developer-pitch">Planning a website redesign, brand build, platform migration, or SEO growth?</span>
+        </div>
+        <a href="https://wa.me/2348103883295?text=Hello%20IBTEX,%20I%20saw%20the%20Epicurean%20Flow%20website%20and%20would%20like%20to%20discuss%20a%20website%20redesign%2C%20development%2C%20or%20SEO%20project." target="_blank" rel="noopener" class="developer-cta-badge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <span>Chat with Developer on WhatsApp</span>
+        </a>
       </div>
     </div>
   </footer>

@@ -11,15 +11,9 @@ const path = require('path');
   const page = await browser.newPage();
   await page.setViewport({ width: 1440, height: 900 });
 
-  const filePath = 'file:///' + path.resolve(__dirname, '../index.html').replace(/\\/g, '/');
+  const filePath = 'file:///' + path.resolve(__dirname, '../wix-bundle.html').replace(/\\/g, '/');
   console.log('Loading:', filePath);
-  await page.goto(filePath, { waitUntil: 'networkidle0' });
-
-  // Scroll to footer
-  await page.evaluate(() => {
-    document.querySelector('.footer').scrollIntoView();
-  });
-
+  await page.goto(filePath, { waitUntil: 'domcontentloaded' });
   await new Promise(r => setTimeout(r, 1000));
 
   // Check social links

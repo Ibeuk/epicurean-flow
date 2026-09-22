@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    body { padding: 40px; background: #F8F5F0; font-family: sans-serif; }
+    .test-container { max-width: 1200px; margin: 0 auto; }
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    
+    /* Option 1: Pure Cover Card with Interactive Hover Overlay */
+    .book-cover-card {
+      display: block;
+      text-decoration: none;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(18, 17, 15, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      aspect-ratio: 1 / 1.414;
+    }
+    .book-cover-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 24px 48px rgba(18, 17, 15, 0.16);
+      border-color: var(--color-gold);
+    }
+    .book-cover-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #FAF8F5;
+    }
+    .book-cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(18, 17, 15, 0.85) 0%, rgba(18, 17, 15, 0.2) 40%, transparent 100%);
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 24px;
+      transition: opacity 0.3s ease;
+    }
+    .book-cover-card:hover .book-cover-overlay {
+      opacity: 1;
+    }
+    .btn-overlay-view {
+      background: var(--color-gold-gradient, #C28B47);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: 999px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    /* Option 2: Full Cover with a Clean Sleek Action Bar Below */
+    .book-card-clean-bar {
+      display: flex;
+      flex-direction: column;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(18, 17, 15, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .book-card-clean-bar:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 48px rgba(18, 17, 15, 0.16);
+      border-color: var(--color-gold);
+    }
+    .book-card-clean-bar .media {
+      width: 100%;
+      aspect-ratio: 1 / 1.414;
+      background: #FAF8F5;
+      overflow: hidden;
+      position: relative;
+    }
+    .book-card-clean-bar .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .book-card-clean-bar .action-bar {
+      padding: 16px;
+      background: #FFFFFF;
+      border-top: 1px solid var(--color-border-light, #EFECE6);
+      display: flex;
+      justify-content: center;
+    }
+    .book-card-clean-bar .btn-action {
+      width: 100%;
+      padding: 12px;
+      background: #12110F;
+      color: #FFFFFF;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .book-card-clean-bar .btn-action:hover {
+      background: var(--color-gold, #C28B47);
+    }
+  </style>
+</head>
+<body>
+  <div class="test-container">
+    <h2 style="margin-bottom: 24px;">Comparing Full Cover Display Options</h2>
+    <div class="test-grid">
+      <!-- Option 1: Pure Full Cover with Hover Action -->
+      <div>
+        <h4 style="margin-bottom: 12px;">Option 1: Pure Full Cover Card (Floating Button on Hover)</h4>
+        <a href="courses.html" class="book-cover-card">
+          <img src="../images/intermediate-cooking-techniques-cover.jpg" alt="Intermediate Cooking Techniques">
+          <div class="book-cover-overlay">
+            <span class="btn-overlay-view">View Course &rarr;</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Option 2: Full Cover with Compact Action Button (No bulky text block) -->
+      <div>
+        <h4 style="margin-bottom: 12px;">Option 2: Full Cover with Sleek Action Button Below</h4>
+        <div class="book-card-clean-bar">
+          <div class="media">
+            <img src="../images/intermediate-cooking-techniques-cover.jpg" alt="Intermediate Cooking Techniques">
+          </div>
+          <div class="action-bar">
+            <a href="courses.html" class="btn-action">View Course &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -143,19 +143,555 @@
     <!-- Catalog Section with Filter Bar -->
     <section class="section" id="catalog">
       <div class="container">
-        <!-- Dynamic Live Cookbooks Container (auto-populated when added in Wix Stores) -->
-        <div id="cookbooks-live-grid" class="grid-products-responsive" style="display: none; margin-bottom: 36px;"></div>
+        
+        <!-- PROMOTIONAL BUNDLES SHOWCASE -->
+        <div class="section-header text-center" style="margin-bottom: 36px;">
+          <p class="section-tag">Exclusive Launch Packages</p>
+          <h2 class="section-title">Special Value Bundles &amp; Collections</h2>
+          <p class="section-subtitle">The most rewarding way to experience Chef Eliane’s seasonal cookbooks and specialist guides with maximum savings.</p>
+        </div>
 
-        <!-- Redesigned Collection Under Curation -->
-        <div id="cookbooks-curation-placeholder" style="max-width: 860px; margin: 0 auto; text-align: center; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 64px 36px; box-shadow: var(--shadow-sm);">
-          <span class="product-badge gold" style="font-size: 0.85rem; padding: 6px 18px; margin-bottom: 20px; display: inline-block;">New Editions in Curation</span>
-          <h2 style="font-family: var(--font-serif); font-size: 2.25rem; color: var(--color-ink); margin-bottom: 16px;">Newly Redesigned Cookbooks &amp; Guides Arriving Soon</h2>
-          <p style="font-size: 1.0625rem; color: var(--color-ink-muted); max-width: 640px; margin: 0 auto 32px auto; line-height: 1.75;">
-            Chef Eliane is currently finalizing our refreshed, redesigned digital publications and seasonal master guides. The updated collection is being prepared for release.
-          </p>
-          <div style="display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
-            <a href="recipes.html" class="btn btn-primary"><span>Explore Free Chef Recipes</span></a>
-            <a href="contact.html" class="btn btn-outline"><span>Inquire with Chef Eliane</span></a>
+        <div class="bundle-showcase-grid">
+          <!-- BUNDLE 1: Complete Holiday Table Collection -->
+          <article class="bundle-card" id="bundle-holiday-collection">
+            <div class="bundle-card-media">
+              <div class="bundle-card-img-group">
+                <img src="images/thanksgiving-guide-cover.jpg" alt="Stress-Free Thanksgiving" loading="lazy">
+                <img src="images/the-christmas-recipe-collection-cover.jpg" alt="The Christmas Recipe Collection" loading="lazy">
+                <img src="images/christmas-in-paris-cover.jpg" alt="Christmas in Paris" loading="lazy">
+                <img src="images/ditch-the-cheese-ball-cover.jpg" alt="Ditch the Cheese Ball" loading="lazy">
+              </div>
+            </div>
+            <div class="bundle-card-body">
+              <div class="bundle-badge-pill">Best Value Bundle &bull; Save €23.85</div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.65rem; color: var(--color-ink); margin-bottom: 6px;">Complete Holiday Table Collection</h3>
+              <p style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; color: var(--color-gold); margin-bottom: 12px;">Four festive books. One unforgettable holiday season.</p>
+              <p style="font-size: 0.9rem; color: var(--color-ink-subtle); line-height: 1.65; margin-bottom: 14px;">
+                Plan Thanksgiving and Christmas with chef-created recipes, menus, preparation guidance and practical timelines designed to take the stress out of holiday entertaining.
+              </p>
+              
+              <div class="free-bonus-highlight">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span><strong>FREE BONUS:</strong> <em>Ditch the Cheese Ball</em> is included absolutely free!</span>
+              </div>
+
+              <ul class="catalog-card-checklist" style="margin-bottom: 22px;">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Stress-Free Thanksgiving Guide (€14.95 value)</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>The Christmas Recipe Collection (€16.95 value)</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Christmas in Paris: The French Holiday Table (€19.95 value)</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Ditch the Cheese Ball: 10 Holiday Appetizers (€8.95 FREE BONUS)</span>
+                </li>
+              </ul>
+
+              <div style="margin-bottom: 20px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px;">
+                <span class="price-strikethrough">Total Value €60.80</span>
+                <span class="price-main-bundle">€36.95</span>
+                <span class="savings-chip">Save €23.85 (39% Off)</span>
+              </div>
+
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-add-to-cart"
+                  data-id="holiday-collection"
+                  data-title="Complete Holiday Table Collection"
+                  data-numeric="36.95"
+                  data-price="€36.95"
+                  data-image="images/the-christmas-recipe-collection-cover.jpg">
+                  GET THE HOLIDAY COLLECTION &bull; €36.95
+                </button>
+                <a href="seasonal.html" class="btn btn-outline btn-sm">Explore Holiday Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- BUNDLE 2: The Flavor Without Compromise Bundle -->
+          <article class="bundle-card" id="bundle-flavor-compromise">
+            <div class="bundle-card-media">
+              <div class="bundle-card-img-group">
+                <img src="images/diabetes-kitchen-cover.jpg" alt="The Diabetes-Friendly Kitchen" loading="lazy">
+                <img src="images/symphony-flavors-cover.jpg" alt="A Symphony of Flavors" loading="lazy">
+              </div>
+            </div>
+            <div class="bundle-card-body">
+              <div class="bundle-badge-pill">Flavor &amp; Health Bundle &bull; Save €6.95</div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.65rem; color: var(--color-ink); margin-bottom: 6px;">The Flavor Without Compromise Bundle</h3>
+              <p style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; color: var(--color-gold); margin-bottom: 12px;">Diabetes-friendly should never mean flavour-free.</p>
+              <p style="font-size: 0.9rem; color: var(--color-ink-subtle); line-height: 1.65; margin-bottom: 14px;">
+                Discover satisfying diabetes-friendly recipes alongside a practical guide to Mediterranean and Middle Eastern herbs, spices and flavour combinations.
+              </p>
+              
+              <ul class="catalog-card-checklist" style="margin-top: 16px; margin-bottom: 22px;">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>The Diabetes-Friendly Kitchen Specialist Guide (€24.95 value)</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>A Symphony of Flavors: Spice Essentials Guide (€16.95 value)</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Low-Glycemic Gourmet Ratios &amp; Aromatic Flavor Matrix</span>
+                </li>
+              </ul>
+
+              <div style="margin-bottom: 20px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px; margin-top: auto;">
+                <span class="price-strikethrough">Total Value €41.90</span>
+                <span class="price-main-bundle">€34.95</span>
+                <span class="savings-chip">Save €6.95</span>
+              </div>
+
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-add-to-cart"
+                  data-id="flavor-compromise-bundle"
+                  data-title="The Flavor Without Compromise Bundle"
+                  data-numeric="34.95"
+                  data-price="€34.95"
+                  data-image="images/diabetes-kitchen-cover.jpg">
+                  GET THE BUNDLE &bull; €34.95
+                </button>
+                <a href="product-detail.html?id=the-diabetes-friendly-kitchen" class="btn btn-outline btn-sm">View Guide Details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+
+        <!-- INDIVIDUAL DIGITAL COOKBOOKS GRID -->
+        <div class="section-header text-center" style="margin-top: 40px; margin-bottom: 36px;">
+          <p class="section-tag">Chef-Authored Releases</p>
+          <h2 class="section-title">All Digital Cookbooks &amp; Culinary Guides</h2>
+          <p class="section-subtitle">Meticulously tested recipe publications with instant digital delivery across all devices.</p>
+        </div>
+
+        <!-- Cookbooks Catalog Grid (8 Core Books) -->
+        <div class="product-cards-grid-4" id="cookbooks-static-grid" style="margin-bottom: 56px;">
+          
+          <!-- 1. Stress-Free Thanksgiving (€14.95) -->
+          <article class="catalog-card-editorial" id="stress-free-thanksgiving" data-id="stress-free-thanksgiving">
+            <div class="catalog-card-media">
+              <img src="images/thanksgiving-guide-cover.jpg" alt="Stress-Free Thanksgiving Cooking Guide Cover" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-masterclass">Instant Download &bull; 58 Pages</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Holiday Guide</span>
+                <span class="catalog-card-price">€14.95</span>
+              </div>
+              <h3 class="catalog-card-heading">Stress-Free Thanksgiving</h3>
+              <p class="catalog-card-subheading">A Complete Cooking Guide</p>
+              <p class="catalog-card-paragraph">
+                Eliminate holiday cooking stress with Chef Eliane’s definitive 58-page guide. Features turkey three ways, foolproof side dishes, luscious desserts, and a minute-by-minute 3-day oven master timeline.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>58-Page Master Holiday Strategy Guide</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Minute-by-Minute 3-Day Oven Schedule</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Turkey 3 Ways (Spatchcock, Roast &amp; Braised)</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="stress-free-thanksgiving"
+                  data-title="Stress-Free Thanksgiving"
+                  data-numeric="14.95"
+                  data-price="€14.95"
+                  data-image="images/thanksgiving-guide-cover.jpg">
+                  Add to Cart &bull; €14.95
+                </button>
+                <a href="product-detail.html?id=stress-free-thanksgiving" class="btn btn-outline btn-sm">View Book Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. The Christmas Recipe Collection (€16.95) -->
+          <article class="catalog-card-editorial" id="the-christmas-recipe-collection" data-id="the-christmas-recipe-collection">
+            <div class="catalog-card-media">
+              <img src="images/the-christmas-recipe-collection-cover.jpg" alt="The Christmas Recipe Collection Cover" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-masterclass">Instant Download &bull; 48 Pages</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Festive Classics</span>
+                <span class="catalog-card-price">€16.95</span>
+              </div>
+              <h3 class="catalog-card-heading">The Christmas Recipe Collection</h3>
+              <p class="catalog-card-subheading">Traditional &amp; Modern Festive Classics</p>
+              <p class="catalog-card-paragraph">
+                From golden roasts and aromatic stuffing to showstopping desserts, master festive entertaining with foolproof chef instructions and stress-free preparation timelines.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>48 Pages of Tested Holiday Showstoppers</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Oven Scheduling &amp; Make-Ahead Master Plan</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Festive Cocktails, Starters &amp; Centerpieces</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="the-christmas-recipe-collection"
+                  data-title="The Christmas Recipe Collection"
+                  data-numeric="16.95"
+                  data-price="€16.95"
+                  data-image="images/the-christmas-recipe-collection-cover.jpg">
+                  Add to Cart &bull; €16.95
+                </button>
+                <a href="product-detail.html?id=the-christmas-recipe-collection" class="btn btn-outline btn-sm">View Book Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Christmas in Paris (€19.95) -->
+          <article class="catalog-card-editorial" id="christmas-in-paris" data-id="christmas-in-paris">
+            <div class="catalog-card-media">
+              <img src="images/christmas-in-paris-cover.jpg" alt="Christmas in Paris Cookbook Cover" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-everyday">Instant Download &bull; 52 Pages</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">French Gastronomy</span>
+                <span class="catalog-card-price">€19.95</span>
+              </div>
+              <h3 class="catalog-card-heading">Christmas in Paris</h3>
+              <p class="catalog-card-subheading">The French Holiday Table</p>
+              <p class="catalog-card-paragraph">
+                European festive sophistication made approachable. Classic French holiday starters, fresh oysters, delicate duck confit, bûche de Noël, and sommelier wine pairing guidance.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>52-Page French Haute Cuisine Home Guide</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Authentic Bûche de Noël &amp; Duck Confit</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Parisian Host Etiquette &amp; Wine Notes</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="christmas-in-paris"
+                  data-title="Christmas in Paris"
+                  data-numeric="19.95"
+                  data-price="€19.95"
+                  data-image="images/christmas-in-paris-cover.jpg">
+                  Add to Cart &bull; €19.95
+                </button>
+                <a href="product-detail.html?id=christmas-in-paris" class="btn btn-outline btn-sm">View Book Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Ditch the Cheese Ball (€8.95) -->
+          <article class="catalog-card-editorial" id="ditch-the-cheese-ball" data-id="ditch-the-cheese-ball">
+            <div class="catalog-card-media">
+              <img src="images/ditch-the-cheese-ball-cover.jpg" alt="Ditch the Cheese Ball Cookbook Cover" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-coming-soon">Instant Download &bull; 28 Pages</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Party Entertaining</span>
+                <span class="catalog-card-price">€8.95</span>
+              </div>
+              <h3 class="catalog-card-heading">Ditch the Cheese Ball</h3>
+              <p class="catalog-card-subheading">10 Holiday Appetizers That Steal the Show</p>
+              <p class="catalog-card-paragraph">
+                Say goodbye to tired supermarket platters. 10 sophisticated, vibrant party canapés and hors d'oeuvres that are effortless to prepare and leave every guest raving.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>10 Showstopping Gourmet Canapé Recipes</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Fast Assembly Ratios for Stress-Free Parties</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Included FREE in the Holiday Table Collection!</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="ditch-the-cheese-ball"
+                  data-title="Ditch the Cheese Ball"
+                  data-numeric="8.95"
+                  data-price="€8.95"
+                  data-image="images/ditch-the-cheese-ball-cover.jpg">
+                  Add to Cart &bull; €8.95
+                </button>
+                <a href="product-detail.html?id=ditch-the-cheese-ball" class="btn btn-outline btn-sm">View Book Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. The Diabetes-Friendly Kitchen (€24.95) -->
+          <article class="catalog-card-editorial" id="the-diabetes-friendly-kitchen" data-id="the-diabetes-friendly-kitchen">
+            <div class="catalog-card-media">
+              <img src="images/diabetes-kitchen-cover.jpg" alt="The Diabetes-Friendly Kitchen Cookbook Cover" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-everyday">Specialist Guide &bull; 50 Pages</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Specialist Nutrition</span>
+                <span class="catalog-card-price">€24.95</span>
+              </div>
+              <h3 class="catalog-card-heading">The Diabetes-Friendly Kitchen</h3>
+              <p class="catalog-card-subheading">Nourishing Low-Glycemic Everyday Meals</p>
+              <p class="catalog-card-paragraph">
+                A comprehensive specialist guide combining diabetes-friendly recipes, smart substitutions, shopping guidance, travel advice and professional chef techniques that sacrifice zero flavor.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Comprehensive Specialist Culinary Guide</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Low-Glycemic Gourmet Dinners &amp; Stable Sweets</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Pantry Substitutions, Shopping &amp; Dining Guidance</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="the-diabetes-friendly-kitchen"
+                  data-title="The Diabetes-Friendly Kitchen"
+                  data-numeric="24.95"
+                  data-price="€24.95"
+                  data-image="images/diabetes-kitchen-cover.jpg">
+                  Add to Cart &bull; €24.95
+                </button>
+                <a href="product-detail.html?id=the-diabetes-friendly-kitchen" class="btn btn-outline btn-sm">View Guide Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. A Symphony of Flavors (€16.95) -->
+          <article class="catalog-card-editorial" id="symphony-of-flavors" data-id="symphony-of-flavors">
+            <div class="catalog-card-media">
+              <img src="images/symphony-flavors-cover.jpg" alt="A Symphony of Flavors Spice Essentials Cookbook Cover" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-masterclass">Instant Download &bull; 39 Pages</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Curated Spice Guide</span>
+                <span class="catalog-card-price">€16.95</span>
+              </div>
+              <h3 class="catalog-card-heading">A Symphony of Flavors</h3>
+              <p class="catalog-card-subheading">Mediterranean &amp; Middle Eastern Spice Essentials</p>
+              <p class="catalog-card-paragraph">
+                Unlock the secret aromatic alchemy of Mediterranean and Middle Eastern spice blending. Detailed flavor pairings, storage secrets, and 39 pages of foolproof culinary inspiration.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>39-Page Comprehensive Spice Companion</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Whole Spice Toasting &amp; Grinding Guide</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Aromatic Flavor Matrix &amp; Swaps</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="symphony-of-flavors"
+                  data-title="A Symphony of Flavors"
+                  data-numeric="16.95"
+                  data-price="€16.95"
+                  data-image="images/symphony-flavors-cover.jpg">
+                  Add to Cart &bull; €16.95
+                </button>
+                <a href="product-detail.html?id=symphony-of-flavors" class="btn btn-outline btn-sm">View Book Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. A Taste of Southern Europe (€15.95) -->
+          <article class="catalog-card-editorial" id="taste-of-southern-europe" data-id="taste-of-southern-europe">
+            <div class="catalog-card-media">
+              <img src="images/taste-of-southern-europe-cover.jpg" alt="A Taste of Southern Europe Cookbook Cover" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-everyday">Instant Download &bull; 42 Pages</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Everyday Mediterranean</span>
+                <span class="catalog-card-price">€15.95</span>
+              </div>
+              <h3 class="catalog-card-heading">A Taste of Southern Europe</h3>
+              <p class="catalog-card-subheading">20 Budget-Friendly Mediterranean Recipes</p>
+              <p class="catalog-card-paragraph">
+                Authentic Mediterranean cooking on a budget. 20 nourishing, vegetable-forward and seafood-inspired recipes celebrating the sun-drenched European coast without expensive ingredients.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>20 Heart-Healthy Mediterranean Dinners</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Cost-Effective Pantry Ratios &amp; Shopping List</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Fast 30-Minute Weeknight Execution</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="taste-of-southern-europe"
+                  data-title="A Taste of Southern Europe"
+                  data-numeric="15.95"
+                  data-price="€15.95"
+                  data-image="images/taste-of-southern-europe-cover.jpg">
+                  Add to Cart &bull; €15.95
+                </button>
+                <a href="product-detail.html?id=taste-of-southern-europe" class="btn btn-outline btn-sm">View Book Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Soup Cookbook (€8.95) -->
+          <article class="catalog-card-editorial" id="soup-cookbook" data-id="soup-cookbook">
+            <div class="catalog-card-media">
+              <img src="images/soup-cookbook-cover.jpg" alt="Soup Cookbook Cover" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-masterclass">Instant Download &bull; 32 Pages</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Comfort Gastronomy</span>
+                <span class="catalog-card-price">€8.95</span>
+              </div>
+              <h3 class="catalog-card-heading">The Artisan Soup Cookbook</h3>
+              <p class="catalog-card-subheading">Nourishing Broths, Velvety Purees &amp; Wholesome Bowls</p>
+              <p class="catalog-card-paragraph">
+                Warm your kitchen table with deeply flavorful artisan soups. Silky purees, robust Mediterranean broths, and meal-in-a-bowl creations complete with chef pairing notes and homemade garnishes.
+              </p>
+              <ul class="catalog-card-checklist">
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Velvety Purees &amp; Rich Bone Broth Foundations</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Freezer-Friendly Batch Cooking Guidelines</span>
+                </li>
+                <li class="catalog-card-check-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Artisanal Croutons &amp; Herb Oil Drizzles</span>
+                </li>
+              </ul>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="soup-cookbook"
+                  data-title="Soup Cookbook"
+                  data-numeric="8.95"
+                  data-price="€8.95"
+                  data-image="images/soup-cookbook-cover.jpg">
+                  Add to Cart &bull; €8.95
+                </button>
+                <a href="product-detail.html?id=soup-cookbook" class="btn btn-outline btn-sm">View Book Details</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+
+        <!-- DEDICATED PHYSICAL PUBLISHED BOOK (AMAZON ONLY) -->
+        <div class="physical-book-spotlight" id="physical-book-section">
+          <div class="physical-spotlight-grid">
+            <div style="text-align: center;">
+              <img src="images/lets-eat-cover.jpg" alt="Let's Eat Cookbook - Published Physical Edition" style="width: 100%; max-width: 280px; border-radius: 10px; box-shadow: 0 16px 36px rgba(18,17,15,0.22); margin: 0 auto; display: block;">
+            </div>
+            <div>
+              <span class="card-badge-pill badge-everyday" style="display: inline-block; margin-bottom: 12px; position: static;">Physical Published Book &bull; 339 Pages</span>
+              <h3 style="font-family: var(--font-serif); font-size: 2.1rem; color: var(--color-ink); margin-bottom: 8px;">Let’s Eat: Delicious Recipes from My Cooking Classes and World Travels</h3>
+              <p style="font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; color: var(--color-gold); margin-bottom: 16px;">By Chef Eliane Muskus &bull; Available Exclusively via Amazon</p>
+              <p style="font-size: 0.95rem; line-height: 1.75; color: var(--color-ink-subtle); margin-bottom: 24px;">
+                From the award-winning cooking classes of La Serviette Blanche in Cannes to flavours inspired by Eliane’s travels, this 339-page cookbook brings together recipes shaped by a lifetime of cooking, teaching and discovery. Available in paperback and hardcover exclusively through Amazon. Orders, payment and delivery are handled directly by Amazon.
+              </p>
+              
+              <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                <a href="https://www.amazon.com/s?k=Eliane+Muskus+Let%27s+Eat" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 14px 28px; font-size: 0.95rem;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px; vertical-align: text-bottom;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                  ORDER ON AMAZON
+                </a>
+                <span style="font-size: 0.85rem; color: var(--color-ink-muted); font-style: italic;">Note: Handled exclusively via Amazon. Format &amp; shipping rates set by Amazon.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Live Cookbooks Container (optional enhancement if added in Wix Stores) -->
+        <div id="cookbooks-live-grid" class="product-cards-grid-4" style="display: none; margin-bottom: 48px;"></div>
+
+        <!-- Free Chef Guides & Downloads Section -->
+        <div style="background: var(--color-offwhite); border: 1px solid var(--color-border-light); border-radius: var(--radius-xl); padding: clamp(32px, 5vw, 48px); margin-top: 24px;">
+          <div class="text-center" style="max-width: 680px; margin: 0 auto 36px auto;">
+            <span class="card-badge-pill badge-standard" style="position: static; display: inline-block; margin-bottom: 12px;">Complimentary Chef Gifts</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.85rem; color: var(--color-ink); margin-bottom: 10px;">Free Recipe Guides &amp; Samplers</h3>
+            <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.65;">
+              Taste Chef Eliane’s signature culinary philosophy with these complimentary instant-download recipe collections.
+            </p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+            <!-- Free Guide 1 -->
+            <div style="background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 24px; display: flex; gap: 20px; align-items: center; box-shadow: var(--shadow-xs);">
+              <img src="https://static.wixstatic.com/media/30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Free Mediterranean Recipe eBook" style="width: 88px; height: 110px; object-fit: cover; border-radius: 8px; flex-shrink: 0; box-shadow: var(--shadow-sm);">
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em;">Free Download &bull; €0.00</span>
+                <h4 style="font-family: var(--font-serif); font-size: 1.125rem; color: var(--color-ink); margin: 0;">Mediterranean Recipe eBook</h4>
+                <p style="font-size: 0.85rem; color: var(--color-ink-light); line-height: 1.5; margin: 0;">6 Authentic Dishes + 2 Bonus Secret Dips crafted by Chef Eliane.</p>
+                <a href="https://epicureanflow.wixsite.com/epicurean-flow/product-page/download-your-free-mediterranean-recipe-ebook-6-delicious-recipes-2-bonus-di" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="align-self: flex-start; margin-top: 4px;">Download Free Guide</a>
+              </div>
+            </div>
+
+            <!-- Free Guide 2 -->
+            <div style="background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 24px; display: flex; gap: 20px; align-items: center; box-shadow: var(--shadow-xs);">
+              <img src="https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Free Diabetes-Friendly Mediterranean Bowls of Flavor" style="width: 88px; height: 110px; object-fit: cover; border-radius: 8px; flex-shrink: 0; box-shadow: var(--shadow-sm);">
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em;">Free Download &bull; €0.00</span>
+                <h4 style="font-family: var(--font-serif); font-size: 1.125rem; color: var(--color-ink); margin: 0;">Bowls of Flavor Guide</h4>
+                <p style="font-size: 0.85rem; color: var(--color-ink-light); line-height: 1.5; margin: 0;">Low-Carb, High-Protein Nutrient-Dense Mediterranean Bowls.</p>
+                <a href="https://epicureanflow.wixsite.com/epicurean-flow/product-page/download-your-free-diabetes-friendly-mediterranean-bowls-of-flavor" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="align-self: flex-start; margin-top: 4px;">Download Free Guide</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -180,19 +716,19 @@
             <span class="footer-social-label">Follow Chef Eliane</span>
             <div class="footer-social-links" role="list" aria-label="Social media channels">
               <a href="https://www.facebook.com/profile.php?id=61558943582868" target="_blank" rel="noopener noreferrer" class="social-btn social-facebook" aria-label="Chef Eliane Muskus on Facebook" title="Facebook">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03.8-1.5 1.5-1.5H17.5V2.3A26 26 0 0 0 14.7 2c-3.1 0-5.2 1.9-5.2 5.3v2.2H6.5v4H9.5V22h4.5v-8.5z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
               </a>
               <a href="https://www.instagram.com/epicureanflow/" target="_blank" rel="noopener noreferrer" class="social-btn social-instagram" aria-label="Chef Eliane Muskus on Instagram" title="Instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </a>
               <a href="https://www.linkedin.com/in/epicureanadventureamsterdam/" target="_blank" rel="noopener noreferrer" class="social-btn social-linkedin" aria-label="Chef Eliane Muskus on LinkedIn" title="LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
               </a>
               <a href="https://www.tiktok.com/@elianemuskus8" target="_blank" rel="noopener noreferrer" class="social-btn social-tiktok" aria-label="Chef Eliane Muskus on TikTok" title="TikTok">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.47 6.28 6.28 0 0 0 1.95-4.57V8.53a8.28 8.28 0 0 0 4.82 1.54V6.69z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.47 6.28 6.28 0 0 0 1.95-4.57V8.53a8.28 8.28 0 0 0 4.82 1.54V6.69z"/></svg>
               </a>
               <a href="https://uk.pinterest.com/elianem0879/" target="_blank" rel="noopener noreferrer" class="social-btn social-pinterest" aria-label="Chef Eliane Muskus on Pinterest" title="Pinterest">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
               </a>
             </div>
           </div>

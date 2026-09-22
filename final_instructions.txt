@@ -1,0 +1,147 @@
+Hi Bright,
+
+I am sending you the final set of images for the renewed Epicurean Flow landing page. Please use them in the following order and positions.
+
+1. Homepage hero image
+
+Please place the wide image of me cooking at the very top of the homepage, above the fold.
+
+I am positioned on the right, leaving space on the left for:
+
+Headline:
+Cook with Confidence. Create Food Worth Remembering.
+
+Supporting text:
+Chef-led cookbooks and interactive cooking courses created to bring professional skills, exceptional flavour and renewed confidence into your kitchen.
+
+Button:
+Explore Cookbooks & Courses
+
+Please add all wording and the button as live website elements. Do not embed them permanently into the image. Avoid cropping my face, hands or the plated dish. The mobile version should retain both my face and the food.
+
+
+2. Explore Cookbooks & Courses
+
+Please divide this section into two clear subsections.
+
+Interactive Cooking Courses
+
+Use the mockup showing the laptop, course-progress tracker, quiz and certificate of completion as the introductory image.
+
+Underneath, please add individual product cards for:
+
+- Beginners Baking Course
+- Intermediate Cooking Course
+- Advanced Cooking Techniques
+- Diabetes Cooking Course
+- Diabetes Masterclass
+
+Each card should include the course cover, a concise outcome-focused description and a View Course button.
+
+Please keep the Diabetes Cooking Course and Diabetes Masterclass clearly differentiated:
+
+- Diabetes Cooking Course: practical, structured everyday guidance
+- Diabetes Masterclass: a more comprehensive premium learning experience
+
+Curated Cookbooks
+
+Use the image showing the three cookbook covers as the main introductory visual.
+
+Please follow this with individual cookbook product cards. The Diabetes-Friendly Kitchen must display a clear Coming Soon label until it launches.
+
+
+3. Why Choose Epicurean Flow?
+
+Please use the three individual JPG icons in a horizontal row with three equal columns on desktop. Stack them vertically on mobile.
+
+Each icon should be approximately 60–80 pixels wide and placed above its corresponding heading:
+
+- Interactive Learning icon: Dynamic and Engaging Learning
+- Chef Expertise icon: Expert Guidance at Your Fingertips
+- Globe and location-pin icon: Global Culinary Tours
+
+Please keep all icons the same size and alignment. They should remain small visual accents rather than large illustrations.
+
+
+4. Global Culinary Tours
+
+Please use the latest wide tapas-tasting image showing the guide with the larger group, people tasting, laughing and enjoying a few glasses of wine.
+
+This image should introduce the dedicated Global Culinary Tours section and sit beside the tour description and booking button. It should not replace the small culinary-tours icon used earlier.
+
+The photograph should remain prominent, with no excessive text placed over it. Please add the heading, description and button as live website elements.
+
+Suggested button:
+
+Explore Food Tours
+
+
+5. Testimonials
+
+Please use clean, elegant quote cards rather than another large photograph. We will only add genuine customer testimonials. If customer photographs are eventually used, they must be provided by the customers and used with permission.
+
+
+6. Limited-Time Offer
+
+Please present the 10% offer in a refined promotional panel using the website’s established colours. No additional photograph is required.
+
+The discount code should be clearly visible:
+
+FLOWS10
+
+Suggested button:
+
+Claim Your Discount
+
+Please ensure the code is activated and the offer conditions are accurate before publication.
+
+---
+
+7. FAQs
+
+Please use a clean accordion layout. No photographic image is needed. Small, understated question or information icons may be used, but the section should remain simple and easy to scan.
+
+
+8. Final call to action
+
+Please use the latest wide image of the whole grilled sea bass on the Málaga terrace, including the white wine, two glasses and bougainvillea.
+
+Because the final image is visually rich, I recommend a clean two-column layout rather than placing a large amount of text directly over it:
+
+- CTA text and button on the left
+- Terrace image on the right
+
+Suggested headline:
+
+Ready to Cook with Greater Confidence?
+
+Suggested supporting text:
+
+Explore chef-led courses and cookbooks designed to bring exceptional flavour, practical skills and fresh inspiration into your kitchen.
+
+Suggested button:
+
+Start Cooking Today
+
+Please ensure the whole fish and terrace atmosphere remain visible when cropped for tablet and mobile.
+
+---
+
+9. Contact
+
+Please keep the contact area simple, using small email and WhatsApp icons only. Both details should be clickable:
+
+info@epicureanflow.com
+WhatsApp: +31 6 18571677
+
+
+General visual instructions
+
+- Keep the landing page clean, spacious and premium.
+- Do not embed headlines, descriptions, buttons or logos permanently inside the photographs.
+- Use live website text so it remains sharp and responsive.
+- Maintain consistent spacing, typography and colour treatment throughout.
+- Avoid placing text over faces, food or important visual details.
+- Optimise all images for fast loading without visible loss of quality.
+- Check every section carefully on desktop, tablet and mobile.
+- Do not repeat images unnecessarily.
