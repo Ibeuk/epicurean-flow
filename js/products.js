@@ -26,7 +26,7 @@ const PRODUCTS_DATA = {
     {
       id: 'holiday-collection',
       title: 'Complete Holiday Table Collection',
-      subtitle: 'Four Festive Books. One Unforgettable Holiday Season.',
+      subtitle: 'Streamline Your Holiday Cooking with Confidence',
       category: 'Promotional Holiday Bundle',
       originalPrice: '€60.80',
       originalNumeric: 60.80,
@@ -44,14 +44,14 @@ const PRODUCTS_DATA = {
         'Christmas in Paris: The French Holiday Table (€19.95 value)',
         'Ditch the Cheese Ball: 10 Holiday Appetizers (€8.95 FREE BONUS)'
       ],
-      description: 'Plan Thanksgiving and Christmas with chef-created recipes, menus, preparation guidance and practical timelines designed to take the stress out of holiday entertaining. Get the complete collection for only €36.95, including Ditch the Cheese Ball absolutely free. Total value €60.80 – save €23.85.',
+      description: 'Three celebrations, four books, one seamless plan! Prepare for Thanksgiving, Christmas, and an elegant Parisian dinner without the last-minute panic. Plus, enjoy our appetizer guide for free—covering every detail from the first welcome bite to the final dessert!',
       buttonText: 'GET THE HOLIDAY COLLECTION',
       url: 'seasonal.html'
     },
     {
       id: 'flavor-compromise-bundle',
       title: 'The Flavor Without Compromise Bundle',
-      subtitle: 'Diabetes-Friendly Should Never Mean Flavour-Free',
+      subtitle: 'Delicious Food Doesn’t Have to be Bland',
       category: 'Promotional Nutrition Bundle',
       originalPrice: '€41.90',
       originalNumeric: 41.90,
@@ -65,8 +65,8 @@ const PRODUCTS_DATA = {
         'The Diabetes-Friendly Kitchen (Comprehensive Specialist Guide — €24.95 value)',
         'A Symphony of Flavors: Spice Essentials (€16.95 value)'
       ],
-      description: 'Discover satisfying diabetes-friendly recipes alongside a practical guide to Mediterranean and Middle Eastern herbs, spices and flavour combinations. Total value €41.90 – bundle price €34.95. Save €6.95.',
-      buttonText: 'GET THE BUNDLE',
+      description: 'Enjoy flavorful meals while managing diabetes! Our bundle includes The Diabetes-Friendly Kitchen and A Symphony of Flavors, empowering you to create satisfying dishes without sacrificing taste. Make thoughtful choices that enhance your dining experience.',
+      buttonText: 'COOK WITH FLAVOUR',
       url: 'cookbooks.html'
     }
   ],
@@ -81,72 +81,79 @@ const PRODUCTS_DATA = {
       image: 'images/thanksgiving-guide-cover.jpg',
       badge: 'Instant Digital Download • 58 Pages',
       pages: 58,
-      description: 'Eliminate holiday cooking stress with Chef Eliane’s definitive 58-page guide. Features turkey three ways, foolproof side dishes, luscious desserts, and a minute-by-minute 3-day oven master timeline.',
+      description: "Thanksgiving should be about cherishing moments, not sweating in the kitchen. Our comprehensive guide alleviates the pressure of preparing the year's biggest meal. Explore three foolproof turkey methods, exquisite side dishes, and mouthwatering desserts, along with a practical three-day prep plan that tells you exactly what to do—and when. Spend less time worrying and more time savoring Thanksgiving with your loved ones.",
+      buttonText: 'PLAN MY STRESS-FREE THANKSGIVING',
       url: 'seasonal.html'
     },
     {
       id: 'the-christmas-recipe-collection',
       title: 'The Christmas Recipe Collection',
-      subtitle: 'Traditional & Modern Festive Classics',
+      subtitle: 'Bring the Joy Back to Your Holiday Cooking',
       category: 'Holiday Culinary Collection',
       price: '€16.95',
       numericPrice: 16.95,
       image: 'images/the-christmas-recipe-collection-cover.jpg',
       badge: 'Instant Digital Download • 48 Pages',
       pages: 48,
-      description: 'From golden roasts and aromatic stuffing to showstopping desserts, master festive entertaining with foolproof chef instructions and prep timelines.',
+      description: 'Transform your Christmas dinner into a celebration of flavors without the stress! This collection features festive recipes designed to make your holiday table unforgettable and hassle-free. From intimate dinners to grand feasts, serve dishes that evoke joy and confidence.',
+      buttonText: 'CREATE MY CHRISTMAS FEAST',
       url: 'cookbooks.html'
     },
     {
       id: 'christmas-in-paris',
       title: 'Christmas in Paris',
-      subtitle: 'The French Holiday Table',
+      subtitle: 'Experience the French Holiday Table at Home',
       category: 'French Gastronomy Guide',
       price: '€19.95',
       numericPrice: 19.95,
       image: 'images/christmas-in-paris-cover.jpg',
       badge: 'Instant Digital Download • 52 Pages',
       pages: 52,
-      description: 'European festive sophistication made approachable. Classic French holiday starters, oysters, delicate duck confit, bûche de Noël, and wine pairings.',
+      description: 'This Christmas, elevate your dinner to a Parisian dining experience! Our guide takes you through an elegant French celebration—from delectable hors d’oeuvres to a complete three-course dinner, including menus, shopping lists, and chef tips. No flight to Paris needed—just welcome your guests and bring the French holiday magic home!',
+      buttonText: 'BRING CHRISTMAS IN PARIS HOME',
       url: 'cookbooks.html'
     },
     {
       id: 'ditch-the-cheese-ball',
       title: 'Ditch the Cheese Ball',
-      subtitle: '10 Holiday Appetizers That Steal the Show',
+      subtitle: '10 Holiday Appetizers That Dazzle',
       category: 'Entertaining Guide',
       price: '€8.95',
       numericPrice: 8.95,
       image: 'images/ditch-the-cheese-ball-cover.jpg',
       badge: 'Instant Digital Download • 28 Pages',
       pages: 28,
-      description: 'Say goodbye to tired supermarket platters. 10 sophisticated, vibrant party appetizers that are easy to prepare and leave guests raving.',
+      description: 'Your guests deserve more than the same old cheese ball! This festive collection features 10 stunning appetizers that will kick off your celebration with flair. Expect bold flavors and polished presentation—all without hours of complicated prep. Start your gatherings with unforgettable bites!',
+      buttonText: 'DITCH THE CHEESE BALL',
       url: 'cookbooks.html'
     },
     {
       id: 'the-diabetes-friendly-kitchen',
       title: 'The Diabetes-Friendly Kitchen',
-      subtitle: 'Nourishing Low-Glycemic Everyday Meals',
+      subtitle: 'Cook Without Compromise',
       category: 'Specialist Culinary Guide',
       price: '€24.95',
       numericPrice: 24.95,
       image: 'images/diabetes-kitchen-cover.jpg',
-      badge: 'Instant Digital Download • 50 Pages',
+      badge: 'Coming Soon • Specialist Guide',
+      isComingSoon: true,
       pages: 50,
-      description: 'A comprehensive specialist guide combining diabetes-friendly recipes, smart substitutions, shopping guidance, travel advice, and professional chef techniques.',
-      url: 'cookbooks.html'
+      description: "Cooking for diabetes shouldn't mean sacrificing your love for food. Created by Chef Eliane Muskus, who has lived with Type 2 diabetes for over 8 years, this guide offers practical advice, satisfying recipes, and smart ingredient substitutions. Embrace smarter ingredient choices and flavorful cooking techniques that make diabetes-friendly cooking enjoyable—so much so that even non-diabetics will love it! They wouldn’t even know that it’s diabetes-friendly food. Enjoy cooking and eating well without fear!",
+      buttonText: 'DISCOVER THE DIABETES-FRIENDLY KITCHEN',
+      url: 'diabetes.html'
     },
     {
       id: 'symphony-of-flavors',
       title: 'A Symphony of Flavors',
-      subtitle: 'Mediterranean & Middle Eastern Spice Essentials',
+      subtitle: 'Unlock the Secrets of Mediterranean and Middle Eastern Spices',
       category: 'Curated Spice Guide & Cookbook',
       price: '€16.95',
       numericPrice: 16.95,
       image: 'images/symphony-flavors-cover.jpg',
       badge: 'Instant Digital Download • 39 Pages',
       pages: 39,
-      description: 'Unlock the secret aromatic alchemy of Mediterranean and Middle Eastern spice blending. Detailed flavor pairings, storage secrets, and 39 pages of foolproof culinary inspiration.',
+      description: 'If your meals lack flavor, the solution lies not just in recipes but in understanding spices! This guide reveals how ingredients like sumac, saffron, and za’atar can transform your cooking. Learn to buy, store, and combine spices for maximum impact and flavor. Elevate your dishes beyond the ordinary!',
+      buttonText: 'START BUILDING BETTER FLAVOR',
       url: 'cookbooks.html'
     },
     {
@@ -159,26 +166,28 @@ const PRODUCTS_DATA = {
       image: 'images/taste-of-southern-europe-cover.jpg',
       badge: 'Instant Digital Download • 42 Pages',
       pages: 42,
-      description: 'Authentic Mediterranean cooking on a budget. 20 nourishing, vegetable-forward and seafood-inspired recipes celebrating the sun-drenched European coast.',
+      description: 'Delicious food doesn’t have to break the bank! Travel through Southern Europe with 20 carefully curated recipes that turn accessible ingredients into culinary masterpieces. With practical budget tips and pantry guidance, you’ll create meals that bring people together without overspending.',
+      buttonText: 'TASTE SOUTHERN EUROPE',
       url: 'cookbooks.html'
     },
     {
       id: 'soup-cookbook',
       title: 'Soup Cookbook',
-      subtitle: 'Nourishing Broths, Velvety Purees & Wholesome Bowls',
+      subtitle: 'Comfort in a Bowl—Simple and Satisfying Soups',
       category: 'Comfort Gastronomy',
       price: '€8.95',
       numericPrice: 8.95,
       image: 'images/soup-cookbook-cover.jpg',
       badge: 'Instant Digital Download • 32 Pages',
       pages: 32,
-      description: 'Warm your table with deeply flavorful artisan soups. Silky purees, robust Mediterranean broths, and meal-in-a-bowl creations with chef pairing notes.',
+      description: 'When you crave warmth and comfort, reach for a bowl of homemade soup! This collection offers a variety of inviting soups perfect for relaxed lunches, light dinners, and batch cooking. Turn everyday ingredients into comforting meals that nourish both body and soul.',
+      buttonText: 'DISCOVER THE SOUP COLLECTION',
       url: 'cookbooks.html'
     },
     {
       id: 'lets-eat-mediterranean',
       title: "Let's Eat",
-      subtitle: 'Delicious Recipes from My Cooking Classes and World Travels',
+      subtitle: 'A Culinary Journey from My Classes and Travels',
       category: 'Physical Published Cookbook',
       price: 'Available on Amazon',
       numericPrice: 0.00,
@@ -188,7 +197,8 @@ const PRODUCTS_DATA = {
       isPhysical: true,
       retailer: 'Amazon',
       amazonUrl: 'https://www.amazon.com/s?k=Eliane+Muskus+Let%27s+Eat',
-      description: 'From the award-winning cooking classes of La Serviette Blanche in Cannes to flavours inspired by Eliane’s travels, this 339-page cookbook brings together recipes shaped by a lifetime of cooking, teaching and discovery. Available in paperback and hardcover exclusively through Amazon. Orders, payment and delivery are handled directly by Amazon.',
+      description: "More than just recipes—it's a chef's life story told through food! Chef Eliane Muskus shares seasonal ingredients and global flavors across 339 pages, offering a generous cookbook for those eager to explore culinary diversity. Available in paperback and hardcover.",
+      buttonText: 'ORDER LET’S EAT ON AMAZON',
       url: 'cookbooks.html'
     }
   ],
@@ -196,79 +206,87 @@ const PRODUCTS_DATA = {
     {
       id: 'beginners-cooking-course',
       title: 'Beginners’ Cooking Course',
-      subtitle: 'Essential Kitchen Foundations, Knife Skills & Flavor',
+      subtitle: 'Transform Your Cooking Skills from Uncertainty to Confidence',
       category: 'Self-Paced Digital Course',
       price: '€39.00',
       numericPrice: 39.00,
       image: 'images/course-beginners-cooking-cover.jpg',
       badge: 'Self-Paced Digital Course',
       pages: 65,
-      description: 'Master essential culinary knife skills, heat control, pan searing, and seasoning fundamentals to cook with total confidence every single evening.',
+      description: 'Stop guessing and start understanding the art of cooking! This self-paced course provides the essential foundation for new cooks to feel calm and capable. Learn to prepare, handle ingredients, and control heat with practical chef knowledge and interactive lessons.',
+      buttonText: 'START COOKING WITH CONFIDENCE',
       url: 'courses.html'
     },
     {
       id: 'beginners-baking',
       title: 'Baking for Beginners',
-      subtitle: 'Simple Recipes • Essential Techniques • Timeless Results',
+      subtitle: 'Conquer the Oven with Confidence',
       category: 'Self-Paced Digital Course',
       price: '€39.00',
       numericPrice: 39.00,
       image: 'images/course-baking-cover.jpg',
       badge: 'Self-Paced Digital Course',
       pages: 91,
-      description: 'Master pastry foundations, crusts, dough hydration chemistry, and golden savory bakes with confidence across 91 comprehensive instructional pages.',
+      description: 'Baking doesn’t have to be daunting when you know the science behind it! Master the essential skills of accurate measuring, ingredient selection, and understanding oven dynamics. With delicious recipes and troubleshooting tips, you’ll bake with confidence and ease.',
+      buttonText: 'START BAKING SUCCESSFULLY',
       url: 'courses.html'
     },
     {
       id: 'intermediate-cooking-techniques',
       title: 'Intermediate Cooking Techniques',
-      subtitle: 'Build Skills. Create Flavor. Cook with Confidence.',
+      subtitle: 'Elevate Your Kitchen Skills Beyond Basics',
       category: 'Self-Paced Digital Course',
       price: '€59.00',
       numericPrice: 59.00,
       image: 'images/intermediate-cooking-techniques-cover.jpg',
       badge: 'Self-Paced Digital Course',
       pages: 73,
-      description: 'Stop guessing pan heat and seasoning. Master golden pan-searing, emulsified French sauces, precision knife skills, and restaurant-style kitchen timing across 73 chef-led pages.',
+      description: 'Ready to step up your cooking game? This course empowers home cooks to refine their techniques and gain greater control over their culinary creations. Transform your cooking from following recipes to mastering skills that enhance every meal.',
+      buttonText: 'MOVE BEYOND THE BASICS',
       url: 'courses.html'
     },
     {
       id: 'advanced-cooking-techniques',
       title: 'Advanced Cooking Techniques',
-      subtitle: 'Master the Methods. Elevate Every Dish.',
+      subtitle: 'Achieve Restaurant-Quality Meals at Home',
       category: 'Self-Paced Digital Course',
       price: '€79.00',
       numericPrice: 79.00,
       image: 'images/course-advanced-cover.jpg',
       badge: 'Self-Paced Digital Course',
       pages: 40,
-      description: 'Professional culinary methods for passionate home cooks. Complex reductions, braising science, delicate poaching, and precision plated presentation.',
+      description: 'Take your cooking to the next level with advanced techniques! From creating luxurious sauces to mastering fresh pasta, this course equips you with the skills to cook like a chef. Gain precision and understanding that will transform your culinary repertoire.',
+      buttonText: 'MASTER ADVANCED TECHNIQUES',
       url: 'courses.html'
     },
     {
       id: 'diabetes-cooking-course',
-      title: 'Diabetes Cooking Course (Everyday Guidance)',
-      subtitle: 'Practical, Structured Everyday Guidance',
+      title: 'Diabetes Cooking Course',
+      subtitle: 'Cook Smart, Eat Well, Enjoy Your Meals',
+      differentiator: 'Practical, structured everyday guidance',
       category: 'Self-Paced Digital Course',
       price: '€49.00',
       numericPrice: 49.00,
       image: 'images/course-diabetes-cooking.jpg',
-      badge: 'Self-Paced Digital Course',
+      badge: 'Everyday Practical Guidance',
       pages: 45,
-      description: 'Practical, structured everyday culinary guidance for balanced blood sugar, vibrant energy, and delicious home cooking without sacrificing rich Mediterranean flavor.',
+      description: 'Unlock the secrets to flavorful and healthy cooking in our Diabetes Cooking Course! This interactive experience focuses on essential culinary techniques and practical strategies that empower you to create satisfying meals while managing diabetes. With a selection of delicious recipes included, you’ll learn how to make informed ingredient choices and master cooking methods that enhance taste and nutrition. Plus, combine this course with The Diabetes-Friendly Kitchen cookbook for a comprehensive culinary toolkit that encourages you to enjoy every meal without compromise.',
+      buttonText: 'START YOUR COOKING JOURNEY',
       url: 'courses.html'
     },
     {
       id: 'diabetes-cooking-masterclass',
       title: 'The Complete Diabetes-Friendly Cooking Masterclass',
-      subtitle: 'Delicious Recipes. Smart Strategies. Better Blood Sugar.',
+      subtitle: 'Transform Your Cooking with Confidence and Flavor',
+      differentiator: 'Comprehensive premium learning experience',
       category: 'Self-Paced Digital Course',
       price: '€89.00',
       numericPrice: 89.00,
       image: 'images/course-diabetes-masterclass.jpg',
-      badge: 'Self-Paced Digital Course',
+      badge: 'Comprehensive Masterclass Experience',
       pages: 37,
-      description: 'A scientifically grounded, culinary-focused masterclass guide. Delicious glycemic control strategies, nutrient-dense meal architecture, and satisfying gourmet flavors.',
+      description: 'Don’t just avoid certain foods, learn to enjoy the ones you love! This comprehensive masterclass offers deeper culinary guidance and interactive learning to help you make flavorful, informed choices in your kitchen. Experience the joy of cooking without compromise.',
+      buttonText: 'JOIN THE COMPLETE MASTERCLASS',
       url: 'courses.html'
     }
   ],
@@ -865,8 +883,15 @@ class CartManager {
       } catch (e) {}
     }
 
-    console.log('[CartManager] Falling back to standard store cart');
-    const targetUrl = `${WIX_CONFIG.pagesDomain}cart-page`;
+    console.log('[CartManager] Directing to live Wix product checkout...');
+    let targetUrl = 'https://epicureanflow.wixsite.com/epicurean-flow/cart-page';
+    if (this.cartItems && this.cartItems.length > 0) {
+      const primaryItem = this.cartItems[0];
+      const wixUrlMap = {'holiday-collection': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/exclusive-holiday-cooking-bundle-master-the-art-of-festive-entertaining', 'flavor-compromise-bundle': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate', 'stress-free-thanksgiving': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/seasonal-recipe-cookbook', 'the-christmas-recipe-collection': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/christmas-recipe-collection-cookbook', 'christmas-in-paris': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/christmas-recipe-collection-cookbook', 'ditch-the-cheese-ball': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/christmas-recipe-collection-cookbook', 'the-diabetes-friendly-kitchen': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/chef-eliane-s-new-diabetes-recipe-book', 'symphony-of-flavors': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate', 'taste-of-southern-europe': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate', 'soup-cookbook': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/seasonal-recipe-cookbook', 'lets-eat-mediterranean': 'https://www.amazon.com/s?k=Eliane+Muskus+Let%27s+Eat', 'beginners-cooking-course': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/diabetes-cooking-course', 'beginners-baking': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/diabetes-cooking-course', 'intermediate-cooking-techniques': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/diabetes-cooking-course', 'advanced-cooking-techniques': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/diabetes-cooking-course-masterclass-1', 'diabetes-cooking-course': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/diabetes-cooking-course', 'diabetes-cooking-masterclass': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/diabetes-cooking-course-masterclass-1', 'consultation-menu-planning': 'https://epicureanflow.wixsite.com/epicurean-flow/menu-planning-service'};
+      if (wixUrlMap[primaryItem.id]) {
+        targetUrl = wixUrlMap[primaryItem.id];
+      }
+    }
     if (window.top && window.top !== window) {
       try {
         window.top.location.href = targetUrl;
