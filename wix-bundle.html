@@ -10820,6 +10820,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'flavor-compromise-bundle',
+      wixId: '3c4c3872-5b66-a78e-0623-757992b4bf45',
       title: 'The Flavor Without Compromise Bundle',
       subtitle: 'Delicious Food Doesn’t Have to be Bland',
       category: 'Promotional Nutrition Bundle',
@@ -10873,6 +10874,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'christmas-in-paris',
+      wixId: '930ffd07-a0bf-362e-7f7c-b360d4feffc2',
       title: 'Christmas in Paris',
       subtitle: 'Experience the French Holiday Table at Home',
       category: 'French Gastronomy Guide',
@@ -10887,6 +10889,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'ditch-the-cheese-ball',
+      wixId: '930ffd07-a0bf-362e-7f7c-b360d4feffc2',
       title: 'Ditch the Cheese Ball',
       subtitle: '10 Holiday Appetizers That Dazzle',
       category: 'Entertaining Guide',
@@ -10932,6 +10935,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'taste-of-southern-europe',
+      wixId: '58c9b3a6-c50b-52d8-67f7-e2b1adf793de',
       title: 'A Taste of Southern Europe',
       subtitle: '20 Budget-Friendly Mediterranean Recipes',
       category: 'Everyday Mediterranean',
@@ -10946,6 +10950,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'soup-cookbook',
+      wixId: '11b42723-d4d6-e78c-480e-bae4d77c9c02',
       title: 'Soup Cookbook',
       subtitle: 'Comfort in a Bowl—Simple and Satisfying Soups',
       category: 'Comfort Gastronomy',
@@ -10960,6 +10965,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'lets-eat-mediterranean',
+      wixId: '46e3573a-341a-b5bc-926d-f0f15279d4c7',
       title: "Let's Eat",
       subtitle: 'Delicious Recipes from My Award-Winning Cooking Classes and World Travels',
       category: 'Physical Published Cookbook',
@@ -10979,6 +10985,7 @@ const PRODUCTS_DATA = {
   courses: [
     {
       id: 'beginners-cooking-course',
+      wixId: '160f5527-13c1-9ef9-3e2e-1b0f07a94abb',
       title: 'Beginners’ Cooking Course',
       subtitle: 'Transform Your Cooking Skills from Uncertainty to Confidence',
       category: 'Self-Paced Digital Course',
@@ -10993,6 +11000,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'beginners-baking',
+      wixId: '160f5527-13c1-9ef9-3e2e-1b0f07a94abb',
       title: 'Baking for Beginners',
       subtitle: 'Conquer the Oven with Confidence',
       category: 'Self-Paced Digital Course',
@@ -11007,6 +11015,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'intermediate-cooking-techniques',
+      wixId: '160f5527-13c1-9ef9-3e2e-1b0f07a94abb',
       title: 'Intermediate Cooking Techniques',
       subtitle: 'Elevate Your Kitchen Skills Beyond Basics',
       category: 'Self-Paced Digital Course',
@@ -11021,6 +11030,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'advanced-cooking-techniques',
+      wixId: 'b0ad737f-d24e-afa3-9390-bd9691cd5e67',
       title: 'Advanced Cooking Techniques',
       subtitle: 'Achieve Restaurant-Quality Meals at Home',
       category: 'Self-Paced Digital Course',
@@ -11390,25 +11400,6 @@ class CartManager {
     this.saveCart();
     this.renderCart();
     this.openDrawer();
-
-    // If connected to Wix Headless e-commerce, sync with currentCart
-    if (this.wixClient && item.wixId) {
-      try {
-        await this.wixClient.currentCart.addToCurrentCart({
-          lineItems: [
-            {
-              catalogReference: {
-                appId: '215238eb-22a5-4c36-9e7b-e7c08025e04e',
-                catalogItemId: item.wixId
-              },
-              quantity: 1
-            }
-          ]
-        });
-      } catch (err) {
-        console.warn('[Wix Headless] Server cart sync note:', err.message);
-      }
-    }
   }
 
   removeItem(index) {
@@ -11647,23 +11638,37 @@ class CartManager {
     // Headless Client Cart Sync (if enabled and authenticated)
     if (this.wixClient && this.wixClient.currentCart) {
       try {
-        console.log('[CartManager] Attempting headless checkout creation...');
+        console.log('[CartManager] Synchronizing fresh cart session with Wix...');
+        // Clear previous server cart so stale or abandoned items never accumulate
+        try {
+          await this.wixClient.currentCart.deleteCurrentCart();
+        } catch (delErr) {
+          // If no active cart exists on server, proceed
+        }
+
+        // Aggregate unique line items and exact quantities from local cart
+        const lineItemMap = new Map();
         for (const item of this.cartItems) {
-          if (item.wixId) {
-            try {
-              await this.wixClient.currentCart.addToCurrentCart({
-                lineItems: [{
-                  catalogReference: {
-                    appId: '215238eb-22a5-4c36-9e7b-e7c08025e04e',
-                    catalogItemId: item.wixId
-                  },
-                  quantity: 1
-                }]
-              });
-            } catch (addErr) {
-              console.warn('[CartManager] Headless item sync note:', addErr.message);
-            }
+          const wixId = item.wixId || (PRODUCTS_DATA.findById && PRODUCTS_DATA.findById(item.id)?.wixId);
+          if (wixId) {
+            const currentQty = lineItemMap.get(wixId) || 0;
+            lineItemMap.set(wixId, currentQty + (item.quantity || 1));
           }
+        }
+
+        const lineItems = [];
+        for (const [wixId, quantity] of lineItemMap.entries()) {
+          lineItems.push({
+            catalogReference: {
+              appId: '215238eb-22a5-4c36-9e7b-e7c08025e04e',
+              catalogItemId: wixId
+            },
+            quantity: quantity
+          });
+        }
+
+        if (lineItems.length > 0) {
+          await this.wixClient.currentCart.addToCurrentCart({ lineItems });
         }
 
         const checkout = await this.wixClient.currentCart.createCheckoutFromCurrentCart({
