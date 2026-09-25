@@ -11,14 +11,16 @@ def build_wix_bundle():
         'layout.css',
         'components.css',
         'animations.css',
-        'responsive.css'
+        'responsive.css',
+        'members.css'
     ]
 
     js_files = [
         'products.js',
         'navigation.js',
         'animations.js',
-        'main.js'
+        'main.js',
+        'members.js'
     ]
 
     css_content = ''
@@ -81,17 +83,17 @@ document.addEventListener('DOMContentLoaded', () => {
 {js_content}
   </script>'''
 
-    # Replace CSS references
+    # Replace CSS references safely without regex backslash interpretation
     html_bundled = re.sub(
         r'\s*<!-- Stylesheets -->(\s*<link rel="stylesheet" href="css/[^"]+">)+',
-        '\n' + css_bundle_tag,
+        lambda m: '\n' + css_bundle_tag,
         html
     )
 
-    # Replace JS references
+    # Replace JS references safely without regex backslash interpretation
     html_bundled = re.sub(
         r'\s*<!-- Scripts -->(\s*<script src="js/[^"]+"></script>)+',
-        '\n' + js_bundle_tag,
+        lambda m: '\n' + js_bundle_tag,
         html_bundled
     )
 

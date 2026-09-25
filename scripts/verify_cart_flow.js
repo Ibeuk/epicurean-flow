@@ -72,9 +72,10 @@ async function runTest() {
     const initialBadge = await page.$eval('.cart-badge', el => el.textContent.trim());
     console.log(`Initial cart badge count: "${initialBadge}"`);
 
-    // Click quick add button on first product
+    // Navigate to cookbooks.html for adding products
+    await page.goto(`http://localhost:${PORT}/cookbooks.html`, { waitUntil: 'networkidle0' });
     const addBtn = await page.$('.btn-add-to-cart, .btn-buy-trigger');
-    if (!addBtn) throw new Error('Could not find .btn-add-to-cart or .btn-buy-trigger button on index.html');
+    if (!addBtn) throw new Error('Could not find .btn-add-to-cart button on cookbooks.html');
     await addBtn.click();
     await new Promise(r => setTimeout(r, 600));
 

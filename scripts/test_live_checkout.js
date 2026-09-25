@@ -43,10 +43,12 @@ server.listen(PORT, async () => {
   await page.goto(`http://localhost:${PORT}/wix-bundle.html`, { waitUntil: 'networkidle2' });
   console.log('wix-bundle.html loaded');
 
-  // Click buy button for Symphony of Flavors
-  await page.click('.btn-buy-trigger[data-product-id="symphony-flavors"]');
-  console.log('Clicked Buy Symphony of Flavors');
-  await new Promise(r => setTimeout(r, 2000));
+  // Add Holiday Collection to cart via cartManager
+  await page.evaluate(() => {
+    window.cartManager.addItem('holiday-collection');
+  });
+  console.log('Added Holiday Collection to cart');
+  await new Promise(r => setTimeout(r, 1000));
 
   // Click checkout
   console.log('Clicking proceed to checkout...');

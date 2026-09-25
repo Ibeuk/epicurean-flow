@@ -187,7 +187,7 @@ const PRODUCTS_DATA = {
     {
       id: 'lets-eat-mediterranean',
       title: "Let's Eat",
-      subtitle: 'A Culinary Journey from My Classes and Travels',
+      subtitle: 'Delicious Recipes from My Award-Winning Cooking Classes and World Travels',
       category: 'Physical Published Cookbook',
       price: 'Available on Amazon',
       numericPrice: 0.00,
@@ -811,22 +811,51 @@ class CartManager {
 
   async proceedToCheckout() {
     console.log('[CartManager] proceedToCheckout invoked! Cart items:', this.cartItems.length);
-    const originalText = this.checkoutBtnEl ? this.checkoutBtnEl.textContent : '';
+    if (!this.cartItems || this.cartItems.length === 0) {
+      alert('Your shopping bag is currently empty. Please add a cookbook or course to proceed.');
+      return;
+    }
+
+    const originalText = this.checkoutBtnEl ? this.checkoutBtnEl.textContent : 'Proceed to Checkout';
     if (this.checkoutBtnEl) {
       this.checkoutBtnEl.textContent = 'Connecting to Secure Checkout...';
       this.checkoutBtnEl.style.opacity = '0.75';
       this.checkoutBtnEl.style.pointerEvents = 'none';
     }
 
-    if (this.wixClient && this.wixClient.currentCart) {
-      console.log('[CartManager] wixClient ready, checking items...');
+    // Safety timeout: Ensure the checkout button always restores interactivity if navigation is delayed
+    const resetCheckoutBtn = () => {
+      if (this.checkoutBtnEl) {
+        this.checkoutBtnEl.textContent = originalText;
+        this.checkoutBtnEl.style.opacity = '1';
+        this.checkoutBtnEl.style.pointerEvents = 'auto';
+      }
+    };
+    setTimeout(resetCheckoutBtn, 3500);
+
+    // 1. If embedded inside Wix Studio / Wix Editor iframe, delegate to Velo bridge with full items & coupon
+    if (window.parent && window.parent !== window) {
+      console.log('[CartManager] Inside Wix iframe, dispatching NAVIGATE_CHECKOUT via postMessage');
       try {
-        // Sync any cart items to Wix server cart if needed
+        window.parent.postMessage({
+          type: 'NAVIGATE_CHECKOUT',
+          items: this.cartItems,
+          coupon: this.appliedCoupon,
+          subtotal: this.cartItems.reduce((acc, cur) => acc + (Number(cur.numericPrice) || 0), 0)
+        }, '*');
+      } catch (e) {
+        console.warn('[CartManager] postMessage note:', e);
+      }
+    }
+
+    // 2. Headless Client Cart Sync (if enabled and authenticated)
+    if (this.wixClient && this.wixClient.currentCart) {
+      try {
+        console.log('[CartManager] Attempting headless checkout creation...');
         for (const item of this.cartItems) {
-          console.log('[CartManager] Checking item wixId:', item.title, item.wixId);
           if (item.wixId) {
             try {
-              const addRes = await this.wixClient.currentCart.addToCurrentCart({
+              await this.wixClient.currentCart.addToCurrentCart({
                 lineItems: [{
                   catalogReference: {
                     appId: '215238eb-22a5-4c36-9e7b-e7c08025e04e',
@@ -835,21 +864,17 @@ class CartManager {
                   quantity: 1
                 }]
               });
-              console.log('[CartManager] Synced item to Wix cart:', addRes);
             } catch (addErr) {
-              console.warn('[CartManager] Item add note:', addErr.message);
+              console.warn('[CartManager] Headless item sync note:', addErr.message);
             }
           }
         }
 
-        console.log('[CartManager] Calling createCheckoutFromCurrentCart...');
         const checkout = await this.wixClient.currentCart.createCheckoutFromCurrentCart({
           channelType: 'WEB'
         });
-        console.log('[CartManager] Checkout created:', checkout);
 
         if (checkout && checkout.checkoutId && this.wixClient.redirects) {
-          console.log('[CartManager] Creating redirect session for checkoutId:', checkout.checkoutId);
           const redirect = await this.wixClient.redirects.createRedirectSession({
             ecomCheckout: { checkoutId: checkout.checkoutId },
             callbacks: {
@@ -857,48 +882,52 @@ class CartManager {
               thankYouPageUrl: window.location.origin
             }
           });
-          console.log('[CartManager] Redirect session result:', redirect);
 
           if (redirect && redirect.redirectSession && redirect.redirectSession.fullUrl) {
-            console.log('[CartManager] REDIRECTING TO:', redirect.redirectSession.fullUrl);
-            if (window.top) {
-              window.top.location.href = redirect.redirectSession.fullUrl;
-            } else {
-              window.location.href = redirect.redirectSession.fullUrl;
-            }
+            console.log('[CartManager] Headless session created, redirecting:', redirect.redirectSession.fullUrl);
+            const targetWin = window.top || window;
+            targetWin.location.href = redirect.redirectSession.fullUrl;
             return;
           }
         }
       } catch (err) {
-        console.error('[CartManager] Wix Headless checkout error:', err);
-      }
-    } else {
-      console.warn('[CartManager] wixClient not ready, fallback triggered');
-    }
-
-    // 1. Notify parent Wix page if running inside an iframe
-    if (window.parent && window.parent !== window) {
-      try {
-        window.parent.postMessage({ type: 'NAVIGATE_CHECKOUT' }, '*');
-      } catch (e) {}
-    }
-
-    console.log('[CartManager] Directing to live Wix product checkout...');
-    let targetUrl = 'https://epicureanflow.wixsite.com/epicurean-flow/cart-page';
-    if (this.cartItems && this.cartItems.length > 0) {
-      const primaryItem = this.cartItems[0];
-      const wixUrlMap = {'holiday-collection': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/exclusive-holiday-cooking-bundle-master-the-art-of-festive-entertaining', 'flavor-compromise-bundle': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate', 'stress-free-thanksgiving': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/seasonal-recipe-cookbook', 'the-christmas-recipe-collection': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/christmas-recipe-collection-cookbook', 'christmas-in-paris': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/christmas-recipe-collection-cookbook', 'ditch-the-cheese-ball': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/christmas-recipe-collection-cookbook', 'the-diabetes-friendly-kitchen': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/chef-eliane-s-new-diabetes-recipe-book', 'symphony-of-flavors': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate', 'taste-of-southern-europe': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate', 'soup-cookbook': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/seasonal-recipe-cookbook', 'lets-eat-mediterranean': 'https://www.amazon.com/s?k=Eliane+Muskus+Let%27s+Eat', 'beginners-cooking-course': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/diabetes-cooking-course', 'beginners-baking': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/diabetes-cooking-course', 'intermediate-cooking-techniques': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/diabetes-cooking-course', 'advanced-cooking-techniques': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/diabetes-cooking-course-masterclass-1', 'diabetes-cooking-course': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/diabetes-cooking-course', 'diabetes-cooking-masterclass': 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/diabetes-cooking-course-masterclass-1', 'consultation-menu-planning': 'https://epicureanflow.wixsite.com/epicurean-flow/menu-planning-service'};
-      if (wixUrlMap[primaryItem.id]) {
-        targetUrl = wixUrlMap[primaryItem.id];
+        console.info('[CartManager] Wix Headless API note (using direct store gateway fallback):', err.message);
       }
     }
-    if (window.top && window.top !== window) {
-      try {
-        window.top.location.href = targetUrl;
-        return;
-      } catch (e) {}
+
+    // 3. Verified Direct Wix Store & Cart Gateway Routing
+    const baseDomain = WIX_CONFIG.pagesDomain.replace(/\/+$/, '');
+    let targetUrl = `${baseDomain}/cart-page`;
+
+    const primaryItem = this.cartItems[0];
+    const wixUrlMap = {
+      'holiday-collection': `${baseDomain}/product-page/exclusive-holiday-cooking-bundle-master-the-art-of-festive-entertaining`,
+      'flavor-compromise-bundle': `${baseDomain}/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate`,
+      'stress-free-thanksgiving': `${baseDomain}/product-page/seasonal-recipe-cookbook`,
+      'the-christmas-recipe-collection': `${baseDomain}/product-page/christmas-recipe-collection-cookbook`,
+      'christmas-in-paris': `${baseDomain}/product-page/christmas-recipe-collection-cookbook`,
+      'ditch-the-cheese-ball': `${baseDomain}/product-page/christmas-recipe-collection-cookbook`,
+      'the-diabetes-friendly-kitchen': `${baseDomain}/product-page/chef-eliane-s-new-diabetes-recipe-book`,
+      'symphony-of-flavors': `${baseDomain}/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate`,
+      'taste-of-southern-europe': `${baseDomain}/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate`,
+      'soup-cookbook': `${baseDomain}/product-page/seasonal-recipe-cookbook`,
+      'lets-eat-mediterranean': 'https://www.amazon.com/s?k=Eliane+Muskus+Let%27s+Eat',
+      'beginners-cooking-course': `${baseDomain}/product-page/diabetes-cooking-course`,
+      'beginners-baking': `${baseDomain}/product-page/diabetes-cooking-course`,
+      'intermediate-cooking-techniques': `${baseDomain}/product-page/diabetes-cooking-course`,
+      'advanced-cooking-techniques': `${baseDomain}/product-page/diabetes-cooking-course-masterclass-1`,
+      'diabetes-cooking-course': `${baseDomain}/product-page/diabetes-cooking-course`,
+      'diabetes-cooking-masterclass': `${baseDomain}/product-page/diabetes-cooking-course-masterclass-1`,
+      'consultation-menu-planning': `${baseDomain}/menu-planning-service`
+    };
+
+    if (wixUrlMap[primaryItem.id]) {
+      targetUrl = wixUrlMap[primaryItem.id];
     }
-    window.location.href = targetUrl;
+
+    console.log('[CartManager] Directing to secure checkout gateway:', targetUrl);
+    const targetWin = window.top || window;
+    targetWin.location.href = targetUrl;
   }
 }
 
