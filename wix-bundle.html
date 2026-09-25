@@ -10772,7 +10772,7 @@ html, body {
    ========================================================================== */
 
 const WIX_CONFIG = {
-  clientId: 'd446c704-ea75-4680-affd-1633fca4bfb8',
+  clientId: '155465fa-5c5a-477d-969f-f0d098b3bcca',
   get pagesDomain() {
     if (typeof window !== 'undefined') {
       const host = window.location.hostname;
@@ -10794,6 +10794,7 @@ const PRODUCTS_DATA = {
   bundles: [
     {
       id: 'holiday-collection',
+      wixId: 'c5d1456f-fbc3-c9c5-f0fe-520b3f1ef401',
       title: 'Complete Holiday Table Collection',
       subtitle: 'Streamline Your Holiday Cooking with Confidence',
       category: 'Promotional Holiday Bundle',
@@ -10842,6 +10843,7 @@ const PRODUCTS_DATA = {
   cookbooks: [
     {
       id: 'stress-free-thanksgiving',
+      wixId: '11b42723-d4d6-e78c-480e-bae4d77c9c02',
       title: 'Stress-Free Thanksgiving',
       subtitle: 'A Complete Cooking Guide',
       category: 'Holiday Culinary Guide',
@@ -10856,6 +10858,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'the-christmas-recipe-collection',
+      wixId: '930ffd07-a0bf-362e-7f7c-b360d4feffc2',
       title: 'The Christmas Recipe Collection',
       subtitle: 'Bring the Joy Back to Your Holiday Cooking',
       category: 'Holiday Culinary Collection',
@@ -10898,6 +10901,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'the-diabetes-friendly-kitchen',
+      wixId: '3c4c3872-5b66-a78e-0623-757992b4bf45',
       title: 'The Diabetes-Friendly Kitchen',
       subtitle: 'Cook Without Compromise',
       category: 'Specialist Culinary Guide',
@@ -10913,6 +10917,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'symphony-of-flavors',
+      wixId: '58c9b3a6-c50b-52d8-67f7-e2b1adf793de',
       title: 'A Symphony of Flavors',
       subtitle: 'Unlock the Secrets of Mediterranean and Middle Eastern Spices',
       category: 'Curated Spice Guide & Cookbook',
@@ -11030,6 +11035,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'diabetes-cooking-course',
+      wixId: '160f5527-13c1-9ef9-3e2e-1b0f07a94abb',
       title: 'Diabetes Cooking Course',
       subtitle: 'Cook Smart, Eat Well, Enjoy Your Meals',
       differentiator: 'Practical, structured everyday guidance',
@@ -11045,6 +11051,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'diabetes-cooking-masterclass',
+      wixId: 'b0ad737f-d24e-afa3-9390-bd9691cd5e67',
       title: 'The Complete Diabetes-Friendly Cooking Masterclass',
       subtitle: 'Transform Your Cooking with Confidence and Flavor',
       differentiator: 'Comprehensive premium learning experience',
@@ -11121,6 +11128,20 @@ async function createWixHeadlessClient() {
       modules: { products, currentCart, redirects },
       auth: OAuthStrategy({ clientId: WIX_CONFIG.clientId })
     });
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        const savedTokens = localStorage.getItem('wix_visitor_tokens');
+        if (savedTokens) {
+          client.auth.setTokens(JSON.parse(savedTokens));
+        } else if (client.auth && client.auth.generateVisitorTokens) {
+          const tokens = await client.auth.generateVisitorTokens();
+          client.auth.setTokens(tokens);
+          localStorage.setItem('wix_visitor_tokens', JSON.stringify(tokens));
+        }
+      }
+    } catch(tErr) {
+      console.warn('[Wix Headless] Visitor token note:', tErr.message);
+    }
     console.log('[Wix Headless] Client initialized with Client ID:', WIX_CONFIG.clientId);
     return client;
   } catch (err) {
@@ -11617,7 +11638,13 @@ class CartManager {
       }
     }
 
-    // 2. Headless Client Cart Sync (if enabled and authenticated)
+    // 2. Ensure wixClient is ready
+    if (!this.wixClient) {
+      console.log('[CartManager] Initializing Wix Headless client...');
+      this.wixClient = await createWixHeadlessClient();
+    }
+
+    // Headless Client Cart Sync (if enabled and authenticated)
     if (this.wixClient && this.wixClient.currentCart) {
       try {
         console.log('[CartManager] Attempting headless checkout creation...');
