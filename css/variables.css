@@ -9,10 +9,10 @@
   --color-ink-light: #44403B;
   --color-ink-muted: #6E685E;
   
-  --color-ivory: #F5F0E7;
-  --color-ivory-warm: #EFE8DC;
-  --color-ivory-surface: #FAF7F2;
-  --color-cream: #FCF9F3;
+  --color-ivory: #FFFFFF;
+  --color-ivory-warm: #FAFAFA;
+  --color-ivory-surface: #FFFFFF;
+  --color-cream: #FFFFFF;
   --color-white: #FFFFFF;
   
   --color-gold: #BC9142;
@@ -44,9 +44,9 @@
   --max-content-width: 1280px;
   --text-reading-width: 700px;
   --text-editorial-width: 860px;
-  --header-height: 96px;
-  --header-height-scrolled: 76px;
-  --header-height-mobile: 72px;
+  --header-height: 92px;
+  --header-height-scrolled: 74px;
+  --header-height-mobile: 70px;
   
   /* Section Spacing Foundation */
   --section-padding-desktop: 72px;

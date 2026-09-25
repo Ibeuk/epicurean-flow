@@ -922,35 +922,9 @@ class CartManager {
       }
     }
 
-    // 3. Verified Direct Wix Store & Cart Gateway Routing
+    // 3. Direct Wix Store Cart Gateway Fallback (Never redirect to a single product page)
     const baseDomain = WIX_CONFIG.pagesDomain.replace(/\/+$/, '');
-    let targetUrl = `${baseDomain}/cart-page`;
-
-    const primaryItem = this.cartItems[0];
-    const wixUrlMap = {
-      'holiday-collection': `${baseDomain}/product-page/exclusive-holiday-cooking-bundle-master-the-art-of-festive-entertaining`,
-      'flavor-compromise-bundle': `${baseDomain}/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate`,
-      'stress-free-thanksgiving': `${baseDomain}/product-page/seasonal-recipe-cookbook`,
-      'the-christmas-recipe-collection': `${baseDomain}/product-page/christmas-recipe-collection-cookbook`,
-      'christmas-in-paris': `${baseDomain}/product-page/christmas-recipe-collection-cookbook`,
-      'ditch-the-cheese-ball': `${baseDomain}/product-page/christmas-recipe-collection-cookbook`,
-      'the-diabetes-friendly-kitchen': `${baseDomain}/product-page/chef-eliane-s-new-diabetes-recipe-book`,
-      'symphony-of-flavors': `${baseDomain}/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate`,
-      'taste-of-southern-europe': `${baseDomain}/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate`,
-      'soup-cookbook': `${baseDomain}/product-page/seasonal-recipe-cookbook`,
-      'lets-eat-mediterranean': 'https://www.amazon.com/s?k=Eliane+Muskus+Let%27s+Eat',
-      'beginners-cooking-course': `${baseDomain}/product-page/diabetes-cooking-course`,
-      'beginners-baking': `${baseDomain}/product-page/diabetes-cooking-course`,
-      'intermediate-cooking-techniques': `${baseDomain}/product-page/diabetes-cooking-course`,
-      'advanced-cooking-techniques': `${baseDomain}/product-page/diabetes-cooking-course-masterclass-1`,
-      'diabetes-cooking-course': `${baseDomain}/product-page/diabetes-cooking-course`,
-      'diabetes-cooking-masterclass': `${baseDomain}/product-page/diabetes-cooking-course-masterclass-1`,
-      'consultation-menu-planning': `${baseDomain}/menu-planning-service`
-    };
-
-    if (wixUrlMap[primaryItem.id]) {
-      targetUrl = wixUrlMap[primaryItem.id];
-    }
+    const targetUrl = `${baseDomain}/cart-page`;
 
     console.log('[CartManager] Directing to secure checkout gateway:', targetUrl);
     const targetWin = window.top || window;

@@ -43,14 +43,15 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   02B. NAVIGATION OVERFLOW GUARD (Under 1180px)
-   Switches cleanly to mobile drawer before 7-pillar nav can ever wrap or overflow
+   02B. NAVIGATION OVERFLOW GUARD (Under 1140px)
+   Switches cleanly to mobile drawer on tablet/compact screens
    -------------------------------------------------------------------------- */
-@media (max-width: 1180px) {
+@media (max-width: 1140px) {
   .nav-desktop,
   .nav-links,
   .nav-actions .btn,
-  .nav-actions .nav-cta {
+  .nav-actions .nav-cta,
+  .btn-header-shop {
     display: none !important;
   }
 
@@ -61,6 +62,7 @@ html, body {
 
   .header-container {
     gap: 16px;
+    padding: 0 20px;
   }
 
   .header-logo-img {

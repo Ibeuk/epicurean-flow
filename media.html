@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/members.css">
 </head>
 <body>
 
@@ -32,17 +33,17 @@
       <a href="index.html" class="logo-brand" aria-label="Epicurean Flow - Where Cooking Inspires">
         <img src="images/logo.png" alt="Epicurean Flow - Where Cooking Inspires" class="header-logo-img">
       </a>
-      <!-- Desktop Navigation (7 Pillars) -->
+      <!-- Desktop Navigation (Refined Classic Luxury) -->
       <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
           <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
           
-          <!-- Recipes & Living Dropdown -->
+          <!-- Recipes Dropdown -->
           <li class="nav-item has-dropdown">
             <a href="recipes.html" class="nav-link dropdown-toggle active" aria-haspopup="true" aria-expanded="false">
-              <span>Recipes / Blog</span>
+              <span>Recipes</span>
               <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
                 <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -74,10 +75,55 @@
           <li class="nav-item"><a href="food-tours.html" class="nav-link">Food Tours</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item"><a href="https://apps.wix.com/place-invites/join-lp/c4f86012-7e7b-4eda-8838-2ec67d3dbeb7" target="_blank" rel="noopener noreferrer" class="nav-link" title="Epicurean Flow Community & Member Portal">Community</a></li>
         </ul>
 
         <div class="nav-actions">
+          <!-- Member Log In / Profile Widget (Matching Image 2) -->
+          <div class="member-nav-widget" id="member-nav-widget">
+            <button type="button" class="btn-member-login" id="btn-header-login" onclick="window.openEpicureanAuth('signup')" aria-label="Member Log In">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Log In</span>
+            </button>
+            <div class="member-profile-btn" id="member-profile-btn" style="display: none;" onclick="window.toggleEpicureanMemberDropdown(event)" aria-label="Member Account Menu">
+              <div class="member-avatar" id="member-avatar-initials">M</div>
+              <span class="member-name" id="member-display-name">Member</span>
+              <svg class="member-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="member-dropdown-menu" id="member-dropdown-menu">
+              <div class="member-menu-header">
+                <div class="member-menu-avatar" id="member-menu-avatar">M</div>
+                <div class="member-menu-info">
+                  <div class="member-menu-name" id="member-menu-name">Member Name</div>
+                  <div class="member-menu-email" id="member-menu-email">member@email.com</div>
+                  <span class="member-badge-pill">Verified Member</span>
+                </div>
+              </div>
+              <div class="member-menu-divider"></div>
+              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>My Account &amp; Profile</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-library" onclick="window.openEpicureanPortal('library'); window.closeEpicureanMemberDropdown();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>My Cookbooks &amp; Courses</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-reviews" onclick="window.openEpicureanPortal('reviews'); window.closeEpicureanMemberDropdown();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span>My Verified Reviews</span>
+              </button>
+              <div class="member-menu-divider"></div>
+              <button type="button" class="member-menu-item member-logout-item" id="menu-logout-btn" onclick="window.logoutEpicureanMember(); window.closeEpicureanMemberDropdown();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                <span>Log Out</span>
+              </button>
+            </div>
+          </div>
+
           <button class="cart-btn" id="open-cart-btn" aria-label="View Shopping Cart">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
@@ -86,7 +132,7 @@
             </svg>
             <span class="cart-badge" id="cart-count">0</span>
           </button>
-          <a href="cookbooks.html" class="btn btn-primary nav-cta"><span>Shop</span></a>
+          <a href="cookbooks.html" class="btn-header-shop"><span>Shop</span></a>
         </div>
       </nav>
 
@@ -98,8 +144,28 @@
       </button>
     </div>
   </header>
+
   <!-- Mobile Drawer Menu -->
   <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <!-- Mobile Member Status Bar -->
+    <div class="mobile-member-widget" id="mobile-member-widget">
+      <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Member Log In / Sign Up</span>
+      </button>
+      <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
+        <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
+        <div class="mobile-member-meta">
+          <span class="mobile-member-name" id="mobile-member-name">Member</span>
+          <span class="mobile-member-status">Verified Community Member</span>
+        </div>
+        <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
+      </div>
+    </div>
+
     <div class="mobile-nav-links">
       <a href="index.html" class="mobile-nav-link">Home</a>
       <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
@@ -119,13 +185,6 @@
       <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
       <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
       <a href="contact.html" class="mobile-nav-link">Contact</a>
-      <a href="https://apps.wix.com/place-invites/join-lp/c4f86012-7e7b-4eda-8838-2ec67d3dbeb7" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">Community &amp; Members</a>
-    </div>
-    <div class="mobile-nav-footer">
-      <a href="cookbooks.html" class="btn btn-primary" style="width: 100%;">Explore Collection</a>
-      <p style="font-size: 0.8125rem; color: var(--color-ink-light); text-align: center; margin-top: 8px;">
-        Chef-led culinary education &amp; cookbooks
-      </p>
     </div>
   </div>
 
@@ -147,12 +206,12 @@
         <div style="background: #151515; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); color: var(--color-white); border: 1px solid rgba(212, 163, 89, 0.3);">
           <div class="cinema-spotlight-grid">
             <div class="video-thumb-wrap video-trigger-item" style="aspect-ratio: 16/10; cursor: pointer;" 
-                 data-video-title="Searing the Perfect Steak" 
+                 data-video-title="Searing the Perfect Steak" data-video-src="videos/gourmet-plate-reel.mp4" data-course-link="courses.html#advanced-cooking-techniques" 
                  data-video-tag="Masterclass Spotlight" 
                  data-video-desc="Master the art of searing the perfect steak with these professional chef tips. Learn the optimal cast iron temperature, why salting 40 minutes prior creates the deepest crust, and how to baste with foaming herb butter for a juicy, flavorful result every single time." 
-                 data-video-thumb="https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg"
-                 data-video-link="https://epicureanflow.wixsite.com/epicurean-flow/media">
-              <img src="https://static.wixstatic.com/media/30dece_1857ef21db784a739672d128e48f7dc7f002.jpg/v1/fill/w_1200,h_800,enc_auto/file.jpeg" alt="Searing the Perfect Steak">
+                  data-video-thumb="images/sliced-gourmet-steak.jpg"
+                  data-video-link="https://epicureanflow.wixsite.com/epicurean-flow/media">
+              <img src="images/sliced-gourmet-steak.jpg" alt="Searing the Perfect Steak">
               <div class="play-overlay-btn" style="width: 72px; height: 72px; font-size: 1.5rem;">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
@@ -185,13 +244,13 @@
         <div class="media-grid">
           <!-- Video 1: Healthy Cooking Tips -->
           <article class="media-video-card video-trigger-item" style="cursor: pointer;"
-                   data-video-title="Healthy Cooking Tips for Delicious Everyday Meals"
+                   data-video-title="Healthy Cooking Tips for Delicious Everyday Meals" data-video-src="videos/chef-reel-cooking.mp4" data-course-link="courses.html#beginners-cooking-course"
                    data-video-tag="Everyday Wellness"
                    data-video-desc="Learn how to create delicious, healthy meals with fresh, whole ingredients. These chef-approved tips make healthy cooking easy, flavorful, and perfect for everyday living."
-                   data-video-thumb="https://static.wixstatic.com/media/30dece_d342d577a6c3483c87a5cab0df5805e4f002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg"
+                   data-video-thumb="images/chef-reel-cooking-thumb.jpg"
                    data-video-link="https://epicureanflow.wixsite.com/epicurean-flow/media">
             <div class="video-thumb-wrap">
-              <img src="https://static.wixstatic.com/media/30dece_d342d577a6c3483c87a5cab0df5805e4f002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg" alt="Healthy Cooking Tips for Everyday Meals">
+              <img src="images/chef-reel-cooking-thumb.jpg" alt="Healthy Cooking Tips for Everyday Meals">
               <div class="play-overlay-btn">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
@@ -251,7 +310,7 @@
 
           <!-- Video 4: Puff Pastry Tips -->
           <article class="media-video-card video-trigger-item" style="cursor: pointer;"
-                   data-video-title="Puff Pastry Tips for Flaky, Golden Layers"
+                   data-video-title="Puff Pastry Tips for Flaky, Golden Layers" data-course-link="courses.html#beginners-baking"
                    data-video-tag="French Patisserie"
                    data-video-desc="Discover how to create golden, flaky puff pastry every time with these easy chef secrets. Ensure airy lamination and professional bakery results in your home oven."
                    data-video-thumb="https://static.wixstatic.com/media/30dece_3f49a7daeed842faa0925b7e102181fef002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg"
@@ -276,10 +335,10 @@
                    data-video-title="Crème Brûlée Made Easy — Silky Custard"
                    data-video-tag="Classic French"
                    data-video-desc="Learn how to make silky, crackly-topped Crème Brûlée with this foolproof recipe. Perfect for romantic dinners, date nights, and dinner parties."
-                   data-video-thumb="https://static.wixstatic.com/media/30dece_fcfa16bac6d14050b74009e84df8977af002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg"
+                   data-video-thumb="images/apricot-galette.jpg" data-video-src="videos/gourmet-plate-reel.mp4" data-course-link="courses.html#beginners-baking"
                    data-video-link="https://epicureanflow.wixsite.com/epicurean-flow/media">
             <div class="video-thumb-wrap">
-              <img src="https://static.wixstatic.com/media/30dece_fcfa16bac6d14050b74009e84df8977af002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg" alt="Crème Brûlée Made Easy | Silky French Dessert">
+              <img src="images/apricot-galette.jpg" alt="Crème Brûlée Made Easy | Silky French Dessert">
               <div class="play-overlay-btn">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
@@ -295,7 +354,7 @@
 
           <!-- Video 6: Marinated Cucumber Rolls -->
           <article class="media-video-card video-trigger-item" style="cursor: pointer;"
-                   data-video-title="Marinated Cucumber Rolls with Whipped Feta"
+                   data-video-title="Marinated Cucumber Rolls with Whipped Feta" data-course-link="courses.html#diabetes-cooking-course"
                    data-video-tag="Mezze &amp; Tapas"
                    data-video-desc="Chef Eliane walks you through marinating crisp cucumber ribbons and rolling them with herb-whipped feta. Light, low-carb, gluten-free, and visually stunning."
                    data-video-thumb="https://static.wixstatic.com/media/30dece_799f4d9cc1e2488bbc3673d93dfdfa39f002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg"
@@ -311,6 +370,54 @@
               <h3 class="video-title">Marinated Cucumber Rolls with Whipped Feta</h3>
               <p class="video-desc">
                 Chef Eliane walks you through marinating crisp cucumber ribbons and rolling them with herb-whipped feta. Light, low-carb, gluten-free, and visually stunning.
+              </p>
+            </div>
+          </article>
+
+          <!-- Video 7: Chef Reel - Cooking Live in the Kitchen -->
+          <article class="media-video-card video-trigger-item" style="cursor: pointer;"
+                   data-video-title="Chef Eliane in the Kitchen: Technique, Heat &amp; Flow"
+                   data-video-tag="Chef Reel"
+                   data-video-desc="Step into Chef Eliane's kitchen as she demonstrates pan control, aroma development, and the sensory rhythm of Mediterranean cookery."
+                   data-video-thumb="images/chef-reel-cooking-thumb.jpg"
+                   data-video-src="videos/chef-reel-cooking.mp4"
+                   data-course-link="courses.html#beginners-cooking-course"
+                   data-video-link="videos/chef-reel-cooking.mp4">
+            <div class="video-thumb-wrap">
+              <img src="images/chef-reel-cooking-thumb.jpg" alt="Chef Eliane in the Kitchen Live Demonstration">
+              <div class="play-overlay-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+            <div class="video-card-content">
+              <span class="video-tag" style="background: var(--color-gold); color: #fff;">Chef Reel</span>
+              <h3 class="video-title">Chef Eliane in the Kitchen: Technique &amp; Flow</h3>
+              <p class="video-desc">
+                Step into Chef Eliane's kitchen as she demonstrates pan control, aroma development, and the sensory rhythm of Mediterranean cookery.
+              </p>
+            </div>
+          </article>
+
+          <!-- Video 8: Haute Cuisine Plating Reel -->
+          <article class="media-video-card video-trigger-item" style="cursor: pointer;"
+                   data-video-title="The Art of Plating: Haute Cuisine Presentation"
+                   data-video-tag="Plating Mastery"
+                   data-video-desc="Watch an exquisite plated dish come to life with delicate sauce dots, vibrant microgreens, and Michelin-inspired geometry."
+                   data-video-thumb="images/gourmet-plate-reel-thumb.jpg"
+                   data-video-src="videos/gourmet-plate-reel.mp4"
+                   data-course-link="courses.html#advanced-cooking-techniques"
+                   data-video-link="videos/gourmet-plate-reel.mp4">
+            <div class="video-thumb-wrap">
+              <img src="images/gourmet-plate-reel-thumb.jpg" alt="Gourmet Plating Presentation">
+              <div class="play-overlay-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+            <div class="video-card-content">
+              <span class="video-tag" style="background: var(--color-gold); color: #fff;">Plating Mastery</span>
+              <h3 class="video-title">The Art of Plating: Haute Cuisine Presentation</h3>
+              <p class="video-desc">
+                Watch an exquisite plated dish come to life with delicate sauce dots, vibrant microgreens, and Michelin-inspired geometry.
               </p>
             </div>
           </article>
@@ -341,9 +448,11 @@
           </a>
           <p class="footer-tagline">Where cooking inspires. Masterclasses, curated digital cookbooks, and gourmet culinary cinema by Award-Winning Chef Eliane Muskus.</p>
           <div class="footer-contact-info" style="font-size: 0.875rem; color: rgba(245, 240, 231, 0.78); margin-top: 14px;">
-            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 6px;">Amsterdam (Zuidas) 1082MZ, The Netherlands</p>
-            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 6px;">Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
-            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 0;">WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+31 6 18571677</a></p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px; font-weight: 600;">Epicurean Flow</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Sierra Grazalema 23<br>29016 Málaga, Spain</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+ 31618571677</a></p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Telephone Spain: <a href="tel:+34626617282" style="color: var(--color-gold);">+34626617282</a></p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 0;">Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
           </div>
           <div class="footer-social-wrap">
             <span class="footer-social-label">Follow Chef Eliane</span>
@@ -405,7 +514,7 @@
 
     <div class="footer-bottom container">
       <p class="copyright">&copy; 2026 Epicurean Flow | All Rights Reserved</p>
-      <p style="font-size: 0.8rem; color: #777;">Business Registration number: 94886792 &bull; Amsterdam, The Netherlands</p>
+      <p style="font-size: 0.8rem; color: #777;">Business Registration: 94886792 &bull; Málaga, Spain</p>
       <div class="footer-bottom-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
@@ -424,13 +533,14 @@
         <h3 class="video-modal-title" id="modal-video-title">Culinary Video</h3>
         <button class="video-modal-close" id="modal-video-close" aria-label="Close Video">&times;</button>
       </div>
-      <div class="video-modal-preview">
-        <img id="modal-video-poster" src="" alt="Video Preview">
+      <div class="video-modal-preview" style="position: relative; aspect-ratio: 16/9; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <video id="modal-video-player" controls playsinline style="width: 100%; height: 100%; object-fit: contain; display: none;" poster=""></video>
+        <img id="modal-video-poster" src="" alt="Video Preview" style="width: 100%; height: 100%; object-fit: cover;">
         <span class="badge badge-gold video-modal-overlay-badge" id="modal-video-badge">Technique</span>
-        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35);">
-          <a id="modal-video-play-link" href="#" target="_blank" rel="noopener" class="play-overlay-btn" style="width: 76px; height: 76px; transform: scale(1); box-shadow: 0 0 30px rgba(212,163,89,0.6);" aria-label="Stream Video in HD">
+        <div id="modal-video-overlay-play" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35); cursor: pointer;">
+          <button type="button" class="play-overlay-btn" style="width: 76px; height: 76px; transform: scale(1); box-shadow: 0 0 30px rgba(212,163,89,0.6);" aria-label="Stream Video in HD">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </a>
+          </button>
         </div>
       </div>
       <div class="video-modal-content">
@@ -439,9 +549,7 @@
           <a id="modal-video-cta" href="https://epicureanflow.wixsite.com/epicurean-flow/media" target="_blank" rel="noopener" class="btn btn-gold">
             <span>Watch Full HD Video on Wix Cinema &rarr;</span>
           </a>
-          <a href="courses.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.25); color: #fff;">
-            <span>Explore Related Academy Course</span>
-          </a>
+          <a id="modal-course-btn" href="courses.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.25); color: #fff;"><span>Explore Related Academy Course &rarr;</span></a>
         </div>
       </div>
     </div>
@@ -484,6 +592,7 @@
   <script src="js/navigation.js"></script>
   <script src="js/products.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/members.js"></script>
 
   <!-- Cinema Video Modal Controller -->
   <script>
@@ -494,23 +603,41 @@
       const descEl = document.getElementById('modal-video-desc');
       const badgeEl = document.getElementById('modal-video-badge');
       const posterEl = document.getElementById('modal-video-poster');
-      const playLink = document.getElementById('modal-video-play-link');
+      const videoPlayer = document.getElementById('modal-video-player');
+      const overlayPlay = document.getElementById('modal-video-overlay-play');
       const ctaLink = document.getElementById('modal-video-cta');
+      const courseBtn = document.getElementById('modal-course-btn');
 
       function openModal(card) {
         const title = card.getAttribute('data-video-title') || 'Culinary Masterclass';
         const desc = card.getAttribute('data-video-desc') || '';
         const tag = card.getAttribute('data-video-tag') || 'Culinary Cinema';
         const thumb = card.getAttribute('data-video-thumb') || '';
+        const src = card.getAttribute('data-video-src') || '';
         const link = card.getAttribute('data-video-link') || 'https://epicureanflow.wixsite.com/epicurean-flow/media';
+        const courseLink = card.getAttribute('data-course-link') || 'courses.html';
 
         titleEl.textContent = title;
         descEl.textContent = desc;
         badgeEl.textContent = tag;
         posterEl.src = thumb;
         posterEl.alt = title;
-        playLink.href = link;
         ctaLink.href = link;
+        if (courseBtn) courseBtn.href = courseLink;
+
+        if (src) {
+          videoPlayer.src = src;
+          videoPlayer.poster = thumb;
+          videoPlayer.style.display = 'block';
+          posterEl.style.display = 'none';
+          overlayPlay.style.display = 'none';
+          videoPlayer.play().catch(e => console.log('Autoplay prevented:', e));
+        } else {
+          videoPlayer.style.display = 'none';
+          videoPlayer.pause();
+          posterEl.style.display = 'block';
+          overlayPlay.style.display = 'flex';
+        }
 
         modal.classList.add('open');
         modal.setAttribute('aria-hidden', 'false');
@@ -518,6 +645,10 @@
       }
 
       function closeModal() {
+        if (videoPlayer) {
+          videoPlayer.pause();
+          videoPlayer.currentTime = 0;
+        }
         modal.classList.remove('open');
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
@@ -525,22 +656,31 @@
 
       document.querySelectorAll('.video-trigger-item').forEach(el => {
         el.addEventListener('click', (e) => {
-          if (e.target.closest('a')) return;
+          if (e.target.closest('a') && !e.target.closest('.play-overlay-btn')) return;
           e.preventDefault();
           openModal(el);
         });
       });
 
-      if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
+      if (overlayPlay) {
+        overlayPlay.addEventListener('click', () => {
+          if (videoPlayer.src) {
+            videoPlayer.style.display = 'block';
+            posterEl.style.display = 'none';
+            overlayPlay.style.display = 'none';
+            videoPlayer.play();
+          } else if (ctaLink) {
+            window.open(ctaLink.href, '_blank');
+          }
+        });
       }
 
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
       if (modal) {
         modal.addEventListener('click', (e) => {
           if (e.target === modal) closeModal();
         });
       }
-
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('open')) {
           closeModal();

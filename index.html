@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/members.css">
 
   <!-- Structured Data: Organization & Person -->
   <script type="application/ld+json">
@@ -111,18 +112,17 @@
       <a href="index.html" class="logo-brand" aria-label="Epicurean Flow - Where Cooking Inspires">
         <img src="images/logo.png" alt="Epicurean Flow - Where Cooking Inspires" class="header-logo-img">
       </a>
-
-      <!-- Desktop Navigation (7 Pillars) -->
+      <!-- Desktop Navigation (Refined Classic Luxury) -->
       <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
           <li class="nav-item"><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
           <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
           
-          <!-- Recipes & Living Dropdown -->
+          <!-- Recipes Dropdown -->
           <li class="nav-item has-dropdown">
             <a href="recipes.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-              <span>Recipes / Blog</span>
+              <span>Recipes</span>
               <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
                 <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -154,10 +154,55 @@
           <li class="nav-item"><a href="food-tours.html" class="nav-link">Food Tours</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item"><a href="https://apps.wix.com/place-invites/join-lp/c4f86012-7e7b-4eda-8838-2ec67d3dbeb7" target="_blank" rel="noopener noreferrer" class="nav-link" title="Epicurean Flow Community & Member Portal">Community</a></li>
         </ul>
 
         <div class="nav-actions">
+          <!-- Member Log In / Profile Widget (Matching Image 2) -->
+          <div class="member-nav-widget" id="member-nav-widget">
+            <button type="button" class="btn-member-login" id="btn-header-login" onclick="window.openEpicureanAuth('signup')" aria-label="Member Log In">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Log In</span>
+            </button>
+            <div class="member-profile-btn" id="member-profile-btn" style="display: none;" onclick="window.toggleEpicureanMemberDropdown(event)" aria-label="Member Account Menu">
+              <div class="member-avatar" id="member-avatar-initials">M</div>
+              <span class="member-name" id="member-display-name">Member</span>
+              <svg class="member-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="member-dropdown-menu" id="member-dropdown-menu">
+              <div class="member-menu-header">
+                <div class="member-menu-avatar" id="member-menu-avatar">M</div>
+                <div class="member-menu-info">
+                  <div class="member-menu-name" id="member-menu-name">Member Name</div>
+                  <div class="member-menu-email" id="member-menu-email">member@email.com</div>
+                  <span class="member-badge-pill">Verified Member</span>
+                </div>
+              </div>
+              <div class="member-menu-divider"></div>
+              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>My Account &amp; Profile</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-library" onclick="window.openEpicureanPortal('library'); window.closeEpicureanMemberDropdown();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>My Cookbooks &amp; Courses</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-reviews" onclick="window.openEpicureanPortal('reviews'); window.closeEpicureanMemberDropdown();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span>My Verified Reviews</span>
+              </button>
+              <div class="member-menu-divider"></div>
+              <button type="button" class="member-menu-item member-logout-item" id="menu-logout-btn" onclick="window.logoutEpicureanMember(); window.closeEpicureanMemberDropdown();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                <span>Log Out</span>
+              </button>
+            </div>
+          </div>
+
           <button class="cart-btn" id="open-cart-btn" aria-label="View Shopping Cart">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
@@ -166,7 +211,7 @@
             </svg>
             <span class="cart-badge" id="cart-count">0</span>
           </button>
-          <a href="cookbooks.html" class="btn btn-primary nav-cta"><span>Shop</span></a>
+          <a href="cookbooks.html" class="btn-header-shop"><span>Shop</span></a>
         </div>
       </nav>
 
@@ -181,6 +226,25 @@
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <!-- Mobile Member Status Bar -->
+    <div class="mobile-member-widget" id="mobile-member-widget">
+      <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Member Log In / Sign Up</span>
+      </button>
+      <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
+        <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
+        <div class="mobile-member-meta">
+          <span class="mobile-member-name" id="mobile-member-name">Member</span>
+          <span class="mobile-member-status">Verified Community Member</span>
+        </div>
+        <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
+      </div>
+    </div>
+
     <div class="mobile-nav-links">
       <a href="index.html" class="mobile-nav-link active">Home</a>
       <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
@@ -200,13 +264,6 @@
       <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
       <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
       <a href="contact.html" class="mobile-nav-link">Contact</a>
-      <a href="https://apps.wix.com/place-invites/join-lp/c4f86012-7e7b-4eda-8838-2ec67d3dbeb7" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">Community &amp; Members</a>
-    </div>
-    <div class="mobile-nav-footer">
-      <a href="cookbooks.html" class="btn btn-primary" style="width: 100%;">Explore Collection</a>
-      <p style="font-size: 0.8125rem; color: var(--color-ink-light); text-align: center; margin-top: 8px;">
-        Chef-led culinary education &amp; cookbooks
-      </p>
     </div>
   </div>
 
@@ -471,11 +528,11 @@
             </p>
           </div>
 
-          <!-- Main Introductory 3-Book Mockup -->
+          <!-- Main Introductory 3-Book Showcase -->
           <div class="intro-mockup-showcase reveal-on-scroll">
             <div class="intro-mockup-frame">
-              <img src="images/three-cookbooks-mockup.jpg" 
-                   alt="Curated Cookbooks collection featuring Let's Eat Mediterranean Everyday, A Symphony of Flavors Spice Essentials, and The Diabetes-Friendly Kitchen" 
+              <img src="images/three-cookbooks-collection-banner.jpg" 
+                   alt="Curated Cookbooks collection by Chef Eliane Muskus featuring Christmas in Paris, A Taste of Southern Europe, and The Diabetes-Friendly Kitchen" 
                    class="intro-mockup-img"
                    loading="lazy">
             </div>
@@ -501,10 +558,10 @@
 
           <!-- Individual Cookbook Cards Grid (4 Products - 3 per row) -->
           <div class="product-cards-grid-5 product-cards-grid-flex-3">
-            <!-- 1. Let's Eat: Mediterranean Everyday -->
+            <!-- 1. Let's Eat by Chef Eliane Muskus -->
             <article class="catalog-product-card reveal-on-scroll" id="card-lets-eat">
               <div class="catalog-card-media aspect-book">
-                <img src="images/lets-eat-cover.jpg" alt="Let's Eat Mediterranean Everyday Cookbook Cover" class="catalog-card-img" loading="lazy">
+                <img src="images/lets-eat-cover.jpg" alt="Let's Eat Cookbook by Eliane Muskus Cover" class="catalog-card-img" loading="lazy">
                 <span class="card-badge-pill badge-amazon">Amazon Physical Book</span>
               </div>
               <div class="catalog-card-body">
@@ -513,7 +570,7 @@
                   <span class="catalog-card-price" style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;">Amazon</span>
                 </div>
                 <h4 class="catalog-card-title">Let's Eat</h4>
-                <p class="catalog-card-subheading">A Culinary Journey from My Classes and Travels</p>
+                <p class="catalog-card-subheading">Delicious Recipes from My Award-Winning Cooking Classes and World Travels</p>
                 <p class="catalog-card-desc">
                   More than just recipes—it's a chef's life story told through food! Chef Eliane shares seasonal ingredients and global flavors across 339 pages. Available in paperback and hardcover on Amazon.
                 </p>
@@ -841,11 +898,11 @@
           
           <article class="tour-card reveal-on-scroll delay-1">
             <div class="tour-media">
-              <img src="https://static.wixstatic.com/media/8e85e1_06c405184e654ab7845eee7980e6d23d~mv2.jpg/v1/fit/w_800,h_500,q_90/file.jpg" alt="Low-Carb Gourmet Banana Cake">
+              <img src="images/banana-cake.jpg" alt="Diabetes-Friendly Banana Cake">
             </div>
             <div class="tour-body">
               <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-gold); margin-bottom: 6px;">Recipes &bull; Diabetes-Friendly</span>
-              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px; color: var(--color-ink);">Low-Carb Gourmet Banana Cake</h3>
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px; color: var(--color-ink);">Diabetes-Friendly Banana Cake</h3>
               <p style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.55; margin-bottom: 16px;">
                 Proof that low-glycemic baking can deliver deeply satisfying, moist dessert results.
               </p>
@@ -1439,7 +1496,7 @@
             </p>
 
             <!-- Direct Contact Bar -->
-            <div class="direct-contact-bar" style="margin-top: 24px; padding-top: 18px; justify-content: flex-start;">
+            <div class="direct-contact-bar" style="margin-top: 24px; padding-top: 18px; justify-content: flex-start; flex-wrap: wrap; gap: 12px;">
               <span style="font-weight: 500;">Have questions? Contact us:</span>
               <a href="mailto:info@epicureanflow.com" class="contact-chip-link" title="Email Epicurean Flow">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -1447,8 +1504,16 @@
               </a>
               <a href="https://wa.me/31618571677" target="_blank" rel="noopener" class="contact-chip-link contact-chip-whatsapp" title="WhatsApp Chef Eliane">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                <span>WhatsApp: +31 6 18571677</span>
+                <span>WhatsApp: + 31618571677</span>
               </a>
+              <a href="tel:+34626617282" class="contact-chip-link" title="Call Spain Headquarters">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>Tel Spain: +34626617282</span>
+              </a>
+              <span class="contact-chip-link" style="background: rgba(255,255,255,0.06); cursor: default;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Sierra Grazalema 23, 29016 Málaga, Spain</span>
+              </span>
             </div>
           </div>
 
@@ -1506,6 +1571,13 @@
           <p class="footer-desc">
             Epicurean Flow inspires home cooks and culinary professionals with Michelin-caliber technique, curated cookbooks, bespoke masterclasses, and boutique European food tours.
           </p>
+          <div class="footer-contact-info" style="font-size: 0.875rem; color: rgba(245, 240, 231, 0.78); margin-top: 14px;">
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px; font-weight: 600;">Epicurean Flow</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Sierra Grazalema 23<br>29016 Málaga, Spain</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+ 31618571677</a></p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Telephone Spain: <a href="tel:+34626617282" style="color: var(--color-gold);">+34626617282</a></p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 0;">Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
+          </div>
           <div class="footer-social-wrap">
             <span class="footer-social-label">Follow Chef Eliane</span>
             <div class="footer-social-links" role="list" aria-label="Social media channels">
@@ -1563,7 +1635,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="copyright">&copy; 2026 Epicurean Flow. All rights reserved.</p>
+        <p class="copyright">&copy; 2026 Epicurean Flow. All rights reserved. &bull; Registration: 94886792 &bull; Málaga, Spain</p>
         <ul class="footer-legal-links">
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
@@ -1572,12 +1644,95 @@
       </div>
       </div>
     </div>
-  </footer>
+  <!-- Wix Authentic Member Sign Up / Log In Modal (Image 1) -->
+  <div class="wix-auth-overlay" id="wix-auth-overlay" role="dialog" aria-modal="true" aria-labelledby="wix-auth-title">
+    <div class="wix-auth-modal">
+      <button type="button" class="wix-auth-close-btn" id="wix-auth-close-btn" onclick="document.getElementById('wix-auth-overlay').classList.remove('active'); document.body.style.overflow='';" aria-label="Close modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="wix-auth-header">
+        <h2 class="wix-auth-title" id="wix-auth-title">Sign Up</h2>
+        <p class="wix-auth-toggle-prompt" id="wix-auth-toggle-prompt">
+          Already a member? <button type="button" class="wix-auth-toggle-btn" id="wix-auth-toggle-btn">Log In</button>
+        </p>
+      </div>
+
+      <!-- Alert Container for Real-time Feedback -->
+      <div id="wix-auth-alert-container"></div>
+
+      <div class="wix-auth-social-stack">
+        <button type="button" class="btn-social-google" id="btn-auth-google" onclick="window.EpicureanMembers && window.EpicureanMembers.loginWithGoogle()">
+          <svg viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.14z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.24v3.15C3.26 21.36 7.33 24 12 24z"/>
+            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.24C.45 8.16 0 9.98 0 12s.45 3.84 1.24 5.42l4.04-3.15z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.24 6.58l4.04 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+          </svg>
+          <span id="label-google-auth">Sign up with Google</span>
+        </button>
+
+        <button type="button" class="btn-social-facebook" id="btn-auth-facebook" onclick="window.EpicureanMembers && window.EpicureanMembers.loginWithFacebook()">
+          <svg viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          <span id="label-facebook-auth">Sign up with Facebook</span>
+        </button>
+      </div>
+
+      <div class="wix-auth-divider">
+        <span>or with email</span>
+      </div>
+
+      <form class="wix-auth-email-form active" id="wix-email-form">
+        <div class="wix-form-field" id="field-signup-name">
+          <label class="wix-form-label" for="auth-input-name">Full Name</label>
+          <input type="text" class="wix-form-input" id="auth-input-name" placeholder="e.g. Sarah Jenkins">
+        </div>
+
+        <div class="wix-form-field">
+          <label class="wix-form-label" for="auth-input-email">Email Address</label>
+          <input type="email" class="wix-form-input" id="auth-input-email" required placeholder="you@example.com">
+        </div>
+
+        <div class="wix-form-field">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label class="wix-form-label" for="auth-input-password">Password</label>
+            <a href="#" id="auth-forgot-link" style="display: none; font-size: 0.75rem; color: #888; text-decoration: underline;">Forgot password?</a>
+          </div>
+          <input type="password" class="wix-form-input" id="auth-input-password" required placeholder="•••••••• (min 6 characters)">
+        </div>
+
+        <button type="submit" class="btn-wix-submit" id="btn-wix-form-submit">
+          <span>Create Account</span>
+        </button>
+      </form>
+
+      <div class="wix-auth-public-profile" id="wix-public-profile-row">
+        <input type="checkbox" class="wix-auth-checkbox" id="wix-checkbox-public" checked>
+        <label for="wix-checkbox-public">
+          Sign up to this site with a public profile. 
+          <span class="wix-read-more-link" id="wix-read-more-link">Read more</span>
+        </label>
+      </div>
+
+      <div class="wix-auth-recaptcha-badge">
+        <svg class="wix-recaptcha-icon" viewBox="0 0 24 24" fill="#4285F4">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+        </svg>
+        <span>Protected by reCAPTCHA</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="js/navigation.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/products.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/members.js"></script>
 </body>
 </html>

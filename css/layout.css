@@ -59,12 +59,12 @@
 
 /* Section Themes */
 .theme-ivory {
-  background-color: var(--color-ivory);
+  background-color: #FFFFFF;
   color: var(--color-ink);
 }
 
 .theme-cream {
-  background-color: var(--color-cream);
+  background-color: #FFFFFF;
   color: var(--color-ink);
 }
 
