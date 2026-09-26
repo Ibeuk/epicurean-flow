@@ -181,3 +181,18 @@ ul, ol {
   outline: 2px solid var(--color-gold);
   outline-offset: 4px;
 }
+
+/* Hide Netlify drawer / feedback badge / promo badge */
+[data-netlify-drawer],
+[data-netlify-feedback],
+.netlify-badge,
+#netlify-badge,
+iframe[id*="netlify"],
+div[class*="netlify"],
+a[href*="netlify.com"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
