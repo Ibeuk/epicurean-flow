@@ -1,0 +1,8 @@
+[build]
+  publish = "dist"
+  command = "python scripts/build_dist.py"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"

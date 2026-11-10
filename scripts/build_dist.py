@@ -27,7 +27,18 @@ def build():
         shutil.copytree('videos', dest, ignore=shutil.ignore_patterns('*4k*', '*.bak', '*.tmp'))
         print(f"Copied videos/ to {dest}/ (excluding raw 4k master)")
 
-    # 4. Copy sitemap, robots, and icons if present
+    # 4. Copy digital book PDFs and downloads
+    if os.path.exists('ready_for_wix_upload'):
+        dest = os.path.join(DIST_DIR, 'ready_for_wix_upload')
+        shutil.copytree('ready_for_wix_upload', dest)
+        print(f"Copied ready_for_wix_upload/ to {dest}/")
+
+    for pdf_f in os.listdir('.'):
+        if pdf_f.endswith('.pdf'):
+            shutil.copy2(pdf_f, os.path.join(DIST_DIR, pdf_f))
+            print(f"Copied {pdf_f} to {DIST_DIR}/")
+
+    # 5. Copy sitemap, robots, and icons if present
     for extra in ['sitemap.xml', 'robots.txt', 'favicon.ico']:
         if os.path.exists(extra):
             shutil.copy2(extra, os.path.join(DIST_DIR, extra))
