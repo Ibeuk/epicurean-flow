@@ -83,9 +83,43 @@ document.addEventListener('DOMContentLoaded', () => {
       drawerBackdrop.addEventListener('touchstart', closeDrawer, { passive: true });
     }
 
-    // Close when clicking any nav link
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', closeDrawer);
+    // Event delegation on mobileDrawer for Close Button, Accordion Trigger, and Navigation Links
+    mobileDrawer.addEventListener('click', (e) => {
+      // 1. Close / Cancel button
+      const closeBtn = e.target.closest('#mobile-drawer-close, .mobile-drawer-close');
+      if (closeBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeDrawer();
+        return;
+      }
+
+      // 2. Mobile Accordion Toggle for Recipes & Blog
+      const accordionTrigger = e.target.closest('.mobile-accordion-trigger');
+      if (accordionTrigger) {
+        e.preventDefault();
+        e.stopPropagation();
+        const parentGroup = accordionTrigger.closest('.mobile-nav-group');
+        const submenu = parentGroup ? parentGroup.querySelector('.mobile-nav-submenu') : null;
+        const isExpanded = accordionTrigger.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+          accordionTrigger.setAttribute('aria-expanded', 'false');
+          accordionTrigger.classList.remove('open');
+          if (submenu) submenu.style.display = 'none';
+        } else {
+          accordionTrigger.setAttribute('aria-expanded', 'true');
+          accordionTrigger.classList.add('open');
+          if (submenu) submenu.style.display = 'flex';
+        }
+        return;
+      }
+
+      // 3. Close when clicking any direct nav link or sublink
+      const navLink = e.target.closest('.mobile-nav-link:not(.mobile-accordion-trigger), .mobile-nav-sublink');
+      if (navLink) {
+        closeDrawer();
+      }
     });
 
     // Close on Escape key press

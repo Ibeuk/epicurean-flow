@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stuffed Bell Peppers with Bulgur, Feta & Fresh Herbs | Epicurean Flow Blog</title>
+  <meta name="description" content="Healthy Oven-Baked Peppers That Are Flavor-Packed, Diabetes-Friendly, and Easy to Make Looking for a wholesome dish that’s as nourishing as it is flavorful? The">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="canonical" href="https://www.epicureanflow.com/blog.html">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/members.css">
+
+  <style>
+    /* =============================================
+       BLOG PAGE HERO — CHEF PAELLA BACKGROUND
+       ============================================= */
+    .blog-hero {
+      position: relative;
+      background-color: #100e0c;
+      background-image:
+        linear-gradient(90deg, rgba(12, 10, 8, 0.88) 0%, rgba(12, 10, 8, 0.74) 50%, rgba(12, 10, 8, 0.38) 100%),
+        linear-gradient(180deg, rgba(12, 10, 8, 0.45) 0%, rgba(12, 10, 8, 0.18) 45%, rgba(12, 10, 8, 0.72) 100%),
+        url('images/chef-eliane-cooking-paella.jpg');
+      background-size: cover;
+      background-position: 62% center;
+      background-repeat: no-repeat;
+      padding-top: calc(var(--header-height) + 72px);
+      padding-bottom: 80px;
+      border-bottom: 1px solid rgba(188, 145, 66, 0.35);
+      color: #FFFFFF;
+      overflow: hidden;
+    }
+
+    .blog-hero .container { position: relative; z-index: 2; }
+
+    .blog-hero-tag {
+      display: inline-block;
+      color: #D4AF37;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.85);
+    }
+
+    .blog-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.12;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+      max-width: 820px;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.95);
+    }
+
+    .blog-hero-subtitle {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.90);
+      max-width: 680px;
+      margin-bottom: 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.85);
+    }
+
+    @media (max-width: 767px) {
+      .blog-hero {
+        padding-top: calc(64px + 36px);
+        padding-bottom: 56px;
+        background-position: 60% center;
+        background-image:
+          linear-gradient(180deg, rgba(12,10,8,0.85) 0%, rgba(12,10,8,0.65) 50%, rgba(12,10,8,0.88) 100%),
+          url('images/chef-eliane-cooking-paella.jpg');
+      }
+    }
+
+    /* =============================================
+       FEATURED (PINNED) BLOG POST CARD
+       ============================================= */
+    .blog-featured-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(18,17,15,0.13);
+      border: 1px solid var(--color-border-light);
+      background: var(--color-white);
+    }
+
+    .blog-featured-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-featured-img-wrap img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .blog-featured-card:hover .blog-featured-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .blog-featured-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: var(--color-gold);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 5px 12px;
+      border-radius: 999px;
+      z-index: 1;
+    }
+
+    .blog-featured-body {
+      padding: clamp(28px, 4vw, 52px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .blog-featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .blog-meta-category {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-gold);
+    }
+
+    .blog-meta-dot { color: var(--color-ink-muted); font-size: 0.7rem; }
+
+    .blog-meta-date {
+      font-size: 0.8rem;
+      color: var(--color-ink-muted);
+    }
+
+    .blog-featured-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.55rem, 2.5vw, 2.15rem);
+      font-weight: 600;
+      color: var(--color-ink);
+      line-height: 1.22;
+      margin-bottom: 14px;
+    }
+
+    .blog-featured-excerpt {
+      font-size: 0.97rem;
+      color: var(--color-ink-subtle);
+      line-height: 1.72;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .blog-featured-card {
+        grid-template-columns: 1fr;
+      }
+      .blog-featured-img-wrap img {
+        min-height: 240px;
+        height: 260px;
+      }
+      .blog-featured-body {
+        padding: 24px 20px;
+      }
+    }
+
+    /* =============================================
+       BLOG GRID — STANDARD POST CARDS
+       ============================================= */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    @media (max-width: 1099px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    .blog-post-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-xs);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .blog-post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(18,17,15,0.11);
+    }
+
+    .blog-card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+    }
+
+    .blog-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .blog-post-card:hover .blog-card-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .blog-card-cat {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(18,17,15,0.75);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+    }
+
+    .blog-card-body {
+      padding: 22px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .blog-card-date {
+      font-size: 0.76rem;
+      color: var(--color-ink-muted);
+      margin-bottom: 8px;
+    }
+
+    .blog-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--color-ink);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .blog-card-excerpt {
+      font-size: 0.875rem;
+      color: var(--color-ink-subtle);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 18px;
+    }
+
+    .blog-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--color-gold);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: gap 0.2s ease;
+      margin-top: auto;
+    }
+
+    .blog-card-link:hover { gap: 10px; color: var(--color-gold-dark, #b8922a); }
+
+    /* =============================================
+       FILTER BAR
+       ============================================= */
+    .blog-filter-wrap {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 36px 0 44px;
+    }
+
+    .blog-filter-btn {
+      padding: 9px 20px;
+      border: 1.5px solid var(--color-border-light);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--color-ink-subtle);
+      font-family: var(--font-sans);
+      font-size: 0.83rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .blog-filter-btn:hover {
+      border-color: var(--color-gold);
+      color: var(--color-gold);
+    }
+
+    .blog-filter-btn.active {
+      background: var(--color-gold);
+      border-color: var(--color-gold);
+      color: #fff;
+    }
+
+    @media (max-width: 480px) {
+      .blog-filter-btn {
+        padding: 8px 14px;
+        font-size: 0.78rem;
+      }
+    }
+
+    /* =============================================
+       BLOG CTA STRIP
+       ============================================= */
+    .blog-cta-strip {
+      background: linear-gradient(135deg, var(--color-ink) 0%, #2c2820 100%);
+      border-radius: var(--radius-xl);
+      padding: clamp(32px, 5vw, 52px) clamp(24px, 4vw, 60px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+      border: 1px solid rgba(188,145,66,0.3);
+    }
+
+    .blog-cta-text h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .blog-cta-text p {
+      font-size: 0.95rem;
+      color: rgba(245,240,231,0.82);
+      line-height: 1.6;
+      max-width: 540px;
+    }
+
+    .blog-cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 640px) {
+      .blog-cta-strip {
+        flex-direction: column;
+        text-align: center;
+      }
+      .blog-cta-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+      .blog-cta-actions .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  
+    /* Authentic Wix Rich Content Image Viewer Styles */
+    .KDEWi {
+      display: block;
+      overflow: hidden;
+      position: relative;
+      margin: 32px auto;
+      max-width: 100%;
+      border-radius: var(--radius-lg, 16px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.09);
+    }
+    ._80IYq {
+      border-radius: var(--radius-lg, 16px);
+      overflow: hidden;
+    }
+    .OuB-T {
+      position: relative;
+      width: 100%;
+    }
+    .OuB-T:before {
+      content: "";
+      display: block;
+      padding-bottom: calc(var(--dim-height, 1000) / var(--dim-width, 1000) * 100%);
+      width: 100%;
+    }
+    .oz1f0 {
+      inset: 0;
+      position: absolute;
+    }
+    .TTsMm {
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .TTsMm > :first-child {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    wow-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    wow-image img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      margin: 0 !important;
+      filter: none !important;
+    }
+    .vscz7 {
+      display: block !important;
+      margin: 36px 0 !important;
+    }
+    .vP2vO {
+      display: none !important;
+    }
+
+  </style>
+
+  <style>
+    /* ==========================================================================
+       DEDICATED FULL-PAGE BLOG POST STYLES (Screenshot 2 1:1 Match)
+       ========================================================================== */
+    /* =============================================
+       REFINED POST BREADCRUMB & BACK NAVIGATION
+       ============================================= */
+    .post-breadcrumb-bar {
+      background: #FAF8F5;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 14px 0;
+    }
+    .post-breadcrumb-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .post-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.84rem;
+      font-family: var(--font-sans);
+      color: #7a7065;
+    }
+    .post-breadcrumb a {
+      color: #665f58;
+      text-decoration: none;
+      transition: color 0.18s ease;
+    }
+    .post-breadcrumb a:hover {
+      color: #bc9142;
+    }
+    .post-breadcrumb-sep {
+      color: rgba(0, 0, 0, 0.25);
+      font-size: 0.78rem;
+    }
+    .post-breadcrumb-current {
+      color: #8c6a2c;
+      font-weight: 600;
+    }
+    .post-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #665f58;
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .post-back-btn:hover {
+      background: #1a1714;
+      color: #FFFFFF;
+      border-color: #1a1714;
+      transform: translateX(-2px);
+    }
+
+    .post-page-article {
+      background: #FFFFFF;
+    }
+    .post-page-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    .post-page-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .post-page-time {
+      font-size: 0.88rem;
+      color: #776e65;
+      font-weight: 500;
+    }
+    .post-page-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+      line-height: 1.22;
+      color: #1a1714;
+      font-weight: 500;
+      margin: 0 0 16px;
+      letter-spacing: -0.015em;
+    }
+    .post-page-subtitle {
+      font-size: clamp(1.15rem, 1.4vw, 1.28rem);
+      color: #554e48;
+      line-height: 1.65;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+    .post-page-author-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      margin-bottom: 36px;
+    }
+    .post-author-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .post-author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--color-gold);
+    }
+    .post-author-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .post-author-name {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: #1a1714;
+    }
+    .post-author-role {
+      font-size: 0.82rem;
+      color: #776e65;
+    }
+    .post-share-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .post-share-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #FAF8F5;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: #554e48;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .post-share-btn:hover {
+      background: var(--color-gold);
+      color: #FFFFFF;
+      border-color: var(--color-gold);
+      transform: translateY(-2px);
+    }
+
+    .post-featured-figure {
+      margin: 36px 0 44px;
+      text-align: center;
+    }
+    .post-featured-img {
+      width: 100%;
+      height: auto;
+      max-height: 640px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.12);
+      display: block;
+      margin: 0 auto;
+    }
+    .post-featured-caption {
+      font-size: 0.92rem;
+      color: #776e65;
+      font-style: italic;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* Rich Post Content Typography & Resets */
+    .post-body-content {
+      font-size: clamp(1.12rem, 1.25vw, 1.24rem);
+      line-height: 2.05;
+      color: #2b2723;
+      font-family: var(--font-sans);
+    }
+    .post-body-content section,
+    .post-body-content div,
+    .post-body-content p {
+      box-sizing: border-box;
+    }
+    .post-body-content p {
+      margin-bottom: 26px;
+      color: #2b2723;
+      line-height: 2.05;
+    }
+    .post-body-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      line-height: 1.3;
+      color: #1a1714;
+      margin-top: 52px;
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid rgba(188, 145, 66, 0.3);
+      font-weight: 500;
+    }
+    .post-body-content h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: #8c6a2c;
+      margin-top: 38px;
+      margin-bottom: 18px;
+    }
+    .post-body-content ul,
+    .post-body-content ol {
+      margin-bottom: 32px;
+      padding-left: 28px;
+    }
+    .post-body-content li {
+      margin-bottom: 14px;
+      line-height: 1.9;
+    }
+    .post-body-content img {
+      max-width: 100% !important;
+      height: auto !important;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      margin: 36px auto;
+      display: block;
+    }
+    .post-body-content figure {
+      margin: 36px 0;
+      text-align: center;
+    }
+    .post-body-content figcaption {
+      font-size: 0.92rem;
+      color: #776e65;
+      font-style: italic;
+      margin-top: 10px;
+    }
+    .post-body-content blockquote {
+      background: #FAF8F5;
+      border-left: 4px solid var(--color-gold);
+      padding: 24px 32px;
+      border-radius: 0 12px 12px 0;
+      margin: 36px 0;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.22rem;
+      line-height: 1.8;
+      color: #3a322d;
+    }
+
+    /* Tags Bar */
+    .post-tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 40px 0 24px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .post-tag-pill {
+      display: inline-block;
+      background: #FAF8F5;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      color: #665f58;
+      font-size: 0.82rem;
+      padding: 6px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .post-tag-pill:hover {
+      background: var(--color-gold);
+      color: #FFFFFF;
+      border-color: var(--color-gold);
+    }
+
+    /* Reaction & Social Footer */
+    .post-reaction-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      margin-bottom: 48px;
+    }
+    .post-reaction-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .post-heart-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 0.88rem;
+      cursor: pointer;
+      color: #554e48;
+      transition: all 0.2s ease;
+    }
+    .post-heart-btn:hover, .post-heart-btn.liked {
+      border-color: #e53935;
+      color: #e53935;
+      background: rgba(229, 57, 53, 0.06);
+    }
+    .post-heart-btn.liked svg {
+      fill: #e53935;
+    }
+    .post-view-count {
+      font-size: 0.88rem;
+      color: #888;
+    }
+
+    /* Author Bio Card */
+    .post-chef-bio-card {
+      background: #FAF8F5;
+      border: 1px solid rgba(188, 145, 66, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    }
+    .post-chef-bio-avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: #FFFFFF;
+      padding: 6px;
+      border: 2px solid var(--color-gold);
+      flex-shrink: 0;
+    }
+    .post-chef-bio-text h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: #1a1714;
+      margin-bottom: 8px;
+    }
+    .post-chef-bio-text p {
+      font-size: 0.98rem;
+      color: #665f58;
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+
+    /* Recent / Suggested Posts Section (Screenshot 2 Match) */
+    .post-recent-section {
+      padding: 64px 0 80px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      background: #FDFBF8;
+    }
+    .post-recent-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 36px;
+    }
+    .post-recent-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      color: #1a1714;
+      margin: 0;
+      font-weight: 500;
+    }
+    .post-recent-see-all {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-gold);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .post-recent-see-all:hover {
+      color: #1a1714;
+      text-decoration: underline;
+    }
+    .post-recent-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .post-recent-card {
+      background: #FFFFFF;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .post-recent-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+    .post-recent-card-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      display: block;
+    }
+    .post-recent-card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .post-recent-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      line-height: 1.35;
+      color: #1a1714;
+      margin-bottom: 12px;
+      font-weight: 500;
+      flex: 1;
+    }
+    .post-recent-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 14px;
+      margin-top: auto;
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    @media (max-width: 900px) {
+      .post-recent-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      .post-chef-bio-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 24px;
+      }
+    }
+    @media (max-width: 600px) {
+      .post-recent-grid {
+        grid-template-columns: 1fr;
+      }
+      .post-page-container {
+        padding: 28px 18px 60px;
+      }
+      .post-page-title {
+        font-size: 2rem;
+      }
+      
+    }
+  
+    /* Authentic Wix Rich Content Image Viewer Styles */
+    .KDEWi {
+      display: block;
+      overflow: hidden;
+      position: relative;
+      margin: 32px auto;
+      max-width: 100%;
+      border-radius: var(--radius-lg, 16px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.09);
+    }
+    ._80IYq {
+      border-radius: var(--radius-lg, 16px);
+      overflow: hidden;
+    }
+    .OuB-T {
+      position: relative;
+      width: 100%;
+    }
+    .OuB-T:before {
+      content: "";
+      display: block;
+      padding-bottom: calc(var(--dim-height, 1000) / var(--dim-width, 1000) * 100%);
+      width: 100%;
+    }
+    .oz1f0 {
+      inset: 0;
+      position: absolute;
+    }
+    .TTsMm {
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .TTsMm > :first-child {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    wow-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    wow-image img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      margin: 0 !important;
+      filter: none !important;
+    }
+    .vscz7 {
+      display: block !important;
+      margin: 36px 0 !important;
+    }
+    .vP2vO {
+      display: none !important;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Navigation Header -->
+  <header class="header" id="main-header" role="banner">
+    <div class="header-container container">
+      <!-- Logo -->
+      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow - Where Cooking Inspires">
+        <img src="images/logo.png" alt="Epicurean Flow - Where Cooking Inspires" class="header-logo-img">
+      </a>
+      <!-- Desktop Navigation (Refined Classic Luxury) -->
+      <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Books</a></li>
+          
+          <!-- Recipes Dropdown -->
+          <li class="nav-item has-dropdown">
+            <a href="recipes.html" class="nav-link dropdown-toggle active" aria-haspopup="true" aria-expanded="false">
+              <span>Recipes</span>
+              <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <a href="recipes.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">All Recipes</span>
+                <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
+              </a>
+              <a href="blog.html" class="dropdown-item active" role="menuitem">
+                <span class="dropdown-item-title">Chef's Blog</span>
+                <span class="dropdown-item-desc">Culinary stories, techniques &amp; food science</span>
+              </a>
+              <a href="diabetes.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Diabetes Living</span>
+                <span class="dropdown-item-desc">Flavor-first low-carb gastronomy</span>
+              </a>
+              <a href="nutrition.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Nutrition &amp; Science</span>
+                <span class="dropdown-item-desc">Macro balancing &amp; vital energy</span>
+              </a>
+              <a href="menu-planning.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Menu Planning</span>
+                <span class="dropdown-item-desc">Bespoke 1-on-1 chef consultations</span>
+              </a>
+              <a href="media.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Media &amp; Masterclass</span>
+                <span class="dropdown-item-desc">Culinary clips &amp; kitchen reels</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="food-tours.html" class="nav-link">Food Tours</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Member Log In / Profile Widget (Matching Image 2) -->
+          <div class="member-nav-widget" id="member-nav-widget">
+            <button type="button" class="btn-member-login" id="btn-header-login" onclick="window.openEpicureanAuth('signup')" aria-label="Member Log In">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Log In</span>
+            </button>
+            <div class="member-profile-btn" id="member-profile-btn" style="display: none;" onclick="window.toggleEpicureanMemberDropdown(event)" aria-label="Member Account Menu">
+              <div class="member-avatar" id="member-avatar-initials">M</div>
+              <span class="member-name" id="member-display-name">Member</span>
+              <svg class="member-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="member-dropdown-menu" id="member-dropdown-menu">
+              <div class="member-menu-header">
+                <div class="member-menu-avatar" id="member-menu-avatar">M</div>
+                <div class="member-menu-info">
+                  <div class="member-menu-name" id="member-menu-name">Member Name</div>
+                  <div class="member-menu-email" id="member-menu-email">member@email.com</div>
+                  <span class="member-badge-pill">Verified Member</span>
+                </div>
+              </div>
+              <div class="member-menu-divider"></div>
+              <button type="button" class="member-menu-item" id="menu-my-orders" onclick="window.openEpicureanPortal('orders'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Orders &amp; Purchase History</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-library" onclick="window.openEpicureanPortal('library'); window.closeEpicureanMemberDropdown();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>My Cookbooks &amp; Courses</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>My Account &amp; Profile</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-reviews" onclick="window.openEpicureanPortal('reviews'); window.closeEpicureanMemberDropdown();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span>My Verified Reviews</span>
+              </button>
+              <div class="member-menu-divider"></div>
+              <button type="button" class="member-menu-item member-logout-item" id="menu-logout-btn" onclick="window.logoutEpicureanMember(); window.closeEpicureanMemberDropdown();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                <span>Log Out</span>
+              </button>
+            </div>
+          </div>
+
+          <button class="cart-btn" id="open-cart-btn" aria-label="View Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </button>
+          <a href="cookbooks.html" class="btn-header-shop"><span>Shop</span></a>
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="hamburger mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <!-- Header with Dedicated Cancel / Close Button -->
+    <div class="mobile-drawer-header">
+      <span class="mobile-drawer-title">Navigation</span>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+        <span>Close</span>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-body">
+      <!-- Mobile Member Status Bar -->
+      <div class="mobile-member-widget" id="mobile-member-widget">
+        <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Member Log In / Sign Up</span>
+        </button>
+        <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
+          <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
+          <div class="mobile-member-meta">
+            <span class="mobile-member-name" id="mobile-member-name">Member</span>
+            <span class="mobile-member-status">Verified Community Member</span>
+          </div>
+          <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
+        </div>
+      </div>
+
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="courses.html" class="mobile-nav-link">Courses</a>
+        <a href="cookbooks.html" class="mobile-nav-link">Books</a>
+        
+        <!-- Accordion: Recipes & Blog (Collapsed by Default, Expands on Click) -->
+        <div class="mobile-nav-group">
+          <button type="button" class="mobile-nav-link mobile-accordion-trigger active" id="mobile-recipes-toggle" aria-expanded="false" aria-controls="mobile-recipes-submenu">
+            <span>Recipes &amp; Blog</span>
+            <svg class="mobile-accordion-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-submenu" id="mobile-recipes-submenu" style="display: none;">
+            <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
+            <a href="blog.html" class="mobile-nav-sublink active">Chef's Blog</a>
+            <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
+            <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
+            <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
+            <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclass</a>
+          </div>
+        </div>
+
+        <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
+        <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- Refined Breadcrumb & Back Link -->
+    <div class="post-breadcrumb-bar">
+      <div class="container post-breadcrumb-container">
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="post-breadcrumb-sep">/</span>
+          <a href="blog.html">Chef's Blog</a>
+          <span class="post-breadcrumb-sep">/</span>
+          <span class="post-breadcrumb-current" id="post-breadcrumb-cat">Diabetes-Friendly</span>
+        </nav>
+        <a href="blog.html" class="post-back-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back to All Stories</span>
+        </a>
+      </div>
+    </div>
+
+    <article class="post-page-article">
+      <div class="container post-page-container">
+        <!-- Post Meta Bar -->
+        <div class="post-page-meta-bar">
+          <span class="badge" id="post-cat-badge" style="background: rgba(188, 145, 66, 0.12); color: #9c7328; border: 1px solid rgba(188, 145, 66, 0.35); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 5px 14px; border-radius: 999px;">Diabetes-Friendly Recipes</span>
+          <span class="post-page-time" id="post-meta-details">Jul 4, 2025 &bull; 2 min read</span>
+        </div>
+
+        <!-- Post Title -->
+        <h1 class="post-page-title" id="post-title">Stuffed Bell Peppers with Bulgur, Feta & Fresh Herbs</h1>
+
+        <!-- Subtitle -->
+        <p class="post-page-subtitle" id="post-subtitle">Healthy Oven-Baked Peppers That Are Flavor-Packed, Diabetes-Friendly, and Easy to Make</p>
+
+        <!-- Author & Share Row -->
+        <div class="post-page-author-row">
+          <div class="post-author-box">
+            <img src="images/logo.png" alt="Chef Eliane Muskus" class="post-author-avatar">
+            <div class="post-author-info">
+              <span class="post-author-name">Chef Eliane Muskus</span>
+              <span class="post-author-role">Founder, Epicurean Flow &bull; Mediterranean Gastronomy</span>
+            </div>
+          </div>
+          <div class="post-share-actions">
+            <button type="button" class="post-share-btn" id="post-share-fb" title="Share on Facebook" aria-label="Share on Facebook">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </button>
+            <button type="button" class="post-share-btn" id="post-share-tw" title="Share on X" aria-label="Share on X">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </button>
+            <button type="button" class="post-share-btn" id="post-share-li" title="Share on LinkedIn" aria-label="Share on LinkedIn">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </button>
+            <button type="button" class="post-share-btn" id="post-share-copy" title="Copy Link" aria-label="Copy Link">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+            <span id="copy-feedback" style="display:none; font-size:0.8rem; color:#2e7d32; font-weight:700;">Copied!</span>
+          </div>
+        </div>
+
+        <!-- Featured Image -->
+        <figure class="post-featured-figure" id="post-featured-figure" style="display: none;">
+          <img id="post-main-img" src="https://static.wixstatic.com/media/30dece_c09d66079ef744c288c10fcffa042168~mv2.jpeg/v1/fill/w_1000,h_1000,al_c,q_85,usm_0.66_1.00_0.01/30dece_c09d66079ef744c288c10fcffa042168~mv2.jpeg" alt="Stuffed Bell Peppers with Bulgur, Feta & Fresh Herbs" class="post-featured-img">
+          <figcaption id="post-img-caption" class="post-featured-caption">Mediterranean Stuffed Peppers with Bulgur and Feta</figcaption>
+        </figure>
+
+        <!-- Main Body Content -->
+        <div class="post-body-content" id="post-body-container">
+          <section class="VQDdIN" data-hook="post-description"><div class="moHCnT"><div class="moHCnT"><div class="fTEXDR" data-rce-version="11.15.0"><div class="NF5Ub" data-id="content-viewer" dir="ltr" style="--ricos-text-color:rgb(var(--textParagraphColor-rgb));--ricos-text-color-tuple:var(--textParagraphColor-rgb);--ricos-action-color:rgb(var(--postButtonBackgroundColor-rgb));--ricos-action-color-tuple:var(--postButtonBackgroundColor-rgb);--ricos-background-color:rgb(var(--postBackgroundColor-rgb));--ricos-background-color-tuple:var(--postBackgroundColor-rgb);--ricos-fallback-color:rgb(var(--ricosShade3));--ricos-fallback-color-tuple:var(--ricosShade3);--ricos-disabled-color:rgb(var(--ricosShade2));--ricos-disabled-color-tuple:var(--ricosShade2);--ricos-text-color-low:rgb(var(--ricosShade1));--ricos-text-color-low-tuple:var(--ricosShade1);--ricos-settings-action-color:rgb(17, 109, 255);--ricos-settings-action-color-tuple:17, 109, 255;--ricos-focus-action-color:rgb(var(--postButtonBackgroundColor-rgb));--ricos-focus-action-color-tuple:var(--postButtonBackgroundColor-rgb);--ricos-action-color-fallback:rgb(var(--ricosShade3));--ricos-action-color-fallback-tuple:var(--ricosShade3);--ricos-theme-color-1:rgb(var(--postBackgroundColor-rgb));--ricos-theme-color-1-tuple:var(--postBackgroundColor-rgb);--ricos-theme-color-2:rgb(var(--textParagraphColor-rgb));--ricos-theme-color-2-tuple:var(--textParagraphColor-rgb);--ricos-theme-color-3:rgb(var(--postButtonBackgroundColor-rgb));--ricos-theme-color-3-tuple:var(--postButtonBackgroundColor-rgb);--ricos-theme-color-7:rgb(var(--ricosShade1));--ricos-theme-color-7-tuple:var(--ricosShade1);--ricos-theme-color-8:rgb(var(--ricosShade2));--ricos-theme-color-8-tuple:var(--ricosShade2);--ricos-theme-color-9:rgb(var(--ricosShade3));--ricos-theme-color-9-tuple:var(--ricosShade3);--ricos-custom-button-background-color:rgb(var(--postButtonBackgroundColor));--ricos-custom-button-color:rgb(var(--postButtonTextColor));--ricos-custom-button-background-color-hover:rgb(var(--postButtonBackgroundColor));--ricos-custom-button-color-hover:rgb(var(--postButtonTextColor));--ricos-custom-button-border-color:rgb(var(--postButtonTextColor));--ricos-custom-secondary-button-background-color:rgb(var(--postBackgroundColor));--ricos-custom-secondary-button-color:rgb(var(--postButtonBackgroundColor));--ricos-custom-secondary-button-border-color:rgb(var(--postButtonBackgroundColor));--ricos-custom-link-color:rgb(var(--textLinksAndHashtagsColor));--ricos-custom-link-font-style:inherit;--ricos-custom-link-font-weight:inherit;--ricos-custom-link-text-decoration:inherit;--ricos-custom-audio-background-color:rgb(var(--postBackgroundColor));--ricos-custom-audio-title-color:rgb(var(--textParagraphColor-rgb));--ricos-custom-audio-subtitle-color:rgb(var(--ricosShade3));--ricos-custom-audio-border-color:rgb(var(--ricosShade2));--ricos-custom-audio-component-border-color:rgb(var(--ricosShade2));--ricos-custom-audio-action-color:rgb(var(--postButtonBackgroundColor));--ricos-custom-audio-action-text-color:rgb(var(--postBackgroundColor));--ricos-custom-audio-slider-color:rgb(var(--ricosShade1));--ricos-custom-file-background-color:rgb(var(--postBackgroundColor));--ricos-custom-file-color:var(--textParagraphColor-rgb);--ricos-custom-file-secondary-color:rgb(var(--ricosShade3));--ricos-custom-file-secondary-color-opacity:1;--ricos-custom-file-border-color:var(--textParagraphColor-rgb);--ricos-custom-file-border-opacity:1;--ricos-custom-file-border-color-hover:rgb(var(--ricosShade3));--ricos-custom-file-icon-color:rgb(var(--postButtonBackgroundColor));--ricos-custom-file-icon-stroke-color:rgb(var(--postButtonTextColor));--ricos-custom-table-border-color:rgb(var(--ricosShade2));--ricos-custom-table-color:rgb(var(--textParagraphColor-rgb));--ricos-custom-vertical-embed-background-color:rgb(var(--postBackgroundColor));--ricos-custom-vertical-embed-color:rgb(var(--textParagraphColor-rgb));--ricos-custom-vertical-embed-text-color:rgb(var(--ricosShade3));--ricos-custom-vertical-embed-icon-color:rgb(var(--ricosShade3));--ricos-custom-vertical-embed-border-color:rgb(var(--ricosShade2));--ricos-custom-vertical-embed-ribbon-text-color:rgb(var(--textParagraphColor-rgb));--ricos-custom-link-preview-background-color:rgb(var(--postBackgroundColor));--ricos-custom-link-preview-border-color:rgb(var(--ricosShade2));--ricos-custom-link-preview-hover-border-color:rgb(var(--ricosShade3));--ricos-custom-link-preview-title-color:rgb(var(--textParagraphColor-rgb));--ricos-custom-link-preview-subtitle-color:rgb(var(--ricosShade3));--ricos-custom-code-block-color:rgb(var(--textParagraphColor-rgb));--ricos-custom-code-block-line-height:1.5;--ricos-custom-toc-color:rgb(var(--postButtonBackgroundColor));--ricos-custom-toc-title-color:rgb(var(--textParagraphColor-rgb));--ricos-custom-toc-border-color:rgb(var(--ricosShade2));--ricos-custom-divider-color:rgb(var(--textParagraphColor-rgb));--ricos-custom-quote-color:rgb(var(--textQuoteColor));--ricos-custom-quote-border-color:rgb(var(--textLinksAndHashtagsColor));--ricos-custom-quote-line-height:var(--textQuoteFont-line-height);--ricos-custom-quote-font-size:var(--textQuoteFont-size);--ricos-custom-quote-font-style:var(--textQuoteFont-style);--ricos-custom-quote-font-family:var(--textQuoteFont-family);--ricos-custom-quote-font-weight:var(--textQuoteFont-weight);--ricos-custom-quote-text-decoration:var(--textQuoteFont-text-decoration);--ricos-custom-quote-margin-inline-start:var(--ricosQuoteMarginInlineStart);--ricos-custom-smart-block-label-color:rgb(var(--postButtonBackgroundColor));--ricos-custom-smart-block-track-color:rgb(var(--ricosShade2));--ricos-custom-p-font-weight:var(--textParagraphFont-weight);--ricos-custom-p-font-style:var(--textParagraphFont-style);--ricos-custom-p-line-height:max(calc(var(--textParagraphFont-size) * 1.5), var(--textParagraphFont-line-height));--ricos-custom-p-font-size:var(--textParagraphFont-size);--ricos-custom-p-font-family:var(--textParagraphFont-family);--ricos-custom-p-text-decoration:var(--textParagraphFont-text-decoration);--ricos-custom-p-color:rgb(var(--textParagraphColor));--ricos-custom-h1-font-weight:var(--textH1Font-weight);--ricos-custom-h1-font-style:var(--textH1Font-style);--ricos-custom-h1-line-height:var(--textH1Font-line-height);--ricos-custom-h1-font-size:var(--textH1Font-size);--ricos-custom-h1-font-family:var(--textH1Font-family);--ricos-custom-h1-text-decoration:var(--textH1Font-text-decoration);--ricos-custom-h1-color:rgb(var(--textH1Color));--ricos-custom-h2-font-weight:var(--textH2Font-weight);--ricos-custom-h2-font-style:var(--textH2Font-style);--ricos-custom-h2-line-height:var(--textH2Font-line-height);--ricos-custom-h2-font-size:var(--textH2Font-size);--ricos-custom-h2-font-family:var(--textH2Font-family);--ricos-custom-h2-text-decoration:var(--textH2Font-text-decoration);--ricos-custom-h2-color:rgb(var(--textH2Color));--ricos-custom-h3-font-weight:var(--textH3Font-weight);--ricos-custom-h3-font-style:var(--textH3Font-style);--ricos-custom-h3-line-height:var(--textH3Font-line-height);--ricos-custom-h3-font-size:var(--textH3Font-size);--ricos-custom-h3-font-family:var(--textH3Font-family);--ricos-custom-h3-text-decoration:var(--textH3Font-text-decoration);--ricos-custom-h3-color:rgb(var(--textH3Color));--ricos-custom-h4-font-weight:var(--textH4Font-weight);--ricos-custom-h4-font-style:var(--textH4Font-style);--ricos-custom-h4-line-height:var(--textH4Font-line-height);--ricos-custom-h4-font-size:var(--textH4Font-size);--ricos-custom-h4-font-family:var(--textH4Font-family);--ricos-custom-h4-text-decoration:var(--textH4Font-text-decoration);--ricos-custom-h4-color:rgb(var(--textH4Color));--ricos-custom-h5-font-weight:var(--textH5Font-weight);--ricos-custom-h5-font-style:var(--textH5Font-style);--ricos-custom-h5-line-height:var(--textH5Font-line-height);--ricos-custom-h5-font-size:var(--textH5Font-size);--ricos-custom-h5-font-family:var(--textH5Font-family);--ricos-custom-h5-text-decoration:var(--textH5Font-text-decoration);--ricos-custom-h5-color:rgb(var(--textH5Color));--ricos-custom-h6-font-weight:var(--textH6Font-weight);--ricos-custom-h6-font-style:var(--textH6Font-style);--ricos-custom-h6-line-height:var(--textH6Font-line-height);--ricos-custom-h6-font-size:var(--textH6Font-size);--ricos-custom-h6-font-family:var(--textH6Font-family);--ricos-custom-h6-text-decoration:var(--textH6Font-text-decoration);--ricos-custom-h6-color:rgb(var(--textH6Color));--ricos-custom-hashtag-font-style:inherit;--ricos-custom-hashtag-font-weight:inherit;--ricos-custom-hashtag-text-decoration:inherit;--ricos-custom-hashtag-color:rgb(var(--textLinksAndHashtagsColor));--ricos-custom-footer-toolbar-padding-inline-start:var(--ricosFooterPadding);--ricos-custom-footer-toolbar-padding-inline-end:var(--ricosFooterPadding);--ricos-custom-editor-add-plugin-button-position-inline-start:var(--ricosAddPluginButtonStart);--ricos-breakout-normal-padding-start:var(--ricosNormalPadding);--ricos-breakout-normal-padding-end:var(--ricosNormalPadding);--ricos-breakout-full-width-padding-start:var(--ricosFullWidthPadding);--ricos-breakout-full-width-padding-end:var(--ricosFullWidthPadding)"><div class="unp46"><div data-hook="rcv-block-first" type="first"></div><div class="tzeth"><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="foo" dir="auto" id="viewer-foo" tabindex="-1"><span class="KmEWy"><span>Healthy Oven-Baked Peppers That Are Flavor-Packed, Diabetes-Friendly, and Easy to Make</span></span></p></div><div data-hook="rcv-block1" type="paragraph"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="w4iu123" dir="auto" id="viewer-w4iu123" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block2" type="empty-line"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="8z87l32" dir="auto" id="viewer-8z87l32" tabindex="-1"><span class="KmEWy"><span>Looking for a wholesome dish that’s as nourishing as it is flavorful? These Mediterranean stuffed peppers are your go-to solution. They're oven-baked, vibrant, and loaded with good-for-you ingredients — perfect for a diabetes-friendly lifestyle or anyone craving something light yet satisfying.</span></span></p></div><div data-hook="rcv-block3" type="paragraph"></div><div data-breakout="normal"><div class="_0vncC" id="viewer-1bw0z3" tabindex="-1"><div class="HUNH- _3X59O"><figure class="vscz7" data-hook="figure-IMAGE"><div class="KDEWi" data-hook="image-viewer"><div class="_80IYq OuB-T bCpAv" data-hook="image-viewer-1bw0z3" style="--dim-height:4096;--dim-width:4096;--ricos-image-default-border-color:unset"><div class="oz1f0"><div class="TTsMm" id="1bw0z3" style="position:absolute;top:0;left:0;right:0;bottom:0"><wow-image class="undefined svv3P"  data-bg-effect-name="" data-has-ssr-src="true" data-image-info='{"containerId":"1bw0z3","alignType":"center","displayMode":"fill","isLQIP":false,"isSEOBot":false,"lqipTransition":"none","encoding":"AVIF","imageData":{"width":4096,"height":4096,"uri":"30dece_c09d66079ef744c288c10fcffa042168~mv2.jpeg","name":"","displayMode":"fill"}}' data-is-responsive="true" data-motion-part="BG_IMG 1bw0z3" id="30dece_c09d66079ef744c288c10fcffa042168~mv2.jpeg"><img alt="Mediterranean Stuffed Peppers with Bulgur and Feta" data-pin-media="https://static.wixstatic.com/media/30dece_c09d66079ef744c288c10fcffa042168~mv2.jpeg/v1/fill/w_4096,h_4096,al_c,q_90/30dece_c09d66079ef744c288c10fcffa042168~mv2.jpeg" data-pin-url="https://epicureanflow.wixsite.com/epicurean-flow/post/stuffed-bell-peppers-with-bulgur-feta-fresh-herbs" draggable="false" src="https://static.wixstatic.com/media/30dece_c09d66079ef744c288c10fcffa042168~mv2.jpeg/v1/fill/w_4096,h_4096,al_c,q_90/30dece_c09d66079ef744c288c10fcffa042168~mv2.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;max-width:100%;position:absolute;left:0;top:0"/></wow-image></div></div></div><button aria-label="Expand image" class="vP2vO" data-hook="image-expand-button" type="button"><svg class="_4HXfd" viewbox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><path d="M15.071 8.371V4.585l-4.355 4.356a.2.2 0 0 1-.283 0l-.374-.374a.2.2 0 0 1 0-.283l4.356-4.355h-3.786a.2.2 0 0 1-.2-.2V3.2c0-.11.09-.2.2-.2H16v5.371a.2.2 0 0 1-.2.2h-.529a.2.2 0 0 1-.2-.2zm-6.5 6.9v.529a.2.2 0 0 1-.2.2H3v-5.371c0-.11.09-.2.2-.2h.529c.11 0 .2.09.2.2v3.786l4.355-4.356a.2.2 0 0 1 .283 0l.374.374a.2.2 0 0 1 0 .283L4.585 15.07h3.786c.11 0 .2.09.2.2z" fill="#000" fill-rule="nonzero"></path></svg></button></div><div class="rLyD2 _4kQy0" data-hook="gap-spacer"></div><div class="_0vncC" id="viewer-c6y7h6" tabindex="-1"><div class="_3X59O"><figcaption class="_0Kxft" style="padding-top:16px;padding-bottom:16px"><span>Mediterranean Stuffed Peppers with Bulgur and Feta</span></figcaption></div></div><div class="rLyD2 _4kQy0" data-hook="gap-spacer"></div></figure></div></div></div><div data-hook="rcv-block4" type="image"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="tryeb18" dir="auto" id="viewer-tryeb18" tabindex="-1"><span class="KmEWy"><span>Baked bell peppers aren't just colorful and delicious — they’re also packed with antioxidants, vitamin C, and fiber. Roasting them intensifies their natural sweetness while preserving nutrients. In this recipe, they're filled with a zesty mixture of bulgur, creamy feta, fresh herbs, and warm Mediterranean spices. A perfect option for a healthy lunch, meatless dinner, or meal prep that supports stable blood sugar levels.</span></span></p></div><div data-hook="rcv-block5" type="paragraph"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="2ds4z43" dir="auto" id="viewer-2ds4z43" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block6" type="empty-line"></div><div data-breakout="normal"><h2 class="c-9Q0 oIwRx fUDW- lqKvG" data-ricos-heading="f2n2048" dir="auto" id="viewer-f2n2048" tabindex="-1"><span aria-hidden="true" id="why-this-recipe-is-diabetes-friendly-f2n2048"></span><span class="A7PBN"><span>✅ Why This Recipe is Diabetes-Friendly:</span></span></h2></div><div data-hook="rcv-block7" type="heading"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="zlybs3258" dir="auto" id="viewer-zlybs3258" tabindex="-1"><span class="KmEWy"><span>✔️ Low-glycemic bulgur provides steady energy</span></span></p></div><div data-hook="rcv-block8" type="paragraph"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="hqyz03261" dir="auto" id="viewer-hqyz03261" tabindex="-1"><span class="KmEWy"><span>✔️ Baked, not fried, preserving nutrients without added sugars</span></span></p></div><div data-hook="rcv-block9" type="paragraph"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="7syq23264" dir="auto" id="viewer-7syq23264" tabindex="-1"><span class="KmEWy"><span>✔️ High in fiber and protein, promoting fullness and balanced blood sugar</span></span></p></div><div data-hook="rcv-block10" type="paragraph"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="8fot03267" dir="auto" id="viewer-8fot03267" tabindex="-1"><span class="KmEWy"><span>✔️ No added sugars or heavy carbs</span></span></p></div><div data-hook="rcv-block11" type="paragraph"></div><div data-breakout="normal"><h2 class="c-9Q0 oIwRx fUDW- lqKvG" data-ricos-heading="ly9sc3190" dir="auto" id="viewer-ly9sc3190" tabindex="-1"><span aria-hidden="true" id="section-ly9sc319"></span><span class="A7PBN"><br role="presentation"/></span></h2></div><div data-hook="rcv-block12" type="empty-line"></div><div data-breakout="normal"><h2 class="c-9Q0 oIwRx fUDW- lqKvG" data-ricos-heading="ldo1d3223" dir="auto" id="viewer-ldo1d3223" tabindex="-1"><span aria-hidden="true" id="stuffed-peppers-with-bulgur-feta-herbs-ldo1d322"></span><span class="A7PBN"><span>Stuffed Peppers with Bulgur, Feta &amp; Herbs</span></span></h2></div><div data-hook="rcv-block13" type="heading"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="qgibt54" dir="auto" id="viewer-qgibt54" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block14" type="empty-line"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="crlcl55" dir="auto" id="viewer-crlcl55" tabindex="-1"><span class="KmEWy"><span>Serves: 4</span></span></p></div><div data-hook="rcv-block15" type="paragraph"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="h62s557" dir="auto" id="viewer-h62s557" tabindex="-1"><span class="KmEWy"><span>Prep Time: 15 minutes</span></span></p></div><div data-hook="rcv-block16" type="paragraph"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="8te2v59" dir="auto" id="viewer-8te2v59" tabindex="-1"><span class="KmEWy"><span>Cook Time: 30 minutes</span></span></p></div><div data-hook="rcv-block17" type="paragraph"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="5b0u361" dir="auto" id="viewer-5b0u361" tabindex="-1"><span class="KmEWy"><span>Total Time: 45 minutes</span></span></p></div><div data-hook="rcv-block18" type="paragraph"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="kte0563" dir="auto" id="viewer-kte0563" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block19" type="empty-line"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="i6fq164" dir="auto" id="viewer-i6fq164" tabindex="-1"><span class="KmEWy"><strong style="font-weight:700"><span>Ingredients</span></strong><span>:</span></span></p></div><div data-hook="rcv-block20" type="paragraph"></div><div data-breakout="normal"><ul class="y8M-d fUDW-"><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="ak6p967" dir="" id="viewer-ak6p967" tabindex="-1"><span class="KmEWy"><span>4 large bell peppers (red, yellow, or orange), halved and deseeded</span></span></p></li><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="7uew270" dir="" id="viewer-7uew270" tabindex="-1"><span class="KmEWy"><span>1 cup cooked bulgur(Follow package instructions)</span></span></p></li><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="tc56673" dir="" id="viewer-tc56673" tabindex="-1"><span class="KmEWy"><span>100g crumbled feta cheese</span></span></p></li><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="nfjmb76" dir="" id="viewer-nfjmb76" tabindex="-1"><span class="KmEWy"><span>1 small red onion, finely chopped</span></span></p></li><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="d26qq79" dir="" id="viewer-d26qq79" tabindex="-1"><span class="KmEWy"><span>1 garlic clove, minced</span></span></p></li><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="0ftq982" dir="" id="viewer-0ftq982" tabindex="-1"><span class="KmEWy"><span>1 small zucchini, diced (optional)</span></span></p></li><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="cz9r185" dir="" id="viewer-cz9r185" tabindex="-1"><span class="KmEWy"><span>1 tomato, finely diced</span></span></p></li><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="bcgva88" dir="" id="viewer-bcgva88" tabindex="-1"><span class="KmEWy"><span>2 tbsp fresh parsley, chopped</span></span></p></li><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="wot5c91" dir="" id="viewer-wot5c91" tabindex="-1"><span class="KmEWy"><span>1 tbsp fresh mint or basil, chopped</span></span></p></li><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="sq4mv94" dir="" id="viewer-sq4mv94" tabindex="-1"><span class="KmEWy"><span>1 tsp dried oregano</span></span></p></li><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="aq02d97" dir="" id="viewer-aq02d97" tabindex="-1"><span class="KmEWy"><span>½ tsp ground cumin</span></span></p></li><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="bnhb7100" dir="" id="viewer-bnhb7100" tabindex="-1"><span class="KmEWy"><span>Salt and freshly ground black pepper to taste</span></span></p></li><li aria-level="1" class="FaYQD" dir="auto" style="margin-inline-start:1.5em;list-style-type:disc"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="1s07s103" dir="" id="viewer-1s07s103" tabindex="-1"><span class="KmEWy"><span>2 tbsp extra virgin olive oil</span></span></p></li></ul></div><div data-hook="rcv-block21" type="bulleted_list"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="yox5l106" dir="auto" id="viewer-yox5l106" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block22" type="empty-line"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="mnmd5107" dir="auto" id="viewer-mnmd5107" tabindex="-1"><span class="KmEWy"><strong style="font-weight:700"><span>Instructions</span></strong><span>:</span></span></p></div><div data-hook="rcv-block23" type="paragraph"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="ethe0110" dir="auto" id="viewer-ethe0110" tabindex="-1"><span class="KmEWy"><span>1. Preheat your oven to 190°C/375°F/170° Fan. </span></span></p></div><div data-hook="rcv-block24" type="paragraph"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="u06fp708" dir="auto" id="viewer-u06fp708" tabindex="-1"><span class="KmEWy"><span>Lightly oil a baking dish.</span></span></p></div><div data-hook="rcv-block25" type="paragraph"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="52mj3113" dir="auto" id="viewer-52mj3113" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block26" type="empty-line"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="mnaq4114" dir="auto" id="viewer-mnaq4114" tabindex="-1"><span class="KmEWy"><span>2. Prepare the filling: In a bowl, combine cooked bulgur, feta, onion, garlic, diced zucchini, tomato, herbs, and spices. Drizzle with 1 tablespoon olive oil. Mix well and season to taste.</span></span></p></div><div data-hook="rcv-block27" type="paragraph"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="nztp7117" dir="auto" id="viewer-nztp7117" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block28" type="empty-line"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="ub9n1118" dir="auto" id="viewer-ub9n1118" tabindex="-1"><span class="KmEWy"><span>3. Stuff the peppers: Place the halved peppers in the baking dish and generously fill them with the bulgur mixture.</span></span></p></div><div data-hook="rcv-block29" type="paragraph"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="63spd121" dir="auto" id="viewer-63spd121" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block30" type="empty-line"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="io2nc122" dir="auto" id="viewer-io2nc122" tabindex="-1"><span class="KmEWy"><span>4. Bake uncovered for 30 minutes, until the peppers are tender and lightly roasted.</span></span></p></div><div data-hook="rcv-block31" type="paragraph"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="g9b6u125" dir="auto" id="viewer-g9b6u125" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block32" type="empty-line"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="m9wq8126" dir="auto" id="viewer-m9wq8126" tabindex="-1"><span class="KmEWy"><span>5. Serve warm, garnished with extra parsley or a squeeze of lemon juice.</span></span></p></div><div data-hook="rcv-block33" type="paragraph"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="mzy1n128" dir="auto" id="viewer-mzy1n128" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block34" type="empty-line"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="zu867129" dir="auto" id="viewer-zu867129" tabindex="-1"><span class="KmEWy"><span><a class="C-i-U" href="https://epicureanflow.wixsite.com/epicurean-flow/blog/hashtags/HealthyMediterranean" target="_blank"><span>#HealthyMediterranean</span></a><span> </span><a class="C-i-U" href="https://epicureanflow.wixsite.com/epicurean-flow/blog/hashtags/StuffedPeppers" target="_blank"><span>#StuffedPeppers</span></a><span> </span><a class="C-i-U" href="https://epicureanflow.wixsite.com/epicurean-flow/blog/hashtags/DiabetesFriendlyMeals" target="_blank"><span>#DiabetesFriendlyMeals</span></a><span> </span></span></span></p></div><div data-hook="rcv-block35" type="paragraph"></div><div data-breakout="normal"><p class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="7oy9n3856" dir="auto" id="viewer-7oy9n3856" tabindex="-1"><span class="KmEWy"><span><a class="C-i-U" href="https://epicureanflow.wixsite.com/epicurean-flow/blog/hashtags/BulgurPower" target="_blank"><span>#BulgurPower</span></a><span> </span><a class="C-i-U" href="https://epicureanflow.wixsite.com/epicurean-flow/blog/hashtags/EasyVegetarianRecipes" target="_blank"><span>#EasyVegetarianRecipes</span></a></span></span></p></div><div data-hook="rcv-block36" type="paragraph"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="xurd63817" dir="auto" id="viewer-xurd63817" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block37" type="empty-line"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="lg6gv130" dir="auto" id="viewer-lg6gv130" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block38" type="empty-line"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="nqfpb131" dir="auto" id="viewer-nqfpb131" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block39" type="empty-line"></div><div data-breakout="normal"><div class="_9Nlgm Dd46l fUDW- lqKvG" data-ricos-paragraph="m11i27" dir="auto" id="viewer-m11i27" tabindex="-1"><span class="KmEWy"><br role="presentation"/></span></div></div><div data-hook="rcv-block40" type="empty-line"></div></div><div data-hook="rcv-block-last" type="last"></div></div></div></div></div></div></section>
+        </div>
+
+        <!-- Post Tags Bar -->
+        <div class="post-tags-container" id="post-tags-container">
+          <a href="blog.html?cat=diabetes" class="post-tag-pill">#HealthyMediterranean</a>
+          <a href="blog.html?cat=diabetes" class="post-tag-pill">#StuffedPeppers</a>
+          <a href="blog.html?cat=diabetes" class="post-tag-pill">#DiabetesFriendlyMeals</a>
+          <a href="blog.html?cat=recipes" class="post-tag-pill">#BulgurPower</a>
+          <a href="blog.html?cat=recipes" class="post-tag-pill">#EasyVegetarianRecipes</a>
+          <a href="diabetes.html" class="post-tag-pill">Diabetes Management</a>
+          <a href="nutrition.html" class="post-tag-pill">Mediterranean Diet</a>
+        </div>
+
+        <!-- Post Reaction / Heart & Share Bar -->
+        <div class="post-reaction-bar">
+          <div class="post-reaction-left">
+            <button type="button" class="post-heart-btn" id="post-heart-btn" aria-label="Like this post">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <span id="post-heart-count">24</span>
+            </button>
+            <span class="post-view-count" id="post-view-count">1.4k views &bull; 12 comments</span>
+          </div>
+          <div class="post-reaction-right">
+            <a href="blog.html" class="btn btn-outline" style="font-size: 0.85rem; padding: 9px 20px;">&larr; Back to All 274 Stories</a>
+          </div>
+        </div>
+
+        <!-- Author Bio Recommendation Card -->
+        <div class="post-chef-bio-card">
+          <img src="images/logo.png" alt="Chef Eliane Muskus" class="post-chef-bio-avatar">
+          <div class="post-chef-bio-text">
+            <h3>Crafted with Sensory Mastery by Chef Eliane Muskus</h3>
+            <p>Chef Eliane Muskus is a Mediterranean chef, recipe developer, and culinary educator who champions bold, vibrant cooking designed to nourish body and mind without compromising on indulgence.</p>
+            <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+              <a href="courses.html" class="btn btn-gold" style="font-size: 0.85rem; padding: 10px 20px;">Explore Cooking Courses &rarr;</a>
+              <a href="cookbooks.html" class="btn btn-outline" style="font-size: 0.85rem; padding: 10px 20px;">Browse Cookbooks</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Recent / Suggested Posts Section (Screenshot 2 Match) -->
+    <section class="section post-recent-section">
+      <div class="container">
+        <div class="post-recent-header">
+          <h3 class="post-recent-title">Recent Posts</h3>
+          <a href="blog.html" class="post-recent-see-all">See All</a>
+        </div>
+
+        <div class="post-recent-grid" id="post-recent-grid">
+          <!-- Populated by JavaScript or fallback -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="logo-brand" style="margin-bottom: 16px; display: inline-block;">
+            <img src="images/logo.png" alt="Epicurean Flow" class="header-logo-img" style="filter: brightness(0) invert(1);">
+          </a>
+          <p class="footer-tagline">Where cooking inspires. Masterclasses, curated digital cookbooks, and gourmet cuisine by Award-Winning Chef Eliane Muskus.</p>
+          <div class="footer-contact-info" style="font-size: 0.875rem; color: rgba(245, 240, 231, 0.78); margin-top: 14px;">
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px; font-weight: 600;">Epicurean Flow</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Registered in Amsterdam, Netherlands</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+ 31618571677</a></p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Telephone Spain: <a href="tel:+34626617282" style="color: var(--color-gold);">+34626617282</a></p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 0;">Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
+          </div>
+          <div class="footer-social-wrap">
+            <span class="footer-social-label">Follow Chef Eliane</span>
+            <div class="footer-social-links" role="list" aria-label="Social media channels">
+              <a href="https://www.facebook.com/profile.php?id=61558943582868" target="_blank" rel="noopener noreferrer" class="social-btn social-facebook" aria-label="Chef Eliane Muskus on Facebook" title="Facebook">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/epicureanflow/" target="_blank" rel="noopener noreferrer" class="social-btn social-instagram" aria-label="Chef Eliane Muskus on Instagram" title="Instagram">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/epicureanadventureamsterdam/" target="_blank" rel="noopener noreferrer" class="social-btn social-linkedin" aria-label="Chef Eliane Muskus on LinkedIn" title="LinkedIn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@elianemuskus8" target="_blank" rel="noopener noreferrer" class="social-btn social-tiktok" aria-label="Chef Eliane Muskus on TikTok" title="TikTok">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.47 6.28 6.28 0 0 0 1.95-4.57V8.53a8.28 8.28 0 0 0 4.82 1.54V6.69z"/></svg>
+              </a>
+              <a href="https://uk.pinterest.com/elianem0879/" target="_blank" rel="noopener noreferrer" class="social-btn social-pinterest" aria-label="Chef Eliane Muskus on Pinterest" title="Pinterest">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="courses.html">All Courses</a></li>
+            <li><a href="cookbooks.html">Digital Books &amp; Guides</a></li>
+            <li><a href="menu-planning.html">Menu Planning Service</a></li>
+            <li><a href="diabetes.html">Diabetes Living</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Energy</a></li>
+            <li><a href="recipes.html">Recipe Journal</a></li>
+            <li><a href="blog.html">Chef's Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">About &amp; Trust</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Chef Eliane's Story</a></li>
+            <li><a href="about.html#milestones">Michelin Accreditation</a></li>
+            <li><a href="contact.html">Contact Headquarters</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Stay Inspired</h4>
+          <p style="font-size: 0.9rem; color: rgba(245, 240, 231, 0.78); margin-bottom: 16px;">Receive seasonal recipes, private consultation invitations, and chef tips directly in your inbox.</p>
+          <form class="newsletter-form footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Epicurean Flow!');">
+            <input type="email" placeholder="Your email address" class="newsletter-input" required>
+            <button type="submit" class="btn btn-primary">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p class="copyright">&copy; 2026 Epicurean Flow | All Rights Reserved</p>
+      <p style="font-size: 0.8rem; color: rgba(245, 240, 231, 0.6);">Business Registration: 94886792 &bull; Amsterdam, Netherlands</p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="footer-developer-bar" style="border-top: 1px solid rgba(245, 240, 231, 0.1); padding: 18px 0; text-align: center;">
+        <span style="font-size: 0.8125rem; color: rgba(245, 240, 231, 0.65);">Website designed by <a href="https://ibtex.ibe88agwu.workers.dev/" target="_blank" rel="noopener" style="color: var(--color-gold, #c5a059); text-decoration: none;">IBTEX</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span>Your Culinary Selection</span>
+      </h3>
+      <button class="cart-drawer-close" id="close-cart-btn" aria-label="Close Cart">✕</button>
+    </div>
+    <div class="cart-drawer-body" id="cart-items-list">
+      <div class="cart-empty-message">
+        <div class="cart-empty-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <p class="cart-empty-title">Your shopping bag is empty</p>
+        <p class="cart-empty-desc">Explore our cookbooks, chef guides, and culinary masterclasses.</p>
+        <a href="cookbooks.html" class="btn btn-outline btn-sm">Browse Books &amp; Courses</a>
+      </div>
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal-val">€0.00</span>
+      </div>
+      <a href="javascript:void(0)" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
+        <span>Proceed to Secure Checkout</span>
+      </a>
+    </div>
+  </aside>
+
+  
+
+  <!-- Posts Data & Dynamic Post Loader -->
+  <script src="js/posts-data.js"></script>
+  <script>
+    (function() {
+      'use strict';
+      const posts = window.EPICUREAN_POSTS || [];
+      if (!posts.length) return;
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const slugParam = urlParams.get('slug') || urlParams.get('post') || urlParams.get('id');
+
+      // Helper function to format category
+      function formatCategory(cat) {
+        const map = {
+          recipes: 'Chef Recipes',
+          technique: 'Cooking Technique',
+          diabetes: 'Diabetes-Friendly',
+          nutrition: 'Nutrition & Wellness'
+        };
+        return map[cat] || (cat ? cat.charAt(0).toUpperCase() + cat.slice(1) : 'Culinary Article');
+      }
+
+      // Helper to format date
+      function formatDate(dateStr) {
+        if (!dateStr) return 'Recent Story';
+        const d = new Date(dateStr);
+        if (isNaN(d.getTime())) return dateStr;
+        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+      }
+
+      // Find current post
+      let currentPost = null;
+      let currentIndex = 52; // default stuffed bell peppers
+
+      if (slugParam) {
+        const foundIdx = posts.findIndex(p => p.slug === slugParam || p.id === slugParam || (p.url && p.url.includes(slugParam)));
+        if (foundIdx !== -1) {
+          currentIndex = foundIdx;
+          currentPost = posts[foundIdx];
+        }
+      }
+
+      if (!currentPost) {
+        currentPost = posts[currentIndex] || posts[0];
+      }
+
+      // If viewing a post other than pre-rendered post 52, update DOM
+      if (currentPost && currentPost.slug !== 'stuffed-bell-peppers-with-bulgur-feta-fresh-herbs') {
+        document.title = currentPost.title + ' | Epicurean Flow Blog';
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && currentPost.description) metaDesc.setAttribute('content', currentPost.description.substring(0, 160));
+
+        const titleEl = document.getElementById('post-title');
+        if (titleEl) titleEl.textContent = currentPost.title;
+
+        const subtitleEl = document.getElementById('post-subtitle');
+        if (subtitleEl) subtitleEl.textContent = currentPost.description || '';
+
+        const badgeEl = document.getElementById('post-cat-badge');
+        if (badgeEl) badgeEl.textContent = formatCategory(currentPost.category);
+
+        const metaEl = document.getElementById('post-meta-details');
+        if (metaEl) metaEl.innerHTML = formatDate(currentPost.date) + ' &bull; ' + (currentPost.readTime || '3 min read');
+
+        const bodyEl = document.getElementById('post-body-container');
+        let hasImgInContent = false;
+        if (bodyEl) {
+          if (currentPost.content_html && currentPost.content_html.length > 50) {
+            let processedHtml = currentPost.content_html;
+            // Ensure all images use crisp master URLs without blur
+            processedHtml = processedHtml.replace(/<img[^>]+>/g, function(tag) {
+              const pin = tag.match(/data-pin-media=["']([^"']+)["']/);
+              if (pin) {
+                tag = tag.replace(/src=["'][^"']+["']/, 'src="' + pin[1] + '"');
+              }
+              return tag.replace(/,blur_\d+/g, '');
+            });
+            bodyEl.innerHTML = processedHtml;
+            hasImgInContent = processedHtml.includes('<img');
+          } else {
+            bodyEl.innerHTML = `<p>${currentPost.description || ''}</p><p>${currentPost.body_snippet || ''}</p>`;
+          }
+        }
+
+        // Toggle featured figure: hide if content_html already has the authentic image
+        const figEl = document.getElementById('post-featured-figure');
+        if (figEl) {
+          if (hasImgInContent) {
+            figEl.style.display = 'none';
+          } else if (currentPost.image) {
+            figEl.style.display = 'block';
+            const imgEl = document.getElementById('post-main-img');
+            if (imgEl) {
+              imgEl.src = currentPost.image;
+              imgEl.alt = currentPost.title;
+            }
+            const captionEl = document.getElementById('post-img-caption');
+            if (captionEl) captionEl.textContent = currentPost.title;
+          } else {
+            figEl.style.display = 'none';
+          }
+        }
+
+        // Update breadcrumb category
+      const breadcrumbCat = document.getElementById('post-breadcrumb-cat');
+      if (breadcrumbCat) breadcrumbCat.textContent = formatCategory(currentPost.category);
+
+      // Update tags
+        const tagsContainer = document.getElementById('post-tags-container');
+        if (tagsContainer) {
+          tagsContainer.innerHTML = `
+            <a href="blog.html?cat=${currentPost.category}" class="post-tag-pill">#${currentPost.category}</a>
+            <a href="blog.html" class="post-tag-pill">#EpicureanFlow</a>
+            <a href="courses.html" class="post-tag-pill">Chef Masterclasses</a>
+            <a href="recipes.html" class="post-tag-pill">Original Recipes</a>
+          `;
+        }
+      }
+
+      // Populate 3 Recent / Suggested Posts
+      const recentGrid = document.getElementById('post-recent-grid');
+      if (recentGrid) {
+        // Filter out current post, pick 3 suggested posts
+        let suggestions = posts.filter((p, i) => i !== currentIndex && (p.category === currentPost.category || i < 10)).slice(0, 3);
+        if (suggestions.length < 3) suggestions = posts.filter((p, i) => i !== currentIndex).slice(0, 3);
+
+        recentGrid.innerHTML = suggestions.map(s => `
+          <a href="post.html?slug=${encodeURIComponent(s.slug)}" class="post-recent-card">
+            <img src="${s.image || 'images/chef-eliane-cooking-paella.jpg'}" alt="${s.title}" class="post-recent-card-img" loading="lazy">
+            <div class="post-recent-card-body">
+              <span style="font-size: 0.75rem; color: #d4a359; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">${formatCategory(s.category)}</span>
+              <h4 class="post-recent-card-title">${s.title}</h4>
+              <div class="post-recent-card-footer">
+                <span>${formatDate(s.date)} &bull; ${s.readTime || '3 min read'}</span>
+                <span style="color: #bc9142; font-weight: 600;">Read &rarr;</span>
+              </div>
+            </div>
+          </a>
+        `).join('');
+      }
+
+      // Social Share handlers
+      const shareUrl = encodeURIComponent(window.location.href);
+      const shareTitle = encodeURIComponent(currentPost.title);
+
+      const fbBtn = document.getElementById('post-share-fb');
+      if (fbBtn) fbBtn.addEventListener('click', () => window.open('https://www.facebook.com/sharer/sharer.php?u=' + shareUrl, '_blank'));
+
+      const twBtn = document.getElementById('post-share-tw');
+      if (twBtn) twBtn.addEventListener('click', () => window.open('https://twitter.com/intent/tweet?text=' + shareTitle + '&url=' + shareUrl, '_blank'));
+
+      const liBtn = document.getElementById('post-share-li');
+      if (liBtn) liBtn.addEventListener('click', () => window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + shareUrl, '_blank'));
+
+      const copyBtn = document.getElementById('post-share-copy');
+      const copyFeedback = document.getElementById('copy-feedback');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(window.location.href).then(() => {
+            if (copyFeedback) {
+              copyFeedback.style.display = 'inline';
+              setTimeout(() => { copyFeedback.style.display = 'none'; }, 2500);
+            }
+          });
+        });
+      }
+
+      // Heart / Like counter
+      const heartBtn = document.getElementById('post-heart-btn');
+      const heartCount = document.getElementById('post-heart-count');
+      if (heartBtn && heartCount) {
+        heartBtn.addEventListener('click', () => {
+          const isLiked = heartBtn.classList.toggle('liked');
+          let count = parseInt(heartCount.textContent, 10) || 24;
+          heartCount.textContent = isLiked ? count + 1 : Math.max(0, count - 1);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

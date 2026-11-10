@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "python scripts/build_dist.py",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,7 +12,9 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@wix/blog": "^1.0.662",
     "@wix/ecom": "^1.0.2481",
+    "@wix/redirects": "^1.0.129",
     "@wix/sdk": "^1.21.16",
     "@wix/stores": "^1.0.895",
     "puppeteer-core": "^25.10.0"

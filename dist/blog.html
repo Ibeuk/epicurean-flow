@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chef's Blog | Recipes, Culinary Insights & Chef Stories | Epicurean Flow</title>
+  <meta name="description" content="Explore Chef Eliane Muskus's original blog: Mediterranean recipes, diabetes-friendly cooking, culinary techniques, and personal chef stories from her two-year writing archive.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="canonical" href="https://www.epicureanflow.com/blog.html">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/members.css">
+
+  <style>
+    /* =============================================
+       BLOG PAGE HERO — CHEF PAELLA BACKGROUND
+       ============================================= */
+    .blog-hero {
+      position: relative;
+      background-color: #100e0c;
+      background-image:
+        linear-gradient(90deg, rgba(12, 10, 8, 0.88) 0%, rgba(12, 10, 8, 0.74) 50%, rgba(12, 10, 8, 0.38) 100%),
+        linear-gradient(180deg, rgba(12, 10, 8, 0.45) 0%, rgba(12, 10, 8, 0.18) 45%, rgba(12, 10, 8, 0.72) 100%),
+        url('images/chef-eliane-cooking-paella.jpg');
+      background-size: cover;
+      background-position: 62% center;
+      background-repeat: no-repeat;
+      padding-top: calc(var(--header-height) + 72px);
+      padding-bottom: 80px;
+      border-bottom: 1px solid rgba(188, 145, 66, 0.35);
+      color: #FFFFFF;
+      overflow: hidden;
+    }
+
+    .blog-hero .container { position: relative; z-index: 2; }
+
+    .blog-hero-tag {
+      display: inline-block;
+      color: #D4AF37;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.85);
+    }
+
+    .blog-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.12;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+      max-width: 820px;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.95);
+    }
+
+    .blog-hero-subtitle {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.90);
+      max-width: 680px;
+      margin-bottom: 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.85);
+    }
+
+    @media (max-width: 767px) {
+      .blog-hero {
+        padding-top: calc(64px + 36px);
+        padding-bottom: 56px;
+        background-position: 60% center;
+        background-image:
+          linear-gradient(180deg, rgba(12,10,8,0.85) 0%, rgba(12,10,8,0.65) 50%, rgba(12,10,8,0.88) 100%),
+          url('images/chef-eliane-cooking-paella.jpg');
+      }
+    }
+
+    /* =============================================
+       FEATURED (PINNED) BLOG POST CARD
+       ============================================= */
+    .blog-featured-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(18,17,15,0.13);
+      border: 1px solid var(--color-border-light);
+      background: var(--color-white);
+    }
+
+    .blog-featured-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-featured-img-wrap img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .blog-featured-card:hover .blog-featured-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .blog-featured-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: var(--color-gold);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 5px 12px;
+      border-radius: 999px;
+      z-index: 1;
+    }
+
+    .blog-featured-body {
+      padding: clamp(28px, 4vw, 52px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .blog-featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .blog-meta-category {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-gold);
+    }
+
+    .blog-meta-dot { color: var(--color-ink-muted); font-size: 0.7rem; }
+
+    .blog-meta-date {
+      font-size: 0.8rem;
+      color: var(--color-ink-muted);
+    }
+
+    .blog-featured-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.55rem, 2.5vw, 2.15rem);
+      font-weight: 600;
+      color: var(--color-ink);
+      line-height: 1.22;
+      margin-bottom: 14px;
+    }
+
+    .blog-featured-excerpt {
+      font-size: 0.97rem;
+      color: var(--color-ink-subtle);
+      line-height: 1.72;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .blog-featured-card {
+        grid-template-columns: 1fr;
+      }
+      .blog-featured-img-wrap img {
+        min-height: 240px;
+        height: 260px;
+      }
+      .blog-featured-body {
+        padding: 24px 20px;
+      }
+    }
+
+    /* =============================================
+       BLOG GRID — STANDARD POST CARDS
+       ============================================= */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    @media (max-width: 1099px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    .blog-post-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-xs);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .blog-post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(18,17,15,0.11);
+    }
+
+    .blog-card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+    }
+
+    .blog-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .blog-post-card:hover .blog-card-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .blog-card-cat {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(18,17,15,0.75);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+    }
+
+    .blog-card-body {
+      padding: 22px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .blog-card-date {
+      font-size: 0.76rem;
+      color: var(--color-ink-muted);
+      margin-bottom: 8px;
+    }
+
+    .blog-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--color-ink);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .blog-card-excerpt {
+      font-size: 0.875rem;
+      color: var(--color-ink-subtle);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 18px;
+    }
+
+    .blog-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--color-gold);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: gap 0.2s ease;
+      margin-top: auto;
+    }
+
+    .blog-card-link:hover { gap: 10px; color: var(--color-gold-dark, #b8922a); }
+
+    /* =============================================
+       FILTER BAR
+       ============================================= */
+    .blog-filter-wrap {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 36px 0 44px;
+    }
+
+    .blog-filter-btn {
+      padding: 9px 20px;
+      border: 1.5px solid var(--color-border-light);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--color-ink-subtle);
+      font-family: var(--font-sans);
+      font-size: 0.83rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .blog-filter-btn:hover {
+      border-color: var(--color-gold);
+      color: var(--color-gold);
+    }
+
+    .blog-filter-btn.active {
+      background: var(--color-gold);
+      border-color: var(--color-gold);
+      color: #fff;
+    }
+
+    @media (max-width: 480px) {
+      .blog-filter-btn {
+        padding: 8px 14px;
+        font-size: 0.78rem;
+      }
+    }
+
+    /* =============================================
+       BLOG CTA STRIP
+       ============================================= */
+    .blog-cta-strip {
+      background: linear-gradient(135deg, var(--color-ink) 0%, #2c2820 100%);
+      border-radius: var(--radius-xl);
+      padding: clamp(32px, 5vw, 52px) clamp(24px, 4vw, 60px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+      border: 1px solid rgba(188,145,66,0.3);
+    }
+
+    .blog-cta-text h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .blog-cta-text p {
+      font-size: 0.95rem;
+      color: rgba(245,240,231,0.82);
+      line-height: 1.6;
+      max-width: 540px;
+    }
+
+    .blog-cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 640px) {
+      .blog-cta-strip {
+        flex-direction: column;
+        text-align: center;
+      }
+      .blog-cta-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+      .blog-cta-actions .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="header" id="main-header" role="banner">
+    <div class="header-container container">
+      <!-- Logo -->
+      <a href="index.html" class="logo-brand" aria-label="Epicurean Flow - Where Cooking Inspires">
+        <img src="images/logo.png" alt="Epicurean Flow - Where Cooking Inspires" class="header-logo-img">
+      </a>
+      <!-- Desktop Navigation (Refined Classic Luxury) -->
+      <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Books</a></li>
+          
+          <!-- Recipes Dropdown -->
+          <li class="nav-item has-dropdown">
+            <a href="recipes.html" class="nav-link dropdown-toggle active" aria-haspopup="true" aria-expanded="false">
+              <span>Recipes</span>
+              <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <a href="recipes.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">All Recipes</span>
+                <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
+              </a>
+              <a href="blog.html" class="dropdown-item active" role="menuitem">
+                <span class="dropdown-item-title">Chef's Blog</span>
+                <span class="dropdown-item-desc">Culinary stories, techniques &amp; food science</span>
+              </a>
+              <a href="diabetes.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Diabetes Living</span>
+                <span class="dropdown-item-desc">Flavor-first low-carb gastronomy</span>
+              </a>
+              <a href="nutrition.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Nutrition &amp; Science</span>
+                <span class="dropdown-item-desc">Macro balancing &amp; vital energy</span>
+              </a>
+              <a href="menu-planning.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Menu Planning</span>
+                <span class="dropdown-item-desc">Bespoke 1-on-1 chef consultations</span>
+              </a>
+              <a href="media.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Media &amp; Masterclass</span>
+                <span class="dropdown-item-desc">Culinary clips &amp; kitchen reels</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="food-tours.html" class="nav-link">Food Tours</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Member Log In / Profile Widget (Matching Image 2) -->
+          <div class="member-nav-widget" id="member-nav-widget">
+            <button type="button" class="btn-member-login" id="btn-header-login" onclick="window.openEpicureanAuth('signup')" aria-label="Member Log In">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Log In</span>
+            </button>
+            <div class="member-profile-btn" id="member-profile-btn" style="display: none;" onclick="window.toggleEpicureanMemberDropdown(event)" aria-label="Member Account Menu">
+              <div class="member-avatar" id="member-avatar-initials">M</div>
+              <span class="member-name" id="member-display-name">Member</span>
+              <svg class="member-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="member-dropdown-menu" id="member-dropdown-menu">
+              <div class="member-menu-header">
+                <div class="member-menu-avatar" id="member-menu-avatar">M</div>
+                <div class="member-menu-info">
+                  <div class="member-menu-name" id="member-menu-name">Member Name</div>
+                  <div class="member-menu-email" id="member-menu-email">member@email.com</div>
+                  <span class="member-badge-pill">Verified Member</span>
+                </div>
+              </div>
+              <div class="member-menu-divider"></div>
+              <button type="button" class="member-menu-item" id="menu-my-orders" onclick="window.openEpicureanPortal('orders'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Orders &amp; Purchase History</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-library" onclick="window.openEpicureanPortal('library'); window.closeEpicureanMemberDropdown();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>My Cookbooks &amp; Courses</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>My Account &amp; Profile</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-reviews" onclick="window.openEpicureanPortal('reviews'); window.closeEpicureanMemberDropdown();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span>My Verified Reviews</span>
+              </button>
+              <div class="member-menu-divider"></div>
+              <button type="button" class="member-menu-item member-logout-item" id="menu-logout-btn" onclick="window.logoutEpicureanMember(); window.closeEpicureanMemberDropdown();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                <span>Log Out</span>
+              </button>
+            </div>
+          </div>
+
+          <button class="cart-btn" id="open-cart-btn" aria-label="View Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </button>
+          <a href="cookbooks.html" class="btn-header-shop"><span>Shop</span></a>
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="hamburger mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <!-- Header with Dedicated Cancel / Close Button -->
+    <div class="mobile-drawer-header">
+      <span class="mobile-drawer-title">Navigation</span>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+        <span>Close</span>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-body">
+      <!-- Mobile Member Status Bar -->
+      <div class="mobile-member-widget" id="mobile-member-widget">
+        <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Member Log In / Sign Up</span>
+        </button>
+        <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
+          <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
+          <div class="mobile-member-meta">
+            <span class="mobile-member-name" id="mobile-member-name">Member</span>
+            <span class="mobile-member-status">Verified Community Member</span>
+          </div>
+          <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
+        </div>
+      </div>
+
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="courses.html" class="mobile-nav-link">Courses</a>
+        <a href="cookbooks.html" class="mobile-nav-link">Books</a>
+        
+        <!-- Accordion: Recipes & Blog (Collapsed by Default, Expands on Click) -->
+        <div class="mobile-nav-group">
+          <button type="button" class="mobile-nav-link mobile-accordion-trigger active" id="mobile-recipes-toggle" aria-expanded="false" aria-controls="mobile-recipes-submenu">
+            <span>Recipes &amp; Blog</span>
+            <svg class="mobile-accordion-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-submenu" id="mobile-recipes-submenu" style="display: none;">
+            <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
+            <a href="blog.html" class="mobile-nav-sublink active">Chef's Blog</a>
+            <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
+            <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
+            <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
+            <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclass</a>
+          </div>
+        </div>
+
+        <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
+        <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- Blog Hero -->
+    <section class="blog-hero" aria-label="Chef's Blog">
+      <div class="container">
+        <p class="blog-hero-tag">CHEF ELIANE'S ORIGINAL BLOG</p>
+        <h1 class="blog-hero-title">Stories, Recipes &amp;<br>Culinary Insights</h1>
+        <p class="blog-hero-subtitle">
+          Two years of original writing from Chef Eliane Muskus — Mediterranean recipes, diabetes-friendly cooking discoveries, technique guides, and personal stories from her culinary journey.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured Blog Post -->
+    <section class="section" id="featured-post">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 32px;">
+          <p class="section-tag">Editor's Pick</p>
+          <h2 class="section-title">Featured Article</h2>
+        </div>
+
+        <div class="blog-featured-card">
+          <div class="blog-featured-img-wrap">
+            <span class="blog-featured-badge">Personal Story</span>
+            <img
+              src="images/chef-eliane-paella-portrait.jpg"
+              alt="Chef Eliane Muskus - My Personal Journey with Type 2 Diabetes"
+              loading="eager"
+            >
+          </div>
+          <div class="blog-featured-body">
+            <div class="blog-featured-meta">
+              <span class="blog-meta-category">Diabetes Living</span>
+              <span class="blog-meta-dot">·</span>
+              <span class="blog-meta-date">August 2024</span>
+            </div>
+            <h2 class="blog-featured-title">My Personal Journey with Type 2 Diabetes</h2>
+            <p class="blog-featured-excerpt">
+              I remember the day I was diagnosed with Type 2 diabetes. I sat in the doctor's office feeling overwhelmed, confused, and — as a professional chef — deeply worried about what this meant for my cooking. Would I have to give up the flavors I loved? Could I still cook for my students the way I always had? This is my story of transformation, of rediscovering food without fear, and of how gourmet low-glycemic cooking gave me my vitality back.
+            </p>
+            <a href="diabetes.html" class="btn btn-primary" style="align-self: flex-start;">
+              Read Chef's Story &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Blog Posts Grid -->
+    <section class="section bg-light" id="all-posts">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-tag">The Full Archive</p>
+          <h2 class="section-title">All Blog Posts &amp; Articles</h2>
+          <p class="section-subtitle">Original articles, recipes, and culinary guides from Chef Eliane's two-year writing archive.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="blog-filter-wrap" role="group" aria-label="Filter blog posts by category">
+          <button class="blog-filter-btn active" data-filter="all">All Stories (274)</button>
+          <button class="blog-filter-btn" data-filter="diabetes">Diabetes-Friendly (65)</button>
+          <button class="blog-filter-btn" data-filter="recipes">Chef Recipes (61)</button>
+          <button class="blog-filter-btn" data-filter="baking">Pastry &amp; Baking (49)</button>
+          <button class="blog-filter-btn" data-filter="mediterranean">Mediterranean (34)</button>
+          <button class="blog-filter-btn" data-filter="technique">Technique &amp; Skills (24)</button>
+          <button class="blog-filter-btn" data-filter="festive">Entertaining &amp; Holiday (24)</button>
+          <button class="blog-filter-btn" data-filter="nutrition">Nutrition &amp; Wellness (16)</button>
+        </div>
+
+                <div class="blog-grid" id="blog-posts-grid">
+          <!-- Post: Manchurian Chicken Recipe -->
+          <article class="blog-post-card" data-slug="manchurian-chicken-recipe" onclick="window.location.href='post.html?slug=manchurian-chicken-recipe'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_427d6f6d4dc142de9892ef6d03d0b4c6~mv2.jpg/v1/fill/w_665,h_1000,al_c,q_85,usm_0.66_1.00_0.01/30dece_427d6f6d4dc142de9892ef6d03d0b4c6~mv2.jpg" alt="Manchurian Chicken Recipe" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Chef Recipes</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>January 21, 2026</span>
+                <span>&bull;</span>
+                <span>2 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=manchurian-chicken-recipe" style="color: inherit; text-decoration: none;">Manchurian Chicken Recipe</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">A balanced Manchurian chicken recipe with crisp fried chicken and a bold Indo-Chinese sauce, made with control and clarity of flavour. Crisp chicken, controlled heat, and a glossy sauce that coats without excess — Manchu...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=manchurian-chicken-recipe" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Braised Cabbage Rolls -->
+          <article class="blog-post-card" data-slug="braised-cabbage-rolls" onclick="window.location.href='post.html?slug=braised-cabbage-rolls'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_b7a5dffdfda04db8a28660301d5970a4~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_85,usm_0.66_1.00_0.01/30dece_b7a5dffdfda04db8a28660301d5970a4~mv2.jpg" alt="Braised Cabbage Rolls" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Technique & Skills</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>January 17, 2026</span>
+                <span>&bull;</span>
+                <span>2 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=braised-cabbage-rolls" style="color: inherit; text-decoration: none;">Braised Cabbage Rolls</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Classic braised cabbage rolls filled with minced meat and finished with crème fraîche for a comforting, traditional main dish. Slow-braised cabbage rolls are pure winter comfort. Tender cabbage leaves wrapped around a sa...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=braised-cabbage-rolls" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Chicken With Mushroom Sherry Sauce -->
+          <article class="blog-post-card" data-slug="chicken-with-mushroom-sherry-sauce" onclick="window.location.href='post.html?slug=chicken-with-mushroom-sherry-sauce'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_11f35a04735146f0b8cfd84438731c39~mv2.jpg/v1/fill/w_1000,h_560,al_c,q_85,usm_0.66_1.00_0.01/30dece_11f35a04735146f0b8cfd84438731c39~mv2.jpg" alt="Chicken With Mushroom Sherry Sauce" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Chef Recipes</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>January 16, 2026</span>
+                <span>&bull;</span>
+                <span>2 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=chicken-with-mushroom-sherry-sauce" style="color: inherit; text-decoration: none;">Chicken With Mushroom Sherry Sauce</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Juicy chicken breasts served with a mushroom and sherry sauce, finished with parsley for a balanced and comforting meal. Perfectly cooked chicken breasts paired with a savoury mushroom and sherry sauce make a dish that f...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=chicken-with-mushroom-sherry-sauce" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Meatballs With Silky Gravy -->
+          <article class="blog-post-card" data-slug="meatballs-with-silky-gravy" onclick="window.location.href='post.html?slug=meatballs-with-silky-gravy'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_e0a30dc26c0d412cb1e61461ed7bb838~mv2.jpg/v1/fill/w_1000,h_563,al_c,q_85,usm_0.66_1.00_0.01/30dece_e0a30dc26c0d412cb1e61461ed7bb838~mv2.jpg" alt="Meatballs With Silky Gravy" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Technique & Skills</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>January 15, 2026</span>
+                <span>&bull;</span>
+                <span>2 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=meatballs-with-silky-gravy" style="color: inherit; text-decoration: none;">Meatballs With Silky Gravy</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Juicy homemade meatballs served in a rich, silky gravy, prepared from scratch with classic technique for a comforting main dish. . Soft, juicy meatballs coated in a glossy, deeply savoury gravy — this is comfort food don...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=meatballs-with-silky-gravy" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Indulgent Elegance Homemade Chicken Liver Pâté -->
+          <article class="blog-post-card" data-slug="indulgent-elegance-homemade-chicken-liver-pâté" onclick="window.location.href='post.html?slug=indulgent-elegance-homemade-chicken-liver-pâté'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_db05d9da34fa4c9eaa35100e4fb54dd3~mv2.jpg/v1/fill/w_1000,h_750,al_c,q_85,usm_0.66_1.00_0.01/30dece_db05d9da34fa4c9eaa35100e4fb54dd3~mv2.jpg" alt="Indulgent Elegance Homemade Chicken Liver Pâté" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Entertaining & Holiday</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>January 13, 2026</span>
+                <span>&bull;</span>
+                <span>2 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=indulgent-elegance-homemade-chicken-liver-pâté" style="color: inherit; text-decoration: none;">Indulgent Elegance Homemade Chicken Liver Pâté</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">HolidayAppetizers ElegantEntertaining EasyRecipes</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=indulgent-elegance-homemade-chicken-liver-pâté" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Sarde In Saor Authentic Venetian Sardine Appetizer Recipe With Tangy Sweet Sour Flavors -->
+          <article class="blog-post-card" data-slug="sarde-in-saor-authentic-venetian-sardine-appetizer-recipe-with-tangy-sweet-sour-flavors" onclick="window.location.href='post.html?slug=sarde-in-saor-authentic-venetian-sardine-appetizer-recipe-with-tangy-sweet-sour-flavors'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_efad27058b064ae9b2177f3eec78b352~mv2.jpg/v1/fill/w_1000,h_560,al_c,q_85,usm_0.66_1.00_0.01/30dece_efad27058b064ae9b2177f3eec78b352~mv2.jpg" alt="Sarde In Saor Authentic Venetian Sardine Appetizer Recipe With Tangy Sweet Sour Flavors" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Pastry & Baking</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>December 02, 2025</span>
+                <span>&bull;</span>
+                <span>4 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=sarde-in-saor-authentic-venetian-sardine-appetizer-recipe-with-tangy-sweet-sour-flavors" style="color: inherit; text-decoration: none;">Sarde In Saor Authentic Venetian Sardine Appetizer Recipe With Tangy Sweet Sour Flavors</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Discover Venice’s Iconic Sarde in Saor—A Timeless Italian Seafood Starter Bursting with Tradition Craving a taste of Venice that lingers on your palate and in your memory? This centuries-old Venetian sardine appetizer, S...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=sarde-in-saor-authentic-venetian-sardine-appetizer-recipe-with-tangy-sweet-sour-flavors" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Event Menu Planning Tips For Success -->
+          <article class="blog-post-card" data-slug="event-menu-planning-tips-for-success" onclick="window.location.href='post.html?slug=event-menu-planning-tips-for-success'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_f0648762bb9946d4a667982b1a4d5d6f~mv2.png/v1/fill/w_1000,h_571,al_c,q_90,usm_0.66_1.00_0.01/30dece_f0648762bb9946d4a667982b1a4d5d6f~mv2.png" alt="Event Menu Planning Tips For Success" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Entertaining & Holiday</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>November 15, 2025</span>
+                <span>&bull;</span>
+                <span>5 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=event-menu-planning-tips-for-success" style="color: inherit; text-decoration: none;">Event Menu Planning Tips For Success</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Planning the perfect event involves many moving parts, but one of the most crucial elements is the menu. A well-thought-out menu can elevate the entire experience, delight guests, and make your event memorable. Whether y...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=event-menu-planning-tips-for-success" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: The No Fail Sous Vide Turkey Breast My Restaurant Secret For A Perfect Thanksgiving -->
+          <article class="blog-post-card" data-slug="the-no-fail-sous-vide-turkey-breast-my-restaurant-secret-for-a-perfect-thanksgiving" onclick="window.location.href='post.html?slug=the-no-fail-sous-vide-turkey-breast-my-restaurant-secret-for-a-perfect-thanksgiving'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_4c86450132f94e67909b2f3485ae82c2~mv2.jpg/v1/fill/w_1000,h_560,al_c,q_85,usm_0.66_1.00_0.01/30dece_4c86450132f94e67909b2f3485ae82c2~mv2.jpg" alt="The No Fail Sous Vide Turkey Breast My Restaurant Secret For A Perfect Thanksgiving" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Technique & Skills</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>November 11, 2025</span>
+                <span>&bull;</span>
+                <span>7 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=the-no-fail-sous-vide-turkey-breast-my-restaurant-secret-for-a-perfect-thanksgiving" style="color: inherit; text-decoration: none;">The No Fail Sous Vide Turkey Breast My Restaurant Secret For A Perfect Thanksgiving</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Unlock the &quot;impossible-to-overcook&quot; method that guarantees the juiciest, most tender turkey of your life. A close-up of a juicy sous vide turkey roulade, sliced to show the tender white meat and moist texture. There’s a ...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=the-no-fail-sous-vide-turkey-breast-my-restaurant-secret-for-a-perfect-thanksgiving" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Recipes Authentic Peruvian Ceviche Recipe Fresh Lime Cured Fish Leche De Tigre -->
+          <article class="blog-post-card" data-slug="recipes-authentic-peruvian-ceviche-recipe-fresh-lime-cured-fish-leche-de-tigre" onclick="window.location.href='post.html?slug=recipes-authentic-peruvian-ceviche-recipe-fresh-lime-cured-fish-leche-de-tigre'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_f4259ad46edd47d3bb50a83ec5d2aa5d~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_85,usm_0.66_1.00_0.01/30dece_f4259ad46edd47d3bb50a83ec5d2aa5d~mv2.jpg" alt="Recipes Authentic Peruvian Ceviche Recipe Fresh Lime Cured Fish Leche De Tigre" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Pastry & Baking</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>November 06, 2025</span>
+                <span>&bull;</span>
+                <span>4 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=recipes-authentic-peruvian-ceviche-recipe-fresh-lime-cured-fish-leche-de-tigre" style="color: inherit; text-decoration: none;">Recipes Authentic Peruvian Ceviche Recipe Fresh Lime Cured Fish Leche De Tigre</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">A timeless Peruvian classic — bright citrus, ice-cold precision. Learn the true ceviche technique, elegant plating in verrines, and the perfect wine pairing. Some dishes don’t just nourish — they awaken. One bite and eve...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=recipes-authentic-peruvian-ceviche-recipe-fresh-lime-cured-fish-leche-de-tigre" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Creating A Personalized Menu For Your Needs -->
+          <article class="blog-post-card" data-slug="creating-a-personalized-menu-for-your-needs" onclick="window.location.href='post.html?slug=creating-a-personalized-menu-for-your-needs'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_c31fd3fcab9f42be9c1d909c363a3e76~mv2.png/v1/fill/w_1000,h_571,al_c,q_90,usm_0.66_1.00_0.01/30dece_c31fd3fcab9f42be9c1d909c363a3e76~mv2.png" alt="Creating A Personalized Menu For Your Needs" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Technique & Skills</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>November 04, 2025</span>
+                <span>&bull;</span>
+                <span>3 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=creating-a-personalized-menu-for-your-needs" style="color: inherit; text-decoration: none;">Creating A Personalized Menu For Your Needs</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Creating a menu that fits your lifestyle, preferences, and nutritional needs can transform your eating habits. Whether you want to eat healthier, save time, or simply enjoy your meals more, a well-crafted menu is key. Th...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=creating-a-personalized-menu-for-your-needs" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Stress Free Holiday Entertaining Guide -->
+          <article class="blog-post-card" data-slug="stress-free-holiday-entertaining-guide" onclick="window.location.href='post.html?slug=stress-free-holiday-entertaining-guide'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_12ddc751ac1c4d6cba01482fd12beef3~mv2.jpg/v1/fill/w_1000,h_1000,al_c,q_85,usm_0.66_1.00_0.01/30dece_12ddc751ac1c4d6cba01482fd12beef3~mv2.jpg" alt="Stress Free Holiday Entertaining Guide" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Entertaining & Holiday</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>November 04, 2025</span>
+                <span>&bull;</span>
+                <span>6 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=stress-free-holiday-entertaining-guide" style="color: inherit; text-decoration: none;">Stress Free Holiday Entertaining Guide</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Host an Unforgettable and Stress-Free Holiday Gathering Host an unforgettable and stress-free holiday gathering! Discover elegant tablescape ideas, easy appetizer recipes, simple planning tips, and create a joyful Christ...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=stress-free-holiday-entertaining-guide" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Peppermint Swirl Fudge Holiday Recipe -->
+          <article class="blog-post-card" data-slug="peppermint-swirl-fudge-holiday-recipe" onclick="window.location.href='post.html?slug=peppermint-swirl-fudge-holiday-recipe'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_53d651a04d05449f85d2e1cb3a639dba~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_85,usm_0.66_1.00_0.01/30dece_53d651a04d05449f85d2e1cb3a639dba~mv2.jpg" alt="Peppermint Swirl Fudge Holiday Recipe" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Pastry & Baking</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>November 03, 2025</span>
+                <span>&bull;</span>
+                <span>4 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=peppermint-swirl-fudge-holiday-recipe" style="color: inherit; text-decoration: none;">Peppermint Swirl Fudge Holiday Recipe</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Velvety White Chocolate Meets a Kiss of Peppermint Magic – The Perfect Homemade Gift of the Season When the air turns crisp and laughter fills the kitchen, melting chocolate and the scent of peppermint create a sacred at...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=peppermint-swirl-fudge-holiday-recipe" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Holiday Chocolate Fondue Recipe -->
+          <article class="blog-post-card" data-slug="holiday-chocolate-fondue-recipe" onclick="window.location.href='post.html?slug=holiday-chocolate-fondue-recipe'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_fd0c4b04a74546a0be5457a60bbb7458~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_85,usm_0.66_1.00_0.01/30dece_fd0c4b04a74546a0be5457a60bbb7458~mv2.jpg" alt="Holiday Chocolate Fondue Recipe" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Pastry & Baking</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>October 30, 2025</span>
+                <span>&bull;</span>
+                <span>3 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=holiday-chocolate-fondue-recipe" style="color: inherit; text-decoration: none;">Holiday Chocolate Fondue Recipe</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">How to Create a Decadent Chocolate Fondue Night—Pairings, Wine, and Holiday Magic. As the winter chill wraps Amsterdam in its silvery embrace, kitchens glow with the promise of warmth and togetherness. The holidays are a...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=holiday-chocolate-fondue-recipe" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Healthy Diabetic Banana Bread Low Sugar Guilt Free Recipe -->
+          <article class="blog-post-card" data-slug="healthy-diabetic-banana-bread-low-sugar-guilt-free-recipe" onclick="window.location.href='post.html?slug=healthy-diabetic-banana-bread-low-sugar-guilt-free-recipe'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_8fec68335c1642cc91c030d83d0087e4~mv2.png/v1/fill/w_1000,h_571,al_c,q_90,usm_0.66_1.00_0.01/30dece_8fec68335c1642cc91c030d83d0087e4~mv2.png" alt="Healthy Diabetic Banana Bread Low Sugar Guilt Free Recipe" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Diabetes-Friendly</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>October 27, 2025</span>
+                <span>&bull;</span>
+                <span>4 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=healthy-diabetic-banana-bread-low-sugar-guilt-free-recipe" style="color: inherit; text-decoration: none;">Healthy Diabetic Banana Bread Low Sugar Guilt Free Recipe</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Banana cake is a beloved treat for many, but for those managing blood sugar levels, traditional recipes can be a challenge. This post explores a healthier take on banana cake that suits diabetic dietary needs without sac...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=healthy-diabetic-banana-bread-low-sugar-guilt-free-recipe" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: The Link Between Nutrition And Energy Levels -->
+          <article class="blog-post-card" data-slug="the-link-between-nutrition-and-energy-levels" onclick="window.location.href='post.html?slug=the-link-between-nutrition-and-energy-levels'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_e1a76a38a5064203bc1c1733beb32957~mv2.png/v1/fill/w_1000,h_571,al_c,q_90,usm_0.66_1.00_0.01/30dece_e1a76a38a5064203bc1c1733beb32957~mv2.png" alt="The Link Between Nutrition And Energy Levels" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Nutrition & Wellness</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>October 22, 2025</span>
+                <span>&bull;</span>
+                <span>5 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=the-link-between-nutrition-and-energy-levels" style="color: inherit; text-decoration: none;">The Link Between Nutrition And Energy Levels</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Feeling energetic throughout the day is something many strive for, yet it often feels elusive. One of the most significant factors influencing our vitality is what we eat. The connection between food and how we feel is p...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=the-link-between-nutrition-and-energy-levels" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Mastering Puff Pastry Techniques For Perfect Bakes -->
+          <article class="blog-post-card" data-slug="mastering-puff-pastry-techniques-for-perfect-bakes" onclick="window.location.href='post.html?slug=mastering-puff-pastry-techniques-for-perfect-bakes'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_98ca3fefe1824ff3ad5e3295afc49149~mv2.png/v1/fill/w_1000,h_571,al_c,q_90,usm_0.66_1.00_0.01/30dece_98ca3fefe1824ff3ad5e3295afc49149~mv2.png" alt="Mastering Puff Pastry Techniques For Perfect Bakes" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Pastry & Baking</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>October 21, 2025</span>
+                <span>&bull;</span>
+                <span>5 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=mastering-puff-pastry-techniques-for-perfect-bakes" style="color: inherit; text-decoration: none;">Mastering Puff Pastry Techniques For Perfect Bakes</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Puff pastry is a classic baking staple known for its flaky, buttery layers that melt in your mouth. Whether you are making sweet treats like fruit tarts or savoury delights such as sausage rolls, mastering puff pastry ca...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=mastering-puff-pastry-techniques-for-perfect-bakes" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Holiday Pear Salad Recipe -->
+          <article class="blog-post-card" data-slug="holiday-pear-salad-recipe" onclick="window.location.href='post.html?slug=holiday-pear-salad-recipe'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_0f9ea99b3c5d4873b005481df23dcecd~mv2.jpg/v1/fill/w_560,h_1000,al_c,q_85,usm_0.66_1.00_0.01/30dece_0f9ea99b3c5d4873b005481df23dcecd~mv2.jpg" alt="Holiday Pear Salad Recipe" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Pastry & Baking</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>October 15, 2025</span>
+                <span>&bull;</span>
+                <span>4 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=holiday-pear-salad-recipe" style="color: inherit; text-decoration: none;">Holiday Pear Salad Recipe</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Discover the simple secret to a show-stopping appetizer with our recipes for tender poached or warm baked pears. The holidays are synonymous with gathering, celebration, and finding those special dishes that feel both co...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=holiday-pear-salad-recipe" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+          <!-- Post: Epicureanflow Com Culinary Travel Experiences -->
+          <article class="blog-post-card" data-slug="epicureanflow-com-culinary-travel-experiences" onclick="window.location.href='post.html?slug=epicureanflow-com-culinary-travel-experiences'" style="cursor: pointer; display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.06);">
+            <div class="blog-card-img-wrap" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="https://static.wixstatic.com/media/30dece_3f991ee22f854d119570593a5faf44bc~mv2.jpg/v1/fill/w_667,h_1000,al_c,q_85,usm_0.66_1.00_0.01/30dece_3f991ee22f854d119570593a5faf44bc~mv2.jpg" alt="Epicureanflow Com Culinary Travel Experiences" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+              <span style="position: absolute; top: 12px; left: 12px; background: rgba(18,18,18,0.85); color: #d4a359; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; backdrop-filter: blur(4px);">Wine & Pairing</span>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+              <div style="display: flex; gap: 12px; font-size: 0.8rem; color: #888; margin-bottom: 12px;">
+                <span>October 13, 2025</span>
+                <span>&bull;</span>
+                <span>5 min read</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.35; margin-bottom: 12px; color: #1a1a1a;"><a href="post.html?slug=epicureanflow-com-culinary-travel-experiences" style="color: inherit; text-decoration: none;">Epicureanflow Com Culinary Travel Experiences</a></h3>
+              <p style="color: #666; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Embarking on a culinary journey is one of the most enriching ways to experience a new culture. Food and wine offer a unique window into the traditions, history, and lifestyle of a region. Whether you are wandering throug...</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 16px; margin-top: auto;">
+                <a href="post.html?slug=epicureanflow-com-culinary-travel-experiences" style="font-weight: 600; font-size: 0.85rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">Read Article &rarr;</a>
+                <span style="font-size: 0.78rem; color: #999;">Chef Eliane</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="blog-cta-strip">
+          <div class="blog-cta-text">
+            <h3>Want to Cook Along with Chef Eliane?</h3>
+            <p>Explore her self-paced culinary courses with structured workbooks, technique modules, and completion certificates — or browse her cookbook collection for instant inspiration.</p>
+          </div>
+          <div class="blog-cta-actions">
+            <a href="courses.html" class="btn btn-gold">
+              <span>Explore Courses &rarr;</span>
+            </a>
+            <a href="cookbooks.html" class="btn btn-outline" style="border-color: rgba(245,240,231,0.4); color: #fff;">
+              <span>Browse Cookbooks</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="logo-brand" style="margin-bottom: 16px; display: inline-block;">
+            <img src="images/logo.png" alt="Epicurean Flow" class="header-logo-img" style="filter: brightness(0) invert(1);">
+          </a>
+          <p class="footer-tagline">Where cooking inspires. Masterclasses, curated digital cookbooks, and gourmet cuisine by Award-Winning Chef Eliane Muskus.</p>
+          <div class="footer-contact-info" style="font-size: 0.875rem; color: rgba(245, 240, 231, 0.78); margin-top: 14px;">
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px; font-weight: 600;">Epicurean Flow</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Registered in Amsterdam, Netherlands</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+ 31618571677</a></p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Telephone Spain: <a href="tel:+34626617282" style="color: var(--color-gold);">+34626617282</a></p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 0;">Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
+          </div>
+          <div class="footer-social-wrap">
+            <span class="footer-social-label">Follow Chef Eliane</span>
+            <div class="footer-social-links" role="list" aria-label="Social media channels">
+              <a href="https://www.facebook.com/profile.php?id=61558943582868" target="_blank" rel="noopener noreferrer" class="social-btn social-facebook" aria-label="Chef Eliane Muskus on Facebook" title="Facebook">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/epicureanflow/" target="_blank" rel="noopener noreferrer" class="social-btn social-instagram" aria-label="Chef Eliane Muskus on Instagram" title="Instagram">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/epicureanadventureamsterdam/" target="_blank" rel="noopener noreferrer" class="social-btn social-linkedin" aria-label="Chef Eliane Muskus on LinkedIn" title="LinkedIn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@elianemuskus8" target="_blank" rel="noopener noreferrer" class="social-btn social-tiktok" aria-label="Chef Eliane Muskus on TikTok" title="TikTok">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.47 6.28 6.28 0 0 0 1.95-4.57V8.53a8.28 8.28 0 0 0 4.82 1.54V6.69z"/></svg>
+              </a>
+              <a href="https://uk.pinterest.com/elianem0879/" target="_blank" rel="noopener noreferrer" class="social-btn social-pinterest" aria-label="Chef Eliane Muskus on Pinterest" title="Pinterest">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="courses.html">All Courses</a></li>
+            <li><a href="cookbooks.html">Digital Books &amp; Guides</a></li>
+            <li><a href="menu-planning.html">Menu Planning Service</a></li>
+            <li><a href="diabetes.html">Diabetes Living</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Energy</a></li>
+            <li><a href="recipes.html">Recipe Journal</a></li>
+            <li><a href="blog.html">Chef's Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">About &amp; Trust</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Chef Eliane's Story</a></li>
+            <li><a href="about.html#milestones">Michelin Accreditation</a></li>
+            <li><a href="contact.html">Contact Headquarters</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Stay Inspired</h4>
+          <p style="font-size: 0.9rem; color: rgba(245, 240, 231, 0.78); margin-bottom: 16px;">Receive seasonal recipes, private consultation invitations, and chef tips directly in your inbox.</p>
+          <form class="newsletter-form footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Epicurean Flow!');">
+            <input type="email" placeholder="Your email address" class="newsletter-input" required>
+            <button type="submit" class="btn btn-primary">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p class="copyright">&copy; 2026 Epicurean Flow | All Rights Reserved</p>
+      <p style="font-size: 0.8rem; color: rgba(245, 240, 231, 0.6);">Business Registration: 94886792 &bull; Amsterdam, Netherlands</p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="footer-developer-bar" style="border-top: 1px solid rgba(245, 240, 231, 0.1); padding: 18px 0; text-align: center;">
+        <span style="font-size: 0.8125rem; color: rgba(245, 240, 231, 0.65);">Website designed by <a href="https://ibtex.ibe88agwu.workers.dev/" target="_blank" rel="noopener" style="color: var(--color-gold, #c5a059); text-decoration: none;">IBTEX</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span>Your Culinary Selection</span>
+      </h3>
+      <button class="cart-drawer-close" id="close-cart-btn" aria-label="Close Cart">✕</button>
+    </div>
+    <div class="cart-drawer-body" id="cart-items-list">
+      <div class="cart-empty-message">
+        <div class="cart-empty-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <p class="cart-empty-title">Your shopping bag is empty</p>
+        <p class="cart-empty-desc">Explore our cookbooks, chef guides, and culinary masterclasses.</p>
+        <a href="cookbooks.html" class="btn btn-outline btn-sm">Browse Books &amp; Courses</a>
+      </div>
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal-val">€0.00</span>
+      </div>
+      <a href="javascript:void(0)" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
+        <span>Proceed to Secure Checkout</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- JavaScript -->
+  <script src="js/navigation.js"></script>
+  <script src="js/wix-sdk-client.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/members.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/posts-data.js"></script>
+  <script src="js/blog-renderer.js"></script>
+</body>
+</html>

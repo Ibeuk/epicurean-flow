@@ -1,0 +1,52 @@
+[
+  {
+    "key": "diabetes_course",
+    "productName": "Diabetes Cooking Course",
+    "productId": "160f5527-13c1-9ef9-3e2e-1b0f07a94abb",
+    "price": 49.0,
+    "fileName": "Diabetes_Cooking_Course_Regular_Version_Corrected.pdf",
+    "filePath": "scratch/adobe_downloads/Diabetes_Cooking_Course_Regular_Version_Corrected.pdf",
+    "wixFileId": "30dece_e7718244557d4f0685d2792592151716.pdf",
+    "wixMediaUrl": "https://c4f86012-7e7b-4eda-8838-2ec67d3dbeb7.usrfiles.com/ugd/30dece_e7718244557d4f0685d2792592151716.pdf"
+  },
+  {
+    "key": "symphony_flavors",
+    "productName": "A Symphony of Flavors: Mediterranean & Middle Eastern Spice Essentials",
+    "productId": "58c9b3a6-c50b-52d8-67f7-e2b1adf793de",
+    "price": 16.95,
+    "fileName": "A_Symphony_of_Flavors_Final.pdf",
+    "filePath": "scratch/adobe_downloads/A_Symphony_of_Flavors_Final.pdf",
+    "wixFileId": "30dece_949f1b0205954cc8a2b71c38b4f5b838.pdf",
+    "wixMediaUrl": "https://c4f86012-7e7b-4eda-8838-2ec67d3dbeb7.usrfiles.com/ugd/30dece_949f1b0205954cc8a2b71c38b4f5b838.pdf"
+  },
+  {
+    "key": "thanksgiving_guide",
+    "productName": "Stress-Free Thanksgiving: A Complete Cooking Guide",
+    "productId": null,
+    "price": 14.95,
+    "fileName": "Stress_Free_Thanksgiving_Premium_Guide_Final_Contrast_Corrected_Interactive.pdf",
+    "filePath": "scratch/adobe_downloads/Stress_Free_Thanksgiving_Premium_Guide_Final_Contrast_Corrected_Interactive.pdf",
+    "wixFileId": "30dece_6fc76574148642e7a08a5b07527bbe71.pdf",
+    "wixMediaUrl": "https://c4f86012-7e7b-4eda-8838-2ec67d3dbeb7.usrfiles.com/ugd/30dece_6fc76574148642e7a08a5b07527bbe71.pdf"
+  },
+  {
+    "key": "baking_beginners",
+    "productName": "Epicurean Flow: Baking for Beginners",
+    "productId": null,
+    "price": 39.0,
+    "fileName": "Epicurean_Flow_Baking_for_Beginners_Publication_Ready-1-1.pdf",
+    "filePath": "scratch/adobe_downloads/Epicurean_Flow_Baking_for_Beginners_Publication_Ready-1-1.pdf",
+    "wixFileId": "30dece_cab7733e9f91470db1342ca67c87c5fb.pdf",
+    "wixMediaUrl": "https://c4f86012-7e7b-4eda-8838-2ec67d3dbeb7.usrfiles.com/ugd/30dece_cab7733e9f91470db1342ca67c87c5fb.pdf"
+  },
+  {
+    "key": "diabetes_masterclass",
+    "productName": "Diabetes Cooking Course Masterclass",
+    "productId": "b0ad737f-d24e-afa3-9390-bd9691cd5e67",
+    "price": 89.0,
+    "fileName": "Diabetes_Cooking_Masterclass_Course_Revised.pdf",
+    "filePath": "scratch/adobe_downloads/Diabetes_Cooking_Masterclass_Course_Revised.pdf",
+    "wixFileId": "30dece_c95d4094718146b3b95249d89edacf33.pdf",
+    "wixMediaUrl": "https://c4f86012-7e7b-4eda-8838-2ec67d3dbeb7.usrfiles.com/ugd/30dece_c95d4094718146b3b95249d89edacf33.pdf"
+  }
+]

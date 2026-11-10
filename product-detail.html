@@ -56,8 +56,8 @@
       <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
           <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Books</a></li>
           
           <!-- Recipes Dropdown -->
           <li class="nav-item has-dropdown">
@@ -72,6 +72,10 @@
                 <span class="dropdown-item-title">All Recipes</span>
                 <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
               </a>
+              <a href="blog.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Chef's Blog</span>
+                <span class="dropdown-item-desc">Culinary stories, techniques &amp; food science</span>
+              </a>
               <a href="diabetes.html" class="dropdown-item" role="menuitem">
                 <span class="dropdown-item-title">Diabetes Living</span>
                 <span class="dropdown-item-desc">Flavor-first low-carb gastronomy</span>
@@ -85,8 +89,8 @@
                 <span class="dropdown-item-desc">Bespoke 1-on-1 chef consultations</span>
               </a>
               <a href="media.html" class="dropdown-item" role="menuitem">
-                <span class="dropdown-item-title">Media &amp; Cinema</span>
-                <span class="dropdown-item-desc">Masterclass video streams &amp; previews</span>
+                <span class="dropdown-item-title">Media &amp; Masterclass</span>
+                <span class="dropdown-item-desc">Culinary clips &amp; kitchen reels</span>
               </a>
             </div>
           </li>
@@ -123,13 +127,17 @@
                 </div>
               </div>
               <div class="member-menu-divider"></div>
-              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                <span>My Account &amp; Profile</span>
+              <button type="button" class="member-menu-item" id="menu-my-orders" onclick="window.openEpicureanPortal('orders'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Orders &amp; Purchase History</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-library" onclick="window.openEpicureanPortal('library'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                 <span>My Cookbooks &amp; Courses</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>My Account &amp; Profile</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-reviews" onclick="window.openEpicureanPortal('reviews'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -165,44 +173,65 @@
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
-    <!-- Mobile Member Status Bar -->
-    <div class="mobile-member-widget" id="mobile-member-widget">
-      <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
+    <!-- Header with Dedicated Cancel / Close Button -->
+    <div class="mobile-drawer-header">
+      <span class="mobile-drawer-title">Navigation</span>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
-        <span>Member Log In / Sign Up</span>
+        <span>Close</span>
       </button>
-      <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
-        <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
-        <div class="mobile-member-meta">
-          <span class="mobile-member-name" id="mobile-member-name">Member</span>
-          <span class="mobile-member-status">Verified Community Member</span>
-        </div>
-        <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
-      </div>
     </div>
 
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
-      <a href="courses.html" class="mobile-nav-link">Courses</a>
-      
-      <div class="mobile-nav-group">
-        <a href="recipes.html" class="mobile-nav-link">Recipes / Blog</a>
-        <div class="mobile-nav-submenu">
-          <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
-          <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
-          <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
-          <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
-          <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclasses</a>
+    <div class="mobile-drawer-body">
+      <!-- Mobile Member Status Bar -->
+      <div class="mobile-member-widget" id="mobile-member-widget">
+        <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Member Log In / Sign Up</span>
+        </button>
+        <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
+          <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
+          <div class="mobile-member-meta">
+            <span class="mobile-member-name" id="mobile-member-name">Member</span>
+            <span class="mobile-member-status">Verified Community Member</span>
+          </div>
+          <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
         </div>
       </div>
 
-      <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
-      <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="courses.html" class="mobile-nav-link">Courses</a>
+        <a href="cookbooks.html" class="mobile-nav-link">Books</a>
+        
+        <!-- Accordion: Recipes & Blog (Collapsed by Default, Expands on Click) -->
+        <div class="mobile-nav-group">
+          <button type="button" class="mobile-nav-link mobile-accordion-trigger" id="mobile-recipes-toggle" aria-expanded="false" aria-controls="mobile-recipes-submenu">
+            <span>Recipes &amp; Blog</span>
+            <svg class="mobile-accordion-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-submenu" id="mobile-recipes-submenu" style="display: none;">
+            <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
+            <a href="blog.html" class="mobile-nav-sublink">Chef's Blog</a>
+            <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
+            <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
+            <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
+            <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclass</a>
+          </div>
+        </div>
+
+        <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
+        <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
     </div>
   </div>
 
@@ -233,22 +262,22 @@
               </div>
             </div>
 
-            <!-- Trust Badges Strip -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; text-align: center;">
+            <!-- Trust Badges Strip (Dynamically Updated) -->
+            <div id="product-trust-strip" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; text-align: center;">
               <div style="background: var(--color-warm-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-sm); padding: 14px 8px;">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" style="margin: 0 auto 6px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <div style="font-size: 0.75rem; font-weight: 600; color: var(--color-ink);">Verified Certificate</div>
-                <div style="font-size: 0.6875rem; color: var(--color-ink-muted);">Upon completion</div>
+                <div style="font-size: 0.75rem; font-weight: 600; color: var(--color-ink);" id="badge-feat-1-title">Verified Certificate</div>
+                <div style="font-size: 0.6875rem; color: var(--color-ink-muted);" id="badge-feat-1-sub">Upon completion</div>
               </div>
               <div style="background: var(--color-warm-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-sm); padding: 14px 8px;">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" style="margin: 0 auto 6px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <div style="font-size: 0.75rem; font-weight: 600; color: var(--color-ink);">Lifetime Access</div>
-                <div style="font-size: 0.6875rem; color: var(--color-ink-muted);">Learn at your pace</div>
+                <div style="font-size: 0.75rem; font-weight: 600; color: var(--color-ink);" id="badge-feat-2-title">Lifetime Access</div>
+                <div style="font-size: 0.6875rem; color: var(--color-ink-muted);" id="badge-feat-2-sub">Learn at your pace</div>
               </div>
               <div style="background: var(--color-warm-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-sm); padding: 14px 8px;">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2" style="margin: 0 auto 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                <div style="font-size: 0.75rem; font-weight: 600; color: var(--color-ink);">Instant Delivery</div>
-                <div style="font-size: 0.6875rem; color: var(--color-ink-muted);">HD streams &amp; PDF</div>
+                <div style="font-size: 0.75rem; font-weight: 600; color: var(--color-ink);" id="badge-feat-3-title">Instant Delivery</div>
+                <div style="font-size: 0.6875rem; color: var(--color-ink-muted);" id="badge-feat-3-sub">PDF Download</div>
               </div>
             </div>
           </div>
@@ -273,7 +302,7 @@
               <div class="product-detail-price" id="product-detail-price">€39.00</div>
               <div class="product-detail-guarantee">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <span>30-Day Satisfaction Guarantee &bull; Safe 256-bit Stripe Checkout</span>
+                <span id="product-guarantee-text">Official Epicurean Flow Publication &bull; Safe 256-bit Stripe Checkout</span>
               </div>
             </div>
 
@@ -293,11 +322,15 @@
               <ul class="product-includes-list">
                 <li class="product-includes-item">
                   <span class="product-includes-check">&check;</span>
-                  <span><strong>12 High-Definition Video Masterclasses</strong> covering classic reduction, pan-searing, emulsions &amp; pastry</span>
+                  <span><strong>Comprehensive Digital Companion Workbook (PDF)</strong> with precise kitchen ratios &amp; temperature charts</span>
                 </li>
                 <li class="product-includes-item">
                   <span class="product-includes-check">&check;</span>
-                  <span><strong>Comprehensive 85-Page Digital Companion Workbook (PDF)</strong> with precise kitchen ratios &amp; temperatures</span>
+                  <span><strong>Structured Culinary Modules</strong> covering technique, flavor building, and heat control</span>
+                </li>
+                <li class="product-includes-item">
+                  <span class="product-includes-check">&check;</span>
+                  <span><strong>Interactive Knowledge Checks &amp; Progress Tracking</strong></span>
                 </li>
                 <li class="product-includes-item">
                   <span class="product-includes-check">&check;</span>
@@ -305,11 +338,7 @@
                 </li>
                 <li class="product-includes-item">
                   <span class="product-includes-check">&check;</span>
-                  <span><strong>Lifetime On-Demand Access</strong> across mobile, tablet, and desktop</span>
-                </li>
-                <li class="product-includes-item">
-                  <span class="product-includes-check">&check;</span>
-                  <span><strong>Direct Q&amp;A Culinary Forum</strong> with Chef Eliane and alumni</span>
+                  <span><strong>Q&amp;A Community for Food Lovers</strong> to share progress and ask questions</span>
                 </li>
               </ul>
             </div>
@@ -318,33 +347,33 @@
             <div style="margin-bottom: 28px;">
               <h3 style="font-family: var(--font-serif); font-size: 1.125rem; color: var(--color-ink); margin-bottom: 10px;">Who Is This For?</h3>
               <p style="font-size: 0.9375rem; line-height: 1.65; color: var(--color-ink-light);">
-                Designed for ambitious home cooks, aspiring culinary professionals, and dinner hosts who want to move beyond rigid recipe-following and understand the <em>why</em> behind high-end restaurant culinary execution.
+                Designed for home cooks, aspiring culinary enthusiasts, and dinner hosts who want to understand the <em>why</em> behind delicious culinary execution.
               </p>
             </div>
 
             <!-- Chef Authority Snippet -->
             <div style="display: flex; gap: 16px; align-items: center; padding: 20px; background: rgba(188, 145, 66, 0.08); border-left: 3px solid var(--color-gold); border-radius: var(--radius-sm); margin-bottom: 32px;">
-              <img src="https://static.wixstatic.com/media/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg/v1/fill/w_2500,h_3750,al_c/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg" alt="Chef Eliane Muskus" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-gold);">
+              <img src="images/hero-chef-eliane-welcoming.jpg" alt="Chef Eliane Muskus" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-gold);">
               <div>
-                <div style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-gold);">Instructed by Chef Eliane Muskus</div>
+                <div style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-gold);">Guidance by Chef Eliane Muskus</div>
                 <div style="font-size: 0.875rem; color: var(--color-ink-light); line-height: 1.45; margin-top: 3px;">
-                  Former award-winning chef with Michelin-level accreditation in France and restaurant leadership across Amsterdam.
+                  Culinary Institute of America trained chef, former Michelin-accredited restaurateur, and culinary educator based in Amsterdam, Netherlands.
                 </div>
               </div>
             </div>
 
             <!-- Contextual Upsell / Related Companion -->
             <div class="upsell-box" style="border: 1px solid var(--color-gold-border); border-radius: var(--radius-md); padding: 20px; background: var(--color-white); box-shadow: var(--shadow-sm);">
-              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold); margin-bottom: 6px;">Recommended Companion</div>
+              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold); margin-bottom: 6px;">Recommended Pairing</div>
               <div style="display: flex; gap: 16px; align-items: center;">
-                <img src="https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_500,h_500,q_90/file.png" alt="Recommended Companion" style="width: 54px; height: 68px; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-xs);">
+                <img src="images/symphony-flavors-cover.jpg" alt="A Symphony of Flavors Spice Guide" style="width: 54px; height: 68px; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-xs);">
                 <div style="flex-grow: 1;">
-                  <h4 style="font-size: 0.9375rem; margin-bottom: 2px; color: var(--color-ink);">The Ultimate Macronutrient Guide</h4>
-                  <div style="font-size: 0.8125rem; color: var(--color-ink-muted);">Pair technique with nutritional balance &bull; €29.00</div>
+                  <h4 style="font-size: 0.9375rem; margin-bottom: 2px; color: var(--color-ink);">A Symphony of Flavors</h4>
+                  <div style="font-size: 0.8125rem; color: var(--color-ink-muted);">Unlock Mediterranean &amp; Middle Eastern spices &bull; €16.95</div>
                 </div>
-                <button type="button" class="btn btn-outline btn-sm" onclick="CartManager.addItem({id:'macro-guide', title:'The Ultimate Macronutrient Guide', price:29, type:'book', image:'https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_500,h_500,q_90/file.png'}); CartManager.openCart();">
-                  + Add
-                </button>
+                <a href="product-detail.html?id=symphony-of-flavors" class="btn btn-outline btn-sm">
+                  View Book
+                </a>
               </div>
             </div>
 
@@ -356,21 +385,6 @@
     <!-- Verified Member Customer Reviews & Ratings Section -->
     <section class="product-reviews-section" id="product-reviews-container">
       <!-- Injected by EpicureanMembers.mountProductReviews() -->
-    </section>
-
-    <!-- Client Curation Assurance Notice (Section 5 & 6) -->
-    <section class="section section-sm" style="background: var(--color-warm-white); border-top: 1px solid var(--color-border-light); margin-top: 48px;">
-      <div class="container container-narrow text-center">
-        <span class="section-label" style="display: inline-block; margin-bottom: 8px;">Curated Catalog</span>
-        <h2 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 12px;">Redesigned Product Catalog Staging</h2>
-        <p style="font-size: 0.9375rem; color: var(--color-ink-light); max-width: 620px; margin: 0 auto 20px;">
-          Outdated editions have been safely removed to prevent mix-ups. All approved upcoming editions (including <em>Let's Eat</em> and seasonal Parisian culinary guides) will appear here as final releases are published.
-        </p>
-        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-          <a href="cookbooks.html" class="btn btn-outline btn-sm">Browse Cookbooks</a>
-          <a href="courses.html" class="btn btn-outline btn-sm">Explore All Courses</a>
-        </div>
-      </div>
     </section>
 
   </main>
@@ -400,24 +414,13 @@
     </div>
 
     <div class="cart-drawer-footer" id="cart-footer">
-      <div class="cart-subtotal-row">
-        <span>Subtotal</span>
-        <span class="cart-subtotal-price" id="cart-subtotal">€0.00</span>
+      <div class="cart-subtotal">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal-val">€0.00</span>
       </div>
-      <p class="cart-delivery-note">Instant digital delivery + lifetime course portal access via Stripe.</p>
-      <button class="btn btn-primary btn-checkout" id="checkout-btn">
+      <a href="javascript:void(0)" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
         <span>Proceed to Secure Checkout</span>
-      </button>
-      <div class="cart-trust-badges">
-        <span class="cart-trust-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          256-Bit SSL Encryption
-        </span>
-        <span class="cart-trust-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          Stripe Verified
-        </span>
-      </div>
+      </a>
     </div>
   </aside>
 
@@ -434,7 +437,7 @@
           </p>
           <div class="footer-contact-info" style="font-size: 0.875rem; color: rgba(245, 240, 231, 0.78); margin-top: 14px;">
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px; font-weight: 600;">Epicurean Flow</p>
-            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Sierra Grazalema 23<br>29016 Málaga, Spain</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Registered in Amsterdam, Netherlands</p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+ 31618571677</a></p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Telephone Spain: <a href="tel:+34626617282" style="color: var(--color-gold);">+34626617282</a></p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 0;">Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
@@ -496,7 +499,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="copyright">&copy; 2026 Epicurean Flow. All rights reserved. &bull; Registration: 94886792 &bull; Málaga, Spain</p>
+        <p class="copyright">&copy; 2026 Epicurean Flow. All rights reserved. &bull; Registration: 94886792 &bull; Amsterdam, Netherlands</p>
         <ul class="footer-legal-links">
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
@@ -504,36 +507,89 @@
         </ul>
       </div>
       </div>
+
+    <div class="container">
+      <div class="footer-developer-bar" style="border-top: 1px solid rgba(245, 240, 231, 0.1); padding: 18px 0; text-align: center;">
+        <span style="font-size: 0.8125rem; color: rgba(245, 240, 231, 0.65);">Website designed by <a href="https://ibtex.ibe88agwu.workers.dev/" target="_blank" rel="noopener" style="color: var(--color-gold); text-decoration: none;">IBTEX</a></span>
+      </div>
     </div>
   </footer>
 
   <!-- Scripts -->
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/wix-sdk-client.js"></script>
   <script src="js/products.js"></script>
   <script>
-    // Dynamically Hydrate Product Details based on ?id=... URL parameter
+    // Dynamically Hydrate Product Details based on ?id=... or ?slug=... URL parameter
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
-      const prodId = params.get('id') || 'beginners-cooking-course';
+      const prodId = params.get('id') || params.get('slug') || 'beginners-cooking-course';
       
       const product = (typeof PRODUCTS_DATA !== 'undefined' && PRODUCTS_DATA.findById)
         ? PRODUCTS_DATA.findById(prodId)
         : null;
 
-      const activeProduct = product || {
-        id: 'beginners-cooking-course',
-        title: 'Beginners’ Cooking Course',
-        subtitle: 'Transform Your Cooking Skills from Uncertainty to Confidence',
-        category: 'Self-Paced Digital Course',
+      let activeProduct = product || {
+        id: prodId,
+        wixId: prodId,
+        title: 'Epicurean Flow Culinary Masterclass',
+        subtitle: 'Authentic Technique & Culinary Excellence',
+        category: 'Digital Course & Publication',
         price: '€39.00',
         numericPrice: 39.00,
         image: 'images/course-beginners-cooking-cover.jpg',
-        badge: 'Self-Paced Digital Course',
+        badge: 'Chef Edition',
         pages: 65,
-        description: 'Stop guessing and start understanding the art of cooking! This self-paced course provides the essential foundation for new cooks to feel calm and capable. Learn to prepare, handle ingredients, and control heat with practical chef knowledge and interactive lessons.',
-        buttonText: 'START COOKING WITH CONFIDENCE'
+        description: 'Chef-tested recipes, precision cooking techniques, and step-by-step guidance from award-winning Chef Eliane Muskus.',
+        buttonText: 'ADD TO SELECTION'
       };
+
+      // If product not in local cache, dynamically fetch from Wix Stores
+      if (!product && typeof createWixHeadlessClient === 'function') {
+        createWixHeadlessClient().then(async (client) => {
+          if (!client || !client.products) return;
+          try {
+            const res = await client.products.getProduct(prodId);
+            if (res && res.product) {
+              const p = res.product;
+              const rawPrice = p.price?.price ?? p.priceData?.price ?? 0;
+              let imgUrl = 'images/lets-eat-cover.jpg';
+              if (p.media?.mainMedia?.image?.url) {
+                let u = p.media.mainMedia.image.url;
+                if (u.startsWith('wix:image://v1/')) {
+                  const m = u.match(/wix:image:\/\/v1\/([^/]+)/);
+                  if (m) imgUrl = `https://static.wixstatic.com/media/${m[1]}/v1/fit/w_800,h_800,q_90/file.jpg`;
+                } else imgUrl = u;
+              }
+              document.title = `${p.name} | Epicurean Flow`;
+              const tEl = document.getElementById('product-detail-title');
+              if (tEl) tEl.textContent = p.name;
+              const dEl = document.getElementById('product-detail-desc');
+              if (dEl) dEl.textContent = p.description?.replace(/<[^>]*>?/gm, '') || '';
+              const prEl = document.getElementById('product-detail-price');
+              if (prEl) prEl.textContent = `€${Number(rawPrice).toFixed(2)}`;
+              const iEl = document.getElementById('product-detail-img');
+              if (iEl) { iEl.src = imgUrl; iEl.alt = p.name; }
+              const btn = document.getElementById('btn-buy-now');
+              if (btn) {
+                btn.innerHTML = `<span>Add to Cart &bull; €${Number(rawPrice).toFixed(2)}</span>`;
+                btn.onclick = () => {
+                  window.cartManager?.addItem({
+                    id: p._id,
+                    wixId: p._id,
+                    title: p.name,
+                    price: `€${Number(rawPrice).toFixed(2)}`,
+                    numericPrice: rawPrice,
+                    image: imgUrl
+                  });
+                };
+              }
+            }
+          } catch(e) {}
+        });
+      }
 
       const isCourse = (activeProduct.category || '').toLowerCase().includes('course') || 
                        (activeProduct.badge || '').toLowerCase().includes('master') || 
@@ -567,7 +623,12 @@
 
       const badgeEl = document.getElementById('product-detail-badge');
       if (badgeEl) {
-        badgeEl.textContent = activeProduct.badge || (isCourse ? 'Self-Paced Digital Course' : 'Digital Cookbook');
+        if (isCourse) {
+          badgeEl.textContent = 'Self-Paced Course';
+          badgeEl.style.display = 'inline-block';
+        } else {
+          badgeEl.style.display = 'none';
+        }
       }
 
       const subEl = document.getElementById('product-detail-sub');
@@ -596,6 +657,23 @@
         priceEl.textContent = activeProduct.price || '€39.00';
       }
 
+      // Trust Badges and Guarantees
+      const guaranteeEl = document.getElementById('product-guarantee-text');
+      if (guaranteeEl) {
+        if (activeProduct.isComingSoon || activeProduct.id === 'the-diabetes-friendly-kitchen') {
+          guaranteeEl.textContent = 'Coming Soon • In Final Preparation Ahead of Publication';
+        } else {
+          guaranteeEl.textContent = 'Official Epicurean Flow Publication • Safe 256-bit Stripe Checkout';
+        }
+      }
+
+      const badgeFeat3Title = document.getElementById('badge-feat-3-title');
+      const badgeFeat3Sub = document.getElementById('badge-feat-3-sub');
+      if (activeProduct.isComingSoon || activeProduct.id === 'the-diabetes-friendly-kitchen') {
+        if (badgeFeat3Title) badgeFeat3Title.textContent = 'Upcoming Edition';
+        if (badgeFeat3Sub) badgeFeat3Sub.textContent = 'Coming Soon';
+      }
+
       // Dynamic What Is Included Checklist
       const includesListEl = document.querySelector('.product-includes-list');
       if (includesListEl) {
@@ -607,7 +685,7 @@
             </li>
             <li class="product-includes-item">
               <span class="product-includes-check">&check;</span>
-              <span><strong>Step-by-Step High-Definition Video Masterclasses</strong> covering classic culinary techniques, sauces, and heat control</span>
+              <span><strong>Structured Culinary Modules</strong> covering technique, flavor building, and heat control</span>
             </li>
             <li class="product-includes-item">
               <span class="product-includes-check">&check;</span>
@@ -619,7 +697,26 @@
             </li>
             <li class="product-includes-item">
               <span class="product-includes-check">&check;</span>
-              <span><strong>Lifetime On-Demand Access</strong> across mobile, tablet, and desktop</span>
+              <span><strong>Q&amp;A Community for Food Lovers</strong> to ask questions and share cooking progress</span>
+            </li>
+          `;
+        } else if (activeProduct.isComingSoon || activeProduct.id === 'the-diabetes-friendly-kitchen') {
+          includesListEl.innerHTML = `
+            <li class="product-includes-item">
+              <span class="product-includes-check">&check;</span>
+              <span><strong>Comprehensive ${activeProduct.pages || 50}-Page Specialist Culinary Publication</strong> by Chef Eliane Muskus</span>
+            </li>
+            <li class="product-includes-item">
+              <span class="product-includes-check">&check;</span>
+              <span><strong>Tested Diabetes-Friendly Recipes</strong> crafted without sacrificing authentic flavor</span>
+            </li>
+            <li class="product-includes-item">
+              <span class="product-includes-check">&check;</span>
+              <span><strong>Smart Ingredient Substitution Blueprints</strong> and pantry guidance</span>
+            </li>
+            <li class="product-includes-item">
+              <span class="product-includes-check">&check;</span>
+              <span><strong>Official Publication Release Notification</strong> directly to your inbox upon launch</span>
             </li>
           `;
         } else {
@@ -661,18 +758,19 @@
         }
       } else if (activeProduct.isComingSoon || activeProduct.id === 'the-diabetes-friendly-kitchen') {
         if (btnBuyNow) {
-          btnBuyNow.innerHTML = `<span>${activeProduct.buttonText || 'DISCOVER THE DIABETES-FRIENDLY KITCHEN'}</span>`;
-          btnBuyNow.className = 'btn btn-primary';
-          btnBuyNow.onclick = () => {
-            window.location.href = 'diabetes.html#diabetes-kitchen-spotlight';
-          };
+          btnBuyNow.innerHTML = '<span>COMING SOON &bull; IN PREPARATION</span>';
+          btnBuyNow.className = 'btn btn-secondary disabled';
+          btnBuyNow.disabled = true;
+          btnBuyNow.style.cursor = 'not-allowed';
+          btnBuyNow.style.opacity = '0.85';
+          btnBuyNow.onclick = null;
         }
         if (btnAddCart) {
-          btnAddCart.innerHTML = '<span>Pre-Order Inquiry</span>';
+          btnAddCart.innerHTML = '<span>Read on Diabetes Living &rarr;</span>';
           btnAddCart.className = 'btn btn-outline';
           btnAddCart.style.display = 'inline-flex';
           btnAddCart.onclick = () => {
-            window.location.href = `contact.html?interest=${encodeURIComponent(activeProduct.id)}`;
+            window.location.href = 'diabetes.html#diabetes-kitchen-spotlight';
           };
         }
       } else if (activeProduct.numericPrice === 0 || activeProduct.price === 'Waitlist') {

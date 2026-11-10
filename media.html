@@ -37,8 +37,8 @@
       <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
           <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Books</a></li>
           
           <!-- Recipes Dropdown -->
           <li class="nav-item has-dropdown">
@@ -53,6 +53,10 @@
                 <span class="dropdown-item-title">All Recipes</span>
                 <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
               </a>
+              <a href="blog.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Chef's Blog</span>
+                <span class="dropdown-item-desc">Culinary stories, techniques &amp; food science</span>
+              </a>
               <a href="diabetes.html" class="dropdown-item" role="menuitem">
                 <span class="dropdown-item-title">Diabetes Living</span>
                 <span class="dropdown-item-desc">Flavor-first low-carb gastronomy</span>
@@ -66,8 +70,8 @@
                 <span class="dropdown-item-desc">Bespoke 1-on-1 chef consultations</span>
               </a>
               <a href="media.html" class="dropdown-item active" role="menuitem">
-                <span class="dropdown-item-title">Media &amp; Cinema</span>
-                <span class="dropdown-item-desc">Masterclass video streams &amp; previews</span>
+                <span class="dropdown-item-title">Media &amp; Masterclass</span>
+                <span class="dropdown-item-desc">Culinary clips &amp; kitchen reels</span>
               </a>
             </div>
           </li>
@@ -104,13 +108,17 @@
                 </div>
               </div>
               <div class="member-menu-divider"></div>
-              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                <span>My Account &amp; Profile</span>
+              <button type="button" class="member-menu-item" id="menu-my-orders" onclick="window.openEpicureanPortal('orders'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Orders &amp; Purchase History</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-library" onclick="window.openEpicureanPortal('library'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                 <span>My Cookbooks &amp; Courses</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>My Account &amp; Profile</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-reviews" onclick="window.openEpicureanPortal('reviews'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -147,278 +155,474 @@
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
-    <!-- Mobile Member Status Bar -->
-    <div class="mobile-member-widget" id="mobile-member-widget">
-      <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
+    <!-- Header with Dedicated Cancel / Close Button -->
+    <div class="mobile-drawer-header">
+      <span class="mobile-drawer-title">Navigation</span>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
-        <span>Member Log In / Sign Up</span>
+        <span>Close</span>
       </button>
-      <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
-        <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
-        <div class="mobile-member-meta">
-          <span class="mobile-member-name" id="mobile-member-name">Member</span>
-          <span class="mobile-member-status">Verified Community Member</span>
-        </div>
-        <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
-      </div>
     </div>
 
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
-      <a href="courses.html" class="mobile-nav-link">Courses</a>
-      
-      <div class="mobile-nav-group">
-        <a href="recipes.html" class="mobile-nav-link active">Recipes / Blog</a>
-        <div class="mobile-nav-submenu">
-          <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
-          <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
-          <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
-          <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
-          <a href="media.html" class="mobile-nav-sublink active">Media &amp; Masterclasses</a>
+    <div class="mobile-drawer-body">
+      <!-- Mobile Member Status Bar -->
+      <div class="mobile-member-widget" id="mobile-member-widget">
+        <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Member Log In / Sign Up</span>
+        </button>
+        <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
+          <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
+          <div class="mobile-member-meta">
+            <span class="mobile-member-name" id="mobile-member-name">Member</span>
+            <span class="mobile-member-status">Verified Community Member</span>
+          </div>
+          <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
         </div>
       </div>
 
-      <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
-      <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="courses.html" class="mobile-nav-link">Courses</a>
+        <a href="cookbooks.html" class="mobile-nav-link">Books</a>
+        
+        <!-- Accordion: Recipes & Blog (Collapsed by Default, Expands on Click) -->
+        <div class="mobile-nav-group">
+          <button type="button" class="mobile-nav-link mobile-accordion-trigger active" id="mobile-recipes-toggle" aria-expanded="false" aria-controls="mobile-recipes-submenu">
+            <span>Recipes &amp; Blog</span>
+            <svg class="mobile-accordion-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-submenu" id="mobile-recipes-submenu" style="display: none;">
+            <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
+            <a href="blog.html" class="mobile-nav-sublink">Chef's Blog</a>
+            <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
+            <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
+            <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
+            <a href="media.html" class="mobile-nav-sublink active">Media &amp; Masterclass</a>
+          </div>
+        </div>
+
+        <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
+        <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
     </div>
   </div>
 
   <main id="main-content">
-    <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="container">
-        <p class="section-tag">Taste in Motion</p>
-        <h1 class="page-hero-title">Epicurean Flow Cinema Room</h1>
-        <p class="page-hero-subtitle">
-          Slow down, press play, and let our short clips spark your senses. Master the sensory nuances of high-heat searing, silky emulsions, and authentic Mediterranean recipes.
-        </p>
+    <!-- Top Hero Banner: Discover Our Culinary Services -->
+    <div class="media-hero-banner-wrap" style="width: 100%; background: #121212; line-height: 0;">
+      <img src="images/culinary-services-banner.png" alt="Discover Our Culinary Services - Epicurean Flow" 
+           style="width: 100%; height: auto; max-height: 520px; object-fit: cover; object-position: center; display: block;">
+    </div>
+
+    <!-- Media Breadcrumb Bar -->
+    <div class="media-breadcrumb-bar" style="background: #fdfbf7; border-bottom: 1px solid rgba(212, 163, 89, 0.2); padding: 14px 0;">
+      <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <nav class="media-breadcrumb" aria-label="Breadcrumb" style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #777; font-family: var(--font-sans);">
+          <a href="index.html" style="color: #666; text-decoration: none; transition: color 0.2s;">Epicurean Flow</a>
+          <span style="color: #bbb;">/</span>
+          <span>Video</span>
+          <span style="color: #bbb;">/</span>
+          <span style="color: var(--color-ink, #1a1a1a); font-weight: 600;">Media</span>
+        </nav>
       </div>
-    </section>
+    </div>
 
-    <!-- Star Spotlight Clip -->
-    <section class="section">
-      <div class="container">
-        <div style="background: #151515; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); color: var(--color-white); border: 1px solid rgba(212, 163, 89, 0.3);">
-          <div class="cinema-spotlight-grid">
-            <div class="video-thumb-wrap video-trigger-item" style="aspect-ratio: 16/10; cursor: pointer;" 
-                 data-video-title="Searing the Perfect Steak" data-video-src="videos/gourmet-plate-reel.mp4" data-course-link="courses.html#advanced-cooking-techniques" 
-                 data-video-tag="Masterclass Spotlight" 
-                 data-video-desc="Master the art of searing the perfect steak with these professional chef tips. Learn the optimal cast iron temperature, why salting 40 minutes prior creates the deepest crust, and how to baste with foaming herb butter for a juicy, flavorful result every single time." 
-                  data-video-thumb="images/sliced-gourmet-steak.jpg"
-                  data-video-link="https://epicureanflow.wixsite.com/epicurean-flow/media">
-              <img src="images/sliced-gourmet-steak.jpg" alt="Searing the Perfect Steak">
-              <div class="play-overlay-btn" style="width: 72px; height: 72px; font-size: 1.5rem;">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </div>
-            </div>
-            <div style="padding: 36px;" class="cinema-spotlight-body">
-              <span class="badge badge-gold" style="margin-bottom: 16px; display: inline-block;">Masterclass Spotlight</span>
-              <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--color-white); margin-bottom: 16px;">Searing the Perfect Steak</h2>
-              <p style="color: #bbb; line-height: 1.8; font-size: 1rem; margin-bottom: 24px;">
-                Master the art of searing the perfect steak with these professional chef tips. Learn the optimal cast iron temperature, why salting 40 minutes prior creates the deepest crust, and how to baste with foaming herb butter for a juicy, flavorful result every single time.
-              </p>
-              <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-                <a href="courses.html" class="btn btn-primary">Watch Full Masterclass</a>
-                <a href="recipes.html" class="btn btn-outline" style="border-color: #555; color: #fff;">Read Technique Notes</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Master Video Grid -->
-    <section class="section bg-light">
-      <div class="container">
-        <div class="section-header text-center">
-          <p class="section-tag">Curated Culinary Shorts</p>
-          <h2 class="section-title">Technique &amp; Inspiration Library</h2>
-          <p class="section-subtitle">Bite-sized chef demonstrations packed with actionable, repeatable culinary wisdom.</p>
-        </div>
-
-        <div class="media-grid">
-          <!-- Video 1: Healthy Cooking Tips -->
+    <!-- Master Video Grid (All 16 Curated Videos) -->
+    <section class="section" style="padding: 48px 0 80px; background: #faf8f5;">
+      <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 32px;">
+          <!-- Video 1: Searing the Perfect Steak -->
           <article class="media-video-card video-trigger-item" style="cursor: pointer;"
-                   data-video-title="Healthy Cooking Tips for Delicious Everyday Meals" data-video-src="videos/chef-reel-cooking.mp4" data-course-link="courses.html#beginners-cooking-course"
-                   data-video-tag="Everyday Wellness"
-                   data-video-desc="Learn how to create delicious, healthy meals with fresh, whole ingredients. These chef-approved tips make healthy cooking easy, flavorful, and perfect for everyday living."
-                   data-video-thumb="images/chef-reel-cooking-thumb.jpg"
-                   data-video-link="https://epicureanflow.wixsite.com/epicurean-flow/media">
+                   data-video-index="0"
+                   data-video-title="Searing the Perfect Steak"
+                   data-video-src="videos/searing-perfect-steak.mp4"
+                   data-video-tag="Cooking Courses"
+                   data-video-desc="Master the art of searing the perfect steak with these professional chef tips. Learn the best steak cooking techniques for a juicy, flavorful result every time."
+                   data-video-thumb="images/steak-thumb.jpg"
+                   data-video-duration="0:20"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
             <div class="video-thumb-wrap">
-              <img src="images/chef-reel-cooking-thumb.jpg" alt="Healthy Cooking Tips for Everyday Meals">
-              <div class="play-overlay-btn">
+              <img src="images/steak-thumb.jpg" alt="Searing the Perfect Steak" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Searing the Perfect Steak">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
+              <span class="video-duration-badge">0:20</span>
             </div>
             <div class="video-card-content">
-              <span class="video-tag">Everyday Wellness</span>
+              <h3 class="video-title">Searing the Perfect Steak</h3>
+              <p class="video-desc">Master the art of searing the perfect steak with these professional chef tips. Learn the best steak cooking techniques for a juicy, flavorful result every time.</p>
+            </div>
+          </article>
+          <!-- Video 2: Healthy Cooking Tips for Delicious Everyday Meals -->
+          <article class="media-video-card video-trigger-item" style="cursor: pointer;"
+                   data-video-index="1"
+                   data-video-title="Healthy Cooking Tips for Delicious Everyday Meals"
+                   data-video-src="videos/healthy-cooking-tips.mp4"
+                   data-video-tag="Cooking Courses"
+                   data-video-desc="Learn how to create delicious, healthy meals with fresh, whole ingredients. These chef-approved tips make healthy cooking easy, flavorful, and perfect for everyday eating."
+                   data-video-thumb="images/healthy-tips-thumb.jpg"
+                   data-video-duration="0:14"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
+            <div class="video-thumb-wrap">
+              <img src="images/healthy-tips-thumb.jpg" alt="Healthy Cooking Tips for Delicious Everyday Meals" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Healthy Cooking Tips for Delicious Everyday Meals">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <span class="video-duration-badge">0:14</span>
+            </div>
+            <div class="video-card-content">
               <h3 class="video-title">Healthy Cooking Tips for Delicious Everyday Meals</h3>
-              <p class="video-desc">
-                Learn how to create delicious, healthy meals with fresh, whole ingredients. These chef-approved tips make healthy cooking easy, flavorful, and perfect for everyday living.
-              </p>
+              <p class="video-desc">Learn how to create delicious, healthy meals with fresh, whole ingredients. These chef-approved tips make healthy cooking easy, flavorful, and perfect for everyday eating.</p>
             </div>
           </article>
-
-          <!-- Video 2: Bruschetta Ideas -->
+          <!-- Video 3: Easy Healthy Bruschetta Ideas for Entertaining -->
           <article class="media-video-card video-trigger-item" style="cursor: pointer;"
+                   data-video-index="2"
                    data-video-title="Easy Healthy Bruschetta Ideas for Entertaining"
-                   data-video-tag="Entertaining"
-                   data-video-desc="Impress guests with fresh, healthy bruschetta ideas that are quick to prepare and full of Mediterranean flavor. Perfect for party bites and light gourmet starters."
-                   data-video-thumb="https://static.wixstatic.com/media/30dece_6864124b9ae64c81a77bcca5a850fee7f002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg"
-                   data-video-link="https://epicureanflow.wixsite.com/epicurean-flow/media">
+                   data-video-src="videos/easy-healthy-bruschetta.mp4"
+                   data-video-tag="Food & Drink"
+                   data-video-desc="Impress guests with fresh, healthy bruschetta ideas that are quick to prepare and full of Mediterranean flavor. Perfect for parties, light appetizers, or easy gourmet starters."
+                   data-video-thumb="images/bruschetta-thumb.jpg"
+                   data-video-duration="0:05"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
             <div class="video-thumb-wrap">
-              <img src="https://static.wixstatic.com/media/30dece_6864124b9ae64c81a77bcca5a850fee7f002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg" alt="Easy Healthy Bruschetta Ideas for Entertaining">
-              <div class="play-overlay-btn">
+              <img src="images/bruschetta-thumb.jpg" alt="Easy Healthy Bruschetta Ideas for Entertaining" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Easy Healthy Bruschetta Ideas for Entertaining">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
+              <span class="video-duration-badge">0:05</span>
             </div>
             <div class="video-card-content">
-              <span class="video-tag">Entertaining</span>
               <h3 class="video-title">Easy Healthy Bruschetta Ideas for Entertaining</h3>
-              <p class="video-desc">
-                Impress guests with fresh, healthy bruschetta ideas that are quick to prepare and full of Mediterranean flavor. Perfect for party bites and light gourmet starters.
-              </p>
+              <p class="video-desc">Impress guests with fresh, healthy bruschetta ideas that are quick to prepare and full of Mediterranean flavor. Perfect for parties, light appetizers, or easy gourmet starters.</p>
             </div>
           </article>
-
-          <!-- Video 3: Moroccan Chicken Tagine -->
+          <!-- Video 4: Chef Tips & Mediterranean Recipes for Food Lovers -->
           <article class="media-video-card video-trigger-item" style="cursor: pointer;"
-                   data-video-title="How to Make Moroccan Chicken Tagine"
-                   data-video-tag="Chef’s Pick"
-                   data-video-desc="Learn how to make authentic Moroccan chicken tagine with tender meat, preserved lemon, warm spices, and Mediterranean flair. Naturally diabetes-friendly and deeply comforting."
-                   data-video-thumb="https://static.wixstatic.com/media/30dece_928170cb01614f76ac75d5953f93d93af002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg"
-                   data-video-link="https://epicureanflow.wixsite.com/epicurean-flow/media">
+                   data-video-index="3"
+                   data-video-title="Chef Tips & Mediterranean Recipes for Food Lovers"
+                   data-video-src="videos/chef-tips-mediterranean-recipes.mp4"
+                   data-video-tag="Cooking Courses"
+                   data-video-desc="A must-watch for passionate food lovers! Explore Mediterranean recipes, chef cooking tips, and gourmet ideas that will inspire your next meal. Perfect for anyone who loves bold flavors and fresh ingredients."
+                   data-video-thumb="images/chef-tips-thumb.jpg"
+                   data-video-duration="0:37"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
             <div class="video-thumb-wrap">
-              <img src="https://static.wixstatic.com/media/30dece_928170cb01614f76ac75d5953f93d93af002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg" alt="How to Make Moroccan Chicken Tagine – Chef’s Pick">
-              <div class="play-overlay-btn">
+              <img src="images/chef-tips-thumb.jpg" alt="Chef Tips & Mediterranean Recipes for Food Lovers" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Chef Tips & Mediterranean Recipes for Food Lovers">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
+              <span class="video-duration-badge">0:37</span>
             </div>
             <div class="video-card-content">
-              <span class="video-tag">Chef’s Pick</span>
-              <h3 class="video-title">How to Make Moroccan Chicken Tagine</h3>
-              <p class="video-desc">
-                Learn how to make authentic Moroccan chicken tagine with tender meat, preserved lemon, warm spices, and Mediterranean flair. Naturally diabetes-friendly and deeply comforting.
-              </p>
+              <h3 class="video-title">Chef Tips & Mediterranean Recipes for Food Lovers</h3>
+              <p class="video-desc">A must-watch for passionate food lovers! Explore Mediterranean recipes, chef cooking tips, and gourmet ideas that will inspire your next meal. Perfect for anyone who loves bold flavors and fresh ingredients.</p>
             </div>
           </article>
-
-          <!-- Video 4: Puff Pastry Tips -->
+          <!-- Video 5: Save 10% on All Cooking Classes -->
           <article class="media-video-card video-trigger-item" style="cursor: pointer;"
-                   data-video-title="Puff Pastry Tips for Flaky, Golden Layers" data-course-link="courses.html#beginners-baking"
-                   data-video-tag="French Patisserie"
-                   data-video-desc="Discover how to create golden, flaky puff pastry every time with these easy chef secrets. Ensure airy lamination and professional bakery results in your home oven."
-                   data-video-thumb="https://static.wixstatic.com/media/30dece_3f49a7daeed842faa0925b7e102181fef002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg"
-                   data-video-link="https://epicureanflow.wixsite.com/epicurean-flow/media">
+                   data-video-index="4"
+                   data-video-title="Save 10% on All Cooking Classes"
+                   data-video-src="videos/save-10-percent-cooking-classes.mp4"
+                   data-video-tag="Cooking Courses"
+                   data-video-desc="Join our Mediterranean cooking courses and save 10%! Learn chef techniques, healthy recipes, and gourmet skills that will transform your cooking. Perfect for home cooks of all levels."
+                   data-video-thumb="images/save-10-percent-thumb.jpg"
+                   data-video-duration="0:20"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
             <div class="video-thumb-wrap">
-              <img src="https://static.wixstatic.com/media/30dece_3f49a7daeed842faa0925b7e102181fef002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg" alt="Puff Pastry Tips for Flaky, Golden Layers">
-              <div class="play-overlay-btn">
+              <img src="images/save-10-percent-thumb.jpg" alt="Save 10% on All Cooking Classes" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Save 10% on All Cooking Classes">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
+              <span class="video-duration-badge">0:20</span>
             </div>
             <div class="video-card-content">
-              <span class="video-tag">French Patisserie</span>
+              <h3 class="video-title">Save 10% on All Cooking Classes</h3>
+              <p class="video-desc">Join our Mediterranean cooking courses and save 10%! Learn chef techniques, healthy recipes, and gourmet skills that will transform your cooking. Perfect for home cooks of all levels.</p>
+            </div>
+          </article>
+          <!-- Video 6: Puff Pastry Tips for Flaky, Golden Layers -->
+          <article class="media-video-card video-trigger-item" style="cursor: pointer;"
+                   data-video-index="5"
+                   data-video-title="Puff Pastry Tips for Flaky, Golden Layers"
+                   data-video-src="videos/puff-pastry-tips.mp4"
+                   data-video-tag="Food & Drink"
+                   data-video-desc="Discover how to create golden, flaky puff pastry every time with these easy chef tips. Perfect for sweet or savory pastry recipes, these techniques guarantee light, airy layers and professional results at home."
+                   data-video-thumb="images/puff-pastry-thumb.jpg"
+                   data-video-duration="0:19"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
+            <div class="video-thumb-wrap">
+              <img src="images/puff-pastry-thumb.jpg" alt="Puff Pastry Tips for Flaky, Golden Layers" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Puff Pastry Tips for Flaky, Golden Layers">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <span class="video-duration-badge">0:19</span>
+            </div>
+            <div class="video-card-content">
               <h3 class="video-title">Puff Pastry Tips for Flaky, Golden Layers</h3>
-              <p class="video-desc">
-                Discover how to create golden, flaky puff pastry every time with these easy chef secrets. Ensure airy lamination and professional bakery results in your home oven.
-              </p>
+              <p class="video-desc">Discover how to create golden, flaky puff pastry every time with these easy chef tips. Perfect for sweet or savory pastry recipes, these techniques guarantee light, airy layers and professional results at home.</p>
             </div>
           </article>
-
-          <!-- Video 5: Crème Brûlée Made Easy -->
+          <!-- Video 7: How to Make Moroccan Chicken Tagine – Chef’s Pick -->
           <article class="media-video-card video-trigger-item" style="cursor: pointer;"
-                   data-video-title="Crème Brûlée Made Easy — Silky Custard"
-                   data-video-tag="Classic French"
-                   data-video-desc="Learn how to make silky, crackly-topped Crème Brûlée with this foolproof recipe. Perfect for romantic dinners, date nights, and dinner parties."
-                   data-video-thumb="images/apricot-galette.jpg" data-video-src="videos/gourmet-plate-reel.mp4" data-course-link="courses.html#beginners-baking"
-                   data-video-link="https://epicureanflow.wixsite.com/epicurean-flow/media">
+                   data-video-index="6"
+                   data-video-title="How to Make Moroccan Chicken Tagine – Chef’s Pick"
+                   data-video-src="videos/moroccan-chicken-tagine.mp4"
+                   data-video-tag="Food & Drink"
+                   data-video-desc="Learn how to make authentic Moroccan chicken tagine with tender meat, warm spices, and Mediterranean flair. A flavorful, diabetes-friendly dish perfect for any occasion."
+                   data-video-thumb="images/moroccan-tagine-thumb.jpg"
+                   data-video-duration="0:34"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
             <div class="video-thumb-wrap">
-              <img src="images/apricot-galette.jpg" alt="Crème Brûlée Made Easy | Silky French Dessert">
-              <div class="play-overlay-btn">
+              <img src="images/moroccan-tagine-thumb.jpg" alt="How to Make Moroccan Chicken Tagine – Chef’s Pick" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play How to Make Moroccan Chicken Tagine – Chef’s Pick">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
+              <span class="video-duration-badge">0:34</span>
             </div>
             <div class="video-card-content">
-              <span class="video-tag">Classic French</span>
-              <h3 class="video-title">Crème Brûlée Made Easy &mdash; Silky Custard</h3>
-              <p class="video-desc">
-                Learn how to make silky, crackly-topped Crème Brûlée with this foolproof recipe. Perfect for romantic dinners, date nights, and dinner parties.
-              </p>
+              <h3 class="video-title">How to Make Moroccan Chicken Tagine – Chef’s Pick</h3>
+              <p class="video-desc">Learn how to make authentic Moroccan chicken tagine with tender meat, warm spices, and Mediterranean flair. A flavorful, diabetes-friendly dish perfect for any occasion.</p>
             </div>
           </article>
-
-          <!-- Video 6: Marinated Cucumber Rolls -->
+          <!-- Video 8: Crème Brûlée Made Easy | Silky French Dessert Anyone Can Master -->
           <article class="media-video-card video-trigger-item" style="cursor: pointer;"
-                   data-video-title="Marinated Cucumber Rolls with Whipped Feta" data-course-link="courses.html#diabetes-cooking-course"
-                   data-video-tag="Mezze &amp; Tapas"
-                   data-video-desc="Chef Eliane walks you through marinating crisp cucumber ribbons and rolling them with herb-whipped feta. Light, low-carb, gluten-free, and visually stunning."
-                   data-video-thumb="https://static.wixstatic.com/media/30dece_799f4d9cc1e2488bbc3673d93dfdfa39f002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg"
-                   data-video-link="https://epicureanflow.wixsite.com/epicurean-flow/media">
+                   data-video-index="7"
+                   data-video-title="Crème Brûlée Made Easy | Silky French Dessert Anyone Can Master"
+                   data-video-src="videos/creme-brulee-made-easy.mp4"
+                   data-video-tag="Desserts"
+                   data-video-desc="Learn how to make silky, crackly-topped Crème Brûlée at home with this easy, foolproof recipe. Whether you’re new to French desserts or looking to perfect your technique, this step-by-step tutorial will show you how to master this elegant classic.
+With just a few ingredients, you’ll create a creamy custard base topped with a perfectly torched caramelized sugar crust—restaurant quality, made in your own kitchen.
+
+Perfect for special occasions, date nights, or when you simply want to impress.fre ch desserts"
+                   data-video-thumb="images/creme-brulee-thumb.jpg"
+                   data-video-duration="0:20"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
             <div class="video-thumb-wrap">
-              <img src="https://static.wixstatic.com/media/30dece_799f4d9cc1e2488bbc3673d93dfdfa39f002.jpg/v1/fill/w_600,h_400,enc_auto/file.jpeg" alt="Marinated Cucumber Rolls with Whipped Feta">
-              <div class="play-overlay-btn">
+              <img src="images/creme-brulee-thumb.jpg" alt="Crème Brûlée Made Easy | Silky French Dessert Anyone Can Master" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Crème Brûlée Made Easy | Silky French Dessert Anyone Can Master">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
+              <span class="video-duration-badge">0:20</span>
             </div>
             <div class="video-card-content">
-              <span class="video-tag">Mezze &amp; Tapas</span>
-              <h3 class="video-title">Marinated Cucumber Rolls with Whipped Feta</h3>
-              <p class="video-desc">
-                Chef Eliane walks you through marinating crisp cucumber ribbons and rolling them with herb-whipped feta. Light, low-carb, gluten-free, and visually stunning.
-              </p>
+              <h3 class="video-title">Crème Brûlée Made Easy | Silky French Dessert Anyone Can Master</h3>
+              <p class="video-desc">Learn how to make silky, crackly-topped Crème Brûlée at home with this easy, foolproof recipe. Whether you’re new to French desserts or looking to perfect your technique, this step-by-step tutorial will show you how to master this elegant classic.
+With just a few ingredients, you’ll create a creamy custard base topped with a perfectly torched caramelized sugar crust—restaurant quality, made in your own kitchen.
+
+Perfect for special occasions, date nights, or when you simply want to impress.fre ch desserts</p>
             </div>
           </article>
-
-          <!-- Video 7: Chef Reel - Cooking Live in the Kitchen -->
+          <!-- Video 9: Marinated Cucumber Rolls with Whipped Feta | Light & Elegant Appetizer -->
           <article class="media-video-card video-trigger-item" style="cursor: pointer;"
-                   data-video-title="Chef Eliane in the Kitchen: Technique, Heat &amp; Flow"
-                   data-video-tag="Chef Reel"
-                   data-video-desc="Step into Chef Eliane's kitchen as she demonstrates pan control, aroma development, and the sensory rhythm of Mediterranean cookery."
-                   data-video-thumb="images/chef-reel-cooking-thumb.jpg"
-                   data-video-src="videos/chef-reel-cooking.mp4"
-                   data-course-link="courses.html#beginners-cooking-course"
-                   data-video-link="videos/chef-reel-cooking.mp4">
+                   data-video-index="8"
+                   data-video-title="Marinated Cucumber Rolls with Whipped Feta | Light & Elegant Appetizer"
+                   data-video-src="videos/marinated-cucumber-rolls.mp4"
+                   data-video-tag="Food & Drink"
+                   data-video-desc="Discover how to make elegant and refreshing marinated cucumber rolls filled with whipped feta, the perfect appetizer or party bite. This light Mediterranean-inspired recipe is not only easy to prepare but also visually stunning—ideal for summer gatherings, mezze platters, or healthy entertaining.
+
+In this video, Chef Eliane walks you through the process of marinating cucumber ribbons and filling them with a creamy whipped feta and herb mixture. These rolls are a showstopper for brunch, cocktail parties, or holiday spreads, and they’re naturally low-carb and gluten-free."
+                   data-video-thumb="images/cucumber-rolls-thumb.jpg"
+                   data-video-duration="0:20"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
             <div class="video-thumb-wrap">
-              <img src="images/chef-reel-cooking-thumb.jpg" alt="Chef Eliane in the Kitchen Live Demonstration">
-              <div class="play-overlay-btn">
+              <img src="images/cucumber-rolls-thumb.jpg" alt="Marinated Cucumber Rolls with Whipped Feta | Light & Elegant Appetizer" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Marinated Cucumber Rolls with Whipped Feta | Light & Elegant Appetizer">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
+              <span class="video-duration-badge">0:20</span>
             </div>
             <div class="video-card-content">
-              <span class="video-tag" style="background: var(--color-gold); color: #fff;">Chef Reel</span>
-              <h3 class="video-title">Chef Eliane in the Kitchen: Technique &amp; Flow</h3>
-              <p class="video-desc">
-                Step into Chef Eliane's kitchen as she demonstrates pan control, aroma development, and the sensory rhythm of Mediterranean cookery.
-              </p>
+              <h3 class="video-title">Marinated Cucumber Rolls with Whipped Feta | Light & Elegant Appetizer</h3>
+              <p class="video-desc">Discover how to make elegant and refreshing marinated cucumber rolls filled with whipped feta, the perfect appetizer or party bite. This light Mediterranean-inspired recipe is not only easy to prepare but also visually stunning—ideal for summer gatherings, mezze platters, or healthy entertaining.
+
+In this video, Chef Eliane walks you through the process of marinating cucumber ribbons and filling them with a creamy whipped feta and herb mixture. These rolls are a showstopper for brunch, cocktail parties, or holiday spreads, and they’re naturally low-carb and gluten-free.</p>
             </div>
           </article>
-
-          <!-- Video 8: Haute Cuisine Plating Reel -->
+          <!-- Video 10: Homemade Dulce de Leche Recipe | Easy Slow-Cooked Caramel Spread -->
           <article class="media-video-card video-trigger-item" style="cursor: pointer;"
-                   data-video-title="The Art of Plating: Haute Cuisine Presentation"
-                   data-video-tag="Plating Mastery"
-                   data-video-desc="Watch an exquisite plated dish come to life with delicate sauce dots, vibrant microgreens, and Michelin-inspired geometry."
-                   data-video-thumb="images/gourmet-plate-reel-thumb.jpg"
-                   data-video-src="videos/gourmet-plate-reel.mp4"
-                   data-course-link="courses.html#advanced-cooking-techniques"
-                   data-video-link="videos/gourmet-plate-reel.mp4">
+                   data-video-index="9"
+                   data-video-title="Homemade Dulce de Leche Recipe | Easy Slow-Cooked Caramel Spread"
+                   data-video-src="videos/dulce-de-leche-caramel-spread.mp4"
+                   data-video-tag="Food & Drink"
+                   data-video-desc="Learn how to make rich, creamy homemade dulce de leche using a simple method that delivers authentic flavor every time. This slow-cooked caramel sauce is perfect for drizzling over desserts, spreading on toast, or adding to your favorite baked goods. Whether you're a fan of Latin American desserts or just love a good sweet treat, this easy dulce de leche recipe is a must-try.
+
+In this video, Chef Eliane shows you step-by-step how to make dulce de leche from scratch using pantry staples—no special equipment needed.caramelsauce
+Latinamerican"
+                   data-video-thumb="images/dulce-de-leche-thumb.jpg"
+                   data-video-duration="0:28"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
             <div class="video-thumb-wrap">
-              <img src="images/gourmet-plate-reel-thumb.jpg" alt="Gourmet Plating Presentation">
-              <div class="play-overlay-btn">
+              <img src="images/dulce-de-leche-thumb.jpg" alt="Homemade Dulce de Leche Recipe | Easy Slow-Cooked Caramel Spread" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Homemade Dulce de Leche Recipe | Easy Slow-Cooked Caramel Spread">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
+              <span class="video-duration-badge">0:28</span>
             </div>
             <div class="video-card-content">
-              <span class="video-tag" style="background: var(--color-gold); color: #fff;">Plating Mastery</span>
-              <h3 class="video-title">The Art of Plating: Haute Cuisine Presentation</h3>
-              <p class="video-desc">
-                Watch an exquisite plated dish come to life with delicate sauce dots, vibrant microgreens, and Michelin-inspired geometry.
-              </p>
+              <h3 class="video-title">Homemade Dulce de Leche Recipe | Easy Slow-Cooked Caramel Spread</h3>
+              <p class="video-desc">Learn how to make rich, creamy homemade dulce de leche using a simple method that delivers authentic flavor every time. This slow-cooked caramel sauce is perfect for drizzling over desserts, spreading on toast, or adding to your favorite baked goods. Whether you're a fan of Latin American desserts or just love a good sweet treat, this easy dulce de leche recipe is a must-try.
+
+In this video, Chef Eliane shows you step-by-step how to make dulce de leche from scratch using pantry staples—no special equipment needed.caramelsauce
+Latinamerican</p>
+            </div>
+          </article>
+          <!-- Video 11: Discover our Culinary Services -->
+          <article class="media-video-card video-trigger-item" style="cursor: pointer;"
+                   data-video-index="10"
+                   data-video-title="Discover our Culinary Services"
+                   data-video-src="videos/discover-culinary-services.mp4"
+                   data-video-tag="Epicurean Spotlight"
+                   data-video-desc="Discover our comprehensive culinary services, private chef bookings, and bespoke kitchen consulting by Chef Eliane."
+                   data-video-thumb="images/culinary-services-thumb.jpg"
+                   data-video-duration="0:11"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
+            <div class="video-thumb-wrap">
+              <img src="images/culinary-services-thumb.jpg" alt="Discover our Culinary Services" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Discover our Culinary Services">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <span class="video-duration-badge">0:11</span>
+            </div>
+            <div class="video-card-content">
+              <h3 class="video-title">Discover our Culinary Services</h3>
+              <p class="video-desc">Discover our comprehensive culinary services, private chef bookings, and bespoke kitchen consulting by Chef Eliane.</p>
+            </div>
+          </article>
+          <!-- Video 12: Let's Eat Cookbook -->
+          <article class="media-video-card video-trigger-item" style="cursor: pointer;"
+                   data-video-index="11"
+                   data-video-title="Let's Eat Cookbook"
+                   data-video-src="videos/lets-eat-cookbook.mp4"
+                   data-video-tag="Epicurean Spotlight"
+                   data-video-desc="Explore the Let's Eat Cookbook by Chef Eliane Muskus, packed with wholesome Mediterranean recipes, tips, and kitchen inspiration."
+                   data-video-thumb="images/lets-eat-cookbook-thumb.jpg"
+                   data-video-duration="0:58"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
+            <div class="video-thumb-wrap">
+              <img src="images/lets-eat-cookbook-thumb.jpg" alt="Let's Eat Cookbook" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Let's Eat Cookbook">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <span class="video-duration-badge">0:58</span>
+            </div>
+            <div class="video-card-content">
+              <h3 class="video-title">Let's Eat Cookbook</h3>
+              <p class="video-desc">Explore the Let's Eat Cookbook by Chef Eliane Muskus, packed with wholesome Mediterranean recipes, tips, and kitchen inspiration.</p>
+            </div>
+          </article>
+          <!-- Video 13: Cooking Techniques -->
+          <article class="media-video-card video-trigger-item" style="cursor: pointer;"
+                   data-video-index="12"
+                   data-video-title="Cooking Techniques"
+                   data-video-src="videos/cooking-techniques.mp4"
+                   data-video-tag="Epicurean Spotlight"
+                   data-video-desc="Master essential culinary techniques, knife skills, pan control, and classic methods to elevate your home cooking."
+                   data-video-thumb="images/cooking-techniques-thumb.jpg"
+                   data-video-duration="1:00"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
+            <div class="video-thumb-wrap">
+              <img src="images/cooking-techniques-thumb.jpg" alt="Cooking Techniques" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Cooking Techniques">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <span class="video-duration-badge">1:00</span>
+            </div>
+            <div class="video-card-content">
+              <h3 class="video-title">Cooking Techniques</h3>
+              <p class="video-desc">Master essential culinary techniques, knife skills, pan control, and classic methods to elevate your home cooking.</p>
+            </div>
+          </article>
+          <!-- Video 14: Seasonal Recipes Spring -->
+          <article class="media-video-card video-trigger-item" style="cursor: pointer;"
+                   data-video-index="13"
+                   data-video-title="Seasonal Recipes Spring"
+                   data-video-src="videos/seasonal-recipes-spring.mp4"
+                   data-video-tag="Epicurean Spotlight"
+                   data-video-desc="Fresh, vibrant seasonal recipes crafted for spring with bright Mediterranean herbs, crisp greens, and market vegetables."
+                   data-video-thumb="images/seasonal-recipes-spring-thumb.jpg"
+                   data-video-duration="0:42"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
+            <div class="video-thumb-wrap">
+              <img src="images/seasonal-recipes-spring-thumb.jpg" alt="Seasonal Recipes Spring" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Seasonal Recipes Spring">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <span class="video-duration-badge">0:42</span>
+            </div>
+            <div class="video-card-content">
+              <h3 class="video-title">Seasonal Recipes Spring</h3>
+              <p class="video-desc">Fresh, vibrant seasonal recipes crafted for spring with bright Mediterranean herbs, crisp greens, and market vegetables.</p>
+            </div>
+          </article>
+          <!-- Video 15: Menu Planning for Parties & Events -->
+          <article class="media-video-card video-trigger-item" style="cursor: pointer;"
+                   data-video-index="14"
+                   data-video-title="Menu Planning for Parties & Events"
+                   data-video-src="videos/menu-planning-parties.mp4"
+                   data-video-tag="Consultations & Planning"
+                   data-video-desc="Hosting a party and not sure what to cook? Chef Eliane helps you design the perfect menu, organize your kitchen, and prepare everything in advance — so you can enjoy the event stress-free."
+                   data-video-thumb="images/menu-planning-thumb.jpg"
+                   data-video-duration="0:12"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
+            <div class="video-thumb-wrap">
+              <img src="images/menu-planning-thumb.jpg" alt="Menu Planning for Parties & Events" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Menu Planning for Parties & Events">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <span class="video-duration-badge">0:12</span>
+            </div>
+            <div class="video-card-content">
+              <h3 class="video-title">Menu Planning for Parties & Events</h3>
+              <p class="video-desc">Hosting a party and not sure what to cook? Chef Eliane helps you design the perfect menu, organize your kitchen, and prepare everything in advance — so you can enjoy the event stress-free.</p>
+            </div>
+          </article>
+          <!-- Video 16: Start your day with a healthy breakfast -->
+          <article class="media-video-card video-trigger-item" style="cursor: pointer;"
+                   data-video-index="15"
+                   data-video-title="Start your day with a healthy breakfast"
+                   data-video-src="videos/healthy-breakfast.mp4"
+                   data-video-tag="Epicurean Spotlight"
+                   data-video-desc="Start your morning right with nutritious, energizing breakfast ideas and chef-crafted morning recipes."
+                   data-video-thumb="images/healthy-breakfast-thumb.jpg"
+                   data-video-duration="0:17"
+                   data-course-link="courses.html"
+                   data-video-link="courses.html">
+            <div class="video-thumb-wrap">
+              <img src="images/healthy-breakfast-thumb.jpg" alt="Start your day with a healthy breakfast" loading="lazy">
+              <div class="play-overlay-btn" aria-label="Play Start your day with a healthy breakfast">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <span class="video-duration-badge">0:17</span>
+            </div>
+            <div class="video-card-content">
+              <h3 class="video-title">Start your day with a healthy breakfast</h3>
+              <p class="video-desc">Start your morning right with nutritious, energizing breakfast ideas and chef-crafted morning recipes.</p>
             </div>
           </article>
         </div>
@@ -426,14 +630,14 @@
     </section>
 
     <!-- Save 10% Course Promo Banner -->
-    <section class="section" style="background: linear-gradient(135deg, var(--color-ink), #2b2b2b); color: var(--color-white);">
-      <div class="container text-center" style="max-width: 800px;">
-        <p class="section-tag" style="color: var(--color-gold);">Subscriber Privilege</p>
-        <h2 style="font-family: var(--font-serif); font-size: 2.25rem; color: var(--color-white); margin-bottom: 16px;">Save 10% on All Cooking Classes</h2>
+    <section class="section" style="background: linear-gradient(135deg, var(--color-ink, #1a1a1a), #2b2b2b); color: var(--color-white, #ffffff); padding: 70px 0;">
+      <div class="container text-center" style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+        <p class="section-tag" style="color: var(--color-gold, #d4a359); text-transform: uppercase; font-weight: 700; letter-spacing: 0.15em; font-size: 0.8rem; margin-bottom: 12px;">Subscriber Privilege</p>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.35rem); color: #ffffff; margin-bottom: 16px; font-weight: 500;">Save 10% on Cooking Courses</h2>
         <p style="font-size: 1.05rem; color: #ccc; line-height: 1.7; margin-bottom: 32px;">
-          Join our masterclasses today and apply promo code <strong style="color: var(--color-gold);">EPICUREAN10</strong> at checkout to unlock your 10% discount on foundational, intermediate, and advanced courses.
+          Explore our practical courses today and apply promo code <strong style="color: var(--color-gold, #d4a359);">FLOWS10</strong> at checkout to enjoy your 10% discount on foundational, intermediate, and advanced culinary courses.
         </p>
-        <a href="courses.html" class="btn btn-primary">Browse All Courses Now</a>
+        <a href="courses.html" class="btn btn-primary" style="background: var(--color-gold, #d4a359); color: #1a1a1a; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 14px 28px; border-radius: 4px; text-decoration: none; display: inline-block;">Browse All Courses Now</a>
       </div>
     </section>
   </main>
@@ -449,7 +653,7 @@
           <p class="footer-tagline">Where cooking inspires. Masterclasses, curated digital cookbooks, and gourmet culinary cinema by Award-Winning Chef Eliane Muskus.</p>
           <div class="footer-contact-info" style="font-size: 0.875rem; color: rgba(245, 240, 231, 0.78); margin-top: 14px;">
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px; font-weight: 600;">Epicurean Flow</p>
-            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Sierra Grazalema 23<br>29016 Málaga, Spain</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Registered in Amsterdam, Netherlands</p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+ 31618571677</a></p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Telephone Spain: <a href="tel:+34626617282" style="color: var(--color-gold);">+34626617282</a></p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 0;">Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
@@ -514,48 +718,106 @@
 
     <div class="footer-bottom container">
       <p class="copyright">&copy; 2026 Epicurean Flow | All Rights Reserved</p>
-      <p style="font-size: 0.8rem; color: #777;">Business Registration: 94886792 &bull; Málaga, Spain</p>
+      <p style="font-size: 0.8rem; color: #777;">Business Registration: 94886792 &bull; Amsterdam, Netherlands</p>
       <div class="footer-bottom-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
         <a href="refund-policy.html">Refund Policy</a>
       </div>
     </div>
+
+    <div class="container">
+      <div class="footer-developer-bar" style="border-top: 1px solid rgba(245, 240, 231, 0.1); padding: 18px 0; text-align: center;">
+        <span style="font-size: 0.8125rem; color: rgba(245, 240, 231, 0.65);">Website designed by <a href="https://ibtex.ibe88agwu.workers.dev/" target="_blank" rel="noopener" style="color: var(--color-gold, #c5a059); text-decoration: none;">IBTEX</a></span>
+      </div>
+      </div>
     </div>
   </footer>
 
   <!-- =========================================================================
-       CINEMA VIDEO MODAL
+       WIX AUTHENTIC CINEMA VIDEO THEATER MODAL (1:1 with Wix Player)
        ========================================================================= -->
-  <div class="video-modal-backdrop" id="video-modal" aria-hidden="true">
-    <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-video-title">
-      <div class="video-modal-header">
-        <h3 class="video-modal-title" id="modal-video-title">Culinary Video</h3>
-        <button class="video-modal-close" id="modal-video-close" aria-label="Close Video">&times;</button>
+  <div class="wix-cinema-modal" id="wix-cinema-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Culinary Cinema Video Player">
+    <!-- Top Utility Bar -->
+    <div class="wix-cinema-topbar">
+      <button type="button" class="wix-cinema-share-btn" id="wix-cinema-share-btn" aria-label="Share Video">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+          <polyline points="16 6 12 2 8 6"></polyline>
+          <line x1="12" y1="2" x2="12" y2="15"></line>
+        </svg>
+        <span id="wix-share-text">Share</span>
+      </button>
+      <button type="button" class="wix-cinema-close-btn" id="wix-cinema-close-btn" aria-label="Close Video Player">&times;</button>
+    </div>
+
+    <!-- Main Cinema Stage (Video Center/Left + Info Right) -->
+    <div class="wix-cinema-stage">
+      <!-- Left / Center Video Wrap with Nav Arrows -->
+      <div class="wix-cinema-player-wrap">
+        <!-- Prev Video Button -->
+        <button type="button" class="wix-cinema-nav-arrow prev" id="wix-cinema-prev" aria-label="Previous Video">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Video Player Box -->
+        <div class="wix-cinema-video-box">
+          <video id="wix-cinema-video" controls playsinline preload="auto" poster="images/sliced-gourmet-steak.jpg">
+            <source id="wix-video-source" src="videos/searing-perfect-steak.mp4" type="video/mp4">
+            Your browser does not support high definition video playback.
+          </video>
+        </div>
+
+        <!-- Next Video Button -->
+        <button type="button" class="wix-cinema-nav-arrow next" id="wix-cinema-next" aria-label="Next Video">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
       </div>
-      <div class="video-modal-preview" style="position: relative; aspect-ratio: 16/9; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-        <video id="modal-video-player" controls playsinline style="width: 100%; height: 100%; object-fit: contain; display: none;" poster=""></video>
-        <img id="modal-video-poster" src="" alt="Video Preview" style="width: 100%; height: 100%; object-fit: cover;">
-        <span class="badge badge-gold video-modal-overlay-badge" id="modal-video-badge">Technique</span>
-        <div id="modal-video-overlay-play" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35); cursor: pointer;">
-          <button type="button" class="play-overlay-btn" style="width: 76px; height: 76px; transform: scale(1); box-shadow: 0 0 30px rgba(212,163,89,0.6);" aria-label="Stream Video in HD">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+
+      <!-- Right Video Information Panel -->
+      <div class="wix-cinema-info-panel">
+        <div class="wix-cinema-info-top">
+          <button type="button" class="wix-cinema-icon-btn" title="Information" aria-label="Video Information">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          </button>
+          <button type="button" class="wix-cinema-icon-btn" id="wix-info-share-btn" title="Share" aria-label="Share Video">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
           </button>
         </div>
-      </div>
-      <div class="video-modal-content">
-        <p class="video-modal-desc" id="modal-video-desc"></p>
-        <div class="video-modal-actions">
-          <a id="modal-video-cta" href="https://epicureanflow.wixsite.com/epicurean-flow/media" target="_blank" rel="noopener" class="btn btn-gold">
-            <span>Watch Full HD Video on Wix Cinema &rarr;</span>
-          </a>
-          <a id="modal-course-btn" href="courses.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.25); color: #fff;"><span>Explore Related Academy Course &rarr;</span></a>
+
+        <h2 class="wix-cinema-title" id="wix-cinema-title">Searing the Perfect Steak</h2>
+        <div class="wix-cinema-duration" id="wix-cinema-duration">00:20</div>
+        <div class="wix-cinema-desc" id="wix-cinema-desc">
+          Master the art of searing the perfect steak with these professional chef tips. Learn the optimal cast iron temperature, why salting 40 minutes prior creates the deepest crust, and how to baste with foaming herb butter for a juicy, flavorful result every time.
+        </div>
+        <div class="wix-cinema-cta">
+          <a href="courses.html" class="btn btn-gold" style="font-size: 0.85rem; padding: 12px 24px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700;">Explore Chef Courses &rarr;</a>
         </div>
       </div>
+    </div>
+
+    <!-- Bottom Strip: Filmstrip Carousel -->
+    <div class="wix-cinema-tray-wrap">
+      <button type="button" class="wix-tray-scroll-btn" id="wix-tray-scroll-left" aria-label="Scroll videos left">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <div class="wix-cinema-tray" id="wix-cinema-tray">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+
+      <button type="button" class="wix-tray-scroll-btn" id="wix-tray-scroll-right" aria-label="Scroll videos right">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
     </div>
   </div>
 
   <!-- =========================================================================
+       INTERACTIVE CART DRAWER<!-- =========================================================================
        INTERACTIVE CART DRAWER
        ========================================================================= -->
   <div class="cart-drawer-backdrop" id="cart-backdrop"></div>
@@ -582,7 +844,7 @@
         <span>Subtotal:</span>
         <span id="cart-subtotal-val">€0.00</span>
       </div>
-      <a href="https://epicureanflow.wixsite.com/epicurean-flow/cart-page" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
+      <a href="javascript:void(0)" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
         <span>Proceed to Secure Checkout</span>
       </a>
     </div>
@@ -590,102 +852,370 @@
 
   <!-- JavaScript -->
   <script src="js/navigation.js"></script>
+  <script src="js/wix-sdk-client.js"></script>
   <script src="js/products.js"></script>
   <script src="js/main.js"></script>
   <script src="js/members.js"></script>
+  <script src="js/animations.js"></script>
 
   <!-- Cinema Video Modal Controller -->
   <script>
+    // Authentic Wix Cinema Video Playlist Data (100% exact from Wix Database)
+    const WIX_CINEMA_PLAYLIST = [
+      {
+            "id": "64a5ddaff0144393b0eed32ecac38bbe",
+            "index": 0,
+            "title": "Searing the Perfect Steak",
+            "duration": "0:20",
+            "src": "videos/searing-perfect-steak.mp4",
+            "thumb": "images/steak-thumb.jpg",
+            "desc": "Master the art of searing the perfect steak with these professional chef tips. Learn the best steak cooking techniques for a juicy, flavorful result every time.",
+            "origFileName": "Brown Aesthetic Quotes Instagram Post_20250729_171103_0001.mp4",
+            "tag": "Cooking Courses",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "9ed419064e18412aad6764181f440d2e",
+            "index": 1,
+            "title": "Healthy Cooking Tips for Delicious Everyday Meals",
+            "duration": "0:14",
+            "src": "videos/healthy-cooking-tips.mp4",
+            "thumb": "images/healthy-tips-thumb.jpg",
+            "desc": "Learn how to create delicious, healthy meals with fresh, whole ingredients. These chef-approved tips make healthy cooking easy, flavorful, and perfect for everyday eating.",
+            "origFileName": "Black and White Restaurant Facebook Video Promo_20250724_094613_0001.mp4",
+            "tag": "Cooking Courses",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "4b1fde519b1e4523adb203f30337786c",
+            "index": 2,
+            "title": "Easy Healthy Bruschetta Ideas for Entertaining",
+            "duration": "0:05",
+            "src": "videos/easy-healthy-bruschetta.mp4",
+            "thumb": "images/bruschetta-thumb.jpg",
+            "desc": "Impress guests with fresh, healthy bruschetta ideas that are quick to prepare and full of Mediterranean flavor. Perfect for parties, light appetizers, or easy gourmet starters.",
+            "origFileName": "Black and White Restaurant Facebook Video Promo_20250726_134422_0001.mp4",
+            "tag": "Food & Drink",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "f0af85084cbd49c4a8ca15955d52ae56",
+            "index": 3,
+            "title": "Chef Tips & Mediterranean Recipes for Food Lovers",
+            "duration": "0:37",
+            "src": "videos/chef-tips-mediterranean-recipes.mp4",
+            "thumb": "images/chef-tips-thumb.jpg",
+            "desc": "A must-watch for passionate food lovers! Explore Mediterranean recipes, chef cooking tips, and gourmet ideas that will inspire your next meal. Perfect for anyone who loves bold flavors and fresh ingredients.",
+            "origFileName": "5eae969f36f2d95363d223cd880be855.mp4",
+            "tag": "Cooking Courses",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "83a50349dce44ba3aab741dc18d14faa",
+            "index": 4,
+            "title": "Save 10% on All Cooking Classes",
+            "duration": "0:20",
+            "src": "videos/save-10-percent-cooking-classes.mp4",
+            "thumb": "images/save-10-percent-thumb.jpg",
+            "desc": "Join our Mediterranean cooking courses and save 10%! Learn chef techniques, healthy recipes, and gourmet skills that will transform your cooking. Perfect for home cooks of all levels.",
+            "origFileName": "watermark-2025-05-14-153331263.mp4",
+            "tag": "Cooking Courses",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "154756a1ff2b4cc789d92f3af54228b6",
+            "index": 5,
+            "title": "Puff Pastry Tips for Flaky, Golden Layers",
+            "duration": "0:19",
+            "src": "videos/puff-pastry-tips.mp4",
+            "thumb": "images/puff-pastry-thumb.jpg",
+            "desc": "Discover how to create golden, flaky puff pastry every time with these easy chef tips. Perfect for sweet or savory pastry recipes, these techniques guarantee light, airy layers and professional results at home.",
+            "origFileName": "watermark-2025-08-05-105516901.mp4",
+            "tag": "Food & Drink",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "bb04b4e81f184a9f94c782696d08ed8e",
+            "index": 6,
+            "title": "How to Make Moroccan Chicken Tagine \u2013 Chef\u2019s Pick",
+            "duration": "0:34",
+            "src": "videos/moroccan-chicken-tagine.mp4",
+            "thumb": "images/moroccan-tagine-thumb.jpg",
+            "desc": "Learn how to make authentic Moroccan chicken tagine with tender meat, warm spices, and Mediterranean flair. A flavorful, diabetes-friendly dish perfect for any occasion.",
+            "origFileName": "watermark-2025-07-22-112856859.mp4",
+            "tag": "Food & Drink",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "865f431beb5d4fd083e65aea4b378619",
+            "index": 7,
+            "title": "Cr\u00e8me Br\u00fbl\u00e9e Made Easy | Silky French Dessert Anyone Can Master",
+            "duration": "0:20",
+            "src": "videos/creme-brulee-made-easy.mp4",
+            "thumb": "images/creme-brulee-thumb.jpg",
+            "desc": "Learn how to make silky, crackly-topped Cr\u00e8me Br\u00fbl\u00e9e at home with this easy, foolproof recipe. Whether you\u2019re new to French desserts or looking to perfect your technique, this step-by-step tutorial will show you how to master this elegant classic.\nWith just a few ingredients, you\u2019ll create a creamy custard base topped with a perfectly torched caramelized sugar crust\u2014restaurant quality, made in your own kitchen.\n\nPerfect for special occasions, date nights, or when you simply want to impress.fre ch desserts",
+            "origFileName": "Philippines Local Travel Carousel Instagram Post in Black Beige White Brigh_20250517_100627_0004.mp4",
+            "tag": "Desserts",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "6b77712ed97b4bca8db6fa6c33f93aa5",
+            "index": 8,
+            "title": "Marinated Cucumber Rolls with Whipped Feta | Light & Elegant Appetizer",
+            "duration": "0:20",
+            "src": "videos/marinated-cucumber-rolls.mp4",
+            "thumb": "images/cucumber-rolls-thumb.jpg",
+            "desc": "Discover how to make elegant and refreshing marinated cucumber rolls filled with whipped feta, the perfect appetizer or party bite. This light Mediterranean-inspired recipe is not only easy to prepare but also visually stunning\u2014ideal for summer gatherings, mezze platters, or healthy entertaining.\n\nIn this video, Chef Eliane walks you through the process of marinating cucumber ribbons and filling them with a creamy whipped feta and herb mixture. These rolls are a showstopper for brunch, cocktail parties, or holiday spreads, and they\u2019re naturally low-carb and gluten-free.",
+            "origFileName": "1_20250517_112343_0000.mp4",
+            "tag": "Food & Drink",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "181478b1316e43ca91d557e1868ec752",
+            "index": 9,
+            "title": "Homemade Dulce de Leche Recipe | Easy Slow-Cooked Caramel Spread",
+            "duration": "0:28",
+            "src": "videos/dulce-de-leche-caramel-spread.mp4",
+            "thumb": "images/dulce-de-leche-thumb.jpg",
+            "desc": "Learn how to make rich, creamy homemade dulce de leche using a simple method that delivers authentic flavor every time. This slow-cooked caramel sauce is perfect for drizzling over desserts, spreading on toast, or adding to your favorite baked goods. Whether you're a fan of Latin American desserts or just love a good sweet treat, this easy dulce de leche recipe is a must-try.\n\nIn this video, Chef Eliane shows you step-by-step how to make dulce de leche from scratch using pantry staples\u2014no special equipment needed.caramelsauce\nLatinamerican",
+            "origFileName": "d6d04be7dc488462f588981431aae599.mp4",
+            "tag": "Food & Drink",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "924f006b8297455089ee33ba5f81a6f1",
+            "index": 10,
+            "title": "Discover our Culinary Services",
+            "duration": "0:11",
+            "src": "videos/discover-culinary-services.mp4",
+            "thumb": "images/culinary-services-thumb.jpg",
+            "desc": "Discover our comprehensive culinary services, private chef bookings, and bespoke kitchen consulting by Chef Eliane.",
+            "origFileName": "Discover Epicurean Flow_culinary.mp4",
+            "tag": "Epicurean Spotlight",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "56ed841270b44133bb1f08662af2cc2c",
+            "index": 11,
+            "title": "Let's Eat Cookbook",
+            "duration": "0:58",
+            "src": "videos/lets-eat-cookbook.mp4",
+            "thumb": "images/lets-eat-cookbook-thumb.jpg",
+            "desc": "Explore the Let's Eat Cookbook by Chef Eliane Muskus, packed with wholesome Mediterranean recipes, tips, and kitchen inspiration.",
+            "origFileName": "Let's Eat_Cook Book by Eliane Muskus.mp4",
+            "tag": "Epicurean Spotlight",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "2147c5153aa644449f51bc63b753e6ee",
+            "index": 12,
+            "title": "Cooking Techniques",
+            "duration": "1:00",
+            "src": "videos/cooking-techniques.mp4",
+            "thumb": "images/cooking-techniques-thumb.jpg",
+            "desc": "Master essential culinary techniques, knife skills, pan control, and classic methods to elevate your home cooking.",
+            "origFileName": "Epicurean Flow_techniques.mp4",
+            "tag": "Epicurean Spotlight",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "5ee2fc246d904366844c9c7e22c5c3bd",
+            "index": 13,
+            "title": "Seasonal Recipes Spring",
+            "duration": "0:42",
+            "src": "videos/seasonal-recipes-spring.mp4",
+            "thumb": "images/seasonal-recipes-spring-thumb.jpg",
+            "desc": "Fresh, vibrant seasonal recipes crafted for spring with bright Mediterranean herbs, crisp greens, and market vegetables.",
+            "origFileName": "Seasonal Recipes Spring_Epicurean Flow.mp4",
+            "tag": "Epicurean Spotlight",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "e7d3a0ce3d0741df90a7c1a8dba60b84",
+            "index": 14,
+            "title": "Menu Planning for Parties & Events",
+            "duration": "0:12",
+            "src": "videos/menu-planning-parties.mp4",
+            "thumb": "images/menu-planning-thumb.jpg",
+            "desc": "Hosting a party and not sure what to cook? Chef Eliane helps you design the perfect menu, organize your kitchen, and prepare everything in advance \u2014 so you can enjoy the event stress-free.",
+            "origFileName": "Menu Planning Service_Epicurean Flow.mp4",
+            "tag": "Consultations & Planning",
+            "courseLink": "courses.html"
+      },
+      {
+            "id": "ddecfa43699249aa9ae3f4562671c85a",
+            "index": 15,
+            "title": "Start your day with a healthy breakfast",
+            "duration": "0:17",
+            "src": "videos/healthy-breakfast.mp4",
+            "thumb": "images/healthy-breakfast-thumb.jpg",
+            "desc": "Start your morning right with nutritious, energizing breakfast ideas and chef-crafted morning recipes.",
+            "origFileName": "Breakfast_Epicurean Flow.mp4",
+            "tag": "Epicurean Spotlight",
+            "courseLink": "courses.html"
+      }
+];
+
     document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('video-modal');
-      const closeBtn = document.getElementById('modal-video-close');
-      const titleEl = document.getElementById('modal-video-title');
-      const descEl = document.getElementById('modal-video-desc');
-      const badgeEl = document.getElementById('modal-video-badge');
-      const posterEl = document.getElementById('modal-video-poster');
-      const videoPlayer = document.getElementById('modal-video-player');
-      const overlayPlay = document.getElementById('modal-video-overlay-play');
-      const ctaLink = document.getElementById('modal-video-cta');
-      const courseBtn = document.getElementById('modal-course-btn');
+      const modal = document.getElementById('wix-cinema-modal');
+      const closeBtn = document.getElementById('wix-cinema-close-btn');
+      const prevBtn = document.getElementById('wix-cinema-prev');
+      const nextBtn = document.getElementById('wix-cinema-next');
+      const videoEl = document.getElementById('wix-cinema-video');
+      const titleEl = document.getElementById('wix-cinema-title');
+      const durEl = document.getElementById('wix-cinema-duration');
+      const descEl = document.getElementById('wix-cinema-desc');
+      const trayEl = document.getElementById('wix-cinema-tray');
+      const trayLeftBtn = document.getElementById('wix-tray-scroll-left');
+      const trayRightBtn = document.getElementById('wix-tray-scroll-right');
+      const shareBtn = document.getElementById('wix-cinema-share-btn');
+      const infoShareBtn = document.getElementById('wix-info-share-btn');
+      const shareText = document.getElementById('wix-share-text');
 
-      function openModal(card) {
-        const title = card.getAttribute('data-video-title') || 'Culinary Masterclass';
-        const desc = card.getAttribute('data-video-desc') || '';
-        const tag = card.getAttribute('data-video-tag') || 'Culinary Cinema';
-        const thumb = card.getAttribute('data-video-thumb') || '';
-        const src = card.getAttribute('data-video-src') || '';
-        const link = card.getAttribute('data-video-link') || 'https://epicureanflow.wixsite.com/epicurean-flow/media';
-        const courseLink = card.getAttribute('data-course-link') || 'courses.html';
+      let currentVideoIdx = 0;
 
-        titleEl.textContent = title;
-        descEl.textContent = desc;
-        badgeEl.textContent = tag;
-        posterEl.src = thumb;
-        posterEl.alt = title;
-        ctaLink.href = link;
-        if (courseBtn) courseBtn.href = courseLink;
+      // Populate bottom filmstrip tray
+      if (trayEl) {
+        trayEl.innerHTML = WIX_CINEMA_PLAYLIST.map((v, i) => `
+          <div class="wix-tray-item ${i === 0 ? 'active' : ''}" data-index="${i}" title="${v.title}">
+            <img src="${v.thumb}" alt="${v.title}" loading="lazy">
+            <div class="wix-tray-item-title">${v.title}</div>
+            <div class="wix-tray-item-dur">${v.duration}</div>
+            <div class="wix-tray-item-play">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+        `).join('');
 
-        if (src) {
-          videoPlayer.src = src;
-          videoPlayer.poster = thumb;
-          videoPlayer.style.display = 'block';
-          posterEl.style.display = 'none';
-          overlayPlay.style.display = 'none';
-          videoPlayer.play().catch(e => console.log('Autoplay prevented:', e));
-        } else {
-          videoPlayer.style.display = 'none';
-          videoPlayer.pause();
-          posterEl.style.display = 'block';
-          overlayPlay.style.display = 'flex';
+        trayEl.querySelectorAll('.wix-tray-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const idx = parseInt(item.getAttribute('data-index'), 10);
+            loadVideo(idx, true);
+          });
+        });
+      }
+
+      function loadVideo(idx, autoplay = true) {
+        if (idx < 0) idx = WIX_CINEMA_PLAYLIST.length - 1;
+        if (idx >= WIX_CINEMA_PLAYLIST.length) idx = 0;
+
+        currentVideoIdx = idx;
+        const video = WIX_CINEMA_PLAYLIST[idx];
+
+        titleEl.textContent = video.title;
+        durEl.textContent = video.duration;
+        descEl.textContent = video.desc;
+
+        videoEl.pause();
+        videoEl.src = video.src;
+        videoEl.poster = video.thumb;
+        videoEl.load();
+
+        if (autoplay) {
+          videoEl.play().catch(err => console.log('Autoplay deferred:', err));
         }
 
+        // Update active class on tray
+        if (trayEl) {
+          trayEl.querySelectorAll('.wix-tray-item').forEach((item, i) => {
+            if (i === idx) {
+              item.classList.add('active');
+              item.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            } else {
+              item.classList.remove('active');
+            }
+          });
+        }
+      }
+
+      function openModal(idx = 0) {
+        loadVideo(idx, true);
         modal.classList.add('open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
       }
 
       function closeModal() {
-        if (videoPlayer) {
-          videoPlayer.pause();
-          videoPlayer.currentTime = 0;
+        if (videoEl) {
+          videoEl.pause();
+          videoEl.currentTime = 0;
         }
         modal.classList.remove('open');
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
       }
 
+      // Attach clicks to all trigger items
       document.querySelectorAll('.video-trigger-item').forEach(el => {
         el.addEventListener('click', (e) => {
           if (e.target.closest('a') && !e.target.closest('.play-overlay-btn')) return;
           e.preventDefault();
-          openModal(el);
+          const idxAttr = el.getAttribute('data-video-index');
+          const idx = idxAttr !== null ? parseInt(idxAttr, 10) : 0;
+          openModal(idx);
         });
       });
-
-      if (overlayPlay) {
-        overlayPlay.addEventListener('click', () => {
-          if (videoPlayer.src) {
-            videoPlayer.style.display = 'block';
-            posterEl.style.display = 'none';
-            overlayPlay.style.display = 'none';
-            videoPlayer.play();
-          } else if (ctaLink) {
-            window.open(ctaLink.href, '_blank');
-          }
-        });
-      }
 
       if (closeBtn) closeBtn.addEventListener('click', closeModal);
-      if (modal) {
-        modal.addEventListener('click', (e) => {
-          if (e.target === modal) closeModal();
-        });
+      if (prevBtn) prevBtn.addEventListener('click', () => loadVideo(currentVideoIdx - 1, true));
+      if (nextBtn) nextBtn.addEventListener('click', () => loadVideo(currentVideoIdx + 1, true));
+
+      if (trayLeftBtn && trayEl) {
+        trayLeftBtn.addEventListener('click', () => trayEl.scrollBy({ left: -240, behavior: 'smooth' }));
       }
+      if (trayRightBtn && trayEl) {
+        trayRightBtn.addEventListener('click', () => trayEl.scrollBy({ left: 240, behavior: 'smooth' }));
+      }
+
+      function handleShare() {
+        const video = WIX_CINEMA_PLAYLIST[currentVideoIdx];
+        const shareData = {
+          title: video.title + ' - Epicurean Flow',
+          text: video.desc,
+          url: window.location.href.split('?')[0] + '?video=' + currentVideoIdx
+        };
+
+        if (navigator.share) {
+          navigator.share(shareData).catch(() => {});
+        } else {
+          navigator.clipboard.writeText(shareData.url).then(() => {
+            if (shareText) {
+              const orig = shareText.textContent;
+              shareText.textContent = 'Link Copied!';
+              setTimeout(() => { shareText.textContent = orig; }, 2000);
+            }
+          });
+        }
+      }
+
+      if (shareBtn) shareBtn.addEventListener('click', handleShare);
+      if (infoShareBtn) infoShareBtn.addEventListener('click', handleShare);
+
+      // Keyboard Controls
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('open')) {
-          closeModal();
+        if (!modal.classList.contains('open')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') loadVideo(currentVideoIdx - 1, true);
+        if (e.key === 'ArrowRight') loadVideo(currentVideoIdx + 1, true);
+        if (e.key === ' ' && e.target === document.body) {
+          e.preventDefault();
+          if (videoEl.paused) videoEl.play(); else videoEl.pause();
         }
       });
+
+      // Check URL query param for direct video link
+      const urlParams = new URLSearchParams(window.location.search);
+      const videoParam = urlParams.get('video') || urlParams.get('wix-vod-video-id');
+      if (videoParam !== null) {
+        let targetIdx = parseInt(videoParam, 10);
+        if (isNaN(targetIdx)) {
+          // Check by id
+          const found = WIX_CINEMA_PLAYLIST.findIndex(v => v.id === videoParam || v.title.toLowerCase().includes(videoParam.toLowerCase()));
+          if (found !== -1) targetIdx = found;
+          else targetIdx = 0;
+        }
+        openModal(targetIdx);
+      }
     });
   </script>
 </body>

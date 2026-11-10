@@ -1,0 +1,8 @@
+# Epicurean Flow - Robots.txt
+# https://epicureanflow.com/
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://epicureanflow.com/sitemap.xml

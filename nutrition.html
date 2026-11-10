@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -37,8 +37,8 @@
       <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
           <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Books</a></li>
           
           <!-- Recipes Dropdown -->
           <li class="nav-item has-dropdown">
@@ -53,6 +53,10 @@
                 <span class="dropdown-item-title">All Recipes</span>
                 <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
               </a>
+              <a href="blog.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Chef's Blog</span>
+                <span class="dropdown-item-desc">Culinary stories, techniques &amp; food science</span>
+              </a>
               <a href="diabetes.html" class="dropdown-item" role="menuitem">
                 <span class="dropdown-item-title">Diabetes Living</span>
                 <span class="dropdown-item-desc">Flavor-first low-carb gastronomy</span>
@@ -66,8 +70,8 @@
                 <span class="dropdown-item-desc">Bespoke 1-on-1 chef consultations</span>
               </a>
               <a href="media.html" class="dropdown-item" role="menuitem">
-                <span class="dropdown-item-title">Media &amp; Cinema</span>
-                <span class="dropdown-item-desc">Masterclass video streams &amp; previews</span>
+                <span class="dropdown-item-title">Media &amp; Masterclass</span>
+                <span class="dropdown-item-desc">Culinary clips &amp; kitchen reels</span>
               </a>
             </div>
           </li>
@@ -104,13 +108,17 @@
                 </div>
               </div>
               <div class="member-menu-divider"></div>
-              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                <span>My Account &amp; Profile</span>
+              <button type="button" class="member-menu-item" id="menu-my-orders" onclick="window.openEpicureanPortal('orders'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Orders &amp; Purchase History</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-library" onclick="window.openEpicureanPortal('library'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                 <span>My Cookbooks &amp; Courses</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>My Account &amp; Profile</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-reviews" onclick="window.openEpicureanPortal('reviews'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -147,44 +155,65 @@
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
-    <!-- Mobile Member Status Bar -->
-    <div class="mobile-member-widget" id="mobile-member-widget">
-      <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
+    <!-- Header with Dedicated Cancel / Close Button -->
+    <div class="mobile-drawer-header">
+      <span class="mobile-drawer-title">Navigation</span>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
-        <span>Member Log In / Sign Up</span>
+        <span>Close</span>
       </button>
-      <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
-        <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
-        <div class="mobile-member-meta">
-          <span class="mobile-member-name" id="mobile-member-name">Member</span>
-          <span class="mobile-member-status">Verified Community Member</span>
-        </div>
-        <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
-      </div>
     </div>
 
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
-      <a href="courses.html" class="mobile-nav-link">Courses</a>
-      
-      <div class="mobile-nav-group">
-        <a href="recipes.html" class="mobile-nav-link active">Recipes / Blog</a>
-        <div class="mobile-nav-submenu">
-          <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
-          <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
-          <a href="nutrition.html" class="mobile-nav-sublink active">Nutrition &amp; Science</a>
-          <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
-          <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclasses</a>
+    <div class="mobile-drawer-body">
+      <!-- Mobile Member Status Bar -->
+      <div class="mobile-member-widget" id="mobile-member-widget">
+        <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Member Log In / Sign Up</span>
+        </button>
+        <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
+          <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
+          <div class="mobile-member-meta">
+            <span class="mobile-member-name" id="mobile-member-name">Member</span>
+            <span class="mobile-member-status">Verified Community Member</span>
+          </div>
+          <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
         </div>
       </div>
 
-      <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
-      <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="courses.html" class="mobile-nav-link">Courses</a>
+        <a href="cookbooks.html" class="mobile-nav-link">Books</a>
+        
+        <!-- Accordion: Recipes & Blog (Collapsed by Default, Expands on Click) -->
+        <div class="mobile-nav-group">
+          <button type="button" class="mobile-nav-link mobile-accordion-trigger active" id="mobile-recipes-toggle" aria-expanded="false" aria-controls="mobile-recipes-submenu">
+            <span>Recipes &amp; Blog</span>
+            <svg class="mobile-accordion-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-submenu" id="mobile-recipes-submenu" style="display: none;">
+            <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
+            <a href="blog.html" class="mobile-nav-sublink">Chef's Blog</a>
+            <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
+            <a href="nutrition.html" class="mobile-nav-sublink active">Nutrition &amp; Science</a>
+            <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
+            <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclass</a>
+          </div>
+        </div>
+
+        <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
+        <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
     </div>
   </div>
 
@@ -214,29 +243,29 @@
 
           <div style="font-size: 1.05rem; line-height: 1.8; color: var(--color-ink-subtle); margin-top: 32px;">
             <p style="margin-bottom: 20px;">
-              The food we consume is converted into energy through a process known as metabolism. Carbohydrates, proteins, and fats are broken down into glucose, amino acids, and fatty acids, which are then utilized by our cells to produce cellular ATP. However, not all foods provide energy in the same way or at the same rate.
+              How we feel throughout the day is deeply tied to how we nourish ourselves. Carbohydrates, proteins, and healthy fats each serve distinct roles in keeping us satisfied, alert, and energized. When meals are thoughtfully composed, cooking becomes a joyful daily foundation for overall wellness.
             </p>
             <p style="margin-bottom: 20px;">
-              Simple carbohydrates found in refined grains and sugary snacks cause rapid spikes in blood glucose followed by precipitous crashes&mdash;leaving you fatigued, brain-fogged, and craving more quick sugars. Conversely, complex carbohydrates, clean proteins, and healthy monounsaturated fats provide a slow, sustained energy curve that supports lasting productivity and emotional calm.
+              Refined ingredients and heavily processed foods often lead to quick peaks followed by mid-day slumps. In contrast, embracing wholesome Mediterranean staples&mdash;fiber-rich grains, quality olive oils, fresh vegetables, and mindful proteins&mdash;helps maintain a steady, satisfying rhythm that fuels your day without restriction.
             </p>
           </div>
 
           <!-- Macro Formula Cards -->
           <div class="macro-grid">
             <div class="macro-box">
-              <div class="macro-num">45%</div>
-              <div class="macro-title">Complex Carbohydrates</div>
-              <p style="font-size: 0.88rem; color: var(--color-ink-muted); line-height: 1.5;">Freekeh, bulgur, quinoa, legumes, and vibrant fibrous greens for steady cellular glycogen.</p>
+              <div class="macro-num" style="font-size: 2rem;">🌾</div>
+              <div class="macro-title">Complex Carbohydrates &amp; Fiber</div>
+              <p style="font-size: 0.88rem; color: var(--color-ink-muted); line-height: 1.5;">Freekeh, bulgur, quinoa, legumes, and vibrant fibrous greens for sustained vitality and digestive balance.</p>
             </div>
             <div class="macro-box">
-              <div class="macro-num">30%</div>
-              <div class="macro-title">Healthy Fats</div>
-              <p style="font-size: 0.88rem; color: var(--color-ink-muted); line-height: 1.5;">Extra virgin cold-pressed olive oil, raw nuts, seeds, and wild fish for hormone &amp; brain health.</p>
+              <div class="macro-num" style="font-size: 2rem;">🫒</div>
+              <div class="macro-title">Quality Healthy Fats</div>
+              <p style="font-size: 0.88rem; color: var(--color-ink-muted); line-height: 1.5;">Extra virgin cold-pressed olive oil, raw nuts, seeds, and wild fish for flavor richness and cellular support.</p>
             </div>
             <div class="macro-box">
-              <div class="macro-num">25%</div>
-              <div class="macro-title">Clean Proteins</div>
-              <p style="font-size: 0.88rem; color: var(--color-ink-muted); line-height: 1.5;">Pastured eggs, artisanal tofu, legumes, and lean poultry to sustain muscle repair and satiety.</p>
+              <div class="macro-num" style="font-size: 2rem;">🥚</div>
+              <div class="macro-title">Wholesome Proteins</div>
+              <p style="font-size: 0.88rem; color: var(--color-ink-muted); line-height: 1.5;">Pastured eggs, artisanal tofu, legumes, and lean poultry to sustain satiety and everyday nourishment.</p>
             </div>
           </div>
         </div>
@@ -249,7 +278,7 @@
         <div class="section-header text-center">
           <p class="section-tag">Chef’s Pillars</p>
           <h2 class="section-title">Essential Principles for a Healthier You</h2>
-          <p class="section-subtitle">Practical formulas tested in Michelin kitchens and refined for daily home wellness.</p>
+          <p class="section-subtitle">Practical culinary principles grounded in professional kitchen technique and refined for daily home wellness.</p>
         </div>
 
         <div class="grid-cards-responsive">
@@ -268,9 +297,9 @@
             <div style="font-size: 2rem; margin-bottom: 16px;">🥗</div>
             <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink); margin-bottom: 12px;">How to Build a Nutrient-Rich Plate</h3>
             <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.7; margin-bottom: 16px;">
-              A foolproof visual formula: fill half your plate with non-starchy, colorful produce; one quarter with clean protein; and one quarter with fiber-rich ancient grains or root vegetables, generously drizzled with premium olive oil.
+              A foolproof visual approach: fill half your plate with colorful, seasonal produce; one quarter with clean protein; and one quarter with fiber-rich ancient grains or root vegetables, generously drizzled with premium olive oil.
             </p>
-            <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-gold); text-transform: uppercase;">The 50 / 25 / 25 Plating Formula</span>
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-gold); text-transform: uppercase;">A Balanced Visual Plating Approach</span>
           </div>
 
           <!-- Pillar 3 -->
@@ -280,7 +309,7 @@
             <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.7; margin-bottom: 16px;">
               Ditch diet confusion once and for all. Learn how to listen to bodily satiety cues, balance carbohydrates with healthy fats, and sustain effortless metabolic flexibility throughout busy working days.
             </p>
-            <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-gold); text-transform: uppercase;">Sustainable Metabolic Wellness</span>
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-gold); text-transform: uppercase;">Sustainable Everyday Balance</span>
           </div>
         </div>
       </div>
@@ -295,7 +324,7 @@
           <p class="section-subtitle">Bursting with color, fresh herbs, and Mediterranean vitality.</p>
         </div>
 
-        <div class="grid-cards-responsive">
+        <div class="grid-cards-responsive" id="nutrition-posts-grid">
           <!-- Dish 1: Greek Feta Salad Tower -->
           <article class="course-card">
             <div class="course-thumb">
@@ -384,7 +413,7 @@
           <p class="footer-tagline">Where cooking inspires. Masterclasses, curated digital cookbooks, and gourmet diabetes-friendly cuisine by Award-Winning Chef Eliane Muskus.</p>
           <div class="footer-contact-info" style="font-size: 0.875rem; color: rgba(245, 240, 231, 0.78); margin-top: 14px;">
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px; font-weight: 600;">Epicurean Flow</p>
-            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Sierra Grazalema 23<br>29016 Málaga, Spain</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Registered in Amsterdam, Netherlands</p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+ 31618571677</a></p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Telephone Spain: <a href="tel:+34626617282" style="color: var(--color-gold);">+34626617282</a></p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 0;">Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
@@ -449,13 +478,18 @@
 
     <div class="footer-bottom container">
       <p class="copyright">&copy; 2026 Epicurean Flow | All Rights Reserved</p>
-      <p style="font-size: 0.8rem; color: #777;">Business Registration: 94886792 &bull; Málaga, Spain</p>
+      <p style="font-size: 0.8rem; color: #777;">Business Registration: 94886792 &bull; Amsterdam, Netherlands</p>
       <div class="footer-bottom-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
         <a href="refund-policy.html">Refund Policy</a>
       </div>
     </div>
+
+    <div class="container">
+      <div class="footer-developer-bar" style="border-top: 1px solid rgba(245, 240, 231, 0.1); padding: 18px 0; text-align: center;">
+        <span style="font-size: 0.8125rem; color: rgba(245, 240, 231, 0.65);">Website designed by <a href="https://ibtex.ibe88agwu.workers.dev/" target="_blank" rel="noopener" style="color: var(--color-gold, #c5a059); text-decoration: none;">IBTEX</a></span>
+      </div>
     </div>
   </footer>
 
@@ -486,7 +520,7 @@
         <span>Subtotal:</span>
         <span id="cart-subtotal-val">€0.00</span>
       </div>
-      <a href="https://epicureanflow.wixsite.com/epicurean-flow/cart-page" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
+      <a href="javascript:void(0)" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
         <span>Proceed to Secure Checkout</span>
       </a>
     </div>
@@ -494,8 +528,12 @@
 
   <!-- JavaScript -->
   <script src="js/navigation.js"></script>
+  <script src="js/wix-sdk-client.js"></script>
   <script src="js/products.js"></script>
   <script src="js/main.js"></script>
   <script src="js/members.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/posts-data.js"></script>
+  <script src="js/blog-renderer.js"></script>
 </body>
 </html>

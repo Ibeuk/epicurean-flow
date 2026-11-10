@@ -66,6 +66,11 @@
         observer.observe(el);
       }
     });
+
+    // Safety fallback: ensure all elements become visible after delay
+    setTimeout(() => {
+      revealEls.forEach(el => el.classList.add('is-visible'));
+    }, 2500);
   }
 
   /* ------------------------------------------------------------------------

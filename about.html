@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Eliane Muskus | Founder Epicurean Flow | Culinary Platform</title>
-  <meta name="description" content="Award-winning chef Eliane Muskus’s journey is one of bold transformation, unwavering passion, and culinary excellence. Discover her Cannes Michelin accreditation, global mega-yacht career, and Málaga culinary studio.">
+  <meta name="description" content="Discover Chef Eliane Muskus's culinary journey: Culinary Institute of America training, Cannes Michelin-accredited chef's table, and founding Epicurean Flow.">
   <link rel="icon" type="image/png" href="images/logo.png">
 
   <!-- Google Fonts -->
@@ -37,8 +37,8 @@
       <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
           <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Books</a></li>
           
           <!-- Recipes Dropdown -->
           <li class="nav-item has-dropdown">
@@ -53,6 +53,10 @@
                 <span class="dropdown-item-title">All Recipes</span>
                 <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
               </a>
+              <a href="blog.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Chef's Blog</span>
+                <span class="dropdown-item-desc">Culinary stories, techniques &amp; food science</span>
+              </a>
               <a href="diabetes.html" class="dropdown-item" role="menuitem">
                 <span class="dropdown-item-title">Diabetes Living</span>
                 <span class="dropdown-item-desc">Flavor-first low-carb gastronomy</span>
@@ -66,8 +70,8 @@
                 <span class="dropdown-item-desc">Bespoke 1-on-1 chef consultations</span>
               </a>
               <a href="media.html" class="dropdown-item" role="menuitem">
-                <span class="dropdown-item-title">Media &amp; Cinema</span>
-                <span class="dropdown-item-desc">Masterclass video streams &amp; previews</span>
+                <span class="dropdown-item-title">Media &amp; Masterclass</span>
+                <span class="dropdown-item-desc">Culinary clips &amp; kitchen reels</span>
               </a>
             </div>
           </li>
@@ -104,13 +108,17 @@
                 </div>
               </div>
               <div class="member-menu-divider"></div>
-              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                <span>My Account &amp; Profile</span>
+              <button type="button" class="member-menu-item" id="menu-my-orders" onclick="window.openEpicureanPortal('orders'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Orders &amp; Purchase History</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-library" onclick="window.openEpicureanPortal('library'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                 <span>My Cookbooks &amp; Courses</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>My Account &amp; Profile</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-reviews" onclick="window.openEpicureanPortal('reviews'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -147,44 +155,65 @@
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
-    <!-- Mobile Member Status Bar -->
-    <div class="mobile-member-widget" id="mobile-member-widget">
-      <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
+    <!-- Header with Dedicated Cancel / Close Button -->
+    <div class="mobile-drawer-header">
+      <span class="mobile-drawer-title">Navigation</span>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
-        <span>Member Log In / Sign Up</span>
+        <span>Close</span>
       </button>
-      <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
-        <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
-        <div class="mobile-member-meta">
-          <span class="mobile-member-name" id="mobile-member-name">Member</span>
-          <span class="mobile-member-status">Verified Community Member</span>
-        </div>
-        <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
-      </div>
     </div>
 
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
-      <a href="courses.html" class="mobile-nav-link">Courses</a>
-      
-      <div class="mobile-nav-group">
-        <a href="recipes.html" class="mobile-nav-link">Recipes / Blog</a>
-        <div class="mobile-nav-submenu">
-          <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
-          <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
-          <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
-          <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
-          <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclasses</a>
+    <div class="mobile-drawer-body">
+      <!-- Mobile Member Status Bar -->
+      <div class="mobile-member-widget" id="mobile-member-widget">
+        <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Member Log In / Sign Up</span>
+        </button>
+        <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
+          <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
+          <div class="mobile-member-meta">
+            <span class="mobile-member-name" id="mobile-member-name">Member</span>
+            <span class="mobile-member-status">Verified Community Member</span>
+          </div>
+          <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
         </div>
       </div>
 
-      <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
-      <a href="about.html" class="mobile-nav-link active">About Chef Eliane</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="courses.html" class="mobile-nav-link">Courses</a>
+        <a href="cookbooks.html" class="mobile-nav-link">Books</a>
+        
+        <!-- Accordion: Recipes & Blog (Collapsed by Default, Expands on Click) -->
+        <div class="mobile-nav-group">
+          <button type="button" class="mobile-nav-link mobile-accordion-trigger" id="mobile-recipes-toggle" aria-expanded="false" aria-controls="mobile-recipes-submenu">
+            <span>Recipes &amp; Blog</span>
+            <svg class="mobile-accordion-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-submenu" id="mobile-recipes-submenu" style="display: none;">
+            <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
+            <a href="blog.html" class="mobile-nav-sublink">Chef's Blog</a>
+            <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
+            <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
+            <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
+            <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclass</a>
+          </div>
+        </div>
+
+        <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
+        <a href="about.html" class="mobile-nav-link active">About Chef Eliane</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
     </div>
   </div>
 
@@ -192,157 +221,96 @@
     <!-- Page Hero -->
     <section class="page-hero">
       <div class="container">
-        <p class="section-tag">A Legacy of Excellence</p>
-        <h1 class="page-hero-title">About Chef Eliane Muskus</h1>
+        <p class="section-tag">Chef Eliane Muskus</p>
+        <h1 class="page-hero-title">About Me</h1>
         <p class="page-hero-subtitle">
-          From corporate business development to upstate New York culinary education, Mediterranean mega-yachts, and Cannes Michelin accreditation &mdash; a journey of bold transformation and culinary mastery.
+          Food has always been the heartbeat of my life. Discover my journey from corporate business to the Culinary Institute of America, Michelin accreditation, and diabetes-friendly culinary empowerment.
         </p>
       </div>
     </section>
 
     <!-- =========================================================================
-         MEET CHEF ELIANE MUSKUS (EDITORIAL PROFILE)
+         MEET CHEF ELIANE MUSKUS (APPROVED ABOUT ME STORY)
          ========================================================================= -->
     <section class="section theme-cream" id="meet-chef-eliane">
       <div class="container">
         <div class="grid-editorial">
-          <div class="chef-portrait-frame reveal-on-scroll">
-            <img src="https://static.wixstatic.com/media/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg/v1/fill/w_2500,h_3750,al_c/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg" 
-                 alt="Chef Eliane Muskus portrait in professional culinary environment">
+          <div class="chef-portrait-frame">
+            <img src="images/hero-chef-eliane-welcoming.jpg" 
+                 alt="Chef Eliane Muskus portrait in her kitchen"
+                 style="width: 100%; height: 100%; object-fit: cover;">
             <div class="chef-quote-badge">
               <p class="chef-quote-text" style="color: var(--color-gold-light);">"When you master technique, every recipe becomes an opportunity for personal expression."</p>
               <p style="font-size: 0.8125rem; color: var(--color-gold-light); font-weight: 600; margin: 0;">— Chef Eliane Muskus</p>
             </div>
           </div>
 
-          <div class="chef-authority-content reveal-on-scroll delay-2">
-            <span class="section-eyebrow">Culinary Leadership</span>
-            <h2 style="margin-bottom: 24px;">Meet Chef Eliane Muskus</h2>
-            <p class="lead" style="margin-bottom: 18px;">
-              From corporate leadership to founding a Michelin-accredited restaurant in Cannes, Chef Eliane blends classical French technique with vibrant Mediterranean soul.
+          <div class="chef-authority-content">
+            <span class="section-eyebrow">My Journey &amp; Passion</span>
+            <h2 style="margin-bottom: 24px;">Food as the Heartbeat of Life</h2>
+            <p class="lead" style="margin-bottom: 20px; line-height: 1.8;">
+              Food has always been the heartbeat of my life. I left a job I loved at KLM Royal Dutch Airlines to chase my true passion: cooking. Although my position offered financial security and a successful career in business—built after earning a degree in business management and real estate—nothing could compare to the joy of creating delicious meals. As a child, I was captivated by my mother, a gourmet cook, whose kitchen was a realm of transformation, turning simple ingredients into unforgettable culinary experiences.
             </p>
-            <p style="margin-bottom: 18px; color: var(--color-ink-light); line-height: 1.65;">
-              Living with diabetes herself, she brings an authentic, deeply practical philosophy to modern gastronomy—proving that health-conscious and diabetic-friendly cooking can achieve world-class restaurant elegance without sacrifice.
+            <p style="margin-bottom: 20px; color: var(--color-ink-light); line-height: 1.8; font-size: 1.05rem;">
+              Twenty years ago, I made a bold decision to trade my corporate attire for a chef’s jacket. I enrolled at the Culinary Institute of America for comprehensive professional chef training, where I gained the foundation necessary to build a food business. My culinary education was further enriched by the chefs I worked alongside in renowned restaurants across Europe and the talented culinary artists I met during my world travels, who generously shared their culinary secrets. My journey eventually took me to the high seas, where I served as an executive chef on a mega yacht, crafting exquisite meals for high profile guests while mastering precision and adaptability.
             </p>
-            <p style="margin-bottom: 24px; color: var(--color-ink-light); line-height: 1.65;">
-              Through her digital masterclasses and cookbooks, Chef Eliane shares these proven professional techniques—empowering home cooks around the world to cook with unshakeable confidence and joy.
-            </p>
-
-            <div class="chef-editorial-credentials">
-              <div class="credential-row">
-                <span class="credential-bullet"></span>
-                <span style="font-weight: 600; color: var(--color-ink); font-size: 0.9375rem;">Former owner of a Michelin-accredited restaurant in Cannes, France</span>
-              </div>
-              <div class="credential-row">
-                <span class="credential-bullet"></span>
-                <span style="font-weight: 600; color: var(--color-ink); font-size: 0.9375rem;">Authentic personal perspective managing diabetes through flavor-first cooking</span>
-              </div>
-              <div class="credential-row">
-                <span class="credential-bullet"></span>
-                <span style="font-weight: 600; color: var(--color-ink); font-size: 0.9375rem;">International culinary background spanning Amsterdam, Cannes &amp; M&aacute;laga</span>
-              </div>
-            </div>
-
-            <div style="margin-top: 28px; display: flex; gap: 16px; flex-wrap: wrap;">
-              <a href="courses.html" class="btn btn-primary">
-                <span>Explore Masterclasses &rarr;</span>
-              </a>
-              <a href="cookbooks.html" class="btn btn-outline">
-                <span>Browse Cookbooks</span>
-              </a>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Biography Story Section -->
+    <!-- Cannes, Michelin Accreditation & Transformation -->
     <section class="section">
       <div class="container">
         <div class="about-hero-grid">
           <div>
-            <span class="badge badge-gold" style="margin-bottom: 16px; display: inline-block;">Founder &amp; Executive Chef</span>
-            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-ink); margin-bottom: 20px;">Trading the Boardroom for the Kitchen</h2>
-            <div style="font-size: 1.05rem; line-height: 1.8; color: var(--color-ink-subtle);">
-              <p style="margin-bottom: 16px;">
-                Chef Eliane Muskus’s journey is one of bold transformation, unwavering passion, and culinary mastery. With a degree in Business Development and a thriving corporate career, she took a leap of faith to follow her true calling. Trading the boardroom for the kitchen, she enrolled in a prestigious culinary school in upstate New York, where she refined her skills and discovered her lifelong love for creating extraordinary flavors.
+            <span class="badge badge-gold" style="margin-bottom: 16px; display: inline-block;">Culinary Excellence &amp; Teaching</span>
+            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-ink); margin-bottom: 20px;">Cannes, Michelin Accreditation &amp; New Beginnings</h2>
+            <div style="font-size: 1.05rem; line-height: 1.85; color: var(--color-ink-subtle);">
+              <p style="margin-bottom: 18px;">
+                In Cannes, I founded La Serviette Blanche, where I taught cooking classes, curated culinary experiences, and opened a private dining restaurant. Our cooking classes earned several awards of excellence, and in 2014, the restaurant was honored with a prestigious Michelin accreditation, a testament to our unwavering commitment to exceptional food and service. Later, I established Born to Taste Amsterdam as a subsidiary of La Serviette Blanche, continuing to share my love for teaching and empowering others in the kitchen.
               </p>
-              <p style="margin-bottom: 16px;">
-                After completing her culinary education in New York, Eliane returned to France, where she served as head chef on a mega yacht in the Mediterranean, catering to high-profile international clients. Her culinary journey subsequently took her through Switzerland, the UK, Italy, Belgium, the Netherlands, and Curaçao.
-              </p>
-              <p style="margin-bottom: 16px;">
-                Following her tenure on the mega yacht, she established her thriving culinary enterprise in Cannes, France&mdash;offering acclaimed cooking masterclasses, curated food tours, catering services, sommelier wine and cheese tastings, and a prestigious chef's table restaurant.
+              <p style="margin-bottom: 18px;">
+                However, a serious shoulder injury forced me to step back from the physical demands of being a chef. At the same time, I was diagnosed with diabetes, which transformed my relationship with food. This personal experience inspired me to create a special division dedicated to diabetes-friendly cooking. As a diabetes patient myself, I’ve learned to adapt beloved recipes into guilt-free delights that do not sacrifice flavor. My mission is to empower others living with diabetes to enjoy delicious meals while maintaining their health.
               </p>
             </div>
           </div>
 
           <div style="position: relative;">
             <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg);">
-              <img src="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_2500,h_1357,al_c/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg" alt="Chef Eliane Muskus Cooking" style="width: 100%; height: auto; display: block;">
+              <img src="images/chef-eliane-cooking-paella.jpg" alt="Chef Eliane Muskus Cooking in Cannes and Málaga" style="width: 100%; height: auto; display: block; object-fit: cover;">
             </div>
             <div class="about-hero-badge" style="position: absolute; bottom: -20px; right: 20px; background: var(--color-white); padding: 18px 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--color-gold);">
               <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--color-ink);">Michelin Accredited</span>
-              <p style="font-size: 0.8rem; color: var(--color-ink-muted); margin: 0;">Cannes Chef's Table &bull; 2014</p>
+              <p style="font-size: 0.8rem; color: var(--color-ink-muted); margin: 0;">La Serviette Blanche Cannes &bull; 2014</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Milestones & Accolades (Direct from Wix) -->
-    <section class="section bg-light" id="milestones">
-      <div class="container">
-        <div class="section-header text-center">
-          <p class="section-tag">Career Milestones</p>
-          <h2 class="section-title">A Career Defined by Excellence</h2>
-          <p class="section-subtitle">
-            Chef Eliane’s journey is marked by prestigious milestones and international recognition across 23 years in hospitality.
+    <!-- Epicurean Flow Mission & Invitation -->
+    <section class="section theme-cream">
+      <div class="container" style="max-width: 960px;">
+        <div class="story-callout-card" style="padding: 44px; background: var(--color-white); border: 1px solid var(--color-gold-border); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm);">
+          <span class="section-tag" style="margin-bottom: 10px; display: inline-block;">A New Chapter</span>
+          <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-ink); margin-bottom: 20px;">Sharing the Flavorful Adventure</h2>
+          <p style="font-size: 1.05rem; line-height: 1.85; color: var(--color-ink-subtle); margin-bottom: 20px;">
+            Embracing this new chapter, I pursued intensive training in content marketing and content creation, equipping myself with the skills to share my culinary journey and insights with a broader audience. With Epicurean Flow, I blend my culinary expertise with engaging content, crafting narratives that inspire others to explore the rich tapestry of flavors and experiences that food has to offer.
           </p>
-        </div>
-
-        <div class="grid-cards-responsive">
-          <div style="background: var(--color-white); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
-            <div style="font-family: var(--font-serif); font-size: 2.25rem; color: var(--color-gold); font-weight: 700; margin-bottom: 8px;">2014</div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink); margin-bottom: 12px;">Michelin Accreditation</h3>
-            <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.6;">
-              In 2014, Chef Eliane's chef's table restaurant in Cannes, France, received prestigious Michelin accreditation, celebrating her innovative Mediterranean menu and intimate culinary theater.
-            </p>
-          </div>
-
-          <div style="background: var(--color-white); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
-            <div style="font-family: var(--font-serif); font-size: 2.25rem; color: var(--color-gold); font-weight: 700; margin-bottom: 8px;">500+</div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink); margin-bottom: 12px;">Students Mentored</h3>
-            <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.6;">
-              For over two decades, Chef Eliane has taught over 500 students&mdash;from enthusiastic home cooks to professional yacht chefs&mdash;turning first-time guests into lifelong kitchen masters.
-            </p>
-          </div>
-
-          <div style="background: var(--color-white); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm);">
-            <div style="font-family: var(--font-serif); font-size: 2.25rem; color: var(--color-gold); font-weight: 700; margin-bottom: 8px;">23 Yrs</div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink); margin-bottom: 12px;">Culinary Mastery</h3>
-            <p style="font-size: 0.95rem; color: var(--color-ink-subtle); line-height: 1.6;">
-              With 23 years in demanding kitchens across France, the Caribbean, Amsterdam, and now Málaga, Spain, Chef Eliane founded Epicurean Flow to share her passion, technique, and wellness wisdom globally.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Culinary Philosophy & Diabetes Mission -->
-    <section class="section">
-      <div class="container" style="max-width: 920px;">
-        <div class="story-callout-card">
-          <p class="section-tag" style="margin-bottom: 8px;">Mission &amp; Innovation</p>
-          <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--color-ink); margin-bottom: 16px;">The Modern Mission: Epicurean Flow</h2>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--color-ink-subtle); margin-bottom: 16px;">
-            Today, Chef Eliane brings her expertise to a global stage through Epicurean Flow, an interactive culinary platform designed to make cooking exciting, healthy, and accessible. With step-by-step video tutorials, fun challenges, mini quizzes, and inspiring anecdotes, Epicurean Flow transforms cooking into an engaging, rewarding experience.
-          </p>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--color-ink-subtle); margin-bottom: 24px;">
-            Following her own diagnosis with Type 2 Diabetes five years ago, Chef Eliane also pioneered a new frontier in diabetic cuisine: proving through Michelin techniques that low-carb living can be indulgent, aromatic, and deeply satisfying.
+          <p style="font-size: 1.15rem; font-family: var(--font-serif); font-style: italic; line-height: 1.75; color: #9B7026; margin-bottom: 32px;">
+            “Join me on this flavorful adventure, where we celebrate the love of food, the joy of cooking, and the empowerment of creating delicious, diabetes-friendly meals without compromise!”
           </p>
           <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-            <a href="diabetes.html" class="btn btn-primary">Explore Diabetes Living</a>
-            <a href="menu-planning.html" class="btn btn-outline">Book Private Consultation</a>
+            <a href="recipes.html" class="btn btn-primary">
+              <span>Explore Weekly Recipes</span>
+            </a>
+            <a href="cookbooks.html" class="btn btn-outline">
+              <span>Browse Cookbooks &amp; Courses</span>
+            </a>
+            <a href="diabetes.html" class="btn btn-outline">
+              <span>Diabetes-Friendly Living</span>
+            </a>
           </div>
         </div>
       </div>
@@ -360,7 +328,7 @@
           <p class="footer-tagline">Where cooking inspires. Masterclasses, curated digital cookbooks, and gourmet cuisine by Award-Winning Chef Eliane Muskus.</p>
           <div class="footer-contact-info" style="font-size: 0.875rem; color: rgba(245, 240, 231, 0.78); margin-top: 14px;">
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px; font-weight: 600;">Epicurean Flow</p>
-            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Sierra Grazalema 23<br>29016 Málaga, Spain</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Registered in Amsterdam, Netherlands</p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+ 31618571677</a></p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Telephone Spain: <a href="tel:+34626617282" style="color: var(--color-gold);">+34626617282</a></p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 0;">Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
@@ -425,13 +393,18 @@
 
     <div class="footer-bottom container">
       <p class="copyright">&copy; 2026 Epicurean Flow | All Rights Reserved</p>
-      <p style="font-size: 0.8rem; color: rgba(245, 240, 231, 0.6);">Business Registration: 94886792 &bull; Málaga, Spain</p>
+      <p style="font-size: 0.8rem; color: rgba(245, 240, 231, 0.6);">Business Registration: 94886792 &bull; Amsterdam, Netherlands</p>
       <div class="footer-bottom-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
         <a href="refund-policy.html">Refund Policy</a>
       </div>
     </div>
+
+    <div class="container">
+      <div class="footer-developer-bar" style="border-top: 1px solid rgba(245, 240, 231, 0.1); padding: 18px 0; text-align: center;">
+        <span style="font-size: 0.8125rem; color: rgba(245, 240, 231, 0.65);">Website designed by <a href="https://ibtex.ibe88agwu.workers.dev/" target="_blank" rel="noopener" style="color: var(--color-gold, #c5a059); text-decoration: none;">IBTEX</a></span>
+      </div>
     </div>
   </footer>
 
@@ -462,7 +435,7 @@
         <span>Subtotal:</span>
         <span id="cart-subtotal-val">€0.00</span>
       </div>
-      <a href="https://epicureanflow.wixsite.com/epicurean-flow/cart-page" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
+      <a href="javascript:void(0)" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
         <span>Proceed to Secure Checkout</span>
       </a>
     </div>
@@ -470,8 +443,10 @@
 
   <!-- JavaScript -->
   <script src="js/navigation.js"></script>
+  <script src="js/wix-sdk-client.js"></script>
   <script src="js/products.js"></script>
   <script src="js/main.js"></script>
   <script src="js/members.js"></script>
+  <script src="js/animations.js"></script>
 </body>
 </html>

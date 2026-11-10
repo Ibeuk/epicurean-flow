@@ -37,8 +37,8 @@
       <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
           <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Books</a></li>
           
           <!-- Recipes Dropdown -->
           <li class="nav-item has-dropdown">
@@ -53,6 +53,10 @@
                 <span class="dropdown-item-title">All Recipes</span>
                 <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
               </a>
+              <a href="blog.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Chef's Blog</span>
+                <span class="dropdown-item-desc">Culinary stories, techniques &amp; food science</span>
+              </a>
               <a href="diabetes.html" class="dropdown-item" role="menuitem">
                 <span class="dropdown-item-title">Diabetes Living</span>
                 <span class="dropdown-item-desc">Flavor-first low-carb gastronomy</span>
@@ -66,8 +70,8 @@
                 <span class="dropdown-item-desc">Bespoke 1-on-1 chef consultations</span>
               </a>
               <a href="media.html" class="dropdown-item" role="menuitem">
-                <span class="dropdown-item-title">Media &amp; Cinema</span>
-                <span class="dropdown-item-desc">Masterclass video streams &amp; previews</span>
+                <span class="dropdown-item-title">Media &amp; Masterclass</span>
+                <span class="dropdown-item-desc">Culinary clips &amp; kitchen reels</span>
               </a>
             </div>
           </li>
@@ -104,13 +108,17 @@
                 </div>
               </div>
               <div class="member-menu-divider"></div>
-              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                <span>My Account &amp; Profile</span>
+              <button type="button" class="member-menu-item" id="menu-my-orders" onclick="window.openEpicureanPortal('orders'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Orders &amp; Purchase History</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-library" onclick="window.openEpicureanPortal('library'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                 <span>My Cookbooks &amp; Courses</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>My Account &amp; Profile</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-reviews" onclick="window.openEpicureanPortal('reviews'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -147,44 +155,65 @@
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
-    <!-- Mobile Member Status Bar -->
-    <div class="mobile-member-widget" id="mobile-member-widget">
-      <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
+    <!-- Header with Dedicated Cancel / Close Button -->
+    <div class="mobile-drawer-header">
+      <span class="mobile-drawer-title">Navigation</span>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
-        <span>Member Log In / Sign Up</span>
+        <span>Close</span>
       </button>
-      <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
-        <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
-        <div class="mobile-member-meta">
-          <span class="mobile-member-name" id="mobile-member-name">Member</span>
-          <span class="mobile-member-status">Verified Community Member</span>
-        </div>
-        <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
-      </div>
     </div>
 
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
-      <a href="courses.html" class="mobile-nav-link">Courses</a>
-      
-      <div class="mobile-nav-group">
-        <a href="recipes.html" class="mobile-nav-link active">Recipes / Blog</a>
-        <div class="mobile-nav-submenu">
-          <a href="recipes.html" class="mobile-nav-sublink active">All Recipes</a>
-          <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
-          <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
-          <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
-          <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclasses</a>
+    <div class="mobile-drawer-body">
+      <!-- Mobile Member Status Bar -->
+      <div class="mobile-member-widget" id="mobile-member-widget">
+        <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Member Log In / Sign Up</span>
+        </button>
+        <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
+          <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
+          <div class="mobile-member-meta">
+            <span class="mobile-member-name" id="mobile-member-name">Member</span>
+            <span class="mobile-member-status">Verified Community Member</span>
+          </div>
+          <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
         </div>
       </div>
 
-      <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
-      <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="courses.html" class="mobile-nav-link">Courses</a>
+        <a href="cookbooks.html" class="mobile-nav-link">Books</a>
+        
+        <!-- Accordion: Recipes & Blog (Collapsed by Default, Expands on Click) -->
+        <div class="mobile-nav-group">
+          <button type="button" class="mobile-nav-link mobile-accordion-trigger active" id="mobile-recipes-toggle" aria-expanded="false" aria-controls="mobile-recipes-submenu">
+            <span>Recipes &amp; Blog</span>
+            <svg class="mobile-accordion-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-submenu" id="mobile-recipes-submenu" style="display: none;">
+            <a href="recipes.html" class="mobile-nav-sublink active">All Recipes</a>
+            <a href="blog.html" class="mobile-nav-sublink">Chef's Blog</a>
+            <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
+            <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
+            <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
+            <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclass</a>
+          </div>
+        </div>
+
+        <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
+        <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
     </div>
   </div>
 
@@ -268,8 +297,10 @@
 
     <!-- Star Recipe Culinary Discussion & Chef Q&A -->
     <section class="recipe-discussion-section" id="community-discussion">
-      <div id="recipe-comments-container">
-        <!-- Injected by EpicureanMembers.mountRecipeComments('banana-cake') -->
+      <div class="container">
+        <div id="recipe-comments-container">
+          <!-- Injected by EpicureanMembers.mountRecipeComments('banana-cake') -->
+        </div>
       </div>
     </section>
 
@@ -279,7 +310,7 @@
         <div class="section-header text-center">
           <p class="section-tag">Explore The Archive</p>
           <h2 class="section-title">All Recipes &amp; Technique Articles</h2>
-          <p class="section-subtitle">Curated dishes from Cannes, Málaga, and the Mediterranean basin.</p>
+          <p class="section-subtitle">Curated dishes from Málaga, Andalusia, and the Mediterranean basin.</p>
         </div>
 
         <!-- Filter Bar -->
@@ -292,16 +323,31 @@
         </div>
 
         <div style="text-align: center; margin-bottom: 30px;">
-          <a href="https://epicureanflow.wixsite.com/epicurean-flow/blog" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-lg">
-            <span>Explore Complete Wix Blog Archive &rarr;</span>
-          </a>
+          <button type="button" id="btn-explore-all-recipes" class="btn btn-gold btn-lg">
+            <span>Explore All Signature Recipes &amp; Articles &rarr;</span>
+          </button>
         </div>
 
         <div class="grid-recipes-responsive">
+          <!-- Article: The Surprising Reason Why Some Foods Taste Better the Next Day -->
+          <article class="course-card" data-category="technique" id="the-surprising-reason-why-some-foods-taste-better-the-next-day">
+            <div class="course-thumb">
+              <img src="images/hearty-beef-stew.jpg" alt="Hearty Stew That Tastes Better the Next Day – Flavorful Slow-Cooked Meal" loading="lazy">
+              <span class="course-badge">Food Science &amp; Secrets</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">The Surprising Reason Why Some Foods Taste Better the Next Day</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                Discover the culinary science behind meals that get richer overnight—from gelatin breakdown to spice diffusion—plus essential storage rules.
+              </p>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="foods-taste-better-next-day">Read Food Science Story &rarr;</button>
+            </div>
+          </article>
+
           <!-- Recipe 1: Authentic Peruvian Ceviche -->
           <article class="course-card" data-category="mediterranean">
             <div class="course-thumb">
-              <img src="https://static.wixstatic.com/media/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg/v1/fill/w_2500,h_1357,al_c/8e85e1_77c9aa584b06402187c746820060e2e1~mv2.jpg" alt="Authentic Peruvian Ceviche Recipe">
+              <img src="images/authentic-peruvian-ceviche.jpg" alt="Authentic Peruvian Ceviche Recipe">
               <span class="course-badge">Seafood &amp; Heritage</span>
             </div>
             <div class="course-card-content">
@@ -309,7 +355,7 @@
               <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
                 Fresh sea bass cured in vibrant lime juice, red onions, habanero chilli, and traditional leche de tigre marinade with elegant chef presentation.
               </p>
-              <a href="https://epicureanflow.wixsite.com/epicurean-flow/post/recipes-authentic-peruvian-ceviche-recipe-fresh-lime-cured-fish-leche-de-tigre" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">Read Authentic Recipe &rarr;</a>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="ceviche">Read Authentic Recipe &rarr;</button>
             </div>
           </article>
 
@@ -324,14 +370,14 @@
               <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
                 My restaurant secret for a juicy, perfectly cooked holiday centerpiece with herb compound butter and zero moisture loss.
               </p>
-              <a href="https://epicureanflow.wixsite.com/epicurean-flow/post/the-no-fail-sous-vide-turkey-breast-my-restaurant-secret-for-a-perfect-thanksgiving" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">Read Technique &amp; Recipe &rarr;</a>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="turkey-breast">Read Technique &amp; Recipe &rarr;</button>
             </div>
           </article>
 
           <!-- Recipe 3: Type 2 Diabetes Journey -->
           <article class="course-card" data-category="diabetes">
             <div class="course-thumb">
-              <img src="images/hero-chef-eliane.jpg" alt="Chef Eliane Muskus Diabetes Journey">
+              <img src="images/chef-eliane-paella-portrait.jpg" alt="Chef Eliane Muskus - My Personal Journey with Type 2 Diabetes">
               <span class="course-badge">Diabetes Living</span>
             </div>
             <div class="course-card-content">
@@ -339,14 +385,14 @@
               <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
                 Chef Eliane's personal story of transformation, blood sugar balance, and regaining vitality through gourmet low-glycemic cooking without fear.
               </p>
-              <a href="https://epicureanflow.wixsite.com/epicurean-flow/post/my-personal-journey-with-type-2-diabetes-empowering-change-through-food-and-lifestyle" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">Read Chef's Story &rarr;</a>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="diabetes-journey">Read Chef's Story &rarr;</button>
             </div>
           </article>
 
           <!-- Recipe 4: Sarde in Saor -->
           <article class="course-card" data-category="mediterranean">
             <div class="course-thumb">
-              <img src="images/seafood-crab-platter.jpg" alt="Sarde in Saor Venetian Seafood">
+              <img src="images/pan-seared-fish-chef-eliane.jpg" alt="Sarde in Saor - Venetian Sweet and Sour Sardines" onerror="this.src='images/seafood-gratin.jpg'">
               <span class="course-badge">Venetian Classics</span>
             </div>
             <div class="course-card-content">
@@ -354,7 +400,7 @@
               <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
                 Centuries-old Venetian antipasto of fried sardines marinated in sweet caramelized onions, white wine vinegar, raisins, and toasted pine nuts.
               </p>
-              <a href="https://epicureanflow.wixsite.com/epicurean-flow/post/sarde-in-saor-authentic-venetian-sardine-appetizer-recipe-with-tangy-sweet-sour-flavors" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">Read Authentic Recipe &rarr;</a>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="sarde-in-saor">Read Authentic Recipe &rarr;</button>
             </div>
           </article>
 
@@ -369,7 +415,7 @@
               <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
                 Tender pan-seared chicken deglazed with dry Oloroso sherry, fresh wild mushrooms, minced shallots, and crème fraîche reduction.
               </p>
-              <a href="https://epicureanflow.wixsite.com/epicurean-flow/post/chicken-with-mushroom-sherry-sauce" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">Read Authentic Recipe &rarr;</a>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="chicken-sherry">Read Authentic Recipe &rarr;</button>
             </div>
           </article>
 
@@ -384,7 +430,92 @@
               <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
                 Ultra-tender pork and veal meatballs simmered in velvety beef bone broth reduction with touch of nutmeg and lingonberry glaze.
               </p>
-              <a href="https://epicureanflow.wixsite.com/epicurean-flow/post/meatballs-with-silky-gravy" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">Read Authentic Recipe &rarr;</a>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="meatballs-gravy">Read Authentic Recipe &rarr;</button>
+            </div>
+          </article>
+          <!-- Recipe Article: Crispy Manchurian Chicken: Indo-Chinese Fusion -->
+          <article class="course-card" data-category="fusion">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/30dece_427d6f6d4dc142de9892ef6d03d0b4c6~mv2.jpg/v1/fit/w_800,h_800,q_90/file.jpg" alt="Crispy Manchurian Chicken: Indo-Chinese Fusion" loading="lazy">
+              <span class="course-badge">Indo-Chinese Gastronomy</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">Crispy Manchurian Chicken: Indo-Chinese Fusion</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                Crispy golden chicken bites tossed in an aromatic, glossy, umami-rich dark glaze with fresh ginger, garlic, green chilies, and scallions.
+              </p>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="manchurian-chicken-recipe">Read Authentic Recipe &rarr;</button>
+            </div>
+          </article>
+          <!-- Recipe Article: Comforting Braised Cabbage Rolls in Rich Tomato Broth -->
+          <article class="course-card" data-category="technique">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/30dece_b7a5dffdfda04db8a28660301d5970a4~mv2.jpg/v1/fit/w_800,h_800,q_90/file.jpg" alt="Comforting Braised Cabbage Rolls in Rich Tomato Broth" loading="lazy">
+              <span class="course-badge">Classic Comfort Heritage</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">Comforting Braised Cabbage Rolls in Rich Tomato Broth</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                Tender Savoy cabbage leaves enveloping a seasoned beef and rice stuffing, gently braised in a velvety sweet-and-tangy tomato and herb sauce.
+              </p>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="braised-cabbage-rolls">Read Authentic Recipe &rarr;</button>
+            </div>
+          </article>
+
+          <!-- Recipe Article: Indulgent Elegance: Velvety Chicken Liver Pâté -->
+          <article class="course-card" data-category="mediterranean">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/30dece_db05d9da34fa4c9eaa35100e4fb54dd3~mv2.jpg/v1/fit/w_800,h_800,q_90/file.jpg" alt="Indulgent Elegance: Velvety Chicken Liver Pâté" loading="lazy">
+              <span class="course-badge">French Charcuterie Art</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">Indulgent Elegance: Velvety Chicken Liver Pâté</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                Silky, rich, and delicately spiced poultry parfait enriched with Cognac, thyme, caramelized shallots, and clarified butter cap.
+              </p>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="indulgent-elegance-homemade-chicken-liver-pâté">Read Authentic Recipe &rarr;</button>
+            </div>
+          </article>
+          <!-- Recipe Article: Designing a Bespoke Menu Tailored to Dietary Needs -->
+          <article class="course-card" data-category="diabetes">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/30dece_c31fd3fcab9f42be9c1d909c363a3e76~mv2.png/v1/fit/w_800,h_800,q_90/file.png" alt="Designing a Bespoke Menu Tailored to Dietary Needs" loading="lazy">
+              <span class="course-badge">Bespoke Culinary Design</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">Designing a Bespoke Menu Tailored to Dietary Needs</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                How to balance diabetes management, allergies, and luxury culinary expectations across a unified multi-course dinner.
+              </p>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="creating-a-personalized-menu-for-your-needs">Read Guide &rarr;</button>
+            </div>
+          </article>
+          <!-- Recipe Article: Decadent Holiday Dark Chocolate Fondue with Spices -->
+          <article class="course-card" data-category="technique">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/30dece_fd0c4b04a74546a0be5457a60bbb7458~mv2.jpg/v1/fit/w_800,h_800,q_90/file.jpg" alt="Decadent Holiday Dark Chocolate Fondue with Spices" loading="lazy">
+              <span class="course-badge">Festive Celebration</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">Decadent Holiday Dark Chocolate Fondue with Spices</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                Gourmet 70% dark chocolate melted with double cream, Cointreau, fresh orange zest, and sea salt flakes. Served with seasonal fruits.
+              </p>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="holiday-chocolate-fondue-recipe">Read Authentic Recipe &rarr;</button>
+            </div>
+          </article>
+          <!-- Recipe Article: Guilt-Free Diabetic Banana Bread (Low Sugar, High Fiber) -->
+          <article class="course-card" data-category="diabetes">
+            <div class="course-thumb">
+              <img src="https://static.wixstatic.com/media/30dece_8fec68335c1642cc91c030d83d0087e4~mv2.png/v1/fit/w_800,h_800,q_90/file.png" alt="Guilt-Free Diabetic Banana Bread (Low Sugar, High Fiber)" loading="lazy">
+              <span class="course-badge">Diabetes-Friendly Baking</span>
+            </div>
+            <div class="course-card-content">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 10px;">Guilt-Free Diabetic Banana Bread (Low Sugar, High Fiber)</h3>
+              <p style="font-size: 0.92rem; color: var(--color-ink-subtle); line-height: 1.6; margin-bottom: 16px;">
+                Chef Eliane’s blood-sugar-conscious recipe crafted with almond flour, ripe bananas, cinnamon, and coconut oil.
+              </p>
+              <button type="button" class="btn btn-outline btn-block btn-read-recipe" data-recipe-target="healthy-diabetic-banana-bread-low-sugar-guilt-free-recipe">Read Authentic Recipe &rarr;</button>
             </div>
           </article>
         </div>
@@ -403,7 +534,7 @@
           <p class="footer-tagline">Where cooking inspires. Masterclasses, curated digital cookbooks, and gourmet cuisine by Award-Winning Chef Eliane Muskus.</p>
           <div class="footer-contact-info" style="font-size: 0.875rem; color: rgba(245, 240, 231, 0.78); margin-top: 14px;">
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px; font-weight: 600;">Epicurean Flow</p>
-            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Sierra Grazalema 23<br>29016 Málaga, Spain</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Registered in Amsterdam, Netherlands</p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+ 31618571677</a></p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Telephone Spain: <a href="tel:+34626617282" style="color: var(--color-gold);">+34626617282</a></p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 0;">Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
@@ -468,13 +599,19 @@
 
     <div class="footer-bottom container">
       <p class="copyright">&copy; 2026 Epicurean Flow | All Rights Reserved</p>
-      <p style="font-size: 0.8rem; color: rgba(245, 240, 231, 0.6);">Business Registration: 94886792 &bull; Málaga, Spain</p>
+      <p style="font-size: 0.8rem; color: rgba(245, 240, 231, 0.6);">Business Registration: 94886792 &bull; Amsterdam, Netherlands</p>
       <div class="footer-bottom-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
         <a href="refund-policy.html">Refund Policy</a>
       </div>
     </div>
+
+    <div class="container">
+      <div class="footer-developer-bar" style="border-top: 1px solid rgba(245, 240, 231, 0.1); padding: 18px 0; text-align: center;">
+        <span style="font-size: 0.8125rem; color: rgba(245, 240, 231, 0.65);">Website designed by <a href="https://ibtex.ibe88agwu.workers.dev/" target="_blank" rel="noopener" style="color: var(--color-gold, #c5a059); text-decoration: none;">IBTEX</a></span>
+      </div>
+      </div>
     </div>
   </footer>
 
@@ -505,7 +642,7 @@
         <span>Subtotal:</span>
         <span id="cart-subtotal-val">€0.00</span>
       </div>
-      <a href="https://epicureanflow.wixsite.com/epicurean-flow/cart-page" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
+      <a href="javascript:void(0)" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
         <span>Proceed to Secure Checkout</span>
       </a>
     </div>
@@ -513,15 +650,18 @@
 
   <!-- JavaScript -->
   <script src="js/navigation.js"></script>
+  <script src="js/wix-sdk-client.js"></script>
   <script src="js/products.js"></script>
   <script src="js/main.js"></script>
   <script src="js/members.js"></script>
+  <script src="js/recipes.js"></script>
+  <script src="js/animations.js"></script>
 
   <!-- Filter Pill Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const pills = document.querySelectorAll('.filter-pill');
-      const cards = document.querySelectorAll('.grid-recipes .course-card');
+      const cards = document.querySelectorAll('.grid-recipes .course-card, .grid-recipes-responsive .course-card');
 
       pills.forEach(pill => {
         pill.addEventListener('click', () => {

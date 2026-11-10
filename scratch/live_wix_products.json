@@ -1,0 +1,1933 @@
+[
+  {
+    "id": "20d8c494-72d6-cb9b-f3b9-d1ee3dbd74f1",
+    "name": "YK",
+    "slug": "yk",
+    "visible": true,
+    "productType": "digital",
+    "description": "",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": false,
+      "inStock": true,
+      "inventoryStatus": "IN_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 10.0,
+      "discountedPrice": 10.0,
+      "formatted": {
+        "price": "\u20ac10.00",
+        "discountedPrice": "\u20ac10.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 10.0,
+      "discountedPrice": 10.0,
+      "formatted": {
+        "price": "\u20ac10.00",
+        "discountedPrice": "\u20ac10.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 10.0,
+      "discountedPrice": 10.0,
+      "formatted": {
+        "price": "\u20ac10.00",
+        "discountedPrice": "\u20ac10.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 10.0,
+      "maxValue": 10.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [],
+    "ribbons": [],
+    "media": {
+      "items": []
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/yk"
+    },
+    "numericId": "1790439836478000",
+    "inventoryItemId": "df273b6b-8d29-3464-0c46-2e11c2428b0e",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2026-09-26T16:23:56.478Z",
+    "createdDate": "2026-09-26T16:23:56.478Z",
+    "ribbon": "",
+    "exportProductId": "product_20d8c494-72d6-cb9b-f3b9-d1ee3dbd74f1",
+    "digitalFile": {
+      "id": "30dece_c7739cd52c7c43d187faa95cb22bdb31~mv2.png",
+      "fileName": "design Canva ebook templates lead magnets and digital products.png",
+      "fileType": "SECURE_PICTURE"
+    }
+  },
+  {
+    "id": "58c9b3a6-c50b-52d8-67f7-e2b1adf793de",
+    "name": "A Symphony of Flavors: Mediterranean & Middle Eastern Spice Essentials \u2014 Elevate",
+    "slug": "a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate",
+    "visible": true,
+    "productType": "digital",
+    "description": "<p>Bring the magic of the Mediterranean sun and the rich aromas of the Middle East straight into your kitchen. A Symphony of Flavors: Mediterranean &amp; Middle Eastern Spice Essentials is your key to transforming ordinary meals into unforgettable dishes.</p><p>&nbsp;</p><p>Inside this downloadable eBook, you\u2019ll discover the essential spices and blends that give these cuisines their world-famous flavor. From earthy cumin and citrusy sumac to exotic saffron, za\u2019atar, baharat, and ras el hanout\u2014you\u2019ll finally understand how to season like a pro.</p><p>&nbsp;</p><p>\u2728<strong> Why you\u2019ll love this eBook:</strong></p><ul>\t<li>Unlock Authentic Flavor \u2013 Learn the exact spices that define Mediterranean &amp; Middle Eastern cuisine.</li></ul><ul>\t<li>Season with Confidence \u2013 Practical tips on how and when to use each spice or blend.</li></ul><ul>\t<li>Elevate Every Dish \u2013 Add depth, aroma, and that irresistible \u201cspecial touch\u201d to your cooking.</li></ul><p>&nbsp;</p><p><strong>Don\u2019t just cook\u2014create culinary experiences.</strong></p><p>\ud83d\udc49 Download A Symphony of Flavors now and start transforming your meals tonight!</p><p>&nbsp;</p>",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": false,
+      "inStock": true,
+      "inventoryStatus": "IN_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 9.0,
+      "discountedPrice": 9.0,
+      "formatted": {
+        "price": "\u20ac9.00",
+        "discountedPrice": "\u20ac9.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 9.0,
+      "discountedPrice": 9.0,
+      "formatted": {
+        "price": "\u20ac9.00",
+        "discountedPrice": "\u20ac9.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 9.0,
+      "discountedPrice": 9.0,
+      "formatted": {
+        "price": "\u20ac9.00",
+        "discountedPrice": "\u20ac9.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 9.0,
+      "maxValue": 9.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [],
+    "ribbons": [
+      {
+        "text": "New Arrival"
+      }
+    ],
+    "media": {
+      "mainMedia": {
+        "thumbnail": {
+          "url": "https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+          "width": 50,
+          "height": 50
+        },
+        "mediaType": "image",
+        "title": "Screenshot_20250921_092217_Adobe Acrobat.jpg",
+        "image": {
+          "url": "https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_1573,h_1592,q_90/file.jpg",
+          "width": 1573,
+          "height": 1592
+        },
+        "id": "30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg"
+      },
+      "items": [
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50
+          },
+          "mediaType": "image",
+          "title": "Screenshot_20250921_092217_Adobe Acrobat.jpg",
+          "image": {
+            "url": "https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_1573,h_1592,q_90/file.jpg",
+            "width": 1573,
+            "height": 1592
+          },
+          "id": "30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg"
+        }
+      ]
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate"
+    },
+    "numericId": "1758438982439000",
+    "inventoryItemId": "a7364c59-3af4-ad27-9808-1d4e52086c21",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2025-09-21T07:26:37.845Z",
+    "createdDate": "2025-09-21T07:16:22.439Z",
+    "ribbon": "New Arrival",
+    "brand": "Epicurean Flow Spice Essentials",
+    "exportProductId": "product_58c9b3a6-c50b-52d8-67f7-e2b1adf793de",
+    "digitalFile": {
+      "id": "30dece_899c4fb7cfa8456f9f9d4fd65cea0f58.pdf",
+      "fileName": "Ebook -A Symphony of Flavors- Mediterranean and Middle Eastern Spice Essentials-1(1).pdf",
+      "fileType": "SECURE_DOCUMENT"
+    }
+  },
+  {
+    "id": "c5d1456f-fbc3-c9c5-f0fe-520b3f1ef401",
+    "name": "Your Secret to a Flawless, Stress-Free Holiday Dinner",
+    "slug": "exclusive-holiday-cooking-bundle-master-the-art-of-festive-entertaining",
+    "visible": true,
+    "productType": "digital",
+    "description": "<p>\u200bStop worrying about dry turkey, complicated schedules, and kitchen chaos. This holiday season, you're not just cooking a meal; you're creating a memory. Our bundle is designed to give you the confidence and the exact timeline to host a flawless, impressive holiday dinner, so you can actually relax and enjoy the celebration with your family.</p><p>\u200b</p><p>This curated collection isn't just about recipes; it's your key to becoming a celebrated holiday host.</p><p>&nbsp;</p><p>\u200b<strong>Here's what you'll master:</strong></p><p>\u2022 The Fail-Proof Thanksgiving Guide: Never serve a dry turkey again! Master our 3 proven techniques for a juicy, perfect bird and get a minute-by-minute timeline that eliminates all guesswork and stress.</p><p>&nbsp;</p><p>\u2022 \u200bThe Elegant French Christmas Table: Go beyond the usual and wow your guests with a unique and sophisticated French Christmas menu that's surprisingly simple to prepare.</p><p>\u200b</p><p><strong>\u2022 BONUS</strong> - Free 'Art of the First Bite' Appetizer Ebook: Discover our secrets to simple, make-ahead appetizers that will impress your guests from the moment they arrive.</p>",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": false,
+      "inStock": true,
+      "inventoryStatus": "IN_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 69.0,
+      "discountedPrice": 69.0,
+      "formatted": {
+        "price": "\u20ac69.00",
+        "discountedPrice": "\u20ac69.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 69.0,
+      "discountedPrice": 69.0,
+      "formatted": {
+        "price": "\u20ac69.00",
+        "discountedPrice": "\u20ac69.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 69.0,
+      "discountedPrice": 69.0,
+      "formatted": {
+        "price": "\u20ac69.00",
+        "discountedPrice": "\u20ac69.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 69.0,
+      "maxValue": 69.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [],
+    "ribbons": [
+      {
+        "text": "Bundle"
+      }
+    ],
+    "media": {
+      "mainMedia": {
+        "thumbnail": {
+          "url": "https://static.wixstatic.com/media/644b56_a9d95fd6e2214ef09c51594e73e493b7~mv2.png/v1/fit/w_50,h_50,q_90/file.png",
+          "width": 50,
+          "height": 50
+        },
+        "mediaType": "image",
+        "title": "Unlock the magic of Holiday Cooking.png",
+        "image": {
+          "url": "https://static.wixstatic.com/media/644b56_a9d95fd6e2214ef09c51594e73e493b7~mv2.png/v1/fit/w_2160,h_2700,q_90/file.png",
+          "width": 2160,
+          "height": 2700
+        },
+        "id": "644b56_a9d95fd6e2214ef09c51594e73e493b7~mv2.png"
+      },
+      "items": [
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/644b56_a9d95fd6e2214ef09c51594e73e493b7~mv2.png/v1/fit/w_50,h_50,q_90/file.png",
+            "width": 50,
+            "height": 50
+          },
+          "mediaType": "image",
+          "title": "Unlock the magic of Holiday Cooking.png",
+          "image": {
+            "url": "https://static.wixstatic.com/media/644b56_a9d95fd6e2214ef09c51594e73e493b7~mv2.png/v1/fit/w_2160,h_2700,q_90/file.png",
+            "width": 2160,
+            "height": 2700
+          },
+          "id": "644b56_a9d95fd6e2214ef09c51594e73e493b7~mv2.png"
+        },
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/644b56_be591563f88b45e9a04bd470858f29ef~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50
+          },
+          "mediaType": "image",
+          "title": "The Art of the First Bite_book cover.jpg",
+          "image": {
+            "url": "https://static.wixstatic.com/media/644b56_be591563f88b45e9a04bd470858f29ef~mv2.jpg/v1/fit/w_1572,h_2040,q_90/file.jpg",
+            "width": 1572,
+            "height": 2040
+          },
+          "id": "644b56_be591563f88b45e9a04bd470858f29ef~mv2.jpg"
+        },
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/644b56_f68cef8e90c741239c48b1fe2b0dfee8~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50
+          },
+          "mediaType": "image",
+          "title": "Christmas in Paris_book cover.jpg",
+          "image": {
+            "url": "https://static.wixstatic.com/media/644b56_f68cef8e90c741239c48b1fe2b0dfee8~mv2.jpg/v1/fit/w_1572,h_2040,q_90/file.jpg",
+            "width": 1572,
+            "height": 2040
+          },
+          "id": "644b56_f68cef8e90c741239c48b1fe2b0dfee8~mv2.jpg"
+        },
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/644b56_2cf201b8474e487499a833d7fe3e23c9~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50
+          },
+          "mediaType": "image",
+          "title": "Stress-free Thanksgiving_book cover.jpg",
+          "image": {
+            "url": "https://static.wixstatic.com/media/644b56_2cf201b8474e487499a833d7fe3e23c9~mv2.jpg/v1/fit/w_1572,h_2040,q_90/file.jpg",
+            "width": 1572,
+            "height": 2040
+          },
+          "id": "644b56_2cf201b8474e487499a833d7fe3e23c9~mv2.jpg"
+        },
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/644b56_4509ef5668a647859712e963fb8eb1d9f002.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50
+          },
+          "mediaType": "video",
+          "title": "Holiday Bundle Cooking Course.mp4",
+          "video": {
+            "files": [
+              {
+                "url": "https://video.wixstatic.com/video/644b56_4509ef5668a647859712e963fb8eb1d9/720p/mp4/file.mp4",
+                "width": 1080,
+                "height": 1350,
+                "format": "mp4"
+              },
+              {
+                "url": "https://video.wixstatic.com/video/644b56_4509ef5668a647859712e963fb8eb1d9/480p/mp4/file.mp4",
+                "width": 384,
+                "height": 480,
+                "format": "mp4"
+              },
+              {
+                "url": "https://video.wixstatic.com/video/644b56_4509ef5668a647859712e963fb8eb1d9/360p/mp4/file.mp4",
+                "width": 288,
+                "height": 360,
+                "format": "mp4"
+              }
+            ],
+            "stillFrameMediaId": "644b56_4509ef5668a647859712e963fb8eb1d9f002.jpg"
+          },
+          "id": "644b56_4509ef5668a647859712e963fb8eb1d9"
+        }
+      ]
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/exclusive-holiday-cooking-bundle-master-the-art-of-festive-entertaining"
+    },
+    "numericId": "1758183353728000",
+    "inventoryItemId": "3a2eba90-043c-363a-0f01-adf4c0e10bfe",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2026-01-11T14:47:30.433Z",
+    "createdDate": "2025-09-18T08:15:53.728Z",
+    "seoData": {
+      "tags": [
+        {
+          "type": "meta",
+          "props": {
+            "name": "description",
+            "content": "Exclusive Holiday Cooking Bundle: Master the Art of Festive Entertaining! This holiday season, elevate your culinary skills and create unforgettable memories with our Exclusive Holiday Cooking Bundle! This curated collection includes:\n\u25cf\tStress-Free Thanksgiving: A Complete Cooking Course\n\u25cf\tChristmas in Paris: The French Holiday Table\n\u25cf\tBonus: Elegant Appetizers Booklet"
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        }
+      ],
+      "settings": {
+        "preventAutoRedirect": false,
+        "keywords": []
+      }
+    },
+    "ribbon": "Bundle",
+    "brand": "Epicurean Flow",
+    "exportProductId": "product_c5d1456f-fbc3-c9c5-f0fe-520b3f1ef401",
+    "digitalFile": {
+      "id": "644b56_fb314807b64f442394d5b2e84bd1baa3.zip",
+      "fileName": "Holiday Bundle Epicurean Flow.zip",
+      "fileType": "SECURE_ARCHIVE"
+    }
+  },
+  {
+    "id": "b0ad737f-d24e-afa3-9390-bd9691cd5e67",
+    "name": "Diabetes Cooking Course Masterclass",
+    "slug": "diabetes-cooking-course-masterclass-1",
+    "visible": true,
+    "productType": "digital",
+    "description": "<p>Transform Your Diabetes Management with Our Diabetes-Friendly Cooking Courses!</p><p>&nbsp;</p><p>Reimagine diabetes management with our engaging diabetes-friendly cooking courses! Our flagship offering, the Diabetes Cooking Course Masterclass, is a comprehensive program designed to empower individuals living with diabetes and those looking to prevent pre-diabetes through delicious, healthy recipes for diabetes.</p><p>&nbsp;</p><p>Created by Chef Eliane, who lives with diabetes herself, this masterclass is packed with vibrant recipes, interactive quizzes, practical shopping lists, and expert tips. Learn to cook mouthwatering, diabetes-friendly meals using innovative techniques\u2014so you can enjoy real flavor without compromise. Say goodbye to bland and boring; discover how exciting healthy eating can be! Even non-diabetics will love these recipes.</p><p>&nbsp;</p><p>Course Benefits:</p><p>\u2714\ufe0f Developed by Chef Eliane, an award-winning chef with personal experience managing diabetes</p><p>\u2714\ufe0f Includes a variety of restaurant-quality, easy-to-make recipes transformed into diabetes-friendly versions</p><p>\u2714\ufe0f Step-by-step cooking techniques that make healthy meals easy and enjoyable</p><p>\u2714\ufe0f Interactive quizzes to track your progress and boost your confidence</p><p>\u2714\ufe0f Practical shopping lists to simplify meal planning</p><p>\u2714\ufe0f Tips and strategies for making everyday cooking healthier\u2014without sacrificing taste</p><p>\u2714\ufe0f Suitable for all skill levels, from beginners to experienced home cooks</p><p>\u2714\ufe0f Designed to inspire creativity and make diabetes management a rewarding journey</p><p>\u2714\ufe0f Experience improved well-being and manageable sugar levels through these healthy recipes for diabetes</p><p>&nbsp;</p><p>Enroll in our Diabetes Cooking Course Masterclass today and take the first step towards mastering the art of cooking for diabetics with flavorful, nutritious meals!</p><p>&nbsp;</p><p>&nbsp;</p>",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": false,
+      "inStock": true,
+      "inventoryStatus": "IN_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 39.0,
+      "discountedPrice": 39.0,
+      "formatted": {
+        "price": "\u20ac39.00",
+        "discountedPrice": "\u20ac39.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 39.0,
+      "discountedPrice": 39.0,
+      "formatted": {
+        "price": "\u20ac39.00",
+        "discountedPrice": "\u20ac39.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 39.0,
+      "discountedPrice": 39.0,
+      "formatted": {
+        "price": "\u20ac39.00",
+        "discountedPrice": "\u20ac39.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 39.0,
+      "maxValue": 39.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [],
+    "ribbons": [],
+    "media": {
+      "mainMedia": {
+        "thumbnail": {
+          "url": "https://static.wixstatic.com/media/30dece_b9c1ee9fe5bd4fb3b69eec8a061852fd~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+          "width": 50,
+          "height": 50
+        },
+        "mediaType": "image",
+        "title": "Screenshot_20250912_110724_Adobe Acrobat.jpg",
+        "image": {
+          "url": "https://static.wixstatic.com/media/30dece_b9c1ee9fe5bd4fb3b69eec8a061852fd~mv2.jpg/v1/fit/w_1600,h_2560,q_90/file.jpg",
+          "width": 1600,
+          "height": 2560
+        },
+        "id": "30dece_b9c1ee9fe5bd4fb3b69eec8a061852fd~mv2.jpg"
+      },
+      "items": [
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/30dece_b9c1ee9fe5bd4fb3b69eec8a061852fd~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50
+          },
+          "mediaType": "image",
+          "title": "Screenshot_20250912_110724_Adobe Acrobat.jpg",
+          "image": {
+            "url": "https://static.wixstatic.com/media/30dece_b9c1ee9fe5bd4fb3b69eec8a061852fd~mv2.jpg/v1/fit/w_1600,h_2560,q_90/file.jpg",
+            "width": 1600,
+            "height": 2560
+          },
+          "id": "30dece_b9c1ee9fe5bd4fb3b69eec8a061852fd~mv2.jpg"
+        }
+      ]
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/diabetes-cooking-course-masterclass-1"
+    },
+    "numericId": "1758004469222000",
+    "inventoryItemId": "4f528c80-2db1-505c-6c6f-42696e32a198",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "b1645374-4564-8726-2ffd-dce8ee4f5323",
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2025-09-16T08:46:08.510Z",
+    "createdDate": "2025-09-16T06:34:29.222Z",
+    "ribbon": "",
+    "brand": "Epicurean Flow",
+    "exportProductId": "product_b0ad737f-d24e-afa3-9390-bd9691cd5e67",
+    "digitalFile": {
+      "id": "30dece_3774cf1dae454bbc9efd1ff385ccdb85.pdf",
+      "fileName": "Diabetes Cooking Course Masterclass Def.pdf",
+      "fileType": "SECURE_DOCUMENT"
+    }
+  },
+  {
+    "id": "160f5527-13c1-9ef9-3e2e-1b0f07a94abb",
+    "name": "Diabetes Cooking Course",
+    "slug": "diabetes-cooking-course",
+    "visible": true,
+    "productType": "digital",
+    "description": "<p>Discover our Diabetes Cooking Course at Epicurean Flow, where we combine interactive cooking experiences with expert guidance to empower you in the kitchen. Tailored for those managing diabetes, our classes are designed to build confidence and make every meal memorable, while adhering to dietary needs. Join us to explore delicious, diabetes-friendly recipes that align with your health goals. Elevate your culinary skills and enjoy nutritious, flavorful meals in every bite.</p><p>&nbsp;</p><p><strong>Course Benefits:</strong></p><p><strong>\u2714\ufe0f </strong>Developed by Chef Eliane, an award-winning chef with personal experience managing diabetes</p><p>\u2714\ufe0f Includes a variety of restaurant-quality, easy-to-make recipes transformed into diabetes-friendly versions</p><p>\u2714\ufe0f Step-by-step cooking techniques that make healthy meals easy and enjoyable</p><p>\u2714\ufe0f Interactive quizzes to track your progress and boost your confidence</p><p>\u2714\ufe0f Practical shopping lists to simplify meal planning</p><p>\u2714\ufe0f Tips and strategies for making everyday cooking healthier\u2014without sacrificing taste</p><p>\u2714\ufe0f Suitable for all skill levels, from beginners to experienced home cooks</p><p>\u2714\ufe0f Designed to inspire creativity and make diabetes management a rewarding journey</p><p>\u2714\ufe0f Experience improved well-being and manageable sugar levels through these healthy recipes for diabetes</p><p>&nbsp;</p><p>Enroll in our Diabetes Cooking Course Masterclass today and take the first step towards mastering the art of cooking for diabetics with flavorful, nutritious meals!</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": false,
+      "inStock": true,
+      "inventoryStatus": "IN_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 19.0,
+      "discountedPrice": 19.0,
+      "formatted": {
+        "price": "\u20ac19.00",
+        "discountedPrice": "\u20ac19.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 19.0,
+      "discountedPrice": 19.0,
+      "formatted": {
+        "price": "\u20ac19.00",
+        "discountedPrice": "\u20ac19.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 19.0,
+      "discountedPrice": 19.0,
+      "formatted": {
+        "price": "\u20ac19.00",
+        "discountedPrice": "\u20ac19.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 19.0,
+      "maxValue": 19.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [],
+    "ribbons": [],
+    "media": {
+      "mainMedia": {
+        "thumbnail": {
+          "url": "https://static.wixstatic.com/media/30dece_708d733d9b124c4e942e24e27555419b~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+          "width": 50,
+          "height": 50
+        },
+        "mediaType": "image",
+        "title": "Screenshot_20250421_103523_Canva (1).jpg",
+        "image": {
+          "url": "https://static.wixstatic.com/media/30dece_708d733d9b124c4e942e24e27555419b~mv2.jpg/v1/fit/w_605,h_785,q_90/file.jpg",
+          "width": 605,
+          "height": 785
+        },
+        "id": "30dece_708d733d9b124c4e942e24e27555419b~mv2.jpg"
+      },
+      "items": [
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/30dece_708d733d9b124c4e942e24e27555419b~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50
+          },
+          "mediaType": "image",
+          "title": "Screenshot_20250421_103523_Canva (1).jpg",
+          "image": {
+            "url": "https://static.wixstatic.com/media/30dece_708d733d9b124c4e942e24e27555419b~mv2.jpg/v1/fit/w_605,h_785,q_90/file.jpg",
+            "width": 605,
+            "height": 785
+          },
+          "id": "30dece_708d733d9b124c4e942e24e27555419b~mv2.jpg"
+        }
+      ]
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/diabetes-cooking-course"
+    },
+    "numericId": "1758001070074000",
+    "inventoryItemId": "e9f0aad8-ec3e-6106-c1d1-e4f0f856b544",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "b1645374-4564-8726-2ffd-dce8ee4f5323",
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2025-09-16T08:48:57.112Z",
+    "createdDate": "2025-09-16T05:37:50.074Z",
+    "ribbon": "",
+    "brand": "Epicurean Flow",
+    "exportProductId": "product_160f5527-13c1-9ef9-3e2e-1b0f07a94abb",
+    "digitalFile": {
+      "id": "30dece_4dd9372aeb4e484a90469adce9cf3283.pdf",
+      "fileName": "Diabetes Cooking Course 1 def.pdf",
+      "fileType": "SECURE_DOCUMENT"
+    }
+  },
+  {
+    "id": "d5747779-c725-f005-32e5-e7e4f47af82b",
+    "name": "Download your FREE Diabetes-Friendly Mediterranean Bowls of Flavor",
+    "slug": "download-your-free-diabetes-friendly-mediterranean-bowls-of-flavor",
+    "visible": true,
+    "productType": "digital",
+    "description": "<p>Soulful Soups: Diabetes-Friendly Mediterranean Bowls of Flavor</p><p>&nbsp;</p><p>Warm, nourishing, and bursting with flavor \u2014 this collection of Mediterranean-inspired soups proves that diabetes-friendly cooking can be delicious for everyone. From fragrant Moroccan blends to hearty Greek vegetable bowls, each recipe is easy to follow, naturally healthy, and made with fresh, wholesome ingredients. Comfort in a bowl, without compromising taste or health.</p>",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": false,
+      "inStock": true,
+      "inventoryStatus": "IN_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 0.0,
+      "discountedPrice": 0.0,
+      "formatted": {
+        "price": "\u20ac0.00",
+        "discountedPrice": "\u20ac0.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 0.0,
+      "discountedPrice": 0.0,
+      "formatted": {
+        "price": "\u20ac0.00",
+        "discountedPrice": "\u20ac0.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 0.0,
+      "discountedPrice": 0.0,
+      "formatted": {
+        "price": "\u20ac0.00",
+        "discountedPrice": "\u20ac0.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [],
+    "ribbons": [
+      {
+        "text": "NEW!"
+      }
+    ],
+    "media": {
+      "mainMedia": {
+        "thumbnail": {
+          "url": "https://static.wixstatic.com/media/30dece_f35014b18c7e4ef497d3056cec399bce~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+          "width": 50,
+          "height": 50
+        },
+        "mediaType": "image",
+        "title": "Screenshot_20250809_140448_Adobe Acrobat.jpg",
+        "image": {
+          "url": "https://static.wixstatic.com/media/30dece_f35014b18c7e4ef497d3056cec399bce~mv2.jpg/v1/fit/w_1585,h_2041,q_90/file.jpg",
+          "width": 1585,
+          "height": 2041
+        },
+        "id": "30dece_f35014b18c7e4ef497d3056cec399bce~mv2.jpg"
+      },
+      "items": [
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/30dece_f35014b18c7e4ef497d3056cec399bce~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50
+          },
+          "mediaType": "image",
+          "title": "Screenshot_20250809_140448_Adobe Acrobat.jpg",
+          "image": {
+            "url": "https://static.wixstatic.com/media/30dece_f35014b18c7e4ef497d3056cec399bce~mv2.jpg/v1/fit/w_1585,h_2041,q_90/file.jpg",
+            "width": 1585,
+            "height": 2041
+          },
+          "id": "30dece_f35014b18c7e4ef497d3056cec399bce~mv2.jpg"
+        }
+      ]
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/download-your-free-diabetes-friendly-mediterranean-bowls-of-flavor"
+    },
+    "numericId": "1754742866152000",
+    "inventoryItemId": "2a8b8886-38da-0ffa-cd1a-181b0b8507d4",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "fa3a6fc9-b8e8-2e62-5847-c252526ceee1",
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2025-08-09T12:34:26.500Z",
+    "createdDate": "2025-08-09T12:34:26.152Z",
+    "ribbon": "NEW!",
+    "brand": "Epicurean Flow",
+    "exportProductId": "product_d5747779-c725-f005-32e5-e7e4f47af82b",
+    "digitalFile": {
+      "id": "30dece_0c03e598f8674e2eb519e07384be7c36.pdf",
+      "fileName": "Soup cookbook-2.pdf",
+      "fileType": "SECURE_DOCUMENT"
+    }
+  },
+  {
+    "id": "cbe45ea4-5f5f-5177-21aa-fcc9cf531613",
+    "name": "Download Your FREE Mediterranean Recipe eBook \u2014 6 Delicious Recipes + 2 Bonuses",
+    "slug": "download-your-free-mediterranean-recipe-ebook-6-delicious-recipes-2-bonus-di",
+    "visible": true,
+    "productType": "digital",
+    "description": "<p>Ever wondered what makes Mediterranean home cooking so fresh and full of flavor?</p><p>I\u2019ve bundled 6 authentic, healthy recipes and 2 bonus dishes you rarely see in cookbooks into a FREE downloadable eBook \u2014 simple, vibrant, and crafted for everyday cooks.</p><p>&nbsp;</p><p>Unlock these delicious recipes now \u2014 just enter your email and get instant access.</p><p>No cost, no catch \u2014 only delicious secrets waiting to be cooked.</p>",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": false,
+      "inStock": true,
+      "inventoryStatus": "IN_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 0.0,
+      "discountedPrice": 0.0,
+      "formatted": {
+        "price": "\u20ac0.00",
+        "discountedPrice": "\u20ac0.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 0.0,
+      "discountedPrice": 0.0,
+      "formatted": {
+        "price": "\u20ac0.00",
+        "discountedPrice": "\u20ac0.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 0.0,
+      "discountedPrice": 0.0,
+      "formatted": {
+        "price": "\u20ac0.00",
+        "discountedPrice": "\u20ac0.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [],
+    "ribbons": [],
+    "media": {
+      "mainMedia": {
+        "thumbnail": {
+          "url": "https://static.wixstatic.com/media/30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+          "width": 50,
+          "height": 50
+        },
+        "mediaType": "image",
+        "title": "Screenshot_20250803_120506_Adobe Acrobat.jpg",
+        "image": {
+          "url": "https://static.wixstatic.com/media/30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg/v1/fit/w_1573,h_2026,q_90/file.jpg",
+          "width": 1573,
+          "height": 2026
+        },
+        "id": "30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg"
+      },
+      "items": [
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50
+          },
+          "mediaType": "image",
+          "title": "Screenshot_20250803_120506_Adobe Acrobat.jpg",
+          "image": {
+            "url": "https://static.wixstatic.com/media/30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg/v1/fit/w_1573,h_2026,q_90/file.jpg",
+            "width": 1573,
+            "height": 2026
+          },
+          "id": "30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg"
+        }
+      ]
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/download-your-free-mediterranean-recipe-ebook-6-delicious-recipes-2-bonus-di"
+    },
+    "numericId": "1754216919823000",
+    "inventoryItemId": "341ba15b-a0a0-ae88-de55-033630ace9ec",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2025-08-03T10:48:05.485Z",
+    "createdDate": "2025-08-03T10:28:39.823Z",
+    "ribbon": "",
+    "exportProductId": "product_cbe45ea4-5f5f-5177-21aa-fcc9cf531613",
+    "digitalFile": {
+      "id": "30dece_1153dd6a448540e9a43f2ed8dcb7dc99.pdf",
+      "fileName": "cookbook-1.pdf",
+      "fileType": "SECURE_DOCUMENT"
+    }
+  },
+  {
+    "id": "2e04050d-aa66-ea2a-b1f7-a54afeb8b3d6",
+    "name": "The Ultimate Macronutrient Guide",
+    "slug": "the-ultimate-macronutrient-guide",
+    "visible": true,
+    "productType": "physical",
+    "description": "<p>The Ultimate Macronutrient Guide \u2013 A Simple Path to Balanced Nutrition</p><p></p><p>Learn how to balance carbs, proteins, and fats for optimal energy, muscle support, and overall well-being. This beautifully designed eBook makes healthy eating simple and sustainable.</p><p></p><p></p>",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": false,
+      "inStock": true,
+      "inventoryStatus": "IN_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 7.0,
+      "discountedPrice": 7.0,
+      "formatted": {
+        "price": "\u20ac7.00",
+        "discountedPrice": "\u20ac7.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 7.0,
+      "discountedPrice": 7.0,
+      "formatted": {
+        "price": "\u20ac7.00",
+        "discountedPrice": "\u20ac7.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 7.0,
+      "discountedPrice": 7.0,
+      "formatted": {
+        "price": "\u20ac7.00",
+        "discountedPrice": "\u20ac7.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 7.0,
+      "maxValue": 7.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [
+      {
+        "title": " All sales for digital products are final. Please ",
+        "description": "<p>All sales for digital products are final. Please refer to our refund policy on the homepage for more details.</p><p></p><p></p>"
+      }
+    ],
+    "ribbons": [
+      {
+        "text": "Digital"
+      }
+    ],
+    "media": {
+      "mainMedia": {
+        "thumbnail": {
+          "url": "https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_50,h_50,q_90/file.png",
+          "width": 50,
+          "height": 50,
+          "altText": "The Ultimate Macronutrient Guide by Eliane Muskus"
+        },
+        "mediaType": "image",
+        "title": "Copy of Macros Made Simple - Guide_20250213_085205_0000.png",
+        "image": {
+          "url": "https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_816,h_1056,q_90/file.png",
+          "width": 816,
+          "height": 1056,
+          "altText": "The Ultimate Macronutrient Guide by Eliane Muskus"
+        },
+        "id": "30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png"
+      },
+      "items": [
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_50,h_50,q_90/file.png",
+            "width": 50,
+            "height": 50,
+            "altText": "The Ultimate Macronutrient Guide by Eliane Muskus"
+          },
+          "mediaType": "image",
+          "title": "Copy of Macros Made Simple - Guide_20250213_085205_0000.png",
+          "image": {
+            "url": "https://static.wixstatic.com/media/30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png/v1/fit/w_816,h_1056,q_90/file.png",
+            "width": 816,
+            "height": 1056,
+            "altText": "The Ultimate Macronutrient Guide by Eliane Muskus"
+          },
+          "id": "30dece_c0a7a81afccf4c438a123f50e61ac596~mv2.png"
+        }
+      ]
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/the-ultimate-macronutrient-guide"
+    },
+    "numericId": "1739438458030000",
+    "inventoryItemId": "d1fbfaf2-5599-15d5-4e08-5ab501474c29",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2025-04-16T11:21:39.682Z",
+    "createdDate": "2025-02-13T09:20:58.030Z",
+    "seoData": {
+      "tags": [
+        {
+          "type": "meta",
+          "props": {
+            "name": "description",
+            "content": "The Ultimate Macronutrient Guide. Learn how to balance carbs, proteins, and fats for optimal energy, muscle support, and overall well-being. This beautifully designed eBook makes healthy eating simple and sustainable."
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        }
+      ],
+      "settings": {
+        "preventAutoRedirect": false,
+        "keywords": [
+          {
+            "term": "The Ultimate Macronutrient Guide",
+            "isMain": true
+          }
+        ]
+      }
+    },
+    "ribbon": "Digital",
+    "brand": "Epicurean Flow",
+    "exportProductId": "product_2e04050d-aa66-ea2a-b1f7-a54afeb8b3d6"
+  },
+  {
+    "id": "5c782d72-4985-3fdc-bc3e-8897538044e4",
+    "name": "Epicurean Flow Meal Planner",
+    "slug": "epicurean-flow-meal-planner-by-eliane-muskus",
+    "visible": true,
+    "productType": "digital",
+    "description": "<p>Take the stress out of daily cooking with the Epicurean Flow Meal Planner! Designed for home cooks, foodies, and busy individuals, this meal planner helps you effortlessly plan balanced, delicious meals that fit your lifestyle. Whether you're aiming for health-conscious choices, Mediterranean-inspired dishes, or simply organizing your week, this tool provides:</p><p>&nbsp;</p><ul>\t<li><strong>Weekly &amp; Montly Layouts:</strong> Plan meals in advance with clearly laid-out templates.</li>\t<li><strong>Recipe Integration:</strong> Seamlessly pair your favorite recipes.</li>\t<li><strong>Customizable Options:</strong> Tailor your meals to suit your dietary preferences, including diabetes-friendly or vegetarian options.</li>\t<li><strong>Time-Saving Tips:</strong> Built-in advice for batch cooking, meal prepping, and maximizing leftovers.</li></ul><p>&nbsp;</p><p>Perfect for beginners and experienced cooks alike, the Epicurean Flow Meal Planner empowers you to make every meal an enjoyable, stress-free experience. Transform your cooking routine and bring creativity back to your kitchen!</p><p>&nbsp;</p><p>Available for immediate download.</p>",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": false,
+      "inStock": true,
+      "inventoryStatus": "IN_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 7.0,
+      "discountedPrice": 7.0,
+      "formatted": {
+        "price": "\u20ac7.00",
+        "discountedPrice": "\u20ac7.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 7.0,
+      "discountedPrice": 7.0,
+      "formatted": {
+        "price": "\u20ac7.00",
+        "discountedPrice": "\u20ac7.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 7.0,
+      "discountedPrice": 7.0,
+      "formatted": {
+        "price": "\u20ac7.00",
+        "discountedPrice": "\u20ac7.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 7.0,
+      "maxValue": 7.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [],
+    "ribbons": [
+      {
+        "text": "Digital"
+      }
+    ],
+    "media": {
+      "mainMedia": {
+        "thumbnail": {
+          "url": "https://static.wixstatic.com/media/8e85e1_c25a6a7985884ad7bc9e9b38adda9152~mv2.png/v1/fit/w_50,h_50,q_90/file.png",
+          "width": 50,
+          "height": 50,
+          "altText": "Meal Planner by Eliane Muskus-Epicurean Flow"
+        },
+        "mediaType": "image",
+        "title": "Meal Planner",
+        "image": {
+          "url": "https://static.wixstatic.com/media/8e85e1_c25a6a7985884ad7bc9e9b38adda9152~mv2.png/v1/fit/w_2300,h_3000,q_90/file.png",
+          "width": 2300,
+          "height": 3000,
+          "altText": "Meal Planner by Eliane Muskus-Epicurean Flow"
+        },
+        "id": "8e85e1_c25a6a7985884ad7bc9e9b38adda9152~mv2.png"
+      },
+      "items": [
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/8e85e1_c25a6a7985884ad7bc9e9b38adda9152~mv2.png/v1/fit/w_50,h_50,q_90/file.png",
+            "width": 50,
+            "height": 50,
+            "altText": "Meal Planner by Eliane Muskus-Epicurean Flow"
+          },
+          "mediaType": "image",
+          "title": "Meal Planner",
+          "image": {
+            "url": "https://static.wixstatic.com/media/8e85e1_c25a6a7985884ad7bc9e9b38adda9152~mv2.png/v1/fit/w_2300,h_3000,q_90/file.png",
+            "width": 2300,
+            "height": 3000,
+            "altText": "Meal Planner by Eliane Muskus-Epicurean Flow"
+          },
+          "id": "8e85e1_c25a6a7985884ad7bc9e9b38adda9152~mv2.png"
+        }
+      ]
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/epicurean-flow-meal-planner-by-eliane-muskus"
+    },
+    "numericId": "1734089146684000",
+    "inventoryItemId": "a387d28d-b67a-c023-43c1-7768ac7fbb1b",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2025-06-10T10:23:21.128Z",
+    "createdDate": "2024-12-13T11:25:46.684Z",
+    "seoData": {
+      "tags": [
+        {
+          "type": "meta",
+          "props": {
+            "name": "description",
+            "content": "Take the stress out of daily cooking with the Epicurean Flow Meal Planner! Designed for home cooks, foodies, and busy individuals, this meal planner helps you effortlessly plan balanced, delicious meals that fit your lifestyle. Whether you're aiming for health-conscious choices, Mediterranean-inspired dishes, or simply organizing your week."
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        },
+        {
+          "type": "meta",
+          "props": {
+            "property": "og:description",
+            "content": "Take the stress out of daily cooking with the Epicurean Flow Meal Planner! Designed for home cooks, foodies, and busy individuals, this meal planner helps you effortlessly plan balanced, delicious meals that fit your lifestyle. Whether you're aiming for health-conscious choices, Mediterranean-inspired dishes, or simply organizing your week."
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        },
+        {
+          "type": "title",
+          "children": "Epicurean Flow Meal Planner | Epicurean Flow | Culinary website",
+          "custom": false,
+          "disabled": false
+        }
+      ],
+      "settings": {
+        "preventAutoRedirect": false,
+        "keywords": [
+          {
+            "term": "Epicurean Flow Meal Planner",
+            "isMain": true
+          }
+        ]
+      }
+    },
+    "ribbon": "Digital",
+    "exportProductId": "product_5c782d72-4985-3fdc-bc3e-8897538044e4",
+    "digitalFile": {
+      "id": "8e85e1_3c340f099f0440eeb0ad5176c50bbc3e.pdf",
+      "fileName": "Meal Planner.pdf",
+      "fileType": "SECURE_DOCUMENT"
+    }
+  },
+  {
+    "id": "930ffd07-a0bf-362e-7f7c-b360d4feffc2",
+    "name": "Christmas Recipe Collection Cookbook",
+    "slug": "christmas-recipe-collection-cookbook",
+    "visible": true,
+    "productType": "physical",
+    "description": "<p>Create a Memorable Christmas Feast with the Christmas Recipe Collection Cookbook!</p><p>Transform your holiday meal into a celebration with the Christmas Recipe Collection Cookbook\u2014your go-to guide for delicious, stress-free Christmas cooking. Designed for every skill level, this cookbook is packed with easy-to-follow recipes that capture the flavors of the season and help you create a cozy, festive atmosphere at your table.</p><p>&nbsp;</p><p>Why This Cookbook Is a Must-Have for the Holidays:</p><p>Festive, Flavorful Recipes: Enjoy a full selection of holiday dishes, from starters to decadent desserts, each crafted to make your Christmas meal truly special.</p><p>&nbsp;</p><p>Complete Menu Suggestions: Get inspired with sample menus that pair side dishes with main courses and include wine pairing tips to simplify planning and elevate your meal.</p><p>Effortless Holiday Prep: These recipes are designed to make cooking for Christmas easy, saving you time and stress so you can relax and savor the season.</p><p>&nbsp;</p><p>Perfect for Entertaining: Impress family and friends with dishes that not only taste incredible but also add a warm, festive touch to your holiday gathering.</p><p>&nbsp;</p><p>This Christmas, treat yourself to a cookbook that brings joy to every step of your holiday cooking. Order the Christmas Recipe Collection Cookbook today and make this season\u2019s celebrations unforgettable\u2014perfect for your own kitchen or as a thoughtful gift for anyone who loves to cook.</p>",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": false,
+      "inStock": true,
+      "inventoryStatus": "IN_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 16.0,
+      "discountedPrice": 16.0,
+      "formatted": {
+        "price": "\u20ac16.00",
+        "discountedPrice": "\u20ac16.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 16.0,
+      "discountedPrice": 16.0,
+      "formatted": {
+        "price": "\u20ac16.00",
+        "discountedPrice": "\u20ac16.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 16.0,
+      "discountedPrice": 16.0,
+      "formatted": {
+        "price": "\u20ac16.00",
+        "discountedPrice": "\u20ac16.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 16.0,
+      "maxValue": 16.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [],
+    "ribbons": [],
+    "media": {
+      "mainMedia": {
+        "thumbnail": {
+          "url": "https://static.wixstatic.com/media/8e85e1_14376467c2e045a884d6fe64a1e55711~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+          "width": 50,
+          "height": 50,
+          "altText": "Christmas Recipe Collection e-book by Eliane Muskus, Epicurean Flow"
+        },
+        "mediaType": "image",
+        "title": "4624029844.jpg",
+        "image": {
+          "url": "https://static.wixstatic.com/media/8e85e1_14376467c2e045a884d6fe64a1e55711~mv2.jpg/v1/fit/w_1200,h_1680,q_90/file.jpg",
+          "width": 1200,
+          "height": 1680,
+          "altText": "Christmas Recipe Collection e-book by Eliane Muskus, Epicurean Flow"
+        },
+        "id": "8e85e1_14376467c2e045a884d6fe64a1e55711~mv2.jpg"
+      },
+      "items": [
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/8e85e1_14376467c2e045a884d6fe64a1e55711~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50,
+            "altText": "Christmas Recipe Collection e-book by Eliane Muskus, Epicurean Flow"
+          },
+          "mediaType": "image",
+          "title": "4624029844.jpg",
+          "image": {
+            "url": "https://static.wixstatic.com/media/8e85e1_14376467c2e045a884d6fe64a1e55711~mv2.jpg/v1/fit/w_1200,h_1680,q_90/file.jpg",
+            "width": 1200,
+            "height": 1680,
+            "altText": "Christmas Recipe Collection e-book by Eliane Muskus, Epicurean Flow"
+          },
+          "id": "8e85e1_14376467c2e045a884d6fe64a1e55711~mv2.jpg"
+        }
+      ]
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/christmas-recipe-collection-cookbook"
+    },
+    "numericId": "1733924560310000",
+    "inventoryItemId": "6cf002f8-5f40-c9d1-8083-4c9f2b01003d",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2025-04-16T11:25:57.920Z",
+    "createdDate": "2024-12-11T13:42:40.310Z",
+    "seoData": {
+      "tags": [
+        {
+          "type": "meta",
+          "props": {
+            "name": "description",
+            "content": "Transform your holiday meal into a celebration with the Christmas Recipe Collection Cookbook, your go-to guide for delicious, stress-free Christmas cooking. Designed for every skill level, this cookbook is packed with easy-to-follow recipes that capture the flavors of the season and help you create a cozy, festive atmosphere at your table."
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        },
+        {
+          "type": "meta",
+          "props": {
+            "property": "og:description",
+            "content": "Transform your holiday meal into a celebration with the Christmas Recipe Collection Cookbook, your go-to guide for delicious, stress-free Christmas cooking. Designed for every skill level, this cookbook is packed with easy-to-follow recipes that capture the flavors of the season and help you create a cozy, festive atmosphere at your table."
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        }
+      ],
+      "settings": {
+        "preventAutoRedirect": false,
+        "keywords": [
+          {
+            "term": "Christmas Recipe Collection Cookbook",
+            "isMain": true
+          }
+        ]
+      }
+    },
+    "ribbon": "",
+    "exportProductId": "product_930ffd07-a0bf-362e-7f7c-b360d4feffc2"
+  },
+  {
+    "id": "46e3573a-341a-b5bc-926d-f0f15279d4c7",
+    "name": "Let's Eat",
+    "slug": "let-s-eat",
+    "visible": true,
+    "productType": "physical",
+    "description": "<p>Indulge in a culinary odyssey with \"Let's Eat,\" the cookbook by award-winning Chef Eliane Muskus. This gastronomic masterpiece features delectable recipes inspired by Eliane's extensive travels, her award-winning cooking classes in France, and treasured family recipes from her mother.</p><p>&nbsp;</p><p>Journey from the South of France to Mount Fuji, the Caribbean, South America, and beyond, as Eliane brings the world to your kitchen with easy-to-follow, farm-to-table recipes. Perfect for both seasoned chefs and home cooks, \"Let's Eat\" offers a diverse array of dishes that celebrate global flavors and culinary traditions. Discover the joy of cooking with fresh, high-quality ingredients and transform every meal into an unforgettable experience. Dive into this culinary adventure and elevate your dining with \"Let's Eat.\"</p><p>&nbsp;</p><p><em>Let's Eat, Cookbook by award-winning chef Eliane Muskus</em></p>",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": false,
+      "inStock": true,
+      "inventoryStatus": "IN_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 42.0,
+      "discountedPrice": 42.0,
+      "formatted": {
+        "price": "\u20ac42.00",
+        "discountedPrice": "\u20ac42.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 42.0,
+      "discountedPrice": 42.0,
+      "formatted": {
+        "price": "\u20ac42.00",
+        "discountedPrice": "\u20ac42.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 42.0,
+      "discountedPrice": 42.0,
+      "formatted": {
+        "price": "\u20ac42.00",
+        "discountedPrice": "\u20ac42.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 42.0,
+      "maxValue": 42.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [],
+    "ribbons": [],
+    "media": {
+      "mainMedia": {
+        "thumbnail": {
+          "url": "https://static.wixstatic.com/media/8e85e1_9c9bdde7c7a74e8ca2f05b12e70386d3~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+          "width": 50,
+          "height": 50,
+          "altText": "Let's Eat book by Eliane Muskus-www.epicureanflow.com"
+        },
+        "mediaType": "image",
+        "title": "4464656856.jpg",
+        "image": {
+          "url": "https://static.wixstatic.com/media/8e85e1_9c9bdde7c7a74e8ca2f05b12e70386d3~mv2.jpg/v1/fit/w_1585,h_2042,q_90/file.jpg",
+          "width": 1585,
+          "height": 2042,
+          "altText": "Let's Eat book by Eliane Muskus-www.epicureanflow.com"
+        },
+        "id": "8e85e1_9c9bdde7c7a74e8ca2f05b12e70386d3~mv2.jpg"
+      },
+      "items": [
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/8e85e1_9c9bdde7c7a74e8ca2f05b12e70386d3~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50,
+            "altText": "Let's Eat book by Eliane Muskus-www.epicureanflow.com"
+          },
+          "mediaType": "image",
+          "title": "4464656856.jpg",
+          "image": {
+            "url": "https://static.wixstatic.com/media/8e85e1_9c9bdde7c7a74e8ca2f05b12e70386d3~mv2.jpg/v1/fit/w_1585,h_2042,q_90/file.jpg",
+            "width": 1585,
+            "height": 2042,
+            "altText": "Let's Eat book by Eliane Muskus-www.epicureanflow.com"
+          },
+          "id": "8e85e1_9c9bdde7c7a74e8ca2f05b12e70386d3~mv2.jpg"
+        },
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/644b56_95298505e76546498457144becbcdcdbf002.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50,
+            "altText": "Let's Eat Cookbook by award-winning chef Eliane Muskus"
+          },
+          "mediaType": "video",
+          "title": "Let's Eat_Cook Book by Eliane Muskus.mp4",
+          "video": {
+            "files": [
+              {
+                "url": "https://video.wixstatic.com/video/644b56_95298505e76546498457144becbcdcdb/1080p/mp4/file.mp4",
+                "width": 1920,
+                "height": 1080,
+                "format": "mp4"
+              },
+              {
+                "url": "https://video.wixstatic.com/video/644b56_95298505e76546498457144becbcdcdb/720p/mp4/file.mp4",
+                "width": 1280,
+                "height": 720,
+                "format": "mp4"
+              },
+              {
+                "url": "https://video.wixstatic.com/video/644b56_95298505e76546498457144becbcdcdb/480p/mp4/file.mp4",
+                "width": 854,
+                "height": 480,
+                "format": "mp4"
+              },
+              {
+                "url": "https://video.wixstatic.com/video/644b56_95298505e76546498457144becbcdcdb/360p/mp4/file.mp4",
+                "width": 640,
+                "height": 360,
+                "format": "mp4"
+              }
+            ],
+            "stillFrameMediaId": "644b56_95298505e76546498457144becbcdcdbf002.jpg"
+          },
+          "id": "644b56_95298505e76546498457144becbcdcdb"
+        },
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/8e85e1_08529a671c0445dd893695e3290b0598~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50,
+            "altText": "Let's Eat book by Eliane Muskus-www.epicureanflow.com"
+          },
+          "mediaType": "image",
+          "title": "4464654326.jpg",
+          "image": {
+            "url": "https://static.wixstatic.com/media/8e85e1_08529a671c0445dd893695e3290b0598~mv2.jpg/v1/fit/w_1584,h_2065,q_90/file.jpg",
+            "width": 1584,
+            "height": 2065,
+            "altText": "Let's Eat book by Eliane Muskus-www.epicureanflow.com"
+          },
+          "id": "8e85e1_08529a671c0445dd893695e3290b0598~mv2.jpg"
+        }
+      ]
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/let-s-eat"
+    },
+    "numericId": "1733924084746000",
+    "inventoryItemId": "b91ca8c5-cbe5-4a43-6d92-0f0ead862b38",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2025-04-28T08:19:25.093Z",
+    "createdDate": "2024-12-11T13:34:44.746Z",
+    "seoData": {
+      "tags": [
+        {
+          "type": "title",
+          "children": "Let's Eat | Cookbook by award-winning chef Eliane Muskus",
+          "custom": false,
+          "disabled": false
+        },
+        {
+          "type": "meta",
+          "props": {
+            "name": "description",
+            "content": "Indulge in a culinary odyssey with \"Let's Eat,\" the cookbook by award-winning Chef Eliane Muskus. This gastronomic masterpiece features delectable recipes inspired by Eliane's extensive travels, her award-winning cooking classes in France, and treasured family recipes from her mother."
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        },
+        {
+          "type": "meta",
+          "props": {
+            "property": "og:description",
+            "content": "Indulge in a culinary odyssey with \"Let's Eat,\" the cookbook by award-winning Chef Eliane Muskus. This gastronomic masterpiece features delectable recipes inspired by Eliane's extensive travels, her award-winning cooking classes in France, and treasured family recipes from her mother."
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        }
+      ],
+      "settings": {
+        "preventAutoRedirect": false,
+        "keywords": [
+          {
+            "term": "Let's Eat",
+            "isMain": true
+          }
+        ]
+      }
+    },
+    "ribbon": "",
+    "brand": "Epicurean Flow",
+    "exportProductId": "product_46e3573a-341a-b5bc-926d-f0f15279d4c7"
+  },
+  {
+    "id": "11b42723-d4d6-e78c-480e-bae4d77c9c02",
+    "name": "Seasonal Recipe Cookbook",
+    "slug": "seasonal-recipe-cookbook",
+    "visible": true,
+    "productType": "physical",
+    "description": "<p>Explore the vibrant flavors of the Mediterranean with our \"Seasonal Recipes Cookbook - Spring Edition,\" curated by award-winning Chef Eliane Muskus. This collection includes the delightful Moroccan chicken tagine with prunes, featuring tender chicken in aromatic spices and sweet prunes, and more.</p><p>&nbsp;</p><p>Whether you're a beginner or an experienced cook, these accessible recipes will help you create stunning dishes that capture the essence of spring's freshest ingredients. Bring a taste of the Mediterranean into your home with healthy, flavorful meals designed to impress and delight.</p>",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": false,
+      "inStock": true,
+      "inventoryStatus": "IN_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 16.0,
+      "discountedPrice": 16.0,
+      "formatted": {
+        "price": "\u20ac16.00",
+        "discountedPrice": "\u20ac16.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 16.0,
+      "discountedPrice": 16.0,
+      "formatted": {
+        "price": "\u20ac16.00",
+        "discountedPrice": "\u20ac16.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 16.0,
+      "discountedPrice": 16.0,
+      "formatted": {
+        "price": "\u20ac16.00",
+        "discountedPrice": "\u20ac16.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 16.0,
+      "maxValue": 16.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [],
+    "ribbons": [],
+    "media": {
+      "mainMedia": {
+        "thumbnail": {
+          "url": "https://static.wixstatic.com/media/8e85e1_b3058c1921ad437db4021454b35ce40d~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+          "width": 50,
+          "height": 50,
+          "altText": "Seasonal Recipes Spring version by Eliane Muskus"
+        },
+        "mediaType": "image",
+        "title": "_storage_emulated_0_Android_data_com.adobe.reader_files_Pictures_Adobe Acrobat Exports_1Fi",
+        "image": {
+          "url": "https://static.wixstatic.com/media/8e85e1_b3058c1921ad437db4021454b35ce40d~mv2.jpg/v1/fit/w_1700,h_2200,q_90/file.jpg",
+          "width": 1700,
+          "height": 2200,
+          "altText": "Seasonal Recipes Spring version by Eliane Muskus"
+        },
+        "id": "8e85e1_b3058c1921ad437db4021454b35ce40d~mv2.jpg"
+      },
+      "items": [
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/8e85e1_b3058c1921ad437db4021454b35ce40d~mv2.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50,
+            "altText": "Seasonal Recipes Spring version by Eliane Muskus"
+          },
+          "mediaType": "image",
+          "title": "_storage_emulated_0_Android_data_com.adobe.reader_files_Pictures_Adobe Acrobat Exports_1Fi",
+          "image": {
+            "url": "https://static.wixstatic.com/media/8e85e1_b3058c1921ad437db4021454b35ce40d~mv2.jpg/v1/fit/w_1700,h_2200,q_90/file.jpg",
+            "width": 1700,
+            "height": 2200,
+            "altText": "Seasonal Recipes Spring version by Eliane Muskus"
+          },
+          "id": "8e85e1_b3058c1921ad437db4021454b35ce40d~mv2.jpg"
+        },
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/644b56_db55ae0758db44af851e976161c1c14df002.jpg/v1/fit/w_50,h_50,q_90/file.jpg",
+            "width": 50,
+            "height": 50
+          },
+          "mediaType": "video",
+          "title": "Seasonal Recipe Cookbook.mp4",
+          "video": {
+            "files": [
+              {
+                "url": "https://video.wixstatic.com/video/644b56_db55ae0758db44af851e976161c1c14d/1080p/mp4/file.mp4",
+                "width": 1920,
+                "height": 1080,
+                "format": "mp4"
+              },
+              {
+                "url": "https://video.wixstatic.com/video/644b56_db55ae0758db44af851e976161c1c14d/720p/mp4/file.mp4",
+                "width": 1280,
+                "height": 720,
+                "format": "mp4"
+              },
+              {
+                "url": "https://video.wixstatic.com/video/644b56_db55ae0758db44af851e976161c1c14d/480p/mp4/file.mp4",
+                "width": 854,
+                "height": 480,
+                "format": "mp4"
+              },
+              {
+                "url": "https://video.wixstatic.com/video/644b56_db55ae0758db44af851e976161c1c14d/360p/mp4/file.mp4",
+                "width": 640,
+                "height": 360,
+                "format": "mp4"
+              }
+            ],
+            "stillFrameMediaId": "644b56_db55ae0758db44af851e976161c1c14df002.jpg"
+          },
+          "id": "644b56_db55ae0758db44af851e976161c1c14d"
+        }
+      ]
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/seasonal-recipe-cookbook"
+    },
+    "numericId": "1733923826386000",
+    "inventoryItemId": "ee4bd8dc-2b29-1873-b7f1-451b288363fd",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2025-04-28T08:16:31.741Z",
+    "createdDate": "2024-12-11T13:30:26.386Z",
+    "seoData": {
+      "tags": [
+        {
+          "type": "meta",
+          "props": {
+            "name": "description",
+            "content": "Explore the vibrant flavors of the Mediterranean with our \"Seasonal Recipes Cookbook - Spring Edition,\" curated by award-winning Chef Eliane Muskus. This collection includes the delightful Moroccan chicken tagine with prunes, featuring tender chicken in aromatic spices and sweet prunes, and more."
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        },
+        {
+          "type": "meta",
+          "props": {
+            "property": "og:description",
+            "content": "Explore the vibrant flavors of the Mediterranean with our \"Seasonal Recipes Cookbook - Spring Edition,\" curated by award-winning Chef Eliane Muskus. This collection includes the delightful Moroccan chicken tagine with prunes, featuring tender chicken in aromatic spices and sweet prunes, and more."
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        },
+        {
+          "type": "title",
+          "children": "Seasonal Recipe Cookbook by chef Eliane Muskus | Epicurean Flow",
+          "custom": false,
+          "disabled": false
+        },
+        {
+          "type": "meta",
+          "props": {
+            "property": "og:title",
+            "content": "Seasonal Recipe Cookbook by chef Eliane Muskus | Epicurean Flow"
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        }
+      ],
+      "settings": {
+        "preventAutoRedirect": false,
+        "keywords": [
+          {
+            "term": "Seasonal Recipe Cookbook",
+            "isMain": true
+          }
+        ]
+      }
+    },
+    "ribbon": "",
+    "brand": "Epicurean Flow",
+    "exportProductId": "product_11b42723-d4d6-e78c-480e-bae4d77c9c02"
+  },
+  {
+    "id": "3c4c3872-5b66-a78e-0623-757992b4bf45",
+    "name": "Chef Eliane\u2019s New Diabetes Recipe Book",
+    "slug": "chef-eliane-s-new-diabetes-recipe-book",
+    "visible": true,
+    "productType": "physical",
+    "description": "<p>Chef Eliane\u2019s upcoming book, Managing Diabetes on the Go, provides essential advice for maintaining a healthy diet while traveling or on the go.</p><p>&nbsp;</p><p><strong>Available for pre-order now, the book will be launched May 2025.</strong></p><p>&nbsp;</p><p>Discover how to enjoy gourmet meals and maintain a healthy lifestyle with Chef Eliane\u2019s expert guidance and recipes. Pre-order today at a special introductory price, available for a limited time! Launching in October 2024, the first 100 copies will be personally signed by Chef Eliane on this website.</p><p>&nbsp;</p><p><em>Chef Eliane\u2019s New Diabetes Recipe Book</em></p>",
+    "sku": "",
+    "weight": 0.0,
+    "weightRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "stock": {
+      "trackInventory": true,
+      "quantity": 0,
+      "inStock": false,
+      "inventoryStatus": "OUT_OF_STOCK"
+    },
+    "price": {
+      "currency": "EUR",
+      "price": 32.0,
+      "discountedPrice": 32.0,
+      "formatted": {
+        "price": "\u20ac32.00",
+        "discountedPrice": "\u20ac32.00"
+      }
+    },
+    "priceData": {
+      "currency": "EUR",
+      "price": 32.0,
+      "discountedPrice": 32.0,
+      "formatted": {
+        "price": "\u20ac32.00",
+        "discountedPrice": "\u20ac32.00"
+      }
+    },
+    "convertedPriceData": {
+      "currency": "EUR",
+      "price": 32.0,
+      "discountedPrice": 32.0,
+      "formatted": {
+        "price": "\u20ac32.00",
+        "discountedPrice": "\u20ac32.00"
+      }
+    },
+    "priceRange": {
+      "minValue": 32.0,
+      "maxValue": 32.0
+    },
+    "costRange": {
+      "minValue": 0.0,
+      "maxValue": 0.0
+    },
+    "additionalInfoSections": [
+      {
+        "title": "Legal Disclaimer:",
+        "description": "<p>The content provided by Chef Eliane Muskus and Epicurean Adventure Amsterdam on this page, is for informational purposes only and is not intended as a substitute for professional medical advice, diagnosis, or treatment. Chef Eliane Muskus and Epicurean Adventure Amsterdam do not recommend or endorse any specific medical treatments, and the information provided should not be used to make any decisions about your health or treatment without consulting your healthcare provider. By using this website, you acknowledge and agree that Chef Eliane Muskus and Epicurean Adventure Amsterdam shall not be held liable for any decisions you make regarding your health, including any changes to your diabetes medication or treatment. Always seek the advice of your doctor or other qualified health providers with any questions you may have regarding a medical condition.</p>\n"
+      },
+      {
+        "title": "Pre-Order",
+        "description": "<p>Publication scheduled for September 2025</p>"
+      }
+    ],
+    "ribbons": [],
+    "media": {
+      "mainMedia": {
+        "thumbnail": {
+          "url": "https://static.wixstatic.com/media/8e85e1_ec53f319f79b407db2c73cc46f3aea69~mv2.webp/v1/fit/w_50,h_50,q_90/file.webp",
+          "width": 50,
+          "height": 50,
+          "altText": "Eat, Travel, Thrive, Chef Eliane\u2019s New Diabetes Recipe Book"
+        },
+        "mediaType": "image",
+        "title": "jVpljoS-2000x2000.webp",
+        "image": {
+          "url": "https://static.wixstatic.com/media/8e85e1_ec53f319f79b407db2c73cc46f3aea69~mv2.webp/v1/fit/w_2897,h_2000,q_90/file.webp",
+          "width": 2897,
+          "height": 2000,
+          "altText": "Eat, Travel, Thrive, Chef Eliane\u2019s New Diabetes Recipe Book"
+        },
+        "id": "8e85e1_ec53f319f79b407db2c73cc46f3aea69~mv2.webp"
+      },
+      "items": [
+        {
+          "thumbnail": {
+            "url": "https://static.wixstatic.com/media/8e85e1_ec53f319f79b407db2c73cc46f3aea69~mv2.webp/v1/fit/w_50,h_50,q_90/file.webp",
+            "width": 50,
+            "height": 50,
+            "altText": "Eat, Travel, Thrive, Chef Eliane\u2019s New Diabetes Recipe Book"
+          },
+          "mediaType": "image",
+          "title": "jVpljoS-2000x2000.webp",
+          "image": {
+            "url": "https://static.wixstatic.com/media/8e85e1_ec53f319f79b407db2c73cc46f3aea69~mv2.webp/v1/fit/w_2897,h_2000,q_90/file.webp",
+            "width": 2897,
+            "height": 2000,
+            "altText": "Eat, Travel, Thrive, Chef Eliane\u2019s New Diabetes Recipe Book"
+          },
+          "id": "8e85e1_ec53f319f79b407db2c73cc46f3aea69~mv2.webp"
+        }
+      ]
+    },
+    "customTextFields": [],
+    "manageVariants": false,
+    "productOptions": [],
+    "productPageUrl": {
+      "base": "https://epicureanflow.wixsite.com/epicurean-flow",
+      "path": "/product-page/chef-eliane-s-new-diabetes-recipe-book"
+    },
+    "numericId": "1733844186137000",
+    "inventoryItemId": "c3b3c78d-a499-5871-f9dc-8a866d4b40ba",
+    "discount": {
+      "type": "NONE",
+      "value": 0.0
+    },
+    "collectionIds": [
+      "00000000-000000-000000-000000000001"
+    ],
+    "variants": [],
+    "lastUpdated": "2025-08-09T11:29:56.037Z",
+    "createdDate": "2024-12-10T15:23:06.137Z",
+    "seoData": {
+      "tags": [
+        {
+          "type": "meta",
+          "props": {
+            "name": "description",
+            "content": "Chef Eliane\u2019s New Diabetes Recipe Book, Managing Diabetes on the Go, provides essential advice for maintaining a healthy diet while traveling or on the go."
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        },
+        {
+          "type": "meta",
+          "props": {
+            "property": "og:description",
+            "content": "Chef Eliane\u2019s New Diabetes Recipe Book, Managing Diabetes on the Go, provides essential advice for maintaining a healthy diet while traveling or on the go."
+          },
+          "children": "",
+          "custom": false,
+          "disabled": false
+        }
+      ],
+      "settings": {
+        "preventAutoRedirect": false,
+        "keywords": [
+          {
+            "term": "Chef Eliane\u2019s New Diabetes Recipe Book",
+            "isMain": true
+          }
+        ]
+      }
+    },
+    "ribbon": "",
+    "brand": "Epicurean Flow",
+    "exportProductId": "product_3c4c3872-5b66-a78e-0623-757992b4bf45"
+  }
+]

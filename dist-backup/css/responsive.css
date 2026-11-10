@@ -1,0 +1,715 @@
+/* ==========================================================================
+   EPICUREAN FLOW - MASTER MOBILE & RESPONSIVE STYLESHEET
+   Flawless mobile, tablet, and desktop adaptive layout system
+   ========================================================================== */
+
+/* Global Viewport Guard */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   01. LARGE DESKTOP (Above 1280px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1281px) {
+  .container {
+    max-width: var(--max-content-width);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   02. LAPTOP & SMALL DESKTOP (1024px to 1280px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  :root {
+    --section-padding-desktop: 88px;
+    --grid-gap-desktop: 28px;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 32px;
+  }
+  
+  .grid-editorial, .grid-editorial-reverse {
+    gap: 48px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   02B. NAVIGATION OVERFLOW GUARD (Under 1140px)
+   Switches cleanly to mobile drawer on tablet/compact screens
+   -------------------------------------------------------------------------- */
+@media (max-width: 1140px) {
+  .nav-desktop,
+  .nav-links,
+  .nav-actions .btn,
+  .nav-actions .nav-cta,
+  .btn-header-shop {
+    display: none !important;
+  }
+
+  .hamburger,
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+
+  .header-container {
+    gap: 16px;
+    padding: 0 20px;
+  }
+
+  .header-logo-img {
+    height: 48px;
+    max-height: 48px;
+    max-width: 190px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   03. TABLET PORTRAIT & MEDIUM SCREENS (768px to 1099px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1099px) {
+  :root {
+    --section-padding-desktop: 72px;
+    --header-height: var(--header-height-mobile);
+  }
+
+  /* Two-column balanced grids on tablet */
+  .grid-3,
+  .grid-cards-responsive,
+  .grid-products-responsive,
+  .grid-3-responsive {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 28px !important;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  /* Single-column editorial layout */
+  .grid-2,
+  .grid-editorial,
+  .grid-editorial-reverse,
+  .grid-asymmetric-cookbooks,
+  .grid-asymmetric-courses,
+  .grid-magazine,
+  .grid-travel-hero,
+  .story-callout-grid,
+  .preorder-card-grid,
+  .nutrition-guide-grid,
+  .about-hero-grid,
+  .cinema-spotlight-grid,
+  .consultation-grid,
+  .contact-layout,
+  .recipe-detail-body {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .grid-editorial-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .hero-visual {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .hero-quote-box {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin-top: 16px;
+    max-width: 100%;
+  }
+
+  .chef-portrait-frame {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .cookbook-hero-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Remove negative decorative border frames on tablet/mobile */
+  .hero-visual-frame::before,
+  .chef-portrait-frame::before {
+    display: none !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 40px !important;
+  }
+
+  .newsletter-card {
+    padding: 40px 28px;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+    max-width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   04. STANDARD MOBILE SCREENS (Under 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  :root {
+    --section-padding-desktop: 56px;
+    --header-height: 64px;
+  }
+
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  /* Fluid Typography */
+  h1, .page-hero-title {
+    font-size: clamp(2rem, 7.5vw, 2.75rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  h2, .section-title {
+    font-size: clamp(1.65rem, 5.8vw, 2.15rem) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.015em !important;
+  }
+
+  h3 {
+    font-size: clamp(1.35rem, 4.5vw, 1.65rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  h4 {
+    font-size: 1.2rem !important;
+  }
+
+  .section-subtitle,
+  .page-hero-subtitle {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Container & Section Spacing */
+  .container,
+  .container-narrow,
+  .container-editorial,
+  .container-wide {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .section {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+
+  .section-sm {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .section-lg {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  .section-header {
+    margin-bottom: 36px !important;
+  }
+
+  .page-hero {
+    padding-top: calc(64px + 32px) !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Header and Brand Bar */
+  .header {
+    height: 64px !important;
+  }
+
+  .header-container {
+    gap: 10px !important;
+  }
+
+  .header-logo-img {
+    height: 48px !important;
+    max-height: 48px !important;
+    max-width: 180px !important;
+  }
+
+  .cart-btn,
+  .hamburger,
+  .mobile-menu-btn {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* Full Screen Responsive Drawer */
+  .mobile-nav-drawer,
+  .mobile-menu-drawer {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 80px 24px 28px 24px !important;
+  }
+
+  .mobile-nav-links,
+  .mobile-nav {
+    gap: 16px !important;
+  }
+
+  .mobile-nav-link {
+    font-size: 1.45rem !important;
+    padding: 4px 0 !important;
+  }
+
+  /* Interactive Cart Drawer on Mobile */
+  .cart-drawer {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .cart-drawer-header,
+  .cart-header {
+    padding: 18px 20px !important;
+  }
+
+  .cart-drawer-title,
+  .cart-header-title {
+    font-size: 1.25rem !important;
+  }
+
+  .cart-drawer-body,
+  .cart-body {
+    padding: 18px 20px !important;
+  }
+
+  .cart-drawer-footer,
+  .cart-footer {
+    padding: 18px 20px !important;
+  }
+
+  /* Product Detail Layout Tablet */
+  .product-detail-layout {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .product-detail-gallery {
+    position: static !important;
+  }
+
+  /* Hero Section Mobile Behavior */
+  .hero-wrapper {
+    padding-top: calc(64px + 20px) !important;
+    padding-bottom: 44px !important;
+    min-height: auto !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .hero-buttons .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .hero-actions-wrap {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .hero-actions-wrap .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Adaptive Responsive Buttons on Mobile */
+  .btn {
+    padding: 11px 18px !important;
+    font-size: 0.8125rem !important;
+    letter-spacing: 0.04em !important;
+    white-space: normal !important;
+    text-align: center !important;
+    line-height: 1.35 !important;
+  }
+
+  .btn-lg {
+    padding: 13px 22px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .btn-sm {
+    padding: 8px 14px !important;
+    font-size: 0.775rem !important;
+  }
+
+  .catalog-card-btn-group {
+    width: 100% !important;
+  }
+
+  .catalog-card-btn-group .btn {
+    width: 100% !important;
+    padding: 10px 14px !important;
+    font-size: 0.78125rem !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+  }
+
+  /* Card Paddings & Box Overflows */
+  .responsive-card-box,
+  .contact-card,
+  .legal-content,
+  .newsletter-card,
+  .story-callout-card,
+  .cookbook-hero-body,
+  .course-flagship-body,
+  .recipe-featured-content,
+  .recipe-detail-header,
+  .recipe-detail-body {
+    padding: 24px 18px !important;
+  }
+
+  .legal-container {
+    padding: 36px 16px !important;
+  }
+
+  /* All Catalog, Product, Recipe, and Media Grids Collapse */
+  .grid-products-responsive,
+  .grid-cards-responsive,
+  .grid-recipes-responsive,
+  .grid-products,
+  .grid-recipes,
+  .media-grid,
+  .feature-box-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Form Grids Collapse (Contact & Consultation) */
+  .form-row-2col {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .form-input {
+    font-size: 1rem !important; /* Prevents iOS auto-zoom */
+    padding: 12px 16px !important;
+  }
+
+  /* Compact Cards */
+  .cookbook-compact-card {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .cookbook-compact-cover {
+    width: 75px;
+    height: 95px;
+  }
+
+  .recipe-side-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .recipe-side-img-wrap {
+    width: 100%;
+    height: 180px;
+  }
+
+  /* Recipe Detail Hero & Meta Strip - Mobile Adaptive */
+  .recipe-detail-hero {
+    height: auto !important;
+    aspect-ratio: auto !important;
+    overflow: visible !important;
+  }
+
+  .recipe-detail-hero .recipe-detail-img {
+    height: 240px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .recipe-meta-strip {
+    position: static !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    padding: 16px !important;
+  }
+
+  /* Recipe & Course Card Bottom Alignment */
+  .course-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+  }
+
+  .course-card-content {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    padding: 22px 18px !important;
+  }
+
+  .course-card-content .btn,
+  .course-card-content button {
+    margin-top: auto !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Floating badges reset to normal document flow */
+  .chef-quote-badge {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin-top: 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  div[style*="position: absolute"][style*="bottom: -20px"] {
+    position: static !important;
+    margin-top: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Footer Mobile */
+  .footer {
+    padding-top: 56px !important;
+    padding-bottom: 36px !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+    margin-bottom: 44px !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 16px !important;
+    text-align: center !important;
+    padding-top: 24px !important;
+  }
+
+  .footer-legal-links {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 16px !important;
+  }
+
+  .footer-developer-bar {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+
+  .footer-developer-bar .developer-info {
+    justify-content: center !important;
+  }
+
+  /* Minimum 44px Touch Targets for Accessibility */
+  .btn,
+  .nav-link,
+  .footer-link,
+  .cart-btn,
+  .hamburger,
+  .mobile-menu-btn,
+  .filter-pill {
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   05. COMPACT MOBILE SCREENS (Under 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .macro-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .preorder-card-grid img,
+  .nutrition-guide-grid img {
+    max-width: 200px !important;
+    margin: 0 auto 16px !important;
+  }
+
+  .cookbook-compact-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .cookbook-compact-cover {
+    width: 90px !important;
+    height: 115px !important;
+  }
+
+  .product-footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .product-footer .btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   06. ULTRA-COMPACT MOBILE (320px to 380px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .container,
+  .container-narrow,
+  .container-editorial,
+  .container-wide {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  h1, .page-hero-title {
+    font-size: 1.85rem !important;
+  }
+
+  h2, .section-title {
+    font-size: 1.5rem !important;
+  }
+
+  .btn {
+    padding: 9px 14px !important;
+    font-size: 0.775rem !important;
+    letter-spacing: 0.03em !important;
+    white-space: normal !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+  }
+
+  .btn-lg {
+    padding: 11px 18px !important;
+    font-size: 0.8125rem !important;
+  }
+
+  .btn-sm {
+    padding: 7px 12px !important;
+    font-size: 0.725rem !important;
+  }
+
+  .responsive-card-box,
+  .contact-card,
+  .legal-content,
+  .newsletter-card,
+  .story-callout-card {
+    padding: 18px 12px !important;
+  }
+
+  .header-logo-img {
+    height: 40px !important;
+    max-width: 150px !important;
+  }
+
+  .product-detail-layout {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .product-detail-gallery {
+    position: static !important;
+  }
+
+  .seasonal-banner,
+  .tour-booking-box {
+    padding: 28px 18px !important;
+  }
+}
+
+/* ==========================================================================
+   ACADEMY & COOKBOOK CARDS RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 900px) {
+  .academy-feature-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .academy-feature-card {
+    padding: 36px 28px !important;
+  }
+
+  .cookbook-curation-card {
+    padding: 44px 24px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .academy-feature-card {
+    padding: 28px 18px !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .cookbook-curation-card {
+    padding: 36px 18px !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .academy-actions,
+  .cookbook-curation-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .academy-actions .btn,
+  .cookbook-curation-actions .btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .academy-video-pill {
+    top: 12px !important;
+    right: 12px !important;
+    padding: 4px 10px !important;
+    font-size: 0.6875rem !important;
+  }
+
+  .academy-video-caption {
+    font-size: 0.9375rem !important;
+  }
+}
+

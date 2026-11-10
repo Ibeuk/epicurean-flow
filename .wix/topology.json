@@ -1,0 +1,20 @@
+{
+  "production": {
+    "id": "818c1581-daf1-44b3-bb3c-1bb372a4931a",
+    "site": {
+      "main": "https://y5hskn-epicurean-flow-1-epicureanflow-100d.wix-site-host.com"
+    },
+    "dashboard": {
+      "main": "https://manage.wix.com/dashboard/d599ebce-bf83-48e1-8bba-bb231269bd51?apps-override=818c1581-daf1-44b3-bb3c-1bb372a4931a"
+    }
+  },
+  "preview": {
+    "id": "3becca82-cba5-43c4-b168-ba9f520a83a1",
+    "site": {
+      "main": "https://uejxj6-epicurean-flow-1-epicureanflow-100d.wix-site-host.com"
+    },
+    "dashboard": {
+      "main": "https://manage.wix.com/dashboard/d599ebce-bf83-48e1-8bba-bb231269bd51?apps-override=3becca82-cba5-43c4-b168-ba9f520a83a1"
+    }
+  }
+}

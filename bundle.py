@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </style>'''
 
     js_bundle_tag = f'''  <!-- Inlined Scripts for Standalone Wix Embed -->
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
   <script>
 {js_content}
   </script>'''
@@ -92,8 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     # Replace JS references safely without regex backslash interpretation
     html_bundled = re.sub(
-        r'\s*<!-- Scripts -->(\s*<script src="js/[^"]+"></script>)+',
-        lambda m: '\n' + js_bundle_tag,
+        r'\s*<!-- Scripts -->[\s\S]*?(?=</body>)',
+        lambda m: '\n' + js_bundle_tag + '\n',
         html_bundled
     )
 

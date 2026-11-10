@@ -1,0 +1,67 @@
+{
+  "chef-eliane-s-new-diabetes-recipe-book": {
+    "id": "3c4c3872-5b66-a78e-0623-757992b4bf45",
+    "name": "Chef Eliane’s New Diabetes Recipe Book",
+    "price": 32
+  },
+  "seasonal-recipe-cookbook": {
+    "id": "11b42723-d4d6-e78c-480e-bae4d77c9c02",
+    "name": "Seasonal Recipe Cookbook",
+    "price": 16
+  },
+  "let-s-eat": {
+    "id": "46e3573a-341a-b5bc-926d-f0f15279d4c7",
+    "name": "Let's Eat",
+    "price": 42
+  },
+  "christmas-recipe-collection-cookbook": {
+    "id": "930ffd07-a0bf-362e-7f7c-b360d4feffc2",
+    "name": "Christmas Recipe Collection Cookbook",
+    "price": 16
+  },
+  "epicurean-flow-meal-planner-by-eliane-muskus": {
+    "id": "5c782d72-4985-3fdc-bc3e-8897538044e4",
+    "name": "Epicurean Flow Meal Planner",
+    "price": 7
+  },
+  "the-ultimate-macronutrient-guide": {
+    "id": "2e04050d-aa66-ea2a-b1f7-a54afeb8b3d6",
+    "name": "The Ultimate Macronutrient Guide",
+    "price": 7
+  },
+  "download-your-free-mediterranean-recipe-ebook-6-delicious-recipes-2-bonus-di": {
+    "id": "cbe45ea4-5f5f-5177-21aa-fcc9cf531613",
+    "name": "Download Your FREE Mediterranean Recipe eBook — 6 Delicious Recipes + 2 Bonuses",
+    "price": 0
+  },
+  "download-your-free-diabetes-friendly-mediterranean-bowls-of-flavor": {
+    "id": "d5747779-c725-f005-32e5-e7e4f47af82b",
+    "name": "Download your FREE Diabetes-Friendly Mediterranean Bowls of Flavor",
+    "price": 0
+  },
+  "diabetes-cooking-course": {
+    "id": "160f5527-13c1-9ef9-3e2e-1b0f07a94abb",
+    "name": "Diabetes Cooking Course",
+    "price": 19
+  },
+  "diabetes-cooking-course-masterclass-1": {
+    "id": "b0ad737f-d24e-afa3-9390-bd9691cd5e67",
+    "name": "Diabetes Cooking Course Masterclass",
+    "price": 39
+  },
+  "exclusive-holiday-cooking-bundle-master-the-art-of-festive-entertaining": {
+    "id": "c5d1456f-fbc3-c9c5-f0fe-520b3f1ef401",
+    "name": "Your Secret to a Flawless, Stress-Free Holiday Dinner",
+    "price": 69
+  },
+  "a-symphony-of-flavors-mediterranean-middle-eastern-spice-essentials-elevate": {
+    "id": "58c9b3a6-c50b-52d8-67f7-e2b1adf793de",
+    "name": "A Symphony of Flavors: Mediterranean & Middle Eastern Spice Essentials — Elevate",
+    "price": 9
+  },
+  "yk": {
+    "id": "20d8c494-72d6-cb9b-f3b9-d1ee3dbd74f1",
+    "name": "YK",
+    "price": 10
+  }
+}

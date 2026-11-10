@@ -7,6 +7,7 @@ PAGES = {
     'courses.html': 'courses',
     'food-tours.html': 'food-tours',
     'recipes.html': 'recipes',
+    'blog.html': 'blog',
     'about.html': 'about',
     'contact.html': 'contact',
     'diabetes.html': 'diabetes',
@@ -29,8 +30,9 @@ def generate_desktop_nav(page_key):
     is_contact = ' active' if page_key == 'contact' else ''
 
     # Dropdown active state
-    is_dropdown_active = ' active' if page_key in ['recipes', 'diabetes', 'nutrition', 'menu-planning', 'media'] else ''
+    is_dropdown_active = ' active' if page_key in ['recipes', 'blog', 'diabetes', 'nutrition', 'menu-planning', 'media'] else ''
     item_all_recipes = ' active' if page_key == 'recipes' else ''
+    item_blog = ' active' if page_key == 'blog' else ''
     item_diabetes = ' active' if page_key == 'diabetes' else ''
     item_nutrition = ' active' if page_key == 'nutrition' else ''
     item_menu = ' active' if page_key == 'menu-planning' else ''
@@ -40,8 +42,8 @@ def generate_desktop_nav(page_key):
       <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li class="nav-item"><a href="index.html" class="nav-link{is_home}">Home</a></li>
-          <li class="nav-item"><a href="cookbooks.html" class="nav-link{is_cookbooks}">Cookbooks</a></li>
           <li class="nav-item"><a href="courses.html" class="nav-link{is_courses}">Courses</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link{is_cookbooks}">Books</a></li>
           
           <!-- Recipes Dropdown -->
           <li class="nav-item has-dropdown">
@@ -56,6 +58,10 @@ def generate_desktop_nav(page_key):
                 <span class="dropdown-item-title">All Recipes</span>
                 <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
               </a>
+              <a href="blog.html" class="dropdown-item{item_blog}" role="menuitem">
+                <span class="dropdown-item-title">Chef's Blog</span>
+                <span class="dropdown-item-desc">Culinary stories, techniques &amp; food science</span>
+              </a>
               <a href="diabetes.html" class="dropdown-item{item_diabetes}" role="menuitem">
                 <span class="dropdown-item-title">Diabetes Living</span>
                 <span class="dropdown-item-desc">Flavor-first low-carb gastronomy</span>
@@ -69,8 +75,8 @@ def generate_desktop_nav(page_key):
                 <span class="dropdown-item-desc">Bespoke 1-on-1 chef consultations</span>
               </a>
               <a href="media.html" class="dropdown-item{item_media}" role="menuitem">
-                <span class="dropdown-item-title">Media &amp; Cinema</span>
-                <span class="dropdown-item-desc">Masterclass video streams &amp; previews</span>
+                <span class="dropdown-item-title">Media &amp; Masterclass</span>
+                <span class="dropdown-item-desc">Culinary clips &amp; kitchen reels</span>
               </a>
             </div>
           </li>
@@ -107,13 +113,17 @@ def generate_desktop_nav(page_key):
                 </div>
               </div>
               <div class="member-menu-divider"></div>
-              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                <span>My Account &amp; Profile</span>
+              <button type="button" class="member-menu-item" id="menu-my-orders" onclick="window.openEpicureanPortal('orders'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Orders &amp; Purchase History</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-library" onclick="window.openEpicureanPortal('library'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                 <span>My Cookbooks &amp; Courses</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>My Account &amp; Profile</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-reviews" onclick="window.openEpicureanPortal('reviews'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -147,8 +157,9 @@ def generate_mobile_drawer(page_key):
     is_about = ' active' if page_key == 'about' else ''
     is_contact = ' active' if page_key == 'contact' else ''
 
-    is_recipes_group = ' active' if page_key in ['recipes', 'diabetes', 'nutrition', 'menu-planning', 'media'] else ''
+    is_recipes_group = ' active' if page_key in ['recipes', 'blog', 'diabetes', 'nutrition', 'menu-planning', 'media'] else ''
     item_all_recipes = ' active' if page_key == 'recipes' else ''
+    item_blog = ' active' if page_key == 'blog' else ''
     item_diabetes = ' active' if page_key == 'diabetes' else ''
     item_nutrition = ' active' if page_key == 'nutrition' else ''
     item_menu = ' active' if page_key == 'menu-planning' else ''
@@ -156,44 +167,65 @@ def generate_mobile_drawer(page_key):
 
     return f'''  <!-- Mobile Drawer Menu -->
   <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
-    <!-- Mobile Member Status Bar -->
-    <div class="mobile-member-widget" id="mobile-member-widget">
-      <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
+    <!-- Header with Dedicated Cancel / Close Button -->
+    <div class="mobile-drawer-header">
+      <span class="mobile-drawer-title">Navigation</span>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
-        <span>Member Log In / Sign Up</span>
+        <span>Close</span>
       </button>
-      <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
-        <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
-        <div class="mobile-member-meta">
-          <span class="mobile-member-name" id="mobile-member-name">Member</span>
-          <span class="mobile-member-status">Verified Community Member</span>
-        </div>
-        <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
-      </div>
     </div>
 
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link{is_home}">Home</a>
-      <a href="cookbooks.html" class="mobile-nav-link{is_cookbooks}">Cookbooks</a>
-      <a href="courses.html" class="mobile-nav-link{is_courses}">Courses</a>
-      
-      <div class="mobile-nav-group">
-        <a href="recipes.html" class="mobile-nav-link{is_recipes_group}">Recipes / Blog</a>
-        <div class="mobile-nav-submenu">
-          <a href="recipes.html" class="mobile-nav-sublink{item_all_recipes}">All Recipes</a>
-          <a href="diabetes.html" class="mobile-nav-sublink{item_diabetes}">Diabetes Living</a>
-          <a href="nutrition.html" class="mobile-nav-sublink{item_nutrition}">Nutrition &amp; Science</a>
-          <a href="menu-planning.html" class="mobile-nav-sublink{item_menu}">Menu Planning Consultation</a>
-          <a href="media.html" class="mobile-nav-sublink{item_media}">Media &amp; Masterclasses</a>
+    <div class="mobile-drawer-body">
+      <!-- Mobile Member Status Bar -->
+      <div class="mobile-member-widget" id="mobile-member-widget">
+        <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Member Log In / Sign Up</span>
+        </button>
+        <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
+          <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
+          <div class="mobile-member-meta">
+            <span class="mobile-member-name" id="mobile-member-name">Member</span>
+            <span class="mobile-member-status">Verified Community Member</span>
+          </div>
+          <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
         </div>
       </div>
 
-      <a href="food-tours.html" class="mobile-nav-link{is_food_tours}">Food Tours</a>
-      <a href="about.html" class="mobile-nav-link{is_about}">About Chef Eliane</a>
-      <a href="contact.html" class="mobile-nav-link{is_contact}">Contact</a>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link{is_home}">Home</a>
+        <a href="courses.html" class="mobile-nav-link{is_courses}">Courses</a>
+        <a href="cookbooks.html" class="mobile-nav-link{is_cookbooks}">Books</a>
+        
+        <!-- Accordion: Recipes & Blog (Collapsed by Default, Expands on Click) -->
+        <div class="mobile-nav-group">
+          <button type="button" class="mobile-nav-link mobile-accordion-trigger{is_recipes_group}" id="mobile-recipes-toggle" aria-expanded="false" aria-controls="mobile-recipes-submenu">
+            <span>Recipes &amp; Blog</span>
+            <svg class="mobile-accordion-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-submenu" id="mobile-recipes-submenu" style="display: none;">
+            <a href="recipes.html" class="mobile-nav-sublink{item_all_recipes}">All Recipes</a>
+            <a href="blog.html" class="mobile-nav-sublink{item_blog}">Chef's Blog</a>
+            <a href="diabetes.html" class="mobile-nav-sublink{item_diabetes}">Diabetes Living</a>
+            <a href="nutrition.html" class="mobile-nav-sublink{item_nutrition}">Nutrition &amp; Science</a>
+            <a href="menu-planning.html" class="mobile-nav-sublink{item_menu}">Menu Planning Consultation</a>
+            <a href="media.html" class="mobile-nav-sublink{item_media}">Media &amp; Masterclass</a>
+          </div>
+        </div>
+
+        <a href="food-tours.html" class="mobile-nav-link{is_food_tours}">Food Tours</a>
+        <a href="about.html" class="mobile-nav-link{is_about}">About Chef Eliane</a>
+        <a href="contact.html" class="mobile-nav-link{is_contact}">Contact</a>
+      </div>
     </div>
   </div>'''
 

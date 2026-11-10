@@ -6,19 +6,45 @@ const WIX_CONFIG = {
   clientId: '155465fa-5c5a-477d-969f-f0d098b3bcca',
   get pagesDomain() {
     if (typeof window !== 'undefined') {
-      const host = window.location.hostname;
-      if (host.includes('epicureanflow.com')) {
-        return `${window.location.protocol}//${window.location.host}/`;
-      }
-      try {
-        if (window.top && window.top.location && window.top.location.hostname.includes('epicureanflow.com')) {
-          return `${window.top.location.protocol}//${window.top.location.host}/`;
-        }
-      } catch (e) {}
+      return `${window.location.protocol}//${window.location.host}/`;
     }
-    return 'https://epicureanflow.wixsite.com/epicurean-flow/';
+    return 'https://epicureanflow.com/';
   }
 };
+
+/* ==========================================================================
+   FLUTTERWAVE LIVE PAYMENT CONFIGURATION
+   ========================================================================== */
+const FLUTTERWAVE_CONFIG = {
+  publicKey: 'FLWPUBK-2f89237ea33cdd550db1f26af74d3c34-X',
+  currency: 'EUR',
+  businessTitle: 'Epicurean Flow',
+  logoUrl: 'https://epicureanflow.com/images/logo.png',
+  scriptUrl: 'https://checkout.flutterwave.com/v3.js'
+};
+
+function loadFlutterwaveScript() {
+  return new Promise((resolve) => {
+    if (typeof window !== 'undefined' && window.FlutterwaveCheckout) return resolve(true);
+    if (typeof document === 'undefined') return resolve(false);
+    const existing = document.querySelector('script[src*="flutterwave.com/v3.js"]');
+    if (existing) {
+      if (window.FlutterwaveCheckout) return resolve(true);
+      existing.addEventListener('load', () => resolve(true));
+      existing.addEventListener('error', () => resolve(false));
+      return;
+    }
+    const s = document.createElement('script');
+    s.src = FLUTTERWAVE_CONFIG.scriptUrl;
+    s.async = true;
+    s.onload = () => resolve(true);
+    s.onerror = () => {
+      console.warn('[Flutterwave] Script failed to load from CDN.');
+      resolve(false);
+    };
+    document.head.appendChild(s);
+  });
+}
 
 
 const PRODUCTS_DATA = {
@@ -61,21 +87,22 @@ const PRODUCTS_DATA = {
       numericPrice: 34.95,
       savings: '€6.95',
       isBundle: true,
+      isComingSoon: true,
       image: 'images/diabetes-kitchen-cover.jpg',
-      badge: 'Signature Flavor Bundle • Save €6.95',
+      badge: 'Coming Soon • Signature Flavor Bundle',
       itemsIncluded: [
-        'The Diabetes-Friendly Kitchen (Comprehensive Specialist Guide — €24.95 value)',
+        'The Diabetes-Friendly Kitchen (Comprehensive Specialist Guide — Pending Release)',
         'A Symphony of Flavors: Spice Essentials (€16.95 value)'
       ],
-      description: 'Enjoy flavorful meals while managing diabetes! Our bundle includes The Diabetes-Friendly Kitchen and A Symphony of Flavors, empowering you to create satisfying dishes without sacrificing taste. Make thoughtful choices that enhance your dining experience.',
-      buttonText: 'COOK WITH FLAVOUR',
+      description: 'Enjoy flavorful meals while managing diabetes! Our bundle includes The Diabetes-Friendly Kitchen and A Symphony of Flavors, empowering you to create satisfying dishes without sacrificing taste.',
+      buttonText: 'PRE-ORDER INQUIRY',
       url: 'cookbooks.html'
     }
   ],
   cookbooks: [
     {
       id: 'stress-free-thanksgiving',
-      wixId: '11b42723-d4d6-e78c-480e-bae4d77c9c02',
+      wixId: '090291be-8dd5-69da-a123-7c35870a8ec6',
       title: 'Stress-Free Thanksgiving',
       subtitle: 'A Complete Cooking Guide',
       category: 'Holiday Culinary Guide',
@@ -90,7 +117,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'the-christmas-recipe-collection',
-      wixId: '930ffd07-a0bf-362e-7f7c-b360d4feffc2',
+      wixId: '',
       title: 'The Christmas Recipe Collection',
       subtitle: 'Bring the Joy Back to Your Holiday Cooking',
       category: 'Holiday Culinary Collection',
@@ -105,7 +132,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'christmas-in-paris',
-      wixId: '930ffd07-a0bf-362e-7f7c-b360d4feffc2',
+      wixId: '92e444d7-eb3b-c4eb-0975-12416df7a09f',
       title: 'Christmas in Paris',
       subtitle: 'Experience the French Holiday Table at Home',
       category: 'French Gastronomy Guide',
@@ -120,7 +147,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'ditch-the-cheese-ball',
-      wixId: '930ffd07-a0bf-362e-7f7c-b360d4feffc2',
+      wixId: '',
       title: 'Ditch the Cheese Ball',
       subtitle: '10 Holiday Appetizers That Dazzle',
       category: 'Entertaining Guide',
@@ -166,7 +193,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'taste-of-southern-europe',
-      wixId: '58c9b3a6-c50b-52d8-67f7-e2b1adf793de',
+      wixId: '',
       title: 'A Taste of Southern Europe',
       subtitle: '20 Budget-Friendly Mediterranean Recipes',
       category: 'Everyday Mediterranean',
@@ -181,7 +208,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'soup-cookbook',
-      wixId: '11b42723-d4d6-e78c-480e-bae4d77c9c02',
+      wixId: '',
       title: 'Soup Cookbook',
       subtitle: 'Comfort in a Bowl—Simple and Satisfying Soups',
       category: 'Comfort Gastronomy',
@@ -211,12 +238,42 @@ const PRODUCTS_DATA = {
       description: "More than just recipes—it's a chef's life story told through food! Chef Eliane Muskus shares seasonal ingredients and global flavors across 339 pages, offering a generous cookbook for those eager to explore culinary diversity. Available in paperback and hardcover.",
       buttonText: 'ORDER LET’S EAT ON AMAZON',
       url: 'cookbooks.html'
+    },
+    {
+      id: 'epicurean-flow-meal-planner',
+      wixId: '5c782d72-4985-3fdc-bc3e-8897538044e4',
+      title: 'Epicurean Flow Meal Planner',
+      subtitle: 'Streamline Your Kitchen Schedule & Shopping Lists',
+      category: 'Digital Planner & Guide',
+      price: '€7.00',
+      numericPrice: 7.00,
+      image: 'images/lets-eat-cover.jpg',
+      badge: 'Digital Meal Planner',
+      pages: 25,
+      description: 'The complete chef-designed meal planner to organize weekly menus, batch cooking, and intentional nutrition without waste.',
+      buttonText: 'GET MEAL PLANNER',
+      url: 'cookbooks.html'
+    },
+    {
+      id: 'the-ultimate-macronutrient-guide',
+      wixId: '',
+      title: 'The Ultimate Macronutrient Guide',
+      subtitle: 'Balance Proteins, Fats & Carbohydrates with Chef Precision',
+      category: 'Specialist Nutrition Guide',
+      price: '€7.00',
+      numericPrice: 7.00,
+      image: 'images/nutrition-guide-cover.jpg',
+      badge: 'Macronutrient Guide',
+      pages: 35,
+      description: 'Master nutrient density and glycemic balance with straightforward charts, portion wisdom, and flavorful chef substitution ideas.',
+      buttonText: 'GET MACRONUTRIENT GUIDE',
+      url: 'nutrition.html'
     }
   ],
   courses: [
     {
       id: 'beginners-cooking-course',
-      wixId: '160f5527-13c1-9ef9-3e2e-1b0f07a94abb',
+      wixId: '',
       title: 'Beginners’ Cooking Course',
       subtitle: 'Transform Your Cooking Skills from Uncertainty to Confidence',
       category: 'Self-Paced Digital Course',
@@ -231,7 +288,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'beginners-baking',
-      wixId: '160f5527-13c1-9ef9-3e2e-1b0f07a94abb',
+      wixId: '53390c18-fd85-559f-50fb-f1f03bf9fae6',
       title: 'Baking for Beginners',
       subtitle: 'Conquer the Oven with Confidence',
       category: 'Self-Paced Digital Course',
@@ -246,7 +303,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'intermediate-cooking-techniques',
-      wixId: '160f5527-13c1-9ef9-3e2e-1b0f07a94abb',
+      wixId: '6ce22f5e-37bb-efac-57a3-5b18eff12dd8',
       title: 'Intermediate Cooking Techniques',
       subtitle: 'Elevate Your Kitchen Skills Beyond Basics',
       category: 'Self-Paced Digital Course',
@@ -261,7 +318,7 @@ const PRODUCTS_DATA = {
     },
     {
       id: 'advanced-cooking-techniques',
-      wixId: 'b0ad737f-d24e-afa3-9390-bd9691cd5e67',
+      wixId: '7d018d10-9562-91d3-4d2d-6c6bdcb872c9',
       title: 'Advanced Cooking Techniques',
       subtitle: 'Achieve Restaurant-Quality Meals at Home',
       category: 'Self-Paced Digital Course',
@@ -280,7 +337,7 @@ const PRODUCTS_DATA = {
       title: 'Diabetes Cooking Course',
       subtitle: 'Cook Smart, Eat Well, Enjoy Your Meals',
       differentiator: 'Practical, structured everyday guidance',
-      category: 'Self-Paced Digital Course',
+      category: 'Diabetes-Friendly Cooking Courses',
       price: '€49.00',
       numericPrice: 49.00,
       image: 'images/course-diabetes-cooking.jpg',
@@ -296,7 +353,7 @@ const PRODUCTS_DATA = {
       title: 'The Complete Diabetes-Friendly Cooking Masterclass',
       subtitle: 'Transform Your Cooking with Confidence and Flavor',
       differentiator: 'Comprehensive premium learning experience',
-      category: 'Self-Paced Digital Course',
+      category: 'Diabetes-Friendly Cooking Courses',
       price: '€89.00',
       numericPrice: 89.00,
       image: 'images/course-diabetes-masterclass.jpg',
@@ -314,13 +371,14 @@ const PRODUCTS_DATA = {
       subtitle: 'Stress-Free Party Menu Planning & Custom Organization',
       price: '€65.00',
       numericPrice: 65.00,
-      image: 'https://static.wixstatic.com/media/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg/v1/fill/w_1200,h_1200,al_c/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg',
+      image: 'images/hero-chef-eliane-new.jpg',
       badge: 'Private Service'
     }
   ],
   freeResources: [
     {
       id: 'free-mediterranean-ebook',
+      wixId: 'cbe45ea4-5f5f-5177-21aa-fcc9cf531613',
       title: 'Mediterranean Recipe eBook',
       subtitle: '6 Authentic Dishes + 2 Bonus Secret Dips',
       category: 'Free Download',
@@ -329,10 +387,11 @@ const PRODUCTS_DATA = {
       image: 'https://static.wixstatic.com/media/30dece_44304d695112497d9840ceafd90ff96f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg',
       badge: 'Free Gift',
       description: 'Experience true Mediterranean warmth with Chef Eliane’s favorite everyday recipes, pairing notes, and secret herb blends.',
-      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/download-your-free-mediterranean-recipe-ebook-6-delicious-recipes-2-bonus-di'
+      url: 'cookbooks.html'
     },
     {
       id: 'free-diabetes-bowls',
+      wixId: 'd5747779-c725-f005-32e5-e7e4f47af82b',
       title: 'Diabetes-Friendly Mediterranean Bowls of Flavor',
       subtitle: 'Low-Carb, High-Protein Nutrient-Dense Bowls',
       category: 'Free Download',
@@ -341,11 +400,20 @@ const PRODUCTS_DATA = {
       image: 'https://static.wixstatic.com/media/30dece_e2aa58069aa245689abd1c1db9c7efd1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg',
       badge: 'Free Gift',
       description: 'Satisfying, blood-sugar conscious bowls loaded with fresh greens, healthy fats, and savory Mediterranean spices.',
-      url: 'https://epicureanflow.wixsite.com/epicurean-flow/product-page/download-your-free-diabetes-friendly-mediterranean-bowls-of-flavor'
+      url: 'cookbooks.html'
     }
   ],
   findById: function(id) {
     if (!id) return null;
+    const cleanId = String(id).toLowerCase().trim()
+      .replace(/^a-symphony-of-flavors$/, 'symphony-of-flavors')
+      .replace(/^christmas-in-paris(-.*)?$/, 'christmas-in-paris')
+      .replace(/^stress-free-thanksgiving(-.*)?$/, 'stress-free-thanksgiving')
+      .replace(/^the-christmas-recipe-collection(-.*)?$/, 'the-christmas-recipe-collection')
+      .replace(/^the-diabetes-friendly-kitchen$/, 'the-diabetes-friendly-kitchen')
+      .replace(/^diabetes-friendly-kitchen$/, 'the-diabetes-friendly-kitchen')
+      .replace(/^diabetes-kitchen$/, 'the-diabetes-friendly-kitchen')
+      .replace(/^christmas-collection$/, 'the-christmas-recipe-collection');
     const all = [
       ...(this.bundles || []),
       ...(this.courses || []),
@@ -353,17 +421,22 @@ const PRODUCTS_DATA = {
       ...(this.freeResources || []),
       ...(this.services || [])
     ];
-    return all.find(item => item.id === id) || null;
+    return all.find(item => item.id === id || item.id === cleanId || item.wixId === id) || null;
   }
 };
 
 // Asynchronously load the official Wix Headless SDK
 async function createWixHeadlessClient() {
   try {
-    const { createClient, OAuthStrategy } = await import('https://esm.sh/@wix/sdk');
-    const { products } = await import('https://esm.sh/@wix/stores');
-    const { currentCart } = await import('https://esm.sh/@wix/ecom');
-    const { redirects } = await import('https://esm.sh/@wix/redirects');
+    let createClient, OAuthStrategy, products, currentCart, redirects;
+    if (typeof window !== 'undefined' && window.WixHeadless) {
+      ({ createClient, OAuthStrategy, products, currentCart, redirects } = window.WixHeadless);
+    } else {
+      ({ createClient, OAuthStrategy } = await import('https://esm.sh/@wix/sdk'));
+      ({ products } = await import('https://esm.sh/@wix/stores'));
+      ({ currentCart } = await import('https://esm.sh/@wix/ecom'));
+      ({ redirects } = await import('https://esm.sh/@wix/redirects'));
+    }
 
     const client = createClient({
       modules: { products, currentCart, redirects },
@@ -407,6 +480,10 @@ class CartManager {
     this.cartSubtotalEl = document.getElementById('cart-subtotal-val') || document.querySelector('.cart-subtotal-amount') || document.querySelector('.subtotal-amount');
     this.checkoutBtnEl = document.getElementById('btn-proceed-checkout');
     this.closeBtnEl = document.getElementById('close-cart-btn') || document.getElementById('cart-close-btn');
+    this.customerEmail = '';
+    try {
+      this.customerEmail = localStorage.getItem('epicurean_customer_email') || '';
+    } catch (e) {}
 
     // Load persisted coupon from localStorage
     try {
@@ -541,8 +618,29 @@ class CartManager {
       }
     });
 
+    // Preload Flutterwave SDK
+    loadFlutterwaveScript();
+
     // Initialize Wix SDK connection in background
     this.wixClient = await createWixHeadlessClient();
+  }
+
+  getFinalTotal() {
+    let subtotal = 0;
+    this.cartItems.forEach(item => {
+      subtotal += (Number(item.numericPrice) || 0);
+    });
+    let discountAmount = 0;
+    if (this.appliedCoupon === 'FLOWS10') {
+      const hasBundle = this.cartItems.some(i => i.isBundle || i.id === 'holiday-collection' || i.id === 'flavor-compromise-bundle');
+      if (!hasBundle) {
+        const eligibleCourse = this.cartItems.find(i => i.isCourse || (PRODUCTS_DATA.courses && PRODUCTS_DATA.courses.some(c => c.id === i.id)));
+        if (eligibleCourse) {
+          discountAmount = Number((eligibleCourse.numericPrice * 0.10).toFixed(2));
+        }
+      }
+    }
+    return Math.max(0, subtotal - discountAmount);
   }
 
   toggleDrawer() {
@@ -589,8 +687,11 @@ class CartManager {
       return;
     }
 
-    // Find product in catalog (bundles first, then cookbooks, courses, services)
-    let item = (PRODUCTS_DATA.bundles || []).find(p => p.id === productId);
+    // Find product in catalog (using findById if available, then bundles, cookbooks, courses, services)
+    let item = (typeof PRODUCTS_DATA.findById === 'function') ? PRODUCTS_DATA.findById(productId) : null;
+    if (!item && PRODUCTS_DATA.bundles) {
+      item = PRODUCTS_DATA.bundles.find(p => p.id === productId);
+    }
     if (!item && PRODUCTS_DATA.cookbooks) {
       item = PRODUCTS_DATA.cookbooks.find(p => p.id === productId);
     }
@@ -602,7 +703,7 @@ class CartManager {
     }
 
     if (!item) {
-      const rawPrice = meta && meta.price !== undefined ? meta.price : 9.00;
+      const rawPrice = meta && (meta.numericPrice !== undefined ? meta.numericPrice : meta.price !== undefined ? meta.price : 9.00);
       const priceVal = typeof rawPrice === 'number' ? rawPrice : (parseFloat(String(rawPrice).replace(/[^0-9.]/g, '')) || 9.00);
       item = {
         id: productId || 'custom-item-' + Date.now(),
@@ -671,15 +772,19 @@ class CartManager {
         legacyEmpty.style.display = 'none';
       }
       // Empty cart subtotal update
-      const subtotalElZero = document.getElementById('cart-subtotal-val');
-      const footerContainerZero = document.querySelector('.cart-subtotal') || (subtotalElZero ? subtotalElZero.parentElement : null);
-      if (footerContainerZero) {
-        footerContainerZero.innerHTML = `
-          <div style="display: flex; justify-content: space-between; width: 100%; font-size: 1.15rem; color: var(--color-ink); font-weight: 700;">
-            <span>Subtotal:</span>
-            <span id="cart-subtotal-val">€0.00</span>
-          </div>
-        `;
+      const subtotalElZero = document.getElementById('cart-subtotal-val') || document.getElementById('cart-subtotal');
+      const footerContainersZero = document.querySelectorAll('.cart-subtotal, .cart-subtotal-row');
+      if (footerContainersZero && footerContainersZero.length > 0) {
+        footerContainersZero.forEach(c => {
+          c.innerHTML = `
+            <div style="display: flex; justify-content: space-between; width: 100%; font-size: 1.15rem; color: var(--color-ink); font-weight: 700;">
+              <span>Subtotal:</span>
+              <span id="cart-subtotal-val">€0.00</span>
+            </div>
+          `;
+        });
+      } else if (subtotalElZero) {
+        subtotalElZero.textContent = '€0.00';
       }
       return;
     }
@@ -727,7 +832,7 @@ class CartManager {
 
     const finalTotal = Math.max(0, subtotal - discountAmount);
 
-    // Contextual Upsell Recommendation (Section 8 of Brief)
+    // Contextual Upsell Recommendation
     const hasConsultation = this.cartItems.some(i => i.id === 'consultation-menu-planning');
     if (!hasConsultation) {
       html += `
@@ -737,7 +842,7 @@ class CartManager {
             <span>Chef's Recommended Pairing</span>
           </div>
           <div class="cart-upsell-card">
-            <img src="https://static.wixstatic.com/media/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg/v1/fill/w_1200,h_1200,al_c/8e85e1_de8c49d68c604d00adf01909d76ffb0c~mv2.jpg" alt="30-Minute Culinary Consultation with Chef Eliane" class="cart-upsell-img">
+            <img src="images/hero-chef-eliane-welcoming.jpg" alt="30-Minute Culinary Consultation with Chef Eliane" class="cart-upsell-img">
             <div class="cart-upsell-info">
               <div class="cart-upsell-title">30-Min Menu Planning Consultation</div>
               <div class="cart-upsell-price">€65.00</div>
@@ -767,6 +872,18 @@ class CartManager {
       </div>
     `;
 
+    // Customer Optional Reference Input Module (Zero email automation required)
+    html += `
+      <div class="cart-email-container" style="margin: 14px 0 8px 0; padding: 12px; background: rgba(212, 163, 115, 0.08); border: 1px solid rgba(212, 163, 115, 0.35); border-radius: 8px;">
+        <label for="cart-customer-email" style="display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-ink, #2c2523); margin-bottom: 6px;">
+          <span>Customer Name or Reference (Optional):</span>
+          <span style="font-weight: 500; color: #2E7D32; font-size: 0.72rem; text-transform: none;">Instant On-Screen Download</span>
+        </label>
+        <input type="text" id="cart-customer-email" placeholder="e.g. Your name or leave blank" value="${this.customerEmail || ''}" style="width: 100%; padding: 10px 12px; border: 1px solid #c9c2b5; border-radius: 6px; font-size: 0.88rem; box-sizing: border-box; background: #fff;">
+        <div style="font-size: 0.72rem; color: #777; margin-top: 5px;">⚡ Direct Digital Delivery: Your purchased book files download immediately on screen. No email required.</div>
+      </div>
+    `;
+
     this.cartItemsListEl.innerHTML = html;
 
     // Attach listener for Promo Apply button
@@ -784,158 +901,305 @@ class CartManager {
       };
     }
 
+    // Attach listener for Customer Email input
+    const emailInput = document.getElementById('cart-customer-email');
+    if (emailInput) {
+      emailInput.addEventListener('input', (e) => {
+        this.customerEmail = e.target.value.trim();
+        try { localStorage.setItem('epicurean_customer_email', this.customerEmail); } catch(err){}
+        const errEl = document.getElementById('cart-email-error');
+        if (errEl) errEl.style.display = 'none';
+        emailInput.style.borderColor = '#c9c2b5';
+      });
+    }
+
     // Hide legacy empty state element if present
     const legacyEmpty = document.getElementById('cart-empty-state');
     if (legacyEmpty && legacyEmpty !== this.cartItemsListEl) {
       legacyEmpty.style.display = 'none';
     }
 
-    // Render Subtotal & Total dynamically in container
-    const subtotalContainer = document.querySelector('.cart-subtotal');
-    if (subtotalContainer) {
-      if (discountAmount > 0) {
-        subtotalContainer.innerHTML = `
-          <div style="display: flex; flex-direction: column; width: 100%; gap: 6px;">
-            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--color-ink-subtle); font-weight: 500;">
+    // Render Subtotal & Total dynamically in all matching containers
+    const subtotalContainers = document.querySelectorAll('.cart-subtotal, .cart-subtotal-row');
+    if (subtotalContainers && subtotalContainers.length > 0) {
+      subtotalContainers.forEach(container => {
+        if (discountAmount > 0) {
+          container.innerHTML = `
+            <div style="display: flex; flex-direction: column; width: 100%; gap: 6px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--color-ink-subtle); font-weight: 500;">
+                <span>Subtotal:</span>
+                <span>€${subtotal.toFixed(2)}</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #2E7D32; font-weight: 600;">
+                <span>Discount (${this.appliedCoupon} - 10%):</span>
+                <span>-€${discountAmount.toFixed(2)}</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 1.15rem; color: var(--color-ink); font-weight: 700; border-top: 1px solid var(--color-border-light, #e0dcd5); padding-top: 8px; margin-top: 4px;">
+                <span>Total:</span>
+                <span id="cart-subtotal-val">€${finalTotal.toFixed(2)}</span>
+              </div>
+            </div>
+          `;
+        } else {
+          container.innerHTML = `
+            <div style="display: flex; justify-content: space-between; width: 100%; font-size: 1.15rem; color: var(--color-ink); font-weight: 700;">
               <span>Subtotal:</span>
-              <span>€${subtotal.toFixed(2)}</span>
+              <span id="cart-subtotal-val">€${subtotal.toFixed(2)}</span>
             </div>
-            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #2E7D32; font-weight: 600;">
-              <span>Discount (${this.appliedCoupon} - 10%):</span>
-              <span>-€${discountAmount.toFixed(2)}</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; font-size: 1.15rem; color: var(--color-ink); font-weight: 700; border-top: 1px solid var(--color-border-light, #e0dcd5); padding-top: 8px; margin-top: 4px;">
-              <span>Total:</span>
-              <span id="cart-subtotal-val">€${finalTotal.toFixed(2)}</span>
-            </div>
-          </div>
-        `;
-      } else {
-        subtotalContainer.innerHTML = `
-          <div style="display: flex; justify-content: space-between; width: 100%; font-size: 1.15rem; color: var(--color-ink); font-weight: 700;">
-            <span>Subtotal:</span>
-            <span id="cart-subtotal-val">€${subtotal.toFixed(2)}</span>
-          </div>
-        `;
+          `;
+        }
+      });
+    }
+
+    // Also update any standalone spans by ID
+    const standaloneSpans = document.querySelectorAll('#cart-subtotal-val, #cart-subtotal');
+    standaloneSpans.forEach(s => {
+      s.textContent = `€${(discountAmount > 0 ? finalTotal : subtotal).toFixed(2)}`;
+    });
+
+    // Checkout button — live and ready for purchases via Flutterwave
+    if (this.checkoutBtnEl) {
+      const totalAmount = (discountAmount > 0 ? finalTotal : subtotal);
+      this.checkoutBtnEl.innerHTML = `
+        <span style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Pay with Flutterwave &bull; €${totalAmount.toFixed(2)}
+        </span>
+      `;
+      this.checkoutBtnEl.disabled = false;
+      this.checkoutBtnEl.style.opacity = '1';
+      this.checkoutBtnEl.style.cursor = 'pointer';
+
+      const footer = this.checkoutBtnEl.closest('.cart-drawer-footer');
+      if (footer && !footer.querySelector('.cart-flutterwave-badge')) {
+        const badge = document.createElement('div');
+        badge.className = 'cart-flutterwave-badge';
+        badge.style.cssText = 'text-align: center; margin-top: 10px; font-size: 0.72rem; color: #777; letter-spacing: 0.02em;';
+        badge.innerHTML = '🔒 Secured by <strong>Flutterwave</strong> &bull; Cards &bull; Apple Pay &bull; Bank';
+        footer.appendChild(badge);
       }
     }
   }
 
   async proceedToCheckout() {
     console.log('[CartManager] proceedToCheckout invoked! Cart items:', this.cartItems.length);
+
     if (!this.cartItems || this.cartItems.length === 0) {
       alert('Your shopping bag is currently empty. Please add a cookbook or course to proceed.');
       return;
     }
 
-    const originalText = this.checkoutBtnEl ? this.checkoutBtnEl.textContent : 'Proceed to Checkout';
+    // Customer reference: 100% optional (zero email automation / zero blocking)
+    const emailInput = document.getElementById('cart-customer-email');
+    const inputVal = emailInput ? emailInput.value.trim() : (this.customerEmail || '');
+    
+    // Fallback internally to a guest reference so Flutterwave API payload is satisfied without dispatching mail
+    const isRealEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputVal);
+    const finalEmail = isRealEmail ? inputVal : ('guest-' + Date.now() + '@epicureanflow.com');
+    const customerDisplayName = (inputVal && !isRealEmail) ? inputVal : (isRealEmail ? inputVal.split('@')[0] : 'Guest Reader');
+
+    if (inputVal) {
+      this.customerEmail = inputVal;
+      try { localStorage.setItem('epicurean_customer_email', inputVal); } catch (e) {}
+    }
+
+    const originalContent = this.checkoutBtnEl ? this.checkoutBtnEl.innerHTML : 'Proceed to Checkout';
     if (this.checkoutBtnEl) {
-      this.checkoutBtnEl.textContent = 'Connecting to Secure Checkout...';
-      this.checkoutBtnEl.style.opacity = '0.75';
+      this.checkoutBtnEl.innerHTML = '<span>Launching Secure Payment...</span>';
+      this.checkoutBtnEl.style.opacity = '0.8';
       this.checkoutBtnEl.style.pointerEvents = 'none';
     }
 
-    // Safety timeout: Ensure the checkout button always restores interactivity if navigation is delayed
     const resetCheckoutBtn = () => {
       if (this.checkoutBtnEl) {
-        this.checkoutBtnEl.textContent = originalText;
+        this.checkoutBtnEl.innerHTML = originalContent;
         this.checkoutBtnEl.style.opacity = '1';
         this.checkoutBtnEl.style.pointerEvents = 'auto';
       }
     };
-    setTimeout(resetCheckoutBtn, 3500);
 
-    // 1. If embedded inside Wix Studio / Wix Editor iframe, delegate to Velo bridge with full items & coupon
-    if (window.parent && window.parent !== window) {
-      console.log('[CartManager] Inside Wix iframe, dispatching NAVIGATE_CHECKOUT via postMessage');
-      try {
-        window.parent.postMessage({
-          type: 'NAVIGATE_CHECKOUT',
-          items: this.cartItems,
-          coupon: this.appliedCoupon,
-          subtotal: this.cartItems.reduce((acc, cur) => acc + (Number(cur.numericPrice) || 0), 0)
-        }, '*');
-      } catch (e) {
-        console.warn('[CartManager] postMessage note:', e);
+    try {
+      await loadFlutterwaveScript();
+
+      if (typeof window.FlutterwaveCheckout !== 'function') {
+        throw new Error('Flutterwave SDK not loaded');
       }
-    }
 
-    // 2. Ensure wixClient is ready
-    if (!this.wixClient) {
-      console.log('[CartManager] Initializing Wix Headless client...');
-      this.wixClient = await createWixHeadlessClient();
-    }
+      const totalAmount = this.getFinalTotal();
+      const txRef = 'EF-' + Date.now() + '-' + Math.floor(Math.random() * 1000000);
+      const itemsList = this.cartItems.map(i => i.title).join(', ');
+      const purchasedSnapshot = [...this.cartItems];
 
-    // Headless Client Cart Sync (if enabled and authenticated)
-    if (this.wixClient && this.wixClient.currentCart) {
-      try {
-        console.log('[CartManager] Synchronizing fresh cart session with Wix...');
-        // Clear previous server cart so stale or abandoned items never accumulate
-        try {
-          await this.wixClient.currentCart.deleteCurrentCart();
-        } catch (delErr) {
-          // If no active cart exists on server, proceed
-        }
-
-        // Aggregate unique line items and exact quantities from local cart
-        const lineItemMap = new Map();
-        for (const item of this.cartItems) {
-          const wixId = item.wixId || (PRODUCTS_DATA.findById && PRODUCTS_DATA.findById(item.id)?.wixId);
-          if (wixId) {
-            const currentQty = lineItemMap.get(wixId) || 0;
-            lineItemMap.set(wixId, currentQty + (item.quantity || 1));
+      window.FlutterwaveCheckout({
+        public_key: FLUTTERWAVE_CONFIG.publicKey,
+        tx_ref: txRef,
+        amount: totalAmount,
+        currency: FLUTTERWAVE_CONFIG.currency,
+        payment_options: 'card, ussd, mobilemoney, banktransfer, account, applepay, googlepay',
+        customer: {
+          email: finalEmail,
+          name: customerDisplayName
+        },
+        customizations: {
+          title: FLUTTERWAVE_CONFIG.businessTitle,
+          description: 'Payment for: ' + (itemsList.length > 70 ? itemsList.substring(0, 67) + '...' : itemsList),
+          logo: FLUTTERWAVE_CONFIG.logoUrl
+        },
+        callback: (response) => {
+          console.log('[Flutterwave] Payment response:', response);
+          resetCheckoutBtn();
+          if (response.status === 'successful' || response.status === 'completed') {
+            this.handlePaymentSuccess(response, totalAmount, finalEmail, purchasedSnapshot);
           }
+        },
+        onclose: () => {
+          console.log('[Flutterwave] Payment modal closed by user');
+          resetCheckoutBtn();
         }
+      });
+    } catch (err) {
+      console.error('[CartManager] Flutterwave checkout error:', err);
+      resetCheckoutBtn();
+      alert('Unable to launch Flutterwave secure checkout. Please check your internet connection or try again.');
+    }
+  }
 
-        const lineItems = [];
-        for (const [wixId, quantity] of lineItemMap.entries()) {
-          lineItems.push({
-            catalogReference: {
-              appId: '215238eb-22a5-4c36-9e7b-e7c08025e04e',
-              catalogItemId: wixId
-            },
-            quantity: quantity
-          });
-        }
+  handlePaymentSuccess(response, amountPaid, customerEmail, purchasedItems) {
+    this.cartItems = [];
+    this.saveCart();
+    this.renderCart();
+    this.closeDrawer();
 
-        if (lineItems.length > 0) {
-          await this.wixClient.currentCart.addToCurrentCart({ lineItems });
-        }
-
-        const checkout = await this.wixClient.currentCart.createCheckoutFromCurrentCart({
-          channelType: 'WEB'
-        });
-
-        if (checkout && checkout.checkoutId && this.wixClient.redirects) {
-          const redirect = await this.wixClient.redirects.createRedirectSession({
-            ecomCheckout: { checkoutId: checkout.checkoutId },
-            callbacks: {
-              postFlowUrl: window.location.href,
-              thankYouPageUrl: window.location.origin
-            }
-          });
-
-          if (redirect && redirect.redirectSession && redirect.redirectSession.fullUrl) {
-            console.log('[CartManager] Headless session created, redirecting:', redirect.redirectSession.fullUrl);
-            const targetWin = window.top || window;
-            targetWin.location.href = redirect.redirectSession.fullUrl;
-            return;
-          }
-        }
-      } catch (err) {
-        console.info('[CartManager] Wix Headless API note (using direct store gateway fallback):', err.message);
-      }
+    let modal = document.getElementById('ef-payment-success-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'ef-payment-success-modal';
+      modal.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(18, 14, 12, 0.75); backdrop-filter: blur(8px);
+        display: flex; align-items: center; justify-content: center;
+        z-index: 999999; padding: 20px; box-sizing: border-box;
+      `;
+      document.body.appendChild(modal);
     }
 
-    // 3. Direct Wix Store Cart Gateway Fallback (Never redirect to a single product page)
-    const baseDomain = WIX_CONFIG.pagesDomain.replace(/\/+$/, '');
-    const targetUrl = `${baseDomain}/cart-page`;
+    const downloadMap = {
+      'symphony': { file: 'ready_for_wix_upload/A_Symphony_of_Flavors_Cookbook.pdf', name: 'A_Symphony_of_Flavors_Cookbook.pdf' },
+      'diabetes': { file: 'ready_for_wix_upload/The_Complete_Diabetes_Cooking_Masterclass.pdf', name: 'The_Complete_Diabetes_Cooking_Masterclass.pdf' },
+      'thanksgiving': { file: 'Stress_Free_Thanksgiving_Premium_Guide_Final_Publication_Interactive.pdf', name: 'Stress_Free_Thanksgiving_Guide.pdf' },
+      'baking': { file: 'ready_for_wix_upload/Beginners_Baking_Course_Guide.pdf', name: 'Beginners_Baking_Course_Guide.pdf' },
+      'intermediate': { file: 'ready_for_wix_upload/Intermediate_Cooking_Techniques_Course_Workbook.pdf', name: 'Intermediate_Cooking_Techniques_Workbook.pdf' },
+      'advanced': { file: 'ready_for_wix_upload/Advanced_Cooking_Techniques_Course_Guide.pdf', name: 'Advanced_Cooking_Techniques_Guide.pdf' }
+    };
 
-    console.log('[CartManager] Directing to secure checkout gateway:', targetUrl);
-    const targetWin = window.top || window;
-    targetWin.location.href = targetUrl;
+    const getFileForItem = (item) => {
+      const t = ((item.title || '') + ' ' + (item.id || '')).toLowerCase();
+      if (t.includes('symphony') || t.includes('flavor') || t.includes('spice')) return downloadMap.symphony;
+      if (t.includes('diabetes') || t.includes('diabetic')) return downloadMap.diabetes;
+      if (t.includes('thanksgiving')) return downloadMap.thanksgiving;
+      if (t.includes('baking') || t.includes('beginner')) return downloadMap.baking;
+      if (t.includes('intermediate')) return downloadMap.intermediate;
+      if (t.includes('advanced')) return downloadMap.advanced;
+      return downloadMap.thanksgiving;
+    };
+
+    const itemsHtml = (purchasedItems || []).map(item => {
+      const dl = getFileForItem(item);
+      return `
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; text-align: left; padding: 12px 14px; background: #faf8f5; border-radius: 8px; border: 1px solid #ebd9c8;">
+          <div style="overflow: hidden; flex: 1;">
+            <div style="font-size: 0.92rem; font-weight: 700; color: #2c2523; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">📖 ${item.title}</div>
+            <div style="font-size: 0.74rem; color: #2E7D32; font-weight: 600; margin-top: 2px;">✓ Verified Purchase &bull; Instant PDF Delivery</div>
+          </div>
+          <a href="${dl.file}" download="${dl.name}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #d4a373; color: #ffffff; padding: 9px 16px; border-radius: 6px; font-size: 0.84rem; font-weight: 700; text-decoration: none; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.12);">
+            Download PDF
+          </a>
+        </div>
+      `;
+    }).join('');
+
+    modal.innerHTML = `
+      <div style="background: #ffffff; max-width: 520px; width: 100%; border-radius: 14px; padding: 34px 28px; text-align: center; box-shadow: 0 25px 60px rgba(0,0,0,0.3); border: 1px solid #d4a373; font-family: 'Montserrat', sans-serif;">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: #e8f5e9; color: #2e7d32; display: inline-flex; align-items: center; justify-content: center; font-size: 30px; margin-bottom: 14px;">
+          ✓
+        </div>
+        <h2 style="font-family: 'Cinzel', serif; font-size: 1.55rem; color: #1e1b18; margin: 0 0 8px 0;">Payment Successful!</h2>
+        <p style="font-size: 0.92rem; color: #555; line-height: 1.5; margin: 0 0 18px 0;">
+          Your payment of <strong>€${Number(amountPaid).toFixed(2)}</strong> via Flutterwave has been confirmed.
+        </p>
+
+        <div style="margin: 18px 0; text-align: left;">
+          <div style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #777; margin-bottom: 10px;">
+            📥 Download Your Publications Below:
+          </div>
+          ${itemsHtml || '<div style="font-size: 0.9rem;">Your selected culinary publications</div>'}
+        </div>
+
+        <div style="background: #fdfaf6; border: 1px solid #e8e2d9; border-radius: 8px; padding: 12px; margin-bottom: 22px; font-size: 0.78rem; color: #666; line-height: 1.4; display: flex; justify-content: space-between;">
+          <span>Transaction Ref: <strong>${response.tx_ref || 'EF-' + Date.now()}</strong></span>
+          <span style="color: #2E7D32; font-weight: 700;">Status: Paid</span>
+        </div>
+
+        <button type="button" id="btn-close-payment-modal" style="background: #2c2523; color: #ffffff; border: none; padding: 14px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.2s;">
+          Close &amp; Return to Epicurean Flow
+        </button>
+      </div>
+    `;
+
+    modal.style.display = 'flex';
+    document.getElementById('btn-close-payment-modal').onclick = () => {
+      modal.style.display = 'none';
+    };
   }
 }
+
+// Expose direct single-book Flutterwave checkout globally
+window.paySingleBookWithFlutterwave = async function(bookId, email = null) {
+  let item = (typeof PRODUCTS_DATA.findById === 'function') ? PRODUCTS_DATA.findById(bookId) : null;
+  if (!item && PRODUCTS_DATA.cookbooks) item = PRODUCTS_DATA.cookbooks.find(p => p.id === bookId);
+  if (!item && PRODUCTS_DATA.bundles) item = PRODUCTS_DATA.bundles.find(p => p.id === bookId);
+  if (!item && PRODUCTS_DATA.courses) item = PRODUCTS_DATA.courses.find(p => p.id === bookId);
+
+  if (!item) {
+    console.error('[Flutterwave] Book not found:', bookId);
+    return;
+  }
+
+  const rawPrice = item.numericPrice || parseFloat(String(item.price).replace(/[^0-9.]/g, '')) || 14.95;
+  const userRef = email || (window.cartManager && window.cartManager.customerEmail) || '';
+  const isRealEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userRef);
+  const finalEmail = isRealEmail ? userRef : ('guest-' + Date.now() + '@epicureanflow.com');
+  const finalName = (userRef && !isRealEmail) ? userRef : 'Customer';
+
+  await loadFlutterwaveScript();
+  const txRef = 'EF-BOOK-' + Date.now() + '-' + Math.floor(Math.random() * 1000000);
+
+  window.FlutterwaveCheckout({
+    public_key: FLUTTERWAVE_CONFIG.publicKey,
+    tx_ref: txRef,
+    amount: rawPrice,
+    currency: FLUTTERWAVE_CONFIG.currency,
+    payment_options: 'card, ussd, mobilemoney, banktransfer, account, applepay, googlepay',
+    customer: {
+      email: finalEmail,
+      name: finalName
+    },
+    customizations: {
+      title: FLUTTERWAVE_CONFIG.businessTitle,
+      description: 'Purchase: ' + item.title,
+      logo: FLUTTERWAVE_CONFIG.logoUrl
+    },
+    callback: function(response) {
+      if (response.status === 'successful' || response.status === 'completed') {
+        if (window.cartManager) {
+          window.cartManager.handlePaymentSuccess(response, rawPrice, finalEmail, [item]);
+        } else {
+          alert('Payment Successful! Reference: ' + response.tx_ref);
+        }
+      }
+    }
+  });
+};
 
 // ==========================================================================
 // DYNAMIC WIX STORE SYNCHRONIZATION ENGINE
@@ -1044,23 +1308,30 @@ class WixProductsSync {
         imgUrl = item.image;
       }
 
-      const defaultBadge = type === 'course' ? 'Masterclass Course' : 'Digital Cookbook';
-      const badge = item.ribbon || item.badge || defaultBadge;
+      // Never render generic or unwanted "Digital Cookbook" badge over book covers
+      let badgeHtml = '';
+      if (item.ribbon && item.ribbon.trim()) {
+        const ribbonLower = item.ribbon.toLowerCase().trim();
+        if (!ribbonLower.includes('cookbook') && !ribbonLower.includes('digital')) {
+          const badgeClass = ribbonLower.includes('masterclass') ? 'badge-masterclass' : 'badge-everyday';
+          badgeHtml = `<span class="card-badge-pill ${badgeClass}">${item.ribbon}</span>`;
+        }
+      }
+
       const descSnippet = item.description 
         ? item.description.replace(/<[^>]*>?/gm, '').slice(0, 130) + '...' 
         : (type === 'course' 
-            ? 'Chef-led video masterclass with step-by-step techniques and comprehensive kitchen workbook.' 
+            ? 'Comprehensive self-paced culinary curriculum with step-by-step techniques and kitchen workbook.' 
             : 'Chef-tested recipes with authentic Mediterranean roots, flavor pairing notes, and chef guidance.');
 
-      const productSlug = item.slug || item.productPageUrl?.path || '';
-      const detailUrl = productSlug.startsWith('http') ? productSlug : `product-detail.html?id=${id}`;
+      const detailUrl = `product-detail.html?id=${encodeURIComponent(id)}`;
       const safeTitle = title.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 
       return `
         <article class="catalog-card-editorial" data-wix-id="${id}">
           <div class="catalog-card-media">
             <img src="${imgUrl}" alt="${safeTitle}" class="catalog-card-img" onerror="this.src='images/lets-eat-cover.jpg'">
-            <span class="card-badge-pill badge-masterclass">${badge}</span>
+            ${badgeHtml}
           </div>
           <div class="catalog-card-body">
             <div class="catalog-card-meta">
@@ -1087,34 +1358,30 @@ class WixProductsSync {
       `;
     };
 
-    // 1. Render Courses into #courses-live-grid
-    const coursesGridEl = document.getElementById('courses-live-grid');
-    if (coursesGridEl && courses.length > 0) {
-      coursesGridEl.innerHTML = courses.map(item => renderCard(item, 'course')).join('');
-      coursesGridEl.style.display = 'grid';
-      const staticGrid = document.getElementById('courses-static-grid');
-      if (staticGrid) staticGrid.style.display = 'none';
-      const coursePlaceholder = document.getElementById('courses-curation-placeholder');
-      if (coursePlaceholder) coursePlaceholder.style.display = 'none';
-      console.log(`[WixProductsSync] Rendered ${courses.length} live course(s) into #courses-live-grid`);
+    // 1. Keep all 6 curated courses permanently visible and active
+    const staticGrid = document.getElementById('courses-static-grid');
+    if (staticGrid) {
+      staticGrid.style.display = 'grid';
     }
+    const coursePlaceholder = document.getElementById('courses-curation-placeholder');
+    if (coursePlaceholder) coursePlaceholder.style.display = 'none';
 
-    // 2. Render Cookbooks into #cookbooks-live-grid
-    const cookbooksGridEl = document.getElementById('cookbooks-live-grid');
-    if (cookbooksGridEl && cookbooks.length > 0) {
-      cookbooksGridEl.innerHTML = cookbooks.map(item => renderCard(item, 'cookbook')).join('');
-      cookbooksGridEl.style.display = 'grid';
-      const staticGrid = document.getElementById('cookbooks-static-grid');
-      if (staticGrid) staticGrid.style.display = 'none';
-      const cookbookPlaceholder = document.getElementById('cookbooks-curation-placeholder');
-      if (cookbookPlaceholder) cookbookPlaceholder.style.display = 'none';
-      console.log(`[WixProductsSync] Rendered ${cookbooks.length} live cookbook(s) into #cookbooks-live-grid`);
+    // 2. Keep curated cookbooks permanently visible and active
+    const staticCookbooksGrid = document.getElementById('cookbooks-static-grid');
+    if (staticCookbooksGrid) {
+      staticCookbooksGrid.style.display = 'grid';
     }
+    const cookbookPlaceholder = document.getElementById('cookbooks-curation-placeholder');
+    if (cookbookPlaceholder) cookbookPlaceholder.style.display = 'none';
 
     // 3. Fallback for legacy generic grids if present
     const genericGrid = document.getElementById('featured-products-grid') || document.getElementById('catalog-grid');
     if (genericGrid) {
-      genericGrid.innerHTML = validItems.map(item => renderCard(item, 'cookbook')).join('');
+      genericGrid.innerHTML = validItems.map(item => {
+        const name = (item.name || item.title || '').toLowerCase();
+        const isC = name.includes('course') || name.includes('masterclass') || name.includes('academy') || name.includes('class');
+        return renderCard(item, isC ? 'course' : 'cookbook');
+      }).join('');
     }
   }
 }

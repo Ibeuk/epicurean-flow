@@ -1,0 +1,61 @@
+Epicurean Flow Website Review and Corrections
+For Bright  |  27 September 2026  |  Preview reviewed: epicurean-flow-1-epicureanflow-100d.wix-site-host.com
+Please apply the changes below throughout the preview today and return a revised link for review. This document covers the public site copy, product presentation and remaining checks. The About Me page is being handled separately and is excluded here.
+1 Homepage message and structure
+The first screen must immediately show what problems Epicurean Flow solves. The video being added can create interest, but the headline and visible text must work without sound. The current opening overlooks the recipe blog, Q&A community and food tours. Remove the unapproved 4.9/5 rating and “Trusted by 350+” claim.
+Replace the current hero text with:
+Proposed first screen copy
+From “What should I make?” to “That was delicious.”
+Plan a dinner without the scramble. Get past the technique that keeps going wrong. Find new ways to enjoy the food you love.
+At Epicurean Flow, you’ll find chef-written cookbooks and practical cooking courses, a Q&A community for food lovers, and a blog with delicious recipes from around the world, published weekly.
+Buttons: Explore Recipes  |  Browse Cookbooks and Courses
+Supporting link: Explore Food Tours
+Replace the “Cannes Provenance” label in the homepage image/video treatment with “Award-Winning Chef — Málaga, Spain.” Do not put the old wording back into a video title, overlay or poster image.
+2 One useful benefits section
+The homepage repeats “Why Choose Epicurean Flow?” twice, then adds “Transform Your Culinary Experience” and “Experience the Epicurean Advantage.” Replace those overlapping sections with one compact problem-and-solution section. Avoid vague promises of mastery, transformation and exclusive features that are not supplied.
+Replacement copy
+What can Epicurean Flow help you solve?
+Cooking for guests? Find recipes and preparation plans that help you make a meal you are proud to serve and enjoy the occasion yourself.
+A technique that keeps going wrong? Understand the heat, timing and ingredients behind the result. Practise with a course and ask questions in our Q&A community for food lovers.
+Cooking with diabetes? Explore flavourful adaptations of familiar dishes from a professional chef who lives with Type 2 diabetes.
+Looking for fresh ideas? Visit the blog for a new recipe from around the world each week.
+Why trust this guidance? Eliane trained at the Culinary Institute of America, worked in professional kitchens and taught cooking classes in Cannes and Amsterdam. Link to the approved About Me page for her full story.
+Place clear links from each solution to its relevant course, cookbook, blog or Q&A destination. Keep this section short enough to scan on a phone.
+3 Food tours
+Remove the invented Amsterdam, Paris and Málaga itineraries, durations, guest limits, tasting counts, descriptions and waitlist-only booking presentation. Epicurean Flow associates with a large food-tour company whose tours are led by professionally trained food guides. The partner will supply the actual destinations, listings and booking tools. Do not invent availability, ratings or tour details.
+Holding copy until the partner tools are connected
+Taste the city you’re visiting
+Planning a trip to Europe? Epicurean Flow is partnering with a leading food-tour company to bring you experiences led by professionally trained local food guides. Discover a city through its markets, specialities and food stories. Destinations and booking options will appear here when our partner’s tour listings are connected.
+Once the partner provides the integration, replace the holding sentence with the live listings and “Explore and Book Food Tours.” Attribute any 4.9 rating to the actual tour partner and its published review source, not to Epicurean Flow.
+4 Truthful course and community descriptions
+Remove every promise of video lessons, HD streams, multi-angle demonstrations, video masterclasses or a video curriculum. Courses do not contain video lessons. This applies to homepage, Courses, Diabetes, Media, product detail pages, Terms and Refund Policy.
+Progress tracking and certificates of completion are real and may remain. Check each course detail for the exact workbook, quiz, certificate and access included before publishing page counts or feature lists.
+Use the wording “a Q&A community for food lovers” consistently. Do not suggest a student-only circle, personal feedback, or direct access to Eliane unless those specific services are actually available.
+Do not describe the downloadable courses as live cooking alongside Eliane. Replace “cook with a chef” and similar phrases that imply live or video sessions.
+5 Products and store pages
+Audit every cookbook, course and bundle against the final approved product file: title, cover, page count, contents, price, currency, download attachment and availability. Show unfinished products as coming soon, without an active purchase button or instant-download claim.
+The holiday bundle currently includes several books presented as instantly available. Only publish a purchasable bundle when every included final file is approved, attached and deliverable. Confirm the bundle arithmetic and the free-bonus wording.
+The Diabetes-Friendly Kitchen appears as coming soon in one place yet is included in a purchasable bundle elsewhere. Make availability consistent. Check A Symphony of Flavors and the other pending books in the same way.
+Product detail pages contain reused template content. Christmas in Paris shows a certificate, HD streams and course-style copy; Baking for Beginners lists video masterclasses and unrelated techniques. Replace each with content specific to the actual product.
+Correct the repeated macronutrient guide upsell, inconsistent €12/€29 price and any recommendation that is irrelevant or unavailable. The Let’s Eat button should go to the correct Amazon book listing, not a general Amazon search, once the exact listing is supplied.
+The “Redesigned Product Catalog Staging” text on product detail pages is internal project language. Remove it from customer-facing pages.
+6 Testimonials ratings and unsupported claims
+Provide the original source and Eliane’s approval for every named testimonial, “verified buyer” review, rating, review count and claimed result. Otherwise remove them, including “4.9/5,” “350+,” the 15 homepage testimonials and the product-page review entries. The Christmas in Paris detail page displays five stars and a rating distribution while saying there are zero reviews; remove that contradictory display. Do not substitute invented testimonials.
+Remove or verify precise health claims such as “Low GI,” blood-glucose improvement percentages, the nutrition page’s prescriptive 45/30/25 percentages and claims of guaranteed energy or medical effects.
+Check each recipe and article against Eliane’s actual content. The Recipes page includes first-person claims and a 25-year mega-yacht reference; do not invent career duration, personal stories or chef-tested status. Correct labels such as “READ AUTHENTIC RECIPE” on non-recipe articles.
+The Media page advertises video demonstrations and a “WATCH FULL MASTERCLASS” link, plus promo code EPICUREAN10. Show only actual approved media and reconcile the code with FLOWS10 before publishing.
+7 Contact footer and forms
+Keep only Epicurean Flow’s approved email, phone and WhatsApp links for customer contact. A simple “Website designed by IBTEX” credit is acceptable; remove the developer’s promotional sentence and WhatsApp lead link from every footer.
+Confirm the public street address, phone numbers, registration number and contact labels with Eliane before launch. Remove invented terms such as “Global Studio Headquarters” and “WhatsApp Concierge.”
+Confirm where contact, newsletter, holiday-list and food-tour interest forms submit; show an honest success message and ensure submissions reach the intended Wix dashboard or inbox. Do not describe a booking system as connected before the partner provides it.
+8 Policies and promises
+Align the FAQ, product pages, Terms and Refund Policy with one set of approved terms. Currently the site says “all sales final,” promises a “30-Day Satisfaction Guarantee,” and describes a seven-day course refund based on viewing less than 25% of a nonexistent video curriculum. These cannot all stand. Remove the video condition and any unapproved guarantee. Confirm consultation terms only if that service is actually offered.
+Review the Privacy Policy, Terms and Refund Policy against the actual Wix/Stripe setup, payment methods, downloads, forms, analytics and registered business details. The current pages mention PayPal, iDEAL, video courses and consultation processes that require confirmation. Eliane should approve the final commercial and policy wording.
+9 Remaining acceptance checks
+The copy review does not establish that the following workflows function. Please demonstrate and correct each one in the revised preview or Wix environment:
+All navigation, blog/recipe readers, product links, Amazon link, social links, and mobile layouts.
+Each approved product’s cart price, FLOWS10 eligibility and discount, checkout handoff, successful payment, receipt and correct PDF delivery. Eliane will handle her own payment account connection.
+Member login, course progress, certificates and Q&A destination as actually implemented.
+Contact and signup forms; correct routing of submitted messages and subscriber records.
+Domain assignment and the precise Wix project/dashboard in which Eliane will manage business operations and the custom page code after launch.
+Please send a corrected preview and a concise status against these items today. Monday’s launch remains the target, subject to review of the corrected site and completion of the actual purchase and delivery test.

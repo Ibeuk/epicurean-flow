@@ -20,6 +20,108 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/members.css">
+
+  <style>
+    /* Dedicated Courses Hero Styles with Dark Translucent Scrim & Chef Wok Backdrop */
+    .courses-hero {
+      position: relative;
+      background-color: #100e0c;
+      background-image: 
+        linear-gradient(90deg, rgba(12, 10, 8, 0.84) 0%, rgba(12, 10, 8, 0.72) 44%, rgba(12, 10, 8, 0.42) 72%, rgba(12, 10, 8, 0.28) 100%),
+        linear-gradient(180deg, rgba(12, 10, 8, 0.50) 0%, rgba(12, 10, 8, 0.20) 45%, rgba(12, 10, 8, 0.70) 100%),
+        url('images/chef-cooking-wok-hero.jpg');
+      background-size: cover;
+      background-position: 72% center;
+      background-repeat: no-repeat;
+      padding-top: calc(var(--header-height) + 64px);
+      padding-bottom: 70px;
+      border-bottom: 1px solid rgba(188, 145, 66, 0.35);
+      color: #FFFFFF;
+      overflow: hidden;
+    }
+    .courses-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .courses-hero-tag {
+      display: inline-block;
+      color: #D4AF37 !important;
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+    }
+    .courses-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.35rem, 4.6vw, 3.85rem);
+      font-weight: 500;
+      line-height: 1.14;
+      letter-spacing: -0.015em;
+      color: #FFFFFF !important;
+      margin-bottom: 18px;
+      max-width: 900px;
+      text-shadow: 0 3px 16px rgba(0, 0, 0, 0.95);
+    }
+    .courses-hero-subtitle {
+      font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+      line-height: 1.68;
+      color: rgba(255, 255, 255, 0.92) !important;
+      max-width: 740px;
+      margin-bottom: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+    }
+    .courses-hero-perks {
+      display: flex;
+      gap: clamp(12px, 1.8vw, 24px);
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 36px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+    }
+    .courses-hero-perk-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: clamp(0.82rem, 1.05vw, 0.88rem);
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.96) !important;
+      white-space: nowrap;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+    }
+    .courses-hero-perk-icon {
+      color: #D4AF37 !important;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.55);
+    }
+    @media (max-width: 768px) {
+      .courses-hero {
+        padding-top: calc(var(--header-height) + 36px);
+        padding-bottom: 50px;
+        background-position: 65% center;
+        background-image: 
+          linear-gradient(180deg, rgba(12, 10, 8, 0.82) 0%, rgba(12, 10, 8, 0.65) 50%, rgba(12, 10, 8, 0.85) 100%),
+          url('images/chef-cooking-wok-hero.jpg');
+      }
+      .courses-hero-title {
+        font-size: 2.15rem;
+      }
+      .courses-hero-perks {
+        gap: 12px 18px;
+        margin-top: 26px;
+        padding-top: 20px;
+      }
+      .courses-hero-perk-item {
+        white-space: normal;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -37,8 +139,8 @@
       <nav class="nav-desktop" role="navigation" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Cookbooks</a></li>
           <li class="nav-item"><a href="courses.html" class="nav-link active">Courses</a></li>
+          <li class="nav-item"><a href="cookbooks.html" class="nav-link">Books</a></li>
           
           <!-- Recipes Dropdown -->
           <li class="nav-item has-dropdown">
@@ -53,6 +155,10 @@
                 <span class="dropdown-item-title">All Recipes</span>
                 <span class="dropdown-item-desc">Mediterranean, low-carb &amp; chef creations</span>
               </a>
+              <a href="blog.html" class="dropdown-item" role="menuitem">
+                <span class="dropdown-item-title">Chef's Blog</span>
+                <span class="dropdown-item-desc">Culinary stories, techniques &amp; food science</span>
+              </a>
               <a href="diabetes.html" class="dropdown-item" role="menuitem">
                 <span class="dropdown-item-title">Diabetes Living</span>
                 <span class="dropdown-item-desc">Flavor-first low-carb gastronomy</span>
@@ -66,8 +172,8 @@
                 <span class="dropdown-item-desc">Bespoke 1-on-1 chef consultations</span>
               </a>
               <a href="media.html" class="dropdown-item" role="menuitem">
-                <span class="dropdown-item-title">Media &amp; Cinema</span>
-                <span class="dropdown-item-desc">Masterclass video streams &amp; previews</span>
+                <span class="dropdown-item-title">Media &amp; Masterclass</span>
+                <span class="dropdown-item-desc">Culinary clips &amp; kitchen reels</span>
               </a>
             </div>
           </li>
@@ -104,13 +210,17 @@
                 </div>
               </div>
               <div class="member-menu-divider"></div>
-              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                <span>My Account &amp; Profile</span>
+              <button type="button" class="member-menu-item" id="menu-my-orders" onclick="window.openEpicureanPortal('orders'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Orders &amp; Purchase History</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-library" onclick="window.openEpicureanPortal('library'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                 <span>My Cookbooks &amp; Courses</span>
+              </button>
+              <button type="button" class="member-menu-item" id="menu-my-account" onclick="window.openEpicureanPortal('profile'); window.closeEpicureanMemberDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>My Account &amp; Profile</span>
               </button>
               <button type="button" class="member-menu-item" id="menu-my-reviews" onclick="window.openEpicureanPortal('reviews'); window.closeEpicureanMemberDropdown();">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -147,73 +257,94 @@
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-nav-drawer mobile-menu-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
-    <!-- Mobile Member Status Bar -->
-    <div class="mobile-member-widget" id="mobile-member-widget">
-      <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
+    <!-- Header with Dedicated Cancel / Close Button -->
+    <div class="mobile-drawer-header">
+      <span class="mobile-drawer-title">Navigation</span>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
-        <span>Member Log In / Sign Up</span>
+        <span>Close</span>
       </button>
-      <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
-        <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
-        <div class="mobile-member-meta">
-          <span class="mobile-member-name" id="mobile-member-name">Member</span>
-          <span class="mobile-member-status">Verified Community Member</span>
-        </div>
-        <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
-      </div>
     </div>
 
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="cookbooks.html" class="mobile-nav-link">Cookbooks</a>
-      <a href="courses.html" class="mobile-nav-link active">Courses</a>
-      
-      <div class="mobile-nav-group">
-        <a href="recipes.html" class="mobile-nav-link">Recipes / Blog</a>
-        <div class="mobile-nav-submenu">
-          <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
-          <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
-          <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
-          <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
-          <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclasses</a>
+    <div class="mobile-drawer-body">
+      <!-- Mobile Member Status Bar -->
+      <div class="mobile-member-widget" id="mobile-member-widget">
+        <button type="button" class="btn-mobile-login" id="btn-mobile-login" onclick="window.openEpicureanAuth('signup')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Member Log In / Sign Up</span>
+        </button>
+        <div class="mobile-member-info" id="mobile-member-info" style="display: none;">
+          <div class="mobile-member-avatar" id="mobile-member-avatar">M</div>
+          <div class="mobile-member-meta">
+            <span class="mobile-member-name" id="mobile-member-name">Member</span>
+            <span class="mobile-member-status">Verified Community Member</span>
+          </div>
+          <button type="button" class="btn-mobile-logout" id="btn-mobile-logout" title="Log Out">Log Out</button>
         </div>
       </div>
 
-      <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
-      <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="courses.html" class="mobile-nav-link active">Courses</a>
+        <a href="cookbooks.html" class="mobile-nav-link">Books</a>
+        
+        <!-- Accordion: Recipes & Blog (Collapsed by Default, Expands on Click) -->
+        <div class="mobile-nav-group">
+          <button type="button" class="mobile-nav-link mobile-accordion-trigger" id="mobile-recipes-toggle" aria-expanded="false" aria-controls="mobile-recipes-submenu">
+            <span>Recipes &amp; Blog</span>
+            <svg class="mobile-accordion-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-submenu" id="mobile-recipes-submenu" style="display: none;">
+            <a href="recipes.html" class="mobile-nav-sublink">All Recipes</a>
+            <a href="blog.html" class="mobile-nav-sublink">Chef's Blog</a>
+            <a href="diabetes.html" class="mobile-nav-sublink">Diabetes Living</a>
+            <a href="nutrition.html" class="mobile-nav-sublink">Nutrition &amp; Science</a>
+            <a href="menu-planning.html" class="mobile-nav-sublink">Menu Planning Consultation</a>
+            <a href="media.html" class="mobile-nav-sublink">Media &amp; Masterclass</a>
+          </div>
+        </div>
+
+        <a href="food-tours.html" class="mobile-nav-link">Food Tours</a>
+        <a href="about.html" class="mobile-nav-link">About Chef Eliane</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
     </div>
   </div>
 
   <main id="main-content">
-    <!-- Page Hero -->
-    <section class="page-hero">
+    <!-- Page Hero - Online Culinary Academy with Chef Wok Background -->
+    <section class="courses-hero" id="courses-hero" aria-label="Online Culinary Academy">
       <div class="container">
-        <p class="section-tag">Online Culinary Academy</p>
-        <h1 class="page-hero-title">Cooking Courses &amp; Masterclasses</h1>
-        <p class="page-hero-subtitle">
-          Master the essentials in 7 days or advance to Michelin-level technique with immersive, step-by-step culinary masterclasses.
+        <p class="courses-hero-tag">ONLINE CULINARY ACADEMY</p>
+        <h1 class="courses-hero-title">Practical Cooking Courses</h1>
+        <p class="courses-hero-subtitle">
+          Master kitchen essentials or advance your technique with structured, step-by-step culinary guides and practical workbooks.
         </p>
 
-        <!-- Perks strip -->
-        <div style="display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--color-border-light);">
-          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 500;">
-            <span style="color: var(--color-gold); font-size: 1.1rem;">&#10003;</span>
-            <span>Step-by-Step Video Clarity</span>
+        <!-- Perks strip (Matching Screenshot) -->
+        <div class="courses-hero-perks">
+          <div class="courses-hero-perk-item">
+            <span class="courses-hero-perk-icon" aria-hidden="true">&#10003;</span>
+            <span>Step-by-Step Practical Guidance</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 500;">
-            <span style="color: var(--color-gold); font-size: 1.1rem;">&#10003;</span>
+          <div class="courses-hero-perk-item">
+            <span class="courses-hero-perk-icon" aria-hidden="true">&#10003;</span>
             <span>Free Comprehensive Workbook Included</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 500;">
-            <span style="color: var(--color-gold); font-size: 1.1rem;">&#10003;</span>
+          <div class="courses-hero-perk-item">
+            <span class="courses-hero-perk-icon" aria-hidden="true">&#10003;</span>
             <span>Official Certificate Included (Select Courses)</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 500;">
-            <span style="color: var(--color-gold); font-size: 1.1rem;">&#10003;</span>
+          <div class="courses-hero-perk-item">
+            <span class="courses-hero-perk-icon" aria-hidden="true">&#10003;</span>
             <span>Lifetime Access &amp; Recipe Updates</span>
           </div>
         </div>
@@ -307,19 +438,19 @@
         </div>
 
         <!-- Community Support Hub Section -->
-        <div class="community-hub-card" style="margin-top: 32px; background: linear-gradient(135deg, #1C1917 0%, #2A2521 100%); border: 1px solid var(--color-gold-border); border-radius: var(--radius-xl); padding: 36px; color: var(--color-ivory); display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center;">
-          <div>
+        <div class="community-hub-card">
+          <div class="community-hub-content">
             <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(188,145,66,0.25); color: var(--color-gold-light); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 12px; border-radius: 999px; margin-bottom: 12px;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Student Community Circle</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Culinary Living &bull; Community</span>
             </div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: #FFF; margin-bottom: 10px;">Connect, Share &amp; Celebrate Your Culinary Triumphs</h3>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: #FFF; margin-bottom: 10px;">A Q&amp;A Community for Food Lovers</h3>
             <p style="font-size: 0.95rem; color: rgba(245, 240, 231, 0.85); line-height: 1.6; max-width: 650px; margin-bottom: 0;">
-              Cooking is meant to be shared! Connect directly with Chef Eliane and fellow food enthusiasts in our interactive student circle. Exchange tips, troubleshoot bakes, and share your kitchen successes with a welcoming global culinary community.
+              Cooking is meant to be shared! Join our welcoming Q&amp;A community for food lovers to ask questions about techniques, exchange kitchen tips, and share culinary ideas with fellow passionate home cooks.
             </p>
           </div>
-          <div style="display: flex; flex-direction: column; gap: 12px; min-width: 200px;">
-            <a href="https://wa.me/31618571677?text=Hello%20Chef%20Eliane,%20I%20would%20like%20to%20join%20the%20Epicurean%20Flow%20Student%20Community!" target="_blank" rel="noopener" class="btn btn-gold" style="text-align: center;">
-              <span>Join Student Circle &rarr;</span>
+          <div class="community-hub-actions">
+            <a href="contact.html" class="btn btn-gold" style="text-align: center;">
+              <span>Join Q&amp;A Community &rarr;</span>
             </a>
             <a href="https://www.instagram.com/epicureanflow/" target="_blank" rel="noopener" class="btn btn-secondary-light btn-sm" style="text-align: center;">
               <span>Tag @epicureanflow</span>
@@ -334,19 +465,19 @@
     <section class="section bg-light" id="all-courses">
       <div class="container">
         <!-- Official Launch Promo Announcement -->
-        <div class="course-launch-banner" style="margin-bottom: 32px; background: linear-gradient(135deg, #1C1917 0%, #2D2723 100%); color: #FAF7F2; padding: 18px 24px; border-radius: 12px; border: 1px solid rgba(212,175,55,0.4); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
-          <div style="display: flex; align-items: center; gap: 14px;">
-            <span style="font-size: 1.5rem;">🎉</span>
-            <div>
-              <div style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: #FFF;">
-                New to Epicurean Flow? Use code <span class="course-promo-code" style="background: rgba(212,175,55,0.22); color: var(--color-gold); font-family: monospace; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px dashed var(--color-gold); letter-spacing: 1px;">FLOWS10</span> and enjoy <strong>10% off</strong> your first course.
+        <div class="course-launch-banner">
+          <div class="course-launch-content">
+            <span class="course-launch-icon">🎉</span>
+            <div class="course-launch-text">
+              <div class="course-launch-headline">
+                New to Epicurean Flow? Use code <span class="course-promo-code">FLOWS10</span> and enjoy <strong>10% off</strong> your first course.
               </div>
-              <p style="font-size: 0.8rem; color: rgba(250,247,242,0.7); margin-top: 2px;">
+              <p class="course-launch-subtext">
                 *Valid on your first individual self-paced course. Excluded from bundles or already discounted packages.
               </p>
             </div>
           </div>
-          <button type="button" class="btn btn-gold btn-sm" onclick="navigator.clipboard.writeText('FLOWS10'); alert('Promo code FLOWS10 copied! You can apply it at checkout or in your cart drawer.');">
+          <button type="button" class="btn btn-gold btn-sm course-launch-btn" onclick="navigator.clipboard.writeText('FLOWS10'); alert('Promo code FLOWS10 copied! You can apply it at checkout or in your cart drawer.');">
             Copy Code: FLOWS10
           </button>
         </div>
@@ -354,7 +485,7 @@
         <div class="section-header text-center">
           <p class="section-tag">Self-Paced Digital Curriculum</p>
           <h2 class="section-title">Explore All Cooking Courses</h2>
-          <p class="section-subtitle">Interactive chef-led learning with video clarity, progress tracking, recipe workbooks, and completion certificates.</p>
+          <p class="section-subtitle">Structured chef-led learning with culinary technique modules, progress tracking, recipe workbooks, and completion certificates.</p>
         </div>
 
         <!-- Courses Catalog Grid (6 Official Courses) -->
@@ -379,7 +510,7 @@
               <ul class="catalog-card-checklist">
                 <li class="catalog-card-check-item">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Interactive Video Modules &amp; Quizzes</span>
+                  <span>Structured Culinary Modules &amp; Quizzes</span>
                 </li>
                 <li class="catalog-card-check-item">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -544,13 +675,13 @@
             </div>
             <div class="catalog-card-body">
               <div class="catalog-card-meta">
-                <span class="catalog-card-tag">Practical Health Guidance</span>
+                <span class="catalog-card-tag">Diabetes-Friendly Cooking Courses</span>
                 <span class="catalog-card-price">€49.00</span>
               </div>
               <h3 class="catalog-card-heading">Diabetes Cooking Course</h3>
               <p class="catalog-card-subheading">Cook Smart, Eat Well, Enjoy Your Meals</p>
               <p class="catalog-card-paragraph">
-                Master the secrets of nutritious, flavor-packed dining in our self-paced Diabetes Cooking Course. This structured video program focuses on core culinary techniques, kitchen strategies, and ingredient substitutions that empower you to prepare satisfying meals while managing blood sugar with confidence. (For companion printed recipes, explore our standalone cookbook, <em>The Diabetes-Friendly Kitchen</em>).
+                Master the secrets of nutritious, flavor-packed dining in our self-paced Diabetes Cooking Course. This structured culinary course focuses on core techniques, kitchen strategies, and ingredient substitutions that empower you to prepare satisfying meals while managing blood sugar with confidence. (For companion recipes, explore our standalone cookbook, <em>The Diabetes-Friendly Kitchen</em>).
               </p>
               <ul class="catalog-card-checklist">
                 <li class="catalog-card-check-item">
@@ -588,7 +719,7 @@
             </div>
             <div class="catalog-card-body">
               <div class="catalog-card-meta">
-                <span class="catalog-card-tag">Premium Masterclass</span>
+                <span class="catalog-card-tag">Diabetes-Friendly Cooking Courses</span>
                 <span class="catalog-card-price">€89.00</span>
               </div>
               <h3 class="catalog-card-heading">The Complete Diabetes-Friendly Cooking Masterclass</h3>
@@ -631,6 +762,112 @@
       </div>
     </section>
 
+    <!-- Course Companion Books & Workbooks — included on Courses page per product category assignment -->
+    <section class="section" id="course-companion-books">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-tag">Paired Learning Resources</p>
+          <h2 class="section-title">Course Companion Books &amp; Workbooks</h2>
+          <p class="section-subtitle">
+            Every course includes a comprehensive workbook. These standalone companion guides and holiday cookbooks are designed to sit alongside your chosen course — or to be enjoyed entirely on their own.
+          </p>
+        </div>
+
+        <div class="product-cards-grid-3" id="companion-books-grid" style="margin-bottom: 36px;">
+
+          <!-- Baking for Beginners Workbook -->
+          <article class="catalog-card-editorial" id="baking-beginners-workbook" data-id="baking-beginners-workbook">
+            <div class="catalog-card-media">
+              <img src="images/epicurean_flow_baking_for_beginners_publication_ready-1-1-cover.jpg" alt="Baking for Beginners Companion Workbook" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-masterclass">Course Companion Workbook</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Baking Foundations</span>
+                <span class="catalog-card-price">Included with Course</span>
+              </div>
+              <h3 class="catalog-card-heading">Baking for Beginners Workbook</h3>
+              <p class="catalog-card-subheading">Your Guided Reference for Every Module</p>
+              <p class="catalog-card-paragraph">
+                The complete hands-on workbook designed to accompany the Baking for Beginners course — featuring recipe logs, technique notes, and guided exercises for each lesson.
+              </p>
+              <div class="catalog-card-btn-group">
+                <a href="cookbooks.html#baking-beginners-workbook" class="btn btn-outline btn-sm">View in Books Collection</a>
+                <a href="product-detail.html?id=beginners-baking" class="btn btn-primary btn-sm">Enrol in Course &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Stress-Free Thanksgiving Guide -->
+          <article class="catalog-card-editorial" id="thanksgiving-guide-course" data-id="stress-free-thanksgiving-guide">
+            <div class="catalog-card-media">
+              <img src="images/stress_free_thanksgiving_premium_guide_final_contrast_corrected_interactive-cover.jpg" alt="Stress-Free Thanksgiving Premium Guide" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-standard">Seasonal Cooking Guide</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Holiday Cooking</span>
+                <span class="catalog-card-price">€12.95</span>
+              </div>
+              <h3 class="catalog-card-heading">Stress-Free Thanksgiving</h3>
+              <p class="catalog-card-subheading">Your Complete Holiday Kitchen Companion</p>
+              <p class="catalog-card-paragraph">
+                Plan, prep, and present a flawless Thanksgiving feast — turkey, sides, and desserts — with Chef Eliane's professional holiday kitchen strategy guide.
+              </p>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="stress-free-thanksgiving-guide"
+                  data-title="Stress-Free Thanksgiving Premium Guide"
+                  data-numeric="12.95"
+                  data-price="€12.95"
+                  data-image="images/stress_free_thanksgiving_premium_guide_final_contrast_corrected_interactive-cover.jpg">
+                  GET THE GUIDE &bull; €12.95
+                </button>
+                <a href="cookbooks.html#stress-free-thanksgiving" class="btn btn-outline btn-sm">View in Books Collection</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Christmas Recipe Collection -->
+          <article class="catalog-card-editorial" id="christmas-collection-course" data-id="christmas-recipe-collection">
+            <div class="catalog-card-media">
+              <img src="images/christmas-in-paris-cover.jpg" alt="The Christmas Recipe Collection Cover" class="catalog-card-img" loading="lazy">
+              <span class="card-badge-pill badge-everyday">Festive Collection</span>
+            </div>
+            <div class="catalog-card-body">
+              <div class="catalog-card-meta">
+                <span class="catalog-card-tag">Holiday &amp; Festive</span>
+                <span class="catalog-card-price">€14.95</span>
+              </div>
+              <h3 class="catalog-card-heading">The Christmas Recipe Collection</h3>
+              <p class="catalog-card-subheading">Chef Eliane's Complete Festive Menu Guide</p>
+              <p class="catalog-card-paragraph">
+                From elegant starters to show-stopping mains and festive desserts — a curated collection of Christmas recipes perfect for the holiday table.
+              </p>
+              <div class="catalog-card-btn-group">
+                <button type="button" class="btn btn-primary btn-sm btn-add-to-cart"
+                  data-id="christmas-recipe-collection"
+                  data-title="The Christmas Recipe Collection"
+                  data-numeric="14.95"
+                  data-price="€14.95"
+                  data-image="images/christmas-in-paris-cover.jpg">
+                  GET THE COLLECTION &bull; €14.95
+                </button>
+                <a href="cookbooks.html#christmas-collection" class="btn btn-outline btn-sm">View in Books Collection</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 8px;">
+          <a href="cookbooks.html" class="btn btn-gold">
+            <span>See All Books &amp; Companion Guides &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Is This You? / Problems We Solve (Direct Wix Content) -->
     <section class="section">
       <div class="container">
@@ -654,19 +891,9 @@
 
             <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--color-border-light); font-size: 1rem; line-height: 1.8; color: var(--color-ink-subtle);">
               <p>
-                <strong>You’re not alone!</strong> After teaching over 500 students&mdash;ranging from home cooks to professional yacht chefs in Cannes and Amsterdam&mdash;Chef Eliane has seen every mistake in the book. With the right foundational techniques, you can unlock your potential and create dishes that truly impress.
+                <strong>You’re not alone!</strong> After teaching hundreds of students&mdash;ranging from passionate home cooks to professional yacht chefs&mdash;Chef Eliane has seen every mistake in the book. With the right foundational techniques, you can unlock your potential and create dishes that truly impress.
               </p>
             </div>
-          </div>
-
-          <!-- Student Testimonial -->
-          <div style="text-align: center; margin-top: 48px;">
-            <blockquote style="font-family: var(--font-serif); font-size: 1.4rem; font-style: italic; color: var(--color-ink); line-height: 1.6; margin-bottom: 16px;">
-              &ldquo;The quizzes, workbook, and live Q&amp;A gave me confidence in the kitchen. Epicurean Flow is a game-changer!&rdquo;
-            </blockquote>
-            <cite style="font-size: 0.9rem; font-weight: 600; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em; display: block;">
-              &mdash; Sarah T., Epicurean Flow Student
-            </cite>
           </div>
         </div>
       </div>
@@ -684,7 +911,7 @@
           <p class="footer-tagline">Where cooking inspires. Masterclasses, curated digital cookbooks, and gourmet cuisine by Award-Winning Chef Eliane Muskus.</p>
           <div class="footer-contact-info" style="font-size: 0.875rem; color: rgba(245, 240, 231, 0.78); margin-top: 14px;">
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px; font-weight: 600;">Epicurean Flow</p>
-            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Sierra Grazalema 23<br>29016 Málaga, Spain</p>
+            <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Registered in Amsterdam, Netherlands</p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">WhatsApp: <a href="https://wa.me/31618571677" style="color: var(--color-gold);">+ 31618571677</a></p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 4px;">Telephone Spain: <a href="tel:+34626617282" style="color: var(--color-gold);">+34626617282</a></p>
             <p style="color: rgba(245, 240, 231, 0.78); margin-bottom: 0;">Email: <a href="mailto:info@epicureanflow.com" style="color: var(--color-gold);">info@epicureanflow.com</a></p>
@@ -749,13 +976,19 @@
 
     <div class="footer-bottom container">
       <p class="copyright">&copy; 2026 Epicurean Flow | All Rights Reserved</p>
-      <p style="font-size: 0.8rem; color: rgba(245, 240, 231, 0.6);">Business Registration: 94886792 &bull; Málaga, Spain</p>
+      <p style="font-size: 0.8rem; color: rgba(245, 240, 231, 0.6);">Business Registration: 94886792 &bull; Amsterdam, Netherlands</p>
       <div class="footer-bottom-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
         <a href="refund-policy.html">Refund Policy</a>
       </div>
     </div>
+
+    <div class="container">
+      <div class="footer-developer-bar" style="border-top: 1px solid rgba(245, 240, 231, 0.1); padding: 18px 0; text-align: center;">
+        <span style="font-size: 0.8125rem; color: rgba(245, 240, 231, 0.65);">Website designed by <a href="https://ibtex.ibe88agwu.workers.dev/" target="_blank" rel="noopener" style="color: var(--color-gold, #c5a059); text-decoration: none;">IBTEX</a></span>
+      </div>
+      </div>
     </div>
   </footer>
 
@@ -786,16 +1019,19 @@
         <span>Subtotal:</span>
         <span id="cart-subtotal-val">€0.00</span>
       </div>
-      <a href="https://epicureanflow.wixsite.com/epicurean-flow/cart-page" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
+      <a href="javascript:void(0)" id="btn-proceed-checkout" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">
         <span>Proceed to Secure Checkout</span>
       </a>
     </div>
   </aside>
 
   <!-- JavaScript -->
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
   <script src="js/navigation.js"></script>
+  <script src="js/wix-sdk-client.js"></script>
   <script src="js/products.js"></script>
   <script src="js/main.js"></script>
   <script src="js/members.js"></script>
+  <script src="js/animations.js"></script>
 </body>
 </html>
